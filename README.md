@@ -1,4 +1,21 @@
-# DeepSeek Harness
+# Reevo
+
+Reevo is a fork of [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). From this checkout, use `pnpm reevo` to run the harness.
+
+## Configure Reevo
+
+Reevo uses the existing Cordis profiles and YAML patch layers. Set a separate data directory for a hackathon with `export DSH_HOME="$PWD/.reevo"`. Store credentials outside version control. For the DeepSeek API provider, export `DEEPSEEK_API_KEY` in your shell.
+
+Inspect the selected profile before launching it. The [example patch](examples/reevo/web.patch.yml) turns off the web fetch tool and changes the search timeout.
+
+```sh
+pnpm reevo --profile web --dump-default-config
+pnpm reevo --profile web --dump-config-schema
+pnpm reevo --profile web --patch examples/reevo/web.patch.yml --dump-config
+pnpm reevo --profile web --patch examples/reevo/web.patch.yml
+```
+
+Use the schema and [configuration catalog](docs/config-catalog.zh.md) to find supported plugin settings. Pass multiple `--patch` flags to apply overrides in order.
 
 English | [中文](README.zh.md)
 
