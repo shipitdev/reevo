@@ -4,7 +4,7 @@ Reevo is a fork of [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-ha
 
 ## Configure Reevo
 
-Reevo uses the existing Cordis profiles and YAML patch layers. Set a separate data directory for a hackathon with `export DSH_HOME="$PWD/.reevo"`. Store credentials outside version control. For the DeepSeek API provider, export `DEEPSEEK_API_KEY` in your shell.
+Reevo uses the existing Cordis profiles and YAML patch layers. Reevo defaults to `~/.reevo`. To use an existing DeepSeek Harness data directory, explicitly set `DSH_HOME` to that directory. Set a separate data directory for a hackathon with `export DSH_HOME="$PWD/.reevo"`. Store credentials outside version control. For the DeepSeek API provider, export `DEEPSEEK_API_KEY` in your shell.
 
 Inspect the selected profile before launching it. The [example patch](examples/reevo/web.patch.yml) turns off the web fetch tool and changes the search timeout.
 
