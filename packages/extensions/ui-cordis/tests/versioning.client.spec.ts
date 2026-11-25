@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { DynamicCordisLivePackage } from '@deepseek-ai/dsh-cordis-client-runner/client'
-import { PartialArguments } from '@deepseek-ai/dsh-util-values'
+import { brandString } from '@reevo/dsh-brand'
+import type { DynamicCordisLivePackage } from '@reevo/dsh-cordis-client-runner/client'
+import { PartialArguments } from '@reevo/dsh-util-values'
 import type {
   CordisDynamicPackageId, CordisDynamicPluginId, CordisDynamicPluginRunId,
   DynamicCordisInventoryRow,

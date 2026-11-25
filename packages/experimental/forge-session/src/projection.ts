@@ -4,12 +4,12 @@
  */
 
 import { z } from 'zod'
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import { pluginRecordOf, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionEventMap } from '@deepseek-ai/dsh-session'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-tool-executor-ptc/types'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import { pluginRecordOf, SessionSeq } from '@reevo/dsh-session'
+import type { SessionEvent, SessionEventMap } from '@reevo/dsh-session'
+import type { ProjectionDefinition } from '@reevo/dsh-session-projection'
+import type {} from '@reevo/dsh-tool-executor-ptc/types'
+import { assertNever } from '@reevo/dsh-util-values'
 import { commandIn, commandOf, pushedBranches, sameChangeRequestUrl } from './commands.ts'
 import type { CommandRules, PushedRef } from './commands.ts'
 import type { BindingOrigin, BindingRecord, BindingState, CommandEvidence, ForgeChangeRequestsState, PushedBranch } from './types.ts'

@@ -4,16 +4,16 @@
  */
 import { randomUUID } from 'node:crypto'
 import type { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import type {
   ConnectorAccountButton, ConnectorAccountCopy, ConnectorAccountDisplay, ConnectorAccountSource, ConnectorAccountView,
   ConnectorOperationId, ConnectorOperationResult,
-} from '@deepseek-ai/dsh-client-ui-connector-account/types'
-import type { McpAuthorizationReason, McpOAuthAttemptId, McpOAuthAttemptView } from '@deepseek-ai/dsh-mcp-client/types'
-import type {} from '@deepseek-ai/dsh-mcp-manager'
-import type { McpManagedServerView } from '@deepseek-ai/dsh-mcp-manager/types'
-import type { LocalizedText } from '@deepseek-ai/dsh-package-manifest'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+} from '@reevo/dsh-client-ui-connector-account/types'
+import type { McpAuthorizationReason, McpOAuthAttemptId, McpOAuthAttemptView } from '@reevo/dsh-mcp-client/types'
+import type {} from '@reevo/dsh-mcp-manager'
+import type { McpManagedServerView } from '@reevo/dsh-mcp-manager/types'
+import type { LocalizedText } from '@reevo/dsh-package-manifest'
+import { assertNever } from '@reevo/dsh-util-values'
 import { text, type McpAccountKey } from './locales.ts'
 import type { McpAccountCopy } from './types.ts'
 

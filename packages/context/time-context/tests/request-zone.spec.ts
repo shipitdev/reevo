@@ -1,14 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { UserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { UserMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
 import {
   deriveBrowserTimeZoneContext,
   renderBrowserTimeZoneContext,
   reportedBrowserTimeZone,
 } from '../src/request-zone.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

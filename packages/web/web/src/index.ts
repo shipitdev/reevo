@@ -4,11 +4,11 @@
  * be usable; without one, exactly one usable provider is required, except that a search prefers the
  * usable DeepSeek provider assigned to the route of the model request it serves, so selection never
  * depends on registration order.
- * @module @deepseek-ai/dsh-web
+ * @module @reevo/dsh-web
  */
 
 import { Context, type Volatile } from '@deepseek-ai/cordis'
-import { Remote, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
+import { Remote, TypertRemoteService } from '@reevo/dsh-typert-protocol'
 import z from '@deepseek-ai/schemastery'
 import type {
   WebFetchProvider,

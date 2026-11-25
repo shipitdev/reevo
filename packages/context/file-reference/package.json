@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-file-reference",
+  "name": "@reevo/dsh-file-reference",
   "description": "File-reference discovery contract and shared @file grammar",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -39,11 +39,11 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

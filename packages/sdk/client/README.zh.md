@@ -61,12 +61,12 @@ try {
 
 ### 用 DeepSeekHarness 运行 agent 轮次
 
-下面的示例在运行时导入 `brandString`。请在应用中直接声明 `@deepseek-ai/dsh-brand` 依赖，不要依赖 SDK 的传递依赖；仅测试使用时可以放入开发依赖。
+下面的示例在运行时导入 `brandString`。请在应用中直接声明 `@reevo/dsh-brand` 依赖，不要依赖 SDK 的传递依赖；仅测试使用时可以放入开发依赖。
 
 ```ts
 import { DeepSeekHarness } from '@reevo/sdk'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { ReasoningEffortId } from '@reevo/dsh-llm/types'
 
 await using harness = new DeepSeekHarness({
   profile: 'sdk',

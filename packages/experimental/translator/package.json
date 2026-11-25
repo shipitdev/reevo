@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-translator",
+  "name": "@reevo/dsh-experimental-translator",
   "description": "Machine translation with reusable Session results",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -37,40 +37,40 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-launch-environment": "workspace:*"
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-credentials": "workspace:*",
+    "@reevo/dsh-launch-environment": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*",
+    "@reevo/dsh-session-persistence-jsonl": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-launch-environment": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-api-key": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-account": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-account": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-llm-api-extensions": "workspace:*",
-    "@deepseek-ai/dsh-session-log-deepseek": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-session-query-sqlite": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-auth": "workspace:*"
+    "@reevo/dsh-credentials": "workspace:*",
+    "@reevo/dsh-launch-environment": "workspace:*",
+    "@reevo/dsh-llm-deepseek": "workspace:*",
+    "@reevo/dsh-llm-deepseek-api-key": "workspace:*",
+    "@reevo/dsh-llm-deepseek-account": "workspace:*",
+    "@reevo/dsh-deepseek-account": "workspace:*",
+    "@reevo/dsh-deepseek-llm-api-extensions": "workspace:*",
+    "@reevo/dsh-session-log-deepseek": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-session-query-sqlite": "workspace:*",
+    "@reevo/dsh-deepseek-auth": "workspace:*"
   }
 }

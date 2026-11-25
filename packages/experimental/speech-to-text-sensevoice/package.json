@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-speech-to-text-sensevoice",
+  "name": "@reevo/dsh-experimental-speech-to-text-sensevoice",
   "description": "Local SenseVoice ONNX transcription with a managed sherpa-onnx process",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -39,20 +39,20 @@
   "license": "MIT",
   "dependencies": {
     "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
     "zod": "4.6.6",
     "sherpa-onnx-node": "1.13.8"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-experimental-speech-to-text": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*"
+    "@reevo/dsh-experimental-speech-to-text": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-experimental-speech-to-text": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
+    "@reevo/dsh-experimental-speech-to-text": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-subprocess-local": "workspace:*",
     "tsx": "^4.23.13"
   }
 }

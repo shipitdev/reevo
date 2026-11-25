@@ -5,11 +5,11 @@
  * registrant's text from the Host.
  */
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-layout/client'
-import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
+import type {} from '@reevo/dsh-api-remotes/client'
+import type {} from '@reevo/dsh-client-locale/client'
+import type {} from '@reevo/dsh-client-ui-layout/client'
+import type {} from '@reevo/dsh-client-ui-plugin-manager/client'
+import type {} from '@reevo/dsh-client-ui-renderer/client'
 import {
   ConnectorAccountActivationEntry, ConnectorAccountBadgeEntry, ConnectorAccountSectionEntry, ConnectorAccountToastEntry,
 } from './components.tsx'

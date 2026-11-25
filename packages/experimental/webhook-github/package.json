@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-webhook-github",
+  "name": "@reevo/dsh-webhook-github",
   "description": "Signed GitHub HTTP webhook adapter for the DeepSeek Harness webhook runtime",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -41,14 +41,14 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-webhook": "workspace:*"
+    "@reevo/dsh-credentials": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-webhook": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "@octokit/webhooks": "^14.2.0"
   },
@@ -56,9 +56,9 @@
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-webhook": "workspace:*"
+    "@reevo/dsh-credentials": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-webhook": "workspace:*"
   }
 }

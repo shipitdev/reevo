@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-action-cards",
+  "name": "@reevo/dsh-action-cards",
   "description": "Optional action cards below answers: card state, user actions and status notices",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -37,28 +37,28 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-api-remote-access": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-loop": "workspace:*",
+    "@reevo/dsh-agent-loop-testkit": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-api-remote-access": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
     "@deepseek-ai/cosmokit": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "zod": "4.6.6",
     "@deepseek-ai/schemastery": "workspace:~"
   },

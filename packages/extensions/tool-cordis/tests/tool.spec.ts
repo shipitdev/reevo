@@ -1,10 +1,10 @@
 /** Directory discovery and exact queries through one model-facing tool. */
 import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { CordisInspectRegistryService } from '@deepseek-ai/dsh-cordis-host-runner'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRegistry, { type ToolRunContext } from '@deepseek-ai/dsh-tools'
+import type { Agent } from '@reevo/dsh-agent'
+import { CordisInspectRegistryService } from '@reevo/dsh-cordis-host-runner'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRegistry, { type ToolRunContext } from '@reevo/dsh-tools'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import * as ToolCordis from '../src/index.ts'
 

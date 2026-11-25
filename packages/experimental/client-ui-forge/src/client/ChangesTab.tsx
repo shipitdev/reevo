@@ -21,12 +21,12 @@ import {
   IconWrapFillRegular,
   Menu, Tooltip,
   type MenuEntry,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { HostObservable, InjectFace, PropsLocale, PropsRenderSlots, PropsRuntime, PropsStore } from '@deepseek-ai/dsh-client-ui-slots'
-import type { SidebarRightTabInfo } from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
-import type { RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
-import { fileAddressFor, pathPartsOf } from '@deepseek-ai/dsh-util-workspace-path'
+} from '@reevo/dsh-client-ui-primitives'
+import type { HostObservable, InjectFace, PropsLocale, PropsRenderSlots, PropsRuntime, PropsStore } from '@reevo/dsh-client-ui-slots'
+import type { SidebarRightTabInfo } from '@reevo/dsh-client-ui-sidebar-right/client'
+import type { RemoteResult } from '@reevo/dsh-typert-protocol'
+import { assertNever } from '@reevo/dsh-util-values'
+import { fileAddressFor, pathPartsOf } from '@reevo/dsh-util-workspace-path'
 import type {
   ForgeBaseBranch, ForgeBaseBranches, ForgeChangeRequestDiff, ForgeCommitRange, ForgeDiffFile, ForgeExtensionState, ForgeLensFrame,
   ForgeLensKeep, ForgeLensRequest, ForgeLocalCommits, ForgeLocalDiff, ForgeLocalScope,
@@ -35,7 +35,7 @@ import { lensVersion } from '../lens-version.ts'
 import type {
   ForgeCommitList, ForgeReviewData, ForgeReviewRequest, ForgeReviewResult, ForgeReviewThread, ForgeReviewWrite, ForgeReviewWriteResult,
   ForgeThreadId, ForgeViewedFiles, ForgeViewedRequest,
-} from '@deepseek-ai/dsh-experimental-forge/types'
+} from '@reevo/dsh-experimental-forge/types'
 import { sameReviewSource, type RemovedRecord, type ReviewQueue } from './review-queue.ts'
 import { ReviewThread, useFileReview } from './ReviewThread.tsx'
 import type { ReviewActions } from './ReviewComposer.tsx'

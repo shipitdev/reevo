@@ -94,7 +94,7 @@ https://gitlab.example.com/team/dsh-plugins
 在 DSH 代码仓库中运行它：
 
 ```sh
-pnpm --filter @deepseek-ai/dsh-plugin-market-generator start --input plugins.txt --output site/index.json --title "Team plugins"
+pnpm --filter @reevo/dsh-plugin-market-generator start --input plugins.txt --output site/index.json --title "Team plugins"
 ```
 
 对于 npm 包，索引列出所有未弃用、未设为私有且声明了 `dsh.bundle` 的版本。对于 Git 仓库，生成器在默认分支上查找 `package.json` 没有设置 `"private": true` 的组合包，列出它们在 `vX.Y.Z`、`X.Y.Z` 和 `<name>@X.Y.Z` 标签处的版本，以及每个包在默认分支上的版本。标题、描述、图标、作者和主页取自每个插件的最高版本。路径相对于你运行 pnpm 的目录。

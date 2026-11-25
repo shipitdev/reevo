@@ -1,10 +1,10 @@
 /** Host registry and HTTP adapter for generic Connection RPC channels. */
 
 import { Context, Service } from '@deepseek-ai/cordis'
-import type { WebRoute } from '@deepseek-ai/dsh-host-webserver'
-import type { PeerScope, Principal } from '@deepseek-ai/dsh-typert-protocol'
+import type { WebRoute } from '@reevo/dsh-host-webserver'
+import type { PeerScope, Principal } from '@reevo/dsh-typert-protocol'
 import type { ConnectionInteractions } from './connect-protocol.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import type { ClientRequest, RpcId as RpcIdType } from './rpc.ts'
 import { clientRequestSchema } from './rpc-schema.ts'
 import { bridge } from './http-bridge.ts'

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
-import type { SettingsPathOpView } from '@deepseek-ai/dsh-api-remotes/client'
-import { RemoteError, stubConfigForm, type StubConfigForm } from '@deepseek-ai/dsh-client-test-runtime'
+import type { SettingsPathOpView } from '@reevo/dsh-api-remotes/client'
+import { RemoteError, stubConfigForm, type StubConfigForm } from '@reevo/dsh-client-test-runtime'
 import {
   WebSearchCardController,
   type WebApiSettings, type WebLegacySettings, type WebProviderSelection,

@@ -1,10 +1,10 @@
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment'
+import type { AttachmentId } from '@reevo/dsh-attachment'
 import { runInNewContext } from 'node:vm'
-import { PtcImage } from '@deepseek-ai/dsh-ptc-runtime'
+import { PtcImage } from '@reevo/dsh-ptc-runtime'
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it } from 'vitest'
 import { mountRuntime } from './setup.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const modes = [
   { executionMode: 'per-call', scriptPersistence: false },

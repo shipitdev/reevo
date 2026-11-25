@@ -1,5 +1,5 @@
 /** Account state and presentation extension points shared with client plugins. */
-import type { AccountClientMetadata, AccountView } from '@deepseek-ai/dsh-deepseek-account/types'
+import type { AccountClientMetadata, AccountView } from '@reevo/dsh-deepseek-account/types'
 
 /** Latest account-stream availability, without notification state. */
 export interface AccountUiState {
@@ -41,7 +41,7 @@ declare module '@deepseek-ai/cordis' {
   }
 }
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@reevo/dsh-client-ui-slots' {
   interface SlotMap {
     /** Notifications in the row above the account launcher; the contribution owns its markup and lifecycle. */
     'settings.launcher.notifications': { kind: 'single'; scope: 'root'; owner: AccountNotificationsOwnerProps }

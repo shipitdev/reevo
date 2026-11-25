@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-api-speech-to-text",
+  "name": "@reevo/dsh-experimental-api-speech-to-text",
   "description": "Authenticated experimental speech transcription for browser clients",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -55,12 +55,12 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-experimental-speech-to-text": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-experimental-speech-to-text": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-experimental-speech-to-text": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-experimental-speech-to-text": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   }
 }

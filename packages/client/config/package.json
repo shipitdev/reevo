@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-config",
+  "name": "@reevo/dsh-client-config",
   "description": "Types of browser-synced plugin configuration",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -45,8 +45,8 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@reevo/dsh-client-store": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*"
   },
   "files": [
     "locale/*.json",

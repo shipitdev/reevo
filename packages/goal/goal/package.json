@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-goal",
+  "name": "@reevo/dsh-goal",
   "description": "Event-sourced same-session goal state and lifecycle service for the DeepSeek Harness",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -54,33 +54,33 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-bash-local": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-checkpoint-policy": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-loop": "workspace:*",
+    "@reevo/dsh-agent-loop-testkit": "workspace:*",
+    "@reevo/dsh-bash-local": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-loader-smoke": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-checkpoint-policy": "workspace:*",
+    "@reevo/dsh-session-persistence-jsonl": "workspace:*",
+    "@reevo/dsh-subprocess-local": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-mcp-account",
+  "name": "@reevo/dsh-mcp-account",
   "description": "MCP connector accounts on the Plugins page: each connector's OAuth server in the connector account registry, authorized through the MCP manager",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -35,17 +35,17 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-ui-connector-account": "workspace:*",
-    "@deepseek-ai/dsh-mcp-client": "workspace:*",
-    "@deepseek-ai/dsh-mcp-manager": "workspace:*",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*"
+    "@reevo/dsh-client-ui-connector-account": "workspace:*",
+    "@reevo/dsh-mcp-client": "workspace:*",
+    "@reevo/dsh-mcp-manager": "workspace:*",
+    "@reevo/dsh-package-manifest": "workspace:*"
   }
 }

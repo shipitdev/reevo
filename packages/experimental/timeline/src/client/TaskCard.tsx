@@ -8,11 +8,11 @@ import {
   IconClockOutlineRegular,
   IconRightUpOutlineRegular,
   Tooltip,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { ToolCallViewProps } from '@deepseek-ai/dsh-client-ui-tool/client'
-import type { InjectFace, PropsLocale } from '@deepseek-ai/dsh-client-ui-slots'
-import type { ObservableSnapshot } from '@deepseek-ai/dsh-client-store'
-import type { ConfigFormSnapshot } from '@deepseek-ai/dsh-client-ui-settings/client'
+} from '@reevo/dsh-client-ui-primitives'
+import type { ToolCallViewProps } from '@reevo/dsh-client-ui-tool/client'
+import type { InjectFace, PropsLocale } from '@reevo/dsh-client-ui-slots'
+import type { ObservableSnapshot } from '@reevo/dsh-client-store'
+import type { ConfigFormSnapshot } from '@reevo/dsh-client-ui-settings/client'
 import { z } from 'zod'
 import type { Config } from '../config.ts'
 import { taskReceiptSchema } from '../records.ts'

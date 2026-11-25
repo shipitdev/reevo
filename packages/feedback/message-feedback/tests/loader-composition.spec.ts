@@ -6,12 +6,12 @@ import { afterEach, describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Include from '@deepseek-ai/cordis-plugin-include'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import { remoteMethods } from '@deepseek-ai/dsh-typert-protocol'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
+import { remoteMethods } from '@reevo/dsh-typert-protocol'
 import MessageFeedbackService from '../src/index.ts'
 import { appendMessageFixture } from './helpers.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 let root: string | undefined
 const contexts: Context[] = []
@@ -28,9 +28,9 @@ async function loadComposition(configPath: string): Promise<Context> {
   await ctx.plugin(Loader)
   ctx.loader.builtins.include = Include
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-persistence-jsonl', JsonlSessionPersistence],
-    ['@deepseek-ai/dsh-message-feedback', MessageFeedbackService],
+    ['@reevo/dsh-session', SessionStore],
+    ['@reevo/dsh-session-persistence-jsonl', JsonlSessionPersistence],
+    ['@reevo/dsh-message-feedback', MessageFeedbackService],
   ])
   ctx.loader.internal = {
     version: 'v2',
@@ -56,12 +56,12 @@ describe('message feedback through a real Loader composition', () => {
     root = await mkdtemp(join(tmpdir(), 'dsh-message-feedback-loader-'))
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
-      "- name: '@deepseek-ai/dsh-session'",
-      "- name: '@deepseek-ai/dsh-session-persistence-jsonl'",
+      "- name: '@reevo/dsh-session'",
+      "- name: '@reevo/dsh-session-persistence-jsonl'",
       '  config:',
       `    root: ${JSON.stringify(join(root, 'sessions'))}`,
       '    compression: none',
-      "- name: '@deepseek-ai/dsh-message-feedback'",
+      "- name: '@reevo/dsh-message-feedback'",
       '  config:',
       '    maxNoteBytes: 32',
       '',

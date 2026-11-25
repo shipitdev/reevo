@@ -14,7 +14,7 @@ describe('dsh-sdk-app bundle', () => {
       dsh?: { bundle?: { patch?: string } }
     }
     expect(manifest.dsh?.bundle?.patch).toBe('./cordis.patch.yml')
-    expect(manifest.dependencies).toHaveProperty('@deepseek-ai/dsh-sdk-jsonrpc-server')
+    expect(manifest.dependencies).toHaveProperty('@reevo/dsh-sdk-jsonrpc-server')
     const patches = parseEntryYaml(readFileSync(resolve(root, manifest.dsh!.bundle!.patch!), 'utf8')) as Array<{ id?: string; disabled?: boolean; insert?: Array<{ id?: string; inject?: string[]; name?: string }> }>
     expect(patches.find(patch => patch.id === 'hmr')).toMatchObject({ disabled: true })
     expect(patches.find(patch => patch.id === 'tool-plugin-manager')).toMatchObject({ disabled: false })
@@ -23,7 +23,7 @@ describe('dsh-sdk-app bundle', () => {
       config: { personaPrefix: 'You are a coding agent powered by the {{model}} model.' },
     })
     const rows = patches.flatMap(patch => patch.insert ?? [])
-    expect(rows.find(row => row.id === 'sdk-app-startup')?.name).toBe('@deepseek-ai/dsh-sdk-app')
+    expect(rows.find(row => row.id === 'sdk-app-startup')?.name).toBe('@reevo/dsh-sdk-app')
     expect(rows.find(row => row.id === 'sdk-jsonrpc-server')?.inject).toEqual(['sdkAppStartup', 'loader'])
   })
 })

@@ -1,7 +1,7 @@
 import { createRequire } from 'node:module'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { APP_IDENTITY, attributionHeaders, userAgent } from '@deepseek-ai/dsh-llm'
-import type { AppIdentity } from '@deepseek-ai/dsh-llm'
+import { APP_IDENTITY, attributionHeaders, userAgent } from '@reevo/dsh-llm'
+import type { AppIdentity } from '@reevo/dsh-llm'
 
 // The default identity must not depend on the developer's exported suffix.
 beforeEach(() => { vi.stubEnv('DSH_USER_AGENT_SUFFIX', undefined) })

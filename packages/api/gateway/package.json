@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-api-gateway",
+  "name": "@reevo/dsh-api-gateway",
   "description": "Typert Remote Host dispatcher and Client API endpoint",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -39,8 +39,8 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-typert-registry",
-        "@deepseek-ai/dsh-client-connection"
+        "@reevo/dsh-typert-registry",
+        "@reevo/dsh-client-connection"
       ],
       "platform": "web",
       "immediately": true
@@ -63,24 +63,24 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-deque": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
+    "@reevo/dsh-deque": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "ws": "^8.21.3",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-typert-protocol": "workspace:*"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-api-remote-access": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-cmdline": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-remote-mock": "workspace:*",
-    "@deepseek-ai/dsh-typert-registry": "workspace:*",
-    "@deepseek-ai/dsh-util-crypto": "workspace:*",
+    "@reevo/dsh-api-remote-access": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-cmdline": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-remote-mock": "workspace:*",
+    "@reevo/dsh-typert-registry": "workspace:*",
+    "@reevo/dsh-util-crypto": "workspace:*",
     "@types/ws": "^8.18.1",
     "@deepseek-ai/cordis": "workspace:~",
     "zod": "4.6.6"

@@ -1,11 +1,11 @@
 /** File references contributed to the shared file menu. */
 import type { Context } from '@deepseek-ai/cordis'
-import { sessionDirectory } from '@deepseek-ai/dsh-api-session-controller/client/directories'
-import type { ContextMenuTargetMap } from '@deepseek-ai/dsh-client-ui-context-menu/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import { IconPlusOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
-import { formatFileMention } from '@deepseek-ai/dsh-file-reference/grammar'
-import { resolveWorkspacePath, workspaceTitleOf } from '@deepseek-ai/dsh-util-workspace-path'
+import { sessionDirectory } from '@reevo/dsh-api-session-controller/client/directories'
+import type { ContextMenuTargetMap } from '@reevo/dsh-client-ui-context-menu/client'
+import type {} from '@reevo/dsh-client-ui-conversation/client'
+import { IconPlusOutlineRegular } from '@reevo/dsh-client-ui-primitives'
+import { formatFileMention } from '@reevo/dsh-file-reference/grammar'
+import { resolveWorkspacePath, workspaceTitleOf } from '@reevo/dsh-util-workspace-path'
 import type { ReferenceKey } from './locales.ts'
 
 /**

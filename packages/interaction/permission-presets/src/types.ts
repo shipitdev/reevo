@@ -6,10 +6,10 @@
  * browser half-entry's re-export) for client aggregates — with zero content
  * duplication.
  *
- * @module @deepseek-ai/dsh-permission-presets/types
+ * @module @reevo/dsh-permission-presets/types
  */
 
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { SessionId } from '@reevo/dsh-session/types'
 
 /** Presentation for an available preset or the derived `custom` current value. */
 export interface PresetOption {
@@ -63,7 +63,7 @@ declare module '@deepseek-ai/cordis' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@reevo/dsh-session-projection/types' {
   interface SessionProjectionMap {
     /**
      * The session's current permission, folded from the three whole-value

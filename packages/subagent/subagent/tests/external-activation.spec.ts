@@ -4,14 +4,14 @@ import { mountWorkingDirectoryFixture } from './working-directory-fixture.ts'
 
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import type { SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import SubagentRuntime from '../src/index.ts'
 import { TestSessionQuery } from './test-session-query.ts'
 import type { SubagentStartRequest, SubagentCapabilities, SubagentResult, SubagentRun } from '../src/types.ts'
 import { externalTestParent } from './external-activation-helpers.ts'
 import { subagentManager } from './manager-internals.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const capabilities: SubagentCapabilities = {
   agentOptions: false, agentPreset: false, outputSchema: false, depthLimit: false,

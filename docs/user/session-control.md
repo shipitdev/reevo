@@ -8,7 +8,7 @@ English | [中文](session-control.zh.md)
 
 ## Summary
 
-Enable `session_send_message` in a Web profile when an Agent needs to send instructions or findings to another ordinary Session. The recipient can belong to a different Workspace or directory. You need a profile that includes the `@deepseek-ai/dsh-web-app` bundle, such as `web`, and the target Session's id. The tool is unavailable in the `headless`, `sdk`, `sdk-minimal`, and `acp` profiles.
+Enable `session_send_message` in a Web profile when an Agent needs to send instructions or findings to another ordinary Session. The recipient can belong to a different Workspace or directory. You need a profile that includes the `@reevo/dsh-web-app` bundle, such as `web`, and the target Session's id. The tool is unavailable in the `headless`, `sdk`, `sdk-minimal`, and `acp` profiles.
 
 ## Table of Contents
 

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-workflow",
+  "name": "@reevo/dsh-tool-workflow",
   "description": "Model-facing workflow tool: run a JavaScript orchestration script over ctx.workflowEngine",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -38,34 +38,34 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-jobs": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-workflow": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-jobs": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-workflow": "workspace:*"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-jobs": "workspace:*",
-    "@deepseek-ai/dsh-jobs-local": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-jobs": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-workflow": "workspace:*",
-    "@deepseek-ai/dsh-workflow-ptc": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-loop-testkit": "workspace:*",
+    "@reevo/dsh-jobs": "workspace:*",
+    "@reevo/dsh-jobs-local": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-subagent": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tool-executor-native": "workspace:*",
+    "@reevo/dsh-tool-jobs": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-workflow": "workspace:*",
+    "@reevo/dsh-workflow-ptc": "workspace:*"
   }
 }

@@ -14,17 +14,17 @@ describe('Inspector profile bundle', () => {
     expect(manifest.publishConfig.access).toBe('public')
     expect(manifest.dsh.bundle.patch).toBe('./cordis.patch.yml')
     expect(manifest.dependencies).toEqual({
-      '@deepseek-ai/dsh-experimental-client-ui-stats': 'workspace:*',
-      '@deepseek-ai/dsh-experimental-inspector': 'workspace:*',
-      '@deepseek-ai/dsh-experimental-session-inspector': 'workspace:*',
+      '@reevo/dsh-experimental-client-ui-stats': 'workspace:*',
+      '@reevo/dsh-experimental-inspector': 'workspace:*',
+      '@reevo/dsh-experimental-session-inspector': 'workspace:*',
     })
     expect(parseEntryYaml(readFileSync(new URL(`../${manifest.dsh.bundle.patch}`, import.meta.url), 'utf8'))).toEqual([{ insert: [
       {
-        id: 'experimental-inspector', name: '@deepseek-ai/dsh-experimental-inspector',
+        id: 'experimental-inspector', name: '@reevo/dsh-experimental-inspector',
         disabled: false, config: { captureFetch: true },
       },
-      { id: 'session-inspector', name: '@deepseek-ai/dsh-experimental-session-inspector' },
-      { id: 'client-ui-stats', name: '@deepseek-ai/dsh-experimental-client-ui-stats' },
+      { id: 'session-inspector', name: '@reevo/dsh-experimental-session-inspector' },
+      { id: 'client-ui-stats', name: '@reevo/dsh-experimental-client-ui-stats' },
     ] }])
   })
 })

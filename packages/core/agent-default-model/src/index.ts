@@ -1,18 +1,18 @@
 /**
  * Default model selection for an Agent without a session-specific selection.
  *
- * @module @deepseek-ai/dsh-agent-default-model
+ * @module @reevo/dsh-agent-default-model
  */
-import type {} from '@deepseek-ai/dsh-settings'
+import type {} from '@reevo/dsh-settings'
 
 import type { Volatile } from '@deepseek-ai/cordis'
 
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type { ModelSelection } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-config-editor'
+import type { ModelSelection } from '@reevo/dsh-agent'
+import { brandString } from '@reevo/dsh-brand'
+import type { ReasoningEffortId } from '@reevo/dsh-llm'
+import type {} from '@reevo/dsh-config-editor'
 
 declare module '@deepseek-ai/cordis' {
   interface Context {

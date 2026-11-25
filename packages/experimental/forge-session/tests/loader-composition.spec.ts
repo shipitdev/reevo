@@ -8,37 +8,37 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import LocalBashExecutor from '@deepseek-ai/dsh-bash-local'
-import ForgeService from '@deepseek-ai/dsh-experimental-forge'
-import * as ForgeGitHub from '@deepseek-ai/dsh-experimental-forge-github'
-import * as ForgeGitLab from '@deepseek-ai/dsh-forge-gitlab'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import LlmRuntime, { createUserMessage, LlmAdapter, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk, ToolCallBlock } from '@deepseek-ai/dsh-llm'
-import NodeRuntime from '@deepseek-ai/dsh-ptc-runtime-node'
-import LocalSandbox from '@deepseek-ai/dsh-sandbox-local'
-import SandboxPolicy from '@deepseek-ai/dsh-sandbox-policy'
-import SessionStore, { pluginRecordOf, type SessionId } from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import * as ShellEnv from '@deepseek-ai/dsh-shell-env'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import * as ToolBash from '@deepseek-ai/dsh-tool-bash'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import * as PtcToolExecutor from '@deepseek-ai/dsh-tool-executor-ptc'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import WorkingDirectoryService from '@deepseek-ai/dsh-working-directory'
-import { GH_COMMANDS } from '@deepseek-ai/dsh-experimental-forge-github/src/commands.ts'
-import { GLAB_COMMANDS } from '@deepseek-ai/dsh-forge-gitlab/src/commands.ts'
+import AgentRegistry from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import LocalBashExecutor from '@reevo/dsh-bash-local'
+import ForgeService from '@reevo/dsh-experimental-forge'
+import * as ForgeGitHub from '@reevo/dsh-experimental-forge-github'
+import * as ForgeGitLab from '@reevo/dsh-forge-gitlab'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import LlmRuntime, { createUserMessage, LlmAdapter, type ToolCallId } from '@reevo/dsh-llm'
+import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk, ToolCallBlock } from '@reevo/dsh-llm'
+import NodeRuntime from '@reevo/dsh-ptc-runtime-node'
+import LocalSandbox from '@reevo/dsh-sandbox-local'
+import SandboxPolicy from '@reevo/dsh-sandbox-policy'
+import SessionStore, { pluginRecordOf, type SessionId } from '@reevo/dsh-session'
+import type { Session } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import * as ShellEnv from '@reevo/dsh-shell-env'
+import LocalSubprocessRuntime from '@reevo/dsh-subprocess-local'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import * as ToolBash from '@reevo/dsh-tool-bash'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import * as PtcToolExecutor from '@reevo/dsh-tool-executor-ptc'
+import ToolRuntime from '@reevo/dsh-tools'
+import WorkingDirectoryService from '@reevo/dsh-working-directory'
+import { GH_COMMANDS } from '@reevo/dsh-experimental-forge-github/src/commands.ts'
+import { GLAB_COMMANDS } from '@reevo/dsh-forge-gitlab/src/commands.ts'
 import { compileRules } from '../src/commands.ts'
 import ForgeSessionService from '../src/index.ts'
 import type { SessionChangeRequest, SessionChangeRequestsListener } from '../src/index.ts'
-import type { ShellExecution } from '@deepseek-ai/dsh-shell'
-import type { ToolExecution, ToolExecutionResult, ToolExecutionToken } from '@deepseek-ai/dsh-tools'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { ShellExecution } from '@reevo/dsh-shell'
+import type { ToolExecution, ToolExecutionResult, ToolExecutionToken } from '@reevo/dsh-tools'
+import { brandString } from '@reevo/dsh-brand'
 
 /**
  * GitHub CLI fixture: `pr create` prints PR 8; `pr view` prints PR 9, whose description links PR 6;
@@ -222,10 +222,10 @@ const suite = process.platform === 'win32' ? describe.skip : describe
 
 /** Plugins that replace the native executor in PTC mode, in load order. */
 const PTC_MODULES = [
-  ['@deepseek-ai/dsh-sandbox-local', LocalSandbox],
-  ['@deepseek-ai/dsh-sandbox-policy', SandboxPolicy],
-  ['@deepseek-ai/dsh-ptc-runtime-node', NodeRuntime],
-  ['@deepseek-ai/dsh-tool-executor-ptc', PtcToolExecutor],
+  ['@reevo/dsh-sandbox-local', LocalSandbox],
+  ['@reevo/dsh-sandbox-policy', SandboxPolicy],
+  ['@reevo/dsh-ptc-runtime-node', NodeRuntime],
+  ['@reevo/dsh-tool-executor-ptc', PtcToolExecutor],
 ] as const
 
 /**
@@ -246,34 +246,34 @@ async function load(mode: 'native' | 'ptc' = 'native') {
   await chmod(join(bin, 'git'), 0o755)
 
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-llm', LlmRuntime],
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-    ['@deepseek-ai/dsh-system-prompt', SystemPrompt],
-    ['@deepseek-ai/dsh-fs-local', LocalFileSystem],
-    ['@deepseek-ai/dsh-working-directory', WorkingDirectoryService],
-    ['@deepseek-ai/dsh-tools', ToolRuntime],
-    ...mode === 'native' ? [['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor] as const] : PTC_MODULES,
-    ['@deepseek-ai/dsh-agent', AgentRegistry],
-    ['@deepseek-ai/dsh-agent-loop', AgentLoop],
-    ['@deepseek-ai/dsh-subprocess-local', LocalSubprocessRuntime],
-    ['@deepseek-ai/dsh-shell-env', ShellEnv],
-    ['@deepseek-ai/dsh-bash-local', LocalBashExecutor],
-    ['@deepseek-ai/dsh-tool-bash', ToolBash],
-    ['@deepseek-ai/dsh-experimental-forge', ForgeService],
-    ['@deepseek-ai/dsh-experimental-forge-github', ForgeGitHub],
-    ['@deepseek-ai/dsh-forge-gitlab', ForgeGitLab],
-    ['@deepseek-ai/dsh-experimental-forge-session', ForgeSessionService],
+    ['@reevo/dsh-llm', LlmRuntime],
+    ['@reevo/dsh-session', SessionStore],
+    ['@reevo/dsh-session-projection', SessionProjectionRegistry],
+    ['@reevo/dsh-system-prompt', SystemPrompt],
+    ['@reevo/dsh-fs-local', LocalFileSystem],
+    ['@reevo/dsh-working-directory', WorkingDirectoryService],
+    ['@reevo/dsh-tools', ToolRuntime],
+    ...mode === 'native' ? [['@reevo/dsh-tool-executor-native', NativeToolExecutor] as const] : PTC_MODULES,
+    ['@reevo/dsh-agent', AgentRegistry],
+    ['@reevo/dsh-agent-loop', AgentLoop],
+    ['@reevo/dsh-subprocess-local', LocalSubprocessRuntime],
+    ['@reevo/dsh-shell-env', ShellEnv],
+    ['@reevo/dsh-bash-local', LocalBashExecutor],
+    ['@reevo/dsh-tool-bash', ToolBash],
+    ['@reevo/dsh-experimental-forge', ForgeService],
+    ['@reevo/dsh-experimental-forge-github', ForgeGitHub],
+    ['@reevo/dsh-forge-gitlab', ForgeGitLab],
+    ['@reevo/dsh-experimental-forge-session', ForgeSessionService],
   ])
   const configs: Record<string, readonly string[]> = {
-    '@deepseek-ai/dsh-agent-loop': ['agents: []'],
-    '@deepseek-ai/dsh-shell-env': [`dshHome: ${JSON.stringify(join(root, 'dsh-home'))}`],
-    '@deepseek-ai/dsh-sandbox-policy': ['mode: danger-full-access'],
-    '@deepseek-ai/dsh-bash-local': ['timeoutMs: 20000'],
-    '@deepseek-ai/dsh-experimental-forge': ['activeIntervalMs: 600000', 'idleIntervalMs: 600000'],
-    '@deepseek-ai/dsh-experimental-forge-github': [`ghCommand: ${JSON.stringify(join(bin, 'gh'))}`],
-    '@deepseek-ai/dsh-forge-gitlab': [`glabCommand: ${JSON.stringify(join(bin, 'glab'))}`, 'hosts: [gitlab.example.test]'],
-    '@deepseek-ai/dsh-experimental-forge-session': ['discoveryTimeoutMs: 20000'],
+    '@reevo/dsh-agent-loop': ['agents: []'],
+    '@reevo/dsh-shell-env': [`dshHome: ${JSON.stringify(join(root, 'dsh-home'))}`],
+    '@reevo/dsh-sandbox-policy': ['mode: danger-full-access'],
+    '@reevo/dsh-bash-local': ['timeoutMs: 20000'],
+    '@reevo/dsh-experimental-forge': ['activeIntervalMs: 600000', 'idleIntervalMs: 600000'],
+    '@reevo/dsh-experimental-forge-github': [`ghCommand: ${JSON.stringify(join(bin, 'gh'))}`],
+    '@reevo/dsh-forge-gitlab': [`glabCommand: ${JSON.stringify(join(bin, 'glab'))}`, 'hosts: [gitlab.example.test]'],
+    '@reevo/dsh-experimental-forge-session': ['discoveryTimeoutMs: 20000'],
   }
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, [...modules.keys()].flatMap(name => [
@@ -307,7 +307,7 @@ async function observerFixture() {
     isError: false, content: [{ type: 'text', text: '{"number":9}' }],
     value: { kind: 'foreground', cwd: root, exitCode: 0, signal: null, timedOut: false, aborted: false },
   }
-  const entry = [...ctx.loader.entries()].find(candidate => candidate.options.name === 'cordis:@deepseek-ai/dsh-experimental-forge-session')!
+  const entry = [...ctx.loader.entries()].find(candidate => candidate.options.name === 'cordis:@reevo/dsh-experimental-forge-session')!
   const records = () => handle.agent.session.snapshotEvents().flatMap((event) => {
     const record = pluginRecordOf(event)
     return record?.type === 'plugin:forge-session/binding' ? [record.data] : []
@@ -484,7 +484,7 @@ suite('forge-session through a real cordis.yml Loader composition', () => {
       ? [entry.update.snapshot.title, entry.update.snapshot.checksRollup]
       : null)).toEqual([['Change 7', 'pending'], ['Change 8', 'success'], ['Change 9', 'success']]) })
 
-    const entry = [...ctx.loader.entries()].find(candidate => candidate.options.name === 'cordis:@deepseek-ai/dsh-experimental-forge-session')
+    const entry = [...ctx.loader.entries()].find(candidate => candidate.options.name === 'cordis:@reevo/dsh-experimental-forge-session')
     const row = ctx.sessionProjections.checkpoint(agent.session).forgeChangeRequests
     await entry?.fiber?.dispose()
     expect(ctx.sessionProjections.checkpoint(agent.session)).toHaveProperty('forgeChangeRequests', row)

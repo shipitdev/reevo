@@ -55,7 +55,7 @@ const ASSET_GLOBS = [
   'node_modules/**/package.json',
   'node_modules/**/*.json',
   // Plugin display metadata resolves these package-owned images at runtime.
-  'node_modules/@deepseek-ai/dsh-*/**/*.{svg,png,jpg,jpeg,webp}',
+  'node_modules/@reevo/dsh-*/**/*.{svg,png,jpg,jpeg,webp}',
   // Package-owned Markdown includes runtime skill instructions.
   'node_modules/**/*.md',
   'node_modules/**/*.dylib',
@@ -69,13 +69,13 @@ const ASSET_GLOBS = [
   // web-app builds this path dynamically, so pkg cannot discover the static frontend.
   'node_modules/@reevo/web/dist/**/*',
   // The diagnosis provider extracts its PowerShell script for an external interpreter.
-  'node_modules/@deepseek-ai/dsh-sandbox-windows-acl/assets/**/*',
+  'node_modules/@reevo/dsh-sandbox-windows-acl/assets/**/*',
 ]
 
 /** Published source and documentation: types and maps already describe the runtime, so no load path needs them. */
 const PUBLISHED_PAYLOAD_IGNORES = [
   '**/node_modules/@reevo/cli/src/**',
-  '**/node_modules/@deepseek-ai/dsh-*/src/**',
+  '**/node_modules/@reevo/dsh-*/src/**',
   '**/node_modules/@reevo/cli/docs/**',
 ]
 

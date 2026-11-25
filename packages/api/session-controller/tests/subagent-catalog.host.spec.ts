@@ -1,18 +1,18 @@
 import { Context } from '@deepseek-ai/cordis'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import SessionStore, { SESSION_FORMAT_VERSION, SessionSeq, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionHeader } from '@deepseek-ai/dsh-session'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
+import { provideWorkingDirectoryFixture } from '@reevo/dsh-agent-loop-testkit'
+import AgentRegistry from '@reevo/dsh-agent'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { Agent } from '@reevo/dsh-agent'
+import SessionStore, { SESSION_FORMAT_VERSION, SessionSeq, type SessionId } from '@reevo/dsh-session'
+import type { SessionEvent, SessionHeader } from '@reevo/dsh-session'
+import SubagentRuntime from '@reevo/dsh-subagent'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   createSessionTestController,
   installSessionReadTestServices,
   testSessionPersistence,
 } from './test-remote.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const defaults = {
   defaultModelSelection: () => ({ provider: 'fixture', model: 'fixture-model' }),

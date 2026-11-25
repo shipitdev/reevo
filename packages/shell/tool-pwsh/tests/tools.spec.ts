@@ -9,35 +9,35 @@
  * background job wiring, and the UI presenters. Real-pwsh behavior
  * is pinned separately in integration.spec.ts.
  */
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import { provideWorkingDirectoryFixture } from '@reevo/dsh-agent-loop-testkit'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { mkdtempSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, resolve as resolvePath } from 'node:path'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import SystemPrompt, { renderPrompt } from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH } from '@deepseek-ai/dsh-tools'
-import LocalJobRegistry from '@deepseek-ai/dsh-jobs-local'
-import * as ToolJobs from '@deepseek-ai/dsh-tool-jobs'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import ApprovalService from '@deepseek-ai/dsh-user-approval'
-import type { ApprovalOutcome } from '@deepseek-ai/dsh-user-approval'
-import { ShellExecutor } from '@deepseek-ai/dsh-shell'
-import type { ShellExecRequest, ShellExecSpec, ShellExecution, ShellProcess, ShellRunResult } from '@deepseek-ai/dsh-shell'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import { escalationHintMarker, sandboxDenialMarker } from '@deepseek-ai/dsh-sandbox'
-import * as ToolPwsh from '@deepseek-ai/dsh-tool-pwsh'
-import * as BashEnvPlugin from '@deepseek-ai/dsh-shell-env'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import SystemPrompt, { renderPrompt } from '@reevo/dsh-system-prompt'
+import ToolRuntime, { TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH } from '@reevo/dsh-tools'
+import LocalJobRegistry from '@reevo/dsh-jobs-local'
+import * as ToolJobs from '@reevo/dsh-tool-jobs'
+import AgentRegistry from '@reevo/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
+import { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@reevo/dsh-session'
+import ApprovalService from '@reevo/dsh-user-approval'
+import type { ApprovalOutcome } from '@reevo/dsh-user-approval'
+import { ShellExecutor } from '@reevo/dsh-shell'
+import type { ShellExecRequest, ShellExecSpec, ShellExecution, ShellProcess, ShellRunResult } from '@reevo/dsh-shell'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SandboxPolicyService from '@reevo/dsh-sandbox-policy'
+import { escalationHintMarker, sandboxDenialMarker } from '@reevo/dsh-sandbox'
+import * as ToolPwsh from '@reevo/dsh-tool-pwsh'
+import * as BashEnvPlugin from '@reevo/dsh-shell-env'
 import { processOutcome } from '../src/background.ts'
 import { renderPwshJobRead, renderPwshResult } from '../src/render.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 /** Empty offset readers for fakes that never produce output. */
 const silentReader = { readFrom: (fromByte: number) => ({ text: '', nextOffset: fromByte, lossy: false }) }
@@ -891,7 +891,7 @@ describe('background execution through the job runtime', () => {
       isError: true,
       error: { info: { name: 'ToolContextUnavailableError', code: 'TOOL_CONTEXT_UNAVAILABLE' } },
     })
-    expect(text(result)).toContain('background jobs unavailable: load @deepseek-ai/dsh-jobs and @deepseek-ai/dsh-tool-jobs')
+    expect(text(result)).toContain('background jobs unavailable: load @reevo/dsh-jobs and @reevo/dsh-tool-jobs')
   })
 
   it('a pre-aborted call is skipped before the process starts', async () => {

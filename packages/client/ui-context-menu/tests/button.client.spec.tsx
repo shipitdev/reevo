@@ -1,19 +1,19 @@
 // @vitest-environment jsdom
-import { syncedConfig } from '@deepseek-ai/dsh-client-test-runtime'
+import { syncedConfig } from '@reevo/dsh-client-test-runtime'
 import { act, cleanup, fireEvent } from '@testing-library/react'
 import { afterEach, expect, it, onTestFinished, vi } from 'vitest'
-import { SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { SlotTestRuntime } from '@reevo/dsh-client-test-runtime'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import { LocaleRuntime } from '@reevo/dsh-client-locale/client'
+import type { SessionId } from '@reevo/dsh-session/types'
 import type { Context } from '@deepseek-ai/cordis'
 import { useState } from 'react'
 import { apply, inject } from '../src/client/index.ts'
 import type { ContextMenuTarget, MenuAction } from '../src/client/types.ts'
 import { isContextMenuTrigger } from '../src/client/external-trigger.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
-declare module '@deepseek-ai/dsh-client-ui-context-menu/client' {
+declare module '@reevo/dsh-client-ui-context-menu/client' {
   interface ContextMenuTargetMap {
     header: { readonly sessionId: SessionId }
     entity: { readonly id: string; readonly title: string }

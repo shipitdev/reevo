@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-browser-use",
+  "name": "@reevo/dsh-browser-use",
   "description": "Exclusive named browser-use provider registration",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -41,6 +41,6 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*"
   }
 }

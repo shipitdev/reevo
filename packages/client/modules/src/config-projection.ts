@@ -4,8 +4,8 @@
  */
 import { isDeepStrictEqual } from 'node:util'
 import type { Volatile } from '@deepseek-ai/cordis'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
-import type { SyncedConfigValues } from '@deepseek-ai/dsh-client-config/types'
+import type { JsonValue } from '@reevo/dsh-util-values'
+import type { SyncedConfigValues } from '@reevo/dsh-client-config/types'
 
 /** Schemastery node fields the projection reads; a Schemastery schema satisfies it structurally. */
 export interface SchemaNode {

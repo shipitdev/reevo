@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-session-list",
+  "name": "@reevo/dsh-tool-session-list",
   "description": "Read-only paginated Workspace and Session metadata tools",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -33,38 +33,38 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-query": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-session-projection-cache": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*"
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-query": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-session-projection-cache": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*",
+    "@reevo/dsh-session-title": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-query": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-session-projection-cache": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-storage": "workspace:*",
-    "@deepseek-ai/dsh-storage-domain": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-storage-json": "workspace:*"
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-query": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-session-projection-cache": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session-title": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*",
+    "@reevo/dsh-storage": "workspace:*",
+    "@reevo/dsh-storage-domain": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tool-executor-native": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*",
+    "@reevo/dsh-storage-json": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-session-projection-cache": {
+    "@reevo/dsh-session-projection-cache": {
       "optional": true
     },
-    "@deepseek-ai/dsh-session-title": {
+    "@reevo/dsh-session-title": {
       "optional": true
     }
   }

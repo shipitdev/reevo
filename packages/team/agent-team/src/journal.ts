@@ -1,12 +1,12 @@
 /** Serialized Team transactions over the exact live Lead Session log. */
 
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
+import type { Agent } from '@reevo/dsh-agent'
+import type { ProjectionHandle } from '@reevo/dsh-session-projection'
 import type { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import type { SessionId } from '@reevo/dsh-session'
 import type { TeamProjectionState, TeamState } from './projection.ts'
 
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import type { TeamId } from './types.ts'
 import { TeamError } from './error.ts'
 import type { TeamTaskSnapshot } from './types.ts'

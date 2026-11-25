@@ -1,8 +1,8 @@
 /** A listed catalog: version gating, this build's model knowledge, and deployment overrides. */
 import semver from 'semver'
-import { APP_IDENTITY, LlmError } from '@deepseek-ai/dsh-llm'
-import type { LlmModelBadge } from '@deepseek-ai/dsh-llm'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+import { APP_IDENTITY, LlmError } from '@reevo/dsh-llm'
+import type { LlmModelBadge } from '@reevo/dsh-llm'
+import { assertNever } from '@reevo/dsh-util-values'
 import { resolveAdapterOptions } from './config.ts'
 import type { ListedFacts, ListingEntry } from './listing.ts'
 import type { DeepSeekCatalogModel } from './types.ts'

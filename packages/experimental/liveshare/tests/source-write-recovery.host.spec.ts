@@ -11,11 +11,11 @@
  */
 
 import { Context } from '@deepseek-ai/cordis'
-import { Peer } from '@deepseek-ai/dsh-client-connection'
-import RemoteAccessService from '@deepseek-ai/dsh-api-remote-access'
+import { Peer } from '@reevo/dsh-client-connection'
+import RemoteAccessService from '@reevo/dsh-api-remote-access'
 import { randomUUID } from 'node:crypto'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import { Session, type SessionId, SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
+import { createScope } from '@reevo/dsh-scope'
+import { Session, type SessionId, SESSION_FORMAT_VERSION } from '@reevo/dsh-session'
 import { mkdirSync, mkdtempSync, realpathSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -24,13 +24,13 @@ import type {
   TunnelRegistrationToken,
   TunnelRequestToken,
   TunnelWorkerEvent,
-} from '@deepseek-ai/dsh-experimental-liveshare-protocol'
+} from '@reevo/dsh-experimental-liveshare-protocol'
 import type {} from '../src/index.ts'
 import { apply } from '../src/host/share-host.ts'
 import { SHARED_TOOL_PROFILES } from '../src/host/shared-tools.ts'
 import type { TunnelWorkerInput } from '../src/host/tunnel-worker.ts'
 import { shareViewerPrincipal } from '../src/host/viewer-principal.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const worker = vi.hoisted(() => ({
   event: undefined as ((event: TunnelWorkerEvent) => void) | undefined,

@@ -6,19 +6,19 @@
  */
 import { act, cleanup, fireEvent, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
+import { makeTranslate } from '@reevo/dsh-client-test-runtime'
 import {
   ConversationNodeAssembler, type ConversationLocationDataSource, type ConversationLocationDataStore,
   type ConversationMatch, type ConversationNodeDefinition, type ConversationStartMatch,
   type ConversationTimelineSnapshot, type ConversationTurnDataMap,
   type ConversationViewDefinition, type ConversationViewNode, type ToolResultNode, type TurnLocation,
-} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type { SessionLiveEventEntry } from '@deepseek-ai/dsh-api-session-controller/client'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createToolResultMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { SessionEvent, SessionId } from '@deepseek-ai/dsh-session/types'
-import type { ScheduleId, ScheduleCatalogEntry } from '@deepseek-ai/dsh-schedule/client'
-import { PartialArguments } from '@deepseek-ai/dsh-util-values'
+} from '@reevo/dsh-client-ui-conversation/client'
+import type { SessionLiveEventEntry } from '@reevo/dsh-api-session-controller/client'
+import { brandString } from '@reevo/dsh-brand'
+import { createToolResultMessage, type ToolCallId } from '@reevo/dsh-llm'
+import type { SessionEvent, SessionId } from '@reevo/dsh-session/types'
+import type { ScheduleId, ScheduleCatalogEntry } from '@reevo/dsh-schedule/client'
+import { PartialArguments } from '@reevo/dsh-util-values'
 import type { CatalogSnapshot } from '../src/client/catalog-source.ts'
 import { ScheduleTurnCard, type ScheduleTurnCardProps } from '../src/client/ScheduleTurnCard.tsx'
 import { zoneLabel } from '../src/client/schedule-format.ts'

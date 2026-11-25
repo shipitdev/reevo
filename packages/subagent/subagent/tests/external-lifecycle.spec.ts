@@ -3,13 +3,13 @@ import { mountWorkingDirectoryFixture } from './working-directory-fixture.ts'
 
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import type { Agent } from '@reevo/dsh-agent'
+import type { SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import SubagentRuntime from '../src/index.ts'
 import type { SubagentStartRequest, SubagentRun, SubagentResult } from '../src/types.ts'
 import { externalTestParent } from './external-activation-helpers.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const complete: SubagentResult = { output: [], stopReason: 'completed' }
 

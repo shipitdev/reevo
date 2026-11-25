@@ -34,12 +34,12 @@
  * forwards the seats' reports; callers use the service's navigation methods.
  */
 import { sidebarTargetFromElement, type SidebarRightTarget } from './focus.ts'
-import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
-import { createSnapshotStore, type ObservableSnapshot, type SnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { FloatRect, LayoutState, PaneId, TabId, TabRecord } from '@deepseek-ai/dsh-client-ui-dockkit'
-import { activeDockPaneId, canSplit, findContentTab, findPaneContentTab, dockPaneIds, findTabPane, getPane } from '@deepseek-ai/dsh-client-ui-dockkit'
-import type { BoundActions } from '@deepseek-ai/dsh-client-ui-slots'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import { randomUUID } from '@reevo/dsh-util-crypto'
+import { createSnapshotStore, type ObservableSnapshot, type SnapshotStore } from '@reevo/dsh-client-store'
+import type { FloatRect, LayoutState, PaneId, TabId, TabRecord } from '@reevo/dsh-client-ui-dockkit'
+import { activeDockPaneId, canSplit, findContentTab, findPaneContentTab, dockPaneIds, findTabPane, getPane } from '@reevo/dsh-client-ui-dockkit'
+import type { BoundActions } from '@reevo/dsh-client-ui-slots'
+import type { SessionId } from '@reevo/dsh-session/types'
 import type { SidebarRightNavigationParams, SidebarRightResourceParams, SidebarRightTabParamsFor, SidebarRightTabParamsMap } from './contract/params.ts'
 import { contentPrefix, pageAddress } from './contract/seed.ts'
 import type { SidebarRightDestination } from './contract/slots.ts'

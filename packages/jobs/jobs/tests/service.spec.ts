@@ -1,11 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { type JobId, JobRegistry } from '@deepseek-ai/dsh-jobs'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { SessionId } from '@reevo/dsh-session'
+import { type JobId, JobRegistry } from '@reevo/dsh-jobs'
+import { brandString } from '@reevo/dsh-brand'
 import type {
   JobEvent, JobEventFilter, JobEventListener, JobHooks, JobOutputSource, JobOutputRead, JobRead, JobSpec, JobView,
-} from '@deepseek-ai/dsh-jobs'
+} from '@reevo/dsh-jobs'
 
 /** Compile-time probe: does `Shape` carry a `Key` member? */
 type HasKey<Shape, Key extends string> = Key extends keyof Shape ? true : false
@@ -13,7 +13,7 @@ type HasKey<Shape, Key extends string> = Key extends keyof Shape ? true : false
 /**
  * Minimal concrete registry: one canned row. The Service Definition owns the
  * contract only (ids, caller-scoped operations, the event stream); the registry
- * behavior suite lives with `@deepseek-ai/dsh-jobs-local`.
+ * behavior suite lives with `@reevo/dsh-jobs-local`.
  */
 class StubJobRegistry extends JobRegistry {
   readonly subscriptions: { filter: JobEventFilter; listener: JobEventListener }[] = []
@@ -148,6 +148,6 @@ describe('JobRegistry seam', () => {
   it('mounting the abstract seam directly fails loudly at load (stale-composition fence)', async () => {
     const ctx = new Context()
     await expect(ctx.plugin(JobRegistry as typeof StubJobRegistry))
-      .rejects.toThrow(/abstract job registry seam; load an implementation such as @deepseek-ai\/dsh-jobs-local/)
+      .rejects.toThrow(/abstract job registry seam; load an implementation such as @reevo\/dsh-jobs-local/)
   })
 })

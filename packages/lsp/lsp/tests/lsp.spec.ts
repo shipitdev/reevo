@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import { Context } from '@deepseek-ai/cordis'
 import Lsp, {
   finalExtension,
@@ -8,7 +8,7 @@ import Lsp, {
   type LspProvider,
   type LspProviderQuery,
   type LspQueryResult,
-} from '@deepseek-ai/dsh-lsp'
+} from '@reevo/dsh-lsp'
 
 /** A scripted provider that records the queries it receives. */
 function makeProvider(

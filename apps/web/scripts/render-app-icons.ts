@@ -21,7 +21,7 @@
 import { readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+import { assertNever } from '@reevo/dsh-util-values'
 
 /** Vector source owned by the desktop application; 1104 units square with the tile inset. */
 export const TILE_SOURCE = fileURLToPath(new URL('../../desktop/resources/icon.svg', import.meta.url))

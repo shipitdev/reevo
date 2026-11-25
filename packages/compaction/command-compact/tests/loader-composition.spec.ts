@@ -6,19 +6,19 @@ import { afterEach, describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import CommandRuntime from '@deepseek-ai/dsh-commands'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CompactionId } from '@deepseek-ai/dsh-compaction/types'
+import type { Agent } from '@reevo/dsh-agent'
+import CommandRuntime from '@reevo/dsh-commands'
+import { brandString } from '@reevo/dsh-brand'
+import type { CompactionId } from '@reevo/dsh-compaction/types'
 import {
   CompactionEngine,
   type CompactionAgentContext,
   type CompactionResult,
   type CompactionTrigger,
   type ManualCompactAgentContext,
-} from '@deepseek-ai/dsh-compaction'
-import * as commandCompact from '@deepseek-ai/dsh-command-compact'
-import { Session, type SessionId, SessionSeq } from '@deepseek-ai/dsh-session'
+} from '@reevo/dsh-compaction'
+import * as commandCompact from '@reevo/dsh-command-compact'
+import { Session, type SessionId, SessionSeq } from '@reevo/dsh-session'
 
 const COMPACTION_ID = brandString<CompactionId>('loader-command-compact-test')
 
@@ -85,9 +85,9 @@ describe('command-compact real Loader composition', () => {
     root = await mkdtemp(join(tmpdir(), 'dsh-command-compact-loader-'))
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
-      "- name: '@deepseek-ai/dsh-commands'",
+      "- name: '@reevo/dsh-commands'",
       "- name: '@test/compact-backend'",
-      "- name: '@deepseek-ai/dsh-command-compact'",
+      "- name: '@reevo/dsh-command-compact'",
       '',
     ].join('\n'))
 
@@ -96,9 +96,9 @@ describe('command-compact real Loader composition', () => {
     await context.plugin(Loader)
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-commands', CommandRuntime],
+      ['@reevo/dsh-commands', CommandRuntime],
       ['@test/compact-backend', LoaderCompactionEngine],
-      ['@deepseek-ai/dsh-command-compact', commandCompact],
+      ['@reevo/dsh-command-compact', commandCompact],
     ])
     context.loader.internal = {
       version: 'v2',
@@ -121,7 +121,7 @@ describe('command-compact real Loader composition', () => {
       reserveTurnAdmission: () => () => undefined,
     } as unknown as Agent
     expect(context.commands.list(agent)).toContainEqual({
-      definitionId: '@deepseek-ai/dsh-command-compact',
+      definitionId: '@reevo/dsh-command-compact',
       name: 'compact',
       description: 'Compact older conversation history',
     })

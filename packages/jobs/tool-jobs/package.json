@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-jobs",
+  "name": "@reevo/dsh-tool-jobs",
   "description": "Model-facing background job control tools (job_output, job_list, job_kill) over the ctx.jobs registry",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -32,29 +32,29 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-output-retention": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-jobs": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-output-retention": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-jobs": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-output-retention": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-jobs": "workspace:*",
-    "@deepseek-ai/dsh-jobs-local": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-output-retention": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-jobs": "workspace:*",
+    "@reevo/dsh-jobs-local": "workspace:*",
+    "@reevo/dsh-tool-executor-native": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

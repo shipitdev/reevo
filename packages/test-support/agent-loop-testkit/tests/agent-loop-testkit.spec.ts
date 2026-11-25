@@ -3,11 +3,11 @@ import { mkdtemp, realpath, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import FsLocal from '@deepseek-ai/dsh-fs-local'
-import { PtcRuntime, type PtcRunRequest, type PtcRunResult, type PtcRunSpec } from '@deepseek-ai/dsh-ptc-runtime'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { Session, type SessionId, SessionSeq } from '@deepseek-ai/dsh-session'
-import { renderPrompt } from '@deepseek-ai/dsh-system-prompt'
+import FsLocal from '@reevo/dsh-fs-local'
+import { PtcRuntime, type PtcRunRequest, type PtcRunResult, type PtcRunSpec } from '@reevo/dsh-ptc-runtime'
+import { createUserMessage } from '@reevo/dsh-llm'
+import { Session, type SessionId, SessionSeq } from '@reevo/dsh-session'
+import { renderPrompt } from '@reevo/dsh-system-prompt'
 import {
   createInboxStub,
   mountAgentLoopTestDependencies,
@@ -15,7 +15,7 @@ import {
   unsupportedInbox,
   unsupportedModel,
 } from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 function message(text: string) {
   return createUserMessage({ content: [{ type: 'text', text }], source: { kind: 'user' } })

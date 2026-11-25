@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-notion",
+  "name": "@reevo/dsh-notion",
   "description": "Notion plugin: Notion's hosted MCP server, authorized through the shared MCP manager",
   "version": "0.2.3-alpha.2",
   "icon": "./icon.svg",
@@ -53,15 +53,15 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-connector-account": "workspace:*",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-mcp-account": "workspace:*",
-    "@deepseek-ai/dsh-mcp-manager": "workspace:*",
-    "@deepseek-ai/dsh-mcp-resources": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-client-ui-connector-account": "workspace:*",
+    "@reevo/dsh-credentials": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-mcp-account": "workspace:*",
+    "@reevo/dsh-mcp-manager": "workspace:*",
+    "@reevo/dsh-mcp-resources": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*"
   }
 }

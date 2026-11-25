@@ -28,12 +28,12 @@ import {
   type ProfileContext,
   type Profile,
   type RuntimeResolution,
-} from '@deepseek-ai/dsh-app-boot'
-import { PROFILE_TEMPLATES } from '@deepseek-ai/dsh-official-bundles'
-import { resolveDshHome } from '@deepseek-ai/dsh-home-paths'
-import { installProxyFromEnvironment } from '@deepseek-ai/dsh-http-proxy'
-import { DSH_LAUNCH_ENVIRONMENT_KEY, type LaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
-import { provideCmdline, type AppReady } from '@deepseek-ai/dsh-cmdline'
+} from '@reevo/dsh-app-boot'
+import { PROFILE_TEMPLATES } from '@reevo/dsh-official-bundles'
+import { resolveDshHome } from '@reevo/dsh-home-paths'
+import { installProxyFromEnvironment } from '@reevo/dsh-http-proxy'
+import { DSH_LAUNCH_ENVIRONMENT_KEY, type LaunchEnvironmentSnapshot } from '@reevo/dsh-launch-environment'
+import { provideCmdline, type AppReady } from '@reevo/dsh-cmdline'
 import { createProcessShutdown, type ProcessShutdown } from './process-shutdown.ts'
 
 const NAME = 'dsh'

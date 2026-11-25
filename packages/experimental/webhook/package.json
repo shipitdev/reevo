@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-webhook",
+  "name": "@reevo/dsh-webhook",
   "description": "Fire-and-forget webhook rule runtime that creates Workspace-backed DeepSeek Harness Sessions",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -38,30 +38,30 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-default-model": "workspace:*",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-permission-presets": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-default-model": "workspace:*",
+    "@reevo/dsh-agent-preset-registry": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-permission-presets": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-title": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-default-model": "workspace:*",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-permission-presets": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-default-model": "workspace:*",
+    "@reevo/dsh-agent-preset-registry": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-permission-presets": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-title": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*"
   }
 }

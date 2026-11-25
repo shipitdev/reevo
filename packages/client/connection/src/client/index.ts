@@ -12,7 +12,7 @@ import { createWebConnectionRpc, type RpcFetch, type RpcStreamOpen } from './rpc
 import { isLoopbackHostname } from '../loopback-hostname.ts'
 import type { ClientConnectionRpc } from '../rpc.ts'
 import { resolveConnectionConfig } from '../recovery-config.ts'
-import type { SyncedConfig } from '@deepseek-ai/dsh-client-config/types'
+import type { SyncedConfig } from '@reevo/dsh-client-config/types'
 import type { ConnectionConfig } from '../types.ts'
 import type { ConnectionInteractions } from '../connect-protocol.ts'
 import { openConnectionWebSocket, type ConnectionWebSocket, type ConnectionWebSocketFactory } from './socket.ts'

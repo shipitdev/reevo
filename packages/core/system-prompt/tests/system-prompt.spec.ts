@@ -1,10 +1,10 @@
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import SystemPrompt, {
   AssembleContext, PromptAssembly, renderContextSections, renderContextSnapshot, renderPrompt,
-} from '@deepseek-ai/dsh-system-prompt'
-import type { PromptContextOrderName, PromptPresentation, PromptSectionOrderName } from '@deepseek-ai/dsh-system-prompt'
+} from '@reevo/dsh-system-prompt'
+import type { PromptContextOrderName, PromptPresentation, PromptSectionOrderName } from '@reevo/dsh-system-prompt'
 
 /**
  * Every assembly carries the plugin's own built-ins — `harness:identity`
@@ -869,6 +869,6 @@ describe('SystemPrompt', () => {
   })
 })
 
-function admittedMessages(assembly: import('@deepseek-ai/dsh-system-prompt').PromptAssembly) {
+function admittedMessages(assembly: import('@reevo/dsh-system-prompt').PromptAssembly) {
   return assembly.systemUpdates(false).map(update => update.message)
 }

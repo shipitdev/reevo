@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-subagent-claude-code",
+  "name": "@reevo/dsh-subagent-claude-code",
   "description": "One-shot Claude Code subagent provider over the official Agent SDK",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -41,40 +41,40 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*"
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-subagent": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*"
   },
   "dependencies": {
     "@anthropic-ai/claude-agent-sdk": "0.3.263",
     "@anthropic-ai/sdk": "0.93.0",
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "@modelcontextprotocol/sdk": "^1.31.0",
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-tool-subagent": "workspace:*"
+    "@reevo/dsh-tool-subagent": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-checkpoint-policy": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-subagent-codex": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-tool-jobs": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-loader-smoke": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-checkpoint-policy": "workspace:*",
+    "@reevo/dsh-session-persistence-jsonl": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-subagent": "workspace:*",
+    "@reevo/dsh-subagent-codex": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-subprocess-local": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
+    "@reevo/dsh-tool-jobs": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-agent-loop-testkit": "workspace:*"
   },
   "icon": "./icon.svg"
 }

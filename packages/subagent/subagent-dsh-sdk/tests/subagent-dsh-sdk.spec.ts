@@ -14,9 +14,9 @@ import { existsSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join, relative } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { Agent, AgentOptions } from '@deepseek-ai/dsh-agent'
+import SubagentRuntime from '@reevo/dsh-subagent'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { Agent, AgentOptions } from '@reevo/dsh-agent'
 import {
   DeepSeekHarness,
   HarnessClient,
@@ -25,8 +25,8 @@ import {
 import { createProcessDeepSeekHarness } from '../../../sdk/client/src/api.ts'
 import type { RuntimeProcessOptions } from '../../../sdk/client/src/launch.ts'
 import type { DeepSeekHarnessOptions } from '@reevo/sdk'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { ReasoningEffortId } from '@reevo/dsh-llm/types'
 import * as sdk from '../src/index.ts'
 import {
   DEFAULT_DISPOSE_EOF_GRACE_MS,

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-renderer",
+  "name": "@reevo/dsh-client-ui-renderer",
   "description": "Browser UI renderer: React slot bindings, ctx.uiRenderer, and the assembled application root",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -28,7 +28,7 @@
   },
   "dsh": {
     "client": {
-      "inject": ["@deepseek-ai/dsh-client-modules"],
+      "inject": ["@reevo/dsh-client-modules"],
       "platform": "web",
       "immediately": true
     }
@@ -43,14 +43,14 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-client-modules": "workspace:*",
+    "@reevo/dsh-client-test-runtime": "workspace:*",
+    "@reevo/dsh-client-ui-slots": "workspace:*",
+    "@reevo/dsh-client-modules": "workspace:*",
     "@types/use-sync-external-store": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "use-sync-external-store": "1.6.0",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*"
+    "@reevo/dsh-package-manifest": "workspace:*"
   },
   "files": [
     "locale/*.json",

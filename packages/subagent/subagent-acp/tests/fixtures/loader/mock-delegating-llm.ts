@@ -1,8 +1,8 @@
 import type { Context } from '@deepseek-ai/cordis'
-import type { GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm/types'
-import { LlmAdapter } from '@deepseek-ai/dsh-llm'
+import type { GenerateOptions, StreamChunk } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import type { ToolCallId } from '@reevo/dsh-llm/types'
+import { LlmAdapter } from '@reevo/dsh-llm'
 
 /** Script one delegation, then acknowledge the receipt and the completion notice. */
 class MockDelegatingAdapter extends LlmAdapter {

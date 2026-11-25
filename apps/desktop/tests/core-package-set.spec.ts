@@ -40,8 +40,8 @@ function packageSetProject(): {
   const baseBody = Buffer.from('base')
   const hostBody = Buffer.from('host')
   const dsh = record('@reevo/cli', 'dsh.tgz', dshBody)
-  const base = record('@deepseek-ai/dsh-base', 'dsh-base.tgz', baseBody)
-  const host = record('@deepseek-ai/dsh-desktop-host', 'dsh-desktop-host.tgz', hostBody)
+  const base = record('@reevo/dsh-base', 'dsh-base.tgz', baseBody)
+  const host = record('@reevo/dsh-desktop-host', 'dsh-desktop-host.tgz', hostBody)
   writeFileSync(join(packageDir, dsh.file), dshBody)
   writeFileSync(join(packageDir, base.file), baseBody)
   writeFileSync(join(packageDir, host.file), hostBody)
@@ -63,8 +63,8 @@ describe('desktop core package set', () => {
     expect(desktopDshPackageSpec(packageSet)).toBe('file:./desktop-packages/dsh.tgz')
     expect(desktopCorePackageOverrides(packageSet)).toEqual({
       '@reevo/cli': 'file:./desktop-packages/dsh.tgz',
-      '@deepseek-ai/dsh-base': 'file:./desktop-packages/dsh-base.tgz',
-      '@deepseek-ai/dsh-desktop-host': 'file:./desktop-packages/dsh-desktop-host.tgz',
+      '@reevo/dsh-base': 'file:./desktop-packages/dsh-base.tgz',
+      '@reevo/dsh-desktop-host': 'file:./desktop-packages/dsh-desktop-host.tgz',
     })
   })
 
@@ -85,7 +85,7 @@ describe('desktop core package set', () => {
 
   it('rejects registry resolutions for names supplied by the local package set', () => {
     const dsh = record('@reevo/cli', 'dsh.tgz', Buffer.from('dsh'))
-    const host = record('@deepseek-ai/dsh-desktop-host', 'host.tgz', Buffer.from('host'))
+    const host = record('@reevo/dsh-desktop-host', 'host.tgz', Buffer.from('host'))
     const packageSet = parseDesktopCorePackageSet({ schemaVersion: 1, packages: [dsh, host] })
     expect(() => {
       verifyDesktopCoreLockfile(

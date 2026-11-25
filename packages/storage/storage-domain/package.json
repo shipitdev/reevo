@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-storage-domain",
+  "name": "@reevo/dsh-storage-domain",
   "description": "Domain data form (ctx.storage.domain): schema-validated, event-emitting KV domains over storage backends for the DeepSeek Harness",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -32,7 +32,7 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-storage": "workspace:*",
+    "@reevo/dsh-storage": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     "zod": "4.6.6"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-storage": "workspace:*",
+    "@reevo/dsh-storage": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

@@ -40,7 +40,7 @@ pnpm --filter @reevo/web exec playwright install --with-deps chromium webkit
 
 新增场景要在同一次改动里登记到两份工程清单：根 `tsconfig.host.json` 的 include，以及 Client aggregate `apps/web/tsconfig.json` 的 exclude。该工程包含整个 `tests` 目录，漏登记 exclude 的文件会按 Client 代码编译，`pnpm run typecheck` 的 Client compiler 关卡会一直以 Host 服务错误失败，直到它被列入。
 
-## 不要在此 import `@deepseek-ai/dsh-client-*`
+## 不要在此 import `@reevo/dsh-client-*`
 
 import 一个 Client 包——无论值还是类型——都会把它的 TypeScript 工程及其引用的工程拉进 Host 构建图。生成的 Remote 声明在包编译之前就绪，但这并不使 Host 与 Client 的 Cordis `Context` 声明兼容。保留这些测试的 Host face 归属，只使用下文明确的 built-client harness 例外。
 

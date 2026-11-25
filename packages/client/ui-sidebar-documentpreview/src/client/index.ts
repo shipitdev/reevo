@@ -1,4 +1,4 @@
-import type {} from '@deepseek-ai/dsh-client-ui-context-menu/client'
+import type {} from '@reevo/dsh-client-ui-context-menu/client'
 /**
  * Browser half: register `text` as a right-Sidebar tab type.
  *
@@ -12,15 +12,15 @@ import type {} from '@deepseek-ai/dsh-client-ui-context-menu/client'
  * client plugin is a type.
  */
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-resources/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-client-ui-session/client'
-import type {} from '@deepseek-ai/dsh-client-ui-sidebar-right/client'
-import type {} from '@deepseek-ai/dsh-api-gateway/client'
-import type {} from '@deepseek-ai/dsh-api-workspace-files/remote'
-import type { WorkspaceFileParams } from '@deepseek-ai/dsh-api-workspace-files/client'
+import type {} from '@reevo/dsh-api-remotes/client'
+import type {} from '@reevo/dsh-client-locale/client'
+import type {} from '@reevo/dsh-client-resources/client'
+import type {} from '@reevo/dsh-client-ui-renderer/client'
+import type {} from '@reevo/dsh-client-ui-session/client'
+import type {} from '@reevo/dsh-client-ui-sidebar-right/client'
+import type {} from '@reevo/dsh-api-gateway/client'
+import type {} from '@reevo/dsh-api-workspace-files/remote'
+import type { WorkspaceFileParams } from '@reevo/dsh-api-workspace-files/client'
 import { SummaryPreview, SummaryTitle } from './SummaryPreview.tsx'
 import { TextPreview } from './TextPreview.tsx'
 import type { TextPreviewInjected } from './TextPreview.tsx'
@@ -40,7 +40,7 @@ import { apply as registerPdf } from './pdf/index.ts'
 import { apply as registerCode } from './code/index.ts'
 import { apply as registerOffice } from './office/index.ts'
 import { apply as registerExcel } from './excel/index.ts'
-import type { SyncedConfig } from '@deepseek-ai/dsh-client-config/types'
+import type { SyncedConfig } from '@reevo/dsh-client-config/types'
 import type { DocumentPreviewConfig } from '../types.ts'
 import { EXCEL_DEFAULTS, OFFICE_DEFAULTS } from '../defaults.ts'
 
@@ -65,7 +65,7 @@ declare module '@deepseek-ai/cordis' {
 /** This package's copy namespace. */
 const NS = 'sidebarDocumentPreview'
 
-declare module '@deepseek-ai/dsh-client-ui-sidebar-right/client' {
+declare module '@reevo/dsh-client-ui-sidebar-right/client' {
   interface SidebarRightResourceParamsMap {
     /** File line navigation supported by the text preview. */
     file: WorkspaceFileParams
@@ -77,7 +77,7 @@ declare module '@deepseek-ai/dsh-client-ui-sidebar-right/client' {
   }
 }
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@reevo/dsh-client-ui-slots' {
   interface LocaleNamespaceMap {
     /** Text-preview progress, paging, change, control, and failure lines. */
     sidebarDocumentPreview: import('./locales.ts').SidebarDocumentPreviewKey
@@ -137,7 +137,7 @@ export function apply(ctx: ClientContext, config: SyncedConfig<DocumentPreviewCo
   registerOffice(ctx, config.office.get() ?? OFFICE_DEFAULTS)
   registerExcel(ctx, config.excel.get() ?? EXCEL_DEFAULTS)
   registerCode(ctx)
-  const summaryId = '@deepseek-ai/dsh-client-ui-sidebar-documentpreview/compaction'
+  const summaryId = '@reevo/dsh-client-ui-sidebar-documentpreview/compaction'
   const t = ctx.locale.bind('documentMarkdown')
   ctx.effect(() => ctx.sidebarRightTabs.register({
     id: summaryId, kind: 'compaction-summary',

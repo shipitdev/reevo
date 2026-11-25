@@ -12,14 +12,14 @@
  * }, signal)
  * ```
  *
- * @module @deepseek-ai/dsh-deepseek-auth
+ * @module @reevo/dsh-deepseek-auth
  */
 import { Context, Service } from '@deepseek-ai/cordis'
-import { credentialRef, credentialRefConfigured, normalizeApiKey, resolveCredentialRef } from '@deepseek-ai/dsh-credentials'
-import type { ApiKeyRejection } from '@deepseek-ai/dsh-credentials'
-import type {} from '@deepseek-ai/dsh-deepseek-account'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
+import { credentialRef, credentialRefConfigured, normalizeApiKey, resolveCredentialRef } from '@reevo/dsh-credentials'
+import type { ApiKeyRejection } from '@reevo/dsh-credentials'
+import type {} from '@reevo/dsh-deepseek-account'
+import { HarnessError } from '@reevo/dsh-error'
+import { launchEnvironmentOf } from '@reevo/dsh-launch-environment'
 import type {
   DeepSeekAuthCandidate, DeepSeekAuthConnection, DeepSeekAuthKind, DeepSeekAuthRequest, DeepSeekAuthUnresolved,
   DeepSeekAuthorization,

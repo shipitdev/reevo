@@ -2,8 +2,8 @@
 
 import { Context, FiberState } from '@deepseek-ai/cordis'
 import type { Message } from '@deepseek-ai/cordis'
-import type { IndexInjection, WebServer } from '@deepseek-ai/dsh-host-webserver'
-import { ConnectionAuthentication, HostConnectionService } from '@deepseek-ai/dsh-client-connection'
+import type { IndexInjection, WebServer } from '@reevo/dsh-host-webserver'
+import { ConnectionAuthentication, HostConnectionService } from '@reevo/dsh-client-connection'
 import { setFlagsFromString } from 'node:v8'
 import { runInNewContext } from 'node:vm'
 import open from 'open'

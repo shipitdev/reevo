@@ -1,29 +1,29 @@
 /**
  * Single replay-aware token-meter service for request and surface pressure.
  *
- * @module @deepseek-ai/dsh-token-meter
+ * @module @reevo/dsh-token-meter
  */
 
 import { Context, Service } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-compaction-image-offload/projection'
+import type {} from '@reevo/dsh-compaction-image-offload/projection'
 import z from '@deepseek-ai/schemastery'
-import type { LlmImageRequestPricing, LlmRuntime, Message, TokenUsage } from '@deepseek-ai/dsh-llm'
-import { deepFreeze } from '@deepseek-ai/dsh-util-values'
+import type { LlmImageRequestPricing, LlmRuntime, Message, TokenUsage } from '@reevo/dsh-llm'
+import { deepFreeze } from '@reevo/dsh-util-values'
 import type {
   EpochHeader,
   Session,
   SessionEvent,
   SessionSeq as SessionSeqType,
   SessionLogOffset as SessionLogOffsetType,
-} from '@deepseek-ai/dsh-session'
+} from '@reevo/dsh-session'
 import {
   canonicalHeader,
   headerEquals,
   isSurfaceEvent,
   SessionLogOffset,
   SessionSeq,
-} from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
+} from '@reevo/dsh-session'
+import type { ProjectionHandle } from '@reevo/dsh-session-projection'
 import type {
   ContextPressureProjection,
   TokenMeasurement,

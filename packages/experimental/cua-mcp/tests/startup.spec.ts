@@ -5,7 +5,7 @@ import { mkdtemp, rm, stat, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import { internals, provideCmdline } from '@deepseek-ai/dsh-cmdline'
+import { internals, provideCmdline } from '@reevo/dsh-cmdline'
 import { Server } from '@modelcontextprotocol/server'
 import { StdioServerTransport } from '@modelcontextprotocol/server/stdio'
 import { afterEach, beforeEach, describe, expect, it, vi, type Mock } from 'vitest'
@@ -65,7 +65,7 @@ afterEach(async () => {
 const profileContext = {
   name: 'cua-mcp', dir: '/profiles/cua-mcp', patchPath: '/profiles/cua-mcp/cordis.patch.yml',
   installAnchor: '/dsh/package.json', cwd: '/launch', home: '/home/me/.dsh',
-  startedBundles: ['@deepseek-ai/dsh-cua-mcp'], overlays: [], telemetryDisabledEnv: undefined,
+  startedBundles: ['@reevo/dsh-cua-mcp'], overlays: [], telemetryDisabledEnv: undefined,
 }
 
 async function boot(args: string[], config: Partial<frontend.Config> = {}) {

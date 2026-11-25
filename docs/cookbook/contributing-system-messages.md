@@ -24,7 +24,7 @@ Declare the service dependency and register through your plugin's `ctx`. Cordis 
 
 ```ts
 import type { Context } from '@deepseek-ai/cordis'
-import '@deepseek-ai/dsh-system-prompt'
+import '@reevo/dsh-system-prompt'
 
 export const name = 'example-response-style'
 export const inject = ['systemPrompt']
@@ -50,7 +50,7 @@ For changing instructions, keep one registration and let its synchronous `text` 
 
 ```ts
 import type { Context } from '@deepseek-ai/cordis'
-import '@deepseek-ai/dsh-system-prompt'
+import '@reevo/dsh-system-prompt'
 
 export function registerInstructions(ctx: Context, initialText: string) {
   let currentText = initialText

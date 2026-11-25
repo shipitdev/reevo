@@ -1,20 +1,20 @@
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it } from 'vitest'
-import SessionStore, { Session, type SessionId, SessionSeq } from '@deepseek-ai/dsh-session'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SessionTitleProviderId } from '@deepseek-ai/dsh-session-title/types'
+import SessionStore, { Session, type SessionId, SessionSeq } from '@reevo/dsh-session'
+import AgentRegistry from '@reevo/dsh-agent'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { brandString } from '@reevo/dsh-brand'
+import type { SessionTitleProviderId } from '@reevo/dsh-session-title/types'
 import SessionTitleService, {
   fallbackSessionTitle,
   foldSessionTitle,
   normalizeSessionTitle,
   truncateTitleUtf8,
-} from '@deepseek-ai/dsh-session-title'
+} from '@reevo/dsh-session-title'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'seed': { kind: 'seed' } & ContextFormed
   }

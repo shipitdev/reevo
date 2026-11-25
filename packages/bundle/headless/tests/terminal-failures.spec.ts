@@ -2,16 +2,16 @@
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentDefaultModelConfig from '@deepseek-ai/dsh-agent-default-model'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { SessionId, SessionEvent } from '@deepseek-ai/dsh-session'
+import type { Agent } from '@reevo/dsh-agent'
+import AgentDefaultModelConfig from '@reevo/dsh-agent-default-model'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { SessionId, SessionEvent } from '@reevo/dsh-session'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import { apply } from '../src/index.ts'
 import { internals } from '../src/runner-internals.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const originalInternals = { ...internals }
 let ctx: Context | undefined

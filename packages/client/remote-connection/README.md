@@ -3,7 +3,7 @@ description: "QR login, private login links, and owner-approved browser pairing.
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-client-remote-connection
+# @reevo/dsh-client-remote-connection
 
 English | [中文](README.zh.md)
 
@@ -86,9 +86,9 @@ Register in the root-scoped list `settings.remoteConnection.extensions` to add o
 
 ```ts client
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
+import type {} from '@reevo/dsh-client-ui-renderer/client'
 import type { FunctionComponent } from 'react'
-import type { RemoteConnectionExtensionProps } from '@deepseek-ai/dsh-client-remote-connection/client'
+import type { RemoteConnectionExtensionProps } from '@reevo/dsh-client-remote-connection/client'
 
 declare const ConnectionOptions: FunctionComponent<RemoteConnectionExtensionProps>
 
@@ -111,9 +111,9 @@ Register a replacement component from your Client plugin with a lower priority t
 
 ```ts client
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
+import type {} from '@reevo/dsh-client-ui-renderer/client'
 import type { FunctionComponent } from 'react'
-import type { RemoteConnectionContentProps } from '@deepseek-ai/dsh-client-remote-connection/client'
+import type { RemoteConnectionContentProps } from '@reevo/dsh-client-remote-connection/client'
 
 declare const CustomPanel: FunctionComponent<RemoteConnectionContentProps>
 

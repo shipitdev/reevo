@@ -7,10 +7,10 @@
  */
 
 import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { truncateWithoutSplittingSurrogatePair } from '@deepseek-ai/dsh-output-retention'
-import { createScope, type Scope, type ScopeKey } from '@deepseek-ai/dsh-scope'
-import { defineTool, type ToolDefinition } from '@deepseek-ai/dsh-tools'
+import type { Agent } from '@reevo/dsh-agent'
+import { truncateWithoutSplittingSurrogatePair } from '@reevo/dsh-output-retention'
+import { createScope, type Scope, type ScopeKey } from '@reevo/dsh-scope'
+import { defineTool, type ToolDefinition } from '@reevo/dsh-tools'
 import { publicToolName } from './tools.ts'
 
 /** Raw name of the loader tool inside the server's `mcp__<serverName>__` namespace. */

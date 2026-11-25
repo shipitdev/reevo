@@ -5,23 +5,23 @@ import { join } from 'node:path'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import type { Context } from '@deepseek-ai/cordis'
 import Timer from '@deepseek-ai/cordis-plugin-timer'
-import { boot, initProfile, loadProfileDirectory, readProfilePatches, readProfileManifest, type ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import Hmr from '@deepseek-ai/dsh-hmr'
-import PluginManager from '@deepseek-ai/dsh-plugin-manager'
-import Sessions, { type SessionId } from '@deepseek-ai/dsh-session'
-import Projections from '@deepseek-ai/dsh-session-projection'
-import Agents from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import Llm, { LlmAdapter, createUserMessage, type GenerateOptions, type StreamChunk } from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import Tools from '@deepseek-ai/dsh-tools'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import Skills from '@deepseek-ai/dsh-skill'
-import Access from '@deepseek-ai/dsh-api-remote-access'
-import * as ActionCards from '@deepseek-ai/dsh-action-cards'
+import { boot, initProfile, loadProfileDirectory, readProfilePatches, readProfileManifest, type ProfileContext } from '@reevo/dsh-app-boot'
+import Hmr from '@reevo/dsh-hmr'
+import PluginManager from '@reevo/dsh-plugin-manager'
+import Sessions, { type SessionId } from '@reevo/dsh-session'
+import Projections from '@reevo/dsh-session-projection'
+import Agents from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import Llm, { LlmAdapter, createUserMessage, type GenerateOptions, type StreamChunk } from '@reevo/dsh-llm'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import Tools from '@reevo/dsh-tools'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import Skills from '@reevo/dsh-skill'
+import Access from '@reevo/dsh-api-remote-access'
+import * as ActionCards from '@reevo/dsh-action-cards'
 import * as Recommendations from '../src/index.ts'
 import { ACTION, logProposal } from './fixture.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 class Model extends LlmAdapter {
   readonly requests: GenerateOptions[] = []
@@ -40,7 +40,7 @@ it.each(['normal', 'consumer-unload'] as const)('enables through the real Loader
   onTestFinished(async () => { await owner?.fiber.dispose(); await rm(home, { recursive: true, force: true }) })
   const dir = join(home, 'profiles', 'test')
   const anchor = join(home, 'package.json')
-  const name = '@deepseek-ai/dsh-experimental-session-search'
+  const name = '@reevo/dsh-experimental-session-search'
   await writeFile(anchor, JSON.stringify({ name: 'installation', dependencies: { [name]: '1.0.0' } }))
   initProfile(dir, ['fixture-base'])
   async function bundle(root: string, name: string, patch: string) {

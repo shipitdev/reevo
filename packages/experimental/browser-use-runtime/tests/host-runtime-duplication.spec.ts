@@ -1,6 +1,6 @@
 /**
  * Issue #4573: a profile install of this package sits beside the dsh
- * installation and installs its own copy of `@deepseek-ai/dsh-scope`, so two
+ * installation and installs its own copy of `@reevo/dsh-scope`, so two
  * scope module instances coexist in one host process. `dsh-scope` mints its
  * scope-tag symbol per module instance, so the copy's `createScope` writes a
  * tag every host registry ignores: each Agent's MCP tools register in the
@@ -23,12 +23,12 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { afterEach, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import BrowserUse from '@deepseek-ai/dsh-browser-use'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
+import BrowserUse from '@reevo/dsh-browser-use'
+import type { SessionId } from '@reevo/dsh-session'
+import type { Agent } from '@reevo/dsh-agent'
 import { mountSessionMcp } from '../src/mcp.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const FIXTURE = fileURLToPath(new URL('./mcp-fixture.mjs', import.meta.url))
 const TOOL = 'mcp__browser-fixture__visit'
@@ -69,8 +69,8 @@ it('reproduces the second-Agent failure a profile install causes', async () => {
   // What npm installs beside the installation: one second copy of both packages
   // in the profile, so the copy's client resolves the copy's scope module.
   vi.resetModules()
-  const profileScope = await import('@deepseek-ai/dsh-scope')
-  const profileMcpClient = await import('@deepseek-ai/dsh-mcp-client')
+  const profileScope = await import('@reevo/dsh-scope')
+  const profileMcpClient = await import('@reevo/dsh-mcp-client')
   ctx.on('agent/created', async ({ agent }) => {
     await profileScope.createScope(ctx, agent).ctx.plugin(profileMcpClient, profileMcpClient.Config({
       transport: 'stdio', serverName: 'browser-fixture', command: process.execPath, args: [FIXTURE, root],

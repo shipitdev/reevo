@@ -14,16 +14,16 @@
  * or `*ApiKeyEnv` uses only that endpoint and key instead, whatever its billing
  * ([rationale](../../../../.agents/notes/implemented/architecture/2026-10-29-web-provider-selection.md#credential-resolution)).
  * Both providers report themselves not ready when their next operation would have no credential.
- * @module @deepseek-ai/dsh-web-deepseek-api
+ * @module @reevo/dsh-web-deepseek-api
  */
 import type { Context, Volatile } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-agent'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import type { DeepSeekAuthCandidate, DeepSeekAuthKind, DeepSeekAuthUnresolved } from '@deepseek-ai/dsh-deepseek-auth'
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-web'
+import type {} from '@reevo/dsh-agent'
+import { credentialRef } from '@reevo/dsh-credentials'
+import type { DeepSeekAuthCandidate, DeepSeekAuthKind, DeepSeekAuthUnresolved } from '@reevo/dsh-deepseek-auth'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import type { Session } from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-web'
 import { DeepSeekFetchApiProvider } from './fetch.ts'
 import {
   DEEPSEEK_DEFAULT_COUNT, DEEPSEEK_SEARCH_REQUESTS_PER_SECOND, DEEPSEEK_WEB_API_BASE_URL, DeepSeekSearchApiProvider,

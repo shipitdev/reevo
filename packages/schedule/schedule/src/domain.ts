@@ -1,9 +1,9 @@
 /**
  * Host task decoding, timing validation, occurrence selection, and reminder framing.
- * @module @deepseek-ai/dsh-schedule
+ * @module @reevo/dsh-schedule
  */
 
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import { Temporal } from '@js-temporal/polyfill'
 import {
   Cron,
@@ -17,10 +17,10 @@ import {
   parseLocalCalendar,
   parseOffsetInstant,
   resolveLocalInstant,
-} from '@deepseek-ai/dsh-util-time'
+} from '@reevo/dsh-util-time'
 import type {
   InstantRejection, LocalCalendarRejection, LocalCalendarTime, TimeZoneRejection, RecurrenceResult,
-} from '@deepseek-ai/dsh-util-time'
+} from '@reevo/dsh-util-time'
 import type {
   AfterScheduleRecord,
   AtInput,

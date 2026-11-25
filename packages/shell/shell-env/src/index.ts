@@ -5,19 +5,19 @@
  * the registry itself while plugins can register additional, enumerable facts
  * with effect-scoped disposal.
  *
- * @module @deepseek-ai/dsh-shell-env
+ * @module @reevo/dsh-shell-env
  */
 
 import { dirname } from 'node:path'
 import { Service, type Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { DSH_ENV_PREFIX } from '@deepseek-ai/dsh-shell'
-import type { DshEnvironment, DshEnvironmentKey } from '@deepseek-ai/dsh-shell'
-import { DSH_HOME_ENV, resolveDshHome } from '@deepseek-ai/dsh-home-paths'
+import { DSH_ENV_PREFIX } from '@reevo/dsh-shell'
+import type { DshEnvironment, DshEnvironmentKey } from '@reevo/dsh-shell'
+import { DSH_HOME_ENV, resolveDshHome } from '@reevo/dsh-home-paths'
 import { ShellEnvError } from './error.ts'
-import type { ToolExecution } from '@deepseek-ai/dsh-tools'
+import type { ToolExecution } from '@reevo/dsh-tools'
 // Declares `Context.profileContext`, the launcher-provided profile the built-ins read.
-import type {} from '@deepseek-ai/dsh-app-boot'
+import type {} from '@reevo/dsh-app-boot'
 
 export { ShellEnvError, type ShellEnvErrorCode } from './error.ts'
 

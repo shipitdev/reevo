@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-product-analytics",
+  "name": "@reevo/dsh-client-product-analytics",
   "description": "Desktop product event collection and authenticated Host reporting",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -40,7 +40,7 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-gateway"
+        "@reevo/dsh-api-gateway"
       ],
       "platform": "web"
     }
@@ -54,20 +54,20 @@
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-host-product-telemetry-otel": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-account": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
+    "@reevo/dsh-api-gateway": "workspace:*",
+    "@reevo/dsh-compaction": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-host-product-telemetry-otel": "workspace:*",
+    "@reevo/dsh-deepseek-account": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-settings": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-otel": "workspace:*",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:*"
+    "@reevo/dsh-otel": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-loader-smoke": "workspace:*"
   },
   "files": [
     "locale/*.json",
@@ -84,7 +84,7 @@
     "src"
   ],
   "dependencies": {
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "zod": "4.6.6"
   }

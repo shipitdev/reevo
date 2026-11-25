@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-agent-loop-testkit",
+  "name": "@reevo/dsh-agent-loop-testkit",
   "description": "Prerequisite mounting, production AgentLoop drivers, and Inbox stubs for tests",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -30,33 +30,33 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-loop": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*"
+    "@reevo/dsh-working-directory": "workspace:*",
+    "@reevo/dsh-fs-local": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-ptc": "workspace:*"
+    "@reevo/dsh-tool-executor-native": "workspace:*",
+    "@reevo/dsh-tool-executor-ptc": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-ptc-runtime": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-loop": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-ptc-runtime": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*"
+    "@reevo/dsh-working-directory": "workspace:*",
+    "@reevo/dsh-fs-local": "workspace:*"
   }
 }

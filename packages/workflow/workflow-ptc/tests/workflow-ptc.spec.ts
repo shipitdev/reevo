@@ -1,20 +1,20 @@
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { provideWorkingDirectoryFixture } from '@reevo/dsh-agent-loop-testkit'
 import { describe, expect, it, vi } from 'vitest'
 import { readFile, rm, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import type { SubagentCapabilities, SubagentProvider, SubagentResult, SubagentRun, SubagentStartRequest } from '@deepseek-ai/dsh-subagent'
-import type { WorkflowMeta, WorkflowResult, WorkflowResultInfo, WorkflowRun, WorkflowRunInfo } from '@deepseek-ai/dsh-workflow'
+import type { Agent } from '@reevo/dsh-agent'
+import SubagentRuntime from '@reevo/dsh-subagent'
+import type { SubagentCapabilities, SubagentProvider, SubagentResult, SubagentRun, SubagentStartRequest } from '@reevo/dsh-subagent'
+import type { WorkflowMeta, WorkflowResult, WorkflowResultInfo, WorkflowRun, WorkflowRunInfo } from '@reevo/dsh-workflow'
 import * as ptcEngineModule from '../src/index.ts'
 import PtcWorkflowEngine, { type Config } from '../src/index.ts'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import type { SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 
 import { fakeParent, mountPtcRuntime } from './setup.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 /** Bound observations of process startup and host callbacks on shared CI runners. */
 function waitFor(assertion: () => void, timeout = 60_000): Promise<void> {

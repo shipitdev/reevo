@@ -1,14 +1,14 @@
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'agent-message': { readonly kind: 'agent-message' }
   }
 }
 
 import { beforeEach, describe, expect, it } from 'vitest'
-import type { SessionEventLike } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { TeamId, TeamMessageId } from '@deepseek-ai/dsh-agent-team/types'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { SessionEventLike } from '@reevo/dsh-api-session-controller/client'
+import type { TeamId, TeamMessageId } from '@reevo/dsh-agent-team/types'
+import type { AttachmentId } from '@reevo/dsh-attachment/types'
+import { brandString } from '@reevo/dsh-brand'
 import type {
   LlmAttemptId,
   MessageId,
@@ -21,10 +21,10 @@ import type {
   TokenUsage,
   ToolResultMessage,
   UserMessage,
-} from '@deepseek-ai/dsh-llm'
-import type { RetryId } from '@deepseek-ai/dsh-llm-retry/types'
-import { type SessionId, SessionSeq, type SessionEventMap, type SessionEventType } from '@deepseek-ai/dsh-session/types'
-import type {} from '@deepseek-ai/dsh-tool-executor-ptc/types'
+} from '@reevo/dsh-llm'
+import type { RetryId } from '@reevo/dsh-llm-retry/types'
+import { type SessionId, SessionSeq, type SessionEventMap, type SessionEventType } from '@reevo/dsh-session/types'
+import type {} from '@reevo/dsh-tool-executor-ptc/types'
 import {
   CALL_LIMIT, fallbackState, foldEvent, isCodeMode, newState, promptOf, stepMetrics, toolSpanUnion, triggerSenderOf,
 } from '../src/client/stats-fold.ts'

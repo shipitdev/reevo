@@ -13,13 +13,13 @@ import type { ReactElement, ReactNode, RefObject } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
   Button, IconFolderCloseRegular, IconPlusOutlineRegular, Menu, Modal, type MenuEntry,
-} from '@deepseek-ai/dsh-client-ui-primitives'
+} from '@reevo/dsh-client-ui-primitives'
 import type {
   WorkspaceId, WorkspaceSnapshot, WorkspaceView,
-} from '@deepseek-ai/dsh-api-workspace-controller/client'
-import { workspaceDisplayTitle } from '@deepseek-ai/dsh-api-workspace-controller/default-workspace'
-import type { SnapshotSelectorHook } from '@deepseek-ai/dsh-client-ui-slots'
-import { TextSearchIndex } from '@deepseek-ai/dsh-util-text-search'
+} from '@reevo/dsh-api-workspace-controller/client'
+import { workspaceDisplayTitle } from '@reevo/dsh-api-workspace-controller/default-workspace'
+import type { SnapshotSelectorHook } from '@reevo/dsh-client-ui-slots'
+import { TextSearchIndex } from '@reevo/dsh-util-text-search'
 import type { DirectoryFlowOwnerProps, WorkspacePickerFactoryProps, WorkspacePickerProps } from './contract/slots.ts'
 import { distinguishingPathSuffixes } from './path-suffix.ts'
 import css from './WorkspacePicker.module.css'

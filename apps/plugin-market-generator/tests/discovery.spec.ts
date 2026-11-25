@@ -61,7 +61,7 @@ describe('isBundle and dshRange', () => {
 
   it('copies engines.dsh, else joins DSH peer ranges, and refuses ranges installation rejects', () => {
     expect(dshRange({ engines: { dsh: '>=0.2.0' }, peerDependencies: { '@reevo/cli': '1' } })).toBe('>=0.2.0')
-    expect(dshRange({ peerDependencies: { react: '18', '@deepseek-ai/dsh-agent': 'workspace:*', '@reevo/cli': '*' } })).toBeUndefined()
+    expect(dshRange({ peerDependencies: { react: '18', '@reevo/dsh-agent': 'workspace:*', '@reevo/cli': '*' } })).toBeUndefined()
     // Installation refuses an empty range, any `workspace:` engines.dsh, and a padded workspace peer on every DSH version.
     for (const manifest of [
       { peerDependencies: { '@reevo/cli': ' ' } }, { engines: { dsh: '' } }, { engines: { dsh: 'workspace:*' } },
@@ -71,23 +71,23 @@ describe('isBundle and dshRange', () => {
     expect(dshRange({ engines: { dsh: ' * ' } })).toBeUndefined()
     expect(dshRange({ engines: { node: '22' }, peerDependencies: [] })).toBeUndefined()
     expect(dshRange({
-      peerDependencies: { '@deepseek-ai/dsh-a': '^0.2.0 || ^0.3.0', '@deepseek-ai/dsh-b': '>=0.2.1', '@deepseek-ai/dsh-c': '>=0.2.1', '@deepseek-ai/dsh-d': '<1 ||' },
+      peerDependencies: { '@reevo/dsh-a': '^0.2.0 || ^0.3.0', '@reevo/dsh-b': '>=0.2.1', '@reevo/dsh-c': '>=0.2.1', '@reevo/dsh-d': '<1 ||' },
     })).toBe('>=0.2.0 <0.3.0-0 >=0.2.1 || >=0.3.0 <0.4.0-0 >=0.2.1')
     // A hyphen range is expanded before combining, and combinations no version satisfies are dropped.
-    expect(dshRange({ peerDependencies: { '@reevo/cli': '1.0.0 - 2.0.0', '@deepseek-ai/dsh-x': '>=1.5.0 || <0.5.0' } })).toBe('>=1.0.0-0 <2.0.1-0 >=1.5.0')
-    expect(dshRange({ peerDependencies: { '@reevo/cli': '^0.1.0', '@deepseek-ai/dsh-x': '^0.2.0' } }))
+    expect(dshRange({ peerDependencies: { '@reevo/cli': '1.0.0 - 2.0.0', '@reevo/dsh-x': '>=1.5.0 || <0.5.0' } })).toBe('>=1.0.0-0 <2.0.1-0 >=1.5.0')
+    expect(dshRange({ peerDependencies: { '@reevo/cli': '^0.1.0', '@reevo/dsh-x': '^0.2.0' } }))
       .toEqual(new Error('no DSH version satisfies every DSH peer range: ^0.1.0, ^0.2.0'))
     expect(dshRange({ peerDependencies: { '@reevo/cli': '^0.2.0-rc.1' } })).toBe('^0.2.0-rc.1')
-    expect(dshRange({ peerDependencies: { '@reevo/cli': '>=0.1.0 || *', '@deepseek-ai/dsh-x': '^0.2.0 || *' } })).toBeUndefined()
-    expect(dshRange({ peerDependencies: { '@reevo/cli': '<0.1.0', '@deepseek-ai/dsh-x': '>=0.2.0' } }))
+    expect(dshRange({ peerDependencies: { '@reevo/cli': '>=0.1.0 || *', '@reevo/dsh-x': '^0.2.0 || *' } })).toBeUndefined()
+    expect(dshRange({ peerDependencies: { '@reevo/cli': '<0.1.0', '@reevo/dsh-x': '>=0.2.0' } }))
       .toEqual(new Error('no DSH version satisfies every DSH peer range: <0.1.0, >=0.2.0'))
-    expect(dshRange({ peerDependencies: { '@reevo/cli': '*', '@deepseek-ai/dsh-x': '>=0' } })).toBeUndefined()
-    expect(dshRange({ peerDependencies: { '@deepseek-ai/dsh-llm': '*', '@deepseek-ai/dsh-x': '*' } })).toBeUndefined()
-    const wide = Object.fromEntries(Array.from({ length: 3 }, (_, peer) => [`@deepseek-ai/dsh-${peer}`, Array.from({ length: 10 }, (_, minor) => `>=0.${minor}.${peer}`).join(' || ')]))
+    expect(dshRange({ peerDependencies: { '@reevo/cli': '*', '@reevo/dsh-x': '>=0' } })).toBeUndefined()
+    expect(dshRange({ peerDependencies: { '@reevo/dsh-llm': '*', '@reevo/dsh-x': '*' } })).toBeUndefined()
+    const wide = Object.fromEntries(Array.from({ length: 3 }, (_, peer) => [`@reevo/dsh-${peer}`, Array.from({ length: 10 }, (_, minor) => `>=0.${minor}.${peer}`).join(' || ')]))
     expect(dshRange({ peerDependencies: wide })).toEqual(new Error('DSH peer ranges combine into more than 256 alternatives'))
-    expect(dshRange({ peerDependencies: { '@deepseek-ai/dsh-a': 'workspace:>=1' } })).toEqual(new Error('DSH range "workspace:>=1" is not a valid SemVer range'))
+    expect(dshRange({ peerDependencies: { '@reevo/dsh-a': 'workspace:>=1' } })).toEqual(new Error('DSH range "workspace:>=1" is not a valid SemVer range'))
     expect(dshRange({ engines: { dsh: 'not a range' } })).toBeInstanceOf(Error)
-    expect(dshRange({ peerDependencies: { '@reevo/cli': '>=0.2.0', '@deepseek-ai/dsh-x': 'not a range' } })).toEqual(new Error('DSH range "not a range" is not a valid SemVer range'))
+    expect(dshRange({ peerDependencies: { '@reevo/cli': '>=0.2.0', '@reevo/dsh-x': 'not a range' } })).toEqual(new Error('DSH range "not a range" is not a valid SemVer range'))
   })
 })
 

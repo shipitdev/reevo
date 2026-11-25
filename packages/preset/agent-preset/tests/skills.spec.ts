@@ -10,10 +10,10 @@ import { dirname, join, resolve, sep } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
 import { fileURLToPath } from 'node:url'
 import { parseEntryYaml } from '@deepseek-ai/cordis-plugin-include'
-import { codePointLength } from '@deepseek-ai/dsh-compaction-tool-result-pruner'
-import { detailImage, languageChain, localFiles, readPackageDocument } from '@deepseek-ai/dsh-plugin-detail'
-import SkillRegistry, { renderSkillContent } from '@deepseek-ai/dsh-skill'
-import * as SkillFileSystem from '@deepseek-ai/dsh-skill-filesystem'
+import { codePointLength } from '@reevo/dsh-compaction-tool-result-pruner'
+import { detailImage, languageChain, localFiles, readPackageDocument } from '@reevo/dsh-plugin-detail'
+import SkillRegistry, { renderSkillContent } from '@reevo/dsh-skill'
+import * as SkillFileSystem from '@reevo/dsh-skill-filesystem'
 import { describe, expect, it, type TestContext } from 'vitest'
 import { JSDOM } from 'jsdom'
 import { packageMetaProblems } from '../../../../scripts/verify-package-meta.ts'
@@ -212,15 +212,15 @@ describe('the shipped dsh-doc skill', () => {
   it.skipIf(process.platform === 'win32')('documents shell commands that locate a package and list upgrade index sections', (test) => {
     const install = realpathSync(mkdtempSync(join(tmpdir(), 'dsh-doc-commands-')))
     test.onTestFinished(() => { rmSync(install, { recursive: true, force: true }) })
-    const pkg = join(install, 'node_modules', '@deepseek-ai', 'dsh-tool-bash')
+    const pkg = join(install, 'node_modules', '@reevo', 'dsh-tool-bash')
     mkdirSync(pkg, { recursive: true })
-    writeFileSync(join(pkg, 'package.json'), '{"name":"@deepseek-ai/dsh-tool-bash"}\n')
+    writeFileSync(join(pkg, 'package.json'), '{"name":"@reevo/dsh-tool-bash"}\n')
     mkdirSync(join(install, 'docs', 'upgrade-guide'), { recursive: true })
     writeFileSync(join(install, 'docs', 'upgrade-guide', 'README.md'), '# Upgrade guides\r\n\r\n## v2.0.0\r\n\r\n| row |\n## v1.0.0\n')
     const cwd = join(install, 'unrelated-workspace')
-    const decoy = join(cwd, 'node_modules', '@deepseek-ai', 'dsh-tool-bash')
+    const decoy = join(cwd, 'node_modules', '@reevo', 'dsh-tool-bash')
     mkdirSync(decoy, { recursive: true })
-    writeFileSync(join(decoy, 'package.json'), '{"name":"@deepseek-ai/dsh-tool-bash"}\n')
+    writeFileSync(join(decoy, 'package.json'), '{"name":"@reevo/dsh-tool-bash"}\n')
     mkdirSync(join(pkg, 'src'))
     writeFileSync(join(pkg, 'README.md'), '# Installed package\n')
     writeFileSync(join(pkg, 'src', 'index.ts'), 'export const installed = true\n')
@@ -242,9 +242,9 @@ describe('the shipped dsh-doc skill', () => {
   it.skipIf(spawnSync('pwsh', ['-NoProfile', '-Command', 'exit 0']).status !== 0)('documents a PowerShell process form that waits for the runtime', (test) => {
     const install = realpathSync(mkdtempSync(join(tmpdir(), 'dsh-doc-pwsh-')))
     test.onTestFinished(() => { rmSync(install, { recursive: true, force: true }) })
-    const pkg = join(install, 'node_modules', '@deepseek-ai', 'dsh-tool-bash')
+    const pkg = join(install, 'node_modules', '@reevo', 'dsh-tool-bash')
     mkdirSync(pkg, { recursive: true })
-    writeFileSync(join(pkg, 'package.json'), '{"name":"@deepseek-ai/dsh-tool-bash"}\n')
+    writeFileSync(join(pkg, 'package.json'), '{"name":"@reevo/dsh-tool-bash"}\n')
     const command = /```powershell\n([\s\S]+?)\n```/u.exec(readFileSync(join(skill, 'references', 'locate-docs.md'), 'utf8'))?.[1]
     expect(command).toBeDefined()
     const run = (script: string) => spawnSync('pwsh', ['-NoProfile', '-NonInteractive', '-Command', script], {
@@ -254,10 +254,10 @@ describe('the shipped dsh-doc skill', () => {
     expect(found.status, found.stderr).toBe(0)
     expect(found.stdout.trim()).toBe(pkg)
     // A failing script keeps its exit code and writes its error to stderr only.
-    const missing = run((command ?? '').replace("'@deepseek-ai/dsh-tool-bash'", "'@deepseek-ai/dsh-missing'"))
+    const missing = run((command ?? '').replace("'@reevo/dsh-tool-bash'", "'@reevo/dsh-missing'"))
     expect(missing.status).not.toBe(0)
     expect(missing.stdout).toBe('')
-    expect(missing.stderr).toContain('@deepseek-ai/dsh-missing')
+    expect(missing.stderr).toContain('@reevo/dsh-missing')
   })
 
   it('never forbid reading DSH package sources and never route skill files through the shell', () => {

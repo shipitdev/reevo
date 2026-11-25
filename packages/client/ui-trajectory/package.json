@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-trajectory",
+  "name": "@reevo/dsh-client-ui-trajectory",
   "description": "Trajectory event ledger and timing overview with live tool-result inspection",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -40,11 +40,11 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-session-controller",
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-renderer",
-        "@deepseek-ai/dsh-client-ui-session"
+        "@reevo/dsh-api-session-controller",
+        "@reevo/dsh-client-locale",
+        "@reevo/dsh-client-ui-conversation",
+        "@reevo/dsh-client-ui-renderer",
+        "@reevo/dsh-client-ui-session"
       ],
       "platform": "web"
     }
@@ -58,32 +58,32 @@
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-ptc": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-client-locale": "workspace:*",
+    "@reevo/dsh-client-test-runtime": "workspace:*",
+    "@reevo/dsh-client-ui-primitives": "workspace:*",
+    "@reevo/dsh-client-ui-conversation": "workspace:*",
+    "@reevo/dsh-tool-executor-ptc": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-client-ui-slots": "workspace:*",
+    "@reevo/dsh-compaction": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-chat": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-api-session-controller": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-session": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-session-status": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
+    "@reevo/dsh-client-store": "workspace:*",
+    "@reevo/dsh-client-ui-chat": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-api-session-controller": "workspace:*",
+    "@reevo/dsh-client-ui-renderer": "workspace:*",
+    "@reevo/dsh-client-ui-session": "workspace:*",
+    "@reevo/dsh-client-ui-session-status": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-attachment": "workspace:*",
     "@tanstack/react-virtual": "3.14.10",
     "diff": "^9.0.0",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*"
+    "@reevo/dsh-api-gateway": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*"
   },
   "files": [
     "locale/*.json",
@@ -100,7 +100,7 @@
     "src"
   ],
   "dependencies": {
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "zod": "4.6.6",
     "@deepseek-ai/schemastery": "workspace:~"
   }

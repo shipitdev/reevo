@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-feishu",
+  "name": "@reevo/dsh-feishu",
   "description": "Feishu plugin: the official lark-cli with its embedded skills, and account connection from the Plugins page",
   "version": "0.2.3-alpha.2",
   "icon": "./icon.svg",
@@ -43,8 +43,8 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "@larksuite/cli": "1.0.97",
     "yaml": "^2.4.2",
@@ -52,16 +52,16 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-cli-account": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*"
+    "@reevo/dsh-cli-account": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-cli-account": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-connector-account": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*"
+    "@reevo/dsh-cli-account": "workspace:*",
+    "@reevo/dsh-client-ui-connector-account": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*"
   }
 }

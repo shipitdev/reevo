@@ -1,13 +1,13 @@
 /**
  * Owner-scoped persistent PTY registry. Backends own terminal mechanics while
  * this service owns ids, publication, authorization, and awaited cleanup.
- * @module @deepseek-ai/dsh-terminal
+ * @module @reevo/dsh-terminal
  */
 
 import { Context, Service } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
 import { TerminalBackendCleanupError, TerminalError } from './error.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import type {
   TerminalBackend,
   TerminalBackendSession,

@@ -19,47 +19,47 @@
 
 | 工具包 | 模型可见名称 | 依赖 | 写入／影响 | 随产品发布的别名 | 部署说明 |
 | --- | --- | --- | --- | --- | --- |
-| `@deepseek-ai/dsh-tool-session-control` | `session_send_message` | `ctx.tools`、`ctx.sessionController`、`ctx.workspaceRegistry`、调用 Agent | `tool/call`、接收方的 `agent/inbox/spliced`、`tool/result` | - | dsh-web-app bundle 以禁用行挂载本包；Web Session controller 负责激活每个目标。 |
-| `@deepseek-ai/dsh-plugin-manager` | `plugin_manager` | `ctx.tools`, `ctx.pluginManager`, `ctx.sandboxPolicy` | `tool/call`, `tool/result`, `user/message` | - | - |
-| `@deepseek-ai/dsh-plugin-market` | `plugin_market` | `ctx.tools`, `ctx.pluginMarket` | `tool/call`, `tool/result` | - | - |
-| `@deepseek-ai/dsh-mcp-resources` | `list_mcp_resource_templates`, `list_mcp_resources`, `read_mcp_resource` | `ctx.tools`, `ctx.mcpResources` | `tool/call`, `tool/result` | - | - |
-| `@deepseek-ai/dsh-experimental-browser-use-stagehand-native` | `stagehand_act`、`stagehand_extract`、`stagehand_navigate`、`stagehand_observe`、`stagehand_screenshot`、`stagehand_tabs` | `ctx.browserUse`、`ctx.agents`、`ctx.tools`、`ctx.systemPrompt` | `tool/call`、`tool/result` | - | - |
-| `@deepseek-ai/dsh-tool-ask-user` | `ask_user_question` | `ctx.tools`、`ctx.userQuestions` | `tool/call`、`tool/result after an answer or timeout`、`late user/message` | - | ask_user_question 默认保持原有阻塞行为；设置 `mode: timed` 后才启用前台超时与 pending 结果，同时问题仍可回答；timed 模式内 `timeout: -1` 让本次调用无限期阻塞。 |
-| `@deepseek-ai/dsh-tool-executor-ptc` | `run_code` | `ctx.workingDirectory (Agent executions)`、`ctx.tools`、`ctx.ptcRuntime`、`ctx.systemPrompt` | `tool/call`、`one tool/ptc-dispatch-start + tool/ptc-dispatch pair per bridged sub-call`、`tool/result` | - | PTC 执行器只向模型公开 run_code，并在生成的 TypeScript SDK 中声明其他可见能力。程序绑定按提交顺序进入共享的受守卫工具流水线；并行安全的函数体最多重叠 maxParallelSubCalls 个，嵌套结果保持与外层程序关联。最终超时时间与 maxSubCallsPerMinute 决定调用总额度；超限会终止程序。 |
-| `@deepseek-ai/dsh-plan-mode` | `exit_plan_mode` | `ctx.tools`、`ctx.systemPrompt`、`ctx.agents`、`ctx.userQuestions (execution time, opportunistic)` | `tool/call`、`plan/mode inactive on an approved review`、`tool/result` | - | 规划未激活时，exit_plan_mode 仍保留在面向模型的 schema 中，这样状态转换不会在规划策略变更之外额外造成工具目录变动。其执行路径会拒绝规划模式之外的调用；在规划模式下，它通过用户交互 seam 提交计划（批准／根据反馈继续规划），批准后会在步骤边界记录规划模式已停用。 |
-| `@deepseek-ai/dsh-tool-bash` | `bash` | `ctx.workingDirectory`、`ctx.tools`、`ctx.shell`、`ctx.systemPrompt`、`ctx.shellEnv`、`ctx.jobs for run_in_background and the job-backed foreground path` | `tool/call`、`tool/result` | - | bash 工具是 bash 执行器 seam 面向模型的消费方。组合中有 job 注册表时，每次调用一启动就注册到通用 `ctx.jobs` 运行时，并通过 `job_*` 工具（来自 `@deepseek-ai/dsh-tool-jobs`）收集／停止；没有注册表或 `enableRunInBackground: false` 时，工具注册不带 `run_in_background` 参数的纯前台 schema。 |
-| `@deepseek-ai/dsh-tool-office` | `office_convert`、`office_recalculate`、`office_render` | `ctx.workingDirectory`、`ctx.tools`、`ctx.fs`、`ctx.agents`、`ctx.officeKit`、`ctx.attachments and ctx.llm for office_render` | `tool/call`、`tool/result with rendered image attachments`、`temporary converted files in the Office kit output store` | - | Agent 成功加载 Office 技能后，从下一步起向其声明这些工具；上一次请求头已声明 Office 工具时继续保留。未安装 LibreOffice Kit 时，已声明工具的调用以 Office 服务的 unavailable 错误失败。 |
-| `@deepseek-ai/dsh-tool-present` | `present` | `ctx.workingDirectory`、`ctx.tools`, `ctx.fs`, `ctx.agents` | `tool/call`, `deliverables/presented 在成功的最终结果之后`, `tool/result` | - | 交付归调用方 Session 所有；Web ui-deliverables 提供源文件打开与卡片。 |
-| `@deepseek-ai/dsh-tool-pwsh` | `pwsh` | `ctx.workingDirectory`、`ctx.tools`、`ctx.shell`、`ctx.systemPrompt`、`ctx.shellEnv`、`ctx.jobs for run_in_background and the job-backed foreground path` | `tool/call`、`tool/result` | - | pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费方（由 `@deepseek-ai/dsh-pwsh-local` 等 PowerShell 执行器为 `ctx.shell` 提供后端）；除沙箱接口外，它逐项对应 bash 工具调用。使用 `run_in_background` 的运行会注册到通用 `ctx.jobs` 运行时，并通过 `job_*` 工具收集／停止；托管的 `DSH_*` 环境来自 `@deepseek-ai/dsh-shell-env`。每次调用都在新进程中运行，不使用持久 PTY 会话。路径采用原生 `C:\...` 形式，变量采用 `$env:NAME`。 |
-| `@deepseek-ai/dsh-tool-cordis` | `cordis_inspect` | `ctx.tools`, `ctx.cordisInspect` | `tool/call`, `tool/result` | - | 标准模式和创造模式提供一个只读运行时检查工具。省略 query 获取 provider 目录；传入 query 查询已声明的方法。Cordis host runner 提供检查注册表；Client 查询需要已连接页面。持久化变更编写为组合包，再通过 plugin_manager 安装。 |
-| `@deepseek-ai/dsh-tool-bash-persistent` | `bash` | `ctx.workingDirectory`、`ctx.tools`、`ctx.terminals`、`an owning Agent at execution time` | `tool/call`、`PTY shell state`、`tool/result` | - | 一个按所有者隔离的持久 bash 工具；部署组合提供 PTY 后端，并可覆盖面向模型的环境描述。 |
-| `@deepseek-ai/dsh-tool-pwsh-persistent` | `pwsh` | `ctx.workingDirectory`、`ctx.tools`、`ctx.terminals`、`an owning Agent at execution time` | `tool/call`、`PTY shell state`、`tool/result` | - | 一个按所有者隔离的持久 pwsh 工具，持久 bash 工具的 Windows 对应物；部署组合提供 pwsh 方言的 PTY 后端，并可覆盖面向模型的环境描述。 |
-| `@deepseek-ai/dsh-tool-str-replace-editor` | `str_replace_editor` | `ctx.tools`、`ctx.fs` | `tool/call`、`fs/observed after view presence/absence, edit absence, or successful mutation`、`tool/result` | - | 基于文件系统 seam 的独立查看／创建／唯一字面量替换／按行插入工具；可与任何 shell 或终端接口组合。 |
-| `@deepseek-ai/dsh-tool-fs` | `apply_patch`、`edit`、`read`、`read_image`、`write` | `ctx.workingDirectory`、`ctx.tools`、`ctx.fs`、`ctx.systemPrompt`、`ctx.attachments (image-tool registration)`、`ctx.llm + an image-capable route (image-tool execution)` | `tool/call`、`fs/write-intent, fs/edit-intent, or fs/delete-intent for mutations`、`fs/observed after read presence/absence or successful file operation`、`durable attachment (read_image)`、`tool/result` | - | 先读后写／编辑策略由 `@deepseek-ai/dsh-fs-observation-policy` 添加；它是一个 `fs/*` 事件门禁插件，不会改变 schema。随发行版交付的组合保持该行禁用，因此除非部署启用它，修改都是无条件的。没有 `ctx.attachments` 时图片工具不会注册；其 schema 与路由无关，执行时除非确切路由的模型声明图片输入，否则拒绝。`apply_patch` 仅在 `applyPatch: true` 时注册；目录为了记录其 schema 而开启该开关。`dsh-base` 与 Web 的 `standard` preset 开启它；Web 的 `ptc`、`cordis` preset 以及 PTC overlay 显式写出 `applyPatch: false`。 |
-| `@deepseek-ai/dsh-tool-fs-search` | `glob`、`grep` | `ctx.workingDirectory`、`ctx.tools`、`ctx.subprocess`、`ctx.systemPrompt` | `tool/call`、`tool/result` | - | glob 和 grep 是无条件可用的发现工具，通过 ctx.subprocess spawn 随包提供的 ripgrep 二进制文件（`@vscode/ripgrep`），并作为普通前台调用运行，绝不作为后台任务；无需在宿主机安装 `rg`，也不经过 shell 层。本目录使用 `sampleOverCapGlobResults: true`；部署必须显式选择该行为。结果超过上限时，会通过可选的 ctx.spillStore 后端保存完整的格式化列表；在共置部署中，如果后端公开本地路径，返回的定位信息可供后续读取／搜索。 |
-| `@deepseek-ai/dsh-tool-terminal` | `terminal_close`、`terminal_list`、`terminal_open`、`terminal_read`、`terminal_send`、`terminal_signal` | `ctx.workingDirectory`、`ctx.tools`、`ctx.terminals`、`ctx.systemPrompt`、`ctx.jobs at call time for run_in_background` | `tool/call`、`tool/result` | - | 这 6 个终端工具需要选择启用，用于补充一次性 bash／文件系统工具。`terminal_send(run_in_background: true)` 会注册到 `ctx.jobs`；schema 不包含 TUI、具名按键序列、BEL、调整尺寸、自动启动和跨 agent 共享。 |
-| `@deepseek-ai/dsh-terminal-panel` | `user_terminal_list`、`user_terminal_read` | `ctx.tools`、`ctx.systemPrompt`、`ctx.terminals`、`ctx.terminalController`、`ctx.sandboxPolicy`、`a calling Agent` | `tool/call`、`tool/result` | - | 本包还用 Web 侧栏终端承载 6 个 `terminal_*` 工具。`user_terminal_list` 和 `user_terminal_read` 只读取用户控制的终端；`readUserTerminals: false` 会移除这两个工具。 |
-| `@deepseek-ai/dsh-tool-goal` | `create_goal`、`get_goal`、`update_goal` | `ctx.tools`、`ctx.agents`、`ctx.goals`、`ctx.systemPrompt`、`a calling Agent in an authorized open turn` | `tool/call`、`goal/change for mutations`、`tool/result` | - | create、edit、pause 和 resume 要求直接来自人类的根权限；complete 和 blocked 也接受确切的当前 Goal Round。blocked 的默认下限是 3 个获准的 Round。 |
-| `@deepseek-ai/dsh-tool-schedule` | `schedule_create`、`schedule_edit`、`schedule_list`、`schedule_view` | `ctx.tools`、`ctx.schedule`、`ctx.systemPrompt` | `tool/call`、Schedule storage domain 创建、更新或删除、`tool/result` | - | preset 或 Agent scope 挂载本包，并决定哪些 Agent 获得工具。管理工具按 id 跨会话读写 Host 的任务。任务保存 RFC 5545 重复规则，执行位置可选已有会话、首次创建后复用的会话或每次运行新建的会话。委派子 Agent 不能调用这些工具。 |
-| `@deepseek-ai/dsh-tool-lsp` | `lsp` | `ctx.workingDirectory`、`ctx.tools`、`ctx.lsp`、`ctx.systemPrompt` | `tool/call`、`tool/result` | - | lsp 工具将提供方选择和语言服务器子进程置于 ctx.lsp 之后，因此其模型可见 schema 在更换提供方时保持稳定。运行时要求已注册提供方，例如 `@deepseek-ai/dsh-lsp-stdio`；如果没有提供方，查询会返回结构化 `LSP_UNAVAILABLE` 错误，而不会改变 schema。 |
-| `@deepseek-ai/dsh-tool-ralph` | `ralph` | `ctx.tools`、`ctx.workflowEngine`、`ctx.subagents`、`ctx.systemPrompt`、`a calling Agent (exec.agent parents every fresh round)` | `tool/call`、`tool/result`、`workflow and child session events during execution` | - | 固定的前台工作流会在每个 Round 启动一个全新的结构化子级；模型只能选择不可变目标和可选的 Round 上限。 |
-| `@deepseek-ai/dsh-tool-skill` | `skill` | `ctx.workingDirectory`、`ctx.tools`、`ctx.agents`、`ctx.skills` | `tool/call`、`tool/result`、`user/message replacement catalogs via agent.inject()` | - | - |
-| `@deepseek-ai/dsh-tool-session-list` | `list_session`、`list_workspace` | `ctx.tools`、`ctx.sessions`、`ctx.sessionQuery`、`ctx.workspaceRegistry`、`ctx.sessionProjections` | `tool/call`、`tool/result` | - | 选择启用后，可读取已挂载运行时中全部 Workspace 和 Session 的列表元数据。冷会话的标题和活动时间使用可选的投影缓存；值缺失时，标题为 null，最近活动时间取创建时间。不会激活 Agent。 |
-| `@deepseek-ai/dsh-tool-session-query` | `session_event_read`、`session_event_search`、`session_event_trace`、`session_search`、`session_trace` | `ctx.tools`、`ctx.systemPrompt`、`ctx.sessionQuery`、`a calling Agent for workspace authority` | `tool/call`、`tool/result` | - | 这 5 个只读工具会隐藏提供方游标，并根据不可变的调用 agent 会话为每个结果授权。该包需要选择启用；需要强制截止时间或限制行内输出的组合还会挂载通用超时或 spill 策略。 |
-| `@deepseek-ai/dsh-experimental-tool-subagent-oar` | `subagent_oar` | `ctx.tools`, `ctx.subagents` | `tool/call`, `tool/result`, `parent subagent catalog and completion notices` | - | subagent_oar 工具在为外部提供方配置的别名之间选择。本目录展示 Codex 和 Claude Code 别名；每个部署自行选择提供方。原生模型和权限设置由所选提供方的配置决定。 |
-| `@deepseek-ai/dsh-tool-subagent` | `list_subagent_models`、`subagent` | `ctx.tools`、`ctx.subagents`、`ctx.systemPrompt`、`ctx.sessionProjections`、`用于模型发现和所选路由校验的 ctx.llm` | `tool/call`、`tool/result`、`child session events through the chosen provider` | `subagent`、`subagent_fork` | 加载时的 `toolName` 选择委派名称（默认为 `subagent`）；`modelSelection` 增加可选路由字段。`modelDiscovery` 默认关闭，每个作用域由一个实例注册共享发现工具。Web 与 Desktop preset 启用 spawn 发现和路由字段，并为 `subagent_fork` 保持路由字段关闭。Host 设置服务为每个新顶层 Session 记录授权；子 Session 继承该授权。没有已记录策略时，发现和显式选择只允许当前父级路由。每次委派都会立即返回子代理的名称；本地子代理接受后续消息，外部后端自动汇报单次执行结果。 |
-| `@deepseek-ai/dsh-tool-subagent-control` | `interrupt_agent`、`list_agents`、`send_message`、`wait_agent` | `ctx.tools`、`ctx.subagents`、`ctx.agents` | `tool/call`、`tool/result`、`child session events through ctx.subagents` | - | 共享控制工具发现并联系 subagent 树中的 Agent，中断有权控制的后代，并等待调用者收件箱中的输入。绑定提供方的 `tool-subagent` 实例提供委派工具。 |
-| `@deepseek-ai/dsh-tool-jobs` | `job_kill`、`job_list`、`job_output` | `ctx.tools`、`ctx.jobs`、`ctx.systemPrompt` | `tool/call`、`tool/result`、`user/message via agent.inject() for background completion notices` | - | 与任务种类无关的后台任务控制器：后台 bash 命令与 PTY 发送 都通过相同的 3 个工具读取、列出和终止。加载该插件会挂接控制器，从而启用生产方的 `ctx.jobs.start()`。 |
-| `@deepseek-ai/dsh-tool-agent-team` | `team_task_create`, `team_task_get`, `team_task_list`, `team_task_update` | `ctx.tools`, `ctx.systemPrompt`, `ctx.agentTeams`, `ctx.subagents`, `an exact live Team member Agent` | `tool/call`, `team/task`, `tool/result` | - | 四个任务板工具共享 subagent 树的根 Session。在根 Session 开启 Team 模式，会在标准 subagent 委派和控制工具之外增加任务板指导。标准 subagent 控制工具提供必需身份，不受 Team 模式影响；其结果汇报要求仅在 Team 模式关闭时出现。 |
-| `@deepseek-ai/dsh-tool-todo` | `todo_write` | `ctx.tools`、`owning Agent session` | `tool/call`、`todo/write`、`tool/result` | - | todo_write 是会话所有的状态；UI 将最新的 todo/write 事件渲染为检查清单。`allowParallelInProgress` 是没有默认值的必填项，因此本目录明确选择 `true`，对应描述允许同时存在多个 `in_progress` 项。选择 `false` 的部署会获得同一工具，但描述会要求只能有 1 个活动任务。 |
-| `@deepseek-ai/dsh-experimental-tool-worktree` | `enter_worktree`, `exit_worktree` | `ctx.tools`, `ctx.worktrees`, `a calling Agent` | `tool/call`, `Git branch and checkout`, `workspace-root/change`, `tool/result` | - | 在 Web 和 Desktop 上通过变更请求与工作树组合包启用；其他 profile 可以选择独立组合包。`enter_worktree` 把 Session 移入名称在它所在检出的池中选中的工作树，没有同名工作树时在现有写权限下从固定的本地提交创建新分支与检出目录。`exit_worktree` 把 Session 送回它来自的检出目录；分支与检出目录保留。 |
-| `@deepseek-ai/dsh-tool-workflow` | `workflow` | `ctx.tools`、`ctx.workflowEngine`、`ctx.systemPrompt`、`a calling Agent (exec.agent parents the script children)` | `tool/call`、`tool/result` | - | - |
-| `@deepseek-ai/dsh-tool-workspace-dependencies` | `load_workspace_dependencies` | `ctx.tools` | `tool/call`, `tool/result` | - | - |
-| `@deepseek-ai/dsh-tool-web` | `web_fetch`、`web_search` | `ctx.tools`、`ctx.web`、`ctx.systemPrompt` | `tool/call`、`tool/result` | - | web_search 和 web_fetch 将提供方选择置于 ctx.web 之后，使模型可见 schema 在更换后端时保持稳定。 |
+| `@reevo/dsh-tool-session-control` | `session_send_message` | `ctx.tools`、`ctx.sessionController`、`ctx.workspaceRegistry`、调用 Agent | `tool/call`、接收方的 `agent/inbox/spliced`、`tool/result` | - | dsh-web-app bundle 以禁用行挂载本包；Web Session controller 负责激活每个目标。 |
+| `@reevo/dsh-plugin-manager` | `plugin_manager` | `ctx.tools`, `ctx.pluginManager`, `ctx.sandboxPolicy` | `tool/call`, `tool/result`, `user/message` | - | - |
+| `@reevo/dsh-plugin-market` | `plugin_market` | `ctx.tools`, `ctx.pluginMarket` | `tool/call`, `tool/result` | - | - |
+| `@reevo/dsh-mcp-resources` | `list_mcp_resource_templates`, `list_mcp_resources`, `read_mcp_resource` | `ctx.tools`, `ctx.mcpResources` | `tool/call`, `tool/result` | - | - |
+| `@reevo/dsh-experimental-browser-use-stagehand-native` | `stagehand_act`、`stagehand_extract`、`stagehand_navigate`、`stagehand_observe`、`stagehand_screenshot`、`stagehand_tabs` | `ctx.browserUse`、`ctx.agents`、`ctx.tools`、`ctx.systemPrompt` | `tool/call`、`tool/result` | - | - |
+| `@reevo/dsh-tool-ask-user` | `ask_user_question` | `ctx.tools`、`ctx.userQuestions` | `tool/call`、`tool/result after an answer or timeout`、`late user/message` | - | ask_user_question 默认保持原有阻塞行为；设置 `mode: timed` 后才启用前台超时与 pending 结果，同时问题仍可回答；timed 模式内 `timeout: -1` 让本次调用无限期阻塞。 |
+| `@reevo/dsh-tool-executor-ptc` | `run_code` | `ctx.workingDirectory (Agent executions)`、`ctx.tools`、`ctx.ptcRuntime`、`ctx.systemPrompt` | `tool/call`、`one tool/ptc-dispatch-start + tool/ptc-dispatch pair per bridged sub-call`、`tool/result` | - | PTC 执行器只向模型公开 run_code，并在生成的 TypeScript SDK 中声明其他可见能力。程序绑定按提交顺序进入共享的受守卫工具流水线；并行安全的函数体最多重叠 maxParallelSubCalls 个，嵌套结果保持与外层程序关联。最终超时时间与 maxSubCallsPerMinute 决定调用总额度；超限会终止程序。 |
+| `@reevo/dsh-plan-mode` | `exit_plan_mode` | `ctx.tools`、`ctx.systemPrompt`、`ctx.agents`、`ctx.userQuestions (execution time, opportunistic)` | `tool/call`、`plan/mode inactive on an approved review`、`tool/result` | - | 规划未激活时，exit_plan_mode 仍保留在面向模型的 schema 中，这样状态转换不会在规划策略变更之外额外造成工具目录变动。其执行路径会拒绝规划模式之外的调用；在规划模式下，它通过用户交互 seam 提交计划（批准／根据反馈继续规划），批准后会在步骤边界记录规划模式已停用。 |
+| `@reevo/dsh-tool-bash` | `bash` | `ctx.workingDirectory`、`ctx.tools`、`ctx.shell`、`ctx.systemPrompt`、`ctx.shellEnv`、`ctx.jobs for run_in_background and the job-backed foreground path` | `tool/call`、`tool/result` | - | bash 工具是 bash 执行器 seam 面向模型的消费方。组合中有 job 注册表时，每次调用一启动就注册到通用 `ctx.jobs` 运行时，并通过 `job_*` 工具（来自 `@reevo/dsh-tool-jobs`）收集／停止；没有注册表或 `enableRunInBackground: false` 时，工具注册不带 `run_in_background` 参数的纯前台 schema。 |
+| `@reevo/dsh-tool-office` | `office_convert`、`office_recalculate`、`office_render` | `ctx.workingDirectory`、`ctx.tools`、`ctx.fs`、`ctx.agents`、`ctx.officeKit`、`ctx.attachments and ctx.llm for office_render` | `tool/call`、`tool/result with rendered image attachments`、`temporary converted files in the Office kit output store` | - | Agent 成功加载 Office 技能后，从下一步起向其声明这些工具；上一次请求头已声明 Office 工具时继续保留。未安装 LibreOffice Kit 时，已声明工具的调用以 Office 服务的 unavailable 错误失败。 |
+| `@reevo/dsh-tool-present` | `present` | `ctx.workingDirectory`、`ctx.tools`, `ctx.fs`, `ctx.agents` | `tool/call`, `deliverables/presented 在成功的最终结果之后`, `tool/result` | - | 交付归调用方 Session 所有；Web ui-deliverables 提供源文件打开与卡片。 |
+| `@reevo/dsh-tool-pwsh` | `pwsh` | `ctx.workingDirectory`、`ctx.tools`、`ctx.shell`、`ctx.systemPrompt`、`ctx.shellEnv`、`ctx.jobs for run_in_background and the job-backed foreground path` | `tool/call`、`tool/result` | - | pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费方（由 `@reevo/dsh-pwsh-local` 等 PowerShell 执行器为 `ctx.shell` 提供后端）；除沙箱接口外，它逐项对应 bash 工具调用。使用 `run_in_background` 的运行会注册到通用 `ctx.jobs` 运行时，并通过 `job_*` 工具收集／停止；托管的 `DSH_*` 环境来自 `@reevo/dsh-shell-env`。每次调用都在新进程中运行，不使用持久 PTY 会话。路径采用原生 `C:\...` 形式，变量采用 `$env:NAME`。 |
+| `@reevo/dsh-tool-cordis` | `cordis_inspect` | `ctx.tools`, `ctx.cordisInspect` | `tool/call`, `tool/result` | - | 标准模式和创造模式提供一个只读运行时检查工具。省略 query 获取 provider 目录；传入 query 查询已声明的方法。Cordis host runner 提供检查注册表；Client 查询需要已连接页面。持久化变更编写为组合包，再通过 plugin_manager 安装。 |
+| `@reevo/dsh-tool-bash-persistent` | `bash` | `ctx.workingDirectory`、`ctx.tools`、`ctx.terminals`、`an owning Agent at execution time` | `tool/call`、`PTY shell state`、`tool/result` | - | 一个按所有者隔离的持久 bash 工具；部署组合提供 PTY 后端，并可覆盖面向模型的环境描述。 |
+| `@reevo/dsh-tool-pwsh-persistent` | `pwsh` | `ctx.workingDirectory`、`ctx.tools`、`ctx.terminals`、`an owning Agent at execution time` | `tool/call`、`PTY shell state`、`tool/result` | - | 一个按所有者隔离的持久 pwsh 工具，持久 bash 工具的 Windows 对应物；部署组合提供 pwsh 方言的 PTY 后端，并可覆盖面向模型的环境描述。 |
+| `@reevo/dsh-tool-str-replace-editor` | `str_replace_editor` | `ctx.tools`、`ctx.fs` | `tool/call`、`fs/observed after view presence/absence, edit absence, or successful mutation`、`tool/result` | - | 基于文件系统 seam 的独立查看／创建／唯一字面量替换／按行插入工具；可与任何 shell 或终端接口组合。 |
+| `@reevo/dsh-tool-fs` | `apply_patch`、`edit`、`read`、`read_image`、`write` | `ctx.workingDirectory`、`ctx.tools`、`ctx.fs`、`ctx.systemPrompt`、`ctx.attachments (image-tool registration)`、`ctx.llm + an image-capable route (image-tool execution)` | `tool/call`、`fs/write-intent, fs/edit-intent, or fs/delete-intent for mutations`、`fs/observed after read presence/absence or successful file operation`、`durable attachment (read_image)`、`tool/result` | - | 先读后写／编辑策略由 `@reevo/dsh-fs-observation-policy` 添加；它是一个 `fs/*` 事件门禁插件，不会改变 schema。随发行版交付的组合保持该行禁用，因此除非部署启用它，修改都是无条件的。没有 `ctx.attachments` 时图片工具不会注册；其 schema 与路由无关，执行时除非确切路由的模型声明图片输入，否则拒绝。`apply_patch` 仅在 `applyPatch: true` 时注册；目录为了记录其 schema 而开启该开关。`dsh-base` 与 Web 的 `standard` preset 开启它；Web 的 `ptc`、`cordis` preset 以及 PTC overlay 显式写出 `applyPatch: false`。 |
+| `@reevo/dsh-tool-fs-search` | `glob`、`grep` | `ctx.workingDirectory`、`ctx.tools`、`ctx.subprocess`、`ctx.systemPrompt` | `tool/call`、`tool/result` | - | glob 和 grep 是无条件可用的发现工具，通过 ctx.subprocess spawn 随包提供的 ripgrep 二进制文件（`@vscode/ripgrep`），并作为普通前台调用运行，绝不作为后台任务；无需在宿主机安装 `rg`，也不经过 shell 层。本目录使用 `sampleOverCapGlobResults: true`；部署必须显式选择该行为。结果超过上限时，会通过可选的 ctx.spillStore 后端保存完整的格式化列表；在共置部署中，如果后端公开本地路径，返回的定位信息可供后续读取／搜索。 |
+| `@reevo/dsh-tool-terminal` | `terminal_close`、`terminal_list`、`terminal_open`、`terminal_read`、`terminal_send`、`terminal_signal` | `ctx.workingDirectory`、`ctx.tools`、`ctx.terminals`、`ctx.systemPrompt`、`ctx.jobs at call time for run_in_background` | `tool/call`、`tool/result` | - | 这 6 个终端工具需要选择启用，用于补充一次性 bash／文件系统工具。`terminal_send(run_in_background: true)` 会注册到 `ctx.jobs`；schema 不包含 TUI、具名按键序列、BEL、调整尺寸、自动启动和跨 agent 共享。 |
+| `@reevo/dsh-terminal-panel` | `user_terminal_list`、`user_terminal_read` | `ctx.tools`、`ctx.systemPrompt`、`ctx.terminals`、`ctx.terminalController`、`ctx.sandboxPolicy`、`a calling Agent` | `tool/call`、`tool/result` | - | 本包还用 Web 侧栏终端承载 6 个 `terminal_*` 工具。`user_terminal_list` 和 `user_terminal_read` 只读取用户控制的终端；`readUserTerminals: false` 会移除这两个工具。 |
+| `@reevo/dsh-tool-goal` | `create_goal`、`get_goal`、`update_goal` | `ctx.tools`、`ctx.agents`、`ctx.goals`、`ctx.systemPrompt`、`a calling Agent in an authorized open turn` | `tool/call`、`goal/change for mutations`、`tool/result` | - | create、edit、pause 和 resume 要求直接来自人类的根权限；complete 和 blocked 也接受确切的当前 Goal Round。blocked 的默认下限是 3 个获准的 Round。 |
+| `@reevo/dsh-tool-schedule` | `schedule_create`、`schedule_edit`、`schedule_list`、`schedule_view` | `ctx.tools`、`ctx.schedule`、`ctx.systemPrompt` | `tool/call`、Schedule storage domain 创建、更新或删除、`tool/result` | - | preset 或 Agent scope 挂载本包，并决定哪些 Agent 获得工具。管理工具按 id 跨会话读写 Host 的任务。任务保存 RFC 5545 重复规则，执行位置可选已有会话、首次创建后复用的会话或每次运行新建的会话。委派子 Agent 不能调用这些工具。 |
+| `@reevo/dsh-tool-lsp` | `lsp` | `ctx.workingDirectory`、`ctx.tools`、`ctx.lsp`、`ctx.systemPrompt` | `tool/call`、`tool/result` | - | lsp 工具将提供方选择和语言服务器子进程置于 ctx.lsp 之后，因此其模型可见 schema 在更换提供方时保持稳定。运行时要求已注册提供方，例如 `@reevo/dsh-lsp-stdio`；如果没有提供方，查询会返回结构化 `LSP_UNAVAILABLE` 错误，而不会改变 schema。 |
+| `@reevo/dsh-tool-ralph` | `ralph` | `ctx.tools`、`ctx.workflowEngine`、`ctx.subagents`、`ctx.systemPrompt`、`a calling Agent (exec.agent parents every fresh round)` | `tool/call`、`tool/result`、`workflow and child session events during execution` | - | 固定的前台工作流会在每个 Round 启动一个全新的结构化子级；模型只能选择不可变目标和可选的 Round 上限。 |
+| `@reevo/dsh-tool-skill` | `skill` | `ctx.workingDirectory`、`ctx.tools`、`ctx.agents`、`ctx.skills` | `tool/call`、`tool/result`、`user/message replacement catalogs via agent.inject()` | - | - |
+| `@reevo/dsh-tool-session-list` | `list_session`、`list_workspace` | `ctx.tools`、`ctx.sessions`、`ctx.sessionQuery`、`ctx.workspaceRegistry`、`ctx.sessionProjections` | `tool/call`、`tool/result` | - | 选择启用后，可读取已挂载运行时中全部 Workspace 和 Session 的列表元数据。冷会话的标题和活动时间使用可选的投影缓存；值缺失时，标题为 null，最近活动时间取创建时间。不会激活 Agent。 |
+| `@reevo/dsh-tool-session-query` | `session_event_read`、`session_event_search`、`session_event_trace`、`session_search`、`session_trace` | `ctx.tools`、`ctx.systemPrompt`、`ctx.sessionQuery`、`a calling Agent for workspace authority` | `tool/call`、`tool/result` | - | 这 5 个只读工具会隐藏提供方游标，并根据不可变的调用 agent 会话为每个结果授权。该包需要选择启用；需要强制截止时间或限制行内输出的组合还会挂载通用超时或 spill 策略。 |
+| `@reevo/dsh-experimental-tool-subagent-oar` | `subagent_oar` | `ctx.tools`, `ctx.subagents` | `tool/call`, `tool/result`, `parent subagent catalog and completion notices` | - | subagent_oar 工具在为外部提供方配置的别名之间选择。本目录展示 Codex 和 Claude Code 别名；每个部署自行选择提供方。原生模型和权限设置由所选提供方的配置决定。 |
+| `@reevo/dsh-tool-subagent` | `list_subagent_models`、`subagent` | `ctx.tools`、`ctx.subagents`、`ctx.systemPrompt`、`ctx.sessionProjections`、`用于模型发现和所选路由校验的 ctx.llm` | `tool/call`、`tool/result`、`child session events through the chosen provider` | `subagent`、`subagent_fork` | 加载时的 `toolName` 选择委派名称（默认为 `subagent`）；`modelSelection` 增加可选路由字段。`modelDiscovery` 默认关闭，每个作用域由一个实例注册共享发现工具。Web 与 Desktop preset 启用 spawn 发现和路由字段，并为 `subagent_fork` 保持路由字段关闭。Host 设置服务为每个新顶层 Session 记录授权；子 Session 继承该授权。没有已记录策略时，发现和显式选择只允许当前父级路由。每次委派都会立即返回子代理的名称；本地子代理接受后续消息，外部后端自动汇报单次执行结果。 |
+| `@reevo/dsh-tool-subagent-control` | `interrupt_agent`、`list_agents`、`send_message`、`wait_agent` | `ctx.tools`、`ctx.subagents`、`ctx.agents` | `tool/call`、`tool/result`、`child session events through ctx.subagents` | - | 共享控制工具发现并联系 subagent 树中的 Agent，中断有权控制的后代，并等待调用者收件箱中的输入。绑定提供方的 `tool-subagent` 实例提供委派工具。 |
+| `@reevo/dsh-tool-jobs` | `job_kill`、`job_list`、`job_output` | `ctx.tools`、`ctx.jobs`、`ctx.systemPrompt` | `tool/call`、`tool/result`、`user/message via agent.inject() for background completion notices` | - | 与任务种类无关的后台任务控制器：后台 bash 命令与 PTY 发送 都通过相同的 3 个工具读取、列出和终止。加载该插件会挂接控制器，从而启用生产方的 `ctx.jobs.start()`。 |
+| `@reevo/dsh-tool-agent-team` | `team_task_create`, `team_task_get`, `team_task_list`, `team_task_update` | `ctx.tools`, `ctx.systemPrompt`, `ctx.agentTeams`, `ctx.subagents`, `an exact live Team member Agent` | `tool/call`, `team/task`, `tool/result` | - | 四个任务板工具共享 subagent 树的根 Session。在根 Session 开启 Team 模式，会在标准 subagent 委派和控制工具之外增加任务板指导。标准 subagent 控制工具提供必需身份，不受 Team 模式影响；其结果汇报要求仅在 Team 模式关闭时出现。 |
+| `@reevo/dsh-tool-todo` | `todo_write` | `ctx.tools`、`owning Agent session` | `tool/call`、`todo/write`、`tool/result` | - | todo_write 是会话所有的状态；UI 将最新的 todo/write 事件渲染为检查清单。`allowParallelInProgress` 是没有默认值的必填项，因此本目录明确选择 `true`，对应描述允许同时存在多个 `in_progress` 项。选择 `false` 的部署会获得同一工具，但描述会要求只能有 1 个活动任务。 |
+| `@reevo/dsh-experimental-tool-worktree` | `enter_worktree`, `exit_worktree` | `ctx.tools`, `ctx.worktrees`, `a calling Agent` | `tool/call`, `Git branch and checkout`, `workspace-root/change`, `tool/result` | - | 在 Web 和 Desktop 上通过变更请求与工作树组合包启用；其他 profile 可以选择独立组合包。`enter_worktree` 把 Session 移入名称在它所在检出的池中选中的工作树，没有同名工作树时在现有写权限下从固定的本地提交创建新分支与检出目录。`exit_worktree` 把 Session 送回它来自的检出目录；分支与检出目录保留。 |
+| `@reevo/dsh-tool-workflow` | `workflow` | `ctx.tools`、`ctx.workflowEngine`、`ctx.systemPrompt`、`a calling Agent (exec.agent parents the script children)` | `tool/call`、`tool/result` | - | - |
+| `@reevo/dsh-tool-workspace-dependencies` | `load_workspace_dependencies` | `ctx.tools` | `tool/call`, `tool/result` | - | - |
+| `@reevo/dsh-tool-web` | `web_fetch`、`web_search` | `ctx.tools`、`ctx.web`、`ctx.systemPrompt` | `tool/call`、`tool/result` | - | web_search 和 web_fetch 将提供方选择置于 ctx.web 之后，使模型可见 schema 在更换后端时保持稳定。 |
 
 <a id="deepseek-aidsh-tool-session-control"></a>
 
-## `@deepseek-ai/dsh-tool-session-control`
+## `@reevo/dsh-tool-session-control`
 
 ### `session_send_message`
 
@@ -91,7 +91,7 @@ dsh-web-app bundle 以禁用行挂载本包；Web Session controller 负责激�
 
 <a id="deepseek-aidsh-plugin-manager"></a>
 
-## `@deepseek-ai/dsh-plugin-manager`
+## `@reevo/dsh-plugin-manager`
 
 ### `plugin_manager`
 
@@ -161,7 +161,7 @@ dsh-web-app bundle 以禁用行挂载本包；Web Session controller 负责激�
 
 <a id="deepseek-aidsh-plugin-market"></a>
 
-## `@deepseek-ai/dsh-plugin-market`
+## `@reevo/dsh-plugin-market`
 
 ### `plugin_market`
 
@@ -211,7 +211,7 @@ dsh-web-app bundle 以禁用行挂载本包；Web Session controller 负责激�
 
 <a id="deepseek-aidsh-mcp-resources"></a>
 
-## `@deepseek-ai/dsh-mcp-resources`
+## `@reevo/dsh-mcp-resources`
 
 ### `list_mcp_resource_templates`
 
@@ -291,7 +291,7 @@ dsh-web-app bundle 以禁用行挂载本包；Web Session controller 负责激�
 
 <a id="deepseek-aidsh-experimental-browser-use-stagehand-native"></a>
 
-## `@deepseek-ai/dsh-experimental-browser-use-stagehand-native`
+## `@reevo/dsh-experimental-browser-use-stagehand-native`
 
 ### `stagehand_act`
 
@@ -538,7 +538,7 @@ dsh-web-app bundle 以禁用行挂载本包；Web Session controller 负责激�
 
 <a id="deepseek-aidsh-tool-ask-user"></a>
 
-## `@deepseek-ai/dsh-tool-ask-user`
+## `@reevo/dsh-tool-ask-user`
 
 ### `ask_user_question`
 
@@ -612,7 +612,7 @@ ask_user_question 默认保持原有阻塞行为；设置 `mode: timed` 后才�
 
 <a id="deepseek-aidsh-tool-executor-ptc"></a>
 
-## `@deepseek-ai/dsh-tool-executor-ptc`
+## `@reevo/dsh-tool-executor-ptc`
 
 ### `run_code`
 
@@ -660,7 +660,7 @@ PTC 执行器只向模型公开 run_code，并在生成的 TypeScript SDK 中声
 
 <a id="deepseek-aidsh-plan-mode"></a>
 
-## `@deepseek-ai/dsh-plan-mode`
+## `@reevo/dsh-plan-mode`
 
 ### `exit_plan_mode`
 
@@ -687,7 +687,7 @@ PTC 执行器只向模型公开 run_code，并在生成的 TypeScript SDK 中声
 
 <a id="deepseek-aidsh-tool-bash"></a>
 
-## `@deepseek-ai/dsh-tool-bash`
+## `@reevo/dsh-tool-bash`
 
 ### `bash`
 
@@ -727,11 +727,11 @@ PTC 执行器只向模型公开 run_code，并在生成的 TypeScript SDK 中声
 
 来源：[`packages/shell/tool-bash/src/index.ts`](../packages/shell/tool-bash/src/index.ts)
 
-bash 工具是 bash 执行器 seam 面向模型的消费方。组合中有 job 注册表时，每次调用一启动就注册到通用 `ctx.jobs` 运行时，并通过 `job_*` 工具（来自 `@deepseek-ai/dsh-tool-jobs`）收集／停止；没有注册表或 `enableRunInBackground: false` 时，工具注册不带 `run_in_background` 参数的纯前台 schema。
+bash 工具是 bash 执行器 seam 面向模型的消费方。组合中有 job 注册表时，每次调用一启动就注册到通用 `ctx.jobs` 运行时，并通过 `job_*` 工具（来自 `@reevo/dsh-tool-jobs`）收集／停止；没有注册表或 `enableRunInBackground: false` 时，工具注册不带 `run_in_background` 参数的纯前台 schema。
 
 <a id="deepseek-aidsh-tool-office"></a>
 
-## `@deepseek-ai/dsh-tool-office`
+## `@reevo/dsh-tool-office`
 
 ### `office_convert`
 
@@ -848,7 +848,7 @@ Agent 成功加载 Office 技能后，从下一步起向其声明这些工具；
 
 <a id="deepseek-aidsh-tool-present"></a>
 
-## `@deepseek-ai/dsh-tool-present`
+## `@reevo/dsh-tool-present`
 
 ### `present`
 
@@ -892,7 +892,7 @@ Agent 成功加载 Office 技能后，从下一步起向其声明这些工具；
 
 <a id="deepseek-aidsh-tool-pwsh"></a>
 
-## `@deepseek-ai/dsh-tool-pwsh`
+## `@reevo/dsh-tool-pwsh`
 
 ### `pwsh`
 
@@ -932,11 +932,11 @@ Agent 成功加载 Office 技能后，从下一步起向其声明这些工具；
 
 来源：[`packages/shell/tool-pwsh/src/index.ts`](../packages/shell/tool-pwsh/src/index.ts)
 
-pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费方（由 `@deepseek-ai/dsh-pwsh-local` 等 PowerShell 执行器为 `ctx.shell` 提供后端）；除沙箱接口外，它逐项对应 bash 工具调用。使用 `run_in_background` 的运行会注册到通用 `ctx.jobs` 运行时，并通过 `job_*` 工具收集／停止；托管的 `DSH_*` 环境来自 `@deepseek-ai/dsh-shell-env`。每次调用都在新进程中运行，不使用持久 PTY 会话。路径采用原生 `C:\...` 形式，变量采用 `$env:NAME`。
+pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费方（由 `@reevo/dsh-pwsh-local` 等 PowerShell 执行器为 `ctx.shell` 提供后端）；除沙箱接口外，它逐项对应 bash 工具调用。使用 `run_in_background` 的运行会注册到通用 `ctx.jobs` 运行时，并通过 `job_*` 工具收集／停止；托管的 `DSH_*` 环境来自 `@reevo/dsh-shell-env`。每次调用都在新进程中运行，不使用持久 PTY 会话。路径采用原生 `C:\...` 形式，变量采用 `$env:NAME`。
 
 <a id="deepseek-aidsh-tool-cordis"></a>
 
-## `@deepseek-ai/dsh-tool-cordis`
+## `@reevo/dsh-tool-cordis`
 
 ### `cordis_inspect`
 
@@ -986,7 +986,7 @@ pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费
 
 <a id="deepseek-aidsh-tool-bash-persistent"></a>
 
-## `@deepseek-ai/dsh-tool-bash-persistent`
+## `@reevo/dsh-tool-bash-persistent`
 
 ### `bash`
 
@@ -1013,7 +1013,7 @@ pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费
 
 <a id="deepseek-aidsh-tool-pwsh-persistent"></a>
 
-## `@deepseek-ai/dsh-tool-pwsh-persistent`
+## `@reevo/dsh-tool-pwsh-persistent`
 
 ### `pwsh`
 
@@ -1040,7 +1040,7 @@ pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费
 
 <a id="deepseek-aidsh-tool-str-replace-editor"></a>
 
-## `@deepseek-ai/dsh-tool-str-replace-editor`
+## `@reevo/dsh-tool-str-replace-editor`
 
 ### `str_replace_editor`
 
@@ -1148,7 +1148,7 @@ pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费
 
 <a id="deepseek-aidsh-tool-fs"></a>
 
-## `@deepseek-ai/dsh-tool-fs`
+## `@reevo/dsh-tool-fs`
 
 ### `apply_patch`
 
@@ -1282,11 +1282,11 @@ pwsh 工具是 Windows 组合中 bash 执行器 seam 的 PowerShell 方言消费
 
 来源：[`packages/fs/tool-fs/src/index.ts`](../packages/fs/tool-fs/src/index.ts)
 
-先读后写／编辑策略由 `@deepseek-ai/dsh-fs-observation-policy` 添加；它是一个 `fs/*` 事件门禁插件，不会改变 schema。随发行版交付的组合保持该行禁用，因此除非部署启用它，修改都是无条件的。没有 `ctx.attachments` 时图片工具不会注册；其 schema 与路由无关，执行时除非确切路由的模型声明图片输入，否则拒绝。`apply_patch` 仅在 `applyPatch: true` 时注册；目录为了记录其 schema 而开启该开关。`dsh-base` 与 Web 的 `standard` preset 开启它；Web 的 `ptc`、`cordis` preset 以及 PTC overlay 显式写出 `applyPatch: false`。
+先读后写／编辑策略由 `@reevo/dsh-fs-observation-policy` 添加；它是一个 `fs/*` 事件门禁插件，不会改变 schema。随发行版交付的组合保持该行禁用，因此除非部署启用它，修改都是无条件的。没有 `ctx.attachments` 时图片工具不会注册；其 schema 与路由无关，执行时除非确切路由的模型声明图片输入，否则拒绝。`apply_patch` 仅在 `applyPatch: true` 时注册；目录为了记录其 schema 而开启该开关。`dsh-base` 与 Web 的 `standard` preset 开启它；Web 的 `ptc`、`cordis` preset 以及 PTC overlay 显式写出 `applyPatch: false`。
 
 <a id="deepseek-aidsh-tool-fs-search"></a>
 
-## `@deepseek-ai/dsh-tool-fs-search`
+## `@reevo/dsh-tool-fs-search`
 
 ### `glob`
 
@@ -1346,7 +1346,7 @@ glob 和 grep 是无条件可用的发现工具，通过 ctx.subprocess spawn �
 
 <a id="deepseek-aidsh-experimental-tool-terminal"></a>
 
-## `@deepseek-ai/dsh-tool-terminal`
+## `@reevo/dsh-tool-terminal`
 
 ### `terminal_close`
 
@@ -1511,7 +1511,7 @@ glob 和 grep 是无条件可用的发现工具，通过 ctx.subprocess spawn �
 
 <a id="deepseek-aidsh-terminal-panel"></a>
 
-## `@deepseek-ai/dsh-terminal-panel`
+## `@reevo/dsh-terminal-panel`
 
 ### `user_terminal_list`
 
@@ -1555,7 +1555,7 @@ glob 和 grep 是无条件可用的发现工具，通过 ctx.subprocess spawn �
 
 <a id="deepseek-aidsh-tool-goal"></a>
 
-## `@deepseek-ai/dsh-tool-goal`
+## `@reevo/dsh-tool-goal`
 
 ### `create_goal`
 
@@ -1649,7 +1649,7 @@ create、edit、pause 和 resume 要求直接来自人类的根权限；complete
 
 <a id="deepseek-aidsh-tool-schedule"></a>
 
-## `@deepseek-ai/dsh-tool-schedule`
+## `@reevo/dsh-tool-schedule`
 
 ### `schedule_create`
 
@@ -1802,7 +1802,7 @@ preset 或 Agent scope 挂载本包，并决定哪些 Agent 获得工具。管�
 
 <a id="deepseek-aidsh-tool-lsp"></a>
 
-## `@deepseek-ai/dsh-tool-lsp`
+## `@reevo/dsh-tool-lsp`
 
 ### `lsp`
 
@@ -1846,11 +1846,11 @@ preset 或 Agent scope 挂载本包，并决定哪些 Agent 获得工具。管�
 
 来源：[`packages/lsp/tool-lsp/src/index.ts`](../packages/lsp/tool-lsp/src/index.ts)
 
-lsp 工具将提供方选择和语言服务器子进程置于 ctx.lsp 之后，因此其模型可见 schema 在更换提供方时保持稳定。运行时要求已注册提供方，例如 `@deepseek-ai/dsh-lsp-stdio`；如果没有提供方，查询会返回结构化 `LSP_UNAVAILABLE` 错误，而不会改变 schema。
+lsp 工具将提供方选择和语言服务器子进程置于 ctx.lsp 之后，因此其模型可见 schema 在更换提供方时保持稳定。运行时要求已注册提供方，例如 `@reevo/dsh-lsp-stdio`；如果没有提供方，查询会返回结构化 `LSP_UNAVAILABLE` 错误，而不会改变 schema。
 
 <a id="deepseek-aidsh-experimental-tool-ralph"></a>
 
-## `@deepseek-ai/dsh-tool-ralph`
+## `@reevo/dsh-tool-ralph`
 
 ### `ralph`
 
@@ -1881,7 +1881,7 @@ lsp 工具将提供方选择和语言服务器子进程置于 ctx.lsp 之后，�
 
 <a id="deepseek-aidsh-tool-skill"></a>
 
-## `@deepseek-ai/dsh-tool-skill`
+## `@reevo/dsh-tool-skill`
 
 ### `skill`
 
@@ -1906,7 +1906,7 @@ lsp 工具将提供方选择和语言服务器子进程置于 ctx.lsp 之后，�
 
 <a id="deepseek-aidsh-tool-session-list"></a>
 
-## `@deepseek-ai/dsh-tool-session-list`
+## `@reevo/dsh-tool-session-list`
 
 ### `list_session`
 
@@ -1964,7 +1964,7 @@ lsp 工具将提供方选择和语言服务器子进程置于 ctx.lsp 之后，�
 
 <a id="deepseek-aidsh-tool-session-query"></a>
 
-## `@deepseek-ai/dsh-tool-session-query`
+## `@reevo/dsh-tool-session-query`
 
 ### `session_event_read`
 
@@ -2199,7 +2199,7 @@ lsp 工具将提供方选择和语言服务器子进程置于 ctx.lsp 之后，�
 
 <a id="deepseek-aidsh-experimental-tool-subagent-oar"></a>
 
-## `@deepseek-ai/dsh-experimental-tool-subagent-oar`
+## `@reevo/dsh-experimental-tool-subagent-oar`
 
 ### `subagent_oar`
 
@@ -2244,7 +2244,7 @@ subagent_oar 工具在为外部提供方配置的别名之间选择。本目录�
 
 <a id="deepseek-aidsh-tool-subagent"></a>
 
-## `@deepseek-ai/dsh-tool-subagent`
+## `@reevo/dsh-tool-subagent`
 
 ### `list_subagent_models`
 
@@ -2302,7 +2302,7 @@ subagent_oar 工具在为外部提供方配置的别名之间选择。本目录�
 
 <a id="deepseek-aidsh-tool-subagent-control"></a>
 
-## `@deepseek-ai/dsh-tool-subagent-control`
+## `@reevo/dsh-tool-subagent-control`
 
 ### `interrupt_agent`
 
@@ -2386,7 +2386,7 @@ subagent_oar 工具在为外部提供方配置的别名之间选择。本目录�
 
 <a id="deepseek-aidsh-tool-jobs"></a>
 
-## `@deepseek-ai/dsh-tool-jobs`
+## `@reevo/dsh-tool-jobs`
 
 ### `job_kill`
 
@@ -2459,7 +2459,7 @@ subagent_oar 工具在为外部提供方配置的别名之间选择。本目录�
 
 <a id="deepseek-aidsh-tool-agent-team"></a>
 
-## `@deepseek-ai/dsh-tool-agent-team`
+## `@reevo/dsh-tool-agent-team`
 
 ### `team_task_create`
 
@@ -2636,7 +2636,7 @@ subagent_oar 工具在为外部提供方配置的别名之间选择。本目录�
 
 <a id="deepseek-aidsh-tool-todo"></a>
 
-## `@deepseek-ai/dsh-tool-todo`
+## `@reevo/dsh-tool-todo`
 
 ### `todo_write`
 
@@ -2686,7 +2686,7 @@ todo_write 是会话所有的状态；UI 将最新的 todo/write 事件渲染为
 
 <a id="deepseek-aidsh-experimental-tool-worktree"></a>
 
-## `@deepseek-ai/dsh-experimental-tool-worktree`
+## `@reevo/dsh-experimental-tool-worktree`
 
 ### `enter_worktree`
 
@@ -2727,7 +2727,7 @@ todo_write 是会话所有的状态；UI 将最新的 todo/write 事件渲染为
 
 <a id="deepseek-aidsh-tool-workflow"></a>
 
-## `@deepseek-ai/dsh-tool-workflow`
+## `@reevo/dsh-tool-workflow`
 
 ### `workflow`
 
@@ -2823,7 +2823,7 @@ todo_write 是会话所有的状态；UI 将最新的 todo/write 事件渲染为
 
 <a id="deepseek-aidsh-tool-workspace-dependencies"></a>
 
-## `@deepseek-ai/dsh-tool-workspace-dependencies`
+## `@reevo/dsh-tool-workspace-dependencies`
 
 ### `load_workspace_dependencies`
 
@@ -2840,7 +2840,7 @@ todo_write 是会话所有的状态；UI 将最新的 todo/write 事件渲染为
 
 <a id="deepseek-aidsh-tool-web"></a>
 
-## `@deepseek-ai/dsh-tool-web`
+## `@reevo/dsh-tool-web`
 
 ### `web_fetch`
 

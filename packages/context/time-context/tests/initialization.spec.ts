@@ -1,13 +1,13 @@
 /** Real Agent requests overlapping time-context projection registration. */
 import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import * as timeContext from '@deepseek-ai/dsh-time-context'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { SessionId } from '@reevo/dsh-session'
+import * as timeContext from '@reevo/dsh-time-context'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 describe('time-context activation', () => {
   it.each(['ready', 'cancelled', 'disposed', 'failed'] as const)('handles a %s registration before the first request', async (outcome) => {

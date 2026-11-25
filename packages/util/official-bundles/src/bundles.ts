@@ -9,19 +9,19 @@ export interface ProfileTemplate {
 /** The shipped profile templates auto-initialized on first use, by name. */
 export const PROFILE_TEMPLATES: Record<string, ProfileTemplate> = {
   acp: {
-    bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-acp-app'],
+    bundles: ['@reevo/dsh-base', '@reevo/dsh-acp-app'],
   },
   web: {
-    bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app'],
+    bundles: ['@reevo/dsh-base', '@reevo/dsh-web-app'],
   },
   headless: {
-    bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-headless'],
+    bundles: ['@reevo/dsh-base', '@reevo/dsh-headless'],
   },
   sdk: {
-    bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-sdk-app'],
+    bundles: ['@reevo/dsh-base', '@reevo/dsh-sdk-app'],
   },
   'sdk-minimal': {
-    bundles: ['@deepseek-ai/dsh-sdk-minimal'],
+    bundles: ['@reevo/dsh-sdk-minimal'],
   },
 }
 
@@ -30,22 +30,22 @@ export const PROFILE_TEMPLATES: Record<string, ProfileTemplate> = {
  * match with the {@link PROFILE_TEMPLATES} entry of the same name and leaves every other list untouched.
  */
 export const INSTALLATION_OWNED_PROFILE_TUPLES: Readonly<Record<string, readonly string[]>> = {
-  headless: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app', '@deepseek-ai/dsh-headless'],
+  headless: ['@reevo/dsh-base', '@reevo/dsh-web-app', '@reevo/dsh-headless'],
 }
 
 /** Bundles an earlier release shipped and the installation no longer carries; app-boot removes them from profiles. */
 export const RETIRED_BUNDLES: ReadonlySet<string> = new Set([
   // The Web composition mounts Schedule itself
   // ([upgrade guide](../../../../docs/upgrade-guide/v0.2.0-rc.2/schedule-bundle-retired/guide.md)).
-  '@deepseek-ai/dsh-experimental-schedule-bundle',
-  '@deepseek-ai/dsh-experimental-agent-team-profile',
+  '@reevo/dsh-experimental-schedule-bundle',
+  '@reevo/dsh-experimental-agent-team-profile',
   // The Web composition mounts personalized recommendations itself
   // ([upgrade guide](../../../../docs/upgrade-guide/v0.2.2-rc.5/personalized-recommendations-bundle-retired/guide.md)).
-  '@deepseek-ai/dsh-personalized-recommendations',
+  '@reevo/dsh-personalized-recommendations',
 ])
 
 /** The bundle list a `dsh plugin` init uses for a name with no shipped template. */
-export const DEFAULT_PROFILE_BUNDLES: readonly string[] = ['@deepseek-ai/dsh-base']
+export const DEFAULT_PROFILE_BUNDLES: readonly string[] = ['@reevo/dsh-base']
 
 /**
  * The bundles the dsh installation ships for a person to switch on: each a
@@ -56,27 +56,27 @@ export const DEFAULT_PROFILE_BUNDLES: readonly string[] = ['@deepseek-ai/dsh-bas
  * [admission](../../../../.agents/notes/implemented/architecture/2026-09-21-experimental-capabilities-as-optional-bundles.md)).
  */
 export const OPTIONAL_BUNDLES: readonly string[] = [
-  '@deepseek-ai/dsh-cua-bundle',
-  '@deepseek-ai/dsh-cua-mcp',
-  '@deepseek-ai/dsh-timeline',
-  '@deepseek-ai/dsh-experimental-session-search',
-  '@deepseek-ai/dsh-experimental-ralph-bundle',
-  '@deepseek-ai/dsh-experimental-terminal-bundle',
-  '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-  '@deepseek-ai/dsh-experimental-session-titles-bundle',
-  '@deepseek-ai/dsh-experimental-voice-input-bundle',
-  '@deepseek-ai/dsh-experimental-cot-translation-bundle',
-  '@deepseek-ai/dsh-experimental-auto-review',
-  '@deepseek-ai/dsh-experimental-inspector-profile',
-  '@deepseek-ai/dsh-experimental-liveshare',
-  '@deepseek-ai/dsh-experimental-plugin-market-bundle',
-  '@deepseek-ai/dsh-experimental-tool-worktree',
-  '@deepseek-ai/dsh-experimental-forge-bundle',
-  '@deepseek-ai/dsh-deepseek-chat-import',
+  '@reevo/dsh-cua-bundle',
+  '@reevo/dsh-cua-mcp',
+  '@reevo/dsh-timeline',
+  '@reevo/dsh-experimental-session-search',
+  '@reevo/dsh-experimental-ralph-bundle',
+  '@reevo/dsh-experimental-terminal-bundle',
+  '@reevo/dsh-experimental-badge-skill-bundle',
+  '@reevo/dsh-experimental-session-titles-bundle',
+  '@reevo/dsh-experimental-voice-input-bundle',
+  '@reevo/dsh-experimental-cot-translation-bundle',
+  '@reevo/dsh-experimental-auto-review',
+  '@reevo/dsh-experimental-inspector-profile',
+  '@reevo/dsh-experimental-liveshare',
+  '@reevo/dsh-experimental-plugin-market-bundle',
+  '@reevo/dsh-experimental-tool-worktree',
+  '@reevo/dsh-experimental-forge-bundle',
+  '@reevo/dsh-deepseek-chat-import',
 ]
 
 /** Public DSH release members available through the ordinary on-demand bundle installer. */
 export const ON_DEMAND_BUNDLES: readonly string[] = [
-  '@deepseek-ai/dsh-subagent-claude-code',
-  '@deepseek-ai/dsh-subagent-codex',
+  '@reevo/dsh-subagent-claude-code',
+  '@reevo/dsh-subagent-codex',
 ]

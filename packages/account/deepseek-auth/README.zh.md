@@ -3,7 +3,7 @@ description: "面向调用 DeepSeek API 的插件的 DeepSeek 请求鉴权：一
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-deepseek-auth
+# @reevo/dsh-deepseek-auth
 
 [English](README.md) | 中文
 
@@ -35,7 +35,7 @@ Host 插件发往 DeepSeek 部署的每一个请求都使用它。凡是挂载�
 
 ```ts
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-deepseek-auth'
+import type {} from '@reevo/dsh-deepseek-auth'
 
 declare const ctx: Context
 declare const route: string | undefined // provider route of the conversation's latest model request
@@ -81,8 +81,8 @@ await fetch(authorization.endpoint, { method: 'POST', headers: authorization.hea
 
 ```ts
 import type { Context } from '@deepseek-ai/cordis'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import type {} from '@deepseek-ai/dsh-deepseek-auth'
+import { credentialRef } from '@reevo/dsh-credentials'
+import type {} from '@reevo/dsh-deepseek-auth'
 
 declare const ctx: Context
 declare const settings: () => { baseURL: string; apiKeyEnv: string }

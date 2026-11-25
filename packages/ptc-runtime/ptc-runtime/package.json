@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-ptc-runtime",
+  "name": "@reevo/dsh-ptc-runtime",
   "description": "Abstract PTC execution seam (ctx.ptcRuntime) for the DeepSeek Harness",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -31,14 +31,14 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*"
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-attachment": "workspace:*",
+    "@reevo/dsh-error": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*"
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-attachment": "workspace:*",
+    "@reevo/dsh-error": "workspace:*"
   }
 }

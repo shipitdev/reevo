@@ -7,11 +7,11 @@
  * `ctx.subprocess` — the subprocess seam's documented exception for
  * SDK-managed transports — so this driver applies the seam's shared env scrub.
  *
- * @module @deepseek-ai/dsh-subagent-dsh-sdk/run
+ * @module @reevo/dsh-subagent-dsh-sdk/run
  */
 
 import { randomUUID } from 'node:crypto'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import {
   DeepSeekHarness,
   type DeepSeekHarnessOptions,
@@ -20,11 +20,11 @@ import {
   TransportClosedError,
   validatedSessionEvent,
 } from '@reevo/sdk'
-import type { ContentBlock, ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import type { SessionId, TurnEndReason } from '@deepseek-ai/dsh-session'
-import type { SubagentResult, SubagentRun, SubagentStartRequest, SubagentStopReason } from '@deepseek-ai/dsh-subagent'
-import { AssistantOutputFold, settleRunResult, subprocessRunHandle } from '@deepseek-ai/dsh-subagent'
-import { scrubbedParentEnv } from '@deepseek-ai/dsh-subprocess'
+import type { ContentBlock, ReasoningEffortId } from '@reevo/dsh-llm'
+import type { SessionId, TurnEndReason } from '@reevo/dsh-session'
+import type { SubagentResult, SubagentRun, SubagentStartRequest, SubagentStopReason } from '@reevo/dsh-subagent'
+import { AssistantOutputFold, settleRunResult, subprocessRunHandle } from '@reevo/dsh-subagent'
+import { scrubbedParentEnv } from '@reevo/dsh-subprocess'
 
 /** Resolved spawn spec for an SDK runtime child process (no defaults — see Config). */
 export interface SdkRunSpec {

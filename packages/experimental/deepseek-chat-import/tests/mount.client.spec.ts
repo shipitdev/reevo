@@ -3,10 +3,10 @@
 import assert from 'node:assert/strict'
 import { Context, Service } from '@deepseek-ai/cordis'
 import { afterEach, expect, it, vi } from 'vitest'
-import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import { RemoteError, type RemoteResult, type TypertRemoteContribution } from '@deepseek-ai/dsh-typert-protocol'
-import type { WorkspaceId } from '@deepseek-ai/dsh-workspace/types'
+import { SlotRegistry } from '@reevo/dsh-client-ui-renderer/client'
+import { LocaleRuntime } from '@reevo/dsh-client-locale/client'
+import { RemoteError, type RemoteResult, type TypertRemoteContribution } from '@reevo/dsh-typert-protocol'
+import type { WorkspaceId } from '@reevo/dsh-workspace/types'
 import type { DeepseekChatImportInjected } from '../src/client/ImportSessions.tsx'
 import { inject, mountImport } from '../src/client/mount.ts'
 import type { UploadAnswer } from '../src/client/upload.ts'
@@ -18,7 +18,7 @@ vi.mock('../src/client/upload.ts', () => ({
 }))
 const { uploadArchive } = await import('../src/client/upload.ts')
 
-const contribution: TypertRemoteContribution = { package: '@deepseek-ai/dsh-deepseek-chat-import', descriptors: [] }
+const contribution: TypertRemoteContribution = { package: '@reevo/dsh-deepseek-chat-import', descriptors: [] }
 const W1 = 'w1' as WorkspaceId
 const RESULT: DeepseekChatImportResult = {
   workspaceId: 'w1', workspacePath: '/home/a/project', sessionIds: ['s1'], conversationCount: 1, omittedByLimit: 0, skipped: [],
@@ -29,7 +29,7 @@ const contexts: Context[] = []
 afterEach(async () => {
   for (const ctx of contexts.splice(0)) await ctx.fiber.dispose()
   vi.mocked(uploadArchive).mockClear()
-  vi.doUnmock('@deepseek-ai/dsh-deepseek-chat-import/remote')
+  vi.doUnmock('@reevo/dsh-deepseek-chat-import/remote')
 })
 
 async function fixture(
@@ -119,7 +119,7 @@ it('keeps the outcome when the list refresh fails and refreshes after a thrown u
 
 it('loads the browser entry through its generated Remote contribution', async () => {
   const b = await fixture()
-  vi.doMock('@deepseek-ai/dsh-deepseek-chat-import/remote', () => ({ default: contribution }))
+  vi.doMock('@reevo/dsh-deepseek-chat-import/remote', () => ({ default: contribution }))
   const browser = await import('../src/client/index.ts')
   expect(browser.inject).toEqual(inject)
   const fiber = b.ctx.plugin({ inject: [...browser.inject], apply: browser.apply })

@@ -3,11 +3,11 @@
  * allows, never an Owner interaction, and the viewer's Peer cannot settle one.
  */
 import { Context } from '@deepseek-ai/cordis'
-import RemoteAccessService from '@deepseek-ai/dsh-api-remote-access'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
-import TypertGateway from '@deepseek-ai/dsh-api-gateway'
-import { Peer, type ConnectionRpcResult } from '@deepseek-ai/dsh-client-connection'
-import type { PeerScope, TypertResourceReader } from '@deepseek-ai/dsh-typert-protocol'
+import RemoteAccessService from '@reevo/dsh-api-remote-access'
+import TypertRegistry from '@reevo/dsh-typert-registry'
+import TypertGateway from '@reevo/dsh-api-gateway'
+import { Peer, type ConnectionRpcResult } from '@reevo/dsh-client-connection'
+import type { PeerScope, TypertResourceReader } from '@reevo/dsh-typert-protocol'
 import { describe, expect, it, onTestFinished } from 'vitest'
 import type { ForkRecord } from '../src/host/fork-registry.ts'
 import { createViewerAccessPolicy } from '../src/host/viewer-access-policy.ts'

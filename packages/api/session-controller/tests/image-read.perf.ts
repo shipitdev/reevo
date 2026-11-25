@@ -12,13 +12,13 @@ import { performance } from 'node:perf_hooks'
 import { fileURLToPath } from 'node:url'
 import { crc32, deflateSync } from 'node:zlib'
 import { Context } from '@deepseek-ai/cordis'
-import { LocalAttachmentStore } from '@deepseek-ai/dsh-attachment-local'
-import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { MessageId, ToolCallId } from '@deepseek-ai/dsh-llm'
-import { AssistantStreamAccumulator } from '@deepseek-ai/dsh-llm/assistant-stream'
-import SessionStore, { type SessionId, type Session } from '@deepseek-ai/dsh-session'
-import SessionQueryEngine from '@deepseek-ai/dsh-session-query'
+import { LocalAttachmentStore } from '@reevo/dsh-attachment-local'
+import type { ImageAttachmentRef } from '@reevo/dsh-attachment'
+import { brandString } from '@reevo/dsh-brand'
+import type { MessageId, ToolCallId } from '@reevo/dsh-llm'
+import { AssistantStreamAccumulator } from '@reevo/dsh-llm/assistant-stream'
+import SessionStore, { type SessionId, type Session } from '@reevo/dsh-session'
+import SessionQueryEngine from '@reevo/dsh-session-query'
 import { ApiSessionAgentController } from '../src/agent.ts'
 import { SessionCommandController } from '../src/commands.ts'
 import type { SessionAttachmentValue } from '../src/types.ts'
@@ -300,7 +300,7 @@ async function measure(workload: keyof typeof WORKLOADS) {
 }
 
 for (const specifier of [
-  '@deepseek-ai/cordis', '@deepseek-ai/dsh-attachment-local', '@deepseek-ai/dsh-session', '@deepseek-ai/dsh-session-query',
+  '@deepseek-ai/cordis', '@reevo/dsh-attachment-local', '@reevo/dsh-session', '@reevo/dsh-session-query',
 ]) {
   assert.match(import.meta.resolve(specifier), /\/lib\/.*\.js$/, `${specifier} must resolve to built JavaScript`)
 }

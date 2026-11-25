@@ -9,7 +9,7 @@
  * itself, and a released limit must all be refused before anything runs.
  */
 
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import {
   existsSync,
   mkdirSync,
@@ -22,26 +22,26 @@ import {
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { provideWorkingDirectoryFixture } from '@reevo/dsh-agent-loop-testkit'
 import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createScope, type Scope } from '@deepseek-ai/dsh-scope'
-import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@deepseek-ai/dsh-session'
-import type { FsTarget } from '@deepseek-ai/dsh-fs'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { defineTool, type ParameterSchemaSpec } from '@deepseek-ai/dsh-tools'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import * as ToolFs from '@deepseek-ai/dsh-tool-fs'
-import * as FsObservationPolicy from '@deepseek-ai/dsh-fs-observation-policy'
+import type { Agent } from '@reevo/dsh-agent'
+import { createScope, type Scope } from '@reevo/dsh-scope'
+import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@reevo/dsh-session'
+import type { FsTarget } from '@reevo/dsh-fs'
+import { brandString } from '@reevo/dsh-brand'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime, { defineTool, type ParameterSchemaSpec } from '@reevo/dsh-tools'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import * as ToolFs from '@reevo/dsh-tool-fs'
+import * as FsObservationPolicy from '@reevo/dsh-fs-observation-policy'
 import { installForkEnforcement, installSourceSessionAccess } from '../src/host/fork-enforcement.ts'
 import { ForkRegistry } from '../src/host/fork-registry.ts'
 import { forkToolGuard, installChildEnforcement, type ForkToolExecution } from '../src/host/fork-tool-guard.ts'
 import { READ_ONLY_FORK_CEILING } from '../src/host/fork-policy.ts'
 import { describeSharedTool } from '../src/host/shared-tools.ts'
 import { executeOneTool } from './tool-call.ts'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 
 const childSessionId = 'child-1'
 const viewer = { providerId: 'feishu', tenantId: 'tenant-a', subjectId: 'ou_viewer' }

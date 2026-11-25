@@ -8,8 +8,8 @@
  * select one by name.
  *
  * This package owns the Service Definition role of the capability seam. Service Providers
- * (`@deepseek-ai/dsh-subagent-spawn-in-process`, `-fork`, `-acp`) and the model-facing
- * consumer (`@deepseek-ai/dsh-tool-subagent`) are separate packages.
+ * (`@reevo/dsh-subagent-spawn-in-process`, `-fork`, `-acp`) and the model-facing
+ * consumer (`@reevo/dsh-tool-subagent`) are separate packages.
  *
  * `startActivation` establishes every child under the activation manager, which
  * owns execution, result delivery, and resource release. Local providers seed
@@ -25,23 +25,23 @@
  * serialization and hostile-input validation belong at real process, worker,
  * persistence, and model boundaries.
  *
- * @module @deepseek-ai/dsh-subagent
+ * @module @reevo/dsh-subagent
  */
 import type { Volatile } from '@deepseek-ai/cordis'
 
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-working-directory'
-import type {} from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { scopeTarget } from '@deepseek-ai/dsh-scope'
-import type { Scoped } from '@deepseek-ai/dsh-scope'
-import { assertObjectJsonSchema } from '@deepseek-ai/dsh-tools'
-import type { ContentBlock, MessageId } from '@deepseek-ai/dsh-llm'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { canonicalClientTimeZone } from '@deepseek-ai/dsh-util-time'
-import { Remote, RemoteError, TypertRemoteService, principalOf, type Principal } from '@deepseek-ai/dsh-typert-protocol'
+import type {} from '@reevo/dsh-working-directory'
+import type {} from '@reevo/dsh-attachment'
+import { brandString } from '@reevo/dsh-brand'
+import { scopeTarget } from '@reevo/dsh-scope'
+import type { Scoped } from '@reevo/dsh-scope'
+import { assertObjectJsonSchema } from '@reevo/dsh-tools'
+import type { ContentBlock, MessageId } from '@reevo/dsh-llm'
+import type { Agent } from '@reevo/dsh-agent'
+import type { SessionId } from '@reevo/dsh-session'
+import { canonicalClientTimeZone } from '@reevo/dsh-util-time'
+import { Remote, RemoteError, TypertRemoteService, principalOf, type Principal } from '@reevo/dsh-typert-protocol'
 import {
   rejectPrompt, validateControlRequest,
 } from './control.ts'

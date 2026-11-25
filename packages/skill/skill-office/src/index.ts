@@ -5,7 +5,7 @@ import { isAbsolute, join, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { BUNDLED_SKILL_RANK, type SkillCandidate } from '@deepseek-ai/dsh-skill'
+import { BUNDLED_SKILL_RANK, type SkillCandidate } from '@reevo/dsh-skill'
 import { parse as parseYaml } from 'yaml'
 
 const SKILL_NAMES = ['office'] as const

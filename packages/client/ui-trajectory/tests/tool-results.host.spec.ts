@@ -1,14 +1,14 @@
 /** Live tool inspection shares the real Session's unload lifetime, never its replay data. */
 import { Context } from '@deepseek-ai/cordis'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
+import TypertRegistry from '@reevo/dsh-typert-registry'
 import { expect, it, onTestFinished } from 'vitest'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { SessionId, SessionEvent } from '@deepseek-ai/dsh-session'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { Agent } from '@reevo/dsh-agent'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
+import { brandString } from '@reevo/dsh-brand'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import type { SessionId, SessionEvent } from '@reevo/dsh-session'
+import { defineTool } from '@reevo/dsh-tools'
+import type { JsonValue } from '@reevo/dsh-util-values'
 import SessionToolResults, { type Config } from '../src/index.ts'
 
 async function setup(value: JsonValue = { answer: 42 }, config: Partial<Config> = {}) {

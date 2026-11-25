@@ -1,9 +1,9 @@
 /** Model tool descriptions and complete batch execution owned by plugins. @module */
-import { HarnessError } from '@deepseek-ai/dsh-llm'
-import type { ToolCallBlock, ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { UserMessage } from '@deepseek-ai/dsh-session'
-import type { PromptSection, ToolProviderResult } from '@deepseek-ai/dsh-system-prompt'
+import { HarnessError } from '@reevo/dsh-llm'
+import type { ToolCallBlock, ToolCallId } from '@reevo/dsh-llm'
+import type { Agent } from '@reevo/dsh-agent'
+import type { UserMessage } from '@reevo/dsh-session'
+import type { PromptSection, ToolProviderResult } from '@reevo/dsh-system-prompt'
 import type { ResolvedToolSet, ToolDefinition, ToolExecutionResult } from './contracts.ts'
 
 /** Model-call schemas produced by an executor. */

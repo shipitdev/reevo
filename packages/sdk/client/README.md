@@ -61,12 +61,12 @@ Pass `{ permissionMode: "danger-full-access" }` as the second argument to replac
 
 ### Running agent turns with DeepSeekHarness
 
-The following example imports `brandString` at runtime. Declare `@deepseek-ai/dsh-brand` as a direct dependency of your application rather than relying on the SDK's transitive dependencies; tests alone can use a development dependency.
+The following example imports `brandString` at runtime. Declare `@reevo/dsh-brand` as a direct dependency of your application rather than relying on the SDK's transitive dependencies; tests alone can use a development dependency.
 
 ```ts
 import { DeepSeekHarness } from '@reevo/sdk'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { ReasoningEffortId } from '@reevo/dsh-llm/types'
 
 await using harness = new DeepSeekHarness({
   profile: 'sdk',

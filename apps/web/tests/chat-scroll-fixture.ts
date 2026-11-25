@@ -2,21 +2,21 @@
 // generated through Session so pagination exercises the same event shapes as
 // persisted conversations, while unique markers identify semantic rows
 // without depending on CSS-module names or virtualizer DOM positions.
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import {
   type ToolCallId,
   createAssistantMessage,
   createSystemMessage,
   createToolResultMessage,
   createUserMessage,
-} from '@deepseek-ai/dsh-llm'
+} from '@reevo/dsh-llm'
 import {
   SESSION_FORMAT_VERSION,
   Session,
   type SessionId,
-} from '@deepseek-ai/dsh-session'
+} from '@reevo/dsh-session'
 // Carries the session/title event declaration into this fixture builder.
-import type {} from '@deepseek-ai/dsh-session-title'
+import type {} from '@reevo/dsh-session-title'
 
 /** Options for one deterministic long-chat fixture. */
 export interface ChatScrollFixtureOptions {

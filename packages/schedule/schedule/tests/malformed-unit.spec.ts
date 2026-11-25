@@ -4,13 +4,13 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import Storage from '@deepseek-ai/dsh-storage'
-import { DomainFacility } from '@deepseek-ai/dsh-storage-domain'
-import { JsonStorageBackend } from '@deepseek-ai/dsh-storage-json'
+import Storage from '@reevo/dsh-storage'
+import { DomainFacility } from '@reevo/dsh-storage-domain'
+import { JsonStorageBackend } from '@reevo/dsh-storage-json'
 import { scheduleDomain } from '../src/storage.ts'
 import { createAtScheduleRecord } from '../src/domain.ts'
 import type { ScheduleId } from '../src/types.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const roots: string[] = []
 const contexts: Context[] = []

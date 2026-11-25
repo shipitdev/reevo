@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-agent",
+  "name": "@reevo/dsh-agent",
   "description": "Agent interface, registry, initiator scope, and event vocabulary for the DeepSeek Harness",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -37,35 +37,35 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-workspace": {
+    "@reevo/dsh-workspace": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-typert-registry": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-typert-registry": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "zod": "4.6.6"
   }
 }

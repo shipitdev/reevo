@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-shortcuts",
+  "name": "@reevo/dsh-client-shortcuts",
   "description": "Application keyboard command registry and physical-key routing",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -33,7 +33,7 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-client-locale"
+        "@reevo/dsh-client-locale"
       ],
       "platform": "web"
     }
@@ -48,12 +48,12 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-client-config": "workspace:*"
+    "@reevo/dsh-client-locale": "workspace:*",
+    "@reevo/dsh-client-store": "workspace:*",
+    "@reevo/dsh-client-ui-primitives": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-client-test-runtime": "workspace:*",
+    "@reevo/dsh-client-config": "workspace:*"
   },
   "files": [
     "locale/*.json",
@@ -66,8 +66,8 @@
     "src"
   ],
   "dependencies": {
-    "@deepseek-ai/dsh-util-crypto": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-util-crypto": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~"
   }
 }

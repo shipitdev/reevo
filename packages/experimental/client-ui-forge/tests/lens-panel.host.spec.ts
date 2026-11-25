@@ -2,8 +2,8 @@ import { writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { Context } from '@deepseek-ai/cordis'
-import type { ForgeCommitList } from '@deepseek-ai/dsh-experimental-forge'
-import type { Session } from '@deepseek-ai/dsh-session'
+import type { ForgeCommitList } from '@reevo/dsh-experimental-forge'
+import type { Session } from '@reevo/dsh-session'
 import type {
   ForgeExtensionState, ForgeLens, ForgeLensFrame, ForgeLensId, ForgeLensInput, ForgeLensRequest, ForgeLensResult,
 } from '../src/index.ts'

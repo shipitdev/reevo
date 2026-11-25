@@ -3,21 +3,21 @@
  * that outlives the Chat panel, and history scrollback never does.
  */
 // @vitest-environment jsdom
-import { syncedConfig } from '@deepseek-ai/dsh-client-test-runtime'
-import { apply as applyMenus, inject as injectMenus } from '@deepseek-ai/dsh-client-ui-context-menu/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
+import { syncedConfig } from '@reevo/dsh-client-test-runtime'
+import { apply as applyMenus, inject as injectMenus } from '@reevo/dsh-client-ui-context-menu/client'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
 import { afterEach, describe, expect, it } from 'vitest'
 import { act, screen } from '@testing-library/react'
-import { SlotTestRuntime, stubConfigForm, usePinnedBrowserLanguages } from '@deepseek-ai/dsh-client-test-runtime'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import type { SessionLiveEventEntry, SessionReference } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { SessionId, SessionSeq } from '@deepseek-ai/dsh-session/types'
-import type { WorkspaceId } from '@deepseek-ai/dsh-workspace/types'
+import { SlotTestRuntime, stubConfigForm, usePinnedBrowserLanguages } from '@reevo/dsh-client-test-runtime'
+import { LocaleRuntime } from '@reevo/dsh-client-locale/client'
+import type { SessionLiveEventEntry, SessionReference } from '@reevo/dsh-api-session-controller/client'
+import type { SessionId, SessionSeq } from '@reevo/dsh-session/types'
+import type { WorkspaceId } from '@reevo/dsh-workspace/types'
 import {
   apply as applyConversation, inject as injectConversation,
-} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import { apply as applyChat, inject as injectChat } from '@deepseek-ai/dsh-client-ui-chat/client'
-import type { QuotaNoticeInjected } from '@deepseek-ai/dsh-client-ui-chat/client'
+} from '@reevo/dsh-client-ui-conversation/client'
+import { apply as applyChat, inject as injectChat } from '@reevo/dsh-client-ui-chat/client'
+import type { QuotaNoticeInjected } from '@reevo/dsh-client-ui-chat/client'
 import { CHAT_SETTINGS_NAMESPACE, type ChatSettings } from '../src/chat-settings.ts'
 
 usePinnedBrowserLanguages('en')

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-hmr",
+  "name": "@reevo/dsh-client-hmr",
   "description": "Web client graph and rebuilt-bundle delivery over an authenticated Remote stream",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -40,12 +40,12 @@
   "dsh": {
     "client": {
       "external": [
-        "@deepseek-ai/dsh-api-gateway/client"
+        "@reevo/dsh-api-gateway/client"
       ],
       "inject": [
-        "@deepseek-ai/dsh-api-gateway",
-        "@deepseek-ai/dsh-api-remote-access",
-        "@deepseek-ai/dsh-client-modules"
+        "@reevo/dsh-api-gateway",
+        "@reevo/dsh-api-remote-access",
+        "@reevo/dsh-client-modules"
       ],
       "platform": "web",
       "immediately": true
@@ -53,8 +53,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-deque": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-deque": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
@@ -64,9 +64,9 @@
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-api-remote-access": "workspace:*",
-    "@deepseek-ai/dsh-client-modules": "workspace:*"
+    "@reevo/dsh-api-gateway": "workspace:*",
+    "@reevo/dsh-api-remote-access": "workspace:*",
+    "@reevo/dsh-client-modules": "workspace:*"
   },
   "files": [
     "locale/*.json",

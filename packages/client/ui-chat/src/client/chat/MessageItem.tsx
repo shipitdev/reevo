@@ -1,9 +1,9 @@
 import { memo, useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { PendingSubmission } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { InjectFace, PropsRenderFactories, PropsRenderSlots } from '@deepseek-ai/dsh-client-ui-slots'
-import type { UserTextFacts } from '@deepseek-ai/dsh-client-ui-conversation/client'
-import { IconBranchOutlineRegular, JsonBlock, StateDot, TextShimmer } from '@deepseek-ai/dsh-client-ui-primitives'
+import type { PendingSubmission } from '@reevo/dsh-api-session-controller/client'
+import type { InjectFace, PropsRenderFactories, PropsRenderSlots } from '@reevo/dsh-client-ui-slots'
+import type { UserTextFacts } from '@reevo/dsh-client-ui-conversation/client'
+import { IconBranchOutlineRegular, JsonBlock, StateDot, TextShimmer } from '@reevo/dsh-client-ui-primitives'
 import type {
   ChatNodeOwnerProps, ChatNodeViewProps, ChatViewSlotProps, UserContentAttachment, UserContentData, UserContentInput,
 } from '../contract/slots.ts'

@@ -1,18 +1,18 @@
 import { Context } from '@deepseek-ai/cordis'
-import ForgeService, { changeRequestKey } from '@deepseek-ai/dsh-experimental-forge'
+import ForgeService, { changeRequestKey } from '@reevo/dsh-experimental-forge'
 import type {
   ChangeRequestKey, ChangeRequestRef, ChangeRequestSnapshot, ForgeActionFailure, ForgeFailure, ForgeProvider, ForgeReadiness,
   ForgeRepository,
-} from '@deepseek-ai/dsh-experimental-forge'
-import { createAssistantMessage, createToolResultMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { GH_COMMANDS } from '@deepseek-ai/dsh-experimental-forge-github/src/commands.ts'
-import type {} from '@deepseek-ai/dsh-tool-executor-ptc/types'
+} from '@reevo/dsh-experimental-forge'
+import { createAssistantMessage, createToolResultMessage, type ToolCallId } from '@reevo/dsh-llm'
+import SessionStore from '@reevo/dsh-session'
+import type { Session } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { GH_COMMANDS } from '@reevo/dsh-experimental-forge-github/src/commands.ts'
+import type {} from '@reevo/dsh-tool-executor-ptc/types'
 import ForgeSessionService from '../src/index.ts'
 import type { Config, ForgeCommandRule } from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 /**
  * A rule with reference commands only, no JSON URL members, and no options: `tea pulls checkout <url>` names the pull

@@ -1,5 +1,5 @@
-import SessionStore from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionStore from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, onTestFinished } from 'vitest'
 import * as HostPlugin from '../src/index.ts'
@@ -7,7 +7,7 @@ import { liveConfig, omitsGeneratedPage } from '../../../settings/settings/tests
 import { plainConfig } from '../../../settings/settings/src/schema.ts'
 import {
   DEFAULT_BUSY_ENTER_BEHAVIOR,
-} from '@deepseek-ai/dsh-client-ui-conversation'
+} from '@reevo/dsh-client-ui-conversation'
 
 
 describe('ui-conversation host', () => {

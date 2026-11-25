@@ -2,8 +2,8 @@
 
 import { createHmac } from 'node:crypto'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import type { CredentialProvider } from '@deepseek-ai/dsh-credentials'
-import type { PeerId } from '@deepseek-ai/dsh-typert-protocol'
+import type { CredentialProvider } from '@reevo/dsh-credentials'
+import type { PeerId } from '@reevo/dsh-typert-protocol'
 import { BrowserAuth } from '../src/browser-auth.ts'
 import type { ConnectionIndexRequest, ConnectionIndexResponse } from '../src/types.ts'
 import { RecordCredentials } from './browser-credentials.ts'

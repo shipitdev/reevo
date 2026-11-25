@@ -1,10 +1,10 @@
 /** Synthetic current-generation history and paced reply for browser measurements. */
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createAssistantMessage, createSystemMessage, createUserMessage, createToolResultMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { StreamChunk } from '@deepseek-ai/dsh-llm'
-import { AssistantStreamAccumulator } from '@deepseek-ai/dsh-llm/assistant-stream'
-import { Session, type SessionId, SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-session-title'
+import { brandString } from '@reevo/dsh-brand'
+import { createAssistantMessage, createSystemMessage, createUserMessage, createToolResultMessage, type ToolCallId } from '@reevo/dsh-llm'
+import type { StreamChunk } from '@reevo/dsh-llm'
+import { AssistantStreamAccumulator } from '@reevo/dsh-llm/assistant-stream'
+import { Session, type SessionId, SESSION_FORMAT_VERSION } from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-session-title'
 
 /** Closed turns in the browser history workload. */
 export const HISTORY_TURNS = 240

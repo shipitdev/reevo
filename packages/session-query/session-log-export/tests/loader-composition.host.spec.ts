@@ -6,11 +6,11 @@ import { afterEach, describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import CommandRuntime from '@deepseek-ai/dsh-commands'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import * as SessionLogDownload from '@deepseek-ai/dsh-session-log-export'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { Agent } from '@reevo/dsh-agent'
+import CommandRuntime from '@reevo/dsh-commands'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import * as SessionLogDownload from '@reevo/dsh-session-log-export'
+import { brandString } from '@reevo/dsh-brand'
 
 let root: string | undefined
 let context: Context | undefined
@@ -27,9 +27,9 @@ describe('session-log-download real Loader composition', () => {
     root = await mkdtemp(join(tmpdir(), 'dsh-session-export-loader-'))
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
-      "- name: '@deepseek-ai/dsh-session'",
-      "- name: '@deepseek-ai/dsh-commands'",
-      "- name: '@deepseek-ai/dsh-session-log-export'",
+      "- name: '@reevo/dsh-session'",
+      "- name: '@reevo/dsh-commands'",
+      "- name: '@reevo/dsh-session-log-export'",
       '',
     ].join('\n'))
 
@@ -41,9 +41,9 @@ describe('session-log-download real Loader composition', () => {
     await context.plugin(Loader)
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-session', SessionStore],
-      ['@deepseek-ai/dsh-commands', CommandRuntime],
-      ['@deepseek-ai/dsh-session-log-export', SessionLogDownload],
+      ['@reevo/dsh-session', SessionStore],
+      ['@reevo/dsh-commands', CommandRuntime],
+      ['@reevo/dsh-session-log-export', SessionLogDownload],
     ])
     context.loader.internal = {
       version: 'v2',
@@ -62,7 +62,7 @@ describe('session-log-download real Loader composition', () => {
       .create(brandString<SessionId>('loader-session-export'), { meta: { createdAt: 1 } })
     const agent = { session, status: 'idle', options: {} } as unknown as Agent
     expect(context.commands.list(agent)).toContainEqual({
-      definitionId: '@deepseek-ai/dsh-session-log-export',
+      definitionId: '@reevo/dsh-session-log-export',
       name: 'export', description: 'Download this Session log as a ZIP archive',
     })
     const execution = await context.commands.execute(agent, '/export', [], new AbortController().signal)

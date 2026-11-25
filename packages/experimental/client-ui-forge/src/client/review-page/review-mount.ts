@@ -4,16 +4,16 @@
  */
 
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-api-remote-access/client'
-import type {} from '@deepseek-ai/dsh-api-session-controller/client'
-import type {} from '@deepseek-ai/dsh-api-workspace-controller/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-client-ui-workspace/client'
-import type { MainPanelId } from '@deepseek-ai/dsh-client-ui-layout/client'
-import type { HostObservable } from '@deepseek-ai/dsh-client-ui-slots'
-import type {} from '@deepseek-ai/dsh-client-ui-sidebar/client'
-import type {} from '@deepseek-ai/dsh-experimental-client-ui-forge/remote'
-import type { RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
+import type {} from '@reevo/dsh-api-remote-access/client'
+import type {} from '@reevo/dsh-api-session-controller/client'
+import type {} from '@reevo/dsh-api-workspace-controller/client'
+import type {} from '@reevo/dsh-client-ui-conversation/client'
+import type {} from '@reevo/dsh-client-ui-workspace/client'
+import type { MainPanelId } from '@reevo/dsh-client-ui-layout/client'
+import type { HostObservable } from '@reevo/dsh-client-ui-slots'
+import type {} from '@reevo/dsh-client-ui-sidebar/client'
+import type {} from '@reevo/dsh-experimental-client-ui-forge/remote'
+import type { RemoteResult } from '@reevo/dsh-typert-protocol'
 import type { ChangeRequestActions } from '../ChangeRequestCard.tsx'
 import type { ForgePanelKey } from '../locales.ts'
 import { actionReporter } from '../action-notices.ts'
@@ -28,7 +28,7 @@ import type { ChangeRequestEntry } from '../status.ts'
 import { ViewedFiles } from '../viewed-files.ts'
 import type { ForgeReviewCountFrame } from '../../types.ts'
 
-declare module '@deepseek-ai/dsh-api-session-controller/client' {
+declare module '@reevo/dsh-api-session-controller/client' {
   interface SessionReferenceSourceMap {
     /** The review page's conversation about a change request. */
     forgeReview: unknown

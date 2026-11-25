@@ -4,7 +4,7 @@
  * The gateway worker process carries every share this host publishes, so this module owns its
  * lifetime: the commands sent over IPC, the settlements that resolve a pending registration, the
  * timers that re-register or remove a share, and the credential state each registration presents.
- * @module @deepseek-ai/dsh-experimental-liveshare/src/host/tunnel-supervision
+ * @module @reevo/dsh-experimental-liveshare/src/host/tunnel-supervision
  */
 
 import { randomBytes } from 'node:crypto'
@@ -17,7 +17,7 @@ import type {
   LiveshareOwnerPlatform,
   TunnelShareSpec,
   TunnelWorkerEvent,
-} from '@deepseek-ai/dsh-experimental-liveshare-protocol'
+} from '@reevo/dsh-experimental-liveshare-protocol'
 import type {
   ClaimOutcome,
   OwnerIdentityStatus,
@@ -38,7 +38,7 @@ import {
 import type { OwnerShare } from './owner-types.ts'
 import type { RelayAuthority } from './relay-authority.ts'
 import { normalizeRelayUrl } from './relay-url.ts'
-import type { ShareRpcActor } from '@deepseek-ai/dsh-experimental-liveshare-protocol'
+import type { ShareRpcActor } from '@reevo/dsh-experimental-liveshare-protocol'
 import type { ViewerReadService } from './viewer-read.ts'
 import { TunnelWorker, type TunnelWorkerInput } from './tunnel-worker.ts'
 import { isRecord } from './wire-json.ts'

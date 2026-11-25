@@ -1,7 +1,7 @@
 /** DeepSeek `GET /models` listing: one authenticated request and per-entry decoding. */
-import { APP_IDENTITY, attributionHeaders, LlmError } from '@deepseek-ai/dsh-llm'
-import type { LlmModelBadge, LlmModelBadgeTone, ModelModality } from '@deepseek-ai/dsh-llm'
-import { timeoutOf } from '@deepseek-ai/dsh-timeout'
+import { APP_IDENTITY, attributionHeaders, LlmError } from '@reevo/dsh-llm'
+import type { LlmModelBadge, LlmModelBadgeTone, ModelModality } from '@reevo/dsh-llm'
+import { timeoutOf } from '@reevo/dsh-timeout'
 
 const LISTED_MODALITIES = ['text', 'image'] as const satisfies readonly ModelModality[]
 const BADGE_TONES = ['neutral', 'info', 'success', 'warning'] as const satisfies readonly LlmModelBadgeTone[]

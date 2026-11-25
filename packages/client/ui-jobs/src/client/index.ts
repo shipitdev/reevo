@@ -5,18 +5,18 @@
  * transport state of its own.
  */
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type { JobId } from '@deepseek-ai/dsh-jobs/types'
+import type { JobId } from '@reevo/dsh-jobs/types'
 import { JobsRunningIndicator, JobsSection } from './JobsSection.tsx'
 import type { JobsRunningIndicatorInjected, JobsSectionInjected } from './JobsSection.tsx'
 import { createJobsSectionStore } from './jobs-store.ts'
-import type {} from '@deepseek-ai/dsh-api-job-controller/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-client-ui-session/client'
-import type {} from '@deepseek-ai/dsh-client-ui-session-panel/client'
+import type {} from '@reevo/dsh-api-job-controller/client'
+import type {} from '@reevo/dsh-client-locale/client'
+import type {} from '@reevo/dsh-client-ui-renderer/client'
+import type {} from '@reevo/dsh-client-ui-session/client'
+import type {} from '@reevo/dsh-client-ui-session-panel/client'
 import { en, ja, es, fr, de, ru, pt, NS, zh, type JobKey } from './locales.ts'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@reevo/dsh-client-ui-slots' {
   interface LocaleNamespaceMap {
     /** Background-job list copy. */
     'job': JobKey

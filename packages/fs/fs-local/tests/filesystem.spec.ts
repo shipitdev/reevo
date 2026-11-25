@@ -13,10 +13,10 @@ import { tmpdir } from 'node:os'
 import { join, parse, relative } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { Context } from '@deepseek-ai/cordis'
-import { LocalFileSystem } from '@deepseek-ai/dsh-fs-local'
-import type { FsVersion } from '@deepseek-ai/dsh-fs'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { FsTarget } from '@deepseek-ai/dsh-fs'
+import { LocalFileSystem } from '@reevo/dsh-fs-local'
+import type { FsVersion } from '@reevo/dsh-fs'
+import { brandString } from '@reevo/dsh-brand'
+import type { FsTarget } from '@reevo/dsh-fs'
 
 let dir: string
 let ctx: Context

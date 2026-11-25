@@ -1,8 +1,8 @@
 import { z } from 'zod'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
+import type { ProjectionDefinition } from '@reevo/dsh-session-projection'
 import type { Context } from '@deepseek-ai/cordis'
-import { pluginRecordOf } from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
+import { pluginRecordOf } from '@reevo/dsh-session'
+import type { Session } from '@reevo/dsh-session'
 import {
   activitySchema,
   annotationRecordSchema,

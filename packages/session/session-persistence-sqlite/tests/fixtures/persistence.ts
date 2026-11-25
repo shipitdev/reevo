@@ -5,9 +5,9 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { onTestFinished } from 'vitest'
 import * as SqlitePersistence from '../../src/index.ts'
-import * as JsonlPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import type { JsonlCompression } from '@deepseek-ai/dsh-session-persistence-jsonl'
-import SessionStore from '@deepseek-ai/dsh-session'
+import * as JsonlPersistence from '@reevo/dsh-session-persistence-jsonl'
+import type { JsonlCompression } from '@reevo/dsh-session-persistence-jsonl'
+import SessionStore from '@reevo/dsh-session'
 
 /**
  * Allocate private storage and close every mounted provider before removing it.

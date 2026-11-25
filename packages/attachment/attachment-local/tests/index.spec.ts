@@ -1,6 +1,6 @@
 import { Context } from '@deepseek-ai/cordis'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { AttachmentId } from '@reevo/dsh-attachment/types'
+import { brandString } from '@reevo/dsh-brand'
 import { existsSync } from 'node:fs'
 import { mkdtemp, readFile, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'

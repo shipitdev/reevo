@@ -2,34 +2,34 @@
 
 import { homedir } from 'node:os'
 import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
 import type {
   TypertRemoteEventDispatch,
   TypertRemoteEventInvocation,
   TypertRemoteEventOutcome,
   TypertRemoteEventSource,
-} from '@deepseek-ai/dsh-api-gateway'
-import { Deque } from '@deepseek-ai/dsh-deque'
-import { carrierKeyOf } from '@deepseek-ai/dsh-scope'
-import { isJsonValue, type JsonValue } from '@deepseek-ai/dsh-util-values'
+} from '@reevo/dsh-api-gateway'
+import { Deque } from '@reevo/dsh-deque'
+import { carrierKeyOf } from '@reevo/dsh-scope'
+import { isJsonValue, type JsonValue } from '@reevo/dsh-util-values'
 import { API_REMOTE_FORWARDED_EVENTS } from './remote-events.ts'
 
 // The owner packages' client-safe `./types` exports carry the cordis `Events`
 // declarations for every allowlisted event. Pulling them into this face is what
 // makes the shape assertion below judge real signatures rather than an empty
 // event vocabulary.
-import type {} from '@deepseek-ai/dsh-commands/types'
-import type {} from '@deepseek-ai/dsh-cordis-host-runner/types'
-import type {} from '@deepseek-ai/dsh-credentials/types'
-import type {} from '@deepseek-ai/dsh-goal/types'
-import type {} from '@deepseek-ai/dsh-llm/types'
-import type {} from '@deepseek-ai/dsh-agent-preset-registry/types'
-import type {} from '@deepseek-ai/dsh-permission-presets/types'
-import type {} from '@deepseek-ai/dsh-settings/types'
-import type {} from '@deepseek-ai/dsh-user-approval'
-import type {} from '@deepseek-ai/dsh-user-questions'
-import type {} from '@deepseek-ai/dsh-web/types'
-export type {} from '@deepseek-ai/dsh-api-session-controller/types'
+import type {} from '@reevo/dsh-commands/types'
+import type {} from '@reevo/dsh-cordis-host-runner/types'
+import type {} from '@reevo/dsh-credentials/types'
+import type {} from '@reevo/dsh-goal/types'
+import type {} from '@reevo/dsh-llm/types'
+import type {} from '@reevo/dsh-agent-preset-registry/types'
+import type {} from '@reevo/dsh-permission-presets/types'
+import type {} from '@reevo/dsh-settings/types'
+import type {} from '@reevo/dsh-user-approval'
+import type {} from '@reevo/dsh-user-questions'
+import type {} from '@reevo/dsh-web/types'
+export type {} from '@reevo/dsh-api-session-controller/types'
 
 export { API_REMOTE_FORWARDED_EVENTS } from './remote-events.ts'
 export type { ApiRemoteForwardedEvent } from './types.ts'

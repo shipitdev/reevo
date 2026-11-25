@@ -11,8 +11,8 @@ import { stringifyEntryYaml } from '@deepseek-ai/cordis-plugin-include'
 import { assertInstalledTree, createPackedInstallation } from './packed-installation.ts'
 
 const root = fileURLToPath(new URL('../../../..', import.meta.url))
-const adapter = '@deepseek-ai/dsh-webhook-github'
-const runtime = '@deepseek-ai/dsh-webhook'
+const adapter = '@reevo/dsh-webhook-github'
+const runtime = '@reevo/dsh-webhook'
 const built = existsSync(join(root, 'apps/cli/lib/bin.js'))
   && existsSync(join(root, 'packages/experimental/webhook-github/lib/index.js'))
 const secret = 'packed-webhook-test-secret'
@@ -29,7 +29,7 @@ it.skipIf(!built)('loads the packed GitHub example with its explicitly installed
   expect(existsSync(join(installation, 'node_modules', adapter))).toBe(false)
   await writeFile(join(profile, 'package.json'), JSON.stringify({
     name: 'packed-webhook-profile', private: true, dependencies: {},
-    dsh: { profile: { bundles: ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app'] } },
+    dsh: { profile: { bundles: ['@reevo/dsh-base', '@reevo/dsh-web-app'] } },
   }))
   const profileDependencies = new Set([runtime, adapter])
   for (const name of profileDependencies) {

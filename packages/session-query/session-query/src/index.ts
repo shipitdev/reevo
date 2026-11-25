@@ -1,10 +1,10 @@
 /**
  * Service Definition for combined session-history reads, traces, filters, and full-text search.
  *
- * @module @deepseek-ai/dsh-session-query
+ * @module @reevo/dsh-session-query
  */
 
-import { currentSessionMessageProjections } from '@deepseek-ai/dsh-session-format-catalog/message-projections'
+import { currentSessionMessageProjections } from '@reevo/dsh-session-format-catalog/message-projections'
 import { Context, Service } from '@deepseek-ai/cordis'
 import {
   type Session,
@@ -13,10 +13,10 @@ import {
   validateSessionLog,
   type SessionId,
   type SessionSeq as SessionSeqType,
-} from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import { foldSessionTitle } from '@deepseek-ai/dsh-session-title'
-import type { SessionTitleSnapshot } from '@deepseek-ai/dsh-session-title'
+} from '@reevo/dsh-session'
+import type { ProjectionHandle } from '@reevo/dsh-session-projection'
+import { foldSessionTitle } from '@reevo/dsh-session-title'
+import type { SessionTitleSnapshot } from '@reevo/dsh-session-title'
 import type {
   SessionEventResultFilter,
   SessionEventSearchPage,

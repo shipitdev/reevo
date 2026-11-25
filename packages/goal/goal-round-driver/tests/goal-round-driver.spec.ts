@@ -1,22 +1,22 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { agentEvents } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { GoalId } from '@deepseek-ai/dsh-goal/types'
-import GoalService from '@deepseek-ai/dsh-goal'
-import type { GoalView } from '@deepseek-ai/dsh-goal'
-import { createUserMessage, LlmAdapter, LlmError  } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type { UserMessage } from '@deepseek-ai/dsh-session'
-import type { SubagentRuntime } from '@deepseek-ai/dsh-subagent'
+import type { Agent, PreStepDecision } from '@reevo/dsh-agent'
+import { agentEvents } from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import { brandString } from '@reevo/dsh-brand'
+import type { GoalId } from '@reevo/dsh-goal/types'
+import GoalService from '@reevo/dsh-goal'
+import type { GoalView } from '@reevo/dsh-goal'
+import { createUserMessage, LlmAdapter, LlmError  } from '@reevo/dsh-llm'
+import type { GenerateOptions, StreamChunk } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import type { SessionId } from '@reevo/dsh-session'
+import type { UserMessage } from '@reevo/dsh-session'
+import type { SubagentRuntime } from '@reevo/dsh-subagent'
 import * as goalSession from '../src/index.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

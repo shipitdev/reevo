@@ -4,11 +4,11 @@ import { basename, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { chromium, type Browser, type Locator, type Page } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { type ToolCallId, createAssistantMessage, createToolResultMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@deepseek-ai/dsh-session'
-import { sessionFileAddress } from '@deepseek-ai/dsh-util-workspace-path'
-import type {} from '@deepseek-ai/dsh-session-title'
+import { brandString } from '@reevo/dsh-brand'
+import { type ToolCallId, createAssistantMessage, createToolResultMessage, createUserMessage } from '@reevo/dsh-llm'
+import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@reevo/dsh-session'
+import { sessionFileAddress } from '@reevo/dsh-util-workspace-path'
+import type {} from '@reevo/dsh-session-title'
 import {
   assertFixtureInventory, captureStableAria, compareOrRefreshGolden,
   launchWebScaffold, readPersistedEvents, seedSession, watchConsole, webSnapshotMode, type WebScaffold,

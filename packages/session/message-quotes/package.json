@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-message-quotes",
+  "name": "@reevo/dsh-message-quotes",
   "description": "Selected-text quotation and Markdown blockquote presentation",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -40,27 +40,27 @@
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-api-session-controller": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-chat": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-conversation": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
+    "@reevo/dsh-api-session-controller": "workspace:*",
+    "@reevo/dsh-client-locale": "workspace:*",
+    "@reevo/dsh-client-ui-chat": "workspace:*",
+    "@reevo/dsh-client-ui-conversation": "workspace:*",
+    "@reevo/dsh-client-ui-renderer": "workspace:*",
+    "@reevo/dsh-client-ui-slots": "workspace:*",
+    "@reevo/dsh-client-ui-primitives": "workspace:*",
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@reevo/dsh-client-test-runtime": "workspace:*",
+    "@reevo/dsh-session": "workspace:*"
   },
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-session-controller",
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-chat",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-renderer"
+        "@reevo/dsh-api-session-controller",
+        "@reevo/dsh-client-locale",
+        "@reevo/dsh-client-ui-chat",
+        "@reevo/dsh-client-ui-conversation",
+        "@reevo/dsh-client-ui-renderer"
       ],
       "platform": "web"
     }

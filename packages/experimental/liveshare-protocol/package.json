@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-liveshare-protocol",
+  "name": "@reevo/dsh-experimental-liveshare-protocol",
   "description": "Liveshare wire frames and the identity contract shared by the owner bundle and the Relay",
   "version": "0.2.3-alpha.2",
   "repository": {
@@ -26,7 +26,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~"

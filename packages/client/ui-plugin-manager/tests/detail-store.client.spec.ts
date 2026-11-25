@@ -1,6 +1,6 @@
 import { Context } from '@deepseek-ai/cordis'
-import { RemoteError, TestRemote } from '@deepseek-ai/dsh-client-test-runtime'
-import type { BundleDetail } from '@deepseek-ai/dsh-api-remotes/client'
+import { RemoteError, TestRemote } from '@reevo/dsh-client-test-runtime'
+import type { BundleDetail } from '@reevo/dsh-api-remotes/client'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { BundleDetailController, bundleDetailKey } from '../src/client/detail-store.ts'
 

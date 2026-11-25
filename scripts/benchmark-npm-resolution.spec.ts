@@ -71,11 +71,11 @@ describe('npm resolution benchmark', () => {
     writeJson(root, 'apps/cli/package.json', {
       name: '@reevo/cli',
       version: '0.1.0',
-      dependencies: { '@deepseek-ai/dsh-child': 'workspace:^', external: '^2.0.0' },
+      dependencies: { '@reevo/dsh-child': 'workspace:^', external: '^2.0.0' },
       devDependencies: { ignored: 'workspace:^' },
     })
     writeJson(root, 'packages/core/child/package.json', {
-      name: '@deepseek-ai/dsh-child',
+      name: '@reevo/dsh-child',
       version: '0.1.0',
     })
 
@@ -85,7 +85,7 @@ describe('npm resolution benchmark', () => {
     expect(index.get('@reevo/cli')?.get('0.1.0')).toEqual({
       name: '@reevo/cli',
       version: '0.1.0',
-      dependencies: { '@deepseek-ai/dsh-child': '^0.1.0', external: '^2.0.0' },
+      dependencies: { '@reevo/dsh-child': '^0.1.0', external: '^2.0.0' },
     })
   })
 
@@ -142,10 +142,10 @@ describe('npm resolution benchmark', () => {
         ['@reevo/cli', new Map([['0.1.0', {
           name: '@reevo/cli',
           version: '0.1.0',
-          peerDependencies: { '@deepseek-ai/dsh-peer': '1.0.0' },
+          peerDependencies: { '@reevo/dsh-peer': '1.0.0' },
         }]])],
-        ['@deepseek-ai/dsh-peer', new Map([['1.0.0', {
-          name: '@deepseek-ai/dsh-peer',
+        ['@reevo/dsh-peer', new Map([['1.0.0', {
+          name: '@reevo/dsh-peer',
           version: '1.0.0',
         }]])],
       ])
@@ -153,7 +153,7 @@ describe('npm resolution benchmark', () => {
       const result = await resolveNpmPackageLock(index, { '@reevo/cli': '0.1.0' }, 10_000)
 
       expect(result.archiveRequests).toBe(0)
-      expect(result.packageLock.packages['node_modules/@deepseek-ai/dsh-peer']?.version).toBe('1.0.0')
+      expect(result.packageLock.packages['node_modules/@reevo/dsh-peer']?.version).toBe('1.0.0')
     } finally {
       if (previous.userConfig === undefined) delete process.env.npm_config_userconfig
       else process.env.npm_config_userconfig = previous.userConfig

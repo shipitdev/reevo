@@ -1,8 +1,8 @@
 // Office toolview links target the input, not the temporary output. Rows show the
 // result's text blocks; rendered page images reach the model but are not displayed.
 
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import { IconBrowseOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import { IconBrowseOutlineRegular } from '@reevo/dsh-client-ui-primitives'
 import type { Context } from '@deepseek-ai/cordis'
 import { toolFileInject } from '../file-menu.ts'
 import { officeRowModel } from '../models/office-card-model.ts'

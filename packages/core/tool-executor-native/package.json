@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-executor-native",
+  "name": "@reevo/dsh-tool-executor-native",
   "description": "Native tool execution plugin",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -33,10 +33,10 @@
   ],
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-tools": "workspace:*"
+    "@reevo/dsh-tools": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-tools": "workspace:*"
+    "@reevo/dsh-tools": "workspace:*"
   }
 }

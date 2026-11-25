@@ -1,21 +1,21 @@
 /** Host timer over standalone tasks; target Session activation is a delivery operation. */
 import { randomUUID } from 'node:crypto'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-declare module '@deepseek-ai/dsh-llm' {
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'schedule': { kind: 'schedule' } & ContextFormed
   }
 }
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SessionId as SessionIdType } from '@deepseek-ai/dsh-session/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { SessionId as SessionIdType } from '@reevo/dsh-session/types'
 import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { SessionPersistenceNotFoundError } from '@deepseek-ai/dsh-session-persistence'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
-import type {} from '@deepseek-ai/dsh-api-session-controller'
-import type {} from '@deepseek-ai/dsh-session-title'
-import type {} from '@deepseek-ai/dsh-workspace'
+import type { Agent } from '@reevo/dsh-agent'
+import { SessionPersistenceNotFoundError } from '@reevo/dsh-session-persistence'
+import { RemoteError } from '@reevo/dsh-typert-protocol'
+import type {} from '@reevo/dsh-api-session-controller'
+import type {} from '@reevo/dsh-session-title'
+import type {} from '@reevo/dsh-workspace'
 import {
   isRecurringScheduleRecord, MIN_EVERY_INTERVAL_SECONDS, renderRecurringReminderBatchFraming, renderReminderFraming,
   resolveRecurringOccurrence, type RecurringOccurrence,

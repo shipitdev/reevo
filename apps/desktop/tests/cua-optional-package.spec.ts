@@ -9,9 +9,9 @@ import { expect, it, onTestFinished } from 'vitest'
 import { pnpmCommand } from '../../../scripts/release/process.ts'
 
 const repository = resolve(import.meta.dirname, '../../..')
-const providerName = '@deepseek-ai/dsh-cua-macos'
-const windowsProvider = '@deepseek-ai/dsh-cua-windows'
-const bundleName = '@deepseek-ai/dsh-cua-bundle'
+const providerName = '@reevo/dsh-cua-macos'
+const windowsProvider = '@reevo/dsh-cua-windows'
+const bundleName = '@reevo/dsh-cua-bundle'
 const readManifest = async (path: string): Promise<Record<string, unknown>> =>
   JSON.parse(await readFile(join(repository, path, 'package.json'), 'utf8')) as Record<string, unknown>
 
@@ -124,7 +124,7 @@ it('fetches the platform-declared CUA provider tarballs with an empty cache for 
       `--config.cache-dir=${join(project, 'cache')}`, `--config.state-dir=${join(project, 'state')}`,
     ], project)
     expect(requests).toContain(`/${bundleName}.tgz`)
-    expect(requests).toContain('/@deepseek-ai/dsh-cua.tgz')
+    expect(requests).toContain('/@reevo/dsh-cua.tgz')
     expect(requests.includes(`/${providerName}.tgz`), `${target}: ${JSON.stringify(requests)}\n${output}`)
       .toBe(target === 'darwin' || unrestricted)
     expect(requests.includes(`/${windowsProvider}.tgz`), `${target}: ${JSON.stringify(requests)}\n${output}`)

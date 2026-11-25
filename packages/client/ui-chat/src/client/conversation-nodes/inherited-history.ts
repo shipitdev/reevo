@@ -1,5 +1,5 @@
 import type { Context } from '@deepseek-ai/cordis'
-import type { ConversationNodeDefinition } from '@deepseek-ai/dsh-client-ui-conversation/client'
+import type { ConversationNodeDefinition } from '@reevo/dsh-client-ui-conversation/client'
 import { chatNode } from './common.ts'
 
 declare module '../contract/chat-nodes.ts' {

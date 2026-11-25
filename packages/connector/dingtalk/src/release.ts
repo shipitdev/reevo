@@ -9,7 +9,7 @@ import { mkdir, readdir, rename, rm, writeFile } from 'node:fs/promises'
 import { basename, dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { Context } from '@deepseek-ai/cordis'
-import { dshCachePath } from '@deepseek-ai/dsh-home-paths'
+import { dshCachePath } from '@reevo/dsh-home-paths'
 import { unzipSync } from 'fflate'
 import { x as extract } from 'tar'
 

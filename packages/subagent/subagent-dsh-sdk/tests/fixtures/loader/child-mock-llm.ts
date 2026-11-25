@@ -1,10 +1,10 @@
 import type { Context } from '@deepseek-ai/cordis'
 import { existsSync, writeFileSync } from 'node:fs'
 import { setTimeout } from 'node:timers/promises'
-import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
-import { LlmAdapter } from '@deepseek-ai/dsh-llm'
+import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import type { ReasoningEffortId } from '@reevo/dsh-llm/types'
+import { LlmAdapter } from '@reevo/dsh-llm'
 
 /**
  * Scripted model for the CHILD runtime: validates either the routed success

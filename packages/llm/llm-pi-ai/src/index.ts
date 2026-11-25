@@ -11,7 +11,7 @@
  *
  * ```yaml
  * - id: llm
- *   name: '@deepseek-ai/dsh-llm-pi-ai'
+ *   name: '@reevo/dsh-llm-pi-ai'
  *   config:
  *     providers:
  *       # Catalog route: everything but the credential comes from pi-ai.
@@ -52,20 +52,20 @@
  *               max: ultra
  * ```
  *
- * @module @deepseek-ai/dsh-llm-pi-ai
+ * @module @reevo/dsh-llm-pi-ai
  */
-import type {} from '@deepseek-ai/dsh-settings'
+import type {} from '@reevo/dsh-settings'
 
 import type {} from '@deepseek-ai/cordis-plugin-loader'
 
 import type { Context } from '@deepseek-ai/cordis'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
-import { normalizeApiKey } from '@deepseek-ai/dsh-credentials'
-import type { ApiKeyRejection } from '@deepseek-ai/dsh-credentials'
-import { INVALID_CREDENTIAL_CODE, LlmError, resolveImageAttachmentAccess } from '@deepseek-ai/dsh-llm'
-import type { AdapterRegistrationHandle, DirectoryRegistrationHandle, LlmConfigurableProvider } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-fs'
-import { deepEqualJson } from '@deepseek-ai/dsh-util-values'
+import { launchEnvironmentOf } from '@reevo/dsh-launch-environment'
+import { normalizeApiKey } from '@reevo/dsh-credentials'
+import type { ApiKeyRejection } from '@reevo/dsh-credentials'
+import { INVALID_CREDENTIAL_CODE, LlmError, resolveImageAttachmentAccess } from '@reevo/dsh-llm'
+import type { AdapterRegistrationHandle, DirectoryRegistrationHandle, LlmConfigurableProvider } from '@reevo/dsh-llm'
+import type {} from '@reevo/dsh-fs'
+import { deepEqualJson } from '@reevo/dsh-util-values'
 import { PiAiAdapter } from './adapter.ts'
 import { authContextFrom, credentialStoreFrom } from './auth.ts'
 import { catalogProvider, catalogProviderIds } from './catalog.ts'

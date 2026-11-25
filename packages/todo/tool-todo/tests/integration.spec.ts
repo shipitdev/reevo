@@ -1,13 +1,13 @@
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
+import { createUserMessage } from '@reevo/dsh-llm'
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { SessionId, SessionEvent } from '@deepseek-ai/dsh-session'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import * as ToolTodo from '@deepseek-ai/dsh-tool-todo'
+import type { SessionId, SessionEvent } from '@reevo/dsh-session'
+import type { Agent } from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import * as ToolTodo from '@reevo/dsh-tool-todo'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 /**
  * Full-loop integration: a scripted mock model drives the REAL todo_write tool

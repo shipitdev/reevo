@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-sdk-protocol",
+  "name": "@reevo/dsh-sdk-protocol",
   "description": "Shared wire protocol for the DeepSeek Harness SDK runtime: the newline-delimited JSON-RPC stdio transport and the named request, result, and notification types spoken between the runtime server and SDK clients",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -29,19 +29,19 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-commands": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
+    "@reevo/dsh-commands": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-subagent": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-user-questions": "workspace:*"
+    "@reevo/dsh-user-questions": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-commands": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
+    "@reevo/dsh-commands": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-subagent": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-user-questions": "workspace:*"
+    "@reevo/dsh-user-questions": "workspace:*"
   }
 }

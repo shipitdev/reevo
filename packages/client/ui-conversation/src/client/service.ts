@@ -9,23 +9,23 @@
  */
 import { Service } from '@deepseek-ai/cordis'
 import type { Context } from '@deepseek-ai/cordis'
-import { randomUUID } from '@deepseek-ai/dsh-util-crypto'
+import { randomUUID } from '@reevo/dsh-util-crypto'
 // Type-only imports: a plugin-to-plugin value import is a bundle purity
 // error, so scope resolution goes through the sessions service (scopeOf
 // method) instead of the standalone helper.
 import type {
   ISessions, PendingSubmissionRetirement, SessionFace,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import type {} from '@deepseek-ai/dsh-client-file-upload/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { FileAttachmentRef, ImageMediaType } from '@deepseek-ai/dsh-attachment'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { ObservableSnapshot, SnapshotStore } from '@deepseek-ai/dsh-client-store'
+} from '@reevo/dsh-api-session-controller/client'
+import type {} from '@reevo/dsh-client-file-upload/client'
+import type { SessionId } from '@reevo/dsh-session/types'
+import type { FileAttachmentRef, ImageMediaType } from '@reevo/dsh-attachment'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import type { ObservableSnapshot, SnapshotStore } from '@reevo/dsh-client-store'
 import type {
   ComposerAttachment, ComposerFileAttachment, ComposerImageAttachment, DraftFileUpload,
 } from './contract/slots.ts'
-import type { QueueAction } from '@deepseek-ai/dsh-api-session-controller/types'
-import type { MessageId } from '@deepseek-ai/dsh-llm/types'
+import type { QueueAction } from '@reevo/dsh-api-session-controller/types'
+import type { MessageId } from '@reevo/dsh-llm/types'
 import type { ComposerBlocks } from './contract/composer-blocks.ts'
 import type {
   DraftAttachmentId, DraftAttachmentSerializationResult, SessionInputResolver, SubmitAttachment, SubmitOutcome,

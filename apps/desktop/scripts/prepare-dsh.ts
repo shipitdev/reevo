@@ -152,7 +152,7 @@ async function main(): Promise<void> {
       })
     })
     writeFileSync(join(DSH_OUTPUT_ROOT, 'package.json'), `${JSON.stringify({
-      name: '@deepseek-ai/dsh-desktop-runtime', private: true, version: release.version, type: 'module',
+      name: '@reevo/dsh-desktop-runtime', private: true, version: release.version, type: 'module',
       dependencies: Object.fromEntries(packageSet.packages.map(entry => [entry.name, entry.version])),
     }, undefined, 2)}\n`)
     for (const file of DESKTOP_HOST_RUNTIME_FILES) {

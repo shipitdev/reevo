@@ -11,12 +11,12 @@ import { afterEach, describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import * as WorkspaceChangesPlugin from '@deepseek-ai/dsh-workspace-changes'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import LocalSubprocessRuntime from '@reevo/dsh-subprocess-local'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import * as WorkspaceChangesPlugin from '@reevo/dsh-workspace-changes'
 import { changes, endTurn, git, startTurn, toolCall } from './support.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 let root: string | undefined
 let context: Context | undefined
@@ -33,10 +33,10 @@ describe('real Loader composition', () => {
     root = await mkdtemp(join(tmpdir(), 'dsh-workspace-changes-loader-'))
     const cwd = join(root, 'ws')
     await writeFile(join(root, 'cordis.yml'), [
-      "- name: '@deepseek-ai/dsh-session'",
-      "- name: '@deepseek-ai/dsh-subprocess-local'",
-      "- name: '@deepseek-ai/dsh-fs-local'",
-      "- name: '@deepseek-ai/dsh-workspace-changes'",
+      "- name: '@reevo/dsh-session'",
+      "- name: '@reevo/dsh-subprocess-local'",
+      "- name: '@reevo/dsh-fs-local'",
+      "- name: '@reevo/dsh-workspace-changes'",
       '',
     ].join('\n'))
     context = new Context()
@@ -44,10 +44,10 @@ describe('real Loader composition', () => {
     await context.plugin(Loader)
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-session', SessionStore],
-      ['@deepseek-ai/dsh-subprocess-local', LocalSubprocessRuntime],
-      ['@deepseek-ai/dsh-fs-local', LocalFileSystem],
-      ['@deepseek-ai/dsh-workspace-changes', WorkspaceChangesPlugin],
+      ['@reevo/dsh-session', SessionStore],
+      ['@reevo/dsh-subprocess-local', LocalSubprocessRuntime],
+      ['@reevo/dsh-fs-local', LocalFileSystem],
+      ['@reevo/dsh-workspace-changes', WorkspaceChangesPlugin],
     ])
     context.loader.internal = {
       version: 'v2',

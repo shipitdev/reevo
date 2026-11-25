@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-host-open-in-app",
+  "name": "@reevo/dsh-host-open-in-app",
   "description": "Host half of open-in-app: resolved application catalog, icons, and the launch endpoint as three webServer routes",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -41,9 +41,9 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-launch-environment": "workspace:*",
-    "@deepseek-ai/dsh-native-command": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-launch-environment": "workspace:*",
+    "@reevo/dsh-native-command": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~"
   },
   "peerDependencies": {
@@ -52,7 +52,7 @@
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   }
 }

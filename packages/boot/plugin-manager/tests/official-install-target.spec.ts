@@ -5,7 +5,7 @@ import { dirname, join } from 'node:path'
 import { expect, it, onTestFinished } from 'vitest'
 import { officialBundleInstallTarget } from '../src/official-install-target.ts'
 
-const name = '@deepseek-ai/dsh-subagent-codex'
+const name = '@reevo/dsh-subagent-codex'
 const version = '0.2.1-alpha.1'
 
 function fixture() {
@@ -15,7 +15,7 @@ function fixture() {
   const anchor = join(root, 'apps', 'cli', 'package.json')
   mkdirSync(dirname(anchor), { recursive: true })
   writeFileSync(join(root, 'package.json'), JSON.stringify({ name: '@reevo/workspace' }))
-  writeFileSync(anchor, JSON.stringify({ name: '@reevo/cli', version, dependencies: { '@deepseek-ai/dsh-app-boot': 'workspace:*' } }))
+  writeFileSync(anchor, JSON.stringify({ name: '@reevo/cli', version, dependencies: { '@reevo/dsh-app-boot': 'workspace:*' } }))
   const directory = join(root, 'packages', 'relocated', 'native-provider')
   mkdirSync(join(directory, 'lib'), { recursive: true })
   writeFileSync(join(directory, 'package.json'), JSON.stringify({ name, version, main: 'lib/index.js', dsh: { bundle: { patch: './cordis.patch.yml' } } }))
@@ -26,7 +26,7 @@ function fixture() {
 
 it('offers an exact prerelease registry target for a packed installation inside a checkout', () => {
   const { anchor } = fixture()
-  writeFileSync(anchor, JSON.stringify({ name: '@reevo/cli', version, dependencies: { '@deepseek-ai/dsh-app-boot': version } }))
+  writeFileSync(anchor, JSON.stringify({ name: '@reevo/cli', version, dependencies: { '@reevo/dsh-app-boot': version } }))
   expect(officialBundleInstallTarget(name, anchor, version)).toEqual({ spec: `${name}@${version}`, version })
 })
 

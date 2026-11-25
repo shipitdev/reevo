@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-hook-protocol",
+  "name": "@reevo/dsh-hook-protocol",
   "description": "Shared Claude Code / Codex hook wire protocol: matcher engine, stdin/exit-code/stdout codec, multi-hook merge, and hook/* session events",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -30,14 +30,14 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
+    "@reevo/dsh-shell": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-shell": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

@@ -5,8 +5,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import SkillRegistry from '@deepseek-ai/dsh-skill'
-import * as SkillOffice from '@deepseek-ai/dsh-skill-office'
+import SkillRegistry from '@reevo/dsh-skill'
+import * as SkillOffice from '@reevo/dsh-skill-office'
 import { describe, expect, it, vi } from 'vitest'
 
 vi.mock('node:fs/promises', async (importOriginal) => {
@@ -77,8 +77,8 @@ describe('bundled Office skills', () => {
       await cp(assets, external, { recursive: true })
       const configPath = join(root, 'cordis.yml')
       await writeFile(configPath, [
-        "- name: '@deepseek-ai/dsh-skill'",
-        "- name: '@deepseek-ai/dsh-skill-office'",
+        "- name: '@reevo/dsh-skill'",
+        "- name: '@reevo/dsh-skill-office'",
         '  config:',
         `    assetRoot: ${JSON.stringify(external)}`,
         '',
@@ -87,8 +87,8 @@ describe('bundled Office skills', () => {
       await ctx.plugin(Loader)
       ctx.loader.builtins.include = Include
       const modules = new Map<string, unknown>([
-        ['@deepseek-ai/dsh-skill', SkillRegistry],
-        ['@deepseek-ai/dsh-skill-office', SkillOffice],
+        ['@reevo/dsh-skill', SkillRegistry],
+        ['@reevo/dsh-skill-office', SkillOffice],
       ])
       ctx.loader.internal = {
         version: 'v2',

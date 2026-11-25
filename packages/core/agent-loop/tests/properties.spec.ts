@@ -9,21 +9,21 @@
  * idle→running→idle, while teardown is a registry lifecycle.
  */
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import { createUserMessage, LlmAdapter } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import AgentRegistry, { type Agent } from '@deepseek-ai/dsh-agent'
+import LlmRuntime from '@reevo/dsh-llm'
+import { createUserMessage, LlmAdapter } from '@reevo/dsh-llm'
+import type { GenerateOptions, StreamChunk } from '@reevo/dsh-llm'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import AgentRegistry, { type Agent } from '@reevo/dsh-agent'
 
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import fc from 'fast-check'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 /** A never-exhausting adapter: every model call returns the same short reply. */
 class EchoAdapter extends LlmAdapter {

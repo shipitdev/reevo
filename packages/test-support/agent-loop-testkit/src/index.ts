@@ -2,24 +2,24 @@
  * Shared service mounting, real AgentLoop drivers, and structural Agent stubs
  * for agent-loop tests. Callers retain ownership of their contexts, adapters,
  * optional plugins, agents, and teardown.
- * @module @deepseek-ai/dsh-agent-loop-testkit
+ * @module @reevo/dsh-agent-loop-testkit
  */
 
 import type { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent, AgentOptions, Inbox, InboxTarget } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { SessionHeader, SessionId, UserMessage } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import type { Config as SystemPromptConfig } from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import * as PtcToolExecutor from '@deepseek-ai/dsh-tool-executor-ptc'
-import FsLocal from '@deepseek-ai/dsh-fs-local'
-import WorkingDirectory from '@deepseek-ai/dsh-working-directory'
+import AgentRegistry from '@reevo/dsh-agent'
+import type { Agent, AgentOptions, Inbox, InboxTarget } from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import LlmRuntime from '@reevo/dsh-llm'
+import SessionStore from '@reevo/dsh-session'
+import type { SessionHeader, SessionId, UserMessage } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import type { Config as SystemPromptConfig } from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import * as PtcToolExecutor from '@reevo/dsh-tool-executor-ptc'
+import FsLocal from '@reevo/dsh-fs-local'
+import WorkingDirectory from '@reevo/dsh-working-directory'
 
 export { createInboxStub, unsupportedInbox } from './inbox.ts'
 export { unsupportedModel } from './model.ts'

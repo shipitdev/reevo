@@ -1,12 +1,12 @@
 /** Resolve unqualified CLI references in the shell execution world and persist only confirmed URLs. */
 
 import type { Context } from '@deepseek-ai/cordis'
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { ToolExecution, ToolExecutionResult, ToolExecutionToken } from '@deepseek-ai/dsh-tools'
-import type {} from '@deepseek-ai/dsh-shell'
-import type {} from '@deepseek-ai/dsh-shell-env'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import type { Session } from '@reevo/dsh-session'
+import type { ToolExecution, ToolExecutionResult, ToolExecutionToken } from '@reevo/dsh-tools'
+import type {} from '@reevo/dsh-shell'
+import type {} from '@reevo/dsh-shell-env'
+import type {} from '@reevo/dsh-sandbox-policy'
 import { z } from 'zod'
 import type { CommandRules } from './commands.ts'
 

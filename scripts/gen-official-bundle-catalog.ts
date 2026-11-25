@@ -49,7 +49,7 @@ export function generateOfficialBundleCatalog(root: string, names: readonly stri
   checkInstallation('@reevo/cli')
   return names.map((packageName) => {
     const entry = manifests.get(packageName)
-    if (entry === undefined || !entry.path.startsWith('packages/') || !packageName.startsWith('@deepseek-ai/dsh-') || entry.private || !entry.bundle) {
+    if (entry === undefined || !entry.path.startsWith('packages/') || !packageName.startsWith('@reevo/dsh-') || entry.private || !entry.bundle) {
       throw new Error(`${packageName}: Official catalog entries must be public DSH bundle packages`)
     }
     try { assertBundlePlatform(entry.platforms, process.platform) } catch (error) {

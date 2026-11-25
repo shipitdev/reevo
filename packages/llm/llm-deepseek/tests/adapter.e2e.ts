@@ -1,5 +1,5 @@
-import * as Protocol from '@deepseek-ai/dsh-llm-deepseek'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import * as Protocol from '@reevo/dsh-llm-deepseek'
+import { brandString } from '@reevo/dsh-brand'
 /**
  * Real Messages round trips require credentials; tool replacement also accepts DEEPSEEK_BASE_URL.
  * System-update checks additionally require DEEPSEEK_IN_HISTORY_MODEL.
@@ -13,17 +13,17 @@ import { pathToFileURL } from 'node:url'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context, LoggerLevel } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import LocalAttachments from '@deepseek-ai/dsh-attachment-local'
-import DeepSeekLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import LlmRuntime, { BlockAssembler, createAssistantMessage, createDeveloperMessage, createSystemMessage, createToolResultMessage, type ReasoningEffortId, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { Message } from '@deepseek-ai/dsh-llm'
-import * as PluginPackageInventoryDeepSeek from '@deepseek-ai/dsh-plugin-package-inventory-deepseek'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import * as SessionLogDeepSeek from '@deepseek-ai/dsh-session-log-deepseek'
-import * as Messages from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import DeepSeekAuth from '@deepseek-ai/dsh-deepseek-auth'
+import AgentRegistry from '@reevo/dsh-agent'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import LocalAttachments from '@reevo/dsh-attachment-local'
+import DeepSeekLlmApiExtensionRegistry from '@reevo/dsh-deepseek-llm-api-extensions'
+import LlmRuntime, { BlockAssembler, createAssistantMessage, createDeveloperMessage, createSystemMessage, createToolResultMessage, type ReasoningEffortId, type ToolCallId } from '@reevo/dsh-llm'
+import type { Message } from '@reevo/dsh-llm'
+import * as PluginPackageInventoryDeepSeek from '@reevo/dsh-plugin-package-inventory-deepseek'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import * as SessionLogDeepSeek from '@reevo/dsh-session-log-deepseek'
+import * as Messages from '@reevo/dsh-llm-deepseek-api-key'
+import DeepSeekAuth from '@reevo/dsh-deepseek-auth'
 import { DeepSeekFilesClient } from '../src/files-api.ts'
 import { MESSAGES_FILES_BETA } from '../src/messages-api.ts'
 import { assemble, options, user, sourceModuleLoader } from './helpers.ts'
@@ -183,13 +183,13 @@ describe.skipIf(!process.env.DEEPSEEK_API_KEY)('DeepSeek Messages real API', () 
     // Select the source module while Loader owns its active package entry.
     ctx.loader.internal = sourceModuleLoader(async (specifier) => {
       if (specifier === unversionedModule) return import(specifier)
-      if (specifier !== '@deepseek-ai/dsh-plugin-package-inventory-deepseek') throw new Error(`unexpected Loader import: ${specifier}`)
+      if (specifier !== '@reevo/dsh-plugin-package-inventory-deepseek') throw new Error(`unexpected Loader import: ${specifier}`)
       return PluginPackageInventoryDeepSeek
     })
-    await ctx.loader.create({ name: '@deepseek-ai/dsh-plugin-package-inventory-deepseek' })
+    await ctx.loader.create({ name: '@reevo/dsh-plugin-package-inventory-deepseek' })
     await ctx.loader.create({ name: unversionedModule })
     await ctx.loader.await()
-    const packagePath = createRequire(import.meta.url).resolve('@deepseek-ai/dsh-plugin-package-inventory-deepseek/package.json')
+    const packagePath = createRequire(import.meta.url).resolve('@reevo/dsh-plugin-package-inventory-deepseek/package.json')
     const packageIdentity = JSON.parse(await readFile(packagePath, 'utf8')) as { name: string; version: string }
     const session = ctx.sessions.create(brandString<SessionId>(`real-messages-extensions-${randomUUID()}`))
     session.append('turn/start', { turn: 1 })

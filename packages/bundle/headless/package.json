@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-headless",
+  "name": "@reevo/dsh-headless",
   "description": "The dsh one-shot bundle: a direct core Agent/Session runner over dsh-base with no Host, HTTP, or browser layer",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -45,50 +45,50 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-cmdline": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-cmdline": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "commander": "^15.0.0"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-default-model": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-query": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-permission-presets": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-user-approval": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-default-model": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-query": "workspace:*",
+    "@reevo/dsh-fs": "workspace:*",
+    "@reevo/dsh-permission-presets": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*",
+    "@reevo/dsh-subagent": "workspace:*",
+    "@reevo/dsh-user-approval": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-default-model": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-query": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-permission-presets": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-subagent": "workspace:*",
-    "@deepseek-ai/dsh-user-approval": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-default-model": "workspace:*",
+    "@reevo/dsh-agent-loop": "workspace:*",
+    "@reevo/dsh-agent-loop-testkit": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-query": "workspace:*",
+    "@reevo/dsh-fs": "workspace:*",
+    "@reevo/dsh-permission-presets": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*",
+    "@reevo/dsh-subagent": "workspace:*",
+    "@reevo/dsh-user-approval": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-permission-presets": {
+    "@reevo/dsh-permission-presets": {
       "optional": true
     },
-    "@deepseek-ai/dsh-sandbox-policy": {
+    "@reevo/dsh-sandbox-policy": {
       "optional": true
     },
-    "@deepseek-ai/dsh-subagent": {
+    "@reevo/dsh-subagent": {
       "optional": true
     }
   }

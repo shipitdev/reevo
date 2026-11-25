@@ -2,7 +2,7 @@
 import { mkdir, mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
-import type { SubprocessHandle, SubprocessRuntime } from '@deepseek-ai/dsh-subprocess'
+import type { SubprocessHandle, SubprocessRuntime } from '@reevo/dsh-subprocess'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { nativeExecutablePath, nativeHostArchitecture, prepareNativeExecutable, type NativeArchitecture } from '../src/native-build.ts'
 
@@ -10,7 +10,7 @@ async function fixture(source: boolean, architecture: NativeArchitecture = 'x64'
   const root = await mkdtemp(join(tmpdir(), 'cua-native-build-'))
   onTestFinished(() => rm(root, { recursive: true, force: true }))
   const packageRoot = source ? join(root, 'packages', 'experimental', 'cua-windows')
-    : join(root, ...(asar ? ['app.asar'] : []), 'node_modules', '@deepseek-ai', 'dsh-cua-windows')
+    : join(root, ...(asar ? ['app.asar'] : []), 'node_modules', '@reevo', 'dsh-cua-windows')
   const executable = nativeExecutablePath(packageRoot, architecture)
   const local = join(packageRoot, 'native', 'bin', 'local', 'dsh-cua-windows.exe')
   const otherArchitecture = nativeExecutablePath(packageRoot, architecture === 'x64' ? 'arm64' : 'x64')

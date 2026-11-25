@@ -21,7 +21,7 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context, FiberState } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import type { PeerScope } from '@deepseek-ai/dsh-typert-protocol'
+import type { PeerScope } from '@reevo/dsh-typert-protocol'
 import HttpServer, {
   bindUrlHost, isLoopbackHost, normalizeBindAddress, renderIndexInjections, type TlsConfig, type WebResource, type WebRoute,
   type WebAuthRequest,
@@ -97,7 +97,7 @@ async function loadComposition(
   const root = await mkdtemp(join(tmpdir(), 'dsh-webserver-loader-'))
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, [
-    "- name: '@deepseek-ai/dsh-host-webserver'",
+    "- name: '@reevo/dsh-host-webserver'",
     '  config:',
     `    host: '${host}'`,
     `    port: ${String(port)}`,
@@ -126,7 +126,7 @@ async function loadComposition(
   await context.plugin(Loader)
   context.loader.builtins.include = Include
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-host-webserver', HttpServer],
+    ['@reevo/dsh-host-webserver', HttpServer],
   ])
   context.loader.internal = {
     version: 'v2',
@@ -145,7 +145,7 @@ async function loadComposition(
 
 /** The webserver row's fiber in a Loaded composition. */
 function webserverFiber(context: Context) {
-  return [...context.loader.entries()].find(entry => entry.options.name === '@deepseek-ai/dsh-host-webserver')?.fiber
+  return [...context.loader.entries()].find(entry => entry.options.name === '@reevo/dsh-host-webserver')?.fiber
 }
 
 /** The port a started listener bound; a test that reads it before `listen` fails here. */

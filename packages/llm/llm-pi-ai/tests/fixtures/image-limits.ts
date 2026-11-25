@@ -2,9 +2,9 @@
 
 import { readFile } from 'node:fs/promises'
 import type { Context } from '@deepseek-ai/cordis'
-import { isAttachmentError } from '@deepseek-ai/dsh-attachment'
-import type {} from '@deepseek-ai/dsh-llm'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { isAttachmentError } from '@reevo/dsh-attachment'
+import type {} from '@reevo/dsh-llm'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 
 export const name = 'snapshot-pi-image-limits'
 export const inject = ['tools', 'llm', 'attachments']

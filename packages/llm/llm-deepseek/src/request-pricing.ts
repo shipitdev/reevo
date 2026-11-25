@@ -10,10 +10,10 @@
  */
 
 import { MAX_IMAGE_BYTES } from './defaults.ts'
-import { offloadedImageText, requestImageHandleText, textOnlyImageText } from '@deepseek-ai/dsh-llm'
-import type { ImageAttachmentAccessResolver, ImageBlock, LlmImageRequestPrice, LlmImageRequestPricing } from '@deepseek-ai/dsh-llm'
-import { longEdgeDimensions, requestImageDimensions } from '@deepseek-ai/dsh-attachment'
-import type { ImageAttachmentRef, ImageRequestTarget } from '@deepseek-ai/dsh-attachment'
+import { offloadedImageText, requestImageHandleText, textOnlyImageText } from '@reevo/dsh-llm'
+import type { ImageAttachmentAccessResolver, ImageBlock, LlmImageRequestPrice, LlmImageRequestPricing } from '@reevo/dsh-llm'
+import { longEdgeDimensions, requestImageDimensions } from '@reevo/dsh-attachment'
+import type { ImageAttachmentRef, ImageRequestTarget } from '@reevo/dsh-attachment'
 import { deepSeekImageTokens, deepSeekRequestImageDimensions } from './image-tokens.ts'
 import type { DeepSeekCatalogModel, DeepSeekConnectionOptions } from './types.ts'
 

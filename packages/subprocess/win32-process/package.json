@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-win32-process",
+  "name": "@reevo/dsh-win32-process",
   "description": "Shared low-level Win32 process, stdio, and Job Object primitives",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -31,14 +31,14 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-error": "workspace:*"
+    "@reevo/dsh-error": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-lazy-require": "workspace:*",
+    "@reevo/dsh-lazy-require": "workspace:*",
     "koffi": "3.1.1"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-error": "workspace:*"
+    "@reevo/dsh-error": "workspace:*"
   }
 }

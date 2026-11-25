@@ -9,22 +9,22 @@ import { join, dirname } from 'node:path'
 import { mkdir, readFile, readdir, stat, writeFile } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import { Context } from '@deepseek-ai/cordis'
-import { LOADER_SMOKE_TEST_TIMEOUT_MS, runLoaderSmoke } from '@deepseek-ai/dsh-loader-smoke'
+import { LOADER_SMOKE_TEST_TIMEOUT_MS, runLoaderSmoke } from '@reevo/dsh-loader-smoke'
 import {
   SESSION_FORMAT_VERSION,
   type SessionId,
   SessionSeq,
   type SessionEvent,
   type SessionHeader,
-} from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+} from '@reevo/dsh-session'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
 import {
   generationLogFilename,
   generationLogPath,
   logPath,
 } from '../../../../../../packages/session/session-persistence-jsonl/src/format.ts'
 import { describe, expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const fixtureDir = join(dirname(fileURLToPath(import.meta.url)), 'expected/workspace-context-resume/offline-edit')
 const replayFixture = join(fixtureDir, 'replay.jsonl')

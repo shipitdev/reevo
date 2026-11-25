@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-llm-replay",
+  "name": "@reevo/dsh-llm-replay",
   "description": "Replay LLM plugin: short-circuits llm/stream with model chunks reconstructed from a recorded session JSONL (keyless snapshot tests)",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -31,26 +31,26 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-llm-api-extensions": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@reevo/dsh-compaction": "workspace:*",
+    "@reevo/dsh-deepseek-llm-api-extensions": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-deepseek-llm-api-extensions": {
+    "@reevo/dsh-deepseek-llm-api-extensions": {
       "optional": true
     }
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-llm-api-extensions": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@reevo/dsh-compaction": "workspace:*",
+    "@reevo/dsh-deepseek-llm-api-extensions": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-session-format-catalog": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-session-format-catalog": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*"
   }
 }

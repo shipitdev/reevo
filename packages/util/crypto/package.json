@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-util-crypto",
+  "name": "@reevo/dsh-util-crypto",
   "description": "Zero-dependency browser-safe UUID and byte-encoding helpers",
   "version": "0.2.3-alpha.2",
   "publishConfig": {

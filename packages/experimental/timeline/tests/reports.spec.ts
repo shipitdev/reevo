@@ -1,11 +1,11 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { Session, SessionId, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import { agentEvents } from '@deepseek-ai/dsh-agent'
-import { bindScopeParent, createScope } from '@deepseek-ai/dsh-scope'
-import { createUserMessage, isAgentLoopRequest, ReasoningEffortId, ToolCallId } from '@deepseek-ai/dsh-llm'
+import { Session, SessionId, SessionLogOffset } from '@reevo/dsh-session'
+import { agentEvents } from '@reevo/dsh-agent'
+import { bindScopeParent, createScope } from '@reevo/dsh-scope'
+import { createUserMessage, isAgentLoopRequest, ReasoningEffortId, ToolCallId } from '@reevo/dsh-llm'
 import { updateVolatile } from '@deepseek-ai/cosmokit'
 import { textOutput } from './fixture.ts'
-import { defineTool } from '@deepseek-ai/dsh-tools'
+import { defineTool } from '@reevo/dsh-tools'
 import { Config } from '../src/config.ts'
 import * as Timeline from '../src/index.ts'
 import type { PluginConfig } from '../src/config.ts'
@@ -326,9 +326,9 @@ describe('background summaries through a real agent loop', () => {
     async (main) => {
       const f = await running()
       const namespace: unknown = await import(
-        /* @vite-ignore */ `${import.meta.resolve('@deepseek-ai/dsh-llm/src/call-config.ts')}?timeline-independent-runtime`,
+        /* @vite-ignore */ `${import.meta.resolve('@reevo/dsh-llm/src/call-config.ts')}?timeline-independent-runtime`,
       )
-      const independent = namespace as typeof import('@deepseek-ai/dsh-llm/src/call-config.ts')
+      const independent = namespace as typeof import('@reevo/dsh-llm/src/call-config.ts')
       const previous = f.adapter.main.at(-1)
       if (previous?.signal === undefined) throw new Error('The main request signal is missing')
       const request = independent.markAgentLoopRequest({

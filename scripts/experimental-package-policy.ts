@@ -6,29 +6,29 @@
  * experimental name only through this map.
  */
 export const EXPERIMENTAL_PACKAGE_NAME_EXCEPTIONS: Readonly<Record<string, string>> = {
-  'packages/experimental/cua': '@deepseek-ai/dsh-cua',
-  'packages/experimental/cua-bundle': '@deepseek-ai/dsh-cua-bundle',
-  'packages/experimental/cua-macos': '@deepseek-ai/dsh-cua-macos',
-  'packages/experimental/cua-mcp': '@deepseek-ai/dsh-cua-mcp',
-  'packages/experimental/cua-windows': '@deepseek-ai/dsh-cua-windows',
-  'packages/experimental/timeline': '@deepseek-ai/dsh-timeline',
-  'packages/experimental/tool-session-query': '@deepseek-ai/dsh-tool-session-query',
-  'packages/experimental/session-title-all-prompts-llm': '@deepseek-ai/dsh-session-title-all-prompts-llm',
-  'packages/experimental/tool-terminal': '@deepseek-ai/dsh-tool-terminal',
-  'packages/experimental/terminal-panel': '@deepseek-ai/dsh-terminal-panel',
-  'packages/experimental/tool-ralph': '@deepseek-ai/dsh-tool-ralph',
-  'packages/experimental/skill-badge': '@deepseek-ai/dsh-skill-badge',
-  'packages/experimental/hook-protocol': '@deepseek-ai/dsh-hook-protocol',
-  'packages/experimental/hooks-claude-code': '@deepseek-ai/dsh-hooks-claude-code',
-  'packages/experimental/hooks-codex': '@deepseek-ai/dsh-hooks-codex',
-  'packages/experimental/webhook': '@deepseek-ai/dsh-webhook',
-  'packages/experimental/webhook-github': '@deepseek-ai/dsh-webhook-github',
-  'packages/experimental/forge-gitlab': '@deepseek-ai/dsh-forge-gitlab',
-  'packages/experimental/deepseek-chat-import': '@deepseek-ai/dsh-deepseek-chat-import',
-} satisfies Record<`packages/experimental/${string}`, `@deepseek-ai/dsh-${string}`>
+  'packages/experimental/cua': '@reevo/dsh-cua',
+  'packages/experimental/cua-bundle': '@reevo/dsh-cua-bundle',
+  'packages/experimental/cua-macos': '@reevo/dsh-cua-macos',
+  'packages/experimental/cua-mcp': '@reevo/dsh-cua-mcp',
+  'packages/experimental/cua-windows': '@reevo/dsh-cua-windows',
+  'packages/experimental/timeline': '@reevo/dsh-timeline',
+  'packages/experimental/tool-session-query': '@reevo/dsh-tool-session-query',
+  'packages/experimental/session-title-all-prompts-llm': '@reevo/dsh-session-title-all-prompts-llm',
+  'packages/experimental/tool-terminal': '@reevo/dsh-tool-terminal',
+  'packages/experimental/terminal-panel': '@reevo/dsh-terminal-panel',
+  'packages/experimental/tool-ralph': '@reevo/dsh-tool-ralph',
+  'packages/experimental/skill-badge': '@reevo/dsh-skill-badge',
+  'packages/experimental/hook-protocol': '@reevo/dsh-hook-protocol',
+  'packages/experimental/hooks-claude-code': '@reevo/dsh-hooks-claude-code',
+  'packages/experimental/hooks-codex': '@reevo/dsh-hooks-codex',
+  'packages/experimental/webhook': '@reevo/dsh-webhook',
+  'packages/experimental/webhook-github': '@reevo/dsh-webhook-github',
+  'packages/experimental/forge-gitlab': '@reevo/dsh-forge-gitlab',
+  'packages/experimental/deepseek-chat-import': '@reevo/dsh-deepseek-chat-import',
+} satisfies Record<`packages/experimental/${string}`, `@reevo/dsh-${string}`>
 
 /** Legacy npm namespace, allowed only in `LEGACY_PREFIXED_EXPERIMENTAL_PACKAGE_DIRECTORIES`. */
-export const EXPERIMENTAL_PACKAGE_NAME_PREFIX = '@deepseek-ai/dsh-experimental-'
+export const EXPERIMENTAL_PACKAGE_NAME_PREFIX = '@reevo/dsh-experimental-'
 
 /** Existing experimental packages that keep the legacy prefix until a rename; this list must not grow. */
 export const LEGACY_PREFIXED_EXPERIMENTAL_PACKAGE_DIRECTORIES: readonly string[] = [
@@ -102,7 +102,7 @@ export function hasExperimentalPackageReference(reference: string): boolean {
  */
 export function experimentalPackageRecordNamespace(name: string): string | undefined {
   if (!isExperimentalPackageName(name)) return undefined
-  return name.slice(name.startsWith(EXPERIMENTAL_PACKAGE_NAME_PREFIX) ? EXPERIMENTAL_PACKAGE_NAME_PREFIX.length : '@deepseek-ai/dsh-'.length)
+  return name.slice(name.startsWith(EXPERIMENTAL_PACKAGE_NAME_PREFIX) ? EXPERIMENTAL_PACKAGE_NAME_PREFIX.length : '@reevo/dsh-'.length)
 }
 
 /** Experimental packages excluded from public releases and npm baselines. */

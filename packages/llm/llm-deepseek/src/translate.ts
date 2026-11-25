@@ -1,8 +1,8 @@
 /** Translate Messages events while preserving block order and cumulative usage. */
 
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { LlmError, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, FinishReason, StreamChunk, TokenUsage } from '@deepseek-ai/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import { LlmError, type ToolCallId } from '@reevo/dsh-llm'
+import type { ContentBlock, FinishReason, StreamChunk, TokenUsage } from '@reevo/dsh-llm'
 import { object, replayState } from './replay.ts'
 import type { ReplayBlock } from './replay.ts'
 

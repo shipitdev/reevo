@@ -1,5 +1,5 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { execFile } from 'node:child_process'
 import { mkdir, mkdtemp, readFile, realpath, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -10,20 +10,20 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { type ToolCallId } from '@deepseek-ai/dsh-llm'
-import LocalSandbox from '@deepseek-ai/dsh-sandbox-local'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import WorkingDirectoryService from '@deepseek-ai/dsh-working-directory'
-import WorktreeService from '@deepseek-ai/dsh-experimental-worktree'
+import AgentRegistry from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import { brandString } from '@reevo/dsh-brand'
+import LlmRuntime, { type ToolCallId } from '@reevo/dsh-llm'
+import LocalSandbox from '@reevo/dsh-sandbox-local'
+import SandboxPolicyService from '@reevo/dsh-sandbox-policy'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import LocalSubprocessRuntime from '@reevo/dsh-subprocess-local'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import WorkingDirectoryService from '@reevo/dsh-working-directory'
+import WorktreeService from '@reevo/dsh-experimental-worktree'
 import * as ToolWorktree from '../src/index.ts'
 
 const exec = promisify(execFile)
@@ -54,27 +54,27 @@ describe('worktree tool through real Loader composition', () => {
     const baseCommit = (await git('rev-parse', 'HEAD')).stdout.trim()
 
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-agent', AgentRegistry],
-      ['@deepseek-ai/dsh-session', SessionStore],
-      ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
+      ['@reevo/dsh-agent', AgentRegistry],
+      ['@reevo/dsh-session', SessionStore],
+      ['@reevo/dsh-session-projection', SessionProjectionRegistry],
 
-      ['@deepseek-ai/dsh-system-prompt', SystemPrompt],
-      ['@deepseek-ai/dsh-llm', LlmRuntime],
-      ['@deepseek-ai/dsh-tools', ToolRuntime],
-      ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
-      ['@deepseek-ai/dsh-fs-local', LocalFileSystem],
-      ['@deepseek-ai/dsh-subprocess-local', LocalSubprocessRuntime],
-      ['@deepseek-ai/dsh-sandbox-local', LocalSandbox],
-      ['@deepseek-ai/dsh-sandbox-policy', SandboxPolicyService],
-      ['@deepseek-ai/dsh-working-directory', WorkingDirectoryService],
-      ['@deepseek-ai/dsh-experimental-worktree', WorktreeService],
-      ['@deepseek-ai/dsh-experimental-tool-worktree', ToolWorktree],
-      ['@deepseek-ai/dsh-agent-loop', AgentLoop],
+      ['@reevo/dsh-system-prompt', SystemPrompt],
+      ['@reevo/dsh-llm', LlmRuntime],
+      ['@reevo/dsh-tools', ToolRuntime],
+      ['@reevo/dsh-tool-executor-native', NativeToolExecutor],
+      ['@reevo/dsh-fs-local', LocalFileSystem],
+      ['@reevo/dsh-subprocess-local', LocalSubprocessRuntime],
+      ['@reevo/dsh-sandbox-local', LocalSandbox],
+      ['@reevo/dsh-sandbox-policy', SandboxPolicyService],
+      ['@reevo/dsh-working-directory', WorkingDirectoryService],
+      ['@reevo/dsh-experimental-worktree', WorktreeService],
+      ['@reevo/dsh-experimental-tool-worktree', ToolWorktree],
+      ['@reevo/dsh-agent-loop', AgentLoop],
     ])
     const config = [...modules.keys()].flatMap(name => [
       `- name: 'cordis:${name}'`,
-      ...name === '@deepseek-ai/dsh-sandbox-policy' ? ['  config:', '    mode: danger-full-access'] : [],
-      ...name === '@deepseek-ai/dsh-agent-loop' ? ['  config:', '    agents: []'] : [],
+      ...name === '@reevo/dsh-sandbox-policy' ? ['  config:', '    mode: danger-full-access'] : [],
+      ...name === '@reevo/dsh-agent-loop' ? ['  config:', '    agents: []'] : [],
     ]).join('\n') + '\n'
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, config)
@@ -169,7 +169,7 @@ describe('worktree tool through real Loader composition', () => {
     expect(generated.value).toMatchObject({ baseCommit, repositoryRoot: repository, created: true })
     expect(create).toHaveBeenCalledOnce()
 
-    const entry = [...context.loader.entries()].find(candidate => candidate.options.name === 'cordis:@deepseek-ai/dsh-experimental-tool-worktree')
+    const entry = [...context.loader.entries()].find(candidate => candidate.options.name === 'cordis:@reevo/dsh-experimental-tool-worktree')
     await entry!.fiber!.dispose()
     expect(context.tools.schemas().some(tool => tool.name.endsWith('_worktree'))).toBe(false)
   })

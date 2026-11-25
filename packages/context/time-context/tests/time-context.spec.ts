@@ -1,20 +1,20 @@
 import { afterEach, beforeEach, describe, expect, it, onTestFinished, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId, LlmAdapter } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import { Session, type SessionId, SessionLogOffset, type SessionEvent } from '@deepseek-ai/dsh-session'
-import AgentRegistry, { agentEvents, type Agent } from '@deepseek-ai/dsh-agent'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { unsupportedModel, unsupportedInbox, mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import * as timeContext from '@deepseek-ai/dsh-time-context'
-import type { Config } from '@deepseek-ai/dsh-time-context'
+import { brandString } from '@reevo/dsh-brand'
+import { createUserMessage, type ToolCallId, LlmAdapter } from '@reevo/dsh-llm'
+import type { GenerateOptions, StreamChunk } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import { Session, type SessionId, SessionLogOffset, type SessionEvent } from '@reevo/dsh-session'
+import AgentRegistry, { agentEvents, type Agent } from '@reevo/dsh-agent'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { unsupportedModel, unsupportedInbox, mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import * as timeContext from '@reevo/dsh-time-context'
+import type { Config } from '@reevo/dsh-time-context'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'compaction-basic': { kind: 'compaction-basic' } & ContextFormed
     'time-context-test': { kind: 'time-context-test' } & ContextFormed

@@ -1,6 +1,6 @@
 /** Ordered module styles owned by one renderer presentation destination. */
-import type { ClientModuleMeta } from '@deepseek-ai/dsh-package-manifest'
-import type { ClientModuleLoader, ClientModuleRecord } from '@deepseek-ai/dsh-client-modules/client'
+import type { ClientModuleMeta } from '@reevo/dsh-package-manifest'
+import type { ClientModuleLoader, ClientModuleRecord } from '@reevo/dsh-client-modules/client'
 
 interface StyleRecord {
   readonly element: HTMLStyleElement

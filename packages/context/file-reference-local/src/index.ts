@@ -1,18 +1,18 @@
 /**
  * Local-filesystem implementation of `ctx.fileReferences`.
  *
- * @module @deepseek-ai/dsh-file-reference-local
+ * @module @reevo/dsh-file-reference-local
  */
 
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type {} from '@reevo/dsh-working-directory'
 import { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
 import FileReferenceService, {
   FILE_REFERENCE_PROMPT,
   type FileReferenceCandidate,
-} from '@deepseek-ai/dsh-file-reference'
-import type {} from '@deepseek-ai/dsh-tools'
+} from '@reevo/dsh-file-reference'
+import type {} from '@reevo/dsh-tools'
 import {
   DEFAULT_FILE_SEARCH_EXCLUDED_DIRECTORIES,
   DEFAULT_FILE_SEARCH_MAX_ENTRIES,

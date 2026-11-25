@@ -1,15 +1,15 @@
 /** Covers fail-closed per-call classification and model-schema isolation. */
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { ToolExecutionPipeline } from '@deepseek-ai/dsh-tools/pipeline'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { ToolExecutionPipeline } from '@reevo/dsh-tools/pipeline'
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { describe, expect, expectTypeOf, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { type ToolDefinition, type ToolExecutionInput, type ToolExecutionMode } from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { brandString } from '@reevo/dsh-brand'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime, { type ToolDefinition, type ToolExecutionInput, type ToolExecutionMode } from '@reevo/dsh-tools'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 
 const testToolSignal = new AbortController().signal
 

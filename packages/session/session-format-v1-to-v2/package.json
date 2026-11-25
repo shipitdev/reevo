@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-session-format-v1-to-v2",
+  "name": "@reevo/dsh-session-format-v1-to-v2",
   "description": "Frozen released-v1 Session codec and assistant-stream migration to v2",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -42,16 +42,16 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session-format": "workspace:*",
-    "@deepseek-ai/dsh-session-format-v0-to-v1": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*"
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session-format": "workspace:*",
+    "@reevo/dsh-session-format-v0-to-v1": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@reevo/dsh-session": "workspace:*"
   }
 }

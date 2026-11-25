@@ -6,8 +6,8 @@
 
 /* v8 ignore file -- built-bin acceptance exercises this self-executing dispatch. */
 
-import { getDshRuntimeVersion, loadLayeredEnv, StartupError } from '@deepseek-ai/dsh-app-boot'
-import { resolveDshHome } from '@deepseek-ai/dsh-home-paths'
+import { getDshRuntimeVersion, loadLayeredEnv, StartupError } from '@reevo/dsh-app-boot'
+import { resolveDshHome } from '@reevo/dsh-home-paths'
 import { parseDshArgs } from './args.ts'
 import { reportStartupFailure } from './startup-diagnostics.ts'
 import type { RunProfileOptions } from './profile-boot.ts'

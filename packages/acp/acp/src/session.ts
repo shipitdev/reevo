@@ -1,6 +1,6 @@
 /** One standard ACP session's Agent, configuration, prompt, update, and teardown lifecycle. */
 
-import type {} from '@deepseek-ai/dsh-fs'
+import type {} from '@reevo/dsh-fs'
 import type { Context } from '@deepseek-ai/cordis'
 import {
   RequestError,
@@ -11,10 +11,10 @@ import {
   type SessionNotification,
   type StopReason,
 } from '@agentclientprotocol/sdk'
-import type { Agent, AgentHandle, AgentOptions, AgentStatus } from '@deepseek-ai/dsh-agent'
-import { installModelSelection } from '@deepseek-ai/dsh-agent'
-import { createUserMessage, errorChain, type UserMessage } from '@deepseek-ai/dsh-llm'
-import { type Session, type SessionEvent, type SessionId, type TurnEndReason } from '@deepseek-ai/dsh-session'
+import type { Agent, AgentHandle, AgentOptions, AgentStatus } from '@reevo/dsh-agent'
+import { installModelSelection } from '@reevo/dsh-agent'
+import { createUserMessage, errorChain, type UserMessage } from '@reevo/dsh-llm'
+import { type Session, type SessionEvent, type SessionId, type TurnEndReason } from '@reevo/dsh-session'
 import { AcpContentError, admitAcpPrompt } from './content.ts'
 import { turnEndToStopReason } from './codec.ts'
 import { mountAcpMcpServers } from './mcp.ts'

@@ -132,7 +132,7 @@ export abstract class ReleaseFamily {
       const name = requireString(manifest, 'name', normalized)
       const version = requireString(manifest, 'version', normalized)
       if (name === WORKSPACE_ROOT_PACKAGE) throw new Error(`${normalized} selected the workspace root`)
-      if ((name !== '@reevo/cli' && name !== '@reevo/web' && name !== '@reevo/sdk' && !name.startsWith('@deepseek-ai/'))) throw new Error(`${normalized} must name an @deepseek-ai package`)
+      if ((name !== '@reevo/cli' && name !== '@reevo/web' && name !== '@reevo/sdk' && !name.startsWith('@reevo/dsh-') && !name.startsWith('@deepseek-ai/'))) throw new Error(`${normalized} must name an @deepseek-ai package`)
       if (seen.has(name)) throw new Error(`${name} appears twice in release family ${this.id}`)
       seen.add(name)
       members.push({
@@ -418,7 +418,7 @@ class DshFamily extends ReleaseFamily {
       const dependencies = manifest[section]
       if (dependencies === null || typeof dependencies !== 'object' || Array.isArray(dependencies)) continue
       for (const [name, range] of Object.entries(dependencies)) {
-        if (name !== '@reevo/cli' && !name.startsWith('@deepseek-ai/dsh-')) continue
+        if (name !== '@reevo/cli' && !name.startsWith('@reevo/dsh-')) continue
         if (range !== member.version) {
           throw new Error(`${member.name}: packed ${section}.${name} must equal ${member.version}, got ${String(range)}`)
         }

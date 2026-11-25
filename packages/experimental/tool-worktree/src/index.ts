@@ -4,8 +4,8 @@
  */
 
 import type { Context } from '@deepseek-ai/cordis'
-import { WorktreeError } from '@deepseek-ai/dsh-experimental-worktree'
-import { defineTool, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
+import { WorktreeError } from '@reevo/dsh-experimental-worktree'
+import { defineTool, ToolContextUnavailableError } from '@reevo/dsh-tools'
 
 /** Cordis plugin name. */
 export const name = 'tool-worktree'

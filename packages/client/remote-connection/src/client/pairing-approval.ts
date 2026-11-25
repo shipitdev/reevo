@@ -1,8 +1,8 @@
 /** Owner decisions and their shell-wide notices survive a settings view closing. */
 import type { Context } from '@deepseek-ai/cordis'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
-import type {} from '@deepseek-ai/dsh-client-remote-connection/remote'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import type { RemoteResult } from '@reevo/dsh-typert-protocol'
+import type {} from '@reevo/dsh-client-remote-connection/remote'
 import type { PairingDecision, PairingDecisionResult, PairingRequestId } from '../types.ts'
 
 /** Mutation state shared by approval controls and the persistent notice. */

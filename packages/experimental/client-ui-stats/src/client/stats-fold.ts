@@ -1,12 +1,12 @@
 /** Event folding and per-step metric derivation for the Statistics table. */
 
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import type { SessionEventLike } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
-import type { AssistantMessage, ContentBlock, StreamChunk, UserMessage } from '@deepseek-ai/dsh-llm'
-import { assistantStreamFirstTokenTime } from '@deepseek-ai/dsh-llm/assistant-stream'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import type { SessionEventLike } from '@reevo/dsh-api-session-controller/client'
+import type { ImageAttachmentRef } from '@reevo/dsh-attachment'
+import type { AssistantMessage, ContentBlock, StreamChunk, UserMessage } from '@reevo/dsh-llm'
+import { assistantStreamFirstTokenTime } from '@reevo/dsh-llm/assistant-stream'
 // Type-only: the PTC event members this fold reads.
-import type {} from '@deepseek-ai/dsh-tool-executor-ptc/types'
+import type {} from '@reevo/dsh-tool-executor-ptc/types'
 import type {
   StatsCall, StatsStepMetrics, StatsStepState, StatsToolCount,
 } from './stats-contract.ts'

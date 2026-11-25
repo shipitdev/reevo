@@ -51,7 +51,7 @@ export default defineConfig([
     clean: false,
     codeSplitting: false,
     // The standalone worker has no node_modules; inline even production dependencies.
-    deps: { alwaysBundle: ['@deepseek-ai/dsh-atomic-write', '@deepseek-ai/dsh-error'] },
+    deps: { alwaysBundle: ['@reevo/dsh-atomic-write', '@reevo/dsh-error'] },
   },
   {
     entry: ['lib/types/main.js'],

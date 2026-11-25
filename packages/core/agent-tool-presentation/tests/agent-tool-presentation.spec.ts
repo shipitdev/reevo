@@ -5,23 +5,23 @@
  * inherited executor.
  */
 
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { describe, expect, it, onTestFinished } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import { PtcRuntime } from '@deepseek-ai/dsh-ptc-runtime'
-import type { PtcRunRequest, PtcRunResult } from '@deepseek-ai/dsh-ptc-runtime'
-import ToolRuntime, { RUN_CODE_NAME, defineTool } from '@deepseek-ai/dsh-tools'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { apply, Config, inject, name } from '@deepseek-ai/dsh-agent-tool-presentation'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { createScope } from '@reevo/dsh-scope'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import { PtcRuntime } from '@reevo/dsh-ptc-runtime'
+import type { PtcRunRequest, PtcRunResult } from '@reevo/dsh-ptc-runtime'
+import ToolRuntime, { RUN_CODE_NAME, defineTool } from '@reevo/dsh-tools'
+import type { Agent } from '@reevo/dsh-agent'
+import type { SessionId } from '@reevo/dsh-session'
+import { apply, Config, inject, name } from '@reevo/dsh-agent-tool-presentation'
+import { brandString } from '@reevo/dsh-brand'
 
 /** A runtime that never runs anything: presentation never dispatches. */
 class StubRuntime extends PtcRuntime {
-  resolve(request: import('@deepseek-ai/dsh-ptc-runtime').PtcRunRequest): import('@deepseek-ai/dsh-ptc-runtime').PtcRunSpec { return { ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: request.timeoutMs ?? 120_000 } }
+  resolve(request: import('@reevo/dsh-ptc-runtime').PtcRunRequest): import('@reevo/dsh-ptc-runtime').PtcRunSpec { return { ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: request.timeoutMs ?? 120_000 } }
 
   readonly language: string
 

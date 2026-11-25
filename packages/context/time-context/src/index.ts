@@ -2,25 +2,25 @@
  * Opt-in request clock context. Eligible steps add durable,
  * source-attributed time readings to the request history.
  *
- * @module @deepseek-ai/dsh-time-context
+ * @module @reevo/dsh-time-context
  */
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import { z as zod } from 'zod'
-import type { Agent, PreStepDecision } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-declare module '@deepseek-ai/dsh-llm' {
+import type { Agent, PreStepDecision } from '@reevo/dsh-agent'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'time-context': { kind: 'time-context' } & ContextFormed
   }
 }
 
-import type { UserMessage } from '@deepseek-ai/dsh-llm'
-import { SessionSeq } from '@deepseek-ai/dsh-session'
-import { Duration } from '@deepseek-ai/dsh-util-time'
-import type {} from '@deepseek-ai/dsh-session-projection'
+import type { UserMessage } from '@reevo/dsh-llm'
+import { SessionSeq } from '@reevo/dsh-session'
+import { Duration } from '@reevo/dsh-util-time'
+import type {} from '@reevo/dsh-session-projection'
 import {
   deriveBrowserTimeZoneContext,
   reportedBrowserTimeZone,

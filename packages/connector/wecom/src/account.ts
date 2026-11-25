@@ -3,9 +3,9 @@
  * runs; binding again replaces it.
  */
 
-import type { CliOperationControl } from '@deepseek-ai/dsh-cli-account/types'
-import type { UpstreamSkillsHandle } from '@deepseek-ai/dsh-upstream-skills/types'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+import type { CliOperationControl } from '@reevo/dsh-cli-account/types'
+import type { UpstreamSkillsHandle } from '@reevo/dsh-upstream-skills/types'
+import { assertNever } from '@reevo/dsh-util-values'
 import type { WecomAccountState, WecomCommand, WecomOperationKind, WecomPhase } from './types.ts'
 
 const AUTHORIZATION_LINK = /^\s*(https:\/\/\S+)\s*$/u

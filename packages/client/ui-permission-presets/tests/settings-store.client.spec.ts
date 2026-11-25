@@ -1,8 +1,8 @@
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
 import { describe, expect, it, vi } from 'vitest'
-import type { SettingsNamespaceView } from '@deepseek-ai/dsh-api-remotes/client'
-import { SettingsDescribeMirror } from '@deepseek-ai/dsh-client-ui-settings/src/client/settings-mirror.ts'
-import { RemoteError } from '@deepseek-ai/dsh-client-test-runtime'
+import type { SettingsNamespaceView } from '@reevo/dsh-api-remotes/client'
+import { SettingsDescribeMirror } from '@reevo/dsh-client-ui-settings/src/client/settings-mirror.ts'
+import { RemoteError } from '@reevo/dsh-client-test-runtime'
 import {
   PermissionPresetSettingsController, permissionDefaultOf,
 } from '../src/client/settings-store.ts'

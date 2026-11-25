@@ -14,11 +14,11 @@ import {
   boot, composeEntries, initProfile, loadProfileDirectory, readProfilePatches, readProfileManifest,
   reconcileProfilePatches, PluginPackages, readPluginMeta, getDshRuntimeVersion,
   type ProfileContext, type RuntimeResolution,
-} from '@deepseek-ai/dsh-app-boot'
-import { OPTIONAL_BUNDLES, OFFICIAL_ON_DEMAND_CATALOG } from '@deepseek-ai/dsh-official-bundles'
+} from '@reevo/dsh-app-boot'
+import { OPTIONAL_BUNDLES, OFFICIAL_ON_DEMAND_CATALOG } from '@reevo/dsh-official-bundles'
 import PluginManager, { type Config, type PluginChange, type PluginInstallLogChunk, type PluginInstallProgress, type PluginInstallRequestId } from '../src/index.ts'
 import type { PluginEntryId, PluginOperation } from '../src/types.ts'
-import Hmr from '@deepseek-ai/dsh-hmr'
+import Hmr from '@reevo/dsh-hmr'
 import Timer from '@deepseek-ai/cordis-plugin-timer'
 import type { PatchOptions } from '@deepseek-ai/cordis-plugin-include'
 import { Group } from '@deepseek-ai/cordis-plugin-loader'
@@ -46,7 +46,7 @@ async function fixture(reload: 'live' | 'startup' = 'live', overlay = false, pre
     writeFileSync(join(home, 'package.json'), '{"name":"@reevo/workspace"}')
   }
   writeFileSync(anchor, JSON.stringify(sourceInstallation
-    ? { name: '@reevo/cli', dependencies: { '@deepseek-ai/dsh-app-boot': 'workspace:*' } }
+    ? { name: '@reevo/cli', dependencies: { '@reevo/dsh-app-boot': 'workspace:*' } }
     : { name: 'installation', dependencies: {} }))
   initProfile(dir, ['core', 'extra'])
   const bundle = (name: string, rows: unknown[], packageRoot = dir) => {
@@ -1020,10 +1020,10 @@ it('refuses management bundle disablement and permits repeated bundle selections
 })
 
 it.each([
-  '@deepseek-ai/dsh-host-plugin-inventory',
-  '@deepseek-ai/dsh-typert-registry',
-  '@deepseek-ai/dsh-api-remotes',
-  '@deepseek-ai/dsh-api-remote-access',
+  '@reevo/dsh-host-plugin-inventory',
+  '@reevo/dsh-typert-registry',
+  '@reevo/dsh-api-remotes',
+  '@reevo/dsh-api-remote-access',
 ])('protects the management dependency %s and its containing bundle', async (name) => {
   const { ctx, manager, bundle, profile, dir } = await fixture('startup')
   bundle('extra', [{ id: 'dependency', name, disabled: true }])
@@ -2123,7 +2123,7 @@ it('refuses to list versions of a package not installed from a registry', async 
   expect(await manager.listVersions('extra')).toEqual(refusal('extra declares no semver version'))
   // A bundle carrying plugin management cannot be removed, so it is not offered for an update.
   writeFileSync(join(dir, 'node_modules', 'extra', 'package.json'), JSON.stringify({ name: 'extra', version: '1.0.0', dsh: BUNDLE }))
-  writeFileSync(join(dir, 'node_modules', 'extra', 'cordis.patch.yml'), JSON.stringify([{ insert: [{ id: 'pm', name: '@deepseek-ai/dsh-plugin-manager' }] }]))
+  writeFileSync(join(dir, 'node_modules', 'extra', 'cordis.patch.yml'), JSON.stringify([{ insert: [{ id: 'pm', name: '@reevo/dsh-plugin-manager' }] }]))
   const managed = (await manager.listBundles()).find(item => item.name === 'extra')
   expect(managed).toMatchObject({ readOnlyReason: 'management-required' })
   expect(managed).not.toHaveProperty('update')

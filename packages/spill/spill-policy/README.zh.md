@@ -3,7 +3,7 @@ description: "工具结果保留：文字和图片共享 token 预算，并通�
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-spill-policy
+# @reevo/dsh-spill-policy
 
 [English](README.md) | 中文
 
@@ -32,8 +32,8 @@ kind: "package-reference"
 挂载 spill 后端，并以估算 token 数设置 `maxInlineTokens`：
 
 ```yaml
-- name: '@deepseek-ai/dsh-spill-local'
-- name: '@deepseek-ai/dsh-spill-policy'
+- name: '@reevo/dsh-spill-local'
+- name: '@reevo/dsh-spill-policy'
   config:
     maxInlineTokens: 12500
 ```

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-session-persistence-sqlite",
+  "name": "@reevo/dsh-session-persistence-sqlite",
   "description": "SQLite Session event storage backend for the DeepSeek Harness",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -33,21 +33,21 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*"
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*"
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
+    "@reevo/dsh-session-persistence-jsonl": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session-format": "workspace:*",
-    "@deepseek-ai/dsh-session-format-v3-to-v4": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session-format": "workspace:*",
+    "@reevo/dsh-session-format-v3-to-v4": "workspace:*",
     "zod": "4.6.6",
     "@deepseek-ai/node-addon-system": "workspace:~",
     "p-limit": "7.3.3",

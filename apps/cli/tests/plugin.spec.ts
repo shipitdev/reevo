@@ -3,14 +3,14 @@ import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { expect, it, onTestFinished, vi } from 'vitest'
-import { getDshRuntimeVersion, initProfile, readProfileVersionExemptions } from '@deepseek-ai/dsh-app-boot'
-import { PROFILE_TEMPLATES } from '@deepseek-ai/dsh-official-bundles'
-import { runPluginCommand, runProfilePnpm } from '@deepseek-ai/dsh-plugin-manager/operations'
+import { getDshRuntimeVersion, initProfile, readProfileVersionExemptions } from '@reevo/dsh-app-boot'
+import { PROFILE_TEMPLATES } from '@reevo/dsh-official-bundles'
+import { runPluginCommand, runProfilePnpm } from '@reevo/dsh-plugin-manager/operations'
 import { runPlugin } from '../src/plugin.ts'
 
 vi.mock('../src/profile-boot.ts', () => ({ INSTALL_ANCHOR: '/installation/package.json' }))
-vi.mock('@deepseek-ai/dsh-plugin-manager/operations', async importOriginal => ({
-  ...await importOriginal<typeof import('@deepseek-ai/dsh-plugin-manager/operations')>(),
+vi.mock('@reevo/dsh-plugin-manager/operations', async importOriginal => ({
+  ...await importOriginal<typeof import('@reevo/dsh-plugin-manager/operations')>(),
   runPluginCommand: vi.fn(),
   runProfilePnpm: vi.fn(),
 }))

@@ -4,48 +4,48 @@
 
 - insert:
     - id: sdk-app-startup
-      name: '@deepseek-ai/dsh-sdk-app'
+      name: '@reevo/dsh-sdk-app'
       config:
         profile: sdk-minimal
 
     - id: sdk-jsonrpc-server
-      name: '@deepseek-ai/dsh-sdk-jsonrpc-server'
+      name: '@reevo/dsh-sdk-jsonrpc-server'
       inject: [sdkAppStartup, loader]
       config:
         maxTokensAsSuccess: false
 
     - id: deepseek-llm-api-extensions
-      name: '@deepseek-ai/dsh-deepseek-llm-api-extensions'
+      name: '@reevo/dsh-deepseek-llm-api-extensions'
 
     - id: session-log-deepseek
-      name: '@deepseek-ai/dsh-session-log-deepseek'
+      name: '@reevo/dsh-session-log-deepseek'
 
     - id: plugin-package-inventory-deepseek
-      name: '@deepseek-ai/dsh-plugin-package-inventory-deepseek'
+      name: '@reevo/dsh-plugin-package-inventory-deepseek'
 
     - id: deepseek-auth
-      name: '@deepseek-ai/dsh-deepseek-auth'
+      name: '@reevo/dsh-deepseek-auth'
 
     - id: llm-deepseek
-      name: '@deepseek-ai/dsh-llm-deepseek-api-key'
+      name: '@reevo/dsh-llm-deepseek-api-key'
       config:
         apiKeyEnv: DEEPSEEK_API_KEY
         defaultContextWindow: !!js Number(process.env.DSH_CONTEXT_WINDOW ?? 1000000)
         streamIdleTimeoutMs: 172800000
 
     - id: sandbox
-      name: '@deepseek-ai/dsh-sandbox-local'
+      name: '@reevo/dsh-sandbox-local'
 
     # Shared projection registry: sandbox-policy and terminal-bash fold
     # sandbox-mode state through its units and require it as a hard injection.
     - id: filesystem
-      name: '@deepseek-ai/dsh-fs-local'
+      name: '@reevo/dsh-fs-local'
 
     - id: attachment-local
-      name: '@deepseek-ai/dsh-attachment-local'
+      name: '@reevo/dsh-attachment-local'
 
     - id: tool-fs
-      name: '@deepseek-ai/dsh-tool-fs'
+      name: '@reevo/dsh-tool-fs'
       config:
         read: false
         readImage: true
@@ -53,40 +53,40 @@
         edit: false
 
     - id: working-directory
-      name: '@deepseek-ai/dsh-working-directory'
+      name: '@reevo/dsh-working-directory'
 
     - id: session-projection
-      name: '@deepseek-ai/dsh-session-projection'
+      name: '@reevo/dsh-session-projection'
 
     - id: token-meter
-      name: '@deepseek-ai/dsh-token-meter'
+      name: '@reevo/dsh-token-meter'
 
     - id: compaction-basic
-      name: '@deepseek-ai/dsh-compaction-basic'
+      name: '@reevo/dsh-compaction-basic'
 
     - id: image-offload
-      name: '@deepseek-ai/dsh-compaction-image-offload'
+      name: '@reevo/dsh-compaction-image-offload'
 
     - id: sandbox-policy
-      name: '@deepseek-ai/dsh-sandbox-policy'
+      name: '@reevo/dsh-sandbox-policy'
       config:
         mode: danger-full-access
         workspaceRoot: !!js process.cwd()
 
     - id: subprocess
-      name: '@deepseek-ai/dsh-subprocess-local'
+      name: '@reevo/dsh-subprocess-local'
 
     - id: pty
-      name: '@deepseek-ai/dsh-terminal'
+      name: '@reevo/dsh-terminal'
 
     - id: terminal-bash
-      name: '@deepseek-ai/dsh-terminal-bash'
+      name: '@reevo/dsh-terminal-bash'
       disabled: !!js process.platform === 'win32'
       config:
         timeoutMs: 300000
 
     - id: terminal-pwsh
-      name: '@deepseek-ai/dsh-terminal-bash'
+      name: '@reevo/dsh-terminal-bash'
       disabled: !!js process.platform !== 'win32'
       config:
         shellDialect: pwsh
@@ -98,51 +98,51 @@
       name: '@deepseek-ai/cordis-plugin-timer'
 
     - id: llm
-      name: '@deepseek-ai/dsh-llm'
+      name: '@reevo/dsh-llm'
 
     - id: session
-      name: '@deepseek-ai/dsh-session'
+      name: '@reevo/dsh-session'
 
     - id: session-title
-      name: '@deepseek-ai/dsh-session-title'
+      name: '@reevo/dsh-session-title'
       config:
         fallbackMaxWords: 5
         fallbackMaxBytes: 40
         maxTitleBytes: 80
 
     - id: system-prompt
-      name: '@deepseek-ai/dsh-system-prompt'
+      name: '@reevo/dsh-system-prompt'
       config:
         includeHarnessIdentity: false
         includeRuntimeContext: false
         personaPrefix: !!js process.env.DSH_SYSTEM_PROMPT ?? 'You are a helpful software engineer assistant.'
 
     - id: tools
-      name: '@deepseek-ai/dsh-tools'
+      name: '@reevo/dsh-tools'
 
     - id: tool-executor-native
-      name: '@deepseek-ai/dsh-tool-executor-native'
+      name: '@reevo/dsh-tool-executor-native'
 
     - id: mcp-resources
-      name: '@deepseek-ai/dsh-mcp-resources'
+      name: '@reevo/dsh-mcp-resources'
 
     - id: agent
-      name: '@deepseek-ai/dsh-agent'
+      name: '@reevo/dsh-agent'
 
 
     - id: llm-retry
-      name: '@deepseek-ai/dsh-llm-retry'
+      name: '@reevo/dsh-llm-retry'
 
     - id: jobs
-      name: '@deepseek-ai/dsh-jobs-local'
+      name: '@reevo/dsh-jobs-local'
 
     - id: agent-loop
-      name: '@deepseek-ai/dsh-agent-loop'
+      name: '@reevo/dsh-agent-loop'
       config:
         agents: []
 
     - id: persistent-bash
-      name: '@deepseek-ai/dsh-tool-bash-persistent'
+      name: '@reevo/dsh-tool-bash-persistent'
       disabled: !!js process.platform === 'win32'
       config:
         timeoutMs: 300000
@@ -156,7 +156,7 @@
           * Please run long lived commands in the background, e.g. 'sleep 10 &' or start a server in the background.
 
     - id: persistent-pwsh
-      name: '@deepseek-ai/dsh-tool-pwsh-persistent'
+      name: '@reevo/dsh-tool-pwsh-persistent'
       disabled: !!js process.platform !== 'win32'
       config:
         timeoutMs: 300000
@@ -170,10 +170,10 @@
           * Please run long lived commands in the background, e.g. 'Start-Job' or start a server with Start-Process.
 
     - id: sessions
-      name: '@deepseek-ai/dsh-session-persistence-jsonl'
+      name: '@reevo/dsh-session-persistence-jsonl'
       config:
         root: !!js dshHomePath('sessions')
         compression: none
 
     - id: session-checkpoint-policy
-      name: '@deepseek-ai/dsh-session-checkpoint-policy'
+      name: '@reevo/dsh-session-checkpoint-policy'

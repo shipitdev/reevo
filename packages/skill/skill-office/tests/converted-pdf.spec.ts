@@ -1,7 +1,7 @@
 /** The temporary file and byte count a PDF conversion reports, which the real Office export lane asserts. */
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createToolResultMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import { Session, type SessionId, type SessionEvent } from '@deepseek-ai/dsh-session'
+import { brandString } from '@reevo/dsh-brand'
+import { createToolResultMessage, type ToolCallId } from '@reevo/dsh-llm'
+import { Session, type SessionId, type SessionEvent } from '@reevo/dsh-session'
 import { expect, it } from 'vitest'
 import { convertedPdfFiles } from './fixtures/real-office.ts'
 

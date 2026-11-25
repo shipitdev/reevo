@@ -1,24 +1,24 @@
 /**
  * Six model-facing persistent terminal tools. Owner identity comes from the exact
  * tool execution Agent; generic `ctx.jobs` owns background ids and collection.
- * @module @deepseek-ai/dsh-tool-terminal
+ * @module @reevo/dsh-tool-terminal
  */
 
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type {} from '@reevo/dsh-working-directory'
 import { resolve } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { TerminalSendOperation, TerminalSendResult, TerminalSessionId as TerminalSessionIdType, TerminalSignal } from '@deepseek-ai/dsh-terminal'
-import type {} from '@deepseek-ai/dsh-jobs'
-import { defineTool, ToolArgsError, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import type { ToolDefinition } from '@deepseek-ai/dsh-tools'
+import type { Agent } from '@reevo/dsh-agent'
+import type { ContentBlock } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import type { TerminalSendOperation, TerminalSendResult, TerminalSessionId as TerminalSessionIdType, TerminalSignal } from '@reevo/dsh-terminal'
+import type {} from '@reevo/dsh-jobs'
+import { defineTool, ToolArgsError, ToolContextUnavailableError } from '@reevo/dsh-tools'
+import type { ToolDefinition } from '@reevo/dsh-tools'
 import { sendSource } from './background.ts'
 import { boundTerminalText, renderList, renderRead, renderSend, renderSpawn } from './render.ts'
 
-declare module '@deepseek-ai/dsh-jobs' {
+declare module '@reevo/dsh-jobs' {
   interface JobKindMap {
     'pty-send': 'pty-send'
   }
@@ -261,7 +261,7 @@ export function apply(ctx: Context, config: Config = {}): void {
       if (args.run_in_background === true) {
         if (!enableRunInBackground) throw new ToolArgsError(['run_in_background is disabled by tool-terminal configuration (enableRunInBackground: false)'])
         const jobs = ctx.get('jobs')
-        if (jobs === undefined) throw new ToolContextUnavailableError('background terminal sends require @deepseek-ai/dsh-jobs and @deepseek-ai/dsh-tool-jobs')
+        if (jobs === undefined) throw new ToolContextUnavailableError('background terminal sends require @reevo/dsh-jobs and @reevo/dsh-tool-jobs')
         let cancelRequested = false
         let operation: TerminalSendOperation | undefined
         const jobId = jobs.start({

@@ -1,7 +1,7 @@
 /** Prepare plugin-contributed request fields and commit their delivery after HTTP acceptance. */
 
-import { errorChain, LlmError } from '@deepseek-ai/dsh-llm'
-import type { DeepSeekLlmApiExtensionRequest, PreparedDeepSeekLlmApiExtensions } from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
+import { errorChain, LlmError } from '@reevo/dsh-llm'
+import type { DeepSeekLlmApiExtensionRequest, PreparedDeepSeekLlmApiExtensions } from '@reevo/dsh-deepseek-llm-api-extensions'
 import type { DeepSeekAdapterOptions } from './types.ts'
 
 /**

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-voice-input-bundle",
+  "name": "@reevo/dsh-experimental-voice-input-bundle",
   "description": "Experimental voice input with local SenseVoice; downloads its runtime on first use",
   "version": "0.2.3-alpha.2",
   "icon": "./icon.svg",
@@ -37,10 +37,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-experimental-speech-to-text": "workspace:*",
-    "@deepseek-ai/dsh-experimental-speech-to-text-sensevoice": "workspace:*",
-    "@deepseek-ai/dsh-experimental-api-speech-to-text": "workspace:*",
-    "@deepseek-ai/dsh-experimental-client-ui-voice-input": "workspace:*"
+    "@reevo/dsh-experimental-speech-to-text": "workspace:*",
+    "@reevo/dsh-experimental-speech-to-text-sensevoice": "workspace:*",
+    "@reevo/dsh-experimental-api-speech-to-text": "workspace:*",
+    "@reevo/dsh-experimental-client-ui-voice-input": "workspace:*"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~"

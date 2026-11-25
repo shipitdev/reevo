@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-workspace",
+  "name": "@reevo/dsh-workspace",
   "description": "Workspace entity registry (ctx.workspaceRegistry): durable workspace records with validated session attachment over the domain data form for the DeepSeek Harness",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -38,22 +38,22 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-storage": "workspace:*",
-    "@deepseek-ai/dsh-storage-domain": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*",
+    "@reevo/dsh-storage": "workspace:*",
+    "@reevo/dsh-storage-domain": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "zod": "4.6.6"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-storage": "workspace:*",
-    "@deepseek-ai/dsh-storage-domain": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*",
+    "@reevo/dsh-storage": "workspace:*",
+    "@reevo/dsh-storage-domain": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   }
 }

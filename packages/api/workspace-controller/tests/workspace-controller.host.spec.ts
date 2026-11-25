@@ -3,29 +3,29 @@ import { tmpdir } from 'node:os'
 import { basename, join } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import Storage from '@deepseek-ai/dsh-storage'
-import { DomainFacility } from '@deepseek-ai/dsh-storage-domain'
-import { RemoteError, type PeerId, type Principal, type RemoteInvocation } from '@deepseek-ai/dsh-typert-protocol'
-import WorkspaceRegistry from '@deepseek-ai/dsh-workspace'
-import type { WorkspaceId } from '@deepseek-ai/dsh-workspace/types'
-import RemoteAccessService, { type RemoteAccessCondition, type RemoteAccessRole } from '@deepseek-ai/dsh-api-remote-access'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import Storage from '@reevo/dsh-storage'
+import { DomainFacility } from '@reevo/dsh-storage-domain'
+import { RemoteError, type PeerId, type Principal, type RemoteInvocation } from '@reevo/dsh-typert-protocol'
+import WorkspaceRegistry from '@reevo/dsh-workspace'
+import type { WorkspaceId } from '@reevo/dsh-workspace/types'
+import RemoteAccessService, { type RemoteAccessCondition, type RemoteAccessRole } from '@reevo/dsh-api-remote-access'
 import WorkspaceController from '../src/index.ts'
 import { DEFAULT_WORKSPACE_DIRECTORY } from '../src/default-workspace.ts'
 import { WorkspaceFeed } from '../src/feed.ts'
 import type { WorkspaceFollowFrame } from '../src/types.ts'
 import { MemoryStorageBackend } from '../../../storage/storage-domain/tests/helpers/memory-backend.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 // The controller relays whatever families the providers report; this suite merges its own.
-declare module '@deepseek-ai/dsh-workspace/types' {
+declare module '@reevo/dsh-workspace/types' {
   interface SessionActivityKindMap {
     probe: true
     'probe-items': true
   }
 }
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@reevo/dsh-typert-protocol' {
   interface RemoteErrorDetailsMap {
     'fixture/failure': {}
   }
@@ -76,7 +76,7 @@ async function harness(options: { systemDocuments?: boolean } = {}) {
   return { controller, ctx, root, storageDomain }
 }
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@reevo/dsh-typert-protocol' {
   interface PrincipalMap {
     /** Test-only non-owner caller shared by the access specs. */
     'test-guest': { readonly kind: 'test-guest'; readonly guest: string }

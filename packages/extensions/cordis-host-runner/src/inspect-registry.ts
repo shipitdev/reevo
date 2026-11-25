@@ -2,13 +2,13 @@
 
 import { Service } from '@deepseek-ai/cordis'
 import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import type {} from '@deepseek-ai/dsh-api-gateway'
-import { snapshotJsonValue, type JsonValue } from '@deepseek-ai/dsh-util-values'
-import { assertSupportedJsonSchema, validateJsonSchemaValue } from '@deepseek-ai/dsh-tools'
-import type { JsonSchemaNode } from '@deepseek-ai/dsh-tools'
+import type { Agent } from '@reevo/dsh-agent'
+import type { SessionId } from '@reevo/dsh-session'
+import { HarnessError } from '@reevo/dsh-error'
+import type {} from '@reevo/dsh-api-gateway'
+import { snapshotJsonValue, type JsonValue } from '@reevo/dsh-util-values'
+import { assertSupportedJsonSchema, validateJsonSchemaValue } from '@reevo/dsh-tools'
+import type { JsonSchemaNode } from '@reevo/dsh-tools'
 import type {
   CordisInspectMethodManifest, CordisInspectPlatform, CordisInspectProviderManifest,
   CordisInspectProviderView, CordisInspectQueryRequest, CordisInspectQueryResolution,

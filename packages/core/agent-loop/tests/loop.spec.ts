@@ -1,21 +1,21 @@
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { createUserMessage, type ToolCallId, LlmError, type ReasoningEffortId, StreamChunk, expandAssistantStream } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions } from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId, TurnEndReason } from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import AgentRegistry, { type Agent, type AssistantStreamFrame } from '@deepseek-ai/dsh-agent'
+import { brandString } from '@reevo/dsh-brand'
+import LlmRuntime, { createUserMessage, type ToolCallId, LlmError, type ReasoningEffortId, StreamChunk, expandAssistantStream } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import type { GenerateOptions } from '@reevo/dsh-llm'
+import SessionStore, { type SessionId, TurnEndReason } from '@reevo/dsh-session'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
+import AgentRegistry, { type Agent, type AssistantStreamFrame } from '@reevo/dsh-agent'
 
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { MockAdapter, maxTokensResponse, textResponse, toolCallResponse } from './mock-adapter.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'loop-test': { kind: 'loop-test' } & ContextFormed
     'max-tokens-test': { kind: 'max-tokens-test' } & ContextFormed

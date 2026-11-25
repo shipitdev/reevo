@@ -30,13 +30,13 @@ describe('desktop package-set selection', () => {
   it('includes only the available internal production closure', () => {
     const available = new Map<string, PackedDesktopPackage>([
       ['@reevo/cli', packed('@reevo/cli', {
-        dependencies: { '@deepseek-ai/dsh-base': '^1.0.0', external: '^2.0.0' },
+        dependencies: { '@reevo/dsh-base': '^1.0.0', external: '^2.0.0' },
         optionalDependencies: { '@deepseek-ai/platform-package': '1.0.0', '@deepseek-ai/missing-platform': '1.0.0' },
       })],
-      ['@deepseek-ai/dsh-desktop-host', packed('@deepseek-ai/dsh-desktop-host', {
+      ['@reevo/dsh-desktop-host', packed('@reevo/dsh-desktop-host', {
         dependencies: { '@reevo/cli': '^1.0.0' },
       })],
-      ['@deepseek-ai/dsh-base', packed('@deepseek-ai/dsh-base', {
+      ['@reevo/dsh-base', packed('@reevo/dsh-base', {
         peerDependencies: { '@deepseek-ai/cordis': '^1.0.0' },
       })],
       ['@deepseek-ai/cordis', packed('@deepseek-ai/cordis')],
@@ -46,27 +46,27 @@ describe('desktop package-set selection', () => {
     expect(selectDesktopPackageClosure(available, { platform: 'win32', arch: 'x64' }).map(entry => entry.manifest.name)).toEqual([
       '@deepseek-ai/cordis',
       '@reevo/cli',
-      '@deepseek-ai/dsh-base',
-      '@deepseek-ai/dsh-desktop-host',
+      '@reevo/dsh-base',
+      '@reevo/dsh-desktop-host',
       '@deepseek-ai/platform-package',
     ])
   })
 
   it.each([
-    '@deepseek-ai/dsh-base', '@deepseek-ai/cordis', '@deepseek-ai/node-addon-system',
+    '@reevo/dsh-base', '@deepseek-ai/cordis', '@deepseek-ai/node-addon-system',
   ])('rejects required prepared package %s absent from the packed release inputs', (dependency) => {
     const available = new Map<string, PackedDesktopPackage>([
       ['@reevo/cli', packed('@reevo/cli', {
         dependencies: { [dependency]: '^1.0.0' },
       })],
-      ['@deepseek-ai/dsh-desktop-host', packed('@deepseek-ai/dsh-desktop-host', {
+      ['@reevo/dsh-desktop-host', packed('@reevo/dsh-desktop-host', {
         dependencies: { '@reevo/cli': '^1.0.0' },
       })],
     ])
     expect(() => selectDesktopPackageClosure(available, { platform: 'win32', arch: 'x64' })).toThrow(/unpacked package/u)
     expect(() => selectDesktopPackageClosure(new Map([
       ['@reevo/cli', packed('@reevo/cli')],
-    ]), { platform: 'win32', arch: 'x64' })).toThrow(/omit @deepseek-ai\/dsh-desktop-host/u)
+    ]), { platform: 'win32', arch: 'x64' })).toThrow(/omit @reevo\/dsh-desktop-host/u)
   })
 
   it('leaves independently published Office packages to npm resolution', () => {
@@ -77,10 +77,10 @@ describe('desktop package-set selection', () => {
           '@deepseek-ai/libreoffice-kit-wasm': '0.0.1',
         },
       })],
-      ['@deepseek-ai/dsh-desktop-host', packed('@deepseek-ai/dsh-desktop-host')],
+      ['@reevo/dsh-desktop-host', packed('@reevo/dsh-desktop-host')],
     ])
     expect(selectDesktopPackageClosure(available, { platform: 'win32', arch: 'x64' }).map(entry => entry.manifest.name)).toEqual([
-      '@reevo/cli', '@deepseek-ai/dsh-desktop-host',
+      '@reevo/cli', '@reevo/dsh-desktop-host',
     ])
   })
 
@@ -99,15 +99,15 @@ describe('desktop package-set selection', () => {
   })
 })
 
-const macProvider = '@deepseek-ai/dsh-cua-macos'
-const cuaBundle = '@deepseek-ai/dsh-cua-bundle'
+const macProvider = '@reevo/dsh-cua-macos'
+const cuaBundle = '@reevo/dsh-cua-bundle'
 const targetManifests = () => new Map<string, PackedDesktopPackage>([
   ['@reevo/cli', packed('@reevo/cli', { dependencies: { [cuaBundle]: '1.0.0' } })],
-  ['@deepseek-ai/dsh-desktop-host', packed('@deepseek-ai/dsh-desktop-host')],
+  ['@reevo/dsh-desktop-host', packed('@reevo/dsh-desktop-host')],
   [cuaBundle, packed(cuaBundle, {
-    optionalDependencies: { [macProvider]: '1.0.0' }, dependencies: { '@deepseek-ai/dsh-cua': '1.0.0' },
+    optionalDependencies: { [macProvider]: '1.0.0' }, dependencies: { '@reevo/dsh-cua': '1.0.0' },
   })],
-  ['@deepseek-ai/dsh-cua', packed('@deepseek-ai/dsh-cua')],
+  ['@reevo/dsh-cua', packed('@reevo/dsh-cua')],
   [macProvider, packed(macProvider, { os: ['darwin'] })],
 ])
 
@@ -116,7 +116,7 @@ it.each([
 ] as const)('selects the CUA native tarball for target %s/%s independently of the host', (platform, arch, included) => {
   const selected = selectDesktopPackageClosure(targetManifests(), { platform, arch }).map(entry => entry.manifest.name)
   expect(selected.includes(macProvider)).toBe(included)
-  expect(selected).toContain('@deepseek-ai/dsh-cua')
+  expect(selected).toContain('@reevo/dsh-cua')
   expect(selected).toContain(cuaBundle)
 })
 
@@ -147,7 +147,7 @@ it('copies no macOS tarball into the Windows package set', () => {
     const folder = join(root, stem, 'package')
     mkdirSync(folder, { recursive: true })
     writeFileSync(join(folder, 'package.json'), JSON.stringify(entry.manifest))
-    if (name === '@deepseek-ai/dsh-desktop-host') {
+    if (name === '@reevo/dsh-desktop-host') {
       for (const file of DESKTOP_HOST_RUNTIME_FILES) {
         mkdirSync(join(folder, file, '..'), { recursive: true })
         writeFileSync(join(folder, file), '')

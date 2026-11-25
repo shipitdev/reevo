@@ -1,16 +1,16 @@
 import { describe, expect, expectTypeOf, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { AssistantStreamAccumulator, createAssistantMessage, createUserMessage, createSystemMessage, type ToolCallId, createMessage } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, Message, TokenUsage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import SessionStore, { Session, type SessionId, SessionSeq, canonicalHeader } from '@deepseek-ai/dsh-session'
-import type { EpochHeader, SessionEvent, SessionSeq as SessionSeqType } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
-import type { TokenMeasurement, TokenMeterConfig } from '@deepseek-ai/dsh-token-meter'
+import { brandString } from '@reevo/dsh-brand'
+import { AssistantStreamAccumulator, createAssistantMessage, createUserMessage, createSystemMessage, type ToolCallId, createMessage } from '@reevo/dsh-llm'
+import type { ContentBlock, Message, TokenUsage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import SessionStore, { Session, type SessionId, SessionSeq, canonicalHeader } from '@reevo/dsh-session'
+import type { EpochHeader, SessionEvent, SessionSeq as SessionSeqType } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import TokenMeter from '@reevo/dsh-token-meter'
+import type { TokenMeasurement, TokenMeterConfig } from '@reevo/dsh-token-meter'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

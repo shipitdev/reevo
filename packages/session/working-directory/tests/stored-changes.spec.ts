@@ -4,12 +4,12 @@ import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it } from 'vitest'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import WorkingDirectory from '@deepseek-ai/dsh-working-directory'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { Session, SessionId } from '@deepseek-ai/dsh-session'
-import { renderContextSnapshot } from '@deepseek-ai/dsh-system-prompt'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import WorkingDirectory from '@reevo/dsh-working-directory'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
+import type { Session, SessionId } from '@reevo/dsh-session'
+import { renderContextSnapshot } from '@reevo/dsh-system-prompt'
+import { brandString } from '@reevo/dsh-brand'
 
 async function fixture() {
   const scratch = await realpath(await mkdtemp(join(tmpdir(), 'dsh-stored-changes-')))

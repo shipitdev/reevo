@@ -6,18 +6,18 @@
  * allows the endpoint; every other search reuses `DEEPSEEK_API_KEY`. The provider
  * does not reuse `DEEPSEEK_BASE_URL`; auxiliary search has its own endpoint configuration. The
  * provider reports itself not ready for a model request whose search would have no credential.
- * @module @deepseek-ai/dsh-web-search-deepseek
+ * @module @reevo/dsh-web-search-deepseek
  */
 import type { Volatile } from '@deepseek-ai/cordis'
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-agent'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import type { DeepSeekAuthRequest } from '@deepseek-ai/dsh-deepseek-auth'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
-import type {} from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-web'
+import type {} from '@reevo/dsh-agent'
+import { credentialRef } from '@reevo/dsh-credentials'
+import type { DeepSeekAuthRequest } from '@reevo/dsh-deepseek-auth'
+import { launchEnvironmentOf } from '@reevo/dsh-launch-environment'
+import type {} from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-web'
 import {
   DeepSeekSearchProvider,
   DEEPSEEK_DEFAULT_API_VERSION,

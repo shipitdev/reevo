@@ -2,10 +2,10 @@
 
 import { randomUUID } from 'node:crypto'
 import type { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import type {
   ConnectorAccountSource, ConnectorOperation, ConnectorOperationId, ConnectorOperationResult,
-} from '@deepseek-ai/dsh-client-ui-connector-account/types'
+} from '@reevo/dsh-client-ui-connector-account/types'
 import type { CliCommandExecutor, CliCommandResult, CliRunOptions } from './executor.ts'
 import type { CliAccountRegistration, CliAccountView, CliCommandFailure, CliOperationControl } from './types.ts'
 

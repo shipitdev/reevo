@@ -2,8 +2,8 @@
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { defineTool, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import { SubagentError } from '@deepseek-ai/dsh-subagent'
+import { defineTool, ToolContextUnavailableError } from '@reevo/dsh-tools'
+import { SubagentError } from '@reevo/dsh-subagent'
 
 export const name = 'experimental-tool-subagent-oar'
 export const inject = ['tools', 'subagents']

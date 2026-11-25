@@ -6,12 +6,12 @@
  */
 
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type { SettingsNamespaceView } from '@deepseek-ai/dsh-api-remotes/client'
+import type { SettingsNamespaceView } from '@reevo/dsh-api-remotes/client'
 import {
   createSnapshotStore, type SnapshotStore,
-} from '@deepseek-ai/dsh-client-store'
-import type { SettingsDescribeFace } from '@deepseek-ai/dsh-client-ui-settings/client'
-import type { PermissionCatalog } from '@deepseek-ai/dsh-permission-presets/client'
+} from '@reevo/dsh-client-store'
+import type { SettingsDescribeFace } from '@reevo/dsh-client-ui-settings/client'
+import type { PermissionCatalog } from '@reevo/dsh-permission-presets/client'
 import type { PermissionCatalogDirectory } from './catalog.ts'
 import { displayPermissionPreset } from './presentation.ts'
 

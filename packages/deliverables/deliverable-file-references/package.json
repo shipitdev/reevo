@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-deliverable-file-references",
+  "name": "@reevo/dsh-deliverable-file-references",
   "description": "Shared model guidance for file links and deliverables across DeepSeek Harness hosts",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -33,11 +33,11 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*"
+    "@reevo/dsh-system-prompt": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*"
   }
 }

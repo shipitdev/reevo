@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-agent-loop",
+  "name": "@reevo/dsh-agent-loop",
   "description": "The concrete agent loop plugin for the DeepSeek Harness",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -32,38 +32,38 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-llm-deepseek-api-key": "workspace:*",
+    "@reevo/dsh-llm-deepseek-api-key": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-llm-pi-ai": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence": "workspace:*",
-    "@deepseek-ai/dsh-session-persistence-jsonl": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-ptc": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-compaction": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-auth": "workspace:*"
+    "@reevo/dsh-llm-pi-ai": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-persistence": "workspace:*",
+    "@reevo/dsh-session-persistence-jsonl": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tool-executor-native": "workspace:*",
+    "@reevo/dsh-tool-executor-ptc": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-compaction": "workspace:*",
+    "@reevo/dsh-deepseek-auth": "workspace:*"
   }
 }

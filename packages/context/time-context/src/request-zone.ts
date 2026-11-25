@@ -1,8 +1,8 @@
 /** Browser-zone facts from committed or proposed user messages and model-facing policy text. */
 
-import { canonicalizeTimeZone } from '@deepseek-ai/dsh-util-time'
-import type { UserMessage } from '@deepseek-ai/dsh-llm'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+import { canonicalizeTimeZone } from '@reevo/dsh-util-time'
+import type { UserMessage } from '@reevo/dsh-llm'
+import { assertNever } from '@reevo/dsh-util-values'
 
 /** Browser-zone facts for the messages selected while preparing a request. */
 export type BrowserTimeZoneContext =

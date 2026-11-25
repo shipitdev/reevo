@@ -4,8 +4,8 @@
  * cursor), lifecycle-suffix replay, deep-copy isolation, turn-latency and
  * dispose-ordering pins, failure containment, and the `agent/error` relay.
  */
-import { createAssistantMessage, createToolResultMessage, createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { createAssistantMessage, createToolResultMessage, createUserMessage, type ToolCallId } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
 
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
@@ -15,8 +15,8 @@ import SessionStore, {
   type SessionId,
   SessionLogOffset,
   type SessionEvent,
-} from '@deepseek-ai/dsh-session'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+} from '@reevo/dsh-session'
+import type { Agent } from '@reevo/dsh-agent'
 import {
   SessionTelemetryCoordinator,
   type SessionTelemetrySink,
@@ -24,7 +24,7 @@ import {
   type SessionTelemetryRecord,
 } from '../src/index.ts'
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@reevo/dsh-session/types' {
   interface SessionEventMap {
     /**
      * Test-only merged event proving unknown types flow through unchanged.

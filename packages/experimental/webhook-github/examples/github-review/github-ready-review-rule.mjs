@@ -1,5 +1,5 @@
 import z from '@deepseek-ai/schemastery'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 export const name = 'github-ready-review-rule'
 export const inject = ['webhookRuntime']
@@ -13,7 +13,7 @@ export const Config = z.object({
 })
 
 export function apply(ctx, config) {
-  /** @type {import('@deepseek-ai/dsh-webhook/types').WebhookRuleId} */
+  /** @type {import('@reevo/dsh-webhook/types').WebhookRuleId} */
   const id = brandString('review-pr-when-ready')
   ctx.effect(() => ctx.webhookRuntime.register({
     id,

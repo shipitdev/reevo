@@ -50,7 +50,7 @@ jobs:
           dest: ${{ runner.temp }}/setup-pnpm-${{ github.run_id }}-${{ github.run_attempt }}
       - name: Install only publisher production dependencies
         working-directory: publisher-isolated
-        run: pnpm --filter @deepseek-ai/dsh-desktop-publisher --fail-if-no-match install --prod --frozen-lockfile --ignore-scripts
+        run: pnpm --filter @reevo/dsh-desktop-publisher --fail-if-no-match install --prod --frozen-lockfile --ignore-scripts
       - name: Load publisher without Desktop or root development dependencies
         working-directory: publisher-isolated/apps/desktop-publisher
         run: node --import tsx tests/isolated-install.mjs
@@ -505,7 +505,7 @@ jobs:
           fi
 
       - name: Install benchmark browser and hosted dependencies
-        run: pnpm --filter @deepseek-ai/dsh-benchmarks exec playwright install --with-deps chromium
+        run: pnpm --filter @reevo/dsh-benchmarks exec playwright install --with-deps chromium
 
       - name: Run performance benchmarks
         env:

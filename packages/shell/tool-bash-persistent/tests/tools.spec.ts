@@ -1,14 +1,14 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@reevo/dsh-agent-loop-testkit'
 import { Context } from '@deepseek-ai/cordis'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import TerminalSessionService from '@deepseek-ai/dsh-terminal'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@reevo/dsh-session'
+import AgentRegistry from '@reevo/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
+import TerminalSessionService from '@reevo/dsh-terminal'
 import type {
   TerminalBackend,
   TerminalBackendSession,
@@ -18,11 +18,11 @@ import type {
   TerminalSessionStatus,
   TerminalSignal,
   TerminalWaitReason,
-} from '@deepseek-ai/dsh-terminal'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import * as ToolBashPersistent from '@deepseek-ai/dsh-tool-bash-persistent'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@reevo/dsh-terminal'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import * as ToolBashPersistent from '@reevo/dsh-tool-bash-persistent'
+import { brandString } from '@reevo/dsh-brand'
 
 const contexts: Context[] = []
 let callNumber = 0

@@ -1,26 +1,26 @@
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ReasoningEffortId } from '@deepseek-ai/dsh-llm'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import { brandString } from '@reevo/dsh-brand'
+import { createUserMessage, type ReasoningEffortId } from '@reevo/dsh-llm'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import AgentRegistry, { type Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionHandle } from '@deepseek-ai/dsh-session-persistence'
+import LlmRuntime from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import type { SessionEvent } from '@reevo/dsh-session'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import AgentRegistry, { type Agent } from '@reevo/dsh-agent'
+import type { SessionHandle } from '@reevo/dsh-session-persistence'
 
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import AgentLoop, { CONFIGURED_AGENT_IDENTITIES_KEY } from '@deepseek-ai/dsh-agent-loop'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
+import AgentLoop, { CONFIGURED_AGENT_IDENTITIES_KEY } from '@reevo/dsh-agent-loop'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { MockAdapter, textResponse } from './mock-adapter.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

@@ -1,10 +1,10 @@
 /** Node-half coverage for the model guidance paired with Web file references. */
 
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { readFile } from 'node:fs/promises'
 import { Context } from '@deepseek-ai/cordis'
 import { afterEach, describe, expect, it } from 'vitest'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
+import SystemPrompt from '@reevo/dsh-system-prompt'
 import { apply, inject } from '../src/index.ts'
 
 let ctx: Context | undefined

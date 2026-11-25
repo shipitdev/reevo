@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-fs",
+  "name": "@reevo/dsh-fs",
   "description": "Abstract filesystem capability seam (ctx.fs) for the DeepSeek Harness — vocabulary types, the FileSystem service (text IO + optional version-guarded atomic mutations), and the fs/* policy event vocabulary",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -30,17 +30,17 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-fs-patch": "workspace:*"
+    "@reevo/dsh-fs-patch": "workspace:*"
   }
 }

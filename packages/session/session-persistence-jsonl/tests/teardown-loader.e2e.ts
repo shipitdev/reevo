@@ -2,10 +2,10 @@
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import * as SessionPlugin from '@deepseek-ai/dsh-session'
-import type { SessionId, Session } from '@deepseek-ai/dsh-session'
-import * as JsonlPlugin from '@deepseek-ai/dsh-session-persistence-jsonl'
-import { SessionHandleClosedError } from '@deepseek-ai/dsh-session-persistence'
+import * as SessionPlugin from '@reevo/dsh-session'
+import type { SessionId, Session } from '@reevo/dsh-session'
+import * as JsonlPlugin from '@reevo/dsh-session-persistence-jsonl'
+import { SessionHandleClosedError } from '@reevo/dsh-session-persistence'
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
@@ -13,7 +13,7 @@ import { scheduler } from 'node:timers/promises'
 import { pathToFileURL } from 'node:url'
 import { expect, it } from 'vitest'
 import { logPath } from '../src/format.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 it('waits for injected consumer teardown, persists its final event, and releases listeners and leases', async () => {
   const root = await mkdtemp(join(tmpdir(), 'dsh-jsonl-teardown-'))
@@ -49,9 +49,9 @@ it('waits for injected consumer teardown, persists its final event, and releases
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
       '- id: sessions',
-      "  name: '@deepseek-ai/dsh-session'",
+      "  name: '@reevo/dsh-session'",
       '- id: persistence',
-      "  name: '@deepseek-ai/dsh-session-persistence-jsonl'",
+      "  name: '@reevo/dsh-session-persistence-jsonl'",
       '  config:',
       `    root: ${JSON.stringify(root)}`,
       '    compression: none',
@@ -67,8 +67,8 @@ it('waits for injected consumer teardown, persists its final event, and releases
       loadCache: new Map(),
       async import(specifier: string) {
         switch (specifier) {
-          case '@deepseek-ai/dsh-session': return SessionPlugin
-          case '@deepseek-ai/dsh-session-persistence-jsonl': return JsonlPlugin
+          case '@reevo/dsh-session': return SessionPlugin
+          case '@reevo/dsh-session-persistence-jsonl': return JsonlPlugin
           case 'async-persistence-consumer': return consumer
           default: throw new Error(`Unexpected plugin: ${specifier}`)
         }

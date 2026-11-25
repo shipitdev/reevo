@@ -1,14 +1,14 @@
 import { Context } from '@deepseek-ai/cordis'
 import { expect, it, onTestFinished, vi } from 'vitest'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { MenuRegistry } from '@deepseek-ai/dsh-client-ui-context-menu/src/client/registry.ts'
-import type { SessionListState } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import { MenuRegistry } from '@reevo/dsh-client-ui-context-menu/src/client/registry.ts'
+import type { SessionListState } from '@reevo/dsh-api-session-controller/client'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { LocaleRuntime } from '@reevo/dsh-client-locale/client'
 import { OpenInAppController } from '../src/client/controller.ts'
 import { registerSessionOpenWith } from '../src/client/session-open-with.ts'
 import { en, zh, NS } from '../src/client/locales.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 function bench(apps: readonly string[] | null = ['finder', 'cursor'], cwd: string | undefined = '/captured') {
   const ctx = new Context()

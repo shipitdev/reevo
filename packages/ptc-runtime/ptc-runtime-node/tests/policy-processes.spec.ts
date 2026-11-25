@@ -1,10 +1,10 @@
 import { Context } from '@deepseek-ai/cordis'
-import Sessions, { type SessionId } from '@deepseek-ai/dsh-session'
-import SandboxPolicy, { setSandboxMode } from '@deepseek-ai/dsh-sandbox-policy'
-import SessionProjections from '@deepseek-ai/dsh-session-projection'
+import Sessions, { type SessionId } from '@reevo/dsh-session'
+import SandboxPolicy, { setSandboxMode } from '@reevo/dsh-sandbox-policy'
+import SessionProjections from '@reevo/dsh-session-projection'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { PolicyProcesses } from '../src/policy-processes.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 async function setup() {
   const ctx = new Context()

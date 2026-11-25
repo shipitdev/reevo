@@ -104,10 +104,10 @@ it('lists every bundle version from the registry document that is neither deprec
         time: '2026-04-01T00:00:00.000Z',
         manifest: {
           ...BUNDLE, deprecated: '',
-          peerDependencies: { '@reevo/cli': '>=0.2.0', '@deepseek-ai/dsh-agent': '>=0.2.0', '@deepseek-ai/dsh-tools': '^0.2.0 || ^0.3.0', react: '18' },
+          peerDependencies: { '@reevo/cli': '>=0.2.0', '@reevo/dsh-agent': '>=0.2.0', '@reevo/dsh-tools': '^0.2.0 || ^0.3.0', react: '18' },
         },
       },
-      '1.3.0': { time: '2026-05-01T00:00:00.000Z', manifest: { ...BUNDLE, peerDependencies: { '@deepseek-ai/dsh-agent': 'workspace:>=1' } } },
+      '1.3.0': { time: '2026-05-01T00:00:00.000Z', manifest: { ...BUNDLE, peerDependencies: { '@reevo/dsh-agent': 'workspace:>=1' } } },
       '1.4.0': { manifest: BUNDLE },
       '2.0.0-rc.1': {
         time: '2026-06-01T00:00:00.000Z',

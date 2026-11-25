@@ -11,10 +11,10 @@
 
 每个包的条目用三个标识符标注：`inject` 列出插件注入的服务键，其 `cordis.yml` 树还必须加载这些服务的提供者；`refs` 列出声明引用、但未粘贴在此处的类型；`source` 链接到声明配置的源文件。范围限定为 harness 层级（`packages/`）；配置树还可能加载的 vendored cordis 插件（控制台日志记录器等）固定为上游源代码（参见 [vendoring policy](../vendor/README.md)），未收录于此目录。
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-acp -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-acp -->
 <a id="deepseek-aidsh-acp"></a>
 
-## `@deepseek-ai/dsh-acp`
+## `@reevo/dsh-acp`
 
 - `inject`: `agents` · `llm` · `sessionPersistence` · `sessions`
 - `refs`: `Stream` (`@agentclientprotocol/sdk`)
@@ -33,12 +33,12 @@ export interface AcpConfig {
   stream?: Stream
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-acp -->
+<!-- END GENERATED config-catalog:@reevo/dsh-acp -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-action-cards -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-action-cards -->
 <a id="deepseek-aidsh-action-cards"></a>
 
-## `@deepseek-ai/dsh-action-cards`
+## `@reevo/dsh-action-cards`
 
 - `inject`: `agents` · `sessionProjections` · `remoteAccess`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -55,12 +55,12 @@ export interface Config {
   enabled: Volatile<boolean>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-action-cards -->
+<!-- END GENERATED config-catalog:@reevo/dsh-action-cards -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-agent-default-model -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-agent-default-model -->
 <a id="deepseek-aidsh-agent-default-model"></a>
 
-## `@deepseek-ai/dsh-agent-default-model`
+## `@reevo/dsh-agent-default-model`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/core/agent-default-model/src/index.ts:25`](../packages/core/agent-default-model/src/index.ts)
@@ -76,12 +76,12 @@ export interface Config {
   reasoningEffort: Volatile<string | undefined>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-agent-default-model -->
+<!-- END GENERATED config-catalog:@reevo/dsh-agent-default-model -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-agent-instructions -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-agent-instructions -->
 <a id="deepseek-aidsh-agent-instructions"></a>
 
-## `@deepseek-ai/dsh-agent-instructions`
+## `@reevo/dsh-agent-instructions`
 
 - `inject`: `agents` · `workingDirectory`
 - `source`: [`packages/context/agent-instructions/src/config.ts:18`](../packages/context/agent-instructions/src/config.ts)
@@ -111,12 +111,12 @@ export interface Config {
   localInstructionFileCandidates?: string[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-agent-instructions -->
+<!-- END GENERATED config-catalog:@reevo/dsh-agent-instructions -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-agent-loop -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-agent-loop -->
 <a id="deepseek-aidsh-agent-loop"></a>
 
-## `@deepseek-ai/dsh-agent-loop`
+## `@reevo/dsh-agent-loop`
 
 - `inject`: `agents` · `sessions` · `llm` · `tools` · `systemPrompt` · `sessionProjections`
 - `refs`: [`AgentOptions`](subsystems/core.zh.md) · [`SessionId`](subsystems/core.zh.md) · `Volatile` (`@deepseek-ai/cosmokit`)
@@ -143,12 +143,12 @@ export interface Config {
   })[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-agent-loop -->
+<!-- END GENERATED config-catalog:@reevo/dsh-agent-loop -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-agent-preset -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-agent-preset -->
 <a id="deepseek-aidsh-agent-preset"></a>
 
-## `@deepseek-ai/dsh-agent-preset`
+## `@reevo/dsh-agent-preset`
 
 - `inject`: `agentPresets`
 - `refs`: [`PresetDefinition`](../packages/preset/agent-preset-registry/src/index.ts)
@@ -158,12 +158,12 @@ export interface Config {
 /** Definition submitted to the preset registry. */
 export type Config = PresetDefinition
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-agent-preset -->
+<!-- END GENERATED config-catalog:@reevo/dsh-agent-preset -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-agent-preset-registry -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-agent-preset-registry -->
 <a id="deepseek-aidsh-agent-preset-registry"></a>
 
-## `@deepseek-ai/dsh-agent-preset-registry`
+## `@reevo/dsh-agent-preset-registry`
 
 - `inject`: `loader` · `sessionProjections` · `agents`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -178,12 +178,12 @@ export interface Config {
   selectedDefault: Volatile<string | undefined>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-agent-preset-registry -->
+<!-- END GENERATED config-catalog:@reevo/dsh-agent-preset-registry -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-agent-team -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-agent-team -->
 <a id="deepseek-aidsh-agent-team"></a>
 
-## `@deepseek-ai/dsh-agent-team`
+## `@reevo/dsh-agent-team`
 
 - `inject`: `agents` · `sessions` · `sessionPersistence` · `sessionProjections` · `subagents`
 - `source`: [`packages/team/agent-team/src/types.ts:136`](../packages/team/agent-team/src/types.ts)
@@ -197,12 +197,12 @@ export interface Config {
   readonly maxTasks?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-agent-team -->
+<!-- END GENERATED config-catalog:@reevo/dsh-agent-team -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-agent-tool-presentation -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-agent-tool-presentation -->
 <a id="deepseek-aidsh-agent-tool-presentation"></a>
 
-## `@deepseek-ai/dsh-agent-tool-presentation`
+## `@reevo/dsh-agent-tool-presentation`
 
 - `inject`: `tools`
 - `source`: [`packages/core/agent-tool-presentation/src/index.ts:25`](../packages/core/agent-tool-presentation/src/index.ts)
@@ -223,12 +223,12 @@ export interface Config {
   mode: 'native' | 'ptc'
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-agent-tool-presentation -->
+<!-- END GENERATED config-catalog:@reevo/dsh-agent-tool-presentation -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-api-gateway -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-api-gateway -->
 <a id="deepseek-aidsh-api-gateway"></a>
 
-## `@deepseek-ai/dsh-api-gateway`
+## `@reevo/dsh-api-gateway`
 
 - `inject`: `typert` · `remoteAccess`
 - `source`: [`packages/api/gateway/src/index.ts:158`](../packages/api/gateway/src/index.ts)
@@ -249,12 +249,12 @@ export interface Config {
   readonly websocketCompression?: 'none' | 'deflate'
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-api-gateway -->
+<!-- END GENERATED config-catalog:@reevo/dsh-api-gateway -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-api-job-controller -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-api-job-controller -->
 <a id="deepseek-aidsh-api-job-controller"></a>
 
-## `@deepseek-ai/dsh-api-job-controller`
+## `@reevo/dsh-api-job-controller`
 
 - `inject`: `jobs` · `typert`
 - `source`: [`packages/api/job-controller/src/index.ts:35`](../packages/api/job-controller/src/index.ts)
@@ -268,12 +268,12 @@ export interface Config {
   readonly observeMaxFrameBytes?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-api-job-controller -->
+<!-- END GENERATED config-catalog:@reevo/dsh-api-job-controller -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-api-session-controller -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-api-session-controller -->
 <a id="deepseek-aidsh-api-session-controller"></a>
 
-## `@deepseek-ai/dsh-api-session-controller`
+## `@reevo/dsh-api-session-controller`
 
 - `inject`: `agentDefaultModel` · `agents` · `attachments` · `fileUploads` · `fs` · `llm` · `remoteAccess` · `sessions` · `sessionProjections` · `sessionQuery` · `typert` · `typertGateway` · `workspaceRegistry`
 - `source`: [`packages/api/session-controller/src/index.ts:83`](../packages/api/session-controller/src/index.ts)
@@ -287,12 +287,12 @@ export interface Config {
   readonly listWorkSliceMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-api-session-controller -->
+<!-- END GENERATED config-catalog:@reevo/dsh-api-session-controller -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-api-settings-controller -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-api-settings-controller -->
 <a id="deepseek-aidsh-api-settings-controller"></a>
 
-## `@deepseek-ai/dsh-api-settings-controller`
+## `@reevo/dsh-api-settings-controller`
 
 - `source`: [`packages/api/settings-controller/src/index.ts:35`](../packages/api/settings-controller/src/index.ts)
 
@@ -303,12 +303,12 @@ export interface SettingsControllerInternals {
   readonly openTextFile?: (path: string, signal: AbortSignal) => Promise<void>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-api-settings-controller -->
+<!-- END GENERATED config-catalog:@reevo/dsh-api-settings-controller -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-api-terminal-controller -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-api-terminal-controller -->
 <a id="deepseek-aidsh-api-terminal-controller"></a>
 
-## `@deepseek-ai/dsh-api-terminal-controller`
+## `@reevo/dsh-api-terminal-controller`
 
 - `inject`: `subprocess` · `sandboxPolicy` · `workingDirectory` · `typert`
 - `source`: [`packages/api/terminal-controller/src/index.ts:32`](../packages/api/terminal-controller/src/index.ts)
@@ -354,12 +354,12 @@ export interface Config {
   readonly cleanupRetryMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-api-terminal-controller -->
+<!-- END GENERATED config-catalog:@reevo/dsh-api-terminal-controller -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-api-workspace-controller -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-api-workspace-controller -->
 <a id="deepseek-aidsh-api-workspace-controller"></a>
 
-## `@deepseek-ai/dsh-api-workspace-controller`
+## `@reevo/dsh-api-workspace-controller`
 
 - `inject`: `remoteAccess` · `typert` · `workspaceRegistry`
 - `source`: [`packages/api/workspace-controller/src/index.ts:37`](../packages/api/workspace-controller/src/index.ts)
@@ -373,12 +373,12 @@ export interface Config {
   documentsLookupTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-api-workspace-controller -->
+<!-- END GENERATED config-catalog:@reevo/dsh-api-workspace-controller -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-api-workspace-files -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-api-workspace-files -->
 <a id="deepseek-aidsh-api-workspace-files"></a>
 
-## `@deepseek-ai/dsh-api-workspace-files`
+## `@reevo/dsh-api-workspace-files`
 
 - `inject`: `fs` · `sandboxPolicy` · `sessions` · `typert`
 - `source`: [`packages/api/workspace-files/src/index.ts:100`](../packages/api/workspace-files/src/index.ts)
@@ -418,12 +418,12 @@ export interface SearchLimits {
   readonly stderrMaxBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-api-workspace-files -->
+<!-- END GENERATED config-catalog:@reevo/dsh-api-workspace-files -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-attachment-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-attachment-local -->
 <a id="deepseek-aidsh-attachment-local"></a>
 
-## `@deepseek-ai/dsh-attachment-local`
+## `@reevo/dsh-attachment-local`
 
 - `source`: [`packages/attachment/attachment-local/src/index.ts:70`](../packages/attachment/attachment-local/src/index.ts)
 
@@ -459,12 +459,12 @@ export interface Config {
   requestImageByteHeadroom?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-attachment-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-attachment-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-bash-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-bash-local -->
 <a id="deepseek-aidsh-bash-local"></a>
 
-## `@deepseek-ai/dsh-bash-local`
+## `@reevo/dsh-bash-local`
 
 - `inject`: `subprocess`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -487,12 +487,12 @@ export interface Config {
   graceMs: Volatile<number>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-bash-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-bash-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-bash-sandbox -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-bash-sandbox -->
 <a id="deepseek-aidsh-bash-sandbox"></a>
 
-## `@deepseek-ai/dsh-bash-sandbox`
+## `@reevo/dsh-bash-sandbox`
 
 - `inject`: `subprocess` · `sandbox` · `sandboxPolicy`
 - `refs`: [`LocalConfig`](#deepseek-aidsh-bash-local)
@@ -502,18 +502,18 @@ export interface Config {
 /**
  * Plugin config: the local executor's knobs, verbatim. The sandbox policy —
  * the default mode and fallback `workspace-write` root — is NOT here: it lives
- * on `ctx.sandboxPolicy` (`@deepseek-ai/dsh-sandbox-policy`), which resolves
+ * on `ctx.sandboxPolicy` (`@reevo/dsh-sandbox-policy`), which resolves
  * each calling session's mode and cwd for every enforcing capability. The runner
  * choice is likewise the `ctx.sandbox` provider's config, not this executor's.
  */
 export type Config = LocalConfig
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-bash-sandbox -->
+<!-- END GENERATED config-catalog:@reevo/dsh-bash-sandbox -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-cli-account -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-cli-account -->
 <a id="deepseek-aidsh-cli-account"></a>
 
-## `@deepseek-ai/dsh-cli-account`
+## `@reevo/dsh-cli-account`
 
 - `inject`: `subprocess` · `systemPrompt`
 - `source`: [`packages/connector/cli-account/src/index.ts:33`](../packages/connector/cli-account/src/index.ts)
@@ -525,12 +525,12 @@ export interface Config {
   commandTimeoutMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-cli-account -->
+<!-- END GENERATED config-catalog:@reevo/dsh-cli-account -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-connection -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-connection -->
 <a id="deepseek-aidsh-client-connection"></a>
 
-## `@deepseek-ai/dsh-client-connection`
+## `@reevo/dsh-client-connection`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/client/connection/src/types.ts:6`](../packages/client/connection/src/types.ts)
@@ -568,12 +568,12 @@ export interface ConnectionRecoveryConfig {
   generationReadyTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-connection -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-connection -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-hmr -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-hmr -->
 <a id="deepseek-aidsh-client-hmr"></a>
 
-## `@deepseek-ai/dsh-client-hmr`
+## `@reevo/dsh-client-hmr`
 
 - `inject`: `clientModules`
 - `source`: [`packages/client/hmr/src/index.ts:26`](../packages/client/hmr/src/index.ts)
@@ -585,12 +585,12 @@ export interface Config {
   pollIntervalMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-hmr -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-hmr -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-product-analytics -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-product-analytics -->
 <a id="deepseek-aidsh-client-product-analytics"></a>
 
-## `@deepseek-ai/dsh-client-product-analytics`
+## `@reevo/dsh-client-product-analytics`
 
 - `inject`: `deepseekAccount` · `productTelemetry`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -609,12 +609,12 @@ export interface Config {
   environmentQueryMaxOutputBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-product-analytics -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-product-analytics -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-remote-connection -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-remote-connection -->
 <a id="deepseek-aidsh-client-remote-connection"></a>
 
-## `@deepseek-ai/dsh-client-remote-connection`
+## `@reevo/dsh-client-remote-connection`
 
 - `inject`: `connection` · `connection.authentication` · `credentials` · `webServer` · `webApp`
 - `source`: [`packages/client/remote-connection/src/index.ts:33`](../packages/client/remote-connection/src/index.ts)
@@ -647,12 +647,12 @@ export interface Config {
   }
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-remote-connection -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-remote-connection -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-shortcuts -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-shortcuts -->
 <a id="deepseek-aidsh-client-shortcuts"></a>
 
-## `@deepseek-ai/dsh-client-shortcuts`
+## `@reevo/dsh-client-shortcuts`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/client/shortcuts/src/index.ts:7`](../packages/client/shortcuts/src/index.ts)
@@ -667,12 +667,12 @@ export interface ShortcutsConfig {
   stopSequenceMs: Volatile<number>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-shortcuts -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-shortcuts -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-ui-account-notifications -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-ui-account-notifications -->
 <a id="deepseek-aidsh-client-ui-account-notifications"></a>
 
-## `@deepseek-ai/dsh-client-ui-account-notifications`
+## `@reevo/dsh-client-ui-account-notifications`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/client/ui-account-notifications/src/index.ts:7`](../packages/client/ui-account-notifications/src/index.ts)
@@ -687,12 +687,12 @@ export interface AccountNotificationsConfig {
   notificationPollIntervalMs: Volatile<number>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-ui-account-notifications -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-ui-account-notifications -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-ui-context-menu -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-ui-context-menu -->
 <a id="deepseek-aidsh-client-ui-context-menu"></a>
 
-## `@deepseek-ai/dsh-client-ui-context-menu`
+## `@reevo/dsh-client-ui-context-menu`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/client/ui-context-menu/src/index.ts:7`](../packages/client/ui-context-menu/src/index.ts)
@@ -707,12 +707,12 @@ export interface ContextMenuConfig {
   resolutionTimeoutMs: Volatile<number>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-ui-context-menu -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-ui-context-menu -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-ui-plugin-manager -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-ui-plugin-manager -->
 <a id="deepseek-aidsh-client-ui-plugin-manager"></a>
 
-## `@deepseek-ai/dsh-client-ui-plugin-manager`
+## `@reevo/dsh-client-ui-plugin-manager`
 
 - `source`: [`packages/client/ui-plugin-manager/src/index.ts:15`](../packages/client/ui-plugin-manager/src/index.ts)
 
@@ -727,12 +727,12 @@ export interface Config {
   registryProbeCacheTtlMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-ui-plugin-manager -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-ui-plugin-manager -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-ui-settings-account -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-ui-settings-account -->
 <a id="deepseek-aidsh-client-ui-settings-account"></a>
 
-## `@deepseek-ai/dsh-client-ui-settings-account`
+## `@reevo/dsh-client-ui-settings-account`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/client/ui-settings-account/src/index.ts:9`](../packages/client/ui-settings-account/src/index.ts)
@@ -773,12 +773,12 @@ export type OnboardingPurpose = 'office' | 'development' | 'both'
 /** Work-detail mode applied to Chat when onboarding completes. */
 export type OnboardingProcess = 'compact' | 'standard' | 'detailed'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-ui-settings-account -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-ui-settings-account -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-ui-settings-models -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-ui-settings-models -->
 <a id="deepseek-aidsh-client-ui-settings-models"></a>
 
-## `@deepseek-ai/dsh-client-ui-settings-models`
+## `@reevo/dsh-client-ui-settings-models`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/client/ui-settings-models/src/index.ts:7`](../packages/client/ui-settings-models/src/index.ts)
@@ -793,12 +793,12 @@ export interface ModelsConfig {
   credentialOnboarding: Volatile<boolean>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-ui-settings-models -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-ui-settings-models -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-ui-sidebar-documentpreview -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-ui-sidebar-documentpreview -->
 <a id="deepseek-aidsh-client-ui-sidebar-documentpreview"></a>
 
-## `@deepseek-ai/dsh-client-ui-sidebar-documentpreview`
+## `@reevo/dsh-client-ui-sidebar-documentpreview`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/client/ui-sidebar-documentpreview/src/index.ts:8`](../packages/client/ui-sidebar-documentpreview/src/index.ts)
@@ -837,12 +837,12 @@ export interface ExcelLimits {
   timeoutMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-ui-sidebar-documentpreview -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-ui-sidebar-documentpreview -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-ui-theme -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-ui-theme -->
 <a id="deepseek-aidsh-client-ui-theme"></a>
 
-## `@deepseek-ai/dsh-client-ui-theme`
+## `@reevo/dsh-client-ui-theme`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/client/ui-theme/src/index.ts:20`](../packages/client/ui-theme/src/index.ts)
@@ -869,12 +869,12 @@ export interface Config {
 /** Theme preference persisted by the product Appearance row. */
 export type ThemePreference = typeof THEME_PREFERENCES[number]
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-ui-theme -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-ui-theme -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-client-ui-trajectory -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-client-ui-trajectory -->
 <a id="deepseek-aidsh-client-ui-trajectory"></a>
 
-## `@deepseek-ai/dsh-client-ui-trajectory`
+## `@reevo/dsh-client-ui-trajectory`
 
 - `inject`: `sessions` · `typert`
 - `source`: [`packages/client/ui-trajectory/src/index.ts:25`](../packages/client/ui-trajectory/src/index.ts)
@@ -886,12 +886,12 @@ export interface Config {
   maxResultsPerSession: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-client-ui-trajectory -->
+<!-- END GENERATED config-catalog:@reevo/dsh-client-ui-trajectory -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-compaction-basic -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-compaction-basic -->
 <a id="deepseek-aidsh-compaction-basic"></a>
 
-## `@deepseek-ai/dsh-compaction-basic`
+## `@reevo/dsh-compaction-basic`
 
 - `inject`: `llm` · `tokenMeter` · `sessions` · `sessionProjections`
 - `source`: [`packages/compaction/compaction-basic/src/types.ts:46`](../packages/compaction/compaction-basic/src/types.ts)
@@ -935,12 +935,12 @@ export interface ModelCompactPolicyConfig extends CompactionPolicyConfig {
   model: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-compaction-basic -->
+<!-- END GENERATED config-catalog:@reevo/dsh-compaction-basic -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-compaction-tool-result-pruner -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-compaction-tool-result-pruner -->
 <a id="deepseek-aidsh-compaction-tool-result-pruner"></a>
 
-## `@deepseek-ai/dsh-compaction-tool-result-pruner`
+## `@reevo/dsh-compaction-tool-result-pruner`
 
 - `inject`: `tokenMeter`
 - `source`: [`packages/compaction/compaction-tool-result-pruner/src/types.ts:5`](../packages/compaction/compaction-tool-result-pruner/src/types.ts)
@@ -956,12 +956,12 @@ export interface ToolResultPruneConfig {
   tailChars?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-compaction-tool-result-pruner -->
+<!-- END GENERATED config-catalog:@reevo/dsh-compaction-tool-result-pruner -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-cordis-host-runner -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-cordis-host-runner -->
 <a id="deepseek-aidsh-cordis-host-runner"></a>
 
-## `@deepseek-ai/dsh-cordis-host-runner`
+## `@reevo/dsh-cordis-host-runner`
 
 - `inject`: `tools`
 - `source`: [`packages/extensions/cordis-host-runner/src/index.ts:107`](../packages/extensions/cordis-host-runner/src/index.ts)
@@ -975,12 +975,12 @@ export interface Config {
   clientInspectTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-cordis-host-runner -->
+<!-- END GENERATED config-catalog:@reevo/dsh-cordis-host-runner -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-credentials-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-credentials-local -->
 <a id="deepseek-aidsh-credentials-local"></a>
 
-## `@deepseek-ai/dsh-credentials-local`
+## `@reevo/dsh-credentials-local`
 
 - `source`: [`packages/credentials/credentials-local/src/index.ts:64`](../packages/credentials/credentials-local/src/index.ts)
 
@@ -997,12 +997,12 @@ export interface Config {
   debounceMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-credentials-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-credentials-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-cua-macos -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-cua-macos -->
 <a id="deepseek-aidsh-cua-macos"></a>
 
-## `@deepseek-ai/dsh-cua-macos`
+## `@reevo/dsh-cua-macos`
 
 - `inject`: `computerUse` · `tools` · `systemPrompt` · `subprocess` · `agents`
 - `refs`: [`CuaConfig`](../packages/experimental/cua/src/index.ts)
@@ -1031,12 +1031,12 @@ export type SourceSigning = 'ad-hoc' | {
   keychain: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-cua-macos -->
+<!-- END GENERATED config-catalog:@reevo/dsh-cua-macos -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-cua-mcp -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-cua-mcp -->
 <a id="deepseek-aidsh-cua-mcp"></a>
 
-## `@deepseek-ai/dsh-cua-mcp`
+## `@reevo/dsh-cua-mcp`
 
 - `inject`: `cmdlineArgs` · `appReady` · `appExit` · `profileContext` · `agents` · `agentPresets` · `tools` · `systemPrompt` · `attachments`
 - `source`: [`packages/experimental/cua-mcp/src/index.ts:25`](../packages/experimental/cua-mcp/src/index.ts)
@@ -1060,12 +1060,12 @@ export interface Config {
 /** Who decides application and pointer consent for the connection's Agent. */
 export type ConsentMode = 'allow' | 'elicit'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-cua-mcp -->
+<!-- END GENERATED config-catalog:@reevo/dsh-cua-mcp -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-cua-windows -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-cua-windows -->
 <a id="deepseek-aidsh-cua-windows"></a>
 
-## `@deepseek-ai/dsh-cua-windows`
+## `@reevo/dsh-cua-windows`
 
 - `inject`: `computerUse` · `tools` · `systemPrompt` · `subprocess` · `agents`
 - `refs`: [`CuaConfig`](../packages/experimental/cua/src/index.ts)
@@ -1080,12 +1080,12 @@ export interface Config extends CuaConfig {
   pollIntervalMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-cua-windows -->
+<!-- END GENERATED config-catalog:@reevo/dsh-cua-windows -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-deepseek-account -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-deepseek-account -->
 <a id="deepseek-aidsh-deepseek-account"></a>
 
-## `@deepseek-ai/dsh-deepseek-account`
+## `@reevo/dsh-deepseek-account`
 
 - `inject`: `credentials` · `authorization`
 - `source`: [`packages/account/deepseek-account/src/index.ts:39`](../packages/account/deepseek-account/src/index.ts)
@@ -1125,12 +1125,12 @@ export interface Config {
   attemptTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-deepseek-account -->
+<!-- END GENERATED config-catalog:@reevo/dsh-deepseek-account -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-deepseek-chat-import -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-deepseek-chat-import -->
 <a id="deepseek-aidsh-deepseek-chat-import"></a>
 
-## `@deepseek-ai/dsh-deepseek-chat-import`
+## `@reevo/dsh-deepseek-chat-import`
 
 - `inject`: `typert` · `connection` · `sessionPersistence` · `workspaceRegistry`
 - `source`: [`packages/experimental/deepseek-chat-import/src/index.ts:36`](../packages/experimental/deepseek-chat-import/src/index.ts)
@@ -1148,12 +1148,12 @@ export interface Config {
   maxTitleBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-deepseek-chat-import -->
+<!-- END GENERATED config-catalog:@reevo/dsh-deepseek-chat-import -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-dingtalk -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-dingtalk -->
 <a id="deepseek-aidsh-dingtalk"></a>
 
-## `@deepseek-ai/dsh-dingtalk`
+## `@reevo/dsh-dingtalk`
 
 - `inject`: `cliAccounts` · `skills`
 - `source`: [`packages/connector/dingtalk/src/index.ts:34`](../packages/connector/dingtalk/src/index.ts)
@@ -1171,12 +1171,12 @@ export interface Config {
   releaseTimeoutMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-dingtalk -->
+<!-- END GENERATED config-catalog:@reevo/dsh-dingtalk -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-api-speech-to-text -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-api-speech-to-text -->
 <a id="deepseek-aidsh-experimental-api-speech-to-text"></a>
 
-## `@deepseek-ai/dsh-experimental-api-speech-to-text`
+## `@reevo/dsh-experimental-api-speech-to-text`
 
 - `inject`: `speechToText` · `typert`
 - `source`: [`packages/experimental/api-speech-to-text/src/index.ts:20`](../packages/experimental/api-speech-to-text/src/index.ts)
@@ -1190,42 +1190,42 @@ export interface Config {
   maxDurationSeconds: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-api-speech-to-text -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-api-speech-to-text -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-browser-use-chrome-devtools-mcp -->
 <a id="deepseek-aidsh-experimental-browser-use-chrome-devtools-mcp"></a>
 
-## `@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp`
+## `@reevo/dsh-experimental-browser-use-chrome-devtools-mcp`
 
 - `inject`: `browserUse` · `agents` · `tools` · `systemPrompt` · `workingDirectory`
-- `refs`: `BrowserMcpConfig` (`@deepseek-ai/dsh-experimental-browser-use-runtime/mcp`)
+- `refs`: `BrowserMcpConfig` (`@reevo/dsh-experimental-browser-use-runtime/mcp`)
 - `source`: [`packages/experimental/browser-use-chrome-devtools-mcp/src/index.ts:15`](../packages/experimental/browser-use-chrome-devtools-mcp/src/index.ts)
 
 ```ts config-catalog
 /** Fixed Chromium launch or existing-browser attachment settings. */
 export type Config = BrowserMcpConfig
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-browser-use-chrome-devtools-mcp -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-browser-use-playwright-mcp -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-browser-use-playwright-mcp -->
 <a id="deepseek-aidsh-experimental-browser-use-playwright-mcp"></a>
 
-## `@deepseek-ai/dsh-experimental-browser-use-playwright-mcp`
+## `@reevo/dsh-experimental-browser-use-playwright-mcp`
 
 - `inject`: `browserUse` · `agents` · `tools` · `systemPrompt` · `workingDirectory`
-- `refs`: `BrowserMcpConfig` (`@deepseek-ai/dsh-experimental-browser-use-runtime/mcp`)
+- `refs`: `BrowserMcpConfig` (`@reevo/dsh-experimental-browser-use-runtime/mcp`)
 - `source`: [`packages/experimental/browser-use-playwright-mcp/src/index.ts:16`](../packages/experimental/browser-use-playwright-mcp/src/index.ts)
 
 ```ts config-catalog
 /** Fixed Chromium launch or existing-browser attachment settings. */
 export type Config = BrowserMcpConfig
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-browser-use-playwright-mcp -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-browser-use-playwright-mcp -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-browser-use-stagehand-native -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-browser-use-stagehand-native -->
 <a id="deepseek-aidsh-experimental-browser-use-stagehand-native"></a>
 
-## `@deepseek-ai/dsh-experimental-browser-use-stagehand-native`
+## `@reevo/dsh-experimental-browser-use-stagehand-native`
 
 - `inject`: `browserUse` · `agents` · `tools` · `systemPrompt`
 - `refs`: `ModelConfig` (`@browserbasehq/stagehand`)
@@ -1260,12 +1260,12 @@ export interface StagehandModelConfig {
   headers?: Record<string, string>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-browser-use-stagehand-native -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-browser-use-stagehand-native -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-claude-code-mods -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-claude-code-mods -->
 <a id="deepseek-aidsh-experimental-claude-code-mods"></a>
 
-## `@deepseek-ai/dsh-experimental-claude-code-mods`
+## `@reevo/dsh-experimental-claude-code-mods`
 
 - `inject`: `workingDirectory` · `agents`
 - `source`: [`packages/experimental/claude-code-mods/src/index.ts:55`](../packages/experimental/claude-code-mods/src/index.ts)
@@ -1287,12 +1287,12 @@ export interface Config {
   bandRows?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-claude-code-mods -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-claude-code-mods -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-client-ui-cot-translation -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-client-ui-cot-translation -->
 <a id="deepseek-aidsh-experimental-client-ui-cot-translation"></a>
 
-## `@deepseek-ai/dsh-experimental-client-ui-cot-translation`
+## `@reevo/dsh-experimental-client-ui-cot-translation`
 
 - `inject`: `translator` · `typert` · `sessionController`
 - `refs`: [`TranslationProvider`](subsystems/translation.zh.md) · `Volatile` (`@deepseek-ai/cordis`)
@@ -1315,12 +1315,12 @@ export interface CotTranslationPreferences {
   targetLanguage: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-client-ui-cot-translation -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-client-ui-cot-translation -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-client-ui-forge -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-client-ui-forge -->
 <a id="deepseek-aidsh-experimental-client-ui-forge"></a>
 
-## `@deepseek-ai/dsh-experimental-client-ui-forge`
+## `@reevo/dsh-experimental-client-ui-forge`
 
 - `inject`: `forge` · `forgeSession` · `sessionProjections` · `workingDirectory` · `fs` · `subprocess` · `sandbox` · `sandboxPolicy` · `agents`
 - `source`: [`packages/experimental/client-ui-forge/src/types.ts:587`](../packages/experimental/client-ui-forge/src/types.ts)
@@ -1397,12 +1397,12 @@ export interface Config {
   reviewPageSize?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-client-ui-forge -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-client-ui-forge -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-computer-use-cua-driver-mcp -->
 <a id="deepseek-aidsh-experimental-computer-use-cua-driver-mcp"></a>
 
-## `@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp`
+## `@reevo/dsh-experimental-computer-use-cua-driver-mcp`
 
 - `inject`: `computerUse` · `tools`
 - `refs`: [`McpClient`](../packages/mcp/mcp-client/src/index.ts)
@@ -1421,12 +1421,12 @@ export interface Config {
   reconnect: McpClient.ReconnectConfig
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-computer-use-cua-driver-mcp -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-forge -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-forge -->
 <a id="deepseek-aidsh-experimental-forge"></a>
 
-## `@deepseek-ai/dsh-experimental-forge`
+## `@reevo/dsh-experimental-forge`
 
 - `source`: [`packages/experimental/forge/src/types.ts:833`](../packages/experimental/forge/src/types.ts)
 
@@ -1443,12 +1443,12 @@ export interface Config {
   fetchTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-forge -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-forge -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-forge-github -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-forge-github -->
 <a id="deepseek-aidsh-experimental-forge-github"></a>
 
-## `@deepseek-ai/dsh-experimental-forge-github`
+## `@reevo/dsh-experimental-forge-github`
 
 - `inject`: `forge`
 - `source`: [`packages/experimental/forge-github/src/index.ts:19`](../packages/experimental/forge-github/src/index.ts)
@@ -1484,12 +1484,12 @@ export interface Config {
   maxViewerItems?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-forge-github -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-forge-github -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-forge-session -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-forge-session -->
 <a id="deepseek-aidsh-experimental-forge-session"></a>
 
-## `@deepseek-ai/dsh-experimental-forge-session`
+## `@reevo/dsh-experimental-forge-session`
 
 - `inject`: `forge` · `sessions` · `sessionProjections`
 - `source`: [`packages/experimental/forge-session/src/types.ts:160`](../packages/experimental/forge-session/src/types.ts)
@@ -1501,12 +1501,12 @@ export interface Config {
   discoveryTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-forge-session -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-forge-session -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-inspector -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-inspector -->
 <a id="deepseek-aidsh-experimental-inspector"></a>
 
-## `@deepseek-ai/dsh-experimental-inspector`
+## `@reevo/dsh-experimental-inspector`
 
 - `inject`: `webServer` · `connection`
 - `source`: [`packages/experimental/inspector/src/index.ts:66`](../packages/experimental/inspector/src/index.ts)
@@ -1570,12 +1570,12 @@ export interface InspectorOptions {
   readonly maxDisconnectedCordisTrees?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-inspector -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-inspector -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-speech-to-text -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-speech-to-text -->
 <a id="deepseek-aidsh-experimental-speech-to-text"></a>
 
-## `@deepseek-ai/dsh-experimental-speech-to-text`
+## `@reevo/dsh-experimental-speech-to-text`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/experimental/speech-to-text/src/index.ts:20`](../packages/experimental/speech-to-text/src/index.ts)
@@ -1589,12 +1589,12 @@ export interface Config {
   language: Volatile<string>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-speech-to-text -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-speech-to-text -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-speech-to-text-sensevoice -->
 <a id="deepseek-aidsh-experimental-speech-to-text-sensevoice"></a>
 
-## `@deepseek-ai/dsh-experimental-speech-to-text-sensevoice`
+## `@reevo/dsh-experimental-speech-to-text-sensevoice`
 
 - `inject`: `speechToText` · `subprocess`
 - `source`: [`packages/experimental/speech-to-text-sensevoice/src/config.ts:6`](../packages/experimental/speech-to-text-sensevoice/src/config.ts)
@@ -1650,12 +1650,12 @@ export interface Config {
   progressIntervalMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-speech-to-text-sensevoice -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-speech-to-text-sensevoice -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-subagent-oar -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-subagent-oar -->
 <a id="deepseek-aidsh-experimental-subagent-oar"></a>
 
-## `@deepseek-ai/dsh-experimental-subagent-oar`
+## `@reevo/dsh-experimental-subagent-oar`
 
 - `inject`: `subagents`
 - `source`: [`packages/experimental/subagent-oar/src/index.ts:27`](../packages/experimental/subagent-oar/src/index.ts)
@@ -1679,12 +1679,12 @@ export interface Config {
   timeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-subagent-oar -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-subagent-oar -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-tool-subagent-oar -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-tool-subagent-oar -->
 <a id="deepseek-aidsh-experimental-tool-subagent-oar"></a>
 
-## `@deepseek-ai/dsh-experimental-tool-subagent-oar`
+## `@reevo/dsh-experimental-tool-subagent-oar`
 
 - `inject`: `tools` · `subagents`
 - `source`: [`packages/experimental/tool-subagent-oar/src/index.ts:12`](../packages/experimental/tool-subagent-oar/src/index.ts)
@@ -1698,12 +1698,12 @@ export interface Config {
   toolName?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-tool-subagent-oar -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-tool-subagent-oar -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-translator -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-translator -->
 <a id="deepseek-aidsh-experimental-translator"></a>
 
-## `@deepseek-ai/dsh-experimental-translator`
+## `@reevo/dsh-experimental-translator`
 
 - `source`: [`packages/experimental/translator/src/index.ts:25`](../packages/experimental/translator/src/index.ts)
 
@@ -1737,12 +1737,12 @@ export type AnonymousTranslationProvider = 'google' | 'bing'
 /** Explicit native DeepSeek credential route selected for paid translation. */
 export type PaidTranslationProvider = 'deepseek-account' | 'deepseek-official'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-translator -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-translator -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-experimental-worktree -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-experimental-worktree -->
 <a id="deepseek-aidsh-experimental-worktree"></a>
 
-## `@deepseek-ai/dsh-experimental-worktree`
+## `@reevo/dsh-experimental-worktree`
 
 - `inject`: `workingDirectory` · `fs` · `subprocess` · `sandbox` · `sandboxPolicy` · `sessionProjections`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -1773,12 +1773,12 @@ export interface Config {
   maxOutputBytes?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-experimental-worktree -->
+<!-- END GENERATED config-catalog:@reevo/dsh-experimental-worktree -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-feishu -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-feishu -->
 <a id="deepseek-aidsh-feishu"></a>
 
-## `@deepseek-ai/dsh-feishu`
+## `@reevo/dsh-feishu`
 
 - `inject`: `cliAccounts` · `skills`
 - `source`: [`packages/connector/feishu/src/index.ts:30`](../packages/connector/feishu/src/index.ts)
@@ -1790,12 +1790,12 @@ export interface Config {
   binDir?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-feishu -->
+<!-- END GENERATED config-catalog:@reevo/dsh-feishu -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-file-reference-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-file-reference-local -->
 <a id="deepseek-aidsh-file-reference-local"></a>
 
-## `@deepseek-ai/dsh-file-reference-local`
+## `@reevo/dsh-file-reference-local`
 
 - `inject`: `agents` · `workingDirectory`
 - `source`: [`packages/context/file-reference-local/src/index.ts:27`](../packages/context/file-reference-local/src/index.ts)
@@ -1811,12 +1811,12 @@ export interface Config {
   excludedDirectories?: string[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-file-reference-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-file-reference-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-forge-gitlab -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-forge-gitlab -->
 <a id="deepseek-aidsh-forge-gitlab"></a>
 
-## `@deepseek-ai/dsh-forge-gitlab`
+## `@reevo/dsh-forge-gitlab`
 
 - `inject`: `forge`
 - `source`: [`packages/experimental/forge-gitlab/src/index.ts:19`](../packages/experimental/forge-gitlab/src/index.ts)
@@ -1844,12 +1844,12 @@ export interface Config {
   maxCachedVersionBytes?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-forge-gitlab -->
+<!-- END GENERATED config-catalog:@reevo/dsh-forge-gitlab -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-fs-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-fs-local -->
 <a id="deepseek-aidsh-fs-local"></a>
 
-## `@deepseek-ai/dsh-fs-local`
+## `@reevo/dsh-fs-local`
 
 - `source`: [`packages/fs/fs-local/src/index.ts:52`](../packages/fs/fs-local/src/index.ts)
 
@@ -1865,12 +1865,12 @@ export interface Config {
   diffBasisMaxBytes?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-fs-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-fs-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-fs-sandbox -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-fs-sandbox -->
 <a id="deepseek-aidsh-fs-sandbox"></a>
 
-## `@deepseek-ai/dsh-fs-sandbox`
+## `@reevo/dsh-fs-sandbox`
 
 - `inject`: `sandboxPolicy`
 - `refs`: [`LocalConfig`](#deepseek-aidsh-fs-local)
@@ -1885,12 +1885,12 @@ export interface Config {
  */
 export type Config = LocalConfig
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-fs-sandbox -->
+<!-- END GENERATED config-catalog:@reevo/dsh-fs-sandbox -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-goal -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-goal -->
 <a id="deepseek-aidsh-goal"></a>
 
-## `@deepseek-ai/dsh-goal`
+## `@reevo/dsh-goal`
 
 - `inject`: `agents` · `sessionProjections`
 - `source`: [`packages/goal/goal/src/index.ts:169`](../packages/goal/goal/src/index.ts)
@@ -1902,12 +1902,12 @@ export interface Config {
   defaultMaxGoalRounds?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-goal -->
+<!-- END GENERATED config-catalog:@reevo/dsh-goal -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-headless -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-headless -->
 <a id="deepseek-aidsh-headless"></a>
 
-## `@deepseek-ai/dsh-headless`
+## `@reevo/dsh-headless`
 
 - `inject`: `agentDefaultModel` · `agents` · `sessions`
 - `refs`: [`ApprovalPolicy`](subsystems/approval.zh.md)
@@ -1928,12 +1928,12 @@ export interface Config {
   approvalPolicy?: ApprovalPolicy
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-headless -->
+<!-- END GENERATED config-catalog:@reevo/dsh-headless -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-hmr -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-hmr -->
 <a id="deepseek-aidsh-hmr"></a>
 
-## `@deepseek-ai/dsh-hmr`
+## `@reevo/dsh-hmr`
 
 - `refs`: `ChokidarOptions` (`chokidar`)
 - `source`: [`packages/boot/hmr/src/index.ts:56`](../packages/boot/hmr/src/index.ts)
@@ -1951,12 +1951,12 @@ export interface HmrConfig extends ChokidarOptions {
   ignored: string[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-hmr -->
+<!-- END GENERATED config-catalog:@reevo/dsh-hmr -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-hooks-claude-code -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-hooks-claude-code -->
 <a id="deepseek-aidsh-hooks-claude-code"></a>
 
-## `@deepseek-ai/dsh-hooks-claude-code`
+## `@reevo/dsh-hooks-claude-code`
 
 - `inject`: `shell` · `agents` · `workingDirectory`
 - `source`: [`packages/experimental/hooks-claude-code/src/index.ts:54`](../packages/experimental/hooks-claude-code/src/index.ts)
@@ -1990,12 +1990,12 @@ export interface Config {
   stderrSummaryMaxChars?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-hooks-claude-code -->
+<!-- END GENERATED config-catalog:@reevo/dsh-hooks-claude-code -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-hooks-codex -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-hooks-codex -->
 <a id="deepseek-aidsh-hooks-codex"></a>
 
-## `@deepseek-ai/dsh-hooks-codex`
+## `@reevo/dsh-hooks-codex`
 
 - `inject`: `shell` · `agents` · `workingDirectory`
 - `source`: [`packages/experimental/hooks-codex/src/index.ts:53`](../packages/experimental/hooks-codex/src/index.ts)
@@ -2018,12 +2018,12 @@ export interface Config {
   stderrSummaryMaxChars?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-hooks-codex -->
+<!-- END GENERATED config-catalog:@reevo/dsh-hooks-codex -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-host-authentication-desktop -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-host-authentication-desktop -->
 <a id="deepseek-aidsh-host-authentication-desktop"></a>
 
-## `@deepseek-ai/dsh-host-authentication-desktop`
+## `@reevo/dsh-host-authentication-desktop`
 
 - `inject`: `connection` · `connection.authentication`
 - `source`: [`packages/host/authentication-desktop/src/index.ts:12`](../packages/host/authentication-desktop/src/index.ts)
@@ -2035,12 +2035,12 @@ export interface Config {
   readSecret: () => string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-host-authentication-desktop -->
+<!-- END GENERATED config-catalog:@reevo/dsh-host-authentication-desktop -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-host-authentication-token -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-host-authentication-token -->
 <a id="deepseek-aidsh-host-authentication-token"></a>
 
-## `@deepseek-ai/dsh-host-authentication-token`
+## `@reevo/dsh-host-authentication-token`
 
 - `inject`: `connection` · `connection.authentication` · `credentials`
 - `source`: [`packages/host/authentication-token/src/index.ts:16`](../packages/host/authentication-token/src/index.ts)
@@ -2052,12 +2052,12 @@ export interface Config {
   cookieMaxAgeDays: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-host-authentication-token -->
+<!-- END GENERATED config-catalog:@reevo/dsh-host-authentication-token -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-host-directory-picker-browse -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-host-directory-picker-browse -->
 <a id="deepseek-aidsh-host-directory-picker-browse"></a>
 
-## `@deepseek-ai/dsh-host-directory-picker-browse`
+## `@reevo/dsh-host-directory-picker-browse`
 
 - `source`: [`packages/host/directory-picker-browse/src/index.ts:181`](../packages/host/directory-picker-browse/src/index.ts)
 
@@ -2068,12 +2068,12 @@ export interface Config {
   maxEntries: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-host-directory-picker-browse -->
+<!-- END GENERATED config-catalog:@reevo/dsh-host-directory-picker-browse -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-host-frontend-static -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-host-frontend-static -->
 <a id="deepseek-aidsh-host-frontend-static"></a>
 
-## `@deepseek-ai/dsh-host-frontend-static`
+## `@reevo/dsh-host-frontend-static`
 
 - `inject`: `webServer` · `connection`
 - `source`: [`packages/host/frontend-static/src/index.ts:34`](../packages/host/frontend-static/src/index.ts)
@@ -2085,12 +2085,12 @@ export interface Config {
   distIndex: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-host-frontend-static -->
+<!-- END GENERATED config-catalog:@reevo/dsh-host-frontend-static -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-host-open-in-app -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-host-open-in-app -->
 <a id="deepseek-aidsh-host-open-in-app"></a>
 
-## `@deepseek-ai/dsh-host-open-in-app`
+## `@reevo/dsh-host-open-in-app`
 
 - `inject`: `webServer` · `subprocess`
 - `source`: [`packages/host/open-in-app/src/index.ts:46`](../packages/host/open-in-app/src/index.ts)
@@ -2117,12 +2117,12 @@ export interface Config {
   readonly launchWatchMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-host-open-in-app -->
+<!-- END GENERATED config-catalog:@reevo/dsh-host-open-in-app -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-host-product-telemetry-otel -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-host-product-telemetry-otel -->
 <a id="deepseek-aidsh-host-product-telemetry-otel"></a>
 
-## `@deepseek-ai/dsh-host-product-telemetry-otel`
+## `@reevo/dsh-host-product-telemetry-otel`
 
 - `inject`: `otel`
 - `source`: [`packages/host/product-telemetry-otel/src/index.ts:18`](../packages/host/product-telemetry-otel/src/index.ts)
@@ -2154,12 +2154,12 @@ export interface Config {
   shutdownTimeoutMillis: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-host-product-telemetry-otel -->
+<!-- END GENERATED config-catalog:@reevo/dsh-host-product-telemetry-otel -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-host-webserver -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-host-webserver -->
 <a id="deepseek-aidsh-host-webserver"></a>
 
-## `@deepseek-ai/dsh-host-webserver`
+## `@reevo/dsh-host-webserver`
 
 - `source`: [`packages/host/webserver/src/index.ts:171`](../packages/host/webserver/src/index.ts)
 
@@ -2207,12 +2207,12 @@ export interface TlsConfig {
   keyFile: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-host-webserver -->
+<!-- END GENERATED config-catalog:@reevo/dsh-host-webserver -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-jobs-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-jobs-local -->
 <a id="deepseek-aidsh-jobs-local"></a>
 
-## `@deepseek-ai/dsh-jobs-local`
+## `@reevo/dsh-jobs-local`
 
 - `source`: [`packages/jobs/jobs-local/src/index.ts:47`](../packages/jobs/jobs-local/src/index.ts)
 
@@ -2236,12 +2236,12 @@ export interface Config {
   pumpPollMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-jobs-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-jobs-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-linear -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-linear -->
 <a id="deepseek-aidsh-linear"></a>
 
-## `@deepseek-ai/dsh-linear`
+## `@reevo/dsh-linear`
 
 - `inject`: `mcpManager` · `systemPrompt`
 - `source`: [`packages/connector/linear/src/index.ts:29`](../packages/connector/linear/src/index.ts)
@@ -2255,12 +2255,12 @@ export interface Config {
   toolLoading: 'eager' | 'on-demand'
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-linear -->
+<!-- END GENERATED config-catalog:@reevo/dsh-linear -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-llm-deepseek-account -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-llm-deepseek-account -->
 <a id="deepseek-aidsh-llm-deepseek-account"></a>
 
-## `@deepseek-ai/dsh-llm-deepseek-account`
+## `@reevo/dsh-llm-deepseek-account`
 
 - `inject`: `llm` · `deepseekAuth`
 - `refs`: [`ModelListingConfig`](../packages/llm/llm-deepseek/src/index.ts) · [`ModelOverride`](../packages/llm/llm-deepseek/src/index.ts) · [`ProtocolConfig`](../packages/llm/llm-deepseek/src/index.ts) · `Volatile` (`@deepseek-ai/cordis`)
@@ -2273,12 +2273,12 @@ export interface Config extends Omit<ProtocolConfig, 'models'>, ModelListingConf
   modelOverrides: Volatile<Record<string, ModelOverride>>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-llm-deepseek-account -->
+<!-- END GENERATED config-catalog:@reevo/dsh-llm-deepseek-account -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-llm-deepseek-api-key -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-llm-deepseek-api-key -->
 <a id="deepseek-aidsh-llm-deepseek-api-key"></a>
 
-## `@deepseek-ai/dsh-llm-deepseek-api-key`
+## `@reevo/dsh-llm-deepseek-api-key`
 
 - `inject`: `llm` · `deepseekAuth`
 - `refs`: [`ModelListingConfig`](../packages/llm/llm-deepseek/src/index.ts) · [`ProtocolConfig`](../packages/llm/llm-deepseek/src/index.ts) · `Volatile` (`@deepseek-ai/cordis`)
@@ -2291,12 +2291,12 @@ export interface Config extends ProtocolConfig, ModelListingConfig {
   apiKeyEnv: Volatile<string>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-llm-deepseek-api-key -->
+<!-- END GENERATED config-catalog:@reevo/dsh-llm-deepseek-api-key -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-llm-pi-ai -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-llm-pi-ai -->
 <a id="deepseek-aidsh-llm-pi-ai"></a>
 
-## `@deepseek-ai/dsh-llm-pi-ai`
+## `@reevo/dsh-llm-pi-ai`
 
 - `inject`: `llm`
 - `refs`: `Api` (`@earendil-works/pi-ai`) · `CacheRetention` (`@earendil-works/pi-ai`) · `Model` (`@earendil-works/pi-ai`) · `ModelThinkingLevel` (`@earendil-works/pi-ai`) · `OpenAICompletionsCompat` (`@earendil-works/pi-ai`) · [`RetryPolicyConfig`](../packages/llm/llm/src/index.ts) · `ThinkingBudgets` (`@earendil-works/pi-ai`) · `Transport` (`@earendil-works/pi-ai`) · `Volatile` (`@deepseek-ai/cordis`)
@@ -2583,12 +2583,12 @@ export type PiAiThinkingFormat = NonNullable<OpenAICompletionsCompat['thinkingFo
 /** The reasoning-budget field spellings pi-ai accepts. */
 export type PiAiThinkingTokenBudgetField = NonNullable<OpenAICompletionsCompat['thinkingTokenBudgetField']>
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-llm-pi-ai -->
+<!-- END GENERATED config-catalog:@reevo/dsh-llm-pi-ai -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-llm-replay -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-llm-replay -->
 <a id="deepseek-aidsh-llm-replay"></a>
 
-## `@deepseek-ai/dsh-llm-replay`
+## `@reevo/dsh-llm-replay`
 
 - `inject`: `llm`
 - `refs`: [`LlmModelBadge`](../packages/llm/llm/src/index.ts) · [`ModelModality`](../packages/llm/llm/src/index.ts) · [`RetryPolicyConfig`](../packages/llm/llm/src/index.ts) · [`SystemPromptUpdate`](../packages/llm/llm/src/index.ts) · [`ToolUpdate`](../packages/llm/llm/src/index.ts)
@@ -2666,12 +2666,12 @@ export interface ReplayModelConfig {
   badge?: LlmModelBadge
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-llm-replay -->
+<!-- END GENERATED config-catalog:@reevo/dsh-llm-replay -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-llm-retry -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-llm-retry -->
 <a id="deepseek-aidsh-llm-retry"></a>
 
-## `@deepseek-ai/dsh-llm-retry`
+## `@reevo/dsh-llm-retry`
 
 - `inject`: `agents` · `sessionProjections`
 - `source`: [`packages/llm/llm-retry/src/index.ts:26`](../packages/llm/llm-retry/src/index.ts)
@@ -2680,12 +2680,12 @@ export interface ReplayModelConfig {
 /** This policy executor has no config; providers own `retryPolicy`. */
 export type Config = Readonly<Record<string, never>>
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-llm-retry -->
+<!-- END GENERATED config-catalog:@reevo/dsh-llm-retry -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-lsp-stdio -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-lsp-stdio -->
 <a id="deepseek-aidsh-lsp-stdio"></a>
 
-## `@deepseek-ai/dsh-lsp-stdio`
+## `@reevo/dsh-lsp-stdio`
 
 - `inject`: `fs` · `lsp` · `subprocess`
 - `source`: [`packages/lsp/lsp-stdio/src/index.ts:71`](../packages/lsp/lsp-stdio/src/index.ts)
@@ -2723,12 +2723,12 @@ export interface LspLocalServerConfig {
   killGraceMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-lsp-stdio -->
+<!-- END GENERATED config-catalog:@reevo/dsh-lsp-stdio -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-mcp-client -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-mcp-client -->
 <a id="deepseek-aidsh-mcp-client"></a>
 
-## `@deepseek-ai/dsh-mcp-client`
+## `@reevo/dsh-mcp-client`
 
 - `inject`: `tools`
 - `source`: [`packages/mcp/mcp-client/src/index.ts:136`](../packages/mcp/mcp-client/src/index.ts)
@@ -2837,12 +2837,12 @@ export interface McpOAuthConfig {
   authorizationTimeoutMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-mcp-client -->
+<!-- END GENERATED config-catalog:@reevo/dsh-mcp-client -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-mcp-manager -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-mcp-manager -->
 <a id="deepseek-aidsh-mcp-manager"></a>
 
-## `@deepseek-ai/dsh-mcp-manager`
+## `@reevo/dsh-mcp-manager`
 
 - `inject`: `tools`
 - `refs`: [`McpOAuthConfigInput`](../packages/mcp/mcp-client/src/index.ts) · [`ReconnectConfig`](../packages/mcp/mcp-client/src/index.ts) · `Volatile` (`@deepseek-ai/cordis`)
@@ -2892,12 +2892,12 @@ export interface McpManagedServerEntry {
   toolLoading: 'eager' | 'on-demand'
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-mcp-manager -->
+<!-- END GENERATED config-catalog:@reevo/dsh-mcp-manager -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-message-feedback -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-message-feedback -->
 <a id="deepseek-aidsh-message-feedback"></a>
 
-## `@deepseek-ai/dsh-message-feedback`
+## `@reevo/dsh-message-feedback`
 
 - `inject`: `sessionPersistence` · `sessions`
 - `source`: [`packages/feedback/message-feedback/src/index.ts:40`](../packages/feedback/message-feedback/src/index.ts)
@@ -2909,12 +2909,12 @@ export interface Config {
   readonly maxNoteBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-message-feedback -->
+<!-- END GENERATED config-catalog:@reevo/dsh-message-feedback -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-notion -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-notion -->
 <a id="deepseek-aidsh-notion"></a>
 
-## `@deepseek-ai/dsh-notion`
+## `@reevo/dsh-notion`
 
 - `inject`: `mcpManager` · `systemPrompt`
 - `source`: [`packages/connector/notion/src/index.ts:29`](../packages/connector/notion/src/index.ts)
@@ -2928,12 +2928,12 @@ export interface Config {
   toolLoading: 'eager' | 'on-demand'
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-notion -->
+<!-- END GENERATED config-catalog:@reevo/dsh-notion -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-office-kit -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-office-kit -->
 <a id="deepseek-aidsh-office-kit"></a>
 
-## `@deepseek-ai/dsh-office-kit`
+## `@reevo/dsh-office-kit`
 
 - `source`: [`packages/document/office-kit/src/index.ts:38`](../packages/document/office-kit/src/index.ts)
 
@@ -2986,12 +2986,12 @@ export interface Config {
   maxLoadedFontBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-office-kit -->
+<!-- END GENERATED config-catalog:@reevo/dsh-office-kit -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-permission-presets -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-permission-presets -->
 <a id="deepseek-aidsh-permission-presets"></a>
 
-## `@deepseek-ai/dsh-permission-presets`
+## `@reevo/dsh-permission-presets`
 
 - `inject`: `shell` · `approval` · `sessions` · `agents` · `sessionProjections`
 - `refs`: [`ApprovalPolicy`](subsystems/approval.zh.md) · [`SandboxMode`](subsystems/sandbox.zh.md) · `Volatile` (`@deepseek-ai/cordis`)
@@ -3026,12 +3026,12 @@ export interface PresetSpec {
   description?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-permission-presets -->
+<!-- END GENERATED config-catalog:@reevo/dsh-permission-presets -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-persona -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-persona -->
 <a id="deepseek-aidsh-persona"></a>
 
-## `@deepseek-ai/dsh-persona`
+## `@reevo/dsh-persona`
 
 - `inject`: `systemPrompt`
 - `source`: [`packages/preset/persona/src/index.ts:23`](../packages/preset/persona/src/index.ts)
@@ -3056,12 +3056,12 @@ export interface Config {
   includeRuntimeContext?: boolean
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-persona -->
+<!-- END GENERATED config-catalog:@reevo/dsh-persona -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-plan-mode -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-plan-mode -->
 <a id="deepseek-aidsh-plan-mode"></a>
 
-## `@deepseek-ai/dsh-plan-mode`
+## `@reevo/dsh-plan-mode`
 
 - `inject`: `tools` · `systemPrompt` · `sessionProjections` · `agents`
 - `source`: [`packages/plan/plan-mode/src/index.ts:69`](../packages/plan/plan-mode/src/index.ts)
@@ -3073,12 +3073,12 @@ export interface PlanModeConfig {
   section: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-plan-mode -->
+<!-- END GENERATED config-catalog:@reevo/dsh-plan-mode -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-plugin-manager -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-plugin-manager -->
 <a id="deepseek-aidsh-plugin-manager"></a>
 
-## `@deepseek-ai/dsh-plugin-manager`
+## `@reevo/dsh-plugin-manager`
 
 - `inject`: `loader` · `profileContext`
 - `refs`: [`NpmFileSource`](subsystems/boot.zh.md)
@@ -3123,12 +3123,12 @@ export interface Config {
   detailNpmFileSources?: NpmFileSource[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-plugin-manager -->
+<!-- END GENERATED config-catalog:@reevo/dsh-plugin-manager -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-plugin-market -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-plugin-market -->
 <a id="deepseek-aidsh-plugin-market"></a>
 
-## `@deepseek-ai/dsh-plugin-market`
+## `@reevo/dsh-plugin-market`
 
 - `inject`: `pluginManager`
 - `refs`: [`NpmFileSource`](subsystems/boot.zh.md) · `Volatile` (`@deepseek-ai/cordis`)
@@ -3163,12 +3163,12 @@ export interface Config {
   detailGitlabHosts: string[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-plugin-market -->
+<!-- END GENERATED config-catalog:@reevo/dsh-plugin-market -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-plugin-package-inventory-deepseek -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-plugin-package-inventory-deepseek -->
 <a id="deepseek-aidsh-plugin-package-inventory-deepseek"></a>
 
-## `@deepseek-ai/dsh-plugin-package-inventory-deepseek`
+## `@reevo/dsh-plugin-package-inventory-deepseek`
 
 - `inject`: `agents` · `deepseekLlmApiExtensions` · `loader`
 - `source`: [`packages/llm/plugin-package-inventory-deepseek/src/index.ts:32`](../packages/llm/plugin-package-inventory-deepseek/src/index.ts)
@@ -3180,12 +3180,12 @@ export interface Config {
   enabled?: boolean
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-plugin-package-inventory-deepseek -->
+<!-- END GENERATED config-catalog:@reevo/dsh-plugin-package-inventory-deepseek -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-ptc-runtime-node -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-ptc-runtime-node -->
 <a id="deepseek-aidsh-ptc-runtime-node"></a>
 
-## `@deepseek-ai/dsh-ptc-runtime-node`
+## `@reevo/dsh-ptc-runtime-node`
 
 - `inject`: `fs` · `subprocess` · `sandbox` · `sandboxPolicy`
 - `source`: [`packages/ptc-runtime/ptc-runtime-node/src/config.ts:8`](../packages/ptc-runtime/ptc-runtime-node/src/config.ts)
@@ -3237,12 +3237,12 @@ export type LaunchConfig = {
   executable: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-ptc-runtime-node -->
+<!-- END GENERATED config-catalog:@reevo/dsh-ptc-runtime-node -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-pwsh-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-pwsh-local -->
 <a id="deepseek-aidsh-pwsh-local"></a>
 
-## `@deepseek-ai/dsh-pwsh-local`
+## `@reevo/dsh-pwsh-local`
 
 - `inject`: `subprocess`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -3272,12 +3272,12 @@ export interface Config {
   pwshPath: Volatile<string | undefined>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-pwsh-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-pwsh-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-pwsh-sandbox -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-pwsh-sandbox -->
 <a id="deepseek-aidsh-pwsh-sandbox"></a>
 
-## `@deepseek-ai/dsh-pwsh-sandbox`
+## `@reevo/dsh-pwsh-sandbox`
 
 - `inject`: `subprocess` · `sandbox` · `sandboxPolicy`
 - `refs`: [`LocalConfig`](#deepseek-aidsh-pwsh-local)
@@ -3287,19 +3287,19 @@ export interface Config {
 /**
  * Plugin config: the local executor's knobs, verbatim. The sandbox policy —
  * the default mode and fallback `workspace-write` root — is NOT here: it lives
- * on `ctx.sandboxPolicy` (`@deepseek-ai/dsh-sandbox-policy`), which resolves
+ * on `ctx.sandboxPolicy` (`@reevo/dsh-sandbox-policy`), which resolves
  * each calling session's mode and cwd for every enforcing capability. The
  * runner choice is likewise the `ctx.sandbox` provider's config, not this
  * executor's.
  */
 export type Config = LocalConfig
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-pwsh-sandbox -->
+<!-- END GENERATED config-catalog:@reevo/dsh-pwsh-sandbox -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-repeat-tool-reminder -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-repeat-tool-reminder -->
 <a id="deepseek-aidsh-repeat-tool-reminder"></a>
 
-## `@deepseek-ai/dsh-repeat-tool-reminder`
+## `@reevo/dsh-repeat-tool-reminder`
 
 - `source`: [`packages/guard/repeat-tool-reminder/src/index.ts:35`](../packages/guard/repeat-tool-reminder/src/index.ts)
 
@@ -3330,12 +3330,12 @@ export interface Config {
   argumentsPreviewChars?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-repeat-tool-reminder -->
+<!-- END GENERATED config-catalog:@reevo/dsh-repeat-tool-reminder -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-sandbox-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-sandbox-local -->
 <a id="deepseek-aidsh-sandbox-local"></a>
 
-## `@deepseek-ai/dsh-sandbox-local`
+## `@reevo/dsh-sandbox-local`
 
 - `source`: [`packages/sandbox/sandbox-local/src/index.ts:63`](../packages/sandbox/sandbox-local/src/index.ts)
 
@@ -3364,12 +3364,12 @@ export interface Config {
   probeTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-sandbox-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-sandbox-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-sandbox-policy -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-sandbox-policy -->
 <a id="deepseek-aidsh-sandbox-policy"></a>
 
-## `@deepseek-ai/dsh-sandbox-policy`
+## `@reevo/dsh-sandbox-policy`
 
 - `inject`: `sessionProjections`
 - `refs`: [`SandboxMode`](subsystems/sandbox.zh.md)
@@ -3403,12 +3403,12 @@ export interface Config {
   additionalWritableRoots?: string[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-sandbox-policy -->
+<!-- END GENERATED config-catalog:@reevo/dsh-sandbox-policy -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-schedule -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-schedule -->
 <a id="deepseek-aidsh-schedule"></a>
 
-## `@deepseek-ai/dsh-schedule`
+## `@reevo/dsh-schedule`
 
 - `inject`: `agents` · `sessions` · `storageDomain` · `sessionPersistence`
 - `source`: [`packages/schedule/schedule/src/index.ts:81`](../packages/schedule/schedule/src/index.ts)
@@ -3433,12 +3433,12 @@ export interface Config {
   newSessionIntervalSeconds?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-schedule -->
+<!-- END GENERATED config-catalog:@reevo/dsh-schedule -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-sdk-app -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-sdk-app -->
 <a id="deepseek-aidsh-sdk-app"></a>
 
-## `@deepseek-ai/dsh-sdk-app`
+## `@reevo/dsh-sdk-app`
 
 - `inject`: `cmdlineArgs`
 - `source`: [`packages/bundle/sdk-app/src/index.ts:23`](../packages/bundle/sdk-app/src/index.ts)
@@ -3450,12 +3450,12 @@ export interface Config {
   profile?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-sdk-app -->
+<!-- END GENERATED config-catalog:@reevo/dsh-sdk-app -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-sdk-jsonrpc-server -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-sdk-jsonrpc-server -->
 <a id="deepseek-aidsh-sdk-jsonrpc-server"></a>
 
-## `@deepseek-ai/dsh-sdk-jsonrpc-server`
+## `@reevo/dsh-sdk-jsonrpc-server`
 
 - `inject`: `agents` · `workingDirectory`
 - `refs`: `Readable` (`node:stream`) · `Writable` (`node:stream`)
@@ -3483,12 +3483,12 @@ export interface RuntimeProcessEvents {
   off(event: string, listener: (...args: unknown[]) => void): unknown
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-sdk-jsonrpc-server -->
+<!-- END GENERATED config-catalog:@reevo/dsh-sdk-jsonrpc-server -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-log-deepseek -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-log-deepseek -->
 <a id="deepseek-aidsh-session-log-deepseek"></a>
 
-## `@deepseek-ai/dsh-session-log-deepseek`
+## `@reevo/dsh-session-log-deepseek`
 
 - `inject`: `deepseekLlmApiExtensions` · `sessions`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -3507,12 +3507,12 @@ export interface Config {
   maxBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-log-deepseek -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-log-deepseek -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-log-export -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-log-export -->
 <a id="deepseek-aidsh-session-log-export"></a>
 
-## `@deepseek-ai/dsh-session-log-export`
+## `@reevo/dsh-session-log-export`
 
 - `inject`: `commands` · `connection`
 - `source`: [`packages/session-query/session-log-export/src/index.ts:48`](../packages/session-query/session-log-export/src/index.ts)
@@ -3527,12 +3527,12 @@ export interface Config {
 /** Valid fflate DEFLATE levels accepted by session-log export. */
 export type SessionLogCompressionLevel = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-log-export -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-log-export -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-persistence-jsonl -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-persistence-jsonl -->
 <a id="deepseek-aidsh-session-persistence-jsonl"></a>
 
-## `@deepseek-ai/dsh-session-persistence-jsonl`
+## `@reevo/dsh-session-persistence-jsonl`
 
 - `source`: [`packages/session/session-persistence-jsonl/src/index.ts:107`](../packages/session/session-persistence-jsonl/src/index.ts)
 
@@ -3560,12 +3560,12 @@ export interface Config {
 /** Physical encoding selected for JSONL session artifacts. */
 export type JsonlCompression = 'zstd' | 'none'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-persistence-jsonl -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-persistence-jsonl -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-persistence-sqlite -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-persistence-sqlite -->
 <a id="deepseek-aidsh-session-persistence-sqlite"></a>
 
-## `@deepseek-ai/dsh-session-persistence-sqlite`
+## `@reevo/dsh-session-persistence-sqlite`
 
 - `refs`: [`JsonlConfigOptions`](#deepseek-aidsh-session-persistence-jsonl)
 - `source`: [`packages/session/session-persistence-sqlite/src/index.ts:19`](../packages/session/session-persistence-sqlite/src/index.ts)
@@ -3581,12 +3581,12 @@ export interface Config extends JsonlConfigOptions {
   frameEvents?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-persistence-sqlite -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-persistence-sqlite -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-projection-cache -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-projection-cache -->
 <a id="deepseek-aidsh-session-projection-cache"></a>
 
-## `@deepseek-ai/dsh-session-projection-cache`
+## `@reevo/dsh-session-projection-cache`
 
 - `inject`: `storageDomain` · `sessionProjections` · `sessions`
 - `source`: [`packages/session/session-projection-cache/src/index.ts:76`](../packages/session/session-projection-cache/src/index.ts)
@@ -3606,12 +3606,12 @@ export interface Config {
   writeIntervalMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-projection-cache -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-projection-cache -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-query-sqlite -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-query-sqlite -->
 <a id="deepseek-aidsh-session-query-sqlite"></a>
 
-## `@deepseek-ai/dsh-session-query-sqlite`
+## `@reevo/dsh-session-query-sqlite`
 
 - `inject`: `sessions` · `sessionProjections`
 - `refs`: [`SessionQueryConfig`](../packages/session-query/session-query/src/index.ts)
@@ -3654,12 +3654,12 @@ export type OpenAt = 'startup' | 'first-search' | 'never'
 /** Supported SQLite journal modes. */
 export type JournalMode = 'wal' | 'delete' | 'truncate' | 'persist'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-query-sqlite -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-query-sqlite -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-reference -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-reference -->
 <a id="deepseek-aidsh-session-reference"></a>
 
-## `@deepseek-ai/dsh-session-reference`
+## `@reevo/dsh-session-reference`
 
 - `inject`: `sessionQuery` · `sessions` · `sessionProjections`
 - `source`: [`packages/context/session-reference/src/config.ts:11`](../packages/context/session-reference/src/config.ts)
@@ -3677,12 +3677,12 @@ export interface Config {
   referenceContextFraction?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-reference -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-reference -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-telemetry-otel -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-telemetry-otel -->
 <a id="deepseek-aidsh-session-telemetry-otel"></a>
 
-## `@deepseek-ai/dsh-session-telemetry-otel`
+## `@reevo/dsh-session-telemetry-otel`
 
 - `inject`: `sessions` · `otel`
 - `refs`: [`LogExporterOptions`](../packages/telemetry/otel/src/index.ts) · [`SessionLogProcessorOptions`](../packages/telemetry/otel/src/index.ts)
@@ -3724,12 +3724,12 @@ export enum SessionTelemetryMode {
   DISABLED = 'DISABLED',
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-telemetry-otel -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-telemetry-otel -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-title -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-title -->
 <a id="deepseek-aidsh-session-title"></a>
 
-## `@deepseek-ai/dsh-session-title`
+## `@reevo/dsh-session-title`
 
 - `inject`: `sessions` · `sessionProjections` · `agents`
 - `source`: [`packages/session/session-title/src/index.ts:57`](../packages/session/session-title/src/index.ts)
@@ -3745,12 +3745,12 @@ export interface Config {
   readonly maxTitleBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-title -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-title -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-title-all-prompts-llm -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-title-all-prompts-llm -->
 <a id="deepseek-aidsh-session-title-all-prompts-llm"></a>
 
-## `@deepseek-ai/dsh-session-title-all-prompts-llm`
+## `@reevo/dsh-session-title-all-prompts-llm`
 
 - `inject`: `sessionTitle` · `llm` · `sessions`
 - `refs`: [`SessionTitleLlmConfig`](../packages/session/session-title-llm/src/index.ts)
@@ -3765,12 +3765,12 @@ export interface Config extends SessionTitleLlmConfig {
   readonly targetCjkCharacters: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-title-all-prompts-llm -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-title-all-prompts-llm -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-session-title-first-prompt-llm -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-session-title-first-prompt-llm -->
 <a id="deepseek-aidsh-session-title-first-prompt-llm"></a>
 
-## `@deepseek-ai/dsh-session-title-first-prompt-llm`
+## `@reevo/dsh-session-title-first-prompt-llm`
 
 - `inject`: `sessionTitle` · `llm` · `sessions`
 - `refs`: [`SessionTitleLlmConfig`](../packages/session/session-title-llm/src/index.ts)
@@ -3785,12 +3785,12 @@ export interface Config extends SessionTitleLlmConfig {
   readonly targetCjkCharacters: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-session-title-first-prompt-llm -->
+<!-- END GENERATED config-catalog:@reevo/dsh-session-title-first-prompt-llm -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-shell-env -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-shell-env -->
 <a id="deepseek-aidsh-shell-env"></a>
 
-## `@deepseek-ai/dsh-shell-env`
+## `@reevo/dsh-shell-env`
 
 - `source`: [`packages/shell/shell-env/src/index.ts:34`](../packages/shell/shell-env/src/index.ts)
 
@@ -3801,12 +3801,12 @@ export interface Config {
   dshHome?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-shell-env -->
+<!-- END GENERATED config-catalog:@reevo/dsh-shell-env -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-skill -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-skill -->
 <a id="deepseek-aidsh-skill"></a>
 
-## `@deepseek-ai/dsh-skill`
+## `@reevo/dsh-skill`
 
 - `source`: [`packages/skill/skill/src/index.ts:281`](../packages/skill/skill/src/index.ts)
 
@@ -3817,12 +3817,12 @@ export interface Config {
   readonly collectCacheMaxEntries?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-skill -->
+<!-- END GENERATED config-catalog:@reevo/dsh-skill -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-skill-filesystem -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-skill-filesystem -->
 <a id="deepseek-aidsh-skill-filesystem"></a>
 
-## `@deepseek-ai/dsh-skill-filesystem`
+## `@reevo/dsh-skill-filesystem`
 
 - `inject`: `skills`
 - `source`: [`packages/skill/skill-filesystem/src/index.ts:49`](../packages/skill/skill-filesystem/src/index.ts)
@@ -3856,12 +3856,12 @@ export interface Config {
   bundledSkillDir?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-skill-filesystem -->
+<!-- END GENERATED config-catalog:@reevo/dsh-skill-filesystem -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-skill-office -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-skill-office -->
 <a id="deepseek-aidsh-skill-office"></a>
 
-## `@deepseek-ai/dsh-skill-office`
+## `@reevo/dsh-skill-office`
 
 - `inject`: `skills`
 - `source`: [`packages/skill/skill-office/src/index.ts:33`](../packages/skill/skill-office/src/index.ts)
@@ -3887,12 +3887,12 @@ export interface Config {
  */
 export type PythonEnvironment = 'workspace-dependencies' | 'user'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-skill-office -->
+<!-- END GENERATED config-catalog:@reevo/dsh-skill-office -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-spill-local -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-spill-local -->
 <a id="deepseek-aidsh-spill-local"></a>
 
-## `@deepseek-ai/dsh-spill-local`
+## `@reevo/dsh-spill-local`
 
 - `source`: [`packages/spill/spill-local/src/index.ts:32`](../packages/spill/spill-local/src/index.ts)
 
@@ -3918,12 +3918,12 @@ export interface Config {
   cleanupPeriodDays?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-spill-local -->
+<!-- END GENERATED config-catalog:@reevo/dsh-spill-local -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-spill-policy -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-spill-policy -->
 <a id="deepseek-aidsh-spill-policy"></a>
 
-## `@deepseek-ai/dsh-spill-policy`
+## `@reevo/dsh-spill-policy`
 
 - `inject`: `tools`
 - `source`: [`packages/spill/spill-policy/src/index.ts:26`](../packages/spill/spill-policy/src/index.ts)
@@ -3935,12 +3935,12 @@ export interface Config {
   maxInlineTokens?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-spill-policy -->
+<!-- END GENERATED config-catalog:@reevo/dsh-spill-policy -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-ssh -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-ssh -->
 <a id="deepseek-aidsh-ssh"></a>
 
-## `@deepseek-ai/dsh-ssh`
+## `@reevo/dsh-ssh`
 
 - `source`: [`packages/ssh/ssh/src/index.ts:33`](../packages/ssh/ssh/src/index.ts)
 
@@ -3982,12 +3982,12 @@ export type HelperLaunch = {
   kind: 'executable'
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-ssh -->
+<!-- END GENERATED config-catalog:@reevo/dsh-ssh -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-storage-domain -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-storage-domain -->
 <a id="deepseek-aidsh-storage-domain"></a>
 
-## `@deepseek-ai/dsh-storage-domain`
+## `@reevo/dsh-storage-domain`
 
 - `inject`: `storage`
 - `source`: [`packages/storage/storage-domain/src/index.ts:52`](../packages/storage/storage-domain/src/index.ts)
@@ -4006,12 +4006,12 @@ export interface Config {
   routes?: Record<string, string>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-storage-domain -->
+<!-- END GENERATED config-catalog:@reevo/dsh-storage-domain -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-storage-json -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-storage-json -->
 <a id="deepseek-aidsh-storage-json"></a>
 
-## `@deepseek-ai/dsh-storage-json`
+## `@reevo/dsh-storage-json`
 
 - `inject`: `storage`
 - `source`: [`packages/storage/storage-json/src/index.ts:28`](../packages/storage/storage-json/src/index.ts)
@@ -4028,12 +4028,12 @@ export interface Config {
   root: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-storage-json -->
+<!-- END GENERATED config-catalog:@reevo/dsh-storage-json -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-storage-sqlite -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-storage-sqlite -->
 <a id="deepseek-aidsh-storage-sqlite"></a>
 
-## `@deepseek-ai/dsh-storage-sqlite`
+## `@reevo/dsh-storage-sqlite`
 
 - `inject`: `storage`
 - `source`: [`packages/storage/storage-sqlite/src/index.ts:24`](../packages/storage/storage-sqlite/src/index.ts)
@@ -4069,12 +4069,12 @@ export interface Config {
  */
 export type JournalMode = 'wal' | 'delete' | 'truncate' | 'persist'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-storage-sqlite -->
+<!-- END GENERATED config-catalog:@reevo/dsh-storage-sqlite -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-subagent -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-subagent -->
 <a id="deepseek-aidsh-subagent"></a>
 
-## `@deepseek-ai/dsh-subagent`
+## `@reevo/dsh-subagent`
 
 - `inject`: `workingDirectory` · `sessionProjections`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -4089,12 +4089,12 @@ export interface Config {
   maxDepth: Volatile<number>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-subagent -->
+<!-- END GENERATED config-catalog:@reevo/dsh-subagent -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-subagent-acp -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-subagent-acp -->
 <a id="deepseek-aidsh-subagent-acp"></a>
 
-## `@deepseek-ai/dsh-subagent-acp`
+## `@reevo/dsh-subagent-acp`
 
 - `inject`: `subagents` · `subprocess`
 - `source`: [`packages/subagent/subagent-acp/src/index.ts:25`](../packages/subagent/subagent-acp/src/index.ts)
@@ -4135,12 +4135,12 @@ export interface Config {
 /** Fixed response to child permission requests: reject by default, or select the first allow option. */
 export type PermissionPolicy = 'allow' | 'reject'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-subagent-acp -->
+<!-- END GENERATED config-catalog:@reevo/dsh-subagent-acp -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-subagent-claude-code -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-subagent-claude-code -->
 <a id="deepseek-aidsh-subagent-claude-code"></a>
 
-## `@deepseek-ai/dsh-subagent-claude-code`
+## `@reevo/dsh-subagent-claude-code`
 
 - `inject`: `subagents` · `subprocess`
 - `source`: [`packages/subagent/subagent-claude-code/src/index.ts:38`](../packages/subagent/subagent-claude-code/src/index.ts)
@@ -4171,12 +4171,12 @@ export interface Config {
 /** Profile-selectable non-interactive Claude Code permission mode. */
 export type ClaudeCodePermissionMode = typeof CLAUDE_CODE_PERMISSION_MODES[number]
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-subagent-claude-code -->
+<!-- END GENERATED config-catalog:@reevo/dsh-subagent-claude-code -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-subagent-codex -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-subagent-codex -->
 <a id="deepseek-aidsh-subagent-codex"></a>
 
-## `@deepseek-ai/dsh-subagent-codex`
+## `@reevo/dsh-subagent-codex`
 
 - `inject`: `subagents` · `subprocess`
 - `source`: [`packages/subagent/subagent-codex/src/index.ts:36`](../packages/subagent/subagent-codex/src/index.ts)
@@ -4205,12 +4205,12 @@ export type CodexPermissionMode =
   | 'approve-for-me'
   | 'dangerously-bypass-approvals-and-sandbox'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-subagent-codex -->
+<!-- END GENERATED config-catalog:@reevo/dsh-subagent-codex -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-subagent-dsh-sdk -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-subagent-dsh-sdk -->
 <a id="deepseek-aidsh-subagent-dsh-sdk"></a>
 
-## `@deepseek-ai/dsh-subagent-dsh-sdk`
+## `@reevo/dsh-subagent-dsh-sdk`
 
 - `inject`: `subagents`
 - `source`: [`packages/subagent/subagent-dsh-sdk/src/index.ts:34`](../packages/subagent/subagent-dsh-sdk/src/index.ts)
@@ -4253,12 +4253,12 @@ export interface Config {
   disposeGraceMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-subagent-dsh-sdk -->
+<!-- END GENERATED config-catalog:@reevo/dsh-subagent-dsh-sdk -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-subagent-fork-in-process -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-subagent-fork-in-process -->
 <a id="deepseek-aidsh-subagent-fork-in-process"></a>
 
-## `@deepseek-ai/dsh-subagent-fork-in-process`
+## `@reevo/dsh-subagent-fork-in-process`
 
 - `inject`: `subagents`
 - `source`: [`packages/subagent/subagent-fork-in-process/src/index.ts:29`](../packages/subagent/subagent-fork-in-process/src/index.ts)
@@ -4270,12 +4270,12 @@ export interface Config {
   providerName: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-subagent-fork-in-process -->
+<!-- END GENERATED config-catalog:@reevo/dsh-subagent-fork-in-process -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-subagent-spawn-in-process -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-subagent-spawn-in-process -->
 <a id="deepseek-aidsh-subagent-spawn-in-process"></a>
 
-## `@deepseek-ai/dsh-subagent-spawn-in-process`
+## `@reevo/dsh-subagent-spawn-in-process`
 
 - `inject`: `subagents`
 - `source`: [`packages/subagent/subagent-spawn-in-process/src/index.ts:23`](../packages/subagent/subagent-spawn-in-process/src/index.ts)
@@ -4287,12 +4287,12 @@ export interface Config {
   providerName: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-subagent-spawn-in-process -->
+<!-- END GENERATED config-catalog:@reevo/dsh-subagent-spawn-in-process -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-system-prompt -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-system-prompt -->
 <a id="deepseek-aidsh-system-prompt"></a>
 
-## `@deepseek-ai/dsh-system-prompt`
+## `@reevo/dsh-system-prompt`
 
 - `inject`: `sessionProjections`
 - `source`: [`packages/core/system-prompt/src/index.ts:316`](../packages/core/system-prompt/src/index.ts)
@@ -4322,12 +4322,12 @@ export interface Config {
   toolOrder?: string[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-system-prompt -->
+<!-- END GENERATED config-catalog:@reevo/dsh-system-prompt -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tencent-docs -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tencent-docs -->
 <a id="deepseek-aidsh-tencent-docs"></a>
 
-## `@deepseek-ai/dsh-tencent-docs`
+## `@reevo/dsh-tencent-docs`
 
 - `inject`: `mcpManager` · `systemPrompt`
 - `source`: [`packages/connector/tencent-docs/src/index.ts:30`](../packages/connector/tencent-docs/src/index.ts)
@@ -4341,12 +4341,12 @@ export interface Config {
   toolLoading: 'eager' | 'on-demand'
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tencent-docs -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tencent-docs -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tencent-meeting -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tencent-meeting -->
 <a id="deepseek-aidsh-tencent-meeting"></a>
 
-## `@deepseek-ai/dsh-tencent-meeting`
+## `@reevo/dsh-tencent-meeting`
 
 - `inject`: `cliAccounts` · `upstreamSkills`
 - `source`: [`packages/connector/tencent-meeting/src/index.ts:28`](../packages/connector/tencent-meeting/src/index.ts)
@@ -4360,12 +4360,12 @@ export interface Config {
   skillsDir?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tencent-meeting -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tencent-meeting -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-terminal-bash -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-terminal-bash -->
 <a id="deepseek-aidsh-terminal-bash"></a>
 
-## `@deepseek-ai/dsh-terminal-bash`
+## `@reevo/dsh-terminal-bash`
 
 - `inject`: `terminals` · `sandboxPolicy` · `subprocess` · `workingDirectory`
 - `source`: [`packages/terminal/terminal-bash/src/config.ts:10`](../packages/terminal/terminal-bash/src/config.ts)
@@ -4420,12 +4420,12 @@ export interface Config {
 /** One supported interactive shell dialect. */
 export type ShellDialect = 'bash' | 'pwsh'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-terminal-bash -->
+<!-- END GENERATED config-catalog:@reevo/dsh-terminal-bash -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-terminal-panel -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-terminal-panel -->
 <a id="deepseek-aidsh-terminal-panel"></a>
 
-## `@deepseek-ai/dsh-terminal-panel`
+## `@reevo/dsh-terminal-panel`
 
 - `inject`: `terminals` · `terminalController` · `sandboxPolicy` · `tools` · `systemPrompt`
 - `source`: [`packages/experimental/terminal-panel/src/config.ts:6`](../packages/experimental/terminal-panel/src/config.ts)
@@ -4461,12 +4461,12 @@ export interface Config {
   readUserTerminals: boolean
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-terminal-panel -->
+<!-- END GENERATED config-catalog:@reevo/dsh-terminal-panel -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-time-context -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-time-context -->
 <a id="deepseek-aidsh-time-context"></a>
 
-## `@deepseek-ai/dsh-time-context`
+## `@reevo/dsh-time-context`
 
 - `inject`: `agents` · `sessionProjections`
 - `source`: [`packages/context/time-context/src/index.ts:52`](../packages/context/time-context/src/index.ts)
@@ -4480,12 +4480,12 @@ export interface Config {
   refreshIntervalMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-time-context -->
+<!-- END GENERATED config-catalog:@reevo/dsh-time-context -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-timeline -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-timeline -->
 <a id="deepseek-aidsh-timeline"></a>
 
-## `@deepseek-ai/dsh-timeline`
+## `@reevo/dsh-timeline`
 
 - `inject`: `agents` · `sessions` · `sessionProjections` · `tools` · `llm` · `systemPrompt`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -4573,12 +4573,12 @@ export type OutputLanguage = (typeof outputLanguages)[number]
 /** Number of displayed decimal places. */
 export type ProgressPrecision = (typeof progressPrecisions)[number]
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-timeline -->
+<!-- END GENERATED config-catalog:@reevo/dsh-timeline -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tmux-context -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tmux-context -->
 <a id="deepseek-aidsh-tmux-context"></a>
 
-## `@deepseek-ai/dsh-tmux-context`
+## `@reevo/dsh-tmux-context`
 
 - `inject`: `agents` · `sessionProjections`
 - `source`: [`packages/context/tmux-context/src/index.ts:47`](../packages/context/tmux-context/src/index.ts)
@@ -4590,12 +4590,12 @@ export interface Config {
   refreshIntervalMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tmux-context -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tmux-context -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-token-meter -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-token-meter -->
 <a id="deepseek-aidsh-token-meter"></a>
 
-## `@deepseek-ai/dsh-token-meter`
+## `@reevo/dsh-token-meter`
 
 - `inject`: `sessionProjections`
 - `source`: [`packages/llm/token-meter/src/types.ts:13`](../packages/llm/token-meter/src/types.ts)
@@ -4604,12 +4604,12 @@ export interface Config {
 /** Token-meter plugin configuration; the fixed estimator has no settings. */
 export type TokenMeterConfig = Record<string, never>
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-token-meter -->
+<!-- END GENERATED config-catalog:@reevo/dsh-token-meter -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-agent-team -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-agent-team -->
 <a id="deepseek-aidsh-tool-agent-team"></a>
 
-## `@deepseek-ai/dsh-tool-agent-team`
+## `@reevo/dsh-tool-agent-team`
 
 - `inject`: `agentTeams` · `subagents` · `tools` · `systemPrompt`
 - `source`: [`packages/team/tool-agent-team/src/index.ts:18`](../packages/team/tool-agent-team/src/index.ts)
@@ -4618,12 +4618,12 @@ export type TokenMeterConfig = Record<string, never>
 /** The Team tool plugin takes no configuration. */
 export type Config = Record<never, never>
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-agent-team -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-agent-team -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-ask-user -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-ask-user -->
 <a id="deepseek-aidsh-tool-ask-user"></a>
 
-## `@deepseek-ai/dsh-tool-ask-user`
+## `@reevo/dsh-tool-ask-user`
 
 - `inject`: `tools` · `userQuestions`
 - `source`: [`packages/interaction/tool-ask-user/src/index.ts:16`](../packages/interaction/tool-ask-user/src/index.ts)
@@ -4637,12 +4637,12 @@ export interface Config {
   timeout?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-ask-user -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-ask-user -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-bash -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-bash -->
 <a id="deepseek-aidsh-tool-bash"></a>
 
-## `@deepseek-ai/dsh-tool-bash`
+## `@reevo/dsh-tool-bash`
 
 - `inject`: `tools` · `shell` · `systemPrompt` · `shellEnv` · `workingDirectory`
 - `source`: [`packages/shell/tool-bash/src/index.ts:39`](../packages/shell/tool-bash/src/index.ts)
@@ -4667,12 +4667,12 @@ export interface Config {
   promoteOnTimeout?: boolean
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-bash -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-bash -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-bash-persistent -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-bash-persistent -->
 <a id="deepseek-aidsh-tool-bash-persistent"></a>
 
-## `@deepseek-ai/dsh-tool-bash-persistent`
+## `@reevo/dsh-tool-bash-persistent`
 
 - `inject`: `tools` · `terminals` · `workingDirectory`
 - `source`: [`packages/shell/tool-bash-persistent/src/index.ts:448`](../packages/shell/tool-bash-persistent/src/index.ts)
@@ -4690,12 +4690,12 @@ export interface Config {
   description?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-bash-persistent -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-bash-persistent -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-executor-ptc -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-executor-ptc -->
 <a id="deepseek-aidsh-tool-executor-ptc"></a>
 
-## `@deepseek-ai/dsh-tool-executor-ptc`
+## `@reevo/dsh-tool-executor-ptc`
 
 - `inject`: `tools` · `systemPrompt` · `ptcRuntime`
 - `source`: [`packages/core/tool-executor-ptc/src/config.ts:5`](../packages/core/tool-executor-ptc/src/config.ts)
@@ -4709,12 +4709,12 @@ export interface Config {
   maxParallelSubCalls: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-executor-ptc -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-executor-ptc -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-fs -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-fs -->
 <a id="deepseek-aidsh-tool-fs"></a>
 
-## `@deepseek-ai/dsh-tool-fs`
+## `@reevo/dsh-tool-fs`
 
 - `inject`: `tools` · `fs` · `systemPrompt` · `workingDirectory`
 - `source`: [`packages/fs/tool-fs/src/index.ts:27`](../packages/fs/tool-fs/src/index.ts)
@@ -4742,12 +4742,12 @@ export interface Config {
   readStreamMinSize?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-fs -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-fs -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-fs-search -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-fs-search -->
 <a id="deepseek-aidsh-tool-fs-search"></a>
 
-## `@deepseek-ai/dsh-tool-fs-search`
+## `@reevo/dsh-tool-fs-search`
 
 - `inject`: `tools` · `systemPrompt` · `subprocess` · `workingDirectory`
 - `source`: [`packages/fs/tool-fs-search/src/index.ts:74`](../packages/fs/tool-fs-search/src/index.ts)
@@ -4773,17 +4773,17 @@ export interface Config {
   stderrMaxBytes?: number
   /**
    * Cooperative tool-call timeout budget (ms) on both tools, enforced by
-   * `@deepseek-ai/dsh-tool-call-timeout-policy` through `exec.signal`.
+   * `@reevo/dsh-tool-call-timeout-policy` through `exec.signal`.
    */
   timeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-fs-search -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-fs-search -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-goal -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-goal -->
 <a id="deepseek-aidsh-tool-goal"></a>
 
-## `@deepseek-ai/dsh-tool-goal`
+## `@reevo/dsh-tool-goal`
 
 - `inject`: `agents` · `goals` · `tools` · `systemPrompt`
 - `source`: [`packages/goal/tool-goal/src/index.ts:32`](../packages/goal/tool-goal/src/index.ts)
@@ -4795,12 +4795,12 @@ export interface Config {
   blockedAfterConsecutiveRounds?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-goal -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-goal -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-jobs -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-jobs -->
 <a id="deepseek-aidsh-tool-jobs"></a>
 
-## `@deepseek-ai/dsh-tool-jobs`
+## `@reevo/dsh-tool-jobs`
 
 - `inject`: `tools` · `jobs` · `systemPrompt`
 - `source`: [`packages/jobs/tool-jobs/src/index.ts:44`](../packages/jobs/tool-jobs/src/index.ts)
@@ -4839,12 +4839,12 @@ export interface Config {
  */
 export type CompletionDelivery = 'quiet' | 'wakeup'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-jobs -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-jobs -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-lsp -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-lsp -->
 <a id="deepseek-aidsh-tool-lsp"></a>
 
-## `@deepseek-ai/dsh-tool-lsp`
+## `@reevo/dsh-tool-lsp`
 
 - `inject`: `tools` · `lsp` · `systemPrompt` · `workingDirectory`
 - `source`: [`packages/lsp/tool-lsp/src/index.ts:56`](../packages/lsp/tool-lsp/src/index.ts)
@@ -4860,12 +4860,12 @@ export interface Config {
   timeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-lsp -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-lsp -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-office -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-office -->
 <a id="deepseek-aidsh-tool-office"></a>
 
-## `@deepseek-ai/dsh-tool-office`
+## `@reevo/dsh-tool-office`
 
 - `inject`: `tools` · `fs` · `workingDirectory` · `agents`
 - `source`: [`packages/document/tool-office/src/index.ts:43`](../packages/document/tool-office/src/index.ts)
@@ -4885,12 +4885,12 @@ export interface Config {
   maxImageBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-office -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-office -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-present -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-present -->
 <a id="deepseek-aidsh-tool-present"></a>
 
-## `@deepseek-ai/dsh-tool-present`
+## `@reevo/dsh-tool-present`
 
 - `inject`: `tools` · `fs` · `agents` · `workingDirectory`
 - `source`: [`packages/deliverables/tool-present/src/index.ts:15`](../packages/deliverables/tool-present/src/index.ts)
@@ -4902,12 +4902,12 @@ export interface Config {
   maxFiles: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-present -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-present -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-pwsh -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-pwsh -->
 <a id="deepseek-aidsh-tool-pwsh"></a>
 
-## `@deepseek-ai/dsh-tool-pwsh`
+## `@reevo/dsh-tool-pwsh`
 
 - `inject`: `tools` · `shell` · `systemPrompt` · `shellEnv` · `workingDirectory`
 - `source`: [`packages/shell/tool-pwsh/src/index.ts:56`](../packages/shell/tool-pwsh/src/index.ts)
@@ -4932,12 +4932,12 @@ export interface Config {
   promoteOnTimeout?: boolean
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-pwsh -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-pwsh -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-pwsh-persistent -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-pwsh-persistent -->
 <a id="deepseek-aidsh-tool-pwsh-persistent"></a>
 
-## `@deepseek-ai/dsh-tool-pwsh-persistent`
+## `@reevo/dsh-tool-pwsh-persistent`
 
 - `inject`: `tools` · `terminals` · `workingDirectory`
 - `source`: [`packages/shell/tool-pwsh-persistent/src/index.ts:458`](../packages/shell/tool-pwsh-persistent/src/index.ts)
@@ -4955,12 +4955,12 @@ export interface Config {
   description?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-pwsh-persistent -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-pwsh-persistent -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-ralph -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-ralph -->
 <a id="deepseek-aidsh-tool-ralph"></a>
 
-## `@deepseek-ai/dsh-tool-ralph`
+## `@reevo/dsh-tool-ralph`
 
 - `inject`: `tools` · `workflowEngine` · `subagents` · `systemPrompt`
 - `source`: [`packages/experimental/tool-ralph/src/index.ts:24`](../packages/experimental/tool-ralph/src/index.ts)
@@ -4978,12 +4978,12 @@ export interface Config {
   maxResultChars?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-ralph -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-ralph -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-session-query -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-session-query -->
 <a id="deepseek-aidsh-tool-session-query"></a>
 
-## `@deepseek-ai/dsh-tool-session-query`
+## `@reevo/dsh-tool-session-query`
 
 - `inject`: `tools` · `systemPrompt` · `sessionQuery` · `agents`
 - `source`: [`packages/experimental/tool-session-query/src/index.ts:28`](../packages/experimental/tool-session-query/src/index.ts)
@@ -4997,12 +4997,12 @@ export interface Config {
   searchTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-session-query -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-session-query -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-skill -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-skill -->
 <a id="deepseek-aidsh-tool-skill"></a>
 
-## `@deepseek-ai/dsh-tool-skill`
+## `@reevo/dsh-tool-skill`
 
 - `inject`: `agents` · `tools` · `skills` · `workingDirectory`
 - `source`: [`packages/skill/tool-skill/src/index.ts:65`](../packages/skill/tool-skill/src/index.ts)
@@ -5016,12 +5016,12 @@ export interface Config {
   excludedSkills?: string[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-skill -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-skill -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-str-replace-editor -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-str-replace-editor -->
 <a id="deepseek-aidsh-tool-str-replace-editor"></a>
 
-## `@deepseek-ai/dsh-tool-str-replace-editor`
+## `@reevo/dsh-tool-str-replace-editor`
 
 - `inject`: `tools` · `fs`
 - `source`: [`packages/fs/tool-str-replace-editor/src/index.ts:511`](../packages/fs/tool-str-replace-editor/src/index.ts)
@@ -5035,12 +5035,12 @@ export interface Config {
   description?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-str-replace-editor -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-str-replace-editor -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-subagent -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-subagent -->
 <a id="deepseek-aidsh-tool-subagent"></a>
 
-## `@deepseek-ai/dsh-tool-subagent`
+## `@reevo/dsh-tool-subagent`
 
 - `inject`: `tools` · `subagents` · `systemPrompt`
 - `refs`: [`AgentOptions`](subsystems/core.zh.md)
@@ -5093,12 +5093,12 @@ export interface PresetSelectionConfig {
   allowedAgentPresets?: string[] | undefined
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-subagent -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-subagent -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-subagent-control -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-subagent-control -->
 <a id="deepseek-aidsh-tool-subagent-control"></a>
 
-## `@deepseek-ai/dsh-tool-subagent-control`
+## `@reevo/dsh-tool-subagent-control`
 
 - `inject`: `tools` · `subagents` · `agents` · `systemPrompt`
 - `source`: [`packages/subagent/tool-subagent-control/src/index.ts:25`](../packages/subagent/tool-subagent-control/src/index.ts)
@@ -5110,12 +5110,12 @@ export interface Config {
   interrupt?: boolean
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-subagent-control -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-subagent-control -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-terminal -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-terminal -->
 <a id="deepseek-aidsh-tool-terminal"></a>
 
-## `@deepseek-ai/dsh-tool-terminal`
+## `@reevo/dsh-tool-terminal`
 
 - `inject`: `terminals` · `tools` · `systemPrompt` · `workingDirectory`
 - `source`: [`packages/experimental/tool-terminal/src/index.ts:38`](../packages/experimental/tool-terminal/src/index.ts)
@@ -5129,12 +5129,12 @@ export interface Config {
   maxResultBytes?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-terminal -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-terminal -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-todo -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-todo -->
 <a id="deepseek-aidsh-tool-todo"></a>
 
-## `@deepseek-ai/dsh-tool-todo`
+## `@reevo/dsh-tool-todo`
 
 - `inject`: `tools` · `sessionProjections`
 - `source`: [`packages/todo/tool-todo/src/index.ts:29`](../packages/todo/tool-todo/src/index.ts)
@@ -5152,12 +5152,12 @@ export interface Config {
   allowParallelInProgress: boolean
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-todo -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-todo -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-web -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-web -->
 <a id="deepseek-aidsh-tool-web"></a>
 
-## `@deepseek-ai/dsh-tool-web`
+## `@reevo/dsh-tool-web`
 
 - `inject`: `tools` · `web` · `systemPrompt`
 - `source`: [`packages/web/tool-web/src/index.ts:39`](../packages/web/tool-web/src/index.ts)
@@ -5183,12 +5183,12 @@ export interface Config {
   fetchMaxOutputChars?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-web -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-web -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-workflow -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-workflow -->
 <a id="deepseek-aidsh-tool-workflow"></a>
 
-## `@deepseek-ai/dsh-tool-workflow`
+## `@reevo/dsh-tool-workflow`
 
 - `inject`: `tools` · `workflowEngine` · `systemPrompt`
 - `source`: [`packages/workflow/tool-workflow/src/index.ts:46`](../packages/workflow/tool-workflow/src/index.ts)
@@ -5210,12 +5210,12 @@ export interface Config {
   enableRunInBackground?: boolean
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-workflow -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-workflow -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-tool-workspace-dependencies -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-tool-workspace-dependencies -->
 <a id="deepseek-aidsh-tool-workspace-dependencies"></a>
 
-## `@deepseek-ai/dsh-tool-workspace-dependencies`
+## `@reevo/dsh-tool-workspace-dependencies`
 
 - `inject`: `tools`
 - `source`: [`packages/skill/tool-workspace-dependencies/src/index.ts:18`](../packages/skill/tool-workspace-dependencies/src/index.ts)
@@ -5233,12 +5233,12 @@ export interface Config {
   readonly root?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-tool-workspace-dependencies -->
+<!-- END GENERATED config-catalog:@reevo/dsh-tool-workspace-dependencies -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-typert-loader -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-typert-loader -->
 <a id="deepseek-aidsh-typert-loader"></a>
 
-## `@deepseek-ai/dsh-typert-loader`
+## `@reevo/dsh-typert-loader`
 
 - `inject`: `typert` · `loader`
 - `source`: [`packages/typert/loader/src/index.ts:48`](../packages/typert/loader/src/index.ts)
@@ -5250,12 +5250,12 @@ export interface Config {
   packages?: string[]
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-typert-loader -->
+<!-- END GENERATED config-catalog:@reevo/dsh-typert-loader -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-upstream-skills -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-upstream-skills -->
 <a id="deepseek-aidsh-upstream-skills"></a>
 
-## `@deepseek-ai/dsh-upstream-skills`
+## `@reevo/dsh-upstream-skills`
 
 - `inject`: `skills`
 - `source`: [`packages/connector/upstream-skills/src/index.ts:35`](../packages/connector/upstream-skills/src/index.ts)
@@ -5269,12 +5269,12 @@ export interface Config {
   skillsTimeoutMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-upstream-skills -->
+<!-- END GENERATED config-catalog:@reevo/dsh-upstream-skills -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-user-approval -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-user-approval -->
 <a id="deepseek-aidsh-user-approval"></a>
 
-## `@deepseek-ai/dsh-user-approval`
+## `@reevo/dsh-user-approval`
 
 - `inject`: `sessionProjections`
 - `source`: [`packages/interaction/user-approval/src/index.ts:153`](../packages/interaction/user-approval/src/index.ts)
@@ -5303,12 +5303,12 @@ export interface Config {
  */
 export type ApprovalPolicy = 'ask' | 'never'
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-user-approval -->
+<!-- END GENERATED config-catalog:@reevo/dsh-user-approval -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-web -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-web -->
 <a id="deepseek-aidsh-web"></a>
 
-## `@deepseek-ai/dsh-web`
+## `@reevo/dsh-web`
 
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
 - `source`: [`packages/web/web/src/index.ts:77`](../packages/web/web/src/index.ts)
@@ -5332,12 +5332,12 @@ export interface WebRuntimeConfig {
   readonly fetchProvider: Volatile<string | undefined>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-web -->
+<!-- END GENERATED config-catalog:@reevo/dsh-web -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-web-app -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-web-app -->
 <a id="deepseek-aidsh-web-app"></a>
 
-## `@deepseek-ai/dsh-web-app`
+## `@reevo/dsh-web-app`
 
 - `inject`: `webServer`
 - `source`: [`packages/bundle/web-app/src/index.ts:55`](../packages/bundle/web-app/src/index.ts)
@@ -5364,12 +5364,12 @@ export interface Config {
   publicUrl?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-web-app -->
+<!-- END GENERATED config-catalog:@reevo/dsh-web-app -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-web-deepseek-api -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-web-deepseek-api -->
 <a id="deepseek-aidsh-web-deepseek-api"></a>
 
-## `@deepseek-ai/dsh-web-deepseek-api`
+## `@reevo/dsh-web-deepseek-api`
 
 - `inject`: `web` · `deepseekAuth`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -5417,12 +5417,12 @@ export interface Config {
   fetchApiKeyEnv: Volatile<string | undefined>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-web-deepseek-api -->
+<!-- END GENERATED config-catalog:@reevo/dsh-web-deepseek-api -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-web-fetch-http -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-web-fetch-http -->
 <a id="deepseek-aidsh-web-fetch-http"></a>
 
-## `@deepseek-ai/dsh-web-fetch-http`
+## `@reevo/dsh-web-fetch-http`
 
 - `inject`: `web`
 - `source`: [`packages/web/web-fetch-http/src/index.ts:32`](../packages/web/web-fetch-http/src/index.ts)
@@ -5442,12 +5442,12 @@ export interface Config {
   userAgent?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-web-fetch-http -->
+<!-- END GENERATED config-catalog:@reevo/dsh-web-fetch-http -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-web-search-deepseek -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-web-search-deepseek -->
 <a id="deepseek-aidsh-web-search-deepseek"></a>
 
-## `@deepseek-ai/dsh-web-search-deepseek`
+## `@reevo/dsh-web-search-deepseek`
 
 - `inject`: `web` · `deepseekAuth`
 - `refs`: `Volatile` (`@deepseek-ai/cordis`)
@@ -5472,12 +5472,12 @@ export interface Config {
   maxUses: Volatile<number>
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-web-search-deepseek -->
+<!-- END GENERATED config-catalog:@reevo/dsh-web-search-deepseek -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-webhook-github -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-webhook-github -->
 <a id="deepseek-aidsh-webhook-github"></a>
 
-## `@deepseek-ai/dsh-webhook-github`
+## `@reevo/dsh-webhook-github`
 
 - `inject`: `webServer` · `webhookRuntime` · `credentials`
 - `source`: [`packages/experimental/webhook-github/src/index.ts:17`](../packages/experimental/webhook-github/src/index.ts)
@@ -5495,12 +5495,12 @@ export interface Config {
   readonly maxBodyBytes: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-webhook-github -->
+<!-- END GENERATED config-catalog:@reevo/dsh-webhook-github -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-wecom -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-wecom -->
 <a id="deepseek-aidsh-wecom"></a>
 
-## `@deepseek-ai/dsh-wecom`
+## `@reevo/dsh-wecom`
 
 - `inject`: `cliAccounts` · `upstreamSkills`
 - `source`: [`packages/connector/wecom/src/index.ts:28`](../packages/connector/wecom/src/index.ts)
@@ -5514,12 +5514,12 @@ export interface Config {
   skillsDir?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-wecom -->
+<!-- END GENERATED config-catalog:@reevo/dsh-wecom -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-workflow-ptc -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-workflow-ptc -->
 <a id="deepseek-aidsh-workflow-ptc"></a>
 
-## `@deepseek-ai/dsh-workflow-ptc`
+## `@reevo/dsh-workflow-ptc`
 
 - `inject`: `subagents` · `ptcRuntime` · `sandboxPolicy` · `workingDirectory`
 - `source`: [`packages/workflow/workflow-ptc/src/index.ts:35`](../packages/workflow/workflow-ptc/src/index.ts)
@@ -5539,12 +5539,12 @@ export interface Config {
   syncTimeoutMs?: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-workflow-ptc -->
+<!-- END GENERATED config-catalog:@reevo/dsh-workflow-ptc -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-working-directory -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-working-directory -->
 <a id="deepseek-aidsh-working-directory"></a>
 
-## `@deepseek-ai/dsh-working-directory`
+## `@reevo/dsh-working-directory`
 
 - `inject`: `fs` · `sessionProjections` · `systemPrompt`
 - `source`: [`packages/session/working-directory/src/index.ts:75`](../packages/session/working-directory/src/index.ts)
@@ -5556,12 +5556,12 @@ export interface Config {
   defaultDirectory?: string
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-working-directory -->
+<!-- END GENERATED config-catalog:@reevo/dsh-working-directory -->
 
-<!-- BEGIN GENERATED config-catalog:@deepseek-ai/dsh-workspace-changes -->
+<!-- BEGIN GENERATED config-catalog:@reevo/dsh-workspace-changes -->
 <a id="deepseek-aidsh-workspace-changes"></a>
 
-## `@deepseek-ai/dsh-workspace-changes`
+## `@reevo/dsh-workspace-changes`
 
 - `inject`: `subprocess` · `fs`
 - `source`: [`packages/deliverables/workspace-changes/src/index.ts:35`](../packages/deliverables/workspace-changes/src/index.ts)
@@ -5584,7 +5584,7 @@ export interface Config {
   diffTimeoutMs: number
 }
 ```
-<!-- END GENERATED config-catalog:@deepseek-ai/dsh-workspace-changes -->
+<!-- END GENERATED config-catalog:@reevo/dsh-workspace-changes -->
 
 ## 无配置的可加载插件
 
@@ -5593,130 +5593,130 @@ export interface Config {
 <!-- BEGIN GENERATED config-catalog:no-config -->
 | `package` | `inject` | `source` |
 | --- | --- | --- |
-| `@deepseek-ai/dsh-acp-app` | `cmdlineArgs` | [`packages/bundle/acp-app/src/index.ts`](../packages/bundle/acp-app/src/index.ts) |
-| `@deepseek-ai/dsh-agent` | `sessionProjections` | [`packages/core/agent/src/index.ts`](../packages/core/agent/src/index.ts) |
-| `@deepseek-ai/dsh-api-remote-access` | — | [`packages/api/remote-access/src/index.ts`](../packages/api/remote-access/src/index.ts) |
-| `@deepseek-ai/dsh-api-remotes` | `typertGateway` | [`packages/api/remotes/src/index.ts`](../packages/api/remotes/src/index.ts) |
-| `@deepseek-ai/dsh-authorization` | `credentials` | [`packages/credentials/authorization/src/index.ts`](../packages/credentials/authorization/src/index.ts) |
-| `@deepseek-ai/dsh-browser-use` | — | [`packages/browser-use/browser-use/src/index.ts`](../packages/browser-use/browser-use/src/index.ts) |
-| `@deepseek-ai/dsh-client-config` | — | [`packages/client/config/src/index.ts`](../packages/client/config/src/index.ts) |
-| `@deepseek-ai/dsh-client-file-upload` | `agents` · `attachments` · `commands` · `connection` | [`packages/client/file-upload/src/index.ts`](../packages/client/file-upload/src/index.ts) |
-| `@deepseek-ai/dsh-client-locale` | — | [`packages/client/locale/src/index.ts`](../packages/client/locale/src/index.ts) |
-| `@deepseek-ai/dsh-client-modules` | `loader` | [`packages/client/modules/src/index.ts`](../packages/client/modules/src/index.ts) |
-| `@deepseek-ai/dsh-client-resources` | — | [`packages/client/resources/src/index.ts`](../packages/client/resources/src/index.ts) |
-| `@deepseek-ai/dsh-client-script-realm` | — | [`packages/client/script-realm/src/index.ts`](../packages/client/script-realm/src/index.ts) |
-| `@deepseek-ai/dsh-client-script-realm-iframe` | — | [`packages/client/script-realm-iframe/src/index.ts`](../packages/client/script-realm-iframe/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-action-cards` | — | [`packages/client/ui-action-cards/src/index.ts`](../packages/client/ui-action-cards/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-agent-preset` | — | [`packages/client/ui-agent-preset/src/index.ts`](../packages/client/ui-agent-preset/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-agent-team` | — | [`packages/client/ui-agent-team/src/index.ts`](../packages/client/ui-agent-team/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-approval` | — | [`packages/client/ui-approval/src/index.ts`](../packages/client/ui-approval/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-attachment` | — | [`packages/client/ui-attachment/src/index.ts`](../packages/client/ui-attachment/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-brand-official` | — | [`packages/client/ui-brand-official/src/index.ts`](../packages/client/ui-brand-official/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-chat` | — | [`packages/client/ui-chat/src/index.ts`](../packages/client/ui-chat/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-commands` | — | [`packages/client/ui-commands/src/index.ts`](../packages/client/ui-commands/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-connector-account` | — | [`packages/client/ui-connector-account/src/index.ts`](../packages/client/ui-connector-account/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-conversation` | — | [`packages/client/ui-conversation/src/index.ts`](../packages/client/ui-conversation/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-cordis` | — | [`packages/extensions/ui-cordis/src/index.ts`](../packages/extensions/ui-cordis/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-creation-recommendations` | — | [`packages/client/ui-creation-recommendations/src/index.ts`](../packages/client/ui-creation-recommendations/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-deliverables` | `connection` · `sessionQuery` · `sessionController` · `workspaceFiles` · `fs` · `sandboxPolicy` · `workspaceChanges` | [`packages/client/ui-deliverables/src/index.ts`](../packages/client/ui-deliverables/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-directory-picker-browse` | — | [`packages/client/ui-directory-picker-browse/src/index.ts`](../packages/client/ui-directory-picker-browse/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-directory-picker-native` | — | [`packages/client/ui-directory-picker-native/src/index.ts`](../packages/client/ui-directory-picker-native/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-entry-customization` | — | [`packages/client/ui-entry-customization/src/index.ts`](../packages/client/ui-entry-customization/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-file-actions` | — | [`packages/client/ui-file-actions/src/index.ts`](../packages/client/ui-file-actions/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-file-drag` | — | [`packages/client/ui-file-drag/src/index.ts`](../packages/client/ui-file-drag/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-goal` | — | [`packages/client/ui-goal/src/index.ts`](../packages/client/ui-goal/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-input-trigger` | — | [`packages/client/ui-input-trigger/src/index.ts`](../packages/client/ui-input-trigger/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-jobs` | — | [`packages/client/ui-jobs/src/index.ts`](../packages/client/ui-jobs/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-layout` | — | [`packages/client/ui-layout/src/index.ts`](../packages/client/ui-layout/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-message-feedback` | — | [`packages/client/ui-message-feedback/src/index.ts`](../packages/client/ui-message-feedback/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-model-selection` | — | [`packages/client/ui-model-selection/src/index.ts`](../packages/client/ui-model-selection/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-open-in-app` | — | [`packages/client/ui-open-in-app/src/index.ts`](../packages/client/ui-open-in-app/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-permission-presets` | — | [`packages/client/ui-permission-presets/src/index.ts`](../packages/client/ui-permission-presets/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-plan` | — | [`packages/client/ui-plan/src/index.ts`](../packages/client/ui-plan/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-plugin-market` | — | [`packages/client/ui-plugin-market/src/index.ts`](../packages/client/ui-plugin-market/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-plugin-recommendations` | — | [`packages/client/ui-plugin-recommendations/src/index.ts`](../packages/client/ui-plugin-recommendations/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-reference` | — | [`packages/client/ui-reference/src/index.ts`](../packages/client/ui-reference/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-renderer` | — | [`packages/client/ui-renderer/src/index.ts`](../packages/client/ui-renderer/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-schedule` | — | [`packages/client/ui-schedule/src/index.ts`](../packages/client/ui-schedule/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-secret-mask` | — | [`packages/client/ui-secret-mask/src/index.ts`](../packages/client/ui-secret-mask/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-session` | — | [`packages/client/ui-session/src/index.ts`](../packages/client/ui-session/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-session-panel` | — | [`packages/client/ui-session-panel/src/index.ts`](../packages/client/ui-session-panel/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-session-status` | `remoteAccess` · `sessions` · `sessionPersistence` · `typert` | [`packages/client/ui-session-status/src/index.ts`](../packages/client/ui-session-status/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-settings` | — | [`packages/client/ui-settings/src/index.ts`](../packages/client/ui-settings/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-settings-agent-loop` | — | [`packages/client/ui-settings-agent-loop/src/index.ts`](../packages/client/ui-settings-agent-loop/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-settings-general` | — | [`packages/client/ui-settings-general/src/index.ts`](../packages/client/ui-settings-general/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-settings-session-log` | — | [`packages/client/ui-settings-session-log/src/index.ts`](../packages/client/ui-settings-session-log/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-settings-shell` | — | [`packages/client/ui-settings-shell/src/index.ts`](../packages/client/ui-settings-shell/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-settings-subagent` | — | [`packages/client/ui-settings-subagent/src/index.ts`](../packages/client/ui-settings-subagent/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-settings-web-search` | — | [`packages/client/ui-settings-web-search/src/index.ts`](../packages/client/ui-settings-web-search/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-shortcuts` | — | [`packages/client/ui-shortcuts/src/index.ts`](../packages/client/ui-shortcuts/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-sidebar` | — | [`packages/client/ui-sidebar/src/index.ts`](../packages/client/ui-sidebar/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-sidebar-browser` | — | [`packages/client/ui-sidebar-browser/src/index.ts`](../packages/client/ui-sidebar-browser/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-sidebar-files` | — | [`packages/client/ui-sidebar-files/src/index.ts`](../packages/client/ui-sidebar-files/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-sidebar-right` | — | [`packages/client/ui-sidebar-right/src/index.ts`](../packages/client/ui-sidebar-right/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-sidebar-terminal` | — | [`packages/client/ui-sidebar-terminal/src/index.ts`](../packages/client/ui-sidebar-terminal/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-skill` | — | [`packages/client/ui-skill/src/index.ts`](../packages/client/ui-skill/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-subagent` | — | [`packages/client/ui-subagent/src/index.ts`](../packages/client/ui-subagent/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-tool` | — | [`packages/client/ui-tool/src/index.ts`](../packages/client/ui-tool/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-user-questions` | — | [`packages/client/ui-user-questions/src/index.ts`](../packages/client/ui-user-questions/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-workflow-run` | — | [`packages/client/ui-workflow-run/src/index.ts`](../packages/client/ui-workflow-run/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-workspace` | — | [`packages/client/ui-workspace/src/index.ts`](../packages/client/ui-workspace/src/index.ts) |
-| `@deepseek-ai/dsh-command-compact` | `commands` · `compaction` | [`packages/compaction/command-compact/src/index.ts`](../packages/compaction/command-compact/src/index.ts) |
-| `@deepseek-ai/dsh-command-feedback` | `commands` | [`packages/feedback/command-feedback/src/index.ts`](../packages/feedback/command-feedback/src/index.ts) |
-| `@deepseek-ai/dsh-command-goal` | `commands` · `goals` | [`packages/goal/command-goal/src/index.ts`](../packages/goal/command-goal/src/index.ts) |
-| `@deepseek-ai/dsh-commands` | — | [`packages/interaction/commands/src/index.ts`](../packages/interaction/commands/src/index.ts) |
-| `@deepseek-ai/dsh-compaction-image-offload` | `agents` · `sessions` | [`packages/compaction/compaction-image-offload/src/index.ts`](../packages/compaction/compaction-image-offload/src/index.ts) |
-| `@deepseek-ai/dsh-computer-use` | — | [`packages/computer-use/computer-use/src/index.ts`](../packages/computer-use/computer-use/src/index.ts) |
-| `@deepseek-ai/dsh-config-editor` | `loader` · `profileContext` | [`packages/boot/config-editor/src/index.ts`](../packages/boot/config-editor/src/index.ts) |
-| `@deepseek-ai/dsh-cordis-client-runner` | — | [`packages/extensions/cordis-client-runner/src/index.ts`](../packages/extensions/cordis-client-runner/src/index.ts) |
-| `@deepseek-ai/dsh-creation-recommendations` | `tools` · `pluginManager` · `agents` · `subagents` · `profileContext` · `skills` · `actionCards` | [`packages/extensions/creation-recommendations/src/index.ts`](../packages/extensions/creation-recommendations/src/index.ts) |
-| `@deepseek-ai/dsh-cua` | — | [`packages/experimental/cua/src/index.ts`](../packages/experimental/cua/src/index.ts) |
-| `@deepseek-ai/dsh-deepseek-auth` | — | [`packages/account/deepseek-auth/src/index.ts`](../packages/account/deepseek-auth/src/index.ts) |
-| `@deepseek-ai/dsh-deepseek-llm-api-extensions` | — | [`packages/llm/deepseek-llm-api-extensions/src/index.ts`](../packages/llm/deepseek-llm-api-extensions/src/index.ts) |
-| `@deepseek-ai/dsh-deliverable-file-references` | `systemPrompt` | [`packages/deliverables/deliverable-file-references/src/index.ts`](../packages/deliverables/deliverable-file-references/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-auto-review` | `approval` · `llm` · `permissionPresets` · `sessions` · `tools` · `workingDirectory` | [`packages/experimental/auto-review/src/index.ts`](../packages/experimental/auto-review/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-client-ui-claude-code-mods` | — | [`packages/experimental/client-ui-claude-code-mods/src/index.ts`](../packages/experimental/client-ui-claude-code-mods/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-client-ui-stats` | — | [`packages/experimental/client-ui-stats/src/index.ts`](../packages/experimental/client-ui-stats/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-client-ui-voice-input` | — | [`packages/experimental/client-ui-voice-input/src/index.ts`](../packages/experimental/client-ui-voice-input/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-computer-use-cua-driver-native` | `computerUse` · `tools` · `systemPrompt` | [`packages/experimental/computer-use-cua-driver-native/src/index.ts`](../packages/experimental/computer-use-cua-driver-native/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-session-inspector` | — | [`packages/experimental/session-inspector/src/index.ts`](../packages/experimental/session-inspector/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-tool-worktree` | `tools` · `worktrees` | [`packages/experimental/tool-worktree/src/index.ts`](../packages/experimental/tool-worktree/src/index.ts) |
-| `@deepseek-ai/dsh-fs-observation-policy` | — | [`packages/fs/fs-observation-policy/src/index.ts`](../packages/fs/fs-observation-policy/src/index.ts) |
-| `@deepseek-ai/dsh-fs-ssh` | `ssh` · `sandboxPolicy` | [`packages/ssh/fs-ssh/src/index.ts`](../packages/ssh/fs-ssh/src/index.ts) |
-| `@deepseek-ai/dsh-goal-round-driver` | `agents` · `goals` · `sessions` | [`packages/goal/goal-round-driver/src/index.ts`](../packages/goal/goal-round-driver/src/index.ts) |
-| `@deepseek-ai/dsh-harness-dev-context` | `systemPrompt` · `sessionProjections` · `webApp` | [`packages/context/harness-dev-context/src/index.ts`](../packages/context/harness-dev-context/src/index.ts) |
-| `@deepseek-ai/dsh-host-directory-picker-auto` | `webServer` · `connection` · `loader` | [`packages/host/directory-picker-auto/src/index.ts`](../packages/host/directory-picker-auto/src/index.ts) |
-| `@deepseek-ai/dsh-host-directory-picker-native` | — | [`packages/host/directory-picker-native/src/index.ts`](../packages/host/directory-picker-native/src/index.ts) |
-| `@deepseek-ai/dsh-host-plugin-inventory` | `loader` | [`packages/host/plugin-inventory/src/index.ts`](../packages/host/plugin-inventory/src/index.ts) |
-| `@deepseek-ai/dsh-llm` | — | [`packages/llm/llm/src/index.ts`](../packages/llm/llm/src/index.ts) |
-| `@deepseek-ai/dsh-lsp` | — | [`packages/lsp/lsp/src/index.ts`](../packages/lsp/lsp/src/index.ts) |
-| `@deepseek-ai/dsh-mcp-account` | `mcpManager` · `connectorAccounts` | [`packages/mcp/mcp-account/src/index.ts`](../packages/mcp/mcp-account/src/index.ts) |
-| `@deepseek-ai/dsh-mcp-resources` | `tools` | [`packages/mcp/mcp-resources/src/index.ts`](../packages/mcp/mcp-resources/src/index.ts) |
-| `@deepseek-ai/dsh-message-quotes` | — | [`packages/session/message-quotes/src/index.ts`](../packages/session/message-quotes/src/index.ts) |
-| `@deepseek-ai/dsh-otel` | — | [`packages/telemetry/otel/src/index.ts`](../packages/telemetry/otel/src/index.ts) |
-| `@deepseek-ai/dsh-plugin-recommendations` | `pluginManager` · `agents` · `skills` · `actionCards` | [`packages/extensions/plugin-recommendations/src/index.ts`](../packages/extensions/plugin-recommendations/src/index.ts) |
-| `@deepseek-ai/dsh-sandbox-ssh` | `ssh` | [`packages/ssh/sandbox-ssh/src/index.ts`](../packages/ssh/sandbox-ssh/src/index.ts) |
-| `@deepseek-ai/dsh-session` | — | [`packages/core/session/src/index.ts`](../packages/core/session/src/index.ts) |
-| `@deepseek-ai/dsh-session-checkpoint-policy` | `llm` · `sessionPersistence` · `sessions` · `tools` | [`packages/session/session-checkpoint-policy/src/index.ts`](../packages/session/session-checkpoint-policy/src/index.ts) |
-| `@deepseek-ai/dsh-session-projection` | — | [`packages/session/session-projection/src/index.ts`](../packages/session/session-projection/src/index.ts) |
-| `@deepseek-ai/dsh-session-stats` | `sessionProjections` | [`packages/session/session-stats/src/index.ts`](../packages/session/session-stats/src/index.ts) |
-| `@deepseek-ai/dsh-session-turn-outline` | `sessionProjections` | [`packages/session/session-turn-outline/src/index.ts`](../packages/session/session-turn-outline/src/index.ts) |
-| `@deepseek-ai/dsh-settings` | `configEditor` · `profileContext` | [`packages/settings/settings/src/index.ts`](../packages/settings/settings/src/index.ts) |
-| `@deepseek-ai/dsh-skill-badge` | `skills` | [`packages/experimental/skill-badge/src/index.ts`](../packages/experimental/skill-badge/src/index.ts) |
-| `@deepseek-ai/dsh-storage` | — | [`packages/storage/storage/src/index.ts`](../packages/storage/storage/src/index.ts) |
-| `@deepseek-ai/dsh-subprocess-local` | — | [`packages/subprocess/subprocess-local/src/index.ts`](../packages/subprocess/subprocess-local/src/index.ts) |
-| `@deepseek-ai/dsh-subprocess-ssh` | `ssh` | [`packages/ssh/subprocess-ssh/src/index.ts`](../packages/ssh/subprocess-ssh/src/index.ts) |
-| `@deepseek-ai/dsh-terminal` | — | [`packages/terminal/terminal/src/index.ts`](../packages/terminal/terminal/src/index.ts) |
-| `@deepseek-ai/dsh-tool-call-timeout-policy` | `tools` | [`packages/guard/timeout-policy/src/index.ts`](../packages/guard/timeout-policy/src/index.ts) |
-| `@deepseek-ai/dsh-tool-cordis` | `tools` · `cordisInspect` | [`packages/extensions/tool-cordis/src/index.ts`](../packages/extensions/tool-cordis/src/index.ts) |
-| `@deepseek-ai/dsh-tool-executor-native` | `tools` | [`packages/core/tool-executor-native/src/index.ts`](../packages/core/tool-executor-native/src/index.ts) |
-| `@deepseek-ai/dsh-tool-schedule` | `tools` · `systemPrompt` | [`packages/schedule/tool-schedule/src/index.ts`](../packages/schedule/tool-schedule/src/index.ts) |
-| `@deepseek-ai/dsh-tool-session-control` | `tools` · `sessionController` · `workspaceRegistry` | [`packages/session/tool-session-control/src/index.ts`](../packages/session/tool-session-control/src/index.ts) |
-| `@deepseek-ai/dsh-tool-session-list` | `tools` · `sessions` · `sessionQuery` · `workspaceRegistry` · `sessionProjections` | [`packages/session-query/tool-session-list/src/index.ts`](../packages/session-query/tool-session-list/src/index.ts) |
-| `@deepseek-ai/dsh-tools` | `systemPrompt` | [`packages/core/tools/src/index.ts`](../packages/core/tools/src/index.ts) |
-| `@deepseek-ai/dsh-user-questions` | — | [`packages/interaction/user-questions/src/index.ts`](../packages/interaction/user-questions/src/index.ts) |
-| `@deepseek-ai/dsh-webhook` | `agents` · `agentDefaultModel` · `agentPresets` · `permissionPresets` · `sessionTitle` · `workspaceRegistry` | [`packages/experimental/webhook/src/index.ts`](../packages/experimental/webhook/src/index.ts) |
-| `@deepseek-ai/dsh-workspace` | `storageDomain` · `sessionPersistence` | [`packages/workspace/workspace/src/index.ts`](../packages/workspace/workspace/src/index.ts) |
+| `@reevo/dsh-acp-app` | `cmdlineArgs` | [`packages/bundle/acp-app/src/index.ts`](../packages/bundle/acp-app/src/index.ts) |
+| `@reevo/dsh-agent` | `sessionProjections` | [`packages/core/agent/src/index.ts`](../packages/core/agent/src/index.ts) |
+| `@reevo/dsh-api-remote-access` | — | [`packages/api/remote-access/src/index.ts`](../packages/api/remote-access/src/index.ts) |
+| `@reevo/dsh-api-remotes` | `typertGateway` | [`packages/api/remotes/src/index.ts`](../packages/api/remotes/src/index.ts) |
+| `@reevo/dsh-authorization` | `credentials` | [`packages/credentials/authorization/src/index.ts`](../packages/credentials/authorization/src/index.ts) |
+| `@reevo/dsh-browser-use` | — | [`packages/browser-use/browser-use/src/index.ts`](../packages/browser-use/browser-use/src/index.ts) |
+| `@reevo/dsh-client-config` | — | [`packages/client/config/src/index.ts`](../packages/client/config/src/index.ts) |
+| `@reevo/dsh-client-file-upload` | `agents` · `attachments` · `commands` · `connection` | [`packages/client/file-upload/src/index.ts`](../packages/client/file-upload/src/index.ts) |
+| `@reevo/dsh-client-locale` | — | [`packages/client/locale/src/index.ts`](../packages/client/locale/src/index.ts) |
+| `@reevo/dsh-client-modules` | `loader` | [`packages/client/modules/src/index.ts`](../packages/client/modules/src/index.ts) |
+| `@reevo/dsh-client-resources` | — | [`packages/client/resources/src/index.ts`](../packages/client/resources/src/index.ts) |
+| `@reevo/dsh-client-script-realm` | — | [`packages/client/script-realm/src/index.ts`](../packages/client/script-realm/src/index.ts) |
+| `@reevo/dsh-client-script-realm-iframe` | — | [`packages/client/script-realm-iframe/src/index.ts`](../packages/client/script-realm-iframe/src/index.ts) |
+| `@reevo/dsh-client-ui-action-cards` | — | [`packages/client/ui-action-cards/src/index.ts`](../packages/client/ui-action-cards/src/index.ts) |
+| `@reevo/dsh-client-ui-agent-preset` | — | [`packages/client/ui-agent-preset/src/index.ts`](../packages/client/ui-agent-preset/src/index.ts) |
+| `@reevo/dsh-client-ui-agent-team` | — | [`packages/client/ui-agent-team/src/index.ts`](../packages/client/ui-agent-team/src/index.ts) |
+| `@reevo/dsh-client-ui-approval` | — | [`packages/client/ui-approval/src/index.ts`](../packages/client/ui-approval/src/index.ts) |
+| `@reevo/dsh-client-ui-attachment` | — | [`packages/client/ui-attachment/src/index.ts`](../packages/client/ui-attachment/src/index.ts) |
+| `@reevo/dsh-client-ui-brand-official` | — | [`packages/client/ui-brand-official/src/index.ts`](../packages/client/ui-brand-official/src/index.ts) |
+| `@reevo/dsh-client-ui-chat` | — | [`packages/client/ui-chat/src/index.ts`](../packages/client/ui-chat/src/index.ts) |
+| `@reevo/dsh-client-ui-commands` | — | [`packages/client/ui-commands/src/index.ts`](../packages/client/ui-commands/src/index.ts) |
+| `@reevo/dsh-client-ui-connector-account` | — | [`packages/client/ui-connector-account/src/index.ts`](../packages/client/ui-connector-account/src/index.ts) |
+| `@reevo/dsh-client-ui-conversation` | — | [`packages/client/ui-conversation/src/index.ts`](../packages/client/ui-conversation/src/index.ts) |
+| `@reevo/dsh-client-ui-cordis` | — | [`packages/extensions/ui-cordis/src/index.ts`](../packages/extensions/ui-cordis/src/index.ts) |
+| `@reevo/dsh-client-ui-creation-recommendations` | — | [`packages/client/ui-creation-recommendations/src/index.ts`](../packages/client/ui-creation-recommendations/src/index.ts) |
+| `@reevo/dsh-client-ui-deliverables` | `connection` · `sessionQuery` · `sessionController` · `workspaceFiles` · `fs` · `sandboxPolicy` · `workspaceChanges` | [`packages/client/ui-deliverables/src/index.ts`](../packages/client/ui-deliverables/src/index.ts) |
+| `@reevo/dsh-client-ui-directory-picker-browse` | — | [`packages/client/ui-directory-picker-browse/src/index.ts`](../packages/client/ui-directory-picker-browse/src/index.ts) |
+| `@reevo/dsh-client-ui-directory-picker-native` | — | [`packages/client/ui-directory-picker-native/src/index.ts`](../packages/client/ui-directory-picker-native/src/index.ts) |
+| `@reevo/dsh-client-ui-entry-customization` | — | [`packages/client/ui-entry-customization/src/index.ts`](../packages/client/ui-entry-customization/src/index.ts) |
+| `@reevo/dsh-client-ui-file-actions` | — | [`packages/client/ui-file-actions/src/index.ts`](../packages/client/ui-file-actions/src/index.ts) |
+| `@reevo/dsh-client-ui-file-drag` | — | [`packages/client/ui-file-drag/src/index.ts`](../packages/client/ui-file-drag/src/index.ts) |
+| `@reevo/dsh-client-ui-goal` | — | [`packages/client/ui-goal/src/index.ts`](../packages/client/ui-goal/src/index.ts) |
+| `@reevo/dsh-client-ui-input-trigger` | — | [`packages/client/ui-input-trigger/src/index.ts`](../packages/client/ui-input-trigger/src/index.ts) |
+| `@reevo/dsh-client-ui-jobs` | — | [`packages/client/ui-jobs/src/index.ts`](../packages/client/ui-jobs/src/index.ts) |
+| `@reevo/dsh-client-ui-layout` | — | [`packages/client/ui-layout/src/index.ts`](../packages/client/ui-layout/src/index.ts) |
+| `@reevo/dsh-client-ui-message-feedback` | — | [`packages/client/ui-message-feedback/src/index.ts`](../packages/client/ui-message-feedback/src/index.ts) |
+| `@reevo/dsh-client-ui-model-selection` | — | [`packages/client/ui-model-selection/src/index.ts`](../packages/client/ui-model-selection/src/index.ts) |
+| `@reevo/dsh-client-ui-open-in-app` | — | [`packages/client/ui-open-in-app/src/index.ts`](../packages/client/ui-open-in-app/src/index.ts) |
+| `@reevo/dsh-client-ui-permission-presets` | — | [`packages/client/ui-permission-presets/src/index.ts`](../packages/client/ui-permission-presets/src/index.ts) |
+| `@reevo/dsh-client-ui-plan` | — | [`packages/client/ui-plan/src/index.ts`](../packages/client/ui-plan/src/index.ts) |
+| `@reevo/dsh-client-ui-plugin-market` | — | [`packages/client/ui-plugin-market/src/index.ts`](../packages/client/ui-plugin-market/src/index.ts) |
+| `@reevo/dsh-client-ui-plugin-recommendations` | — | [`packages/client/ui-plugin-recommendations/src/index.ts`](../packages/client/ui-plugin-recommendations/src/index.ts) |
+| `@reevo/dsh-client-ui-reference` | — | [`packages/client/ui-reference/src/index.ts`](../packages/client/ui-reference/src/index.ts) |
+| `@reevo/dsh-client-ui-renderer` | — | [`packages/client/ui-renderer/src/index.ts`](../packages/client/ui-renderer/src/index.ts) |
+| `@reevo/dsh-client-ui-schedule` | — | [`packages/client/ui-schedule/src/index.ts`](../packages/client/ui-schedule/src/index.ts) |
+| `@reevo/dsh-client-ui-secret-mask` | — | [`packages/client/ui-secret-mask/src/index.ts`](../packages/client/ui-secret-mask/src/index.ts) |
+| `@reevo/dsh-client-ui-session` | — | [`packages/client/ui-session/src/index.ts`](../packages/client/ui-session/src/index.ts) |
+| `@reevo/dsh-client-ui-session-panel` | — | [`packages/client/ui-session-panel/src/index.ts`](../packages/client/ui-session-panel/src/index.ts) |
+| `@reevo/dsh-client-ui-session-status` | `remoteAccess` · `sessions` · `sessionPersistence` · `typert` | [`packages/client/ui-session-status/src/index.ts`](../packages/client/ui-session-status/src/index.ts) |
+| `@reevo/dsh-client-ui-settings` | — | [`packages/client/ui-settings/src/index.ts`](../packages/client/ui-settings/src/index.ts) |
+| `@reevo/dsh-client-ui-settings-agent-loop` | — | [`packages/client/ui-settings-agent-loop/src/index.ts`](../packages/client/ui-settings-agent-loop/src/index.ts) |
+| `@reevo/dsh-client-ui-settings-general` | — | [`packages/client/ui-settings-general/src/index.ts`](../packages/client/ui-settings-general/src/index.ts) |
+| `@reevo/dsh-client-ui-settings-session-log` | — | [`packages/client/ui-settings-session-log/src/index.ts`](../packages/client/ui-settings-session-log/src/index.ts) |
+| `@reevo/dsh-client-ui-settings-shell` | — | [`packages/client/ui-settings-shell/src/index.ts`](../packages/client/ui-settings-shell/src/index.ts) |
+| `@reevo/dsh-client-ui-settings-subagent` | — | [`packages/client/ui-settings-subagent/src/index.ts`](../packages/client/ui-settings-subagent/src/index.ts) |
+| `@reevo/dsh-client-ui-settings-web-search` | — | [`packages/client/ui-settings-web-search/src/index.ts`](../packages/client/ui-settings-web-search/src/index.ts) |
+| `@reevo/dsh-client-ui-shortcuts` | — | [`packages/client/ui-shortcuts/src/index.ts`](../packages/client/ui-shortcuts/src/index.ts) |
+| `@reevo/dsh-client-ui-sidebar` | — | [`packages/client/ui-sidebar/src/index.ts`](../packages/client/ui-sidebar/src/index.ts) |
+| `@reevo/dsh-client-ui-sidebar-browser` | — | [`packages/client/ui-sidebar-browser/src/index.ts`](../packages/client/ui-sidebar-browser/src/index.ts) |
+| `@reevo/dsh-client-ui-sidebar-files` | — | [`packages/client/ui-sidebar-files/src/index.ts`](../packages/client/ui-sidebar-files/src/index.ts) |
+| `@reevo/dsh-client-ui-sidebar-right` | — | [`packages/client/ui-sidebar-right/src/index.ts`](../packages/client/ui-sidebar-right/src/index.ts) |
+| `@reevo/dsh-client-ui-sidebar-terminal` | — | [`packages/client/ui-sidebar-terminal/src/index.ts`](../packages/client/ui-sidebar-terminal/src/index.ts) |
+| `@reevo/dsh-client-ui-skill` | — | [`packages/client/ui-skill/src/index.ts`](../packages/client/ui-skill/src/index.ts) |
+| `@reevo/dsh-client-ui-subagent` | — | [`packages/client/ui-subagent/src/index.ts`](../packages/client/ui-subagent/src/index.ts) |
+| `@reevo/dsh-client-ui-tool` | — | [`packages/client/ui-tool/src/index.ts`](../packages/client/ui-tool/src/index.ts) |
+| `@reevo/dsh-client-ui-user-questions` | — | [`packages/client/ui-user-questions/src/index.ts`](../packages/client/ui-user-questions/src/index.ts) |
+| `@reevo/dsh-client-ui-workflow-run` | — | [`packages/client/ui-workflow-run/src/index.ts`](../packages/client/ui-workflow-run/src/index.ts) |
+| `@reevo/dsh-client-ui-workspace` | — | [`packages/client/ui-workspace/src/index.ts`](../packages/client/ui-workspace/src/index.ts) |
+| `@reevo/dsh-command-compact` | `commands` · `compaction` | [`packages/compaction/command-compact/src/index.ts`](../packages/compaction/command-compact/src/index.ts) |
+| `@reevo/dsh-command-feedback` | `commands` | [`packages/feedback/command-feedback/src/index.ts`](../packages/feedback/command-feedback/src/index.ts) |
+| `@reevo/dsh-command-goal` | `commands` · `goals` | [`packages/goal/command-goal/src/index.ts`](../packages/goal/command-goal/src/index.ts) |
+| `@reevo/dsh-commands` | — | [`packages/interaction/commands/src/index.ts`](../packages/interaction/commands/src/index.ts) |
+| `@reevo/dsh-compaction-image-offload` | `agents` · `sessions` | [`packages/compaction/compaction-image-offload/src/index.ts`](../packages/compaction/compaction-image-offload/src/index.ts) |
+| `@reevo/dsh-computer-use` | — | [`packages/computer-use/computer-use/src/index.ts`](../packages/computer-use/computer-use/src/index.ts) |
+| `@reevo/dsh-config-editor` | `loader` · `profileContext` | [`packages/boot/config-editor/src/index.ts`](../packages/boot/config-editor/src/index.ts) |
+| `@reevo/dsh-cordis-client-runner` | — | [`packages/extensions/cordis-client-runner/src/index.ts`](../packages/extensions/cordis-client-runner/src/index.ts) |
+| `@reevo/dsh-creation-recommendations` | `tools` · `pluginManager` · `agents` · `subagents` · `profileContext` · `skills` · `actionCards` | [`packages/extensions/creation-recommendations/src/index.ts`](../packages/extensions/creation-recommendations/src/index.ts) |
+| `@reevo/dsh-cua` | — | [`packages/experimental/cua/src/index.ts`](../packages/experimental/cua/src/index.ts) |
+| `@reevo/dsh-deepseek-auth` | — | [`packages/account/deepseek-auth/src/index.ts`](../packages/account/deepseek-auth/src/index.ts) |
+| `@reevo/dsh-deepseek-llm-api-extensions` | — | [`packages/llm/deepseek-llm-api-extensions/src/index.ts`](../packages/llm/deepseek-llm-api-extensions/src/index.ts) |
+| `@reevo/dsh-deliverable-file-references` | `systemPrompt` | [`packages/deliverables/deliverable-file-references/src/index.ts`](../packages/deliverables/deliverable-file-references/src/index.ts) |
+| `@reevo/dsh-experimental-auto-review` | `approval` · `llm` · `permissionPresets` · `sessions` · `tools` · `workingDirectory` | [`packages/experimental/auto-review/src/index.ts`](../packages/experimental/auto-review/src/index.ts) |
+| `@reevo/dsh-experimental-client-ui-claude-code-mods` | — | [`packages/experimental/client-ui-claude-code-mods/src/index.ts`](../packages/experimental/client-ui-claude-code-mods/src/index.ts) |
+| `@reevo/dsh-experimental-client-ui-stats` | — | [`packages/experimental/client-ui-stats/src/index.ts`](../packages/experimental/client-ui-stats/src/index.ts) |
+| `@reevo/dsh-experimental-client-ui-voice-input` | — | [`packages/experimental/client-ui-voice-input/src/index.ts`](../packages/experimental/client-ui-voice-input/src/index.ts) |
+| `@reevo/dsh-experimental-computer-use-cua-driver-native` | `computerUse` · `tools` · `systemPrompt` | [`packages/experimental/computer-use-cua-driver-native/src/index.ts`](../packages/experimental/computer-use-cua-driver-native/src/index.ts) |
+| `@reevo/dsh-experimental-session-inspector` | — | [`packages/experimental/session-inspector/src/index.ts`](../packages/experimental/session-inspector/src/index.ts) |
+| `@reevo/dsh-experimental-tool-worktree` | `tools` · `worktrees` | [`packages/experimental/tool-worktree/src/index.ts`](../packages/experimental/tool-worktree/src/index.ts) |
+| `@reevo/dsh-fs-observation-policy` | — | [`packages/fs/fs-observation-policy/src/index.ts`](../packages/fs/fs-observation-policy/src/index.ts) |
+| `@reevo/dsh-fs-ssh` | `ssh` · `sandboxPolicy` | [`packages/ssh/fs-ssh/src/index.ts`](../packages/ssh/fs-ssh/src/index.ts) |
+| `@reevo/dsh-goal-round-driver` | `agents` · `goals` · `sessions` | [`packages/goal/goal-round-driver/src/index.ts`](../packages/goal/goal-round-driver/src/index.ts) |
+| `@reevo/dsh-harness-dev-context` | `systemPrompt` · `sessionProjections` · `webApp` | [`packages/context/harness-dev-context/src/index.ts`](../packages/context/harness-dev-context/src/index.ts) |
+| `@reevo/dsh-host-directory-picker-auto` | `webServer` · `connection` · `loader` | [`packages/host/directory-picker-auto/src/index.ts`](../packages/host/directory-picker-auto/src/index.ts) |
+| `@reevo/dsh-host-directory-picker-native` | — | [`packages/host/directory-picker-native/src/index.ts`](../packages/host/directory-picker-native/src/index.ts) |
+| `@reevo/dsh-host-plugin-inventory` | `loader` | [`packages/host/plugin-inventory/src/index.ts`](../packages/host/plugin-inventory/src/index.ts) |
+| `@reevo/dsh-llm` | — | [`packages/llm/llm/src/index.ts`](../packages/llm/llm/src/index.ts) |
+| `@reevo/dsh-lsp` | — | [`packages/lsp/lsp/src/index.ts`](../packages/lsp/lsp/src/index.ts) |
+| `@reevo/dsh-mcp-account` | `mcpManager` · `connectorAccounts` | [`packages/mcp/mcp-account/src/index.ts`](../packages/mcp/mcp-account/src/index.ts) |
+| `@reevo/dsh-mcp-resources` | `tools` | [`packages/mcp/mcp-resources/src/index.ts`](../packages/mcp/mcp-resources/src/index.ts) |
+| `@reevo/dsh-message-quotes` | — | [`packages/session/message-quotes/src/index.ts`](../packages/session/message-quotes/src/index.ts) |
+| `@reevo/dsh-otel` | — | [`packages/telemetry/otel/src/index.ts`](../packages/telemetry/otel/src/index.ts) |
+| `@reevo/dsh-plugin-recommendations` | `pluginManager` · `agents` · `skills` · `actionCards` | [`packages/extensions/plugin-recommendations/src/index.ts`](../packages/extensions/plugin-recommendations/src/index.ts) |
+| `@reevo/dsh-sandbox-ssh` | `ssh` | [`packages/ssh/sandbox-ssh/src/index.ts`](../packages/ssh/sandbox-ssh/src/index.ts) |
+| `@reevo/dsh-session` | — | [`packages/core/session/src/index.ts`](../packages/core/session/src/index.ts) |
+| `@reevo/dsh-session-checkpoint-policy` | `llm` · `sessionPersistence` · `sessions` · `tools` | [`packages/session/session-checkpoint-policy/src/index.ts`](../packages/session/session-checkpoint-policy/src/index.ts) |
+| `@reevo/dsh-session-projection` | — | [`packages/session/session-projection/src/index.ts`](../packages/session/session-projection/src/index.ts) |
+| `@reevo/dsh-session-stats` | `sessionProjections` | [`packages/session/session-stats/src/index.ts`](../packages/session/session-stats/src/index.ts) |
+| `@reevo/dsh-session-turn-outline` | `sessionProjections` | [`packages/session/session-turn-outline/src/index.ts`](../packages/session/session-turn-outline/src/index.ts) |
+| `@reevo/dsh-settings` | `configEditor` · `profileContext` | [`packages/settings/settings/src/index.ts`](../packages/settings/settings/src/index.ts) |
+| `@reevo/dsh-skill-badge` | `skills` | [`packages/experimental/skill-badge/src/index.ts`](../packages/experimental/skill-badge/src/index.ts) |
+| `@reevo/dsh-storage` | — | [`packages/storage/storage/src/index.ts`](../packages/storage/storage/src/index.ts) |
+| `@reevo/dsh-subprocess-local` | — | [`packages/subprocess/subprocess-local/src/index.ts`](../packages/subprocess/subprocess-local/src/index.ts) |
+| `@reevo/dsh-subprocess-ssh` | `ssh` | [`packages/ssh/subprocess-ssh/src/index.ts`](../packages/ssh/subprocess-ssh/src/index.ts) |
+| `@reevo/dsh-terminal` | — | [`packages/terminal/terminal/src/index.ts`](../packages/terminal/terminal/src/index.ts) |
+| `@reevo/dsh-tool-call-timeout-policy` | `tools` | [`packages/guard/timeout-policy/src/index.ts`](../packages/guard/timeout-policy/src/index.ts) |
+| `@reevo/dsh-tool-cordis` | `tools` · `cordisInspect` | [`packages/extensions/tool-cordis/src/index.ts`](../packages/extensions/tool-cordis/src/index.ts) |
+| `@reevo/dsh-tool-executor-native` | `tools` | [`packages/core/tool-executor-native/src/index.ts`](../packages/core/tool-executor-native/src/index.ts) |
+| `@reevo/dsh-tool-schedule` | `tools` · `systemPrompt` | [`packages/schedule/tool-schedule/src/index.ts`](../packages/schedule/tool-schedule/src/index.ts) |
+| `@reevo/dsh-tool-session-control` | `tools` · `sessionController` · `workspaceRegistry` | [`packages/session/tool-session-control/src/index.ts`](../packages/session/tool-session-control/src/index.ts) |
+| `@reevo/dsh-tool-session-list` | `tools` · `sessions` · `sessionQuery` · `workspaceRegistry` · `sessionProjections` | [`packages/session-query/tool-session-list/src/index.ts`](../packages/session-query/tool-session-list/src/index.ts) |
+| `@reevo/dsh-tools` | `systemPrompt` | [`packages/core/tools/src/index.ts`](../packages/core/tools/src/index.ts) |
+| `@reevo/dsh-user-questions` | — | [`packages/interaction/user-questions/src/index.ts`](../packages/interaction/user-questions/src/index.ts) |
+| `@reevo/dsh-webhook` | `agents` · `agentDefaultModel` · `agentPresets` · `permissionPresets` · `sessionTitle` · `workspaceRegistry` | [`packages/experimental/webhook/src/index.ts`](../packages/experimental/webhook/src/index.ts) |
+| `@reevo/dsh-workspace` | `storageDomain` · `sessionPersistence` | [`packages/workspace/workspace/src/index.ts`](../packages/workspace/workspace/src/index.ts) |
 <!-- END GENERATED config-catalog:no-config -->
 
 ## Seam 包（不可直接加载）
@@ -5726,21 +5726,21 @@ export interface Config {
 <!-- BEGIN GENERATED config-catalog:seam -->
 | `package` | `class` | `inject` | `source` |
 | --- | --- | --- | --- |
-| `@deepseek-ai/dsh-attachment` | `AttachmentStore` | — | [`packages/attachment/attachment/src/index.ts`](../packages/attachment/attachment/src/index.ts) |
-| `@deepseek-ai/dsh-compaction` | `CompactionEngine` | — | [`packages/compaction/compaction/src/index.ts`](../packages/compaction/compaction/src/index.ts) |
-| `@deepseek-ai/dsh-credentials` | `CredentialProvider` | — | [`packages/credentials/credentials/src/index.ts`](../packages/credentials/credentials/src/index.ts) |
-| `@deepseek-ai/dsh-file-reference` | `FileReferenceService` | — | [`packages/context/file-reference/src/index.ts`](../packages/context/file-reference/src/index.ts) |
-| `@deepseek-ai/dsh-fs` | `FileSystem` | — | [`packages/fs/fs/src/index.ts`](../packages/fs/fs/src/index.ts) |
-| `@deepseek-ai/dsh-host-directory-picker` | `DirectoryPicker` | — | [`packages/host/directory-picker/src/index.ts`](../packages/host/directory-picker/src/index.ts) |
-| `@deepseek-ai/dsh-jobs` | `JobRegistry` | — | [`packages/jobs/jobs/src/index.ts`](../packages/jobs/jobs/src/index.ts) |
-| `@deepseek-ai/dsh-ptc-runtime` | `PtcRuntime` | — | [`packages/ptc-runtime/ptc-runtime/src/index.ts`](../packages/ptc-runtime/ptc-runtime/src/index.ts) |
-| `@deepseek-ai/dsh-sandbox` | `SandboxProvider` | — | [`packages/sandbox/sandbox/src/index.ts`](../packages/sandbox/sandbox/src/index.ts) |
-| `@deepseek-ai/dsh-session-persistence` | `SessionPersistence` | — | [`packages/session/session-persistence/src/index.ts`](../packages/session/session-persistence/src/index.ts) |
-| `@deepseek-ai/dsh-session-query` | `SessionQueryEngine` | — | [`packages/session-query/session-query/src/index.ts`](../packages/session-query/session-query/src/index.ts) |
-| `@deepseek-ai/dsh-shell` | `ShellExecutor` | — | [`packages/shell/shell/src/index.ts`](../packages/shell/shell/src/index.ts) |
-| `@deepseek-ai/dsh-spill` | `SpillStore` | — | [`packages/spill/spill/src/index.ts`](../packages/spill/spill/src/index.ts) |
-| `@deepseek-ai/dsh-subprocess` | `SubprocessRuntime` | — | [`packages/subprocess/subprocess/src/index.ts`](../packages/subprocess/subprocess/src/index.ts) |
-| `@deepseek-ai/dsh-workflow` | `WorkflowEngine` | — | [`packages/workflow/workflow/src/index.ts`](../packages/workflow/workflow/src/index.ts) |
+| `@reevo/dsh-attachment` | `AttachmentStore` | — | [`packages/attachment/attachment/src/index.ts`](../packages/attachment/attachment/src/index.ts) |
+| `@reevo/dsh-compaction` | `CompactionEngine` | — | [`packages/compaction/compaction/src/index.ts`](../packages/compaction/compaction/src/index.ts) |
+| `@reevo/dsh-credentials` | `CredentialProvider` | — | [`packages/credentials/credentials/src/index.ts`](../packages/credentials/credentials/src/index.ts) |
+| `@reevo/dsh-file-reference` | `FileReferenceService` | — | [`packages/context/file-reference/src/index.ts`](../packages/context/file-reference/src/index.ts) |
+| `@reevo/dsh-fs` | `FileSystem` | — | [`packages/fs/fs/src/index.ts`](../packages/fs/fs/src/index.ts) |
+| `@reevo/dsh-host-directory-picker` | `DirectoryPicker` | — | [`packages/host/directory-picker/src/index.ts`](../packages/host/directory-picker/src/index.ts) |
+| `@reevo/dsh-jobs` | `JobRegistry` | — | [`packages/jobs/jobs/src/index.ts`](../packages/jobs/jobs/src/index.ts) |
+| `@reevo/dsh-ptc-runtime` | `PtcRuntime` | — | [`packages/ptc-runtime/ptc-runtime/src/index.ts`](../packages/ptc-runtime/ptc-runtime/src/index.ts) |
+| `@reevo/dsh-sandbox` | `SandboxProvider` | — | [`packages/sandbox/sandbox/src/index.ts`](../packages/sandbox/sandbox/src/index.ts) |
+| `@reevo/dsh-session-persistence` | `SessionPersistence` | — | [`packages/session/session-persistence/src/index.ts`](../packages/session/session-persistence/src/index.ts) |
+| `@reevo/dsh-session-query` | `SessionQueryEngine` | — | [`packages/session-query/session-query/src/index.ts`](../packages/session-query/session-query/src/index.ts) |
+| `@reevo/dsh-shell` | `ShellExecutor` | — | [`packages/shell/shell/src/index.ts`](../packages/shell/shell/src/index.ts) |
+| `@reevo/dsh-spill` | `SpillStore` | — | [`packages/spill/spill/src/index.ts`](../packages/spill/spill/src/index.ts) |
+| `@reevo/dsh-subprocess` | `SubprocessRuntime` | — | [`packages/subprocess/subprocess/src/index.ts`](../packages/subprocess/subprocess/src/index.ts) |
+| `@reevo/dsh-workflow` | `WorkflowEngine` | — | [`packages/workflow/workflow/src/index.ts`](../packages/workflow/workflow/src/index.ts) |
 <!-- END GENERATED config-catalog:seam -->
 
 ## 库包（无插件入口）
@@ -5750,81 +5750,81 @@ export interface Config {
 <!-- BEGIN GENERATED config-catalog:library -->
 | `package` | `inject` | `source` |
 | --- | --- | --- |
-| `@deepseek-ai/dsh-agent-loop-testkit` | — | [`packages/test-support/agent-loop-testkit/src/index.ts`](../packages/test-support/agent-loop-testkit/src/index.ts) |
-| `@deepseek-ai/dsh-anonymous-user-id` | — | [`packages/identity/anonymous-user-id/src/index.ts`](../packages/identity/anonymous-user-id/src/index.ts) |
-| `@deepseek-ai/dsh-app-boot` | — | [`packages/boot/app-boot/src/index.ts`](../packages/boot/app-boot/src/index.ts) |
-| `@deepseek-ai/dsh-atomic-write` | — | [`packages/util/atomic-write/src/index.ts`](../packages/util/atomic-write/src/index.ts) |
-| `@deepseek-ai/dsh-base` | — | [`packages/bundle/base/src/index.ts`](../packages/bundle/base/src/index.ts) |
-| `@deepseek-ai/dsh-brand` | — | [`packages/util/brand/src/index.ts`](../packages/util/brand/src/index.ts) |
-| `@deepseek-ai/dsh-chunked-list` | — | [`packages/util/chunked-list/src/index.ts`](../packages/util/chunked-list/src/index.ts) |
-| `@deepseek-ai/dsh-client-store` | — | [`packages/client/store/src/index.ts`](../packages/client/store/src/index.ts) |
-| `@deepseek-ai/dsh-client-test-runtime` | — | [`packages/test-support/client-runtime/src/index.ts`](../packages/test-support/client-runtime/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-dockkit` | — | [`packages/client/ui-dockkit/src/index.ts`](../packages/client/ui-dockkit/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-primitives` | — | [`packages/client/ui-primitives/src/index.ts`](../packages/client/ui-primitives/src/index.ts) |
-| `@deepseek-ai/dsh-client-ui-slots` | — | [`packages/client/ui-slots/src/index.ts`](../packages/client/ui-slots/src/index.ts) |
-| `@deepseek-ai/dsh-client-web` | — | [`packages/client/web/src/index.ts`](../packages/client/web/src/index.ts) |
-| `@deepseek-ai/dsh-cmdline` | — | [`packages/boot/cmdline/src/index.ts`](../packages/boot/cmdline/src/index.ts) |
-| `@deepseek-ai/dsh-cua-bundle` | — | [`packages/experimental/cua-bundle/src/index.ts`](../packages/experimental/cua-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-deque` | — | [`packages/util/deque/src/index.ts`](../packages/util/deque/src/index.ts) |
-| `@deepseek-ai/dsh-error` | — | [`packages/util/error/src/index.ts`](../packages/util/error/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-badge-skill-bundle` | — | [`packages/experimental/badge-skill-bundle/src/index.ts`](../packages/experimental/badge-skill-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-browser-use-runtime` | — | [`packages/experimental/browser-use-runtime/src/index.ts`](../packages/experimental/browser-use-runtime/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-cot-translation-bundle` | — | [`packages/experimental/cot-translation-bundle/src/index.ts`](../packages/experimental/cot-translation-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-forge-bundle` | — | [`packages/experimental/forge-bundle/src/index.ts`](../packages/experimental/forge-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-inspector-profile` | — | [`packages/experimental/inspector-profile/src/index.ts`](../packages/experimental/inspector-profile/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-liveshare` | — | [`packages/experimental/liveshare/src/index.ts`](../packages/experimental/liveshare/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-liveshare-protocol` | — | [`packages/experimental/liveshare-protocol/src/index.ts`](../packages/experimental/liveshare-protocol/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-plugin-market-bundle` | — | [`packages/experimental/plugin-market-bundle/src/index.ts`](../packages/experimental/plugin-market-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-ralph-bundle` | — | [`packages/experimental/ralph-bundle/src/index.ts`](../packages/experimental/ralph-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-session-search` | — | [`packages/experimental/session-search/src/index.ts`](../packages/experimental/session-search/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-session-titles-bundle` | — | [`packages/experimental/session-titles-bundle/src/index.ts`](../packages/experimental/session-titles-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-terminal-bundle` | — | [`packages/experimental/terminal-bundle/src/index.ts`](../packages/experimental/terminal-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-voice-input-bundle` | — | [`packages/experimental/voice-input-bundle/src/index.ts`](../packages/experimental/voice-input-bundle/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-webworker-packer` | — | [`packages/experimental/webworker-packer/src/index.ts`](../packages/experimental/webworker-packer/src/index.ts) |
-| `@deepseek-ai/dsh-experimental-webworker-runtime` | — | [`packages/experimental/webworker-runtime/src/index.ts`](../packages/experimental/webworker-runtime/src/index.ts) |
-| `@deepseek-ai/dsh-fs-patch` | — | [`packages/fs/fs-patch/src/index.ts`](../packages/fs/fs-patch/src/index.ts) |
-| `@deepseek-ai/dsh-home-paths` | — | [`packages/util/home-paths/src/index.ts`](../packages/util/home-paths/src/index.ts) |
-| `@deepseek-ai/dsh-hook-protocol` | — | [`packages/experimental/hook-protocol/src/index.ts`](../packages/experimental/hook-protocol/src/index.ts) |
-| `@deepseek-ai/dsh-http-proxy` | — | [`packages/util/http-proxy/src/index.ts`](../packages/util/http-proxy/src/index.ts) |
-| `@deepseek-ai/dsh-launch-environment` | — | [`packages/util/launch-environment/src/index.ts`](../packages/util/launch-environment/src/index.ts) |
-| `@deepseek-ai/dsh-lazy-require` | — | [`packages/util/lazy-require/src/index.ts`](../packages/util/lazy-require/src/index.ts) |
-| `@deepseek-ai/dsh-llm-deepseek` | — | [`packages/llm/llm-deepseek/src/index.ts`](../packages/llm/llm-deepseek/src/index.ts) |
-| `@deepseek-ai/dsh-llm-mock-server` | — | [`packages/test-support/llm-mock-server/src/index.ts`](../packages/test-support/llm-mock-server/src/index.ts) |
-| `@deepseek-ai/dsh-loader-smoke` | — | [`packages/test-support/loader-smoke/src/index.ts`](../packages/test-support/loader-smoke/src/index.ts) |
-| `@deepseek-ai/dsh-native-command` | — | [`packages/util/native-command/src/index.ts`](../packages/util/native-command/src/index.ts) |
-| `@deepseek-ai/dsh-official-bundles` | — | [`packages/util/official-bundles/src/index.ts`](../packages/util/official-bundles/src/index.ts) |
-| `@deepseek-ai/dsh-output-retention` | — | [`packages/util/output-retention/src/index.ts`](../packages/util/output-retention/src/index.ts) |
-| `@deepseek-ai/dsh-package-manifest` | — | [`packages/util/package-manifest/src/index.ts`](../packages/util/package-manifest/src/index.ts) |
-| `@deepseek-ai/dsh-plugin-detail` | — | [`packages/util/plugin-detail/src/index.ts`](../packages/util/plugin-detail/src/index.ts) |
-| `@deepseek-ai/dsh-plugin-market-index` | — | [`packages/util/plugin-market-index/src/index.ts`](../packages/util/plugin-market-index/src/index.ts) |
-| `@deepseek-ai/dsh-remote-mock` | — | [`packages/test-support/remote-mock/src/index.ts`](../packages/test-support/remote-mock/src/index.ts) |
-| `@deepseek-ai/dsh-sandbox-windows-acl` | — | [`packages/sandbox/sandbox-windows-acl/src/index.ts`](../packages/sandbox/sandbox-windows-acl/src/index.ts) |
-| `@deepseek-ai/dsh-scope` | — | [`packages/core/scope/src/index.ts`](../packages/core/scope/src/index.ts) |
+| `@reevo/dsh-agent-loop-testkit` | — | [`packages/test-support/agent-loop-testkit/src/index.ts`](../packages/test-support/agent-loop-testkit/src/index.ts) |
+| `@reevo/dsh-anonymous-user-id` | — | [`packages/identity/anonymous-user-id/src/index.ts`](../packages/identity/anonymous-user-id/src/index.ts) |
+| `@reevo/dsh-app-boot` | — | [`packages/boot/app-boot/src/index.ts`](../packages/boot/app-boot/src/index.ts) |
+| `@reevo/dsh-atomic-write` | — | [`packages/util/atomic-write/src/index.ts`](../packages/util/atomic-write/src/index.ts) |
+| `@reevo/dsh-base` | — | [`packages/bundle/base/src/index.ts`](../packages/bundle/base/src/index.ts) |
+| `@reevo/dsh-brand` | — | [`packages/util/brand/src/index.ts`](../packages/util/brand/src/index.ts) |
+| `@reevo/dsh-chunked-list` | — | [`packages/util/chunked-list/src/index.ts`](../packages/util/chunked-list/src/index.ts) |
+| `@reevo/dsh-client-store` | — | [`packages/client/store/src/index.ts`](../packages/client/store/src/index.ts) |
+| `@reevo/dsh-client-test-runtime` | — | [`packages/test-support/client-runtime/src/index.ts`](../packages/test-support/client-runtime/src/index.ts) |
+| `@reevo/dsh-client-ui-dockkit` | — | [`packages/client/ui-dockkit/src/index.ts`](../packages/client/ui-dockkit/src/index.ts) |
+| `@reevo/dsh-client-ui-primitives` | — | [`packages/client/ui-primitives/src/index.ts`](../packages/client/ui-primitives/src/index.ts) |
+| `@reevo/dsh-client-ui-slots` | — | [`packages/client/ui-slots/src/index.ts`](../packages/client/ui-slots/src/index.ts) |
+| `@reevo/dsh-client-web` | — | [`packages/client/web/src/index.ts`](../packages/client/web/src/index.ts) |
+| `@reevo/dsh-cmdline` | — | [`packages/boot/cmdline/src/index.ts`](../packages/boot/cmdline/src/index.ts) |
+| `@reevo/dsh-cua-bundle` | — | [`packages/experimental/cua-bundle/src/index.ts`](../packages/experimental/cua-bundle/src/index.ts) |
+| `@reevo/dsh-deque` | — | [`packages/util/deque/src/index.ts`](../packages/util/deque/src/index.ts) |
+| `@reevo/dsh-error` | — | [`packages/util/error/src/index.ts`](../packages/util/error/src/index.ts) |
+| `@reevo/dsh-experimental-badge-skill-bundle` | — | [`packages/experimental/badge-skill-bundle/src/index.ts`](../packages/experimental/badge-skill-bundle/src/index.ts) |
+| `@reevo/dsh-experimental-browser-use-runtime` | — | [`packages/experimental/browser-use-runtime/src/index.ts`](../packages/experimental/browser-use-runtime/src/index.ts) |
+| `@reevo/dsh-experimental-cot-translation-bundle` | — | [`packages/experimental/cot-translation-bundle/src/index.ts`](../packages/experimental/cot-translation-bundle/src/index.ts) |
+| `@reevo/dsh-experimental-forge-bundle` | — | [`packages/experimental/forge-bundle/src/index.ts`](../packages/experimental/forge-bundle/src/index.ts) |
+| `@reevo/dsh-experimental-inspector-profile` | — | [`packages/experimental/inspector-profile/src/index.ts`](../packages/experimental/inspector-profile/src/index.ts) |
+| `@reevo/dsh-experimental-liveshare` | — | [`packages/experimental/liveshare/src/index.ts`](../packages/experimental/liveshare/src/index.ts) |
+| `@reevo/dsh-experimental-liveshare-protocol` | — | [`packages/experimental/liveshare-protocol/src/index.ts`](../packages/experimental/liveshare-protocol/src/index.ts) |
+| `@reevo/dsh-experimental-plugin-market-bundle` | — | [`packages/experimental/plugin-market-bundle/src/index.ts`](../packages/experimental/plugin-market-bundle/src/index.ts) |
+| `@reevo/dsh-experimental-ralph-bundle` | — | [`packages/experimental/ralph-bundle/src/index.ts`](../packages/experimental/ralph-bundle/src/index.ts) |
+| `@reevo/dsh-experimental-session-search` | — | [`packages/experimental/session-search/src/index.ts`](../packages/experimental/session-search/src/index.ts) |
+| `@reevo/dsh-experimental-session-titles-bundle` | — | [`packages/experimental/session-titles-bundle/src/index.ts`](../packages/experimental/session-titles-bundle/src/index.ts) |
+| `@reevo/dsh-experimental-terminal-bundle` | — | [`packages/experimental/terminal-bundle/src/index.ts`](../packages/experimental/terminal-bundle/src/index.ts) |
+| `@reevo/dsh-experimental-voice-input-bundle` | — | [`packages/experimental/voice-input-bundle/src/index.ts`](../packages/experimental/voice-input-bundle/src/index.ts) |
+| `@reevo/dsh-experimental-webworker-packer` | — | [`packages/experimental/webworker-packer/src/index.ts`](../packages/experimental/webworker-packer/src/index.ts) |
+| `@reevo/dsh-experimental-webworker-runtime` | — | [`packages/experimental/webworker-runtime/src/index.ts`](../packages/experimental/webworker-runtime/src/index.ts) |
+| `@reevo/dsh-fs-patch` | — | [`packages/fs/fs-patch/src/index.ts`](../packages/fs/fs-patch/src/index.ts) |
+| `@reevo/dsh-home-paths` | — | [`packages/util/home-paths/src/index.ts`](../packages/util/home-paths/src/index.ts) |
+| `@reevo/dsh-hook-protocol` | — | [`packages/experimental/hook-protocol/src/index.ts`](../packages/experimental/hook-protocol/src/index.ts) |
+| `@reevo/dsh-http-proxy` | — | [`packages/util/http-proxy/src/index.ts`](../packages/util/http-proxy/src/index.ts) |
+| `@reevo/dsh-launch-environment` | — | [`packages/util/launch-environment/src/index.ts`](../packages/util/launch-environment/src/index.ts) |
+| `@reevo/dsh-lazy-require` | — | [`packages/util/lazy-require/src/index.ts`](../packages/util/lazy-require/src/index.ts) |
+| `@reevo/dsh-llm-deepseek` | — | [`packages/llm/llm-deepseek/src/index.ts`](../packages/llm/llm-deepseek/src/index.ts) |
+| `@reevo/dsh-llm-mock-server` | — | [`packages/test-support/llm-mock-server/src/index.ts`](../packages/test-support/llm-mock-server/src/index.ts) |
+| `@reevo/dsh-loader-smoke` | — | [`packages/test-support/loader-smoke/src/index.ts`](../packages/test-support/loader-smoke/src/index.ts) |
+| `@reevo/dsh-native-command` | — | [`packages/util/native-command/src/index.ts`](../packages/util/native-command/src/index.ts) |
+| `@reevo/dsh-official-bundles` | — | [`packages/util/official-bundles/src/index.ts`](../packages/util/official-bundles/src/index.ts) |
+| `@reevo/dsh-output-retention` | — | [`packages/util/output-retention/src/index.ts`](../packages/util/output-retention/src/index.ts) |
+| `@reevo/dsh-package-manifest` | — | [`packages/util/package-manifest/src/index.ts`](../packages/util/package-manifest/src/index.ts) |
+| `@reevo/dsh-plugin-detail` | — | [`packages/util/plugin-detail/src/index.ts`](../packages/util/plugin-detail/src/index.ts) |
+| `@reevo/dsh-plugin-market-index` | — | [`packages/util/plugin-market-index/src/index.ts`](../packages/util/plugin-market-index/src/index.ts) |
+| `@reevo/dsh-remote-mock` | — | [`packages/test-support/remote-mock/src/index.ts`](../packages/test-support/remote-mock/src/index.ts) |
+| `@reevo/dsh-sandbox-windows-acl` | — | [`packages/sandbox/sandbox-windows-acl/src/index.ts`](../packages/sandbox/sandbox-windows-acl/src/index.ts) |
+| `@reevo/dsh-scope` | — | [`packages/core/scope/src/index.ts`](../packages/core/scope/src/index.ts) |
 | `@reevo/sdk` | — | [`packages/sdk/client/src/index.ts`](../packages/sdk/client/src/index.ts) |
-| `@deepseek-ai/dsh-sdk-minimal` | — | [`packages/bundle/sdk-minimal/src/index.ts`](../packages/bundle/sdk-minimal/src/index.ts) |
-| `@deepseek-ai/dsh-sdk-protocol` | — | [`packages/sdk/protocol/src/index.ts`](../packages/sdk/protocol/src/index.ts) |
-| `@deepseek-ai/dsh-session-format` | — | [`packages/session/session-format/src/index.ts`](../packages/session/session-format/src/index.ts) |
-| `@deepseek-ai/dsh-session-format-catalog` | — | [`packages/session/session-format-catalog/src/index.ts`](../packages/session/session-format-catalog/src/index.ts) |
-| `@deepseek-ai/dsh-session-format-v0-to-v1` | — | [`packages/session/session-format-v0-to-v1/src/index.ts`](../packages/session/session-format-v0-to-v1/src/index.ts) |
-| `@deepseek-ai/dsh-session-format-v1-to-v2` | — | [`packages/session/session-format-v1-to-v2/src/index.ts`](../packages/session/session-format-v1-to-v2/src/index.ts) |
-| `@deepseek-ai/dsh-session-format-v2-to-v3` | — | [`packages/session/session-format-v2-to-v3/src/index.ts`](../packages/session/session-format-v2-to-v3/src/index.ts) |
-| `@deepseek-ai/dsh-session-format-v3-to-v4` | — | [`packages/session/session-format-v3-to-v4/src/index.ts`](../packages/session/session-format-v3-to-v4/src/index.ts) |
-| `@deepseek-ai/dsh-session-snapshot` | — | [`packages/test-support/session-snapshot/src/index.ts`](../packages/test-support/session-snapshot/src/index.ts) |
-| `@deepseek-ai/dsh-session-telemetry` | — | [`packages/session/session-telemetry/src/index.ts`](../packages/session/session-telemetry/src/index.ts) |
-| `@deepseek-ai/dsh-session-title-llm` | — | [`packages/session/session-title-llm/src/index.ts`](../packages/session/session-title-llm/src/index.ts) |
-| `@deepseek-ai/dsh-ssh-helper-runtime` | — | [`packages/ssh/ssh-helper-runtime/src/index.ts`](../packages/ssh/ssh-helper-runtime/src/index.ts) |
-| `@deepseek-ai/dsh-timeout` | — | [`packages/util/timeout/src/index.ts`](../packages/util/timeout/src/index.ts) |
-| `@deepseek-ai/dsh-tool-testkit` | — | [`packages/test-support/tool-testkit/src/index.ts`](../packages/test-support/tool-testkit/src/index.ts) |
-| `@deepseek-ai/dsh-typert-generator` | — | [`packages/typert/generator/src/index.ts`](../packages/typert/generator/src/index.ts) |
-| `@deepseek-ai/dsh-typert-protocol` | — | [`packages/typert/protocol/src/index.ts`](../packages/typert/protocol/src/index.ts) |
-| `@deepseek-ai/dsh-typert-registry` | — | [`packages/typert/registry/src/index.ts`](../packages/typert/registry/src/index.ts) |
-| `@deepseek-ai/dsh-util-code-language` | — | [`packages/util/code-language/src/index.ts`](../packages/util/code-language/src/index.ts) |
-| `@deepseek-ai/dsh-util-crypto` | — | [`packages/util/crypto/src/index.ts`](../packages/util/crypto/src/index.ts) |
-| `@deepseek-ai/dsh-util-file-drag` | — | [`packages/util/file-drag/src/index.ts`](../packages/util/file-drag/src/index.ts) |
-| `@deepseek-ai/dsh-util-ripgrep` | — | [`packages/util/ripgrep/src/index.ts`](../packages/util/ripgrep/src/index.ts) |
-| `@deepseek-ai/dsh-util-text-search` | — | [`packages/util/text-search/src/index.ts`](../packages/util/text-search/src/index.ts) |
-| `@deepseek-ai/dsh-util-time` | — | [`packages/util/time/src/index.ts`](../packages/util/time/src/index.ts) |
-| `@deepseek-ai/dsh-util-values` | — | [`packages/util/values/src/index.ts`](../packages/util/values/src/index.ts) |
-| `@deepseek-ai/dsh-util-workspace-path` | — | [`packages/util/workspace-path/src/index.ts`](../packages/util/workspace-path/src/index.ts) |
-| `@deepseek-ai/dsh-win32-process` | — | [`packages/subprocess/win32-process/src/index.ts`](../packages/subprocess/win32-process/src/index.ts) |
+| `@reevo/dsh-sdk-minimal` | — | [`packages/bundle/sdk-minimal/src/index.ts`](../packages/bundle/sdk-minimal/src/index.ts) |
+| `@reevo/dsh-sdk-protocol` | — | [`packages/sdk/protocol/src/index.ts`](../packages/sdk/protocol/src/index.ts) |
+| `@reevo/dsh-session-format` | — | [`packages/session/session-format/src/index.ts`](../packages/session/session-format/src/index.ts) |
+| `@reevo/dsh-session-format-catalog` | — | [`packages/session/session-format-catalog/src/index.ts`](../packages/session/session-format-catalog/src/index.ts) |
+| `@reevo/dsh-session-format-v0-to-v1` | — | [`packages/session/session-format-v0-to-v1/src/index.ts`](../packages/session/session-format-v0-to-v1/src/index.ts) |
+| `@reevo/dsh-session-format-v1-to-v2` | — | [`packages/session/session-format-v1-to-v2/src/index.ts`](../packages/session/session-format-v1-to-v2/src/index.ts) |
+| `@reevo/dsh-session-format-v2-to-v3` | — | [`packages/session/session-format-v2-to-v3/src/index.ts`](../packages/session/session-format-v2-to-v3/src/index.ts) |
+| `@reevo/dsh-session-format-v3-to-v4` | — | [`packages/session/session-format-v3-to-v4/src/index.ts`](../packages/session/session-format-v3-to-v4/src/index.ts) |
+| `@reevo/dsh-session-snapshot` | — | [`packages/test-support/session-snapshot/src/index.ts`](../packages/test-support/session-snapshot/src/index.ts) |
+| `@reevo/dsh-session-telemetry` | — | [`packages/session/session-telemetry/src/index.ts`](../packages/session/session-telemetry/src/index.ts) |
+| `@reevo/dsh-session-title-llm` | — | [`packages/session/session-title-llm/src/index.ts`](../packages/session/session-title-llm/src/index.ts) |
+| `@reevo/dsh-ssh-helper-runtime` | — | [`packages/ssh/ssh-helper-runtime/src/index.ts`](../packages/ssh/ssh-helper-runtime/src/index.ts) |
+| `@reevo/dsh-timeout` | — | [`packages/util/timeout/src/index.ts`](../packages/util/timeout/src/index.ts) |
+| `@reevo/dsh-tool-testkit` | — | [`packages/test-support/tool-testkit/src/index.ts`](../packages/test-support/tool-testkit/src/index.ts) |
+| `@reevo/dsh-typert-generator` | — | [`packages/typert/generator/src/index.ts`](../packages/typert/generator/src/index.ts) |
+| `@reevo/dsh-typert-protocol` | — | [`packages/typert/protocol/src/index.ts`](../packages/typert/protocol/src/index.ts) |
+| `@reevo/dsh-typert-registry` | — | [`packages/typert/registry/src/index.ts`](../packages/typert/registry/src/index.ts) |
+| `@reevo/dsh-util-code-language` | — | [`packages/util/code-language/src/index.ts`](../packages/util/code-language/src/index.ts) |
+| `@reevo/dsh-util-crypto` | — | [`packages/util/crypto/src/index.ts`](../packages/util/crypto/src/index.ts) |
+| `@reevo/dsh-util-file-drag` | — | [`packages/util/file-drag/src/index.ts`](../packages/util/file-drag/src/index.ts) |
+| `@reevo/dsh-util-ripgrep` | — | [`packages/util/ripgrep/src/index.ts`](../packages/util/ripgrep/src/index.ts) |
+| `@reevo/dsh-util-text-search` | — | [`packages/util/text-search/src/index.ts`](../packages/util/text-search/src/index.ts) |
+| `@reevo/dsh-util-time` | — | [`packages/util/time/src/index.ts`](../packages/util/time/src/index.ts) |
+| `@reevo/dsh-util-values` | — | [`packages/util/values/src/index.ts`](../packages/util/values/src/index.ts) |
+| `@reevo/dsh-util-workspace-path` | — | [`packages/util/workspace-path/src/index.ts`](../packages/util/workspace-path/src/index.ts) |
+| `@reevo/dsh-win32-process` | — | [`packages/subprocess/win32-process/src/index.ts`](../packages/subprocess/win32-process/src/index.ts) |
 <!-- END GENERATED config-catalog:library -->

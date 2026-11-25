@@ -49,93 +49,93 @@ describe('release families', () => {
     expect(members
       .filter(member => member.directory.startsWith('packages/experimental/'))
       .map(member => member.name)).toEqual([
-      '@deepseek-ai/dsh-experimental-api-speech-to-text',
-      '@deepseek-ai/dsh-experimental-auto-review',
-      '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-      '@deepseek-ai/dsh-experimental-browser-use-chrome-devtools-mcp',
-      '@deepseek-ai/dsh-experimental-browser-use-playwright-mcp',
-      '@deepseek-ai/dsh-experimental-browser-use-runtime',
-      '@deepseek-ai/dsh-experimental-browser-use-stagehand-native',
-      '@deepseek-ai/dsh-experimental-claude-code-mods',
-      '@deepseek-ai/dsh-experimental-client-ui-claude-code-mods',
-      '@deepseek-ai/dsh-experimental-client-ui-cot-translation',
-      '@deepseek-ai/dsh-experimental-client-ui-forge',
-      '@deepseek-ai/dsh-experimental-client-ui-stats',
-      '@deepseek-ai/dsh-experimental-client-ui-voice-input',
-      '@deepseek-ai/dsh-experimental-computer-use-cua-driver-mcp',
-      '@deepseek-ai/dsh-experimental-computer-use-cua-driver-native',
-      '@deepseek-ai/dsh-experimental-cot-translation-bundle',
-      '@deepseek-ai/dsh-cua-bundle',
-      '@deepseek-ai/dsh-cua-macos',
-      '@deepseek-ai/dsh-cua-mcp',
-      '@deepseek-ai/dsh-cua-windows',
-      '@deepseek-ai/dsh-cua',
-      '@deepseek-ai/dsh-deepseek-chat-import',
-      '@deepseek-ai/dsh-experimental-forge-bundle',
-      '@deepseek-ai/dsh-experimental-forge-github',
-      '@deepseek-ai/dsh-forge-gitlab',
-      '@deepseek-ai/dsh-experimental-forge-session',
-      '@deepseek-ai/dsh-experimental-forge',
-      '@deepseek-ai/dsh-hook-protocol',
-      '@deepseek-ai/dsh-hooks-claude-code',
-      '@deepseek-ai/dsh-hooks-codex',
-      '@deepseek-ai/dsh-experimental-inspector-profile',
-      '@deepseek-ai/dsh-experimental-inspector',
-      '@deepseek-ai/dsh-experimental-liveshare-protocol',
-      '@deepseek-ai/dsh-experimental-liveshare',
-      '@deepseek-ai/dsh-experimental-plugin-market-bundle',
-      '@deepseek-ai/dsh-experimental-ralph-bundle',
-      '@deepseek-ai/dsh-experimental-session-inspector',
-      '@deepseek-ai/dsh-experimental-session-search',
-      '@deepseek-ai/dsh-session-title-all-prompts-llm',
-      '@deepseek-ai/dsh-experimental-session-titles-bundle',
-      '@deepseek-ai/dsh-skill-badge',
-      '@deepseek-ai/dsh-experimental-speech-to-text-sensevoice',
-      '@deepseek-ai/dsh-experimental-speech-to-text',
-      '@deepseek-ai/dsh-experimental-subagent-oar',
-      '@deepseek-ai/dsh-experimental-terminal-bundle',
-      '@deepseek-ai/dsh-terminal-panel',
-      '@deepseek-ai/dsh-timeline',
-      '@deepseek-ai/dsh-tool-ralph',
-      '@deepseek-ai/dsh-tool-session-query',
-      '@deepseek-ai/dsh-experimental-tool-subagent-oar',
-      '@deepseek-ai/dsh-tool-terminal',
-      '@deepseek-ai/dsh-experimental-tool-worktree',
-      '@deepseek-ai/dsh-experimental-translator',
-      '@deepseek-ai/dsh-experimental-voice-input-bundle',
-      '@deepseek-ai/dsh-webhook-github',
-      '@deepseek-ai/dsh-webhook',
-      '@deepseek-ai/dsh-experimental-webworker-packer',
-      '@deepseek-ai/dsh-experimental-webworker-runtime',
-      '@deepseek-ai/dsh-experimental-worktree',
+      '@reevo/dsh-experimental-api-speech-to-text',
+      '@reevo/dsh-experimental-auto-review',
+      '@reevo/dsh-experimental-badge-skill-bundle',
+      '@reevo/dsh-experimental-browser-use-chrome-devtools-mcp',
+      '@reevo/dsh-experimental-browser-use-playwright-mcp',
+      '@reevo/dsh-experimental-browser-use-runtime',
+      '@reevo/dsh-experimental-browser-use-stagehand-native',
+      '@reevo/dsh-experimental-claude-code-mods',
+      '@reevo/dsh-experimental-client-ui-claude-code-mods',
+      '@reevo/dsh-experimental-client-ui-cot-translation',
+      '@reevo/dsh-experimental-client-ui-forge',
+      '@reevo/dsh-experimental-client-ui-stats',
+      '@reevo/dsh-experimental-client-ui-voice-input',
+      '@reevo/dsh-experimental-computer-use-cua-driver-mcp',
+      '@reevo/dsh-experimental-computer-use-cua-driver-native',
+      '@reevo/dsh-experimental-cot-translation-bundle',
+      '@reevo/dsh-cua-bundle',
+      '@reevo/dsh-cua-macos',
+      '@reevo/dsh-cua-mcp',
+      '@reevo/dsh-cua-windows',
+      '@reevo/dsh-cua',
+      '@reevo/dsh-deepseek-chat-import',
+      '@reevo/dsh-experimental-forge-bundle',
+      '@reevo/dsh-experimental-forge-github',
+      '@reevo/dsh-forge-gitlab',
+      '@reevo/dsh-experimental-forge-session',
+      '@reevo/dsh-experimental-forge',
+      '@reevo/dsh-hook-protocol',
+      '@reevo/dsh-hooks-claude-code',
+      '@reevo/dsh-hooks-codex',
+      '@reevo/dsh-experimental-inspector-profile',
+      '@reevo/dsh-experimental-inspector',
+      '@reevo/dsh-experimental-liveshare-protocol',
+      '@reevo/dsh-experimental-liveshare',
+      '@reevo/dsh-experimental-plugin-market-bundle',
+      '@reevo/dsh-experimental-ralph-bundle',
+      '@reevo/dsh-experimental-session-inspector',
+      '@reevo/dsh-experimental-session-search',
+      '@reevo/dsh-session-title-all-prompts-llm',
+      '@reevo/dsh-experimental-session-titles-bundle',
+      '@reevo/dsh-skill-badge',
+      '@reevo/dsh-experimental-speech-to-text-sensevoice',
+      '@reevo/dsh-experimental-speech-to-text',
+      '@reevo/dsh-experimental-subagent-oar',
+      '@reevo/dsh-experimental-terminal-bundle',
+      '@reevo/dsh-terminal-panel',
+      '@reevo/dsh-timeline',
+      '@reevo/dsh-tool-ralph',
+      '@reevo/dsh-tool-session-query',
+      '@reevo/dsh-experimental-tool-subagent-oar',
+      '@reevo/dsh-tool-terminal',
+      '@reevo/dsh-experimental-tool-worktree',
+      '@reevo/dsh-experimental-translator',
+      '@reevo/dsh-experimental-voice-input-bundle',
+      '@reevo/dsh-webhook-github',
+      '@reevo/dsh-webhook',
+      '@reevo/dsh-experimental-webworker-packer',
+      '@reevo/dsh-experimental-webworker-runtime',
+      '@reevo/dsh-experimental-worktree',
     ])
   })
 
   it('excludes private applications from the publish set', () => {
     const root = mkdtempSync(join(tmpdir(), 'dsh-release-private-'))
     roots.push(root)
-    write(join(root, 'apps/public/package.json'), '{"name":"@deepseek-ai/dsh-public","version":"0.0.1"}\n')
-    write(join(root, 'apps/private/package.json'), '{"name":"@deepseek-ai/dsh-private","version":"0.0.1","private":true}\n')
+    write(join(root, 'apps/public/package.json'), '{"name":"@reevo/dsh-public","version":"0.0.1"}\n')
+    write(join(root, 'apps/private/package.json'), '{"name":"@reevo/dsh-private","version":"0.0.1","private":true}\n')
 
-    expect(releaseFamily('dsh').members(root).map(entry => entry.name)).toEqual(['@deepseek-ai/dsh-public'])
+    expect(releaseFamily('dsh').members(root).map(entry => entry.name)).toEqual(['@reevo/dsh-public'])
   })
 
   it('publishes unlisted experimental packages while retaining private exclusions', () => {
     const root = mkdtempSync(join(tmpdir(), 'dsh-release-experimental-'))
     roots.push(root)
     write(join(root, 'packages/experimental/prototype/package.json'), JSON.stringify({
-      name: '@deepseek-ai/dsh-experimental-prototype',
+      name: '@reevo/dsh-experimental-prototype',
       version: '0.0.1',
       publishConfig: { access: 'public' },
     }))
     write(join(root, 'packages/experimental/inspector/package.json'), JSON.stringify({
-      name: '@deepseek-ai/dsh-experimental-inspector',
+      name: '@reevo/dsh-experimental-inspector',
       version: '0.0.1',
       private: true,
     }))
 
     expect(releaseFamily('dsh').members(root).map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-experimental-prototype',
+      '@reevo/dsh-experimental-prototype',
     ])
   })
 
@@ -148,7 +148,7 @@ describe('release families', () => {
     write(join(root, 'packages/core/unselected/package.json'), '{"version":"0.0.1"}\n')
 
     const dsh = releaseFamily('dsh')
-    const published = member('packages/core/published', '@deepseek-ai/dsh-published')
+    const published = member('packages/core/published', '@reevo/dsh-published')
     const { planned } = planShared(dsh, root, [published], '0.0.2')
 
     expect(planned.map(entry => ({ path: entry.manifestPath, tag: entry.tag }))).toEqual([
@@ -167,7 +167,7 @@ describe('release families', () => {
       write(join(root, 'package.json'), '{"version":"0.0.1"}\n')
 
       const dsh = releaseFamily('dsh')
-      const published = member('packages/core/published', '@deepseek-ai/dsh-published')
+      const published = member('packages/core/published', '@reevo/dsh-published')
       const plan = planShared(dsh, root, [published], version)
 
       expect(plan.version).toBe(version)
@@ -242,15 +242,15 @@ describe('release families', () => {
   it('publishes a dependency before its consumer, and orders ties by name', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/consumer', '@deepseek-ai/dsh-consumer', { dependencies: { '@deepseek-ai/dsh-library': 'workspace:^' } }),
-      member('packages/a/library', '@deepseek-ai/dsh-library'),
-      member('packages/a/zebra', '@deepseek-ai/dsh-zebra'),
+      member('packages/a/consumer', '@reevo/dsh-consumer', { dependencies: { '@reevo/dsh-library': 'workspace:^' } }),
+      member('packages/a/library', '@reevo/dsh-library'),
+      member('packages/a/zebra', '@reevo/dsh-zebra'),
     ]
 
     expect(dsh.publishOrder(members).order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-library',
-      '@deepseek-ai/dsh-consumer',
-      '@deepseek-ai/dsh-zebra',
+      '@reevo/dsh-library',
+      '@reevo/dsh-consumer',
+      '@reevo/dsh-zebra',
     ])
   })
 
@@ -280,13 +280,13 @@ describe('release families', () => {
 
   it.each(['dependencies', 'optionalDependencies', 'peerDependencies'])(
     'requires exact packed DSH %s while preserving external ranges', (section) => {
-      const pkg = member('packages/example/provider', '@deepseek-ai/dsh-provider')
+      const pkg = member('packages/example/provider', '@reevo/dsh-provider')
       const family = releaseFamily('dsh')
-      const manifest = { name: pkg.name, version: pkg.version, [section]: { '@deepseek-ai/dsh-tools': pkg.version, external: '^4.0.0' } }
+      const manifest = { name: pkg.name, version: pkg.version, [section]: { '@reevo/dsh-tools': pkg.version, external: '^4.0.0' } }
       expect(() => { family.validatePackedManifest(pkg, manifest) }).not.toThrow()
       for (const range of ['workspace:*', '^0.0.1', '~0.0.1', '0.0.2', '*']) {
-        expect(() => { family.validatePackedManifest(pkg, { ...manifest, [section]: { '@deepseek-ai/dsh-tools': range } }) })
-          .toThrow(`packed ${section}.@deepseek-ai/dsh-tools must equal`)
+        expect(() => { family.validatePackedManifest(pkg, { ...manifest, [section]: { '@reevo/dsh-tools': range } }) })
+          .toThrow(`packed ${section}.@reevo/dsh-tools must equal`)
       }
     },
   )
@@ -294,7 +294,7 @@ describe('release families', () => {
   it('checks packed identities and preserves independent vendor versions', () => {
     const pkg = member('vendor/example', '@deepseek-ai/example')
     const family = releaseFamily('vendor')
-    expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: pkg.version, dependencies: { '@deepseek-ai/dsh-tools': '^4.0.0' } }) })
+    expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: pkg.version, dependencies: { '@reevo/dsh-tools': '^4.0.0' } }) })
       .not.toThrow()
     expect(() => { family.validatePackedManifest(pkg, { name: '@deepseek-ai/other', version: pkg.version }) }).toThrow('packed identity')
     expect(() => { family.validatePackedManifest(pkg, { name: pkg.name, version: '0.0.2' }) }).toThrow('packed identity')
@@ -303,8 +303,8 @@ describe('release families', () => {
   it('reports a runtime dependency cycle instead of emitting an arbitrary order', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/left', '@deepseek-ai/dsh-left', { dependencies: { '@deepseek-ai/dsh-right': 'workspace:^' } }),
-      member('packages/a/right', '@deepseek-ai/dsh-right', { dependencies: { '@deepseek-ai/dsh-left': 'workspace:^' } }),
+      member('packages/a/left', '@reevo/dsh-left', { dependencies: { '@reevo/dsh-right': 'workspace:^' } }),
+      member('packages/a/right', '@reevo/dsh-right', { dependencies: { '@reevo/dsh-left': 'workspace:^' } }),
     ]
 
     expect(() => { dsh.publishOrder(members) }).toThrow(/dependency cycle/)
@@ -313,44 +313,44 @@ describe('release families', () => {
   it('publishes a peer before its consumer', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/consumer', '@deepseek-ai/dsh-consumer', { peerDependencies: { '@deepseek-ai/dsh-zebra': 'workspace:^' } }),
-      member('packages/a/zebra', '@deepseek-ai/dsh-zebra'),
+      member('packages/a/consumer', '@reevo/dsh-consumer', { peerDependencies: { '@reevo/dsh-zebra': 'workspace:^' } }),
+      member('packages/a/zebra', '@reevo/dsh-zebra'),
     ]
 
     // Name order alone would place the consumer first; the peer edge moves it.
     expect(dsh.publishOrder(members).order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-zebra',
-      '@deepseek-ai/dsh-consumer',
+      '@reevo/dsh-zebra',
+      '@reevo/dsh-consumer',
     ])
   })
 
   it('orders around a peer cycle rather than refusing to publish, and reports the edge it dropped', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/left', '@deepseek-ai/dsh-left', { peerDependencies: { '@deepseek-ai/dsh-right': 'workspace:^' } }),
-      member('packages/a/right', '@deepseek-ai/dsh-right', { peerDependencies: { '@deepseek-ai/dsh-left': 'workspace:^' } }),
+      member('packages/a/left', '@reevo/dsh-left', { peerDependencies: { '@reevo/dsh-right': 'workspace:^' } }),
+      member('packages/a/right', '@reevo/dsh-right', { peerDependencies: { '@reevo/dsh-left': 'workspace:^' } }),
     ]
 
     // Sibling packages declare each other as peers, and npm treats an unmet peer
     // as a warning, so this pair has to publish rather than fail the release.
     const plan = dsh.publishOrder(members)
     expect(plan.order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-right',
-      '@deepseek-ai/dsh-left',
+      '@reevo/dsh-right',
+      '@reevo/dsh-left',
     ])
     // One of the two edges has to give, and which one it is belongs in the log.
     expect(plan.droppedPeerEdges).toEqual([
-      { consumer: '@deepseek-ai/dsh-right', peer: '@deepseek-ai/dsh-left' },
+      { consumer: '@reevo/dsh-right', peer: '@reevo/dsh-left' },
     ])
   })
 
   it('honours an install edge even when a peer cycle surrounds it', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/base', '@deepseek-ai/dsh-base', { peerDependencies: { '@deepseek-ai/dsh-consumer': 'workspace:^' } }),
-      member('packages/a/consumer', '@deepseek-ai/dsh-consumer', {
-        dependencies: { '@deepseek-ai/dsh-base': 'workspace:^' },
-        peerDependencies: { '@deepseek-ai/dsh-base': 'workspace:^' },
+      member('packages/a/base', '@reevo/dsh-base', { peerDependencies: { '@reevo/dsh-consumer': 'workspace:^' } }),
+      member('packages/a/consumer', '@reevo/dsh-consumer', {
+        dependencies: { '@reevo/dsh-base': 'workspace:^' },
+        peerDependencies: { '@reevo/dsh-base': 'workspace:^' },
       }),
     ]
 
@@ -358,48 +358,48 @@ describe('release families', () => {
     // would reverse it is the one dropped.
     const plan = dsh.publishOrder(members)
     expect(plan.order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-base',
-      '@deepseek-ai/dsh-consumer',
+      '@reevo/dsh-base',
+      '@reevo/dsh-consumer',
     ])
     expect(plan.droppedPeerEdges).toEqual([
-      { consumer: '@deepseek-ai/dsh-base', peer: '@deepseek-ai/dsh-consumer' },
+      { consumer: '@reevo/dsh-base', peer: '@reevo/dsh-consumer' },
     ])
   })
 
   it('refuses an order that would publish a consumer before a dependency it installs', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/alpha', '@deepseek-ai/dsh-alpha', { peerDependencies: { '@deepseek-ai/dsh-bravo': 'workspace:^' } }),
-      member('packages/a/bravo', '@deepseek-ai/dsh-bravo', { peerDependencies: { '@deepseek-ai/dsh-charlie': 'workspace:^' } }),
-      member('packages/a/charlie', '@deepseek-ai/dsh-charlie', { dependencies: { '@deepseek-ai/dsh-alpha': 'workspace:^' } }),
+      member('packages/a/alpha', '@reevo/dsh-alpha', { peerDependencies: { '@reevo/dsh-bravo': 'workspace:^' } }),
+      member('packages/a/bravo', '@reevo/dsh-bravo', { peerDependencies: { '@reevo/dsh-charlie': 'workspace:^' } }),
+      member('packages/a/charlie', '@reevo/dsh-charlie', { dependencies: { '@reevo/dsh-alpha': 'workspace:^' } }),
     ]
 
     // A cycle of two peer edges closed by one install edge: dropping a peer edge
     // would order this, and the traversal drops the install edge instead. That
     // order would publish charlie before the alpha it installs, so it is refused
     // here rather than published.
-    expect(() => { dsh.publishOrder(members) }).toThrow(/no publish order honours @deepseek-ai\/dsh-charlie -> @deepseek-ai\/dsh-alpha/)
+    expect(() => { dsh.publishOrder(members) }).toThrow(/no publish order honours @reevo\/dsh-charlie -> @reevo\/dsh-alpha/)
   })
 
   it('ignores devDependencies when ordering', () => {
     const dsh = releaseFamily('dsh')
     const members = [
-      member('packages/a/alpha', '@deepseek-ai/dsh-alpha', { devDependencies: { '@deepseek-ai/dsh-zebra': 'workspace:^' } }),
-      member('packages/a/zebra', '@deepseek-ai/dsh-zebra'),
+      member('packages/a/alpha', '@reevo/dsh-alpha', { devDependencies: { '@reevo/dsh-zebra': 'workspace:^' } }),
+      member('packages/a/zebra', '@reevo/dsh-zebra'),
     ]
 
     // A dev dependency is absent from the published package, so it must not move
     // the consumer behind it.
     expect(dsh.publishOrder(members).order.map(entry => entry.name)).toEqual([
-      '@deepseek-ai/dsh-alpha',
-      '@deepseek-ai/dsh-zebra',
+      '@reevo/dsh-alpha',
+      '@reevo/dsh-zebra',
     ])
   })
 
   it('accepts the harness payload and keeps upstream payloads for vendored packages', () => {
     const dsh = releaseFamily('dsh')
     const vendor = releaseFamily('vendor')
-    const harness = member('packages/a/library', '@deepseek-ai/dsh-library')
+    const harness = member('packages/a/library', '@reevo/dsh-library')
     const vendored = member('vendor/cordis', '@deepseek-ai/cordis')
 
     expect(() => { dsh.validatePayload(harness, ['package/lib/index.js', 'package/lib/index.js.map', 'package/src/index.ts']) }).not.toThrow()
@@ -512,7 +512,7 @@ describe('payload change judgement', () => {
     // unnecessary patch bump, while under-reporting fails the next publish on a
     // version whose bytes moved.
     expect(reachesPayload(sourceShipping, 'vendor/cosmokit/README.i18n.yaml')).toBe(true)
-    expect(reachesPayload(member('packages/a/library', '@deepseek-ai/dsh-library', { files: ['lib/index.js'] }),
+    expect(reachesPayload(member('packages/a/library', '@reevo/dsh-library', { files: ['lib/index.js'] }),
       'packages/a/library/tests/library.spec.ts')).toBe(false)
   })
 })

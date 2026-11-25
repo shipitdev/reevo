@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-deepseek-account",
+  "name": "@reevo/dsh-deepseek-account",
   "description": "Sign in to DeepSeek and manage account credentials and notifications",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -55,22 +55,22 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-authorization": "workspace:*",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-authorization": "workspace:*",
+    "@reevo/dsh-credentials": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-authorization": "workspace:*",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-authorization": "workspace:*",
+    "@reevo/dsh-credentials": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "workspace:~",

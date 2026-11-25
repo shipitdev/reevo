@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tmux-context",
+  "name": "@reevo/dsh-tmux-context",
   "description": "Opt-in durable per-step context with this agent's tmux pane and window location",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -36,21 +36,21 @@
     "zod": "4.6.6"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-shell": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@reevo/dsh-session-projection": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-shell": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-loop-testkit": "workspace:*",
+    "@reevo/dsh-shell": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@reevo/dsh-session-projection": "workspace:*"
   }
 }

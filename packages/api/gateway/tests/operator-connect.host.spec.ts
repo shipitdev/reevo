@@ -10,15 +10,15 @@ import { pathToFileURL } from 'node:url'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import * as Connection from '@deepseek-ai/dsh-client-connection'
-import * as Token from '@deepseek-ai/dsh-host-authentication-token'
-import { BrowserAuth } from '@deepseek-ai/dsh-host-authentication-token/src/browser-auth.ts'
-import LocalCredentials from '@deepseek-ai/dsh-credentials-local'
-import WebServer from '@deepseek-ai/dsh-host-webserver'
-import * as FrontendStatic from '@deepseek-ai/dsh-host-frontend-static'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
-import TypertGateway from '@deepseek-ai/dsh-api-gateway'
-import RemoteAccess from '@deepseek-ai/dsh-api-remote-access'
+import * as Connection from '@reevo/dsh-client-connection'
+import * as Token from '@reevo/dsh-host-authentication-token'
+import { BrowserAuth } from '@reevo/dsh-host-authentication-token/src/browser-auth.ts'
+import LocalCredentials from '@reevo/dsh-credentials-local'
+import WebServer from '@reevo/dsh-host-webserver'
+import * as FrontendStatic from '@reevo/dsh-host-frontend-static'
+import TypertRegistry from '@reevo/dsh-typert-registry'
+import TypertGateway from '@reevo/dsh-api-gateway'
+import RemoteAccess from '@reevo/dsh-api-remote-access'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import WebSocket, { WebSocketServer } from 'ws'
 import { z } from 'zod'
@@ -352,7 +352,7 @@ describe('operator connect through Loader composition', () => {
       await finish.promise
       await dispose()
     })
-    const token = [...host.ctx.loader.entries()].find(entry => entry.options.name === 'cordis:@deepseek-ai/dsh-host-authentication-token')
+    const token = [...host.ctx.loader.entries()].find(entry => entry.options.name === 'cordis:@reevo/dsh-host-authentication-token')
     if (token?.fiber === undefined) throw new Error('Token provider did not activate')
     const entered = Promise.withResolvers<undefined>()
     const resume = Promise.withResolvers<undefined>()
@@ -439,14 +439,14 @@ async function boot(): Promise<Host> {
   await writeFile(distIndex, '<head></head><body>operator fixture</body>')
   const configPath = join(root, 'cordis.yml')
   const rows = [
-    { name: '@deepseek-ai/dsh-credentials-local', config: { path: join(root, '.credentials.yaml'), watch: false } },
-    { name: '@deepseek-ai/dsh-host-webserver', config: { host: '127.0.0.1', port: 0 } },
-    { name: '@deepseek-ai/dsh-client-connection' },
-    { name: '@deepseek-ai/dsh-host-authentication-token' },
-    { name: '@deepseek-ai/dsh-host-frontend-static', config: { distIndex } },
-    { name: '@deepseek-ai/dsh-typert-registry' },
-    { name: '@deepseek-ai/dsh-api-remote-access' },
-    { name: '@deepseek-ai/dsh-api-gateway' },
+    { name: '@reevo/dsh-credentials-local', config: { path: join(root, '.credentials.yaml'), watch: false } },
+    { name: '@reevo/dsh-host-webserver', config: { host: '127.0.0.1', port: 0 } },
+    { name: '@reevo/dsh-client-connection' },
+    { name: '@reevo/dsh-host-authentication-token' },
+    { name: '@reevo/dsh-host-frontend-static', config: { distIndex } },
+    { name: '@reevo/dsh-typert-registry' },
+    { name: '@reevo/dsh-api-remote-access' },
+    { name: '@reevo/dsh-api-gateway' },
     { name: '@fixture/operator-connect' },
   ]
   await writeFile(configPath, rows.map(row => `- ${JSON.stringify({ ...row, name: `cordis:${row.name}` })}`).join('\n') + '\n')
@@ -456,14 +456,14 @@ async function boot(): Promise<Host> {
     await ctx.plugin(Loader)
     Object.assign(ctx.loader.builtins, {
       include: Include,
-      '@deepseek-ai/dsh-credentials-local': LocalCredentials,
-      '@deepseek-ai/dsh-host-webserver': WebServer,
-      '@deepseek-ai/dsh-client-connection': Connection,
-      '@deepseek-ai/dsh-host-authentication-token': Token,
-      '@deepseek-ai/dsh-host-frontend-static': FrontendStatic,
-      '@deepseek-ai/dsh-typert-registry': TypertRegistry,
-      '@deepseek-ai/dsh-api-remote-access': RemoteAccess,
-      '@deepseek-ai/dsh-api-gateway': TypertGateway,
+      '@reevo/dsh-credentials-local': LocalCredentials,
+      '@reevo/dsh-host-webserver': WebServer,
+      '@reevo/dsh-client-connection': Connection,
+      '@reevo/dsh-host-authentication-token': Token,
+      '@reevo/dsh-host-frontend-static': FrontendStatic,
+      '@reevo/dsh-typert-registry': TypertRegistry,
+      '@reevo/dsh-api-remote-access': RemoteAccess,
+      '@reevo/dsh-api-gateway': TypertGateway,
       '@fixture/operator-connect': OperatorConnectFixture,
     })
     await ctx.loader.create({ name: 'cordis:include', config: { path: pathToFileURL(configPath).href } })

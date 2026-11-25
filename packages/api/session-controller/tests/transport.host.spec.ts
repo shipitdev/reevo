@@ -1,15 +1,15 @@
 import { Context } from '@deepseek-ai/cordis'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent, SessionHeader, SurfaceIntent } from '@deepseek-ai/dsh-session'
-import type { SessionObservation } from '@deepseek-ai/dsh-session-query'
-import { snapshotSubagentDescriptor } from '@deepseek-ai/dsh-subagent'
-import { subagentIdentityProjectionDefinition } from '@deepseek-ai/dsh-subagent/src/projection.ts'
+import { createScope } from '@reevo/dsh-scope'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@reevo/dsh-session'
+import type { Session, SessionEvent, SessionHeader, SurfaceIntent } from '@reevo/dsh-session'
+import type { SessionObservation } from '@reevo/dsh-session-query'
+import { snapshotSubagentDescriptor } from '@reevo/dsh-subagent'
+import { subagentIdentityProjectionDefinition } from '@reevo/dsh-subagent/src/projection.ts'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { HistoryController } from '../src/history/controller.ts'
 import { WebController } from '../src/web/controller.ts'
 import { installSessionReadTestServices, testSessionPersistence } from './test-remote.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const signal = (): AbortSignal => new AbortController().signal
 

@@ -2,8 +2,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { mkdir, symlink, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import type { FsVersion } from '@deepseek-ai/dsh-fs'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { FsVersion } from '@reevo/dsh-fs'
+import { brandString } from '@reevo/dsh-brand'
 import { failureOf, openWorkspace, signal, type Harness } from './harness.ts'
 
 let harness: Harness

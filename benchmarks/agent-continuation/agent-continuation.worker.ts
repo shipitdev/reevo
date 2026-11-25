@@ -3,14 +3,14 @@
 import { performance } from 'node:perf_hooks'
 import { scheduler } from 'node:timers/promises'
 import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import type { Agent, AgentHandle } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createUserMessage, LlmAdapter } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import type { Agent, AgentHandle } from '@reevo/dsh-agent'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import { createUserMessage, LlmAdapter } from '@reevo/dsh-llm'
+import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@reevo/dsh-llm'
+import { SESSION_FORMAT_VERSION } from '@reevo/dsh-session'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 import { assertBuiltBenchmarkRuntime } from '../support/built-worker.ts'
 import { PARENT_ID, response, resultText, syntheticHistory, TIME_ZERO, WORKLOAD } from './workload.ts'
 
@@ -127,8 +127,8 @@ async function measure(root: string, scenario: string): Promise<ContinuationRepo
 }
 
 assertBuiltBenchmarkRuntime(import.meta.url, Object.fromEntries([
-  '@deepseek-ai/dsh-agent-loop', '@deepseek-ai/dsh-session', '@deepseek-ai/dsh-llm',
-  '@deepseek-ai/dsh-tools', '@deepseek-ai/dsh-session-persistence-jsonl',
+  '@reevo/dsh-agent-loop', '@reevo/dsh-session', '@reevo/dsh-llm',
+  '@reevo/dsh-tools', '@reevo/dsh-session-persistence-jsonl',
 ].map(name => [name, import.meta.resolve(name)])))
 const [root, scenario] = process.argv.slice(2)
 if (root === undefined || scenario === undefined || !['seed', 'request-history', 'tool-continuation'].includes(scenario)) {

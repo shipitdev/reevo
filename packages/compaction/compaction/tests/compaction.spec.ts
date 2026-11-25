@@ -1,21 +1,21 @@
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CompactionId } from '@deepseek-ai/dsh-compaction/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { CompactionId } from '@reevo/dsh-compaction/types'
 import {
   CompactionEngine,
   compactCheckpointSource,
   isCompactCheckpointSource,
-} from '@deepseek-ai/dsh-compaction'
-import type { CompactionResult, CompactionTrigger } from '@deepseek-ai/dsh-compaction'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionSeq } from '@deepseek-ai/dsh-session'
-import type { CompactionAgentContext } from '@deepseek-ai/dsh-compaction'
-import type { ManualCompactAgentContext } from '@deepseek-ai/dsh-compaction'
+} from '@reevo/dsh-compaction'
+import type { CompactionResult, CompactionTrigger } from '@reevo/dsh-compaction'
+import { Session, type SessionId } from '@reevo/dsh-session'
+import type { SessionSeq } from '@reevo/dsh-session'
+import type { CompactionAgentContext } from '@reevo/dsh-compaction'
+import type { ManualCompactAgentContext } from '@reevo/dsh-compaction'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'other': { kind: 'other' } & ContextFormed
   }

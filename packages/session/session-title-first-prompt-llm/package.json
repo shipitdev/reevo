@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-session-title-first-prompt-llm",
+  "name": "@reevo/dsh-session-title-first-prompt-llm",
   "description": "First-message LLM provider plugin for DeepSeek Harness session titles",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -31,30 +31,30 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*",
-    "@deepseek-ai/dsh-session-title-llm": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-title": "workspace:*",
+    "@reevo/dsh-session-title-llm": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~"
   },
   "devDependencies": {
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek": "workspace:*",
-    "@deepseek-ai/dsh-llm-deepseek-api-key": "workspace:*",
-    "@deepseek-ai/dsh-llm-pi-ai": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-title": "workspace:*",
-    "@deepseek-ai/dsh-session-title-llm": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-llm-deepseek": "workspace:*",
+    "@reevo/dsh-llm-deepseek-api-key": "workspace:*",
+    "@reevo/dsh-llm-pi-ai": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-title": "workspace:*",
+    "@reevo/dsh-session-title-llm": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*",
-    "@deepseek-ai/dsh-deepseek-auth": "workspace:*"
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-agent-loop": "workspace:*",
+    "@reevo/dsh-deepseek-auth": "workspace:*"
   }
 }

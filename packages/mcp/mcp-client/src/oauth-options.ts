@@ -1,6 +1,6 @@
 /** Configuration for explicit MCP OAuth authorization. */
 import z from '@deepseek-ai/schemastery'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import { MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
 
 /** One server's credential identity and authorization budgets. */
 export interface McpOAuthConfig {

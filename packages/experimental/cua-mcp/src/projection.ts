@@ -1,7 +1,7 @@
 /** MCP projection of one DSH tool execution: text passes through, screenshots become inline images. @module */
-import type { AttachmentStore, ImageAttachmentRef, ImageRequestTarget } from '@deepseek-ai/dsh-attachment'
-import type { ContentBlock, UserMessage } from '@deepseek-ai/dsh-llm'
-import type { ToolExecutionResult } from '@deepseek-ai/dsh-tools'
+import type { AttachmentStore, ImageAttachmentRef, ImageRequestTarget } from '@reevo/dsh-attachment'
+import type { ContentBlock, UserMessage } from '@reevo/dsh-llm'
+import type { ToolExecutionResult } from '@reevo/dsh-tools'
 import type { CallToolResult } from '@modelcontextprotocol/server'
 
 /** Image delivery for one projection: the request version the program observed, or the stored image. */

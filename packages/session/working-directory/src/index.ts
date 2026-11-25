@@ -1,18 +1,18 @@
 /**
  * Session working directories, durable changes, and model context.
- * @module @deepseek-ai/dsh-working-directory
+ * @module @reevo/dsh-working-directory
  */
 
 import { isAbsolute } from 'node:path'
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import { z as zod } from 'zod'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-fs'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-system-prompt'
+import type { Agent } from '@reevo/dsh-agent'
+import type {} from '@reevo/dsh-fs'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { Session } from '@reevo/dsh-session'
+import type { ProjectionHandle } from '@reevo/dsh-session-projection'
+import type {} from '@reevo/dsh-system-prompt'
 import { WorkingDirectoryError } from './error.ts'
 
 export type * from './types.ts'
@@ -40,7 +40,7 @@ declare module '@deepseek-ai/cordis' {
   }
 }
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     /**
      * Committed working-directory transition notices.
@@ -50,7 +50,7 @@ declare module '@deepseek-ai/dsh-llm' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@reevo/dsh-session/types' {
   interface SessionEventMap {
     /**
      * Directory change recorded by releases whose model could move the directory. Readers ignore it: a

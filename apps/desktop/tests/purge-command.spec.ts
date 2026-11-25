@@ -31,7 +31,7 @@ it('forwards the documented pnpm purge command through both package scripts to t
     await symlink(join(root, 'node_modules', dependency), join(directory, 'node_modules', dependency), 'junction')
   }
   await mkdir(join(directory, 'node_modules/@deepseek-ai'), { recursive: true })
-  const publisher = join(directory, 'node_modules/@deepseek-ai/dsh-desktop-publisher')
+  const publisher = join(directory, 'node_modules/@reevo/dsh-desktop-publisher')
   await mkdir(publisher)
   await writeFile(join(publisher, 'package.json'), JSON.stringify({ type: 'module', exports: { './*': './*' } }))
   await copyFile(join(root, 'apps/desktop-publisher/src/desktop-auto-update-environment.mjs'), join(publisher, 'desktop-auto-update-environment.mjs'))

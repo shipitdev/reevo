@@ -2,8 +2,8 @@
 /** Reference insertion from outside the composer follows Session, submission, and disposal state. */
 import { expect, it, onTestFinished, vi } from 'vitest'
 import type { Context } from '@deepseek-ai/cordis'
-import type { SessionSnapshot } from '@deepseek-ai/dsh-api-session-controller/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+import type { SessionSnapshot } from '@reevo/dsh-api-session-controller/client'
+import type { SessionId } from '@reevo/dsh-session/types'
 import type { ComposerBlock } from '../src/client/contract/composer-blocks.ts'
 import type { ReferenceInsert } from '../src/client/contract/draft-editor.ts'
 import type { SubmitOutcome } from '../src/client/contract/input.ts'

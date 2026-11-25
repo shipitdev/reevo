@@ -1,10 +1,10 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import type { Context } from '@deepseek-ai/cordis'
-import { AttachmentError } from '@deepseek-ai/dsh-attachment'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ImageAttachmentRef, SaveImageAttachment } from '@deepseek-ai/dsh-attachment'
-import type { ModelSelection } from '@deepseek-ai/dsh-agent'
+import { AttachmentError } from '@reevo/dsh-attachment'
+import type { AttachmentId } from '@reevo/dsh-attachment/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { ImageAttachmentRef, SaveImageAttachment } from '@reevo/dsh-attachment'
+import type { ModelSelection } from '@reevo/dsh-agent'
 import {
   AcpContentError,
   admitAcpPrompt,

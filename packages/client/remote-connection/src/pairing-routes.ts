@@ -2,9 +2,9 @@
 
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-client-connection'
-import type { ConnectionTrustRequest } from '@deepseek-ai/dsh-client-connection'
-import { normalizeBindAddress } from '@deepseek-ai/dsh-host-webserver'
+import type {} from '@reevo/dsh-client-connection'
+import type { ConnectionTrustRequest } from '@reevo/dsh-client-connection'
+import { normalizeBindAddress } from '@reevo/dsh-host-webserver'
 import { z } from 'zod'
 import type { PairingRequestId } from './pairing-types.ts'
 import type { PairingRequests } from './pairing-requests.ts'

@@ -1,14 +1,14 @@
 /** Session messages activate targets through the Web Session controller and attribute the real sender. */
 
 import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type {} from '@deepseek-ai/dsh-api-session-controller'
-import { LlmAdapter, ToolCallId, type GenerateOptions, type StreamChunk } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
+import type { Agent } from '@reevo/dsh-agent'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
+import type {} from '@reevo/dsh-api-session-controller'
+import { LlmAdapter, ToolCallId, type GenerateOptions, type StreamChunk } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import type { SessionId } from '@reevo/dsh-session'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
+import { RemoteError } from '@reevo/dsh-typert-protocol'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import * as ToolSessionControl from '../src/index.ts'
 

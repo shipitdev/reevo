@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-plugin-recommendations",
+  "name": "@reevo/dsh-plugin-recommendations",
   "description": "Official plugin suggestions with explicit user activation and persistent conversation decisions",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -37,29 +37,29 @@
   },
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-plugin-manager": "workspace:*",
+    "@reevo/dsh-plugin-manager": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*"
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
-    "@deepseek-ai/dsh-api-remote-access": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*"
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-plugin-manager": "workspace:*",
+    "@reevo/dsh-package-manifest": "workspace:*",
+    "@reevo/dsh-api-remote-access": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*"
   },
   "dependencies": {
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-client-ui-plugin-recommendations": "workspace:*",
-    "@deepseek-ai/dsh-action-cards": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-action-cards": "workspace:*"
+    "@reevo/dsh-client-ui-plugin-recommendations": "workspace:*",
+    "@reevo/dsh-action-cards": "workspace:*",
+    "@reevo/dsh-client-ui-action-cards": "workspace:*"
   },
   "files": [
     "icon.svg",

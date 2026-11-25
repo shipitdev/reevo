@@ -1,7 +1,7 @@
 /** Complete-prompt transitions between recorded model requests. */
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-tools'
+import type {} from '@reevo/dsh-system-prompt'
+import type {} from '@reevo/dsh-tools'
 
 export const name = 'complete-prompt-update'
 export const inject = ['systemPrompt']

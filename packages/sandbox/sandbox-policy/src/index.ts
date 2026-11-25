@@ -19,20 +19,20 @@
  * reads session state once at each operation boundary; executors and providers
  * remain session-free.
  *
- * @module @deepseek-ai/dsh-sandbox-policy
+ * @module @reevo/dsh-sandbox-policy
  */
 
 import { isAbsolute } from 'node:path'
 import { Context, Service } from '@deepseek-ai/cordis'
 import { z as zod } from 'zod'
 import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-agent'
-import { SandboxInvalidRootError } from '@deepseek-ai/dsh-sandbox'
-import type { SandboxExecutionPolicy, SandboxMode } from '@deepseek-ai/dsh-sandbox'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type {} from '@reevo/dsh-agent'
+import { SandboxInvalidRootError } from '@reevo/dsh-sandbox'
+import type { SandboxExecutionPolicy, SandboxMode } from '@reevo/dsh-sandbox'
+import type { Session } from '@reevo/dsh-session'
+import type { ProjectionHandle } from '@reevo/dsh-session-projection'
+import type {} from '@reevo/dsh-system-prompt'
+import type {} from '@reevo/dsh-working-directory'
 
 export { SANDBOX_MODES, setSandboxMode } from './session-mode.ts'
 

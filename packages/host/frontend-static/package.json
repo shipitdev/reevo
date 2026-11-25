@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-host-frontend-static",
+  "name": "@reevo/dsh-host-frontend-static",
   "description": "SPA dist server for the Web shell: owns the webserver fallback seat, serving explicit index entries and static assets with traversal rejection and 404 misses",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -32,19 +32,19 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-host-authentication-token": "workspace:*",
+    "@reevo/dsh-host-authentication-token": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-credentials-local": "workspace:*",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-credentials-local": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

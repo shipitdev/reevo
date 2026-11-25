@@ -1,13 +1,13 @@
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
-import { createUserMessage, type ToolCallId , createMessage, createToolResultMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CompactionId } from '@deepseek-ai/dsh-compaction/types'
-import { compactCheckpointSource, toolPairingBalancedAfter, toolPairingBalancedBefore } from '@deepseek-ai/dsh-compaction'
-import { Session, type SessionId, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionSeq as SessionSeqType } from '@deepseek-ai/dsh-session'
+import { createUserMessage, type ToolCallId , createMessage, createToolResultMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import type { CompactionId } from '@reevo/dsh-compaction/types'
+import { compactCheckpointSource, toolPairingBalancedAfter, toolPairingBalancedBefore } from '@reevo/dsh-compaction'
+import { Session, type SessionId, SessionSeq } from '@reevo/dsh-session'
+import type { SessionEvent, SessionSeq as SessionSeqType } from '@reevo/dsh-session'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

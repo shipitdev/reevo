@@ -2,17 +2,17 @@
 import { expect, expectTypeOf, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import * as Cua from '../src/index.ts'
-import type { CuaActionSchema, CuaApi, CuaSurface } from '@deepseek-ai/dsh-cua/api'
-import type { JsonSchemaNode, ObjectJsonSchema } from '@deepseek-ai/dsh-tools'
-import type { CuaApplicationState, CuaSystemPermissionState } from '@deepseek-ai/dsh-cua/types'
+import type { CuaActionSchema, CuaApi, CuaSurface } from '@reevo/dsh-cua/api'
+import type { JsonSchemaNode, ObjectJsonSchema } from '@reevo/dsh-tools'
+import type { CuaApplicationState, CuaSystemPermissionState } from '@reevo/dsh-cua/types'
 // @ts-expect-error Permission payloads are not part of the platform-provider root entry.
-import type { CuaSystemPermissionState as RemovedRoot } from '@deepseek-ai/dsh-cua'
+import type { CuaSystemPermissionState as RemovedRoot } from '@reevo/dsh-cua'
 // @ts-expect-error The object API does not expose permission-page state.
-import type { CuaSystemPermissionState as RemovedApi } from '@deepseek-ai/dsh-cua/api'
+import type { CuaSystemPermissionState as RemovedApi } from '@reevo/dsh-cua/api'
 // @ts-expect-error Object interfaces use /api; /types is the generated Remote type entry.
-import type { CuaApi as RemovedTypes } from '@deepseek-ai/dsh-cua/types'
+import type { CuaApi as RemovedTypes } from '@reevo/dsh-cua/types'
 // @ts-expect-error The nested grant structure is internal, not an independently exported type.
-import type { CuaApplicationGrant as RemovedGrant } from '@deepseek-ai/dsh-cua/types'
+import type { CuaApplicationGrant as RemovedGrant } from '@reevo/dsh-cua/types'
 
 it('keeps application operations and the necessary Remote payload types available', () => {
   expectTypeOf<CuaApi>().toHaveProperty('getApp')

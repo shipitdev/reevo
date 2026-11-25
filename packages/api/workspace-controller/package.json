@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-api-workspace-controller",
+  "name": "@reevo/dsh-api-workspace-controller",
   "description": "Workspace Remote commands and reconnect-safe state transport",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -45,11 +45,11 @@
   "dsh": {
     "client": {
       "external": [
-        "@deepseek-ai/dsh-api-gateway/client"
+        "@reevo/dsh-api-gateway/client"
       ],
       "inject": [
-        "@deepseek-ai/dsh-api-gateway",
-        "@deepseek-ai/dsh-client-connection"
+        "@reevo/dsh-api-gateway",
+        "@reevo/dsh-client-connection"
       ],
       "platform": "web"
     }
@@ -75,34 +75,34 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-deque": "workspace:*",
-    "@deepseek-ai/dsh-native-command": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-deque": "workspace:*",
+    "@reevo/dsh-native-command": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-host-directory-picker": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-storage-domain": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*"
+    "@reevo/dsh-api-gateway": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-host-directory-picker": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-storage-domain": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-api-remote-access": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-host-directory-picker": "workspace:*",
-    "@deepseek-ai/dsh-remote-mock": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-storage-domain": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*"
+    "@reevo/dsh-api-gateway": "workspace:*",
+    "@reevo/dsh-api-remote-access": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-client-store": "workspace:*",
+    "@reevo/dsh-client-test-runtime": "workspace:*",
+    "@reevo/dsh-host-directory-picker": "workspace:*",
+    "@reevo/dsh-remote-mock": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-storage-domain": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*"
   }
 }

@@ -2,15 +2,15 @@ import { mountWorkingDirectoryFixture } from '../../../subagent/subagent/tests/w
 /** SDK shutdown releases managed descendants before their root Agents leave the registry. */
 
 import { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import SubagentRuntime, { NO_START_CAPABILITIES, type SubagentActivation } from '@deepseek-ai/dsh-subagent'
+import type { Agent } from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import type { SessionId } from '@reevo/dsh-session'
+import SubagentRuntime, { NO_START_CAPABILITIES, type SubagentActivation } from '@reevo/dsh-subagent'
 import { describe, expect, it, vi } from 'vitest'
 import { MockAdapter, textResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import { HarnessSdkJsonRpcServer } from '../src/server.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 async function setup() {
   const ctx = new Context()

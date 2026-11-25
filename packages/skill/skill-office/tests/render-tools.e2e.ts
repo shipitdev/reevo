@@ -4,8 +4,8 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execa } from 'execa'
 import { expect, it } from 'vitest'
-import { runLoaderSmoke } from '@deepseek-ai/dsh-loader-smoke'
-import { parseSessionLog } from '@deepseek-ai/dsh-llm-replay'
+import { runLoaderSmoke } from '@reevo/dsh-loader-smoke'
+import { parseSessionLog } from '@reevo/dsh-llm-replay'
 import { convertedPdfFiles, expectNoRenderContext, officeCalls, officeImages,
   officeModelPatches, officeToolPatches } from './fixtures/real-office.ts'
 
@@ -23,9 +23,9 @@ const launch = {
 async function prepareOffice(cwd: string) {
   await writeFile(join(cwd, 'office.patch.json'), JSON.stringify([
     ...officeModelPatches(),
-    { insert: [{ id: 'skill-office', name: '@deepseek-ai/dsh-skill-office', config: { assetRoot: join(repo, 'packages/skill/skill-office/assets') } }] },
+    { insert: [{ id: 'skill-office', name: '@reevo/dsh-skill-office', config: { assetRoot: join(repo, 'packages/skill/skill-office/assets') } }] },
     ...officeToolPatches(),
-    { insert: [{ id: 'workspace-dependencies', name: '@deepseek-ai/dsh-tool-workspace-dependencies', config: { source: runtime! } }] },
+    { insert: [{ id: 'workspace-dependencies', name: '@reevo/dsh-tool-workspace-dependencies', config: { source: runtime! } }] },
     { id: 'session-persistence-jsonl', config: { root: join(cwd, '.sessions'), compression: 'none' } },
   ]))
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-util-ripgrep",
+  "name": "@reevo/dsh-util-ripgrep",
   "description": "Packaged ripgrep resolution and subprocess streaming helpers",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -34,10 +34,10 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-subprocess": "workspace:*"
+    "@reevo/dsh-subprocess": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-subprocess": "workspace:*"
+    "@reevo/dsh-subprocess": "workspace:*"
   }
 }

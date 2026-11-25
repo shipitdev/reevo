@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import type { SessionEvent, SurfaceEvent, SurfaceEventType } from '@deepseek-ai/dsh-session'
+import type { SessionEvent, SurfaceEvent, SurfaceEventType } from '@reevo/dsh-session'
 import {
   Session,
   type SessionId,
@@ -11,9 +11,9 @@ import {
   isReplacementSurfaceEvent,
   isSurfaceEligibleType,
   isSurfaceEvent,
-} from '@deepseek-ai/dsh-session'
-import { SurfaceManager } from '@deepseek-ai/dsh-session/surface'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@reevo/dsh-session'
+import { SurfaceManager } from '@reevo/dsh-session/surface'
+import { brandString } from '@reevo/dsh-brand'
 import {
   type MessageId,
   type ToolCallId,
@@ -23,10 +23,10 @@ import {
   createToolResultMessage,
   createUserMessage,
   freezeMessage,
-} from '@deepseek-ai/dsh-llm'
-import type { ContextFormed, MessageSource } from '@deepseek-ai/dsh-llm'
+} from '@reevo/dsh-llm'
+import type { ContextFormed, MessageSource } from '@reevo/dsh-llm'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
     'watcher': { kind: 'watcher' } & ContextFormed

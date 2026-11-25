@@ -1,7 +1,7 @@
 /** Keyless two-model adapter for the generic ACP control-surface conformance test. */
 
 import type { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import {
   type ToolCallId,
   LlmAdapter,
@@ -9,7 +9,7 @@ import {
   type GenerateOptions,
   type LlmResolvedModelInfo,
   type StreamChunk,
-} from '@deepseek-ai/dsh-llm'
+} from '@reevo/dsh-llm'
 
 /** Adapter whose deterministic tool turn proves model selection and MCP attachment. */
 class ControlSurfaceAdapter extends LlmAdapter {

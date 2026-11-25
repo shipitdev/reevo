@@ -308,8 +308,8 @@ describe('release pack CLI', () => {
     const root = fixture()
     packageFixture(root, 'packages/util/alpha', '@deepseek-ai/alpha')
     packageFixture(root, 'apps/cli', '@reevo/cli', { files: ['lib/index.js', 'src/bin.ts'] })
-    packageFixture(root, 'packages/subagent/subagent-claude-code', '@deepseek-ai/dsh-subagent-claude-code')
-    packageFixture(root, 'packages/subagent/subagent-codex', '@deepseek-ai/dsh-subagent-codex')
+    packageFixture(root, 'packages/subagent/subagent-claude-code', '@reevo/dsh-subagent-claude-code')
+    packageFixture(root, 'packages/subagent/subagent-codex', '@reevo/dsh-subagent-codex')
     write(join(root, 'apps/cli/src/bin.ts'), 'export const bin = 1\n')
     write(join(root, 'apps/web/dist/index.html'), '<main></main>')
     writeClientBuildRecord(root, officialClientBuildEnvironment(root, { DSH_CLIENT_COMMIT_HASH: commit }))
@@ -325,12 +325,12 @@ describe('release pack CLI', () => {
   it.each(['dependencies', 'optionalDependencies', 'peerDependencies'])(
     'rejects nonexact DSH %s in the produced tarball before recording publication', async (section) => {
       const root = fixture()
-      packageFixture(root, 'packages/util/probe', '@deepseek-ai/dsh-probe', { [section]: { '@deepseek-ai/dsh-library': '^1.2.3' } })
+      packageFixture(root, 'packages/util/probe', '@reevo/dsh-probe', { [section]: { '@reevo/dsh-library': '^1.2.3' } })
       write(join(root, 'apps/web/dist/index.html'), '<main></main>')
       writeClientBuildRecord(root, officialClientBuildEnvironment(root, { DSH_CLIENT_COMMIT_HASH: commit }))
       const result = await runPack(root, ['--family', 'dsh'])
       expect(result.status).not.toBe(0)
-      expect(result.stderr).toContain(`packed ${section}.@deepseek-ai/dsh-library must equal 1.2.3`)
+      expect(result.stderr).toContain(`packed ${section}.@reevo/dsh-library must equal 1.2.3`)
       expect(existsSync(join(root, 'packed', PUBLISH_ORDER_FILE))).toBe(false)
     },
   )

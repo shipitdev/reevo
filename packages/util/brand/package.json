@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-brand",
+  "name": "@reevo/dsh-brand",
   "description": "Stateless branded primitive types for the DeepSeek Harness",
   "version": "0.2.3-alpha.2",
   "publishConfig": {

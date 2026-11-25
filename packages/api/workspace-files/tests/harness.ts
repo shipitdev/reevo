@@ -12,11 +12,11 @@ import { mkdir, mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import { LocalFileSystem } from '@deepseek-ai/dsh-fs-local'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { remoteErrorOf } from '@deepseek-ai/dsh-typert-protocol'
+import { LocalFileSystem } from '@reevo/dsh-fs-local'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { remoteErrorOf } from '@reevo/dsh-typert-protocol'
 import { WorkspaceFiles, type Config, type WorkspaceFileScope } from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 /** Build the header-derived scope that direct service calls receive after Typert lookup. */
 function fileScope(workspaceRoot: string): WorkspaceFileScope {

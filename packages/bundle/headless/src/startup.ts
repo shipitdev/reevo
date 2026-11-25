@@ -3,14 +3,14 @@
  * Session identity, permission options, output mode, and help, then publishes
  * {@link HEADLESS_STARTUP_SERVICE}. The runner is an ordinary consumer whose
  * lazy config waits for that service.
- * @module @deepseek-ai/dsh-headless/startup
+ * @module @reevo/dsh-headless/startup
  */
 
 import { Command, CommanderError, Option } from 'commander'
 import { isAbsolute } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'
-import { parseCmdline } from '@deepseek-ai/dsh-cmdline'
-import { APPROVAL_POLICIES, type ApprovalPolicy } from '@deepseek-ai/dsh-user-approval'
+import { parseCmdline } from '@reevo/dsh-cmdline'
+import { APPROVAL_POLICIES, type ApprovalPolicy } from '@reevo/dsh-user-approval'
 import { boundJsonLine } from './json-stream.ts'
 import { internals } from './startup-internals.ts'
 

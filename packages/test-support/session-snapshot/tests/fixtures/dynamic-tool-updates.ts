@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict'
 import type { Context } from '@deepseek-ai/cordis'
-import { projectToolUpdates } from '@deepseek-ai/dsh-llm'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { projectToolUpdates } from '@reevo/dsh-llm'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 
 export const name = 'snapshot-dynamic-tool-updates'
 export const inject = ['tools']

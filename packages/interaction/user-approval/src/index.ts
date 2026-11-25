@@ -1,26 +1,26 @@
 /**
  * Service Definition for the approval capability seam, covering requests, cancellation, audit, and per-session policy. Missing
  * answerers fail closed; grants apply only to the requested action.
- * @module @deepseek-ai/dsh-user-approval
+ * @module @reevo/dsh-user-approval
  */
 
 import { randomUUID } from 'node:crypto'
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import { z as zod } from 'zod'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-declare module '@deepseek-ai/dsh-llm' {
+import type { Agent } from '@reevo/dsh-agent'
+import { createUserMessage, type ToolCallId } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'user-approval': { kind: 'user-approval' } & ContextFormed
   }
 }
 
-import { scopeTarget } from '@deepseek-ai/dsh-scope'
-import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'
-import type { ProjectionDefinition, ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-system-prompt'
+import { scopeTarget } from '@reevo/dsh-scope'
+import type { Session, SessionEvent } from '@reevo/dsh-session'
+import type { ProjectionDefinition, ProjectionHandle } from '@reevo/dsh-session-projection'
+import type {} from '@reevo/dsh-system-prompt'
 
 declare module '@deepseek-ai/cordis' {
   interface Context {
@@ -28,7 +28,7 @@ declare module '@deepseek-ai/cordis' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@reevo/dsh-session/types' {
   interface SessionEventMap {
     /**
      * The session's approval policy was switched — log-only, durable,
@@ -46,7 +46,7 @@ declare module '@deepseek-ai/dsh-session/types' {
   }
 }
 
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import type { ApprovalRequestId } from './types.ts'
 import type { ApprovalOutcome, ApprovalRequestEvent } from './types.ts'
 

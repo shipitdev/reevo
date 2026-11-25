@@ -3,9 +3,9 @@
  * `ctx.cliAccounts` runs.
  */
 
-import type { CliOperationControl } from '@deepseek-ai/dsh-cli-account/types'
-import type { UpstreamSkillsHandle } from '@deepseek-ai/dsh-upstream-skills/types'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+import type { CliOperationControl } from '@reevo/dsh-cli-account/types'
+import type { UpstreamSkillsHandle } from '@reevo/dsh-upstream-skills/types'
+import { assertNever } from '@reevo/dsh-util-values'
 import type {
   TencentMeetingAccountState, TencentMeetingCommand, TencentMeetingOperationKind, TencentMeetingPhase, TencentMeetingSignIn,
 } from './types.ts'

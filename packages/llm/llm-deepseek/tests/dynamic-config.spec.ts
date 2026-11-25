@@ -3,10 +3,10 @@ import { Context, Service } from '@deepseek-ai/cordis'
 import { access, mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import LlmRuntime, { createUserMessage, INVALID_CREDENTIAL_CODE } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import AttachmentStore from '@deepseek-ai/dsh-attachment'
-import type { AttachmentId, ImageVariantId } from '@deepseek-ai/dsh-attachment/types'
+import LlmRuntime, { createUserMessage, INVALID_CREDENTIAL_CODE } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import AttachmentStore from '@reevo/dsh-attachment'
+import type { AttachmentId, ImageVariantId } from '@reevo/dsh-attachment/types'
 import type {
   ImageAttachmentLimits,
   ImageAttachmentRef,
@@ -14,17 +14,17 @@ import type {
   RequestImageAttachment,
   SaveImageAttachment,
   StoredImageAttachment,
-} from '@deepseek-ai/dsh-attachment'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import { LocalCredentialProvider } from '@deepseek-ai/dsh-credentials-local'
+} from '@reevo/dsh-attachment'
+import { credentialRef } from '@reevo/dsh-credentials'
+import { LocalCredentialProvider } from '@reevo/dsh-credentials-local'
 import { liveConfig } from '../../../settings/settings/tests/live-config.ts'
-import * as LlmDeepSeek from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import DeepSeekAuth from '@deepseek-ai/dsh-deepseek-auth'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import * as LlmDeepSeek from '@reevo/dsh-llm-deepseek-api-key'
+import DeepSeekAuth from '@reevo/dsh-deepseek-auth'
+import type { ContextFormed } from '@reevo/dsh-llm'
 import { assemble } from './assemble.ts'
 import { closeMockServers, mockServer, textEvents } from './mock-server.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

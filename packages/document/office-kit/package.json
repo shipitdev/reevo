@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-office-kit",
+  "name": "@reevo/dsh-office-kit",
   "description": "Shared Office rendering, conversion, and recalculation with bounded queues and caching",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -56,16 +56,16 @@
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/dsh-api-workspace-files": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@reevo/dsh-api-workspace-files": "workspace:*",
+    "@reevo/dsh-fs": "workspace:*",
+    "@reevo/dsh-session": "workspace:*"
   },
   "dependencies": {
     "@deepseek-ai/libreoffice-kit": "0.2.3",
     "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-home-paths": "workspace:*"
+    "@reevo/dsh-home-paths": "workspace:*"
   }
 }

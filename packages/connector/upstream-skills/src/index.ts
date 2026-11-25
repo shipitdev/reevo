@@ -3,7 +3,7 @@
  * skill indexes from one directory of the vendor's GitHub repository at a pinned commit, verifies them, publishes them
  * in the DSH cache, and lists the entry skill over them once they are there. In a profile, each plugin's files have
  * a directory of their own, from which a registration deletes the other pins once its own pin is in place.
- * @module @deepseek-ai/dsh-upstream-skills
+ * @module @reevo/dsh-upstream-skills
  */
 
 import { randomUUID } from 'node:crypto'
@@ -13,11 +13,11 @@ import { basename, dirname, join, resolve } from 'node:path'
 import { Service, type Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 // Also declares `Context.profileContext`, the launcher-provided profile that owns a plugin's downloads.
-import type { ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import { dshCachePath } from '@deepseek-ai/dsh-home-paths'
-import { BUNDLED_SKILL_RANK, isSkillName } from '@deepseek-ai/dsh-skill'
-import type { SkillCandidate, SkillDefinition, SkillProvider, SkillProviderControl } from '@deepseek-ai/dsh-skill'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import type { ProfileContext } from '@reevo/dsh-app-boot'
+import { dshCachePath } from '@reevo/dsh-home-paths'
+import { BUNDLED_SKILL_RANK, isSkillName } from '@reevo/dsh-skill'
+import type { SkillCandidate, SkillDefinition, SkillProvider, SkillProviderControl } from '@reevo/dsh-skill'
+import { MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
 import { parse as parseYaml } from 'yaml'
 import { downloadSkillSet, writeFiles } from './archive.ts'
 import type { UpstreamSkillsHandle, UpstreamSkillsRegistration, UpstreamSkillsState } from './types.ts'

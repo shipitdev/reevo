@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-llm-mock-server",
+  "name": "@reevo/dsh-llm-mock-server",
   "description": "Scriptable Messages HTTP/SSE fault server for LLM recovery tests",
   "version": "0.2.3-alpha.2",
   "publishConfig": {

@@ -1,17 +1,17 @@
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry, { agentEvents, type Agent } from '@deepseek-ai/dsh-agent'
+import AgentRegistry, { agentEvents, type Agent } from '@reevo/dsh-agent'
 import UserQuestionService, {
   TIMED_WAIT_PARAMETER,
   UserQuestionError,
   type AskUserQuestionAnswer,
   type AskUserQuestionRequest,
-} from '@deepseek-ai/dsh-user-questions'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import { createToolResultMessage, createUserMessage, type ToolCallId, type ToolSchema, type UserMessage } from '@deepseek-ai/dsh-llm'
-import { Session, type SessionId, SESSION_FORMAT_VERSION, TOOL_OUTCOME_UNKNOWN } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+} from '@reevo/dsh-user-questions'
+import { brandString } from '@reevo/dsh-brand'
+import { HarnessError } from '@reevo/dsh-error'
+import { createToolResultMessage, createUserMessage, type ToolCallId, type ToolSchema, type UserMessage } from '@reevo/dsh-llm'
+import { Session, type SessionId, SESSION_FORMAT_VERSION, TOOL_OUTCOME_UNKNOWN } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 
 interface QuestionAnswerer {
   ask(request: AskUserQuestionRequest): Promise<AskUserQuestionAnswer>

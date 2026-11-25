@@ -1,21 +1,21 @@
-import { executeToolFixture, executeModelToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeToolFixture, executeModelToolFixture } from '@reevo/dsh-tool-testkit'
 import { mountWorkingDirectoryFixture } from './working-directory-fixture.ts'
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId, type ContentBlock, type GenerateOptions } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type {} from '@deepseek-ai/dsh-system-prompt'
+import { brandString } from '@reevo/dsh-brand'
+import { createUserMessage, type ToolCallId, type ContentBlock, type GenerateOptions } from '@reevo/dsh-llm'
+import type { SessionId } from '@reevo/dsh-session'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import type {} from '@reevo/dsh-system-prompt'
 import SubagentRuntime, {
   type SubagentStartRequest,
   type SubagentActivation,
   type SubagentResult,
-} from '@deepseek-ai/dsh-subagent'
-import type { ObjectJsonSchema } from '@deepseek-ai/dsh-tools'
-import { RUN_CODE_NAME } from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+} from '@reevo/dsh-subagent'
+import type { ObjectJsonSchema } from '@reevo/dsh-tools'
+import { RUN_CODE_NAME } from '@reevo/dsh-tools'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import { TestSessionQuery } from './test-session-query.ts'
 import { mountLocalActivations, startTestActivation } from './local-activation.ts'
@@ -57,7 +57,7 @@ async function setup(script: Script, options: SetupOptions = {}) {
     ctx.provide('ptcRuntime', {
       language: 'typescript',
       isolation: 'test',
-      resolve: (request: import('@deepseek-ai/dsh-ptc-runtime').PtcRunRequest) => ({ ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: 120_000 }),
+      resolve: (request: import('@reevo/dsh-ptc-runtime').PtcRunRequest) => ({ ...request, cwd: request.cwd ?? process.cwd(), timeoutMs: 120_000 }),
       run: options.codeRun ?? (() => Promise.resolve({ output: [] })),
     } as never)
   }

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-mcp-manager",
+  "name": "@reevo/dsh-mcp-manager",
   "description": "MCP server manager: a settings-driven fleet of mcp-client instances with runtime status, restart, and probe",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -50,35 +50,35 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-mcp-client": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-mcp-client": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-credentials": "workspace:*"
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-credentials": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-timeout": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
   "devDependencies": {
     "@modelcontextprotocol/client": "2.2.0",
-    "@deepseek-ai/dsh-credentials": "workspace:*",
-    "@deepseek-ai/dsh-mcp-client": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-credentials": "workspace:*",
+    "@reevo/dsh-mcp-client": "workspace:*",
+    "@reevo/dsh-settings": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-config-editor": "workspace:*",
-    "@deepseek-ai/dsh-hmr": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-config-editor": "workspace:*",
+    "@reevo/dsh-hmr": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
     "@deepseek-ai/cordis-plugin-timer": "workspace:~",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*"
   }
 }

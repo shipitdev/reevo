@@ -2,16 +2,16 @@
  * Host Service of CLI app plugins: a plugin registers its third-party CLI, which owns the user's account, once. The
  * Service tells the model the CLI's absolute path in runtime context, runs the plugin's account operations one at a
  * time, and shows the account on the Plugins page. Each plugin keeps its own commands, parsing, and states.
- * @module @deepseek-ai/dsh-cli-account
+ * @module @reevo/dsh-cli-account
  */
 
 import { Service, type Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-client-ui-connector-account'
-import type { ConnectorAccountDisplay } from '@deepseek-ai/dsh-client-ui-connector-account/types'
-import type {} from '@deepseek-ai/dsh-subprocess'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import type {} from '@reevo/dsh-client-ui-connector-account'
+import type { ConnectorAccountDisplay } from '@reevo/dsh-client-ui-connector-account/types'
+import type {} from '@reevo/dsh-subprocess'
+import type {} from '@reevo/dsh-system-prompt'
+import { MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
 import { registerCliPathContext } from './context.ts'
 import { CliCommandExecutor } from './executor.ts'
 import { CliAccountRuntime, failureDetails } from './runtime.ts'

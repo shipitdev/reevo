@@ -2,14 +2,14 @@
 import { Context } from '@deepseek-ai/cordis'
 import Include from '@deepseek-ai/cordis-plugin-include'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import ComputerUseRegistry from '@deepseek-ai/dsh-computer-use'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import SubprocessLocal from '@deepseek-ai/dsh-subprocess-local'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
+import ComputerUseRegistry from '@reevo/dsh-computer-use'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import type { SessionId } from '@reevo/dsh-session'
+import SubprocessLocal from '@reevo/dsh-subprocess-local'
 import { expect, it, onTestFinished } from 'vitest'
 import * as WindowsProvider from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 it.skipIf(process.platform !== 'win32')('loads the Windows provider and rejects a numeric window ID before native dispatch', async () => {
   const ctx = new Context()

@@ -7,9 +7,9 @@ import { pathToFileURL } from 'node:url'
 import { onTestFinished } from 'vitest'
 import type { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { initProfile, mountRootInclude, readProfilePatches, type ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import ConfigEditor from '@deepseek-ai/dsh-config-editor'
-import Settings from '@deepseek-ai/dsh-settings'
+import { initProfile, mountRootInclude, readProfilePatches, type ProfileContext } from '@reevo/dsh-app-boot'
+import ConfigEditor from '@reevo/dsh-config-editor'
+import Settings from '@reevo/dsh-settings'
 import McpServerManager from '../src/index.ts'
 
 /**

@@ -1,17 +1,17 @@
 /** V2 content admission refuses entire generations without publishing a valid prefix. */
 
 import { Context } from '@deepseek-ai/cordis'
-import { SESSION_FORMAT_VERSION, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionFormatJsonObject } from '@deepseek-ai/dsh-session-format'
-import { SessionFormatUnsupportedError } from '@deepseek-ai/dsh-session-persistence'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+import { SESSION_FORMAT_VERSION, type SessionId } from '@reevo/dsh-session'
+import type { SessionFormatJsonObject } from '@reevo/dsh-session-format'
+import { SessionFormatUnsupportedError } from '@reevo/dsh-session-persistence'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
 import { mkdir, mkdtemp, readFile, readdir, rm, stat, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { basename, dirname, join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
 import { generationLogPath, scanLog, type JsonlCompression } from '../src/format.ts'
 import { compressZstdFrame, decompressZstdFrame, scanZstdFrames } from '../src/zstd.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const id = brandString<SessionId>('content-admission')
 const text = { type: 'text', text: 'Keep tool/code-dispatch and tools-code-mode literal. 图片' }

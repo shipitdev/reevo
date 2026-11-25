@@ -15,25 +15,25 @@ function validLayout(): NpmPackageLock {
       'node_modules/@deepseek-ai/cordis': { version: '4.0.1' },
       'node_modules/@reevo/cli': {
         version: '0.2.0',
-        dependencies: { '@deepseek-ai/dsh-child': '^0.2.0' },
+        dependencies: { '@reevo/dsh-child': '^0.2.0' },
         peerDependencies: { '@deepseek-ai/cordis': '^4.0.1' },
       },
-      'node_modules/@deepseek-ai/dsh-child': {
+      'node_modules/@reevo/dsh-child': {
         version: '0.2.0',
-        dependencies: { '@deepseek-ai/dsh-leaf': '^0.2.0' },
+        dependencies: { '@reevo/dsh-leaf': '^0.2.0' },
       },
-      'node_modules/@deepseek-ai/dsh-leaf': { version: '0.2.0' },
+      'node_modules/@reevo/dsh-leaf': { version: '0.2.0' },
       'node_modules/dsh-previous': {
         name: '@reevo/cli',
         version: '0.1.0',
-        dependencies: { '@deepseek-ai/dsh-child': '^0.1.0' },
+        dependencies: { '@reevo/dsh-child': '^0.1.0' },
         peerDependencies: { '@deepseek-ai/cordis': '^4.0.1' },
       },
-      'node_modules/dsh-previous/node_modules/@deepseek-ai/dsh-child': {
+      'node_modules/dsh-previous/node_modules/@reevo/dsh-child': {
         version: '0.1.0',
-        dependencies: { '@deepseek-ai/dsh-leaf': '^0.1.0' },
+        dependencies: { '@reevo/dsh-leaf': '^0.1.0' },
       },
-      'node_modules/dsh-previous/node_modules/@deepseek-ai/dsh-leaf': { version: '0.1.0' },
+      'node_modules/dsh-previous/node_modules/@reevo/dsh-leaf': { version: '0.1.0' },
     },
   }
 }
@@ -44,11 +44,11 @@ describe('npm install layout verifier', () => {
       ['@reevo/cli', new Map([['0.1.1-rc.2', {
         name: '@reevo/cli',
         version: '0.1.1-rc.2',
-        dependencies: { '@deepseek-ai/dsh-child': '^0.1.1-rc.2' },
+        dependencies: { '@reevo/dsh-child': '^0.1.1-rc.2' },
         peerDependencies: { '@deepseek-ai/cordis': '^4.0.1' },
       }]])],
-      ['@deepseek-ai/dsh-child', new Map([['0.1.1-rc.2', {
-        name: '@deepseek-ai/dsh-child',
+      ['@reevo/dsh-child', new Map([['0.1.1-rc.2', {
+        name: '@reevo/dsh-child',
         version: '0.1.1-rc.2',
       }]])],
       ['@deepseek-ai/cordis', new Map([['4.0.1', {
@@ -62,12 +62,12 @@ describe('npm install layout verifier', () => {
     expect([...dual.get('@reevo/cli')?.keys() ?? []]).toEqual(['0.1.0', '0.2.0'])
     expect(dual.get('@reevo/cli')?.get('0.1.0')).toMatchObject({
       version: '0.1.0',
-      dependencies: { '@deepseek-ai/dsh-child': '^0.1.0' },
+      dependencies: { '@reevo/dsh-child': '^0.1.0' },
       peerDependencies: { '@deepseek-ai/cordis': '^4.0.1' },
     })
     expect(dual.get('@reevo/cli')?.get('0.2.0')).toMatchObject({
       version: '0.2.0',
-      dependencies: { '@deepseek-ai/dsh-child': '^0.2.0' },
+      dependencies: { '@reevo/dsh-child': '^0.2.0' },
     })
     expect(dual.get('@deepseek-ai/cordis')).toBe(index.get('@deepseek-ai/cordis'))
   })
@@ -95,11 +95,11 @@ describe('npm install layout verifier', () => {
   it('rejects an internal edge that crosses release versions', () => {
     const layout = validLayout()
     const packages = { ...layout.packages }
-    Reflect.deleteProperty(packages, 'node_modules/dsh-previous/node_modules/@deepseek-ai/dsh-leaf')
+    Reflect.deleteProperty(packages, 'node_modules/dsh-previous/node_modules/@reevo/dsh-leaf')
 
     expect(() => assertDualDshInstallLayout({ ...layout, packages })).toThrow(
-      'node_modules/dsh-previous/node_modules/@deepseek-ai/dsh-child: dependencies '
-      + '@deepseek-ai/dsh-leaf resolves to node_modules/@deepseek-ai/dsh-leaf@0.2.0, expected 0.1.0',
+      'node_modules/dsh-previous/node_modules/@reevo/dsh-child: dependencies '
+      + '@reevo/dsh-leaf resolves to node_modules/@reevo/dsh-leaf@0.2.0, expected 0.1.0',
     )
   })
 

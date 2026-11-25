@@ -8,23 +8,23 @@
  * suite runs on every platform without a system `rg` install; the
  * fake-service suite (tools.spec.ts) carries the coverage gate.
  */
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { executeModelToolFixture, executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { executeModelToolFixture, executeToolFixture } from '@reevo/dsh-tool-testkit'
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import { provideWorkingDirectoryFixture } from '@reevo/dsh-agent-loop-testkit'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { existsSync } from 'node:fs'
 import { mkdir, mkdtemp, rm, symlink, utimes, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join, sep } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { TOOL_ABORTED_BEFORE_DISPATCH } from '@deepseek-ai/dsh-tools'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import * as ToolFsSearch from '@deepseek-ai/dsh-tool-fs-search'
+import { brandString } from '@reevo/dsh-brand'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime, { TOOL_ABORTED_BEFORE_DISPATCH } from '@reevo/dsh-tools'
+import LocalSubprocessRuntime from '@reevo/dsh-subprocess-local'
+import * as ToolFsSearch from '@reevo/dsh-tool-fs-search'
 
 const testToolSignal = new AbortController().signal
 

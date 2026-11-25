@@ -1,12 +1,12 @@
 /**
  * Canonical Office tool results and their model-facing content.
- * @module @deepseek-ai/dsh-tool-office/content
+ * @module @reevo/dsh-tool-office/content
  */
 
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import type { AttachmentId, ImageAttachmentRef, ImageMediaType } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { OfficeConversionFormat, OfficeRecalculationFormat } from '@deepseek-ai/dsh-office-kit'
+import type { ContentBlock } from '@reevo/dsh-llm'
+import type { AttachmentId, ImageAttachmentRef, ImageMediaType } from '@reevo/dsh-attachment/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { OfficeConversionFormat, OfficeRecalculationFormat } from '@reevo/dsh-office-kit'
 
 /**
  * One rendered image and the document location it shows. The attachment fields are those of the stored reference;

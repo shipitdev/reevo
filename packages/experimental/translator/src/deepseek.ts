@@ -1,22 +1,22 @@
 /** Native-route admission and independent audited Flash translation without Agent history. */
 import { FiberState, type Context, type Fiber } from '@deepseek-ai/cordis'
 import type {} from '@deepseek-ai/cordis-plugin-loader'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { BlockAssembler, type ReasoningEffortId, type LlmRuntime, type GenerateOptions, type RequestUserInput, type FinishReason, type TextBlock } from '@deepseek-ai/dsh-llm'
-import type { Config as AccountNativeConfig } from '@deepseek-ai/dsh-llm-deepseek-account'
-import type { Config as OfficialNativeConfig } from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import { deadline, timeoutOf } from '@deepseek-ai/dsh-timeout'
-import { deepFreeze } from '@deepseek-ai/dsh-util-values'
+import { credentialRef } from '@reevo/dsh-credentials'
+import { launchEnvironmentOf } from '@reevo/dsh-launch-environment'
+import { brandString } from '@reevo/dsh-brand'
+import { BlockAssembler, type ReasoningEffortId, type LlmRuntime, type GenerateOptions, type RequestUserInput, type FinishReason, type TextBlock } from '@reevo/dsh-llm'
+import type { Config as AccountNativeConfig } from '@reevo/dsh-llm-deepseek-account'
+import type { Config as OfficialNativeConfig } from '@reevo/dsh-llm-deepseek-api-key'
+import { deadline, timeoutOf } from '@reevo/dsh-timeout'
+import { deepFreeze } from '@reevo/dsh-util-values'
 import type { Config } from './index.ts'
 import type { PaidTranslationProvider, PaidTranslationSpec, TranslationIdentity, TranslationProvider } from './types.ts'
 import { TranslationError } from './error.ts'
 import type { TranslationLog } from './storage.ts'
 
 const MODEL = 'deepseek-flash'
-const OWNER_PACKAGES = { 'deepseek-account': '@deepseek-ai/dsh-llm-deepseek-account',
-  'deepseek-official': '@deepseek-ai/dsh-llm-deepseek-api-key' } as const
+const OWNER_PACKAGES = { 'deepseek-account': '@reevo/dsh-llm-deepseek-account',
+  'deepseek-official': '@reevo/dsh-llm-deepseek-api-key' } as const
 
 interface NativeOwnerFields { llm: LlmRuntime; fiber: Fiber }
 type NativeOwner = NativeOwnerFields & (

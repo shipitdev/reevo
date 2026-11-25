@@ -1,5 +1,5 @@
 /** Keyless assembled-Web evidence for conversational Schedule delivery. */
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
 
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
@@ -9,22 +9,22 @@ import { fileURLToPath } from 'node:url'
 import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed } from 'vitest'
-import type { Agent, AgentHandle } from '@deepseek-ai/dsh-agent'
+import type { Agent, AgentHandle } from '@reevo/dsh-agent'
 import { stringifyEntryYaml } from '@deepseek-ai/cordis-plugin-include'
-import { bundlePatchPaths, composeEntries, loadOverlayPatches } from '@deepseek-ai/dsh-app-boot'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { type MessageId, type ToolCallId, createUserMessage, LlmAdapter } from '@deepseek-ai/dsh-llm'
+import { bundlePatchPaths, composeEntries, loadOverlayPatches } from '@reevo/dsh-app-boot'
+import { brandString } from '@reevo/dsh-brand'
+import { type MessageId, type ToolCallId, createUserMessage, LlmAdapter } from '@reevo/dsh-llm'
 import { appendDelivery } from '../../../packages/schedule/schedule/src/delivery-history.ts'
-import type { ScheduleTask } from '@deepseek-ai/dsh-schedule'
-import type { ContextFormed, GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import type { SessionId, SessionEvent } from '@deepseek-ai/dsh-session'
+import type { ScheduleTask } from '@reevo/dsh-schedule'
+import type { ContextFormed, GenerateOptions, StreamChunk } from '@reevo/dsh-llm'
+import type { SessionId, SessionEvent } from '@reevo/dsh-session'
 import {
   createAfterScheduleRecord,
   createEveryScheduleRecord,
   type EveryScheduleRecord,
   type ScheduleRecord,
-} from '@deepseek-ai/dsh-schedule'
-import type { ScheduleId } from '@deepseek-ai/dsh-schedule/client'
+} from '@reevo/dsh-schedule'
+import type { ScheduleId } from '@reevo/dsh-schedule/client'
 import {
   assertFixtureInventory,
   captureStableAria,
@@ -42,7 +42,7 @@ import {
   saveFailureShot,
 } from './support.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'schedule-web-e2e': { kind: 'schedule-web-e2e' } & ContextFormed
   }
@@ -969,8 +969,8 @@ describe.skipIf(MODE === 'record')('web e2e: active Schedule catalog', () => {
     // The delivered composition carries the Schedule service and its task page;
     // the clock stays preset-level, so no Host row declares it.
     for (const row of [
-      { id: 'schedule', name: '@deepseek-ai/dsh-schedule' },
-      { id: 'ui-schedule', name: '@deepseek-ai/dsh-client-ui-schedule' },
+      { id: 'schedule', name: '@reevo/dsh-schedule' },
+      { id: 'ui-schedule', name: '@reevo/dsh-client-ui-schedule' },
     ]) {
       expect(shipped.filter(entry => entry.id === row.id && entry.name === row.name && entry.disabled !== true))
         .toHaveLength(1)
@@ -986,17 +986,17 @@ describe.skipIf(MODE === 'record')('web e2e: active Schedule catalog', () => {
     for (const id of ['preset-standard', 'preset-ptc', 'preset-cordis']) {
       const plugins = presetPlugins(id)
       expect(plugins.filter(row => row.id === 'time-context'
-        && row.name === '@deepseek-ai/dsh-time-context')).toHaveLength(1)
+        && row.name === '@reevo/dsh-time-context')).toHaveLength(1)
       expect(plugins.filter(row => row.id === 'tool-schedule'
-        && row.name === '@deepseek-ai/dsh-tool-schedule')).toHaveLength(1)
-      for (const name of ['@deepseek-ai/dsh-time-context', '@deepseek-ai/dsh-tool-schedule']) {
+        && row.name === '@reevo/dsh-tool-schedule')).toHaveLength(1)
+      for (const name of ['@reevo/dsh-time-context', '@reevo/dsh-tool-schedule']) {
         const matches = plugins.filter(row => row.name === name)
         expect(matches).toHaveLength(1)
         expect(matches[0]?.disabled).not.toBe(true)
       }
     }
-    expect(presetPlugins('preset-minimal').some(row => row.name === '@deepseek-ai/dsh-time-context'
-      || row.name === '@deepseek-ai/dsh-tool-schedule')).toBe(false)
+    expect(presetPlugins('preset-minimal').some(row => row.name === '@reevo/dsh-time-context'
+      || row.name === '@reevo/dsh-tool-schedule')).toBe(false)
 
     await page.getByRole('button', { name: 'Automation tasks', exact: true }).click()
     const manager = page.getByTestId('task-manager-page')

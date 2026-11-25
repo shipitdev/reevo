@@ -1,46 +1,46 @@
 /** Platform-neutral assembly of generated Host Remote contributions. */
 
 import type { Context } from '@deepseek-ai/cordis'
-import productAnalyticsRemote from '@deepseek-ai/dsh-client-product-analytics/remote'
-export type {} from '@deepseek-ai/dsh-client-product-analytics/remote'
-import agentPresetsRemote from '@deepseek-ai/dsh-agent-preset-registry/remote'
-import userQuestionsRemote from '@deepseek-ai/dsh-user-questions/remote'
-import commandsRemote from '@deepseek-ai/dsh-commands/remote'
-import agentTeamsRemote from '@deepseek-ai/dsh-agent-team/remote'
-export type {} from '@deepseek-ai/dsh-agent-team/remote'
-import accountRemote from '@deepseek-ai/dsh-deepseek-account/remote'
-import settingsControllerRemote from '@deepseek-ai/dsh-api-settings-controller/remote'
-import officeKitRemote from '@deepseek-ai/dsh-office-kit/remote'
-import goalsRemote from '@deepseek-ai/dsh-goal/remote'
-import scheduleRemote from '@deepseek-ai/dsh-schedule/remote'
-import llmRemote from '@deepseek-ai/dsh-llm/remote'
-import dynamicRemote from '@deepseek-ai/dsh-cordis-host-runner/remote'
-import pluginManagerRemote from '@deepseek-ai/dsh-plugin-manager/remote'
-import mcpManagerRemote from '@deepseek-ai/dsh-mcp-manager/remote'
-import toolResultsRemote from '@deepseek-ai/dsh-client-ui-trajectory/remote'
-import pluginRegistryProbeRemote from '@deepseek-ai/dsh-client-ui-plugin-manager/remote'
-import connectorAccountsRemote from '@deepseek-ai/dsh-client-ui-connector-account/remote'
-import pluginMarketRemote from '@deepseek-ai/dsh-plugin-market/remote'
-import actionCardsRemote from '@deepseek-ai/dsh-action-cards/remote'
-import pluginRecommendationsRemote from '@deepseek-ai/dsh-plugin-recommendations/remote'
-import pluginInventoryRemote from '@deepseek-ai/dsh-host-plugin-inventory/remote'
-import messageFeedbackRemote from '@deepseek-ai/dsh-message-feedback/remote'
-import permissionPresetsRemote from '@deepseek-ai/dsh-permission-presets/remote'
-import sessionFeedbackRemote from '@deepseek-ai/dsh-command-feedback/remote'
-import fileUploadsRemote from '@deepseek-ai/dsh-client-file-upload/remote'
-import sessionReferencesRemote from '@deepseek-ai/dsh-session-reference/remote'
-import subagentsRemote from '@deepseek-ai/dsh-subagent/remote'
-import sessionStatusRemote from '@deepseek-ai/dsh-client-ui-session-status/remote'
-export type {} from '@deepseek-ai/dsh-client-ui-session-status/remote'
-import sessionRemote from '@deepseek-ai/dsh-api-session-controller/remote'
-import jobRemote from '@deepseek-ai/dsh-api-job-controller/remote'
-import workspaceRemote from '@deepseek-ai/dsh-api-workspace-controller/remote'
-import terminalRemote from '@deepseek-ai/dsh-api-terminal-controller/remote'
-import workspaceFilesRemote from '@deepseek-ai/dsh-api-workspace-files/remote'
-import webRemote from '@deepseek-ai/dsh-web/remote'
-import type { ClientRemote } from '@deepseek-ai/dsh-api-gateway/client'
+import productAnalyticsRemote from '@reevo/dsh-client-product-analytics/remote'
+export type {} from '@reevo/dsh-client-product-analytics/remote'
+import agentPresetsRemote from '@reevo/dsh-agent-preset-registry/remote'
+import userQuestionsRemote from '@reevo/dsh-user-questions/remote'
+import commandsRemote from '@reevo/dsh-commands/remote'
+import agentTeamsRemote from '@reevo/dsh-agent-team/remote'
+export type {} from '@reevo/dsh-agent-team/remote'
+import accountRemote from '@reevo/dsh-deepseek-account/remote'
+import settingsControllerRemote from '@reevo/dsh-api-settings-controller/remote'
+import officeKitRemote from '@reevo/dsh-office-kit/remote'
+import goalsRemote from '@reevo/dsh-goal/remote'
+import scheduleRemote from '@reevo/dsh-schedule/remote'
+import llmRemote from '@reevo/dsh-llm/remote'
+import dynamicRemote from '@reevo/dsh-cordis-host-runner/remote'
+import pluginManagerRemote from '@reevo/dsh-plugin-manager/remote'
+import mcpManagerRemote from '@reevo/dsh-mcp-manager/remote'
+import toolResultsRemote from '@reevo/dsh-client-ui-trajectory/remote'
+import pluginRegistryProbeRemote from '@reevo/dsh-client-ui-plugin-manager/remote'
+import connectorAccountsRemote from '@reevo/dsh-client-ui-connector-account/remote'
+import pluginMarketRemote from '@reevo/dsh-plugin-market/remote'
+import actionCardsRemote from '@reevo/dsh-action-cards/remote'
+import pluginRecommendationsRemote from '@reevo/dsh-plugin-recommendations/remote'
+import pluginInventoryRemote from '@reevo/dsh-host-plugin-inventory/remote'
+import messageFeedbackRemote from '@reevo/dsh-message-feedback/remote'
+import permissionPresetsRemote from '@reevo/dsh-permission-presets/remote'
+import sessionFeedbackRemote from '@reevo/dsh-command-feedback/remote'
+import fileUploadsRemote from '@reevo/dsh-client-file-upload/remote'
+import sessionReferencesRemote from '@reevo/dsh-session-reference/remote'
+import subagentsRemote from '@reevo/dsh-subagent/remote'
+import sessionStatusRemote from '@reevo/dsh-client-ui-session-status/remote'
+export type {} from '@reevo/dsh-client-ui-session-status/remote'
+import sessionRemote from '@reevo/dsh-api-session-controller/remote'
+import jobRemote from '@reevo/dsh-api-job-controller/remote'
+import workspaceRemote from '@reevo/dsh-api-workspace-controller/remote'
+import terminalRemote from '@reevo/dsh-api-terminal-controller/remote'
+import workspaceFilesRemote from '@reevo/dsh-api-workspace-files/remote'
+import webRemote from '@reevo/dsh-web/remote'
+import type { ClientRemote } from '@reevo/dsh-api-gateway/client'
 
-export type { ClientRemote } from '@deepseek-ai/dsh-api-gateway/client'
+export type { ClientRemote } from '@reevo/dsh-api-gateway/client'
 export type {
   BundleDetail, BundleInfo, BundleRowInfo, ChangeResult, IncompatiblePlugin, InspectOptions, InstallBundleOptions, InstallSpecKind,
   ManagementError, PackageResult,
@@ -48,66 +48,66 @@ export type {
   PluginInstallLogChunk, PluginInstallProgress, PluginInstallRequestId, PluginRegistries, PluginSpecInspection,
   PluginUpdateProgress, PluginUpdateResult, PluginUpdateStep, PluginVersion, PluginVersionList, RegistryAttempt,
   ReadOnlyReason, Registry, RestartReason,
-} from '@deepseek-ai/dsh-plugin-manager/types'
-export type { McpManagedServerStatus, McpManagedServerView } from '@deepseek-ai/dsh-mcp-manager/types'
-export type {} from '@deepseek-ai/dsh-plugin-manager/remote'
-export type {} from '@deepseek-ai/dsh-mcp-manager/remote'
-export type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/remote'
-export type {} from '@deepseek-ai/dsh-client-ui-connector-account/remote'
-export type {} from '@deepseek-ai/dsh-client-ui-trajectory/remote'
-export type {} from '@deepseek-ai/dsh-plugin-market/remote'
-export type {} from '@deepseek-ai/dsh-action-cards/remote'
-export type {} from '@deepseek-ai/dsh-plugin-recommendations/remote'
+} from '@reevo/dsh-plugin-manager/types'
+export type { McpManagedServerStatus, McpManagedServerView } from '@reevo/dsh-mcp-manager/types'
+export type {} from '@reevo/dsh-plugin-manager/remote'
+export type {} from '@reevo/dsh-mcp-manager/remote'
+export type {} from '@reevo/dsh-client-ui-plugin-manager/remote'
+export type {} from '@reevo/dsh-client-ui-connector-account/remote'
+export type {} from '@reevo/dsh-client-ui-trajectory/remote'
+export type {} from '@reevo/dsh-plugin-market/remote'
+export type {} from '@reevo/dsh-action-cards/remote'
+export type {} from '@reevo/dsh-plugin-recommendations/remote'
 export type {
   MarketCompatibility, MarketIndexSummary, MarketInstallation, MarketInstallationStatus, MarketListingEntry, MarketListingVersion,
   MarketQuery, MarketSearchResult, MarketSort, PluginDetail, PluginDetailDocumentId, PluginDetailOrigin,
-} from '@deepseek-ai/dsh-plugin-market/types'
-export type { PluginInventorySnapshot } from '@deepseek-ai/dsh-host-plugin-inventory/types'
-export type {} from '@deepseek-ai/dsh-agent-preset-registry/remote'
-export type {} from '@deepseek-ai/dsh-user-questions/remote'
-export type {} from '@deepseek-ai/dsh-commands/remote'
-export type {} from '@deepseek-ai/dsh-web/remote'
-export type {} from '@deepseek-ai/dsh-api-settings-controller/remote'
-export type {} from '@deepseek-ai/dsh-deepseek-account/remote'
-export type {} from '@deepseek-ai/dsh-goal/remote'
-export type {} from '@deepseek-ai/dsh-schedule/remote'
-export type {} from '@deepseek-ai/dsh-office-kit/remote'
-export type {} from '@deepseek-ai/dsh-llm/remote'
-export type {} from '@deepseek-ai/dsh-host-plugin-inventory/remote'
-export type {} from '@deepseek-ai/dsh-message-feedback/remote'
-export type {} from '@deepseek-ai/dsh-permission-presets/remote'
-export type {} from '@deepseek-ai/dsh-command-feedback/remote'
-export type {} from '@deepseek-ai/dsh-client-file-upload/remote'
-export type {} from '@deepseek-ai/dsh-session-reference/remote'
-export type {} from '@deepseek-ai/dsh-subagent/remote'
-export type * from '@deepseek-ai/dsh-subagent/client'
-export type {} from '@deepseek-ai/dsh-api-session-controller/remote'
-export type * from '@deepseek-ai/dsh-api-session-controller/types'
-export type {} from '@deepseek-ai/dsh-api-job-controller/remote'
-export type * from '@deepseek-ai/dsh-api-job-controller/types'
-export type {} from '@deepseek-ai/dsh-api-workspace-controller/remote'
-export type * from '@deepseek-ai/dsh-api-workspace-controller/types'
-export type {} from '@deepseek-ai/dsh-api-workspace-files/remote'
-export type * from '@deepseek-ai/dsh-api-workspace-files/types'
-export type {} from '@deepseek-ai/dsh-api-terminal-controller/remote'
-export type * from '@deepseek-ai/dsh-api-terminal-controller/types'
+} from '@reevo/dsh-plugin-market/types'
+export type { PluginInventorySnapshot } from '@reevo/dsh-host-plugin-inventory/types'
+export type {} from '@reevo/dsh-agent-preset-registry/remote'
+export type {} from '@reevo/dsh-user-questions/remote'
+export type {} from '@reevo/dsh-commands/remote'
+export type {} from '@reevo/dsh-web/remote'
+export type {} from '@reevo/dsh-api-settings-controller/remote'
+export type {} from '@reevo/dsh-deepseek-account/remote'
+export type {} from '@reevo/dsh-goal/remote'
+export type {} from '@reevo/dsh-schedule/remote'
+export type {} from '@reevo/dsh-office-kit/remote'
+export type {} from '@reevo/dsh-llm/remote'
+export type {} from '@reevo/dsh-host-plugin-inventory/remote'
+export type {} from '@reevo/dsh-message-feedback/remote'
+export type {} from '@reevo/dsh-permission-presets/remote'
+export type {} from '@reevo/dsh-command-feedback/remote'
+export type {} from '@reevo/dsh-client-file-upload/remote'
+export type {} from '@reevo/dsh-session-reference/remote'
+export type {} from '@reevo/dsh-subagent/remote'
+export type * from '@reevo/dsh-subagent/client'
+export type {} from '@reevo/dsh-api-session-controller/remote'
+export type * from '@reevo/dsh-api-session-controller/types'
+export type {} from '@reevo/dsh-api-job-controller/remote'
+export type * from '@reevo/dsh-api-job-controller/types'
+export type {} from '@reevo/dsh-api-workspace-controller/remote'
+export type * from '@reevo/dsh-api-workspace-controller/types'
+export type {} from '@reevo/dsh-api-workspace-files/remote'
+export type * from '@reevo/dsh-api-workspace-files/types'
+export type {} from '@reevo/dsh-api-terminal-controller/remote'
+export type * from '@reevo/dsh-api-terminal-controller/types'
 // The forwarded-event allowlist's selection seat: without it in the consumer's
 // compilation face `TypertRemoteEvent` is `never` and every `$on` call fails.
 export type { ApiRemoteForwardedEvent } from '../types.ts'
 // The owner packages' client-safe `./types` exports supply the `Events`
 // signatures `$on` hands to a listener, so a consumer reads the very
 // declaration the Host emits rather than a flattened restatement of it.
-export type {} from '@deepseek-ai/dsh-commands/types'
-export type {} from '@deepseek-ai/dsh-web/types'
-export type {} from '@deepseek-ai/dsh-cordis-host-runner/types'
-export type {} from '@deepseek-ai/dsh-credentials/types'
-export type {} from '@deepseek-ai/dsh-llm/types'
-export type {} from '@deepseek-ai/dsh-agent-preset-registry/types'
-export type {} from '@deepseek-ai/dsh-permission-presets/types'
-export type {} from '@deepseek-ai/dsh-settings/types'
-export type {} from '@deepseek-ai/dsh-user-approval/types'
-export type {} from '@deepseek-ai/dsh-user-questions/types'
-export type {} from '@deepseek-ai/dsh-api-session-controller/types'
+export type {} from '@reevo/dsh-commands/types'
+export type {} from '@reevo/dsh-web/types'
+export type {} from '@reevo/dsh-cordis-host-runner/types'
+export type {} from '@reevo/dsh-credentials/types'
+export type {} from '@reevo/dsh-llm/types'
+export type {} from '@reevo/dsh-agent-preset-registry/types'
+export type {} from '@reevo/dsh-permission-presets/types'
+export type {} from '@reevo/dsh-settings/types'
+export type {} from '@reevo/dsh-user-approval/types'
+export type {} from '@reevo/dsh-user-questions/types'
+export type {} from '@reevo/dsh-api-session-controller/types'
 
 /**
  * The carrier's Client-facing types, re-exported so a business package names one
@@ -119,9 +119,9 @@ export type {
   MessageId,
   RpcId, RpcRequest, RpcResponse, RpcResult, SessionId,
   StreamChunk,
-} from '@deepseek-ai/dsh-client-connection/client'
-export type {} from '@deepseek-ai/dsh-api-gateway/client'
-export type {} from '@deepseek-ai/dsh-cordis-host-runner/remote'
+} from '@reevo/dsh-client-connection/client'
+export type {} from '@reevo/dsh-api-gateway/client'
+export type {} from '@reevo/dsh-cordis-host-runner/remote'
 
 // The payload vocabulary of the selected namespaces, re-exported so a Client
 // contribution can name what it sends and receives without importing a Host
@@ -159,23 +159,23 @@ export type {
   DynamicCordisStopResponse,
   DynamicCordisUndefineReceipt,
   RequestRunOutcome,
-} from '@deepseek-ai/dsh-cordis-host-runner/types'
+} from '@reevo/dsh-cordis-host-runner/types'
 // Credential state vocabulary for the credentials namespace (values never ride it).
-export type { CredentialInfo } from '@deepseek-ai/dsh-credentials/types'
+export type { CredentialInfo } from '@reevo/dsh-credentials/types'
 // Redacted namespace vocabulary for the settings namespace (secrets never ride
 // it). It travels with its seam, whose `./types` the Client face already reads.
 export type {
   SettingsDescribeValue, SettingsNamespaceView, SettingsPathOpView, SettingsSecretView,
-} from '@deepseek-ai/dsh-settings/types'
+} from '@reevo/dsh-settings/types'
 // Provider registry and discovery vocabulary for the llm namespace.
 export type {
   LlmConfigurableProvider, LlmDiscoveredModel,
   LlmModelDiscoveryRequest, LlmNativeAuth, LlmProviderInfo,
-} from '@deepseek-ai/dsh-llm/types'
+} from '@reevo/dsh-llm/types'
 // Reference-discovery result vocabulary for the fileReferences and
 // sessionReferenceResolver namespaces.
-export type { FileReferenceCandidate } from '@deepseek-ai/dsh-file-reference/types'
-export type { SessionReferenceMentionCandidate } from '@deepseek-ai/dsh-session-reference/types'
+export type { FileReferenceCandidate } from '@reevo/dsh-file-reference/types'
+export type { SessionReferenceMentionCandidate } from '@reevo/dsh-session-reference/types'
 
 // The Remote failure vocabulary, re-exported so business packages keep naming
 // this assembly alone. Types only: a value export would make spec imports load
@@ -183,8 +183,8 @@ export type { SessionReferenceMentionCandidate } from '@deepseek-ai/dsh-session-
 // dsh-client-test-runtime instead.
 export type {
   RemoteErrorCode, RemoteErrorDetailsMap, RemoteFailure, RemoteResult,
-} from '@deepseek-ai/dsh-typert-protocol'
-export type { RemoteHostFacts } from '@deepseek-ai/dsh-api-gateway/client'
+} from '@reevo/dsh-typert-protocol'
+export type { RemoteHostFacts } from '@reevo/dsh-api-gateway/client'
 
 declare module '@deepseek-ai/cordis' {
   interface Context {

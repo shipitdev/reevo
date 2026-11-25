@@ -4,9 +4,9 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { mkdtemp, rm } from 'node:fs/promises'
 import { afterEach, describe, expect, it } from 'vitest'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { FileAttachmentRef } from '@deepseek-ai/dsh-attachment'
+import type { AttachmentId } from '@reevo/dsh-attachment/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { FileAttachmentRef } from '@reevo/dsh-attachment'
 import {
   fileLeafName, readFileStreamVerbatim, saveFileStreamVerbatim, saveFileVerbatim, storedFilePath,
 } from '../src/file-store.ts'

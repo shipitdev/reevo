@@ -1,13 +1,13 @@
 /** Real profile persistence, inherited servers, and live Loader reconciliation. */
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import type { Transport } from '@modelcontextprotocol/client'
 import { readFile, writeFile } from 'node:fs/promises'
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Timer from '@deepseek-ai/cordis-plugin-timer'
-import Hmr from '@deepseek-ai/dsh-hmr'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
+import Hmr from '@reevo/dsh-hmr'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
 import { managerProfile } from './profile-fixture.ts'
 
 const { MockClient, MockTransport } = vi.hoisted(() => {

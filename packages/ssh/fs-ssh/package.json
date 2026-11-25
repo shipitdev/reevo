@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-fs-ssh",
+  "name": "@reevo/dsh-fs-ssh",
   "description": "Filesystem provider over the shared POSIX SSH helper",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -33,21 +33,21 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-ssh": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*"
+    "@reevo/dsh-ssh": "workspace:*",
+    "@reevo/dsh-fs": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-ssh": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*"
+    "@reevo/dsh-ssh": "workspace:*",
+    "@reevo/dsh-fs": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*"
   }
 }

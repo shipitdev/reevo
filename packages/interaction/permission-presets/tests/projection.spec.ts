@@ -10,18 +10,18 @@
  */
 
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
 import { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import CommandRuntime from '@deepseek-ai/dsh-commands'
-import PermissionPresetService from '@deepseek-ai/dsh-permission-presets'
-import { AUTO_PRESET } from '@deepseek-ai/dsh-permission-presets'
-import ApprovalService from '@deepseek-ai/dsh-user-approval'
+import type { SessionId } from '@reevo/dsh-session'
+import type { Session } from '@reevo/dsh-session'
+import type { Agent } from '@reevo/dsh-agent'
+import { createScope } from '@reevo/dsh-scope'
+import CommandRuntime from '@reevo/dsh-commands'
+import PermissionPresetService from '@reevo/dsh-permission-presets'
+import { AUTO_PRESET } from '@reevo/dsh-permission-presets'
+import ApprovalService from '@reevo/dsh-user-approval'
 import { omitsGeneratedPage } from '../../../settings/settings/tests/live-config.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 async function harness(options: {
   withPermission?: boolean

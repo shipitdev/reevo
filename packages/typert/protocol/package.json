@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-typert-protocol",
+  "name": "@reevo/dsh-typert-protocol",
   "description": "Compiler-independent Remote metadata and Typert provider protocols",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -39,15 +39,15 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "zod": "4.6.6"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-error": "workspace:*"
+    "@reevo/dsh-error": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-error": "workspace:*"
+    "@reevo/dsh-error": "workspace:*"
   }
 }

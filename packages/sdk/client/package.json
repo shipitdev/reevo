@@ -29,20 +29,20 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@reevo/cli": "workspace:*"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-sdk-protocol": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-sdk-protocol": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-sdk-protocol": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-sdk-protocol": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-experimental-translator": "workspace:*"
+    "@reevo/dsh-experimental-translator": "workspace:*"
   }
 }

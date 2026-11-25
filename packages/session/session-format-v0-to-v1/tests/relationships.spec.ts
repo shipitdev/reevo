@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { SessionFormatUnsupportedMigrationError } from '@deepseek-ai/dsh-session-format'
+import { SessionFormatUnsupportedMigrationError } from '@reevo/dsh-session-format'
 import {
   assertReleasedArtifactRelationships,
 } from '../src/index.ts'

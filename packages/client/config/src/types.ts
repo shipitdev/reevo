@@ -1,12 +1,12 @@
 /**
  * Types of browser-synced plugin configuration. A plugin declares its Config once, with a Host schema; its Client face
- * receives the top-level volatile fields as a {@link SyncedConfig} through `apply`. `@deepseek-ai/dsh-client-modules`
+ * receives the top-level volatile fields as a {@link SyncedConfig} through `apply`. `@reevo/dsh-client-modules`
  * implements these types; plugins import them from here only.
- * @module @deepseek-ai/dsh-client-config/types
+ * @module @reevo/dsh-client-config/types
  */
 import type { Volatile, VolatileSnapshot } from '@deepseek-ai/cordis'
-import type { ObservableSnapshot } from '@deepseek-ai/dsh-client-store'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { ObservableSnapshot } from '@reevo/dsh-client-store'
+import type { JsonValue } from '@reevo/dsh-util-values'
 
 /** JSON values of one plugin's synced Config fields, keyed by field name. */
 export type SyncedConfigValues = { readonly [field: string]: JsonValue }

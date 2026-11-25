@@ -1,11 +1,11 @@
 /** JSON-safe records and events of the plugin market Remote namespace. */
-import type { MarketIndexMetadata, MarketInstallTarget, MarketPlugin, MarketVersion } from '@deepseek-ai/dsh-plugin-market-index'
-import type { LocalizedText } from '@deepseek-ai/dsh-package-manifest'
-import type { Branded } from '@deepseek-ai/dsh-brand'
-import type {} from '@deepseek-ai/dsh-typert-protocol'
-import type { DetailFailureReason } from '@deepseek-ai/dsh-plugin-detail/types'
+import type { MarketIndexMetadata, MarketInstallTarget, MarketPlugin, MarketVersion } from '@reevo/dsh-plugin-market-index'
+import type { LocalizedText } from '@reevo/dsh-package-manifest'
+import type { Branded } from '@reevo/dsh-brand'
+import type {} from '@reevo/dsh-typert-protocol'
+import type { DetailFailureReason } from '@reevo/dsh-plugin-detail/types'
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@reevo/dsh-typert-protocol' {
   interface RemoteErrorDetailsMap {
     /** An index address is invalid for its HTTP(S) or Git source. */
     'plugin-market/invalid-index-url': { readonly url: string; readonly reason: string }

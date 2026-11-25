@@ -1,7 +1,7 @@
 /** Select Official bundle packages from the running installation without importing provider code. */
 import { existsSync, globSync, readFileSync, realpathSync, statSync } from 'node:fs'
 import { dirname, join, resolve } from 'node:path'
-import { bundlePatchPaths, type ProfileManifest } from '@deepseek-ai/dsh-app-boot'
+import { bundlePatchPaths, type ProfileManifest } from '@reevo/dsh-app-boot'
 
 interface WorkspaceManifest extends ProfileManifest {
   main?: string

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-host-product-telemetry-otel",
+  "name": "@reevo/dsh-host-product-telemetry-otel",
   "description": "Explicit product usage events exported through OpenTelemetry HTTP logs",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -39,13 +39,13 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-otel": "workspace:*"
+    "@reevo/dsh-otel": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-loader-smoke": "workspace:*",
-    "@deepseek-ai/dsh-otel": "workspace:*"
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-loader-smoke": "workspace:*",
+    "@reevo/dsh-otel": "workspace:*"
   }
 }

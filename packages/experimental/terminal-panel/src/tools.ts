@@ -2,9 +2,9 @@
 
 import { Buffer } from 'node:buffer'
 import type { Context } from '@deepseek-ai/cordis'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { TerminalController, TerminalScreenPage, WebTerminalInfo } from '@deepseek-ai/dsh-api-terminal-controller'
-import { defineTool } from '@deepseek-ai/dsh-tools'
+import type { Agent } from '@reevo/dsh-agent'
+import type { TerminalController, TerminalScreenPage, WebTerminalInfo } from '@reevo/dsh-api-terminal-controller'
+import { defineTool } from '@reevo/dsh-tools'
 import { newestBytes } from './session.ts'
 
 /** Lines returned when the model names no count, as the tool schema states. */

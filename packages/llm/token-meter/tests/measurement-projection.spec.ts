@@ -1,14 +1,14 @@
 /** Recovery facts survive JSON checkpoints while positional prices are rebuilt independently. */
 import { Context } from '@deepseek-ai/cordis'
-import { createAssistantMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { Session, type SessionId, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
-import type { ProjectionCheckpoint } from '@deepseek-ai/dsh-session-projection'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
+import { createAssistantMessage, createUserMessage } from '@reevo/dsh-llm'
+import SessionStore, { Session, type SessionId, SessionLogOffset } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { SessionEvent } from '@reevo/dsh-session'
+import type { ProjectionCheckpoint } from '@reevo/dsh-session-projection'
+import TokenMeter from '@reevo/dsh-token-meter'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { measurementProjectionDefinition } from '../src/measurement-projection.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 async function harness() {
   const ctx = new Context()

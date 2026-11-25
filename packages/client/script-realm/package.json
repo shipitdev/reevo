@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-script-realm",
+  "name": "@reevo/dsh-client-script-realm",
   "description": "Direct-reference script environments and Cordis-owned provider registration",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*"
   },
   "files": [
     "locale/*.json",

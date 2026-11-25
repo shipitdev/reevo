@@ -16,20 +16,20 @@ import SessionStore, {
   type SessionId,
   SessionLogOffset,
   SessionSeq,
-} from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionHeader } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@reevo/dsh-session'
+import type { SessionEvent, SessionHeader } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { ProjectionDefinition } from '@reevo/dsh-session-projection'
+import { brandString } from '@reevo/dsh-brand'
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@reevo/dsh-session-projection/types' {
   interface SessionProjectionMap {
     'test/marks': { marks: string[] }
     'test/stable-view': { marks: string[] }
   }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@reevo/dsh-session/types' {
   interface SessionEventMap {
     'test/mark': { marks: string[] }
   }

@@ -1,7 +1,7 @@
 /** Routing publication errors and platform-specific durable publication. @module */
 import { Context } from '@deepseek-ai/cordis'
-import type { SessionHeader } from '@deepseek-ai/dsh-session'
-import { SessionId, SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
+import type { SessionHeader } from '@reevo/dsh-session'
+import { SessionId, SESSION_FORMAT_VERSION } from '@reevo/dsh-session'
 import { SqliteSessionPersistence } from '../src/persistence.ts'
 import { mkdtemp, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'

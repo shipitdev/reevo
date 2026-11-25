@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-computer-use",
+  "name": "@reevo/dsh-computer-use",
   "description": "Exclusive named computer-use provider registration",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -41,6 +41,6 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*"
   }
 }

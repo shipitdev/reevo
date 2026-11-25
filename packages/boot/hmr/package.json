@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-hmr",
+  "name": "@reevo/dsh-hmr",
   "description": "Coordinated module and profile configuration hot reload",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -37,8 +37,8 @@
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-cmdline": "workspace:*"
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-cmdline": "workspace:*"
   },
   "dependencies": {
     "@babel/code-frame": "^7.29.0",
@@ -55,8 +55,8 @@
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-cmdline": "workspace:*",
-    "@deepseek-ai/dsh-atomic-write": "workspace:*"
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-cmdline": "workspace:*",
+    "@reevo/dsh-atomic-write": "workspace:*"
   }
 }

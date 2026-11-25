@@ -7,24 +7,24 @@
  * unless `maxConsecutiveWakes` caps it per owner. A notice carries the job's
  * output and result when it fits `inlineOutputBytes`, and `job_output`
  * withdraws a notice still pending.
- * @module @deepseek-ai/dsh-tool-jobs
+ * @module @reevo/dsh-tool-jobs
  */
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { boundContextSummary, createUserMessage, type ContentBlock } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed, MessageId } from '@deepseek-ai/dsh-llm'
-import { TextRetainer } from '@deepseek-ai/dsh-output-retention'
-import { defineTool, ToolArgsError } from '@deepseek-ai/dsh-tools'
-import type { GenericCallView, ToolDefinition, ToolExecution } from '@deepseek-ai/dsh-tools'
-import type { JobId } from '@deepseek-ai/dsh-jobs'
-import type { JobEvent, JobView, JobRead } from '@deepseek-ai/dsh-jobs'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-agent'
+import { boundContextSummary, createUserMessage, type ContentBlock } from '@reevo/dsh-llm'
+import type { ContextFormed, MessageId } from '@reevo/dsh-llm'
+import { TextRetainer } from '@reevo/dsh-output-retention'
+import { defineTool, ToolArgsError } from '@reevo/dsh-tools'
+import type { GenericCallView, ToolDefinition, ToolExecution } from '@reevo/dsh-tools'
+import type { JobId } from '@reevo/dsh-jobs'
+import type { JobEvent, JobView, JobRead } from '@reevo/dsh-jobs'
+import type { Agent } from '@reevo/dsh-agent'
+import type {} from '@reevo/dsh-agent'
 import { publicJob, renderModelDelta, statusLine } from './render.ts'
 import type { PublicJobSnapshot } from './render.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
-declare module '@deepseek-ai/dsh-llm' {
+import { brandString } from '@reevo/dsh-brand'
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'tool-jobs': { kind: 'tool-jobs' } & ContextFormed
   }

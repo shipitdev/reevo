@@ -3,17 +3,17 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { expect, it } from 'vitest'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { prepareSessionSnapshotFixtureForComparison } from '@deepseek-ai/dsh-llm-replay'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { Session, SessionId } from '@deepseek-ai/dsh-session'
+import { createUserMessage } from '@reevo/dsh-llm'
+import { prepareSessionSnapshotFixtureForComparison } from '@reevo/dsh-llm-replay'
+import { brandString } from '@reevo/dsh-brand'
+import type { Session, SessionId } from '@reevo/dsh-session'
 import {
   fixtureContext, formatSystemPromptSnapshot, formatToolSchemasSnapshot, normalizeSessionSnapshots,
   normalizedSystemPrompts, normalizedToolSchemas, redactSessionSnapshotIds, refreshFixtureReplacements,
   scrubSessionSnapshot, stabilizeFixtureMessageIds, stabilizeRefreshLog, tokenizeSessionFixtureCwd,
-} from '@deepseek-ai/dsh-session-snapshot'
-import type {} from '@deepseek-ai/dsh-api-session-controller'
-import type {} from '@deepseek-ai/dsh-workspace'
+} from '@reevo/dsh-session-snapshot'
+import type {} from '@reevo/dsh-api-session-controller'
+import type {} from '@reevo/dsh-workspace'
 import {
   launchWebScaffold, normalizeWebSessionVolatiles, rawSessionLog, readPersistedEvents,
   recordedSessionFixturePath, selectedSessionFixture, webSnapshotMode,

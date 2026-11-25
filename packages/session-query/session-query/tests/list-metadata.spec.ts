@@ -1,10 +1,10 @@
 /** Session-list metadata is registered and read through the query service lifecycle. */
 
 import { Context } from '@deepseek-ai/cordis'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import { createUserMessage } from '@reevo/dsh-llm'
+import SessionStore from '@reevo/dsh-session'
+import type { Session } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { describe, expect, it, onTestFinished } from 'vitest'
 import { TestSessionQueryEngine } from './test-service.ts'
 

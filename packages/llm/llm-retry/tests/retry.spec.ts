@@ -1,9 +1,9 @@
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { afterEach, describe, expect, expectTypeOf, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import type { Fiber } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { createUserMessage, type ToolCallId, EMPTY_RESPONSE_CODE, LlmAdapter, LlmError, expandAssistantStream, resolveRetryPolicy  } from '@deepseek-ai/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import LlmRuntime, { createUserMessage, type ToolCallId, EMPTY_RESPONSE_CODE, LlmAdapter, LlmError, expandAssistantStream, resolveRetryPolicy  } from '@reevo/dsh-llm'
 import type {
   AlwaysRetryPolicyConfig,
   BackoffConfig,
@@ -12,17 +12,17 @@ import type {
   ResolvedRetryPolicy,
   RetryPolicyConfig,
   StreamChunk,
-} from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { SessionEvent, SessionEventMap } from '@deepseek-ai/dsh-session'
-import type { LlmRetryEventData } from '@deepseek-ai/dsh-llm-retry/types'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent, RequestErrorAction } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
+} from '@reevo/dsh-llm'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { SessionEvent, SessionEventMap } from '@reevo/dsh-session'
+import type { LlmRetryEventData } from '@reevo/dsh-llm-retry/types'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
+import AgentRegistry from '@reevo/dsh-agent'
+import type { Agent, RequestErrorAction } from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
 import type { Config as retryConfig, RetryInternals as retryRetryInternals } from '../src/index.ts'
 import * as retry from '../src/index.ts'
 

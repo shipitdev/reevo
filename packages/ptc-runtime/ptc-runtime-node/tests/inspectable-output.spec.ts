@@ -1,7 +1,7 @@
 import { Context } from '@deepseek-ai/cordis'
-import { PtcImage, PtcInspectableValue, type PtcBindingNamespace, type PtcJsonValue } from '@deepseek-ai/dsh-ptc-runtime'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { PtcImage, PtcInspectableValue, type PtcBindingNamespace, type PtcJsonValue } from '@reevo/dsh-ptc-runtime'
+import type { AttachmentId } from '@reevo/dsh-attachment'
+import { brandString } from '@reevo/dsh-brand'
 import { describe, expect, it } from 'vitest'
 import { mountRuntime } from './setup.ts'
 

@@ -189,14 +189,14 @@ describe.skipIf(!requiredArtifacts)('Goal Remote built LIB chain', () => {
         }
         const client = new Context()
         for (const id of [
-          '@deepseek-ai/dsh-typert-registry',
-          '@deepseek-ai/dsh-client-connection',
-          '@deepseek-ai/dsh-api-gateway',
-          '@deepseek-ai/dsh-api-remotes',
+          '@reevo/dsh-typert-registry',
+          '@reevo/dsh-client-connection',
+          '@reevo/dsh-api-gateway',
+          '@reevo/dsh-api-remotes',
         ]) {
           const plugin = instantiate(id)
           // The connection Client face reads its recovery timing from its synced Config; an absent value uses the defaults.
-          const config = id === '@deepseek-ai/dsh-client-connection' ? { recovery: { get: () => undefined } } : undefined
+          const config = id === '@reevo/dsh-client-connection' ? { recovery: { get: () => undefined } } : undefined
           await client.plugin({ inject: plugin.inject, apply: plugin.apply }, config)
         }
         client.typert.contexts.registerClient('agent', {

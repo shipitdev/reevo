@@ -1,15 +1,15 @@
 /** Complete-log continuation projection, including recovery and publication. */
 import { Context } from '@deepseek-ai/cordis'
-import SessionStore, { type SessionId, SessionSeq, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { createAssistantMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { SessionEvent, TurnEndReason } from '@deepseek-ai/dsh-session/types'
+import SessionStore, { type SessionId, SessionSeq, SessionLogOffset } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { createAssistantMessage, createUserMessage } from '@reevo/dsh-llm'
+import type { SessionEvent, TurnEndReason } from '@reevo/dsh-session/types'
 import { expect, it, onTestFinished, vi } from 'vitest'
 
 import { continuationProjectionDefinition as definition } from '../src/continuation.ts'
 import { paginate } from '../src/history.ts'
 import { continuationTurn as turn } from '../../../client/ui-conversation/tests/continuation-fixture.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const failed = (code: string): TurnEndReason => ({ kind: 'error', error: { code, message: code } })
 function fold(events: readonly SessionEvent[]) {

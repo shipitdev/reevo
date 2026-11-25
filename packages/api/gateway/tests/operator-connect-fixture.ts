@@ -1,9 +1,9 @@
 /** Loader-mounted Remote methods and interactions for authenticated transport tests. */
 import { Context } from '@deepseek-ai/cordis'
-import { Remote, TypertRemoteService, type PeerScope } from '@deepseek-ai/dsh-typert-protocol'
-import type { TypertRemoteEventDispatch, TypertRemoteEventOutcome } from '@deepseek-ai/dsh-api-gateway'
-import type {} from '@deepseek-ai/dsh-client-connection'
-import type {} from '@deepseek-ai/dsh-typert-registry'
+import { Remote, TypertRemoteService, type PeerScope } from '@reevo/dsh-typert-protocol'
+import type { TypertRemoteEventDispatch, TypertRemoteEventOutcome } from '@reevo/dsh-api-gateway'
+import type {} from '@reevo/dsh-client-connection'
+import type {} from '@reevo/dsh-typert-registry'
 
 interface CallObservation {
   readonly peer: PeerScope

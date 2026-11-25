@@ -20,9 +20,9 @@
 
 import { useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { LlmDiscoveredModel } from '@deepseek-ai/dsh-api-remotes/client'
-import { AnimatedRows, Button, IconPlusOutlineRegular, Modal } from '@deepseek-ai/dsh-client-ui-primitives'
-import { TextSearchIndex } from '@deepseek-ai/dsh-util-text-search'
+import type { LlmDiscoveredModel } from '@reevo/dsh-api-remotes/client'
+import { AnimatedRows, Button, IconPlusOutlineRegular, Modal } from '@reevo/dsh-client-ui-primitives'
+import { TextSearchIndex } from '@reevo/dsh-util-text-search'
 import { formatCapacity, parseCapacity } from './DeepSeekModelsEditor.tsx'
 import type { ModelsOperations } from './operations.ts'
 import type { DeepSeekModelDraft } from './DeepSeekModelsEditor.tsx'

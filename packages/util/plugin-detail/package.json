@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-plugin-detail",
+  "name": "@reevo/dsh-plugin-detail",
   "description": "Plugin detail documents: meta.detail or README selection, image paths, and local and npm CDN file sources",
   "version": "0.2.3-alpha.2",
   "publishConfig": {

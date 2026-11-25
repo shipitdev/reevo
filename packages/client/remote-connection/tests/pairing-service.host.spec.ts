@@ -7,11 +7,11 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import type { CredentialKey, CredentialRecord } from '@deepseek-ai/dsh-credentials'
-import * as Connection from '@deepseek-ai/dsh-client-connection'
-import * as Token from '@deepseek-ai/dsh-host-authentication-token'
-import WebServer, { type WebEntryUrl, type WebResourceRoute, type WebRoute } from '@deepseek-ai/dsh-host-webserver'
-import type { Principal, RemoteInvocation } from '@deepseek-ai/dsh-typert-protocol'
+import type { CredentialKey, CredentialRecord } from '@reevo/dsh-credentials'
+import * as Connection from '@reevo/dsh-client-connection'
+import * as Token from '@reevo/dsh-host-authentication-token'
+import WebServer, { type WebEntryUrl, type WebResourceRoute, type WebRoute } from '@reevo/dsh-host-webserver'
+import type { Principal, RemoteInvocation } from '@reevo/dsh-typert-protocol'
 import { afterEach, expect, it, vi } from 'vitest'
 import { MemoryCredentials } from '../../../credentials/credentials/tests/memory.ts'
 import { materializeTlsFixture } from '../../../host/webserver/tests/tls-fixture.ts'
@@ -22,7 +22,7 @@ import { renderPairingScript } from '../src/anonymous/index.ts'
 import { RemoteBrowserAuth } from '../src/remote-auth.ts'
 import { PairingRequests } from '../src/pairing-requests.ts'
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@reevo/dsh-typert-protocol' {
   interface PrincipalMap {
     /** Non-owner used to check approval independently of Gateway grants. */
     'pairing-test-guest': { readonly kind: 'pairing-test-guest' }

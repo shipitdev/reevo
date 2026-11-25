@@ -1,5 +1,5 @@
 /** Optional bundles through the shipped Web Loader, live package manager, and real Agent loop. */
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
 import { randomUUID } from 'node:crypto'
 import { existsSync } from 'node:fs'
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
@@ -8,30 +8,30 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import type { Context } from '@deepseek-ai/cordis'
-import type { Agent, AgentHandle } from '@deepseek-ai/dsh-agent'
-import type { ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { LlmAdapter, type ToolCallId, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-agent-preset-registry'
-import type {} from '@deepseek-ai/dsh-hmr'
-import type {} from '@deepseek-ai/dsh-plugin-manager'
-import type {} from '@deepseek-ai/dsh-permission-presets'
-import type {} from '@deepseek-ai/dsh-session-title-llm'
-import type {} from '@deepseek-ai/dsh-skill'
-import type {} from '@deepseek-ai/dsh-tools'
+import type { Agent, AgentHandle } from '@reevo/dsh-agent'
+import type { ProfileContext } from '@reevo/dsh-app-boot'
+import { brandString } from '@reevo/dsh-brand'
+import { LlmAdapter, type ToolCallId, createUserMessage } from '@reevo/dsh-llm'
+import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@reevo/dsh-llm'
+import type { SessionId } from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-agent-preset-registry'
+import type {} from '@reevo/dsh-hmr'
+import type {} from '@reevo/dsh-plugin-manager'
+import type {} from '@reevo/dsh-permission-presets'
+import type {} from '@reevo/dsh-session-title-llm'
+import type {} from '@reevo/dsh-skill'
+import type {} from '@reevo/dsh-tools'
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest'
 import { textResponse, toolCallResponse } from '../../../packages/core/agent-loop/tests/mock-adapter.ts'
 
 const root = fileURLToPath(new URL('../../..', import.meta.url))
 const installAnchor = join(root, 'apps/cli/package.json')
 const bundles = {
-  search: '@deepseek-ai/dsh-experimental-session-search',
-  ralph: '@deepseek-ai/dsh-experimental-ralph-bundle',
-  terminal: '@deepseek-ai/dsh-experimental-terminal-bundle',
-  badge: '@deepseek-ai/dsh-experimental-badge-skill-bundle',
-  titles: '@deepseek-ai/dsh-experimental-session-titles-bundle',
+  search: '@reevo/dsh-experimental-session-search',
+  ralph: '@reevo/dsh-experimental-ralph-bundle',
+  terminal: '@reevo/dsh-experimental-terminal-bundle',
+  badge: '@reevo/dsh-experimental-badge-skill-bundle',
+  titles: '@reevo/dsh-experimental-session-titles-bundle',
 } as const
 type Response = StreamChunk[] | ((request: GenerateOptions) => StreamChunk[])
 
@@ -84,10 +84,10 @@ describe.skipIf(!existsSync(join(root, 'apps/cli/lib/bin.js')))('Official option
     originalEnvironment = Object.fromEntries(Object.keys(values).map(key => [key, process.env[key]]))
     Object.assign(process.env, values)
     const require = createRequire(import.meta.url)
-    const app = require(join(root, 'packages/boot/app-boot/lib/index.js')) as typeof import('@deepseek-ai/dsh-app-boot')
-    const cmdline = require(join(root, 'packages/boot/cmdline/lib/index.js')) as typeof import('@deepseek-ai/dsh-cmdline')
+    const app = require(join(root, 'packages/boot/app-boot/lib/index.js')) as typeof import('@reevo/dsh-app-boot')
+    const cmdline = require(join(root, 'packages/boot/cmdline/lib/index.js')) as typeof import('@reevo/dsh-cmdline')
     const directory = join(home, 'profiles', 'web')
-    app.initProfile(directory, ['@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app'])
+    app.initProfile(directory, ['@reevo/dsh-base', '@reevo/dsh-web-app'])
     await writeFile(join(directory, 'cordis.yml'), '[]\n')
     await writeFile(join(directory, 'cordis.patch.yml'), JSON.stringify([
       { id: 'agent-default-model', config: { provider: 'bundle-test', model: 'scripted' } },

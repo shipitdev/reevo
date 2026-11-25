@@ -2,16 +2,16 @@
 
 import { afterEach, describe, expect, it, onTestFinished } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime, { BlockAssembler, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { StreamChunk } from '@deepseek-ai/dsh-llm'
-import { PiAiAdapter } from '@deepseek-ai/dsh-llm-pi-ai'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import LlmRuntime, { BlockAssembler, createUserMessage } from '@reevo/dsh-llm'
+import type { StreamChunk } from '@reevo/dsh-llm'
+import { PiAiAdapter } from '@reevo/dsh-llm-pi-ai'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
+import type { SessionId } from '@reevo/dsh-session'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 import { resolveProfiles } from '../src/config.ts'
 import { memoryAuth } from './auth-double.ts'
 import { anthropicFrame, anthropicMessageStart, closeMockServers, mockServer } from './mock-server.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 afterEach(closeMockServers)
 

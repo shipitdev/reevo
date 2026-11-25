@@ -1,12 +1,12 @@
 import { describe, expect, it, onTestFinished } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed, ContextSnapshotSection } from '@deepseek-ai/dsh-llm'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { ContextFormed, ContextSnapshotSection } from '@reevo/dsh-llm'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
 import { RuntimeContextProjection } from '../src/runtime-context.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test-compaction': { kind: 'test-compaction' } & ContextFormed
   }

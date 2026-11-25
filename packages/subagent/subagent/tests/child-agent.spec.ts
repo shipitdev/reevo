@@ -1,8 +1,8 @@
 import { describe, expect, it } from 'vitest'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
+import type { Agent } from '@reevo/dsh-agent'
+import { brandString } from '@reevo/dsh-brand'
+import type { ReasoningEffortId } from '@reevo/dsh-llm/types'
+import { Session, type SessionId } from '@reevo/dsh-session'
 import { resolveChildAgentOptions, resolveChildDepth } from '../src/child-agent.ts'
 
 function parentAgent(): Agent {

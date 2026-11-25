@@ -1,7 +1,7 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { spawnSync } from 'node:child_process'
-import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@reevo/dsh-agent-loop-testkit'
 import { mkdtemp, realpath, rm, writeFile } from 'node:fs/promises'
 import { release, tmpdir, version } from 'node:os'
 import { join } from 'node:path'
@@ -10,23 +10,23 @@ import { afterEach, describe, expect, it, onTestFailed, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import TerminalSessionService from '@deepseek-ai/dsh-terminal'
-import type { TerminalWaitReason } from '@deepseek-ai/dsh-terminal'
-import * as TerminalBash from '@deepseek-ai/dsh-terminal-bash'
-import SandboxProvider from '@deepseek-ai/dsh-sandbox'
-import type { ConfinedArgv, SandboxPolicy } from '@deepseek-ai/dsh-sandbox'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import LocalSubprocessService from '@deepseek-ai/dsh-subprocess-local'
-import { resolvePwshPath } from '@deepseek-ai/dsh-pwsh-local/src/resolve.ts'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRegistry from '@deepseek-ai/dsh-tools'
-import * as ToolPwshPersistent from '@deepseek-ai/dsh-tool-pwsh-persistent'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@reevo/dsh-session'
+import AgentRegistry from '@reevo/dsh-agent'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { Agent } from '@reevo/dsh-agent'
+import TerminalSessionService from '@reevo/dsh-terminal'
+import type { TerminalWaitReason } from '@reevo/dsh-terminal'
+import * as TerminalBash from '@reevo/dsh-terminal-bash'
+import SandboxProvider from '@reevo/dsh-sandbox'
+import type { ConfinedArgv, SandboxPolicy } from '@reevo/dsh-sandbox'
+import SandboxPolicyService from '@reevo/dsh-sandbox-policy'
+import LocalSubprocessService from '@reevo/dsh-subprocess-local'
+import { resolvePwshPath } from '@reevo/dsh-pwsh-local/src/resolve.ts'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRegistry from '@reevo/dsh-tools'
+import * as ToolPwshPersistent from '@reevo/dsh-tool-pwsh-persistent'
 import { ReadinessTimeline, TIMELINE_HEADER } from './readiness-timeline.ts'
 
 const pwshPath = resolvePwshPath()
@@ -111,19 +111,19 @@ describe.skipIf(!hasPwsh)('persistent pwsh through a real cordis.yml Loader comp
     root = await realpath(await mkdtemp(join(tmpdir(), 'dsh-persistent-pwsh-loader-')))
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
-      "- name: '@deepseek-ai/dsh-agent'",
-      "- name: '@deepseek-ai/dsh-system-prompt'",
-      "- name: '@deepseek-ai/dsh-tools'",
-      "- name: '@deepseek-ai/dsh-tool-executor-native'",
-      "- name: '@deepseek-ai/dsh-terminal'",
-      "- name: '@deepseek-ai/dsh-test-sandbox'",
-      "- name: '@deepseek-ai/dsh-session-projection'",
-      "- name: '@deepseek-ai/dsh-sandbox-policy'",
+      "- name: '@reevo/dsh-agent'",
+      "- name: '@reevo/dsh-system-prompt'",
+      "- name: '@reevo/dsh-tools'",
+      "- name: '@reevo/dsh-tool-executor-native'",
+      "- name: '@reevo/dsh-terminal'",
+      "- name: '@reevo/dsh-test-sandbox'",
+      "- name: '@reevo/dsh-session-projection'",
+      "- name: '@reevo/dsh-sandbox-policy'",
       '  config:',
       '    mode: danger-full-access',
       `    workspaceRoot: ${JSON.stringify(root)}`,
-      "- name: '@deepseek-ai/dsh-subprocess-local'",
-      "- name: '@deepseek-ai/dsh-terminal-bash'",
+      "- name: '@reevo/dsh-subprocess-local'",
+      "- name: '@reevo/dsh-terminal-bash'",
       '  config:',
       '    shellDialect: pwsh',
       '    pollIntervalMs: 10',
@@ -146,7 +146,7 @@ describe.skipIf(!hasPwsh)('persistent pwsh through a real cordis.yml Loader comp
       // would not).
       '    timeoutMs: 300000',
       '    disposeGraceMs: 500',
-      "- name: '@deepseek-ai/dsh-tool-pwsh-persistent'",
+      "- name: '@reevo/dsh-tool-pwsh-persistent'",
       '  config:',
       '    timeoutMs: 300000',
       '',
@@ -159,17 +159,17 @@ describe.skipIf(!hasPwsh)('persistent pwsh through a real cordis.yml Loader comp
     await context.plugin(Loader)
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
-      ['@deepseek-ai/dsh-agent', AgentRegistry],
-      ['@deepseek-ai/dsh-system-prompt', SystemPrompt],
-      ['@deepseek-ai/dsh-tools', ToolRegistry],
-      ['@deepseek-ai/dsh-tool-executor-native', NativeToolExecutor],
-      ['@deepseek-ai/dsh-terminal', TerminalSessionService],
-      ['@deepseek-ai/dsh-test-sandbox', PassthroughSandbox],
-      ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-      ['@deepseek-ai/dsh-sandbox-policy', SandboxPolicyService],
-      ['@deepseek-ai/dsh-subprocess-local', LocalSubprocessService],
-      ['@deepseek-ai/dsh-terminal-bash', TerminalBash],
-      ['@deepseek-ai/dsh-tool-pwsh-persistent', ToolPwshPersistent],
+      ['@reevo/dsh-agent', AgentRegistry],
+      ['@reevo/dsh-system-prompt', SystemPrompt],
+      ['@reevo/dsh-tools', ToolRegistry],
+      ['@reevo/dsh-tool-executor-native', NativeToolExecutor],
+      ['@reevo/dsh-terminal', TerminalSessionService],
+      ['@reevo/dsh-test-sandbox', PassthroughSandbox],
+      ['@reevo/dsh-session-projection', SessionProjectionRegistry],
+      ['@reevo/dsh-sandbox-policy', SandboxPolicyService],
+      ['@reevo/dsh-subprocess-local', LocalSubprocessService],
+      ['@reevo/dsh-terminal-bash', TerminalBash],
+      ['@reevo/dsh-tool-pwsh-persistent', ToolPwshPersistent],
     ])
     context.loader.internal = {
       version: 'v2',

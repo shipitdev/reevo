@@ -4,10 +4,10 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { Context, FiberState, type Plugin } from '@deepseek-ai/cordis'
-import { PluginPackages, readPluginMeta, type RuntimeResolution } from '@deepseek-ai/dsh-app-boot'
+import { PluginPackages, readPluginMeta, type RuntimeResolution } from '@reevo/dsh-app-boot'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import { remoteMethods } from '@deepseek-ai/dsh-typert-protocol'
-import type { AgentPresetRegistry } from '@deepseek-ai/dsh-agent-preset-registry'
+import { remoteMethods } from '@reevo/dsh-typert-protocol'
+import type { AgentPresetRegistry } from '@reevo/dsh-agent-preset-registry'
 import PluginInventoryGateway from '../src/index.ts'
 
 const contexts: Context[] = []

@@ -3,7 +3,7 @@ description: "通过独立发布的 kit 在 Host 渲染、转换 Office 文档�
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-office-kit
+# @reevo/dsh-office-kit
 
 [English](README.md) | 中文
 
@@ -25,7 +25,7 @@ kind: "package-reference"
 <a id="use-this-package"></a>
 ## 使用此包
 
-[Web bundle](../../bundle/web-app/README.zh.md)和 [SDK bundle](../../bundle/sdk-app/README.zh.md)以 `office-kit` 条目挂载此提供方；[Office 工具](../tool-office/README.zh.md)是其面向模型的消费方。独立组合通过 `cordis.yml` 条目挂载 `@deepseek-ai/dsh-office-kit`。
+[Web bundle](../../bundle/web-app/README.zh.md)和 [SDK bundle](../../bundle/sdk-app/README.zh.md)以 `office-kit` 条目挂载此提供方；[Office 工具](../tool-office/README.zh.md)是其面向模型的消费方。独立组合通过 `cordis.yml` 条目挂载 `@reevo/dsh-office-kit`。
 
 调用方提交已授权源的标识、版本、可选字节数、延迟的有界读取、输入扩展名；PDF 转换还指定调度优先级，图片渲染、格式转换和重算以前台优先级运行。源版本变化会拒绝操作。取消以原因为拒绝值，失败使用 `OfficeKitError`，其小写 `code` 也是 `document-render/failed` 的原因；[`dsh-tool-office`](../tool-office/README.zh.md#use-this-package) 在工具结果中把它映射为 `OfficeToolError` 的代码。每个结果都携带缺失字体；PDF 结果还携带转换 generation（配置替换后随之改变）。
 

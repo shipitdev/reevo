@@ -6,11 +6,11 @@ import {
   type Agent,
   type AgentOptions,
   type ModelSelection,
-} from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ReasoningEffortId, type UserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { Session, type SessionId, type EpochHeader } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+} from '@reevo/dsh-agent'
+import { brandString } from '@reevo/dsh-brand'
+import { createUserMessage, type ReasoningEffortId, type UserMessage } from '@reevo/dsh-llm'
+import SessionStore, { Session, type SessionId, type EpochHeader } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { AgentModel, modelSelectionProjectionDefinition } from '../src/model-selection.ts'
 
 const INITIAL = { provider: 'alpha', model: 'a0' }

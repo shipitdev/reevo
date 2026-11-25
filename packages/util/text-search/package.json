@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-util-text-search",
+  "name": "@reevo/dsh-util-text-search",
   "description": "Multilingual fuzzy filtering for in-memory search lists",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -30,7 +30,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
+    "@reevo/dsh-package-manifest": "workspace:*",
     "fuzzysort": "4.0.2"
   },
   "peerDependencies": {

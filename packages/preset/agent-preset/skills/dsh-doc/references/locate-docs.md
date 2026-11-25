@@ -31,7 +31,7 @@ Native grep/glob, `ls`, `cat`, and a Node executable chosen from `PATH` cannot t
 With Inspect available, `Config.listConfigs` filtered by `name` lists mounted entries; querying an `entry` supplies `packageDir`. Otherwise use the installation anchor and executable verified above. In bash:
 
 ```sh
-ELECTRON_RUN_AS_NODE=1 "$DSH_NODE_EXECUTABLE" -e "console.log(require('node:path').dirname(require.resolve(process.argv[1] + '/package.json', { paths: [process.env.DSH_INSTALL_DIR] })))" @deepseek-ai/dsh-tool-bash
+ELECTRON_RUN_AS_NODE=1 "$DSH_NODE_EXECUTABLE" -e "console.log(require('node:path').dirname(require.resolve(process.argv[1] + '/package.json', { paths: [process.env.DSH_INSTALL_DIR] })))" @reevo/dsh-tool-bash
 ```
 
 In PowerShell, use redirected process output and wait for the exit code. Windows Desktop's Electron is a GUI-subsystem executable, for which `&` does not reliably wait. Replace `$script` and `$arguments` for other reads:
@@ -40,7 +40,7 @@ In PowerShell, use redirected process output and wait for the exit code. Windows
 $script = @'
 console.log(require('node:path').dirname(require.resolve(process.argv[1] + '/package.json', { paths: [process.env.DSH_INSTALL_DIR] })))
 '@
-$arguments = @('@deepseek-ai/dsh-tool-bash')
+$arguments = @('@reevo/dsh-tool-bash')
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
 $start = [System.Diagnostics.ProcessStartInfo]::new($env:DSH_NODE_EXECUTABLE)
 foreach ($argument in @('-e', $script, '--') + $arguments) { $start.ArgumentList.Add($argument) }
@@ -59,7 +59,7 @@ $process.WaitForExit()
 exit $process.ExitCode
 ```
 
-If the executable or anchor is absent, do not substitute an unrelated Node from PATH. Inspect or directly read verified files. A checkout found only from the skill locates source but does not prove the running CLI version. Verify that `../../package.json` relative to the skill's base names `@deepseek-ai/dsh-agent-preset` before using its version as the shipping skill package's version. For a custom or single-executable layout, report only locations and versions actually verified.
+If the executable or anchor is absent, do not substitute an unrelated Node from PATH. Inspect or directly read verified files. A checkout found only from the skill locates source but does not prove the running CLI version. Verify that `../../package.json` relative to the skill's base names `@reevo/dsh-agent-preset` before using its version as the shipping skill package's version. For a custom or single-executable layout, report only locations and versions actually verified.
 
 ## Bounded lookup
 

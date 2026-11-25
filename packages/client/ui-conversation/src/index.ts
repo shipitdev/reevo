@@ -1,5 +1,5 @@
 /** Browser conversation preferences. */
-import type {} from '@deepseek-ai/dsh-settings'
+import type {} from '@reevo/dsh-settings'
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'

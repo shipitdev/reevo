@@ -1,6 +1,6 @@
 import { Context } from '@deepseek-ai/cordis'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt, { renderContextSections } from '@deepseek-ai/dsh-system-prompt'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt, { renderContextSections } from '@reevo/dsh-system-prompt'
 import { describe, expect, it, onTestFinished } from 'vitest'
 import { cliPathContextText, registerCliPathContext, type CliPathContext } from '../src/context.ts'
 

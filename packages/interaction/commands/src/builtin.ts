@@ -2,12 +2,12 @@
 import type { CommandDescriptor } from './types.ts'
 
 const BUILTINS = {
-  goal: '@deepseek-ai/dsh-command-goal',
-  plan: '@deepseek-ai/dsh-plan-mode',
-  feedback: '@deepseek-ai/dsh-command-feedback',
-  compact: '@deepseek-ai/dsh-command-compact',
-  permission: '@deepseek-ai/dsh-permission-presets',
-  export: '@deepseek-ai/dsh-session-log-export',
+  goal: '@reevo/dsh-command-goal',
+  plan: '@reevo/dsh-plan-mode',
+  feedback: '@reevo/dsh-command-feedback',
+  compact: '@reevo/dsh-command-compact',
+  permission: '@reevo/dsh-permission-presets',
+  export: '@reevo/dsh-session-log-export',
 } as const
 
 /** Stable first-party capabilities, independent of their registered command names. */

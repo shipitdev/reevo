@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-dingtalk",
+  "name": "@reevo/dsh-dingtalk",
   "description": "DingTalk plugin: the official dws CLI with its skills, and sign-in from the Plugins page",
   "version": "0.2.3-alpha.2",
   "icon": "./icon.svg",
@@ -43,10 +43,10 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-home-paths": "workspace:*",
-    "@deepseek-ai/dsh-skill-filesystem": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-home-paths": "workspace:*",
+    "@reevo/dsh-skill-filesystem": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "fflate": "^0.8.3",
     "tar": "^7.5.22",
@@ -54,17 +54,17 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-cli-account": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*"
+    "@reevo/dsh-cli-account": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-cli-account": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-connector-account": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*"
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-cli-account": "workspace:*",
+    "@reevo/dsh-client-ui-connector-account": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*"
   }
 }

@@ -1,8 +1,8 @@
 /** Browser command service, with one keyboard adapter per plugin lifetime. */
 import { Service } from '@deepseek-ai/cordis'
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type { SyncedConfig, SyncedConfigRef } from '@deepseek-ai/dsh-client-config/types'
+import type {} from '@reevo/dsh-client-locale/client'
+import type { SyncedConfig, SyncedConfigRef } from '@reevo/dsh-client-config/types'
 import type { ShortcutsConfig } from '../types.ts'
 import { ShortcutRegistry } from './registry.ts'
 import { detectEnvironment, installKeyboard } from './dom.ts'

@@ -9,24 +9,24 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { afterEach, expect, it, vi } from 'vitest'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { Context } from '@deepseek-ai/cordis'
 import Include from '@deepseek-ai/cordis-plugin-include'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import AuthorizationService from '@deepseek-ai/dsh-authorization'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { credentialKey } from '@deepseek-ai/dsh-credentials'
-import LocalCredentials from '@deepseek-ai/dsh-credentials-local'
-import DeepSeekAccount, { type AccountClientMetadata } from '@deepseek-ai/dsh-deepseek-account'
-import LlmRuntime, { type StreamChunk } from '@deepseek-ai/dsh-llm'
-import * as AccountRoute from '@deepseek-ai/dsh-llm-deepseek-account'
-import DeepSeekAuth from '@deepseek-ai/dsh-deepseek-auth'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
+import AgentRegistry from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import AuthorizationService from '@reevo/dsh-authorization'
+import { brandString } from '@reevo/dsh-brand'
+import { credentialKey } from '@reevo/dsh-credentials'
+import LocalCredentials from '@reevo/dsh-credentials-local'
+import DeepSeekAccount, { type AccountClientMetadata } from '@reevo/dsh-deepseek-account'
+import LlmRuntime, { type StreamChunk } from '@reevo/dsh-llm'
+import * as AccountRoute from '@reevo/dsh-llm-deepseek-account'
+import DeepSeekAuth from '@reevo/dsh-deepseek-auth'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
 import { profileComposition } from '../../../settings/settings/tests/profile-composition.ts'
 import { sourceModuleLoader, sse, start, user } from './helpers.ts'
 
@@ -107,17 +107,17 @@ async function boot(origin: string) {
   const ctx = new Context()
   cleanup.push(() => ctx.fiber.dispose())
   const modules = new Map<string, { module: unknown; config?: object }>([
-    ['@deepseek-ai/dsh-llm', { module: LlmRuntime }], ['@deepseek-ai/dsh-session', { module: SessionStore }],
-    ['@deepseek-ai/dsh-session-projection', { module: SessionProjectionRegistry }], ['@deepseek-ai/dsh-system-prompt', { module: SystemPrompt }],
-    ['@deepseek-ai/dsh-tools', { module: ToolRuntime }], ['@deepseek-ai/dsh-tool-executor-native', { module: NativeToolExecutor }],
-    ['@deepseek-ai/dsh-agent', { module: AgentRegistry }], ['@deepseek-ai/dsh-agent-loop', { module: AgentLoop, config: { agents: [] } }],
-    ['@deepseek-ai/dsh-credentials-local', { module: LocalCredentials, config: { path: join(home, '.credentials.yaml'), watch: false } }],
-    ['@deepseek-ai/dsh-authorization', { module: AuthorizationService }],
-    ['@deepseek-ai/dsh-deepseek-account', { module: DeepSeekAccount, config: {
+    ['@reevo/dsh-llm', { module: LlmRuntime }], ['@reevo/dsh-session', { module: SessionStore }],
+    ['@reevo/dsh-session-projection', { module: SessionProjectionRegistry }], ['@reevo/dsh-system-prompt', { module: SystemPrompt }],
+    ['@reevo/dsh-tools', { module: ToolRuntime }], ['@reevo/dsh-tool-executor-native', { module: NativeToolExecutor }],
+    ['@reevo/dsh-agent', { module: AgentRegistry }], ['@reevo/dsh-agent-loop', { module: AgentLoop, config: { agents: [] } }],
+    ['@reevo/dsh-credentials-local', { module: LocalCredentials, config: { path: join(home, '.credentials.yaml'), watch: false } }],
+    ['@reevo/dsh-authorization', { module: AuthorizationService }],
+    ['@reevo/dsh-deepseek-account', { module: DeepSeekAccount, config: {
       platformOrigin: origin, inferenceOrigin: origin, allowLoopbackHttp: true, logoutRetryDelayMs: 1,
     } }],
-    ['@deepseek-ai/dsh-deepseek-auth', { module: DeepSeekAuth }],
-    ['@deepseek-ai/dsh-llm-deepseek-account', { module: AccountRoute, config: { baseURL: `${origin}/anthropic` } }],
+    ['@reevo/dsh-deepseek-auth', { module: DeepSeekAuth }],
+    ['@reevo/dsh-llm-deepseek-account', { module: AccountRoute, config: { baseURL: `${origin}/anthropic` } }],
   ])
   await writeFile(join(home, 'cordis.yml'), JSON.stringify(
     [...modules].map(([name, { config }]) => ({ name, ...config === undefined ? {} : { config } })),

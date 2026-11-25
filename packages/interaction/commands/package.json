@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-commands",
+  "name": "@reevo/dsh-commands",
   "description": "Plugin-owned human command registry for DeepSeek Harness UIs",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -54,26 +54,26 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-attachment": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-util-crypto": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-util-crypto": "workspace:*",
     "zod": "4.6.6"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-scope": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-attachment": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-scope": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

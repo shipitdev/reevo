@@ -5,12 +5,12 @@
  */
 import { act, cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
-import type { SessionListState } from '@deepseek-ai/dsh-api-session-controller/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { bindSnapshotSelector, makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
-import type { BindingState } from '@deepseek-ai/dsh-experimental-forge-session/types'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type { SessionProjectionSummaryValues } from '@deepseek-ai/dsh-session-projection/types'
+import type { SessionListState } from '@reevo/dsh-api-session-controller/client'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import { bindSnapshotSelector, makeTranslate } from '@reevo/dsh-client-test-runtime'
+import type { BindingState } from '@reevo/dsh-experimental-forge-session/types'
+import type { SessionId } from '@reevo/dsh-session/types'
+import type { SessionProjectionSummaryValues } from '@reevo/dsh-session-projection/types'
 import { en } from '../src/client/locales.ts'
 import { sessionForgeFacts, type ChangeRequestStates } from '../src/client/session-list.ts'
 import { HOVER_CHANGE_REQUEST_LIMIT, SessionHoverForge, type SessionHoverForgeProps } from '../src/client/SessionHoverForge.tsx'
@@ -18,7 +18,7 @@ import { SessionRowForge, stateLine, type SessionRowForgeProps } from '../src/cl
 import css from '../src/client/SessionList.module.css'
 import type { ForgeChangeRequestListState } from '../src/types.ts'
 import { created, listState as state } from './client-fixtures.client.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 afterEach(cleanup)
 

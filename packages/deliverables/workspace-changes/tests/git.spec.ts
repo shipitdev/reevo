@@ -3,12 +3,12 @@ import { chmod, mkdir, readdir, readFile, realpath, writeFile } from 'node:fs/pr
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
+import LocalSubprocessRuntime from '@reevo/dsh-subprocess-local'
 import { GitRunner, blobText, diffTrees, ignoredPaths, locateGitWorkspace, snapshotTree, treeBlob } from '../src/git.ts'
 import { TurnRecorder } from '../src/recorder.ts'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
 import { git, scratchDir, startTurn, toolCall } from './support.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 /** An object directory factory under a scratch root. */
 const objectsIn = (root: string) => () => Promise.resolve(join(root, 'objects'))

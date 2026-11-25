@@ -5,9 +5,9 @@ import {
   resolveRetryPolicy,
   RETRY_CODE_CHOICES,
   RetryPolicySchema,
-} from '@deepseek-ai/dsh-llm'
-import type { RetryPolicyConfig } from '@deepseek-ai/dsh-llm'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+} from '@reevo/dsh-llm'
+import type { RetryPolicyConfig } from '@reevo/dsh-llm'
+import { MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
 
 describe('provider retry policy', () => {
   it('resolves immutable normal defaults', () => {

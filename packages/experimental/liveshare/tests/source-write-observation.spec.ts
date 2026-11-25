@@ -6,7 +6,7 @@
  * cases are the policy's own answers rather than this host's substitute for them.
  */
 
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import {
   existsSync,
   mkdirSync,
@@ -20,18 +20,18 @@ import {
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { provideWorkingDirectoryFixture } from '@reevo/dsh-agent-loop-testkit'
 import { Context } from '@deepseek-ai/cordis'
-import { createScope, type Scope } from '@deepseek-ai/dsh-scope'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@deepseek-ai/dsh-session'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { type ToolExecutionToken, type ToolRunContext } from '@deepseek-ai/dsh-tools'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import * as FsPolicy from '@deepseek-ai/dsh-fs-observation-policy'
-import * as ToolFs from '@deepseek-ai/dsh-tool-fs'
+import { createScope, type Scope } from '@reevo/dsh-scope'
+import type { Agent } from '@reevo/dsh-agent'
+import { SESSION_FORMAT_VERSION, Session, type SessionId } from '@reevo/dsh-session'
+import { brandString } from '@reevo/dsh-brand'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime, { type ToolExecutionToken, type ToolRunContext } from '@reevo/dsh-tools'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import * as FsPolicy from '@reevo/dsh-fs-observation-policy'
+import * as ToolFs from '@reevo/dsh-tool-fs'
 import {
   installSourceSessionAccess,
   type ForkEnforcementFs,
@@ -39,7 +39,7 @@ import {
 } from '../src/host/fork-enforcement.ts'
 import type { ForkToolExecution } from '../src/host/fork-tool-guard.ts'
 import { executeOneTool } from './tool-call.ts'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 
 const testToolSignal = new AbortController().signal
 const session = 'session-shared'

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-speech-to-text",
+  "name": "@reevo/dsh-experimental-speech-to-text",
   "description": "Experimental speech recognition with independently selectable providers",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -41,19 +41,19 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-settings": "workspace:*",
+    "@reevo/dsh-settings": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-config-editor": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-config-editor": "workspace:*",
+    "@reevo/dsh-settings": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~"
   },
   "peerDependenciesMeta": {

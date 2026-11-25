@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-webworker-packer",
+  "name": "@reevo/dsh-experimental-webworker-packer",
   "description": "Build-time packer for the browser runtime's base VFS image and ordered data-overlay archives",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -37,12 +37,12 @@
   "license": "MIT",
   "dependencies": {
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-experimental-webworker-runtime": "workspace:*",
-    "@deepseek-ai/dsh-official-bundles": "workspace:*",
-    "@deepseek-ai/dsh-session-format": "workspace:*",
-    "@deepseek-ai/dsh-session-format-catalog": "workspace:*",
-    "@deepseek-ai/dsh-session-format-v3-to-v4": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-experimental-webworker-runtime": "workspace:*",
+    "@reevo/dsh-official-bundles": "workspace:*",
+    "@reevo/dsh-session-format": "workspace:*",
+    "@reevo/dsh-session-format-catalog": "workspace:*",
+    "@reevo/dsh-session-format-v3-to-v4": "workspace:*",
     "picomatch": "^4.0.7"
   },
   "devDependencies": {

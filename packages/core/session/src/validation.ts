@@ -1,12 +1,12 @@
 /**
  * Session header, seed-event, and inherited-cut validation shared by Session
  * construction and log validation.
- * @module @deepseek-ai/dsh-session/validation
+ * @module @reevo/dsh-session/validation
  */
 
 import { isAbsolute } from 'node:path'
-import { deepFreeze, snapshotJsonValue } from '@deepseek-ai/dsh-util-values'
-import type { Message } from '@deepseek-ai/dsh-llm'
+import { deepFreeze, snapshotJsonValue } from '@reevo/dsh-util-values'
+import type { Message } from '@reevo/dsh-llm'
 import { SESSION_FORMAT_VERSION, SessionLogOffset } from './types.ts'
 import type { SessionEvent, SessionHeader, SessionHeaderMeta, SessionId, SessionSeedEventState, SurfaceEventType } from './types.ts'
 import { SurfaceManager, validateSessionEventData } from './surface.ts'

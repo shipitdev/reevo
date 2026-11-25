@@ -3,15 +3,15 @@ import { mountWorkingDirectoryFixture } from './working-directory-fixture.ts'
 
 import { expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import * as Spawn from '@deepseek-ai/dsh-subagent-spawn-in-process'
-import * as Control from '@deepseek-ai/dsh-tool-subagent-control'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import type { SessionId } from '@reevo/dsh-session'
+import * as Spawn from '@reevo/dsh-subagent-spawn-in-process'
+import * as Control from '@reevo/dsh-tool-subagent-control'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 import SubagentRuntime from '../src/index.ts'
 import { mountLocalActivations } from './local-activation.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 it.each(['absent', 'unused'] as const)('returns the closing answer when send_message is %s', async (availability) => {
   const ctx = new Context()

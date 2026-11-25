@@ -12,12 +12,12 @@ import * as ReactDomClient from 'react-dom/client'
 import * as Cordis from '@deepseek-ai/cordis'
 import * as Zod from 'zod'
 import * as ReactVirtual from '@tanstack/react-virtual'
-import * as ClientStore from '@deepseek-ai/dsh-client-store'
-import * as UiSlots from '@deepseek-ai/dsh-client-ui-slots'
-import * as UiPrimitives from '@deepseek-ai/dsh-client-ui-primitives'
-import * as UiDockkit from '@deepseek-ai/dsh-client-ui-dockkit'
-import type { ClientModuleCreateOptions } from '@deepseek-ai/dsh-client-modules/client'
-import type { PlatformModule } from '@deepseek-ai/dsh-client-web/src/platform.ts'
+import * as ClientStore from '@reevo/dsh-client-store'
+import * as UiSlots from '@reevo/dsh-client-ui-slots'
+import * as UiPrimitives from '@reevo/dsh-client-ui-primitives'
+import * as UiDockkit from '@reevo/dsh-client-ui-dockkit'
+import type { ClientModuleCreateOptions } from '@reevo/dsh-client-modules/client'
+import type { PlatformModule } from '@reevo/dsh-client-web/src/platform.ts'
 
 /**
  * Adapt source namespaces to the module registration protocol without compiled metadata.
@@ -32,10 +32,10 @@ export function getStaticModules(): ClientModuleCreateOptions['staticModules'] {
     '@deepseek-ai/cordis': Cordis,
     'zod': Zod,
     '@tanstack/react-virtual': ReactVirtual,
-    '@deepseek-ai/dsh-client-store': ClientStore,
-    '@deepseek-ai/dsh-client-ui-slots': UiSlots,
-    '@deepseek-ai/dsh-client-ui-primitives': UiPrimitives,
-    '@deepseek-ai/dsh-client-ui-dockkit': UiDockkit,
+    '@reevo/dsh-client-store': ClientStore,
+    '@reevo/dsh-client-ui-slots': UiSlots,
+    '@reevo/dsh-client-ui-primitives': UiPrimitives,
+    '@reevo/dsh-client-ui-dockkit': UiDockkit,
   } satisfies Record<PlatformModule, Record<string, unknown>>
   return Object.entries(sources).map(([id, exports]) => ({ id, factory: () => exports }))
 }

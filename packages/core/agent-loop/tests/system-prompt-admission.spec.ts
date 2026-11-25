@@ -1,23 +1,23 @@
-import { CompactionId } from '@deepseek-ai/dsh-compaction'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { CompactionId } from '@reevo/dsh-compaction'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry, { type Agent, type ModelSelection } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { installModelSelection } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { createUserMessage, LlmError, type ReasoningEffortId, type GenerateOptions } from '@deepseek-ai/dsh-llm'
-import { toPiContext } from '@deepseek-ai/dsh-llm-pi-ai/src/context.ts'
-import SessionStore, { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import AgentRegistry, { type Agent, type ModelSelection } from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { installModelSelection } from '@reevo/dsh-agent'
+import { brandString } from '@reevo/dsh-brand'
+import LlmRuntime, { createUserMessage, LlmError, type ReasoningEffortId, type GenerateOptions } from '@reevo/dsh-llm'
+import { toPiContext } from '@reevo/dsh-llm-pi-ai/src/context.ts'
+import SessionStore, { Session, type SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 import { MockAdapter, textResponse } from './mock-adapter.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
-    'test-compaction': { kind: 'test-compaction' } & import('@deepseek-ai/dsh-llm').ContextFormed
+    'test-compaction': { kind: 'test-compaction' } & import('@reevo/dsh-llm').ContextFormed
   }
 }
 
@@ -68,8 +68,8 @@ async function send(agent: Agent, text: string) {
   await agent.whenIdle()
 }
 
-function compact(agent: Agent, start: import('@deepseek-ai/dsh-session').SessionSeq,
-  end: import('@deepseek-ai/dsh-session').SessionSeq, turn: number | null) {
+function compact(agent: Agent, start: import('@reevo/dsh-session').SessionSeq,
+  end: import('@reevo/dsh-session').SessionSeq, turn: number | null) {
   const session = agent.session
   const nodes = session.surface.nodes
   const shadowedSeqs = nodes.slice(nodes.indexOf(start), nodes.indexOf(end) + 1)

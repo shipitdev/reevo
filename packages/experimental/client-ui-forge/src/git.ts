@@ -1,12 +1,12 @@
 /** Git queries in a Session's current directory, using its permissions and execution world. */
 
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-fs'
-import type { SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import type { Session } from '@deepseek-ai/dsh-session'
-import type { SubprocessCollectedOutputs } from '@deepseek-ai/dsh-subprocess'
-import { deadline } from '@deepseek-ai/dsh-timeout'
+import type {} from '@reevo/dsh-fs'
+import type { SandboxExecutionPolicy } from '@reevo/dsh-sandbox'
+import type {} from '@reevo/dsh-sandbox-policy'
+import type { Session } from '@reevo/dsh-session'
+import type { SubprocessCollectedOutputs } from '@reevo/dsh-subprocess'
+import { deadline } from '@reevo/dsh-timeout'
 import { LOCAL_REF_PREFIX } from './branch-name.ts'
 import { parseName, parseRemotes, parseTopLevel } from './parse.ts'
 import type { GitRemote } from './parse.ts'

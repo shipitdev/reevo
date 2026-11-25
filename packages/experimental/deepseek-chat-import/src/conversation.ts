@@ -12,17 +12,17 @@
  */
 
 import { createHash } from 'node:crypto'
-import type { AttachmentId, FileAttachmentRef, ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
-import { brandNumber, brandString } from '@deepseek-ai/dsh-brand'
+import type { AttachmentId, FileAttachmentRef, ImageAttachmentRef } from '@reevo/dsh-attachment'
+import { brandNumber, brandString } from '@reevo/dsh-brand'
 import type {
   AssistantMessage, ContentBlock, LlmFailure, MessageId, SystemMessage, ToolCallBlock, ToolCallId, ToolResultMessage,
   UserMessage,
-} from '@deepseek-ai/dsh-llm'
-import type { SessionEvent, SessionSeq } from '@deepseek-ai/dsh-session'
-import { normalizeSessionTitle } from '@deepseek-ai/dsh-session-title'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
-import { formatFetchOutput, formatSearchOutput, fetchMetaFromValue, searchMetaFromValue } from '@deepseek-ai/dsh-tool-web'
-import type { WebFetchResult, WebSearchResult } from '@deepseek-ai/dsh-web'
+} from '@reevo/dsh-llm'
+import type { SessionEvent, SessionSeq } from '@reevo/dsh-session'
+import { normalizeSessionTitle } from '@reevo/dsh-session-title'
+import type { JsonValue } from '@reevo/dsh-util-values'
+import { formatFetchOutput, formatSearchOutput, fetchMetaFromValue, searchMetaFromValue } from '@reevo/dsh-tool-web'
+import type { WebFetchResult, WebSearchResult } from '@reevo/dsh-web'
 import { parseExportTime, parseKnownFragment } from './format.ts'
 import type { ExportFileEntry, ExportMessage, ExportSessionFile, KnownFragment } from './format.ts'
 

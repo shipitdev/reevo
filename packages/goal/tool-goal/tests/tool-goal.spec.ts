@@ -1,33 +1,33 @@
-import { ToolExecutionPipeline } from '@deepseek-ai/dsh-tools/pipeline'
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { ToolExecutionPipeline } from '@reevo/dsh-tools/pipeline'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { afterAll, afterEach, describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import AgentRegistry, { agentEvents } from '@deepseek-ai/dsh-agent'
-import type { Agent, AgentStatus, Inbox } from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { GoalId } from '@deepseek-ai/dsh-goal/types'
-import GoalService from '@deepseek-ai/dsh-goal'
-import type { GoalRef } from '@deepseek-ai/dsh-goal'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm/types'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { MessageSource } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import AgentRegistry, { agentEvents } from '@reevo/dsh-agent'
+import type { Agent, AgentStatus, Inbox } from '@reevo/dsh-agent'
+import { brandString } from '@reevo/dsh-brand'
+import type { GoalId } from '@reevo/dsh-goal/types'
+import GoalService from '@reevo/dsh-goal'
+import type { GoalRef } from '@reevo/dsh-goal'
+import type { ToolCallId } from '@reevo/dsh-llm/types'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { MessageSource } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
 import SessionStore, {
   SESSION_FORMAT_VERSION,
   Session,
   type SessionId,
   SessionLogOffset,
-} from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import type { ToolExecutionResult } from '@deepseek-ai/dsh-tools'
-import * as toolGoal from '@deepseek-ai/dsh-tool-goal'
-import { unsupportedModel, createInboxStub } from '@deepseek-ai/dsh-agent-loop-testkit'
+} from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import type { ToolExecutionResult } from '@reevo/dsh-tools'
+import * as toolGoal from '@reevo/dsh-tool-goal'
+import { unsupportedModel, createInboxStub } from '@reevo/dsh-agent-loop-testkit'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

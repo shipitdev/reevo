@@ -6,10 +6,10 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include, { applyEntryPatches } from '@deepseek-ai/cordis-plugin-include'
-import { loadOverlayPatches } from '@deepseek-ai/dsh-app-boot'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { OfficeSourceKey, OfficeKitRequest } from '@deepseek-ai/dsh-office-kit/types'
-import * as LibreOfficeProvider from '@deepseek-ai/dsh-office-kit'
+import { loadOverlayPatches } from '@reevo/dsh-app-boot'
+import { brandString } from '@reevo/dsh-brand'
+import type { OfficeSourceKey, OfficeKitRequest } from '@reevo/dsh-office-kit/types'
+import * as LibreOfficeProvider from '@reevo/dsh-office-kit'
 import { expect, it, onTestFinished } from 'vitest'
 
 it('loads one shared conversion row and retains caller-owned PDFs after disposal', async () => {
@@ -25,7 +25,7 @@ it('loads one shared conversion row and retains caller-owned PDFs after disposal
   })
   const rows = loadOverlayPatches('conversion-test', fileURLToPath(new URL('../cordis.patch.yml', import.meta.url)))
     .flatMap(patch => patch.insert ?? [])
-    .filter(row => row.name === '@deepseek-ai/dsh-office-kit')
+    .filter(row => row.name === '@reevo/dsh-office-kit')
   expect(rows.map(row => row.id)).toEqual(['office-kit'])
   const configured = applyEntryPatches(rows, [{ id: 'office-kit', config: { maxConcurrentConversions: 1, outputDirectory } }],
     (message) => { throw new Error(message) }).data
@@ -38,7 +38,7 @@ it('loads one shared conversion row and retains caller-owned PDFs after disposal
   ctx.loader.internal = {
     version: 'v2',
     async import(specifier: string) {
-      if (specifier !== '@deepseek-ai/dsh-office-kit') throw new Error(`Unexpected plugin: ${specifier}`)
+      if (specifier !== '@reevo/dsh-office-kit') throw new Error(`Unexpected plugin: ${specifier}`)
       return LibreOfficeProvider
     },
   } as unknown as NonNullable<typeof ctx.loader.internal>

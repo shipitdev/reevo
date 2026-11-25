@@ -3,19 +3,19 @@ import { readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SubagentPromptRequestId } from '@deepseek-ai/dsh-subagent'
-import { createUserMessage, type ContentBlock } from '@deepseek-ai/dsh-llm'
-import { parseSessionLog, prepareSessionSnapshotFixtureForComparison } from '@deepseek-ai/dsh-llm-replay'
-import type { Session } from '@deepseek-ai/dsh-session'
+import { brandString } from '@reevo/dsh-brand'
+import type { SubagentPromptRequestId } from '@reevo/dsh-subagent'
+import { createUserMessage, type ContentBlock } from '@reevo/dsh-llm'
+import { parseSessionLog, prepareSessionSnapshotFixtureForComparison } from '@reevo/dsh-llm-replay'
+import type { Session } from '@reevo/dsh-session'
 import {
   fixtureContext, normalizeSessionSnapshots, normalizedSystemPrompts, normalizedToolSchemas,
   formatSystemPromptSnapshot, parseToolSchemasSnapshot, redactSessionSnapshotIds, refreshFixtureReplacements,
   scrubSessionSnapshot, stabilizeFixtureMessageIds, stabilizeRefreshLog, tokenizeSessionFixtureCwd,
-} from '@deepseek-ai/dsh-session-snapshot'
-import type {} from '@deepseek-ai/dsh-api-session-controller'
-import type {} from '@deepseek-ai/dsh-schedule'
-import type {} from '@deepseek-ai/dsh-subagent'
+} from '@reevo/dsh-session-snapshot'
+import type {} from '@reevo/dsh-api-session-controller'
+import type {} from '@reevo/dsh-schedule'
+import type {} from '@reevo/dsh-subagent'
 import {
   fixtureUserPrompts, launchWebScaffold, normalizeWebSessionVolatiles, rawSessionLog, readPersistedEvents,
   recordedSessionFixturePath, selectedSessionFixture, webSnapshotMode,

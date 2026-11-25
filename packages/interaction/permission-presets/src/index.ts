@@ -13,28 +13,28 @@
  *
  * @module dsh-permission-presets
  */
-import type {} from '@deepseek-ai/dsh-settings'
-import type {} from '@deepseek-ai/dsh-agent'
+import type {} from '@reevo/dsh-settings'
+import type {} from '@reevo/dsh-agent'
 
 import type { Volatile } from '@deepseek-ai/cordis'
 
 import { Context, Service } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CommandDefinitionId } from '@deepseek-ai/dsh-commands/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { CommandDefinitionId } from '@reevo/dsh-commands/types'
 import z from '@deepseek-ai/schemastery'
 import { z as zod } from 'zod'
-import { Remote, RemoteError, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import type { Session, SessionEvent } from '@deepseek-ai/dsh-session'
-import type { SandboxMode } from '@deepseek-ai/dsh-sandbox'
-import { SANDBOX_MODES, setSandboxMode } from '@deepseek-ai/dsh-sandbox-policy'
+import { Remote, RemoteError, TypertRemoteService } from '@reevo/dsh-typert-protocol'
+import type { Session, SessionEvent } from '@reevo/dsh-session'
+import type { SandboxMode } from '@reevo/dsh-sandbox'
+import { SANDBOX_MODES, setSandboxMode } from '@reevo/dsh-sandbox-policy'
 // Side-effect type import: declaration-merges `ctx.shell` (the capability fact
 // `sandboxMode` this service reads), without a value dependency on the seam.
-import type {} from '@deepseek-ai/dsh-shell'
-import type { ApprovalPolicy } from '@deepseek-ai/dsh-user-approval'
-import { APPROVAL_POLICIES, setApprovalPolicy } from '@deepseek-ai/dsh-user-approval'
+import type {} from '@reevo/dsh-shell'
+import type { ApprovalPolicy } from '@reevo/dsh-user-approval'
+import { APPROVAL_POLICIES, setApprovalPolicy } from '@reevo/dsh-user-approval'
 // Type-only: resolves the required projection service and optional settings/command children.
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-commands'
+import type { ProjectionHandle } from '@reevo/dsh-session-projection'
+import type {} from '@reevo/dsh-commands'
 import type {
   PermissionCatalog,
   PermissionPresetSetRequest,
@@ -50,7 +50,7 @@ declare module '@deepseek-ai/cordis' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@reevo/dsh-session/types' {
   interface SessionEventMap {
     /**
      * Records the selected preset as durable, log-only user intent. The knob
@@ -261,7 +261,7 @@ export class PermissionPresetService extends TypertRemoteService {
     // activates only when a command registry is composed.
     ctx.inject(['commands'], (commandCtx) => {
       commandCtx.commands.register({
-        definitionId: brandString<CommandDefinitionId>('@deepseek-ai/dsh-permission-presets'),
+        definitionId: brandString<CommandDefinitionId>('@reevo/dsh-permission-presets'),
         name: 'permission',
         description: 'Switch the permission preset (sandbox mode + approval policy)',
         input: { hint: '<preset>' },

@@ -16,7 +16,7 @@ import {
   PluginPackages,
   type ProfileContext,
   type ProfileLayer,
-} from '@deepseek-ai/dsh-app-boot'
+} from '@reevo/dsh-app-boot'
 
 const installAnchor = fileURLToPath(new URL('../../../../../apps/cli/package.json', import.meta.url))
 

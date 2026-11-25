@@ -4,7 +4,7 @@ import Loader from '@deepseek-ai/cordis-plugin-loader'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import z from '@deepseek-ai/schemastery'
 import { createClientModuleSystem } from '../src/client/index.ts'
-import type { SyncedConfigRef } from '@deepseek-ai/dsh-client-config/types'
+import type { SyncedConfigRef } from '@reevo/dsh-client-config/types'
 import type { ClientBundleRegistration, ClientModuleLoaderTarget, WebBootRelease, WebBootEntry, WebBootGraph } from '../src/client/index.ts'
 
 type Factory = ClientBundleRegistration['factory']

@@ -1,9 +1,9 @@
 /** Provider, language, and external-service disclosure on the Plugins page. */
-import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
+import type {} from '@reevo/dsh-client-ui-plugin-manager/client'
 import { useEffect, useId } from 'react'
-import type { TranslationProvider } from '@deepseek-ai/dsh-experimental-translator/types'
-import { Button, SettingsForm, SettingsValueField, Tag } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { HostObservable, InjectFace, PropsLocale, PropsRuntime } from '@deepseek-ai/dsh-client-ui-slots'
+import type { TranslationProvider } from '@reevo/dsh-experimental-translator/types'
+import { Button, SettingsForm, SettingsValueField, Tag } from '@reevo/dsh-client-ui-primitives'
+import type { HostObservable, InjectFace, PropsLocale, PropsRuntime } from '@reevo/dsh-client-ui-slots'
 import { NS, formLabels } from './locales.ts'
 import type { TranslationFormInjected } from './preferences-form.ts'
 import css from './Translation.module.css'

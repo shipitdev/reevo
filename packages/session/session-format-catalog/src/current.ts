@@ -4,9 +4,9 @@ import {
   SESSION_FORMAT_VERSION,
   SessionLogOffset,
   validateSessionLog,
-} from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionHeader } from '@deepseek-ai/dsh-session'
-import type { SessionFormatArtifact, SessionFormatHeader } from '@deepseek-ai/dsh-session-format'
+} from '@reevo/dsh-session'
+import type { SessionEvent, SessionHeader } from '@reevo/dsh-session'
+import type { SessionFormatArtifact, SessionFormatHeader } from '@reevo/dsh-session-format'
 import { currentSessionMessageProjections } from './message-projections.ts'
 
 /**

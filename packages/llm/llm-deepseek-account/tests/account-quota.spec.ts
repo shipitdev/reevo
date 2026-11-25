@@ -1,11 +1,11 @@
 /** Account-route quota classification stays separate from API-key and third-party quota. */
 import { Context } from '@deepseek-ai/cordis'
-import { BlockAssembler, LlmRuntime } from '@deepseek-ai/dsh-llm'
+import { BlockAssembler, LlmRuntime } from '@reevo/dsh-llm'
 import { accountStub } from '../../../account/deepseek-account/tests/account-stub.ts'
-import * as ApiKey from '@deepseek-ai/dsh-llm-deepseek-api-key'
+import * as ApiKey from '@reevo/dsh-llm-deepseek-api-key'
 import { afterEach, expect, it, vi } from 'vitest'
 import * as Account from '../src/index.ts'
-import DeepSeekAuth from '@deepseek-ai/dsh-deepseek-auth'
+import DeepSeekAuth from '@reevo/dsh-deepseek-auth'
 
 const contexts: Context[] = []
 afterEach(async () => {

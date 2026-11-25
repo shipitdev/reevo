@@ -8,26 +8,26 @@ import { afterEach, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import type { ImageAttachmentRef, SaveImageAttachment } from '@deepseek-ai/dsh-attachment'
-import { AttachmentId } from '@deepseek-ai/dsh-attachment'
-import type { ConnectionFetchRoute } from '@deepseek-ai/dsh-client-connection'
-import * as SessionStore from '@deepseek-ai/dsh-session'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import * as JsonlPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import * as SessionProjection from '@deepseek-ai/dsh-session-projection'
-import * as SessionProjectionCache from '@deepseek-ai/dsh-session-projection-cache'
-import * as Storage from '@deepseek-ai/dsh-storage'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
-import * as TypertRegistry from '@deepseek-ai/dsh-typert-registry'
-import * as Workspace from '@deepseek-ai/dsh-workspace'
+import type { ImageAttachmentRef, SaveImageAttachment } from '@reevo/dsh-attachment'
+import { AttachmentId } from '@reevo/dsh-attachment'
+import type { ConnectionFetchRoute } from '@reevo/dsh-client-connection'
+import * as SessionStore from '@reevo/dsh-session'
+import { SessionId } from '@reevo/dsh-session'
+import * as JsonlPersistence from '@reevo/dsh-session-persistence-jsonl'
+import * as SessionProjection from '@reevo/dsh-session-projection'
+import * as SessionProjectionCache from '@reevo/dsh-session-projection-cache'
+import * as Storage from '@reevo/dsh-storage'
+import * as StorageDomain from '@reevo/dsh-storage-domain'
+import * as StorageJson from '@reevo/dsh-storage-json'
+import * as TypertRegistry from '@reevo/dsh-typert-registry'
+import * as Workspace from '@reevo/dsh-workspace'
 import * as DeepseekChatImport from '../src/index.ts'
 import { UPLOAD_PATH } from '../src/protocol.ts'
 import type { ExportSessionFile } from '../src/format.ts'
 import type { DeepseekChatImportLine } from '../src/types.ts'
-import type { PeerId, Principal, RemoteInvocation } from '@deepseek-ai/dsh-typert-protocol'
+import type { PeerId, Principal, RemoteInvocation } from '@reevo/dsh-typert-protocol'
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@reevo/dsh-typert-protocol' {
   interface PrincipalMap {
     /** Test-only non-owner caller shared by the access specs. */
     'test-guest': { readonly kind: 'test-guest'; readonly guest: string }
@@ -64,26 +64,26 @@ async function boot(saveImage: (input: SaveImageAttachment) => Promise<ImageAtta
   await mkdir(workspacePath)
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, [
-    "- name: '@deepseek-ai/dsh-session'",
-    "- name: '@deepseek-ai/dsh-session-persistence-jsonl'",
+    "- name: '@reevo/dsh-session'",
+    "- name: '@reevo/dsh-session-persistence-jsonl'",
     '  config:',
     `    root: ${JSON.stringify(join(root, 'sessions'))}`,
-    "- name: '@deepseek-ai/dsh-storage'",
-    "- name: '@deepseek-ai/dsh-storage-json'",
+    "- name: '@reevo/dsh-storage'",
+    "- name: '@reevo/dsh-storage-json'",
     '  config:',
     `    root: ${JSON.stringify(join(root, 'storage'))}`,
-    "- name: '@deepseek-ai/dsh-storage-domain'",
+    "- name: '@reevo/dsh-storage-domain'",
     '  config:',
     '    backend: json',
-    "- name: '@deepseek-ai/dsh-workspace'",
-    "- name: '@deepseek-ai/dsh-session-projection'",
-    "- name: '@deepseek-ai/dsh-session-projection-cache'",
+    "- name: '@reevo/dsh-workspace'",
+    "- name: '@reevo/dsh-session-projection'",
+    "- name: '@reevo/dsh-session-projection-cache'",
     '  config:',
     '    writeEveryEvents: 1',
     '    writeIntervalMs: 1000',
-    "- name: '@deepseek-ai/dsh-typert-registry'",
+    "- name: '@reevo/dsh-typert-registry'",
     '- id: deepseek-chat-import',
-    "  name: '@deepseek-ai/dsh-deepseek-chat-import'",
+    "  name: '@reevo/dsh-deepseek-chat-import'",
     '  config:',
     '    maxSessions: 1',
     '    maxUploadBytes: 4096',
@@ -105,16 +105,16 @@ async function boot(saveImage: (input: SaveImageAttachment) => Promise<ImageAtta
   await context.plugin(Loader)
   context.loader.builtins.include = Include
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-persistence-jsonl', JsonlPersistence],
-    ['@deepseek-ai/dsh-storage', Storage],
-    ['@deepseek-ai/dsh-storage-json', StorageJson],
-    ['@deepseek-ai/dsh-storage-domain', StorageDomain],
-    ['@deepseek-ai/dsh-workspace', Workspace],
-    ['@deepseek-ai/dsh-session-projection', SessionProjection],
-    ['@deepseek-ai/dsh-session-projection-cache', SessionProjectionCache],
-    ['@deepseek-ai/dsh-typert-registry', TypertRegistry],
-    ['@deepseek-ai/dsh-deepseek-chat-import', DeepseekChatImport],
+    ['@reevo/dsh-session', SessionStore],
+    ['@reevo/dsh-session-persistence-jsonl', JsonlPersistence],
+    ['@reevo/dsh-storage', Storage],
+    ['@reevo/dsh-storage-json', StorageJson],
+    ['@reevo/dsh-storage-domain', StorageDomain],
+    ['@reevo/dsh-workspace', Workspace],
+    ['@reevo/dsh-session-projection', SessionProjection],
+    ['@reevo/dsh-session-projection-cache', SessionProjectionCache],
+    ['@reevo/dsh-typert-registry', TypertRegistry],
+    ['@reevo/dsh-deepseek-chat-import', DeepseekChatImport],
   ])
   context.loader.internal = {
     version: 'v2',

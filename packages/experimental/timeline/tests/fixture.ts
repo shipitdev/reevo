@@ -3,18 +3,18 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import { createUserMessage, isAgentLoopRequest, LlmAdapter, ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { LlmModelReasoningInfo } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { pluginRecordOf, SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
-import { defineTool } from '@deepseek-ai/dsh-tools'
+import { createUserMessage, isAgentLoopRequest, LlmAdapter, ToolCallId } from '@reevo/dsh-llm'
+import type { LlmModelReasoningInfo } from '@reevo/dsh-llm'
+import type { GenerateOptions, StreamChunk } from '@reevo/dsh-llm'
+import { pluginRecordOf, SessionId } from '@reevo/dsh-session'
+import type { SessionEvent } from '@reevo/dsh-session'
+import { defineTool } from '@reevo/dsh-tools'
 import {
   mountAgentLoopTestDependencies,
   mountAgentLoopTestHarness,
-} from '@deepseek-ai/dsh-agent-loop-testkit'
-import * as Jsonl from '@deepseek-ai/dsh-session-persistence-jsonl'
-import type {} from '@deepseek-ai/dsh-session-persistence'
+} from '@reevo/dsh-agent-loop-testkit'
+import * as Jsonl from '@reevo/dsh-session-persistence-jsonl'
+import type {} from '@reevo/dsh-session-persistence'
 import * as Timeline from '../src/index.ts'
 
 export const textOutput = {

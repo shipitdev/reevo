@@ -1,17 +1,17 @@
-import { imageOffloadProjection } from '@deepseek-ai/dsh-compaction-image-offload/projection'
+import { imageOffloadProjection } from '@reevo/dsh-compaction-image-offload/projection'
 import { describe, expect, it, onTestFinished } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import {
   LlmRuntime, LlmAdapter, createMessage, createToolResultMessage, createUserMessage, projectFilesToText, type ToolCallId,
-} from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, LlmImageRequestPricing, Message, StreamChunk, TokenUsage, UserMessage } from '@deepseek-ai/dsh-llm'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { FileAttachmentRef, ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
-import { Session, type SessionId, canonicalHeader } from '@deepseek-ai/dsh-session'
-import type { EpochHeader } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
+} from '@reevo/dsh-llm'
+import type { GenerateOptions, LlmImageRequestPricing, Message, StreamChunk, TokenUsage, UserMessage } from '@reevo/dsh-llm'
+import type { AttachmentId } from '@reevo/dsh-attachment/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { FileAttachmentRef, ImageAttachmentRef } from '@reevo/dsh-attachment'
+import { Session, type SessionId, canonicalHeader } from '@reevo/dsh-session'
+import type { EpochHeader } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import TokenMeter from '@reevo/dsh-token-meter'
 import { estimateContent, estimateMessage } from '../src/estimate.ts'
 
 /** Adapter double declaring fixed per-occurrence image prices for one route. */

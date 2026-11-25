@@ -4,9 +4,9 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Service, type Context } from '@deepseek-ai/cordis'
 import { expect, it, vi } from 'vitest'
-import { boot, initProfile, readProfilePatches, type ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import ConfigEditor from '@deepseek-ai/dsh-config-editor'
-import Settings from '@deepseek-ai/dsh-settings'
+import { boot, initProfile, readProfilePatches, type ProfileContext } from '@reevo/dsh-app-boot'
+import ConfigEditor from '@reevo/dsh-config-editor'
+import Settings from '@reevo/dsh-settings'
 import PluginMarket from '../src/index.ts'
 
 /** The `pluginManager` reads the market makes, with an empty profile. */

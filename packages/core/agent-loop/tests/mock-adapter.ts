@@ -1,6 +1,6 @@
-import type { GenerateOptions, LlmModelReasoningInfo, LlmResolvedModelInfo, StreamChunk, SystemPromptUpdate, ToolUpdate } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { type ToolCallId, LlmAdapter } from '@deepseek-ai/dsh-llm'
+import type { GenerateOptions, LlmModelReasoningInfo, LlmResolvedModelInfo, StreamChunk, SystemPromptUpdate, ToolUpdate } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import { type ToolCallId, LlmAdapter } from '@reevo/dsh-llm'
 
 /** Helpers to write scripted responses tersely. */
 export function textResponse(text: string): StreamChunk[] {

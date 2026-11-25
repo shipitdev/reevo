@@ -10,12 +10,12 @@
 
 - insert:
     - id: sdk-app-startup
-      name: '@deepseek-ai/dsh-sdk-app'
+      name: '@reevo/dsh-sdk-app'
       config:
         profile: sdk
 
     - id: sdk-jsonrpc-server
-      name: '@deepseek-ai/dsh-sdk-jsonrpc-server'
+      name: '@reevo/dsh-sdk-jsonrpc-server'
       inject: [sdkAppStartup, loader]
       config:
         maxTokensAsSuccess: !!js "process.env.DSH_MAX_TOKENS_AS_SUCCESS === undefined ? true : JSON.parse(process.env.DSH_MAX_TOKENS_AS_SUCCESS)"
@@ -30,11 +30,11 @@
 # omit both skills with an action-cards patch setting config.enabled to false.
 - insert:
     - id: action-cards
-      name: '@deepseek-ai/dsh-action-cards'
+      name: '@reevo/dsh-action-cards'
     - id: creation-recommendations
-      name: '@deepseek-ai/dsh-creation-recommendations'
+      name: '@reevo/dsh-creation-recommendations'
     - id: plugin-recommendations
-      name: '@deepseek-ai/dsh-plugin-recommendations'
+      name: '@reevo/dsh-plugin-recommendations'
 
 # DSH_PRIMARY_RUNTIME names the primary runtime; the packaged launcher fills it
 # from its download cache when unset, and an empty value opts out. Each row can
@@ -44,63 +44,63 @@
 # select `user` and direct the model to the user's Python.
 - insert:
     - id: office-kit
-      name: '@deepseek-ai/dsh-office-kit'
+      name: '@reevo/dsh-office-kit'
       config:
         outputDirectory: !!js dshHomePath('office-kit', 'outputs')
 
     # The Office tools stay registered without Kit; calls report the service's unavailable error.
     - id: tool-office
-      name: '@deepseek-ai/dsh-tool-office'
+      name: '@reevo/dsh-tool-office'
 
     - id: workspace-dependencies
-      name: '@deepseek-ai/dsh-tool-workspace-dependencies'
+      name: '@reevo/dsh-tool-workspace-dependencies'
       disabled: !!js "!process.env.DSH_PRIMARY_RUNTIME"
       config:
         source: !!js "process.getBuiltinModule('node:path').resolve(process.env.DSH_PRIMARY_RUNTIME ?? '')"
 
     - id: skill-office
-      name: '@deepseek-ai/dsh-skill-office'
+      name: '@reevo/dsh-skill-office'
       config:
         pythonEnvironment: !!js "process.env.DSH_PRIMARY_RUNTIME ? 'workspace-dependencies' : 'user'"
 
 # The skill catalog lists dsh-doc, as the Desktop standard, PTC, and Creator
 # presets do; its instructions load only when the model calls `skill`. The
-# path resolves through this package's `@deepseek-ai/dsh-agent-preset`
+# path resolves through this package's `@reevo/dsh-agent-preset`
 # dependency, which no plugin row names.
 - id: skill-filesystem
   config:
     customSkillDirs:
-      - !!js process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@deepseek-ai/dsh-agent-preset/package.json')), 'skills')
+      - !!js process.getBuiltinModule('node:path').join(process.getBuiltinModule('node:path').dirname(process.getBuiltinModule('node:module').createRequire(baseUrl).resolve('@reevo/dsh-agent-preset/package.json')), 'skills')
 
 # Share native desktop tools and model context without starting a Web server.
 - insert:
     - id: connection
-      name: '@deepseek-ai/dsh-client-connection'
+      name: '@reevo/dsh-client-connection'
 
     - id: file-upload
-      name: '@deepseek-ai/dsh-client-file-upload'
+      name: '@reevo/dsh-client-file-upload'
 
     - id: workspace
-      name: '@deepseek-ai/dsh-workspace'
+      name: '@reevo/dsh-workspace'
 
     - id: schedule
-      name: '@deepseek-ai/dsh-schedule'
+      name: '@reevo/dsh-schedule'
       inject: [sdkSessionActivation]
 
     - id: time-context
-      name: '@deepseek-ai/dsh-time-context'
+      name: '@reevo/dsh-time-context'
 
     - id: tool-schedule
-      name: '@deepseek-ai/dsh-tool-schedule'
+      name: '@reevo/dsh-tool-schedule'
 
     - id: tool-ask-user
-      name: '@deepseek-ai/dsh-tool-ask-user'
+      name: '@reevo/dsh-tool-ask-user'
 
     - id: present
-      name: '@deepseek-ai/dsh-tool-present'
+      name: '@reevo/dsh-tool-present'
 
     - id: file-reference-local
-      name: '@deepseek-ai/dsh-file-reference-local'
+      name: '@reevo/dsh-file-reference-local'
 
     - id: deliverable-file-references
-      name: '@deepseek-ai/dsh-deliverable-file-references'
+      name: '@reevo/dsh-deliverable-file-references'

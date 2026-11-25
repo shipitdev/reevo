@@ -1,19 +1,19 @@
-import { modelSelectionProjectionDefinition } from '@deepseek-ai/dsh-agent'
+import { modelSelectionProjectionDefinition } from '@reevo/dsh-agent'
 /** Request immutability through the real loop, including adopted restore graphs. */
 
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { createAssistantMessage, createUserMessage, isAgentLoopRequest } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, ToolSchema } from '@deepseek-ai/dsh-llm'
-import { Session, type SessionId, SessionLogOffset, SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
-import * as values from '@deepseek-ai/dsh-util-values'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import type { Agent } from '@reevo/dsh-agent'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import { createAssistantMessage, createUserMessage, isAgentLoopRequest } from '@reevo/dsh-llm'
+import type { GenerateOptions, ToolSchema } from '@reevo/dsh-llm'
+import { Session, type SessionId, SessionLogOffset, SESSION_FORMAT_VERSION } from '@reevo/dsh-session'
+import * as values from '@reevo/dsh-util-values'
 import { inboxProjectionDefinition } from '../src/inbox.ts'
 import { ReactLoopAgent } from '../src/agent.ts'
 import { MockAdapter, textResponse } from './mock-adapter.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const cleanups: (() => Promise<void>)[] = []
 afterEach(async () => {

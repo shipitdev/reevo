@@ -1,33 +1,33 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { mkdtempSync, rmSync } from 'node:fs'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { provideWorkingDirectoryFixture } from '@reevo/dsh-agent-loop-testkit'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterAll, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
-import { ShellExecutor } from '@deepseek-ai/dsh-shell'
-import type { ShellExecRequest, ShellExecSpec, ShellExecution, ShellProcess, ShellRunResult } from '@deepseek-ai/dsh-shell'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH } from '@deepseek-ai/dsh-tools'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import LocalJobRegistry from '@deepseek-ai/dsh-jobs-local'
-import * as ToolJobs from '@deepseek-ai/dsh-tool-jobs'
-import ApprovalService from '@deepseek-ai/dsh-user-approval'
-import type { ApprovalOutcome } from '@deepseek-ai/dsh-user-approval'
-import { LocalBashExecutor } from '@deepseek-ai/dsh-bash-local'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import { escalationHintMarker, sandboxDenialMarker } from '@deepseek-ai/dsh-sandbox'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import * as ToolBash from '@deepseek-ai/dsh-tool-bash'
-import * as BashEnvPlugin from '@deepseek-ai/dsh-shell-env'
+import type { ToolCallId } from '@reevo/dsh-llm'
+import { ShellExecutor } from '@reevo/dsh-shell'
+import type { ShellExecRequest, ShellExecSpec, ShellExecution, ShellProcess, ShellRunResult } from '@reevo/dsh-shell'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime, { TOOL_ABORTED, TOOL_ABORTED_BEFORE_DISPATCH } from '@reevo/dsh-tools'
+import AgentRegistry from '@reevo/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
+import type { SessionId } from '@reevo/dsh-session'
+import LocalJobRegistry from '@reevo/dsh-jobs-local'
+import * as ToolJobs from '@reevo/dsh-tool-jobs'
+import ApprovalService from '@reevo/dsh-user-approval'
+import type { ApprovalOutcome } from '@reevo/dsh-user-approval'
+import { LocalBashExecutor } from '@reevo/dsh-bash-local'
+import LocalSubprocessRuntime from '@reevo/dsh-subprocess-local'
+import SandboxPolicyService from '@reevo/dsh-sandbox-policy'
+import { escalationHintMarker, sandboxDenialMarker } from '@reevo/dsh-sandbox'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import * as ToolBash from '@reevo/dsh-tool-bash'
+import * as BashEnvPlugin from '@reevo/dsh-shell-env'
 import { processOutcome } from '../src/background.ts'
 import { renderJobRead, renderResult } from '../src/render.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 /** Use the newest id returned by the real registry, including settled jobs. */
 function currentId(ctx: Context, owner?: Agent): string {
@@ -648,7 +648,7 @@ describe('background execution through the job runtime', () => {
       isError: true,
       error: { info: { name: 'ToolContextUnavailableError', code: 'TOOL_CONTEXT_UNAVAILABLE' } },
     })
-    expect(text(result)).toContain('background jobs unavailable: load @deepseek-ai/dsh-jobs and @deepseek-ai/dsh-tool-jobs')
+    expect(text(result)).toContain('background jobs unavailable: load @reevo/dsh-jobs and @reevo/dsh-tool-jobs')
   })
 
   it('a pre-aborted call is skipped before the process starts', async () => {

@@ -1,10 +1,10 @@
 /** Prepared calls retain their endpoint and credential generation. */
 import { afterEach, expect, it } from 'vitest'
-import type { AnonymousUserId } from '@deepseek-ai/dsh-anonymous-user-id'
+import type { AnonymousUserId } from '@reevo/dsh-anonymous-user-id'
 import { DeepSeekAdapter } from '../src/index.ts'
-import { Config } from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import { plainOptions, resolveAdapterOptions } from '@deepseek-ai/dsh-llm-deepseek-api-key/src/config.ts'
-import type { ResolvedDeepSeekOptions as DeepSeekConnectionOptions } from '@deepseek-ai/dsh-llm-deepseek-api-key'
+import { Config } from '@reevo/dsh-llm-deepseek-api-key'
+import { plainOptions, resolveAdapterOptions } from '@reevo/dsh-llm-deepseek-api-key/src/config.ts'
+import type { ResolvedDeepSeekOptions as DeepSeekConnectionOptions } from '@reevo/dsh-llm-deepseek-api-key'
 import { assemble, chunks, MODEL, options, server } from './helpers.ts'
 
 const close: (() => Promise<void>)[] = []

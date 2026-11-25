@@ -1,15 +1,15 @@
 /** Browser plugin owning ZIP download and Markdown copy state, plus feedback controls. */
 
 import type { Context as ClientContext } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-commands/client'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
-import type {} from '@deepseek-ai/dsh-client-ui-message-feedback/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type {} from '@deepseek-ai/dsh-client-ui-context-menu/client'
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import { IconCopyOutlineRegular, IconDownloadOutlineRegular, IconPaperPlaneOutlineRegular } from '@deepseek-ai/dsh-client-ui-primitives'
+import type { SessionId } from '@reevo/dsh-session/types'
+import type {} from '@reevo/dsh-client-locale/client'
+import type {} from '@reevo/dsh-client-ui-commands/client'
+import type {} from '@reevo/dsh-client-ui-renderer/client'
+import type {} from '@reevo/dsh-client-ui-message-feedback/client'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import type {} from '@reevo/dsh-client-ui-context-menu/client'
+import type {} from '@reevo/dsh-client-ui-conversation/client'
+import { IconCopyOutlineRegular, IconDownloadOutlineRegular, IconPaperPlaneOutlineRegular } from '@reevo/dsh-client-ui-primitives'
 import { SessionLogDownloadController } from './controller.ts'
 import { SessionMarkdownCopyController } from './copy-controller.ts'
 import { SessionMarkdownCopyToast, type SessionMarkdownCopyToastInjected } from './CopyToast.tsx'
@@ -22,7 +22,7 @@ declare module '@deepseek-ai/cordis' {
   }
 }
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@reevo/dsh-client-ui-slots' {
   interface LocaleNamespaceMap {
     'session-log-download': SessionLogDownloadKey
   }

@@ -1,8 +1,8 @@
 /** Native V4 metadata and generation-owned relationship validation. */
 
 import { isAbsolute } from 'node:path'
-import { SessionFormatError, SessionFormatUnsupportedMigrationError, isSessionFormatJsonObject, sessionFormatCount } from '@deepseek-ai/dsh-session-format'
-import type { SessionFormatArtifact, SessionFormatEvent, SessionFormatJsonObject, SessionFormatJsonValue } from '@deepseek-ai/dsh-session-format'
+import { SessionFormatError, SessionFormatUnsupportedMigrationError, isSessionFormatJsonObject, sessionFormatCount } from '@reevo/dsh-session-format'
+import type { SessionFormatArtifact, SessionFormatEvent, SessionFormatJsonObject, SessionFormatJsonValue } from '@reevo/dsh-session-format'
 import { assertV4DeveloperData } from './developer.ts'
 import { assertV4LifecycleRelationships } from './relationships.ts'
 import { assertV4MessageSources } from './message-sources.ts'

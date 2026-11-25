@@ -2,20 +2,20 @@
 import { resolve } from 'node:path'
 import { Context, FiberState } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import AgentPresets from '@deepseek-ai/dsh-agent-preset-registry'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import ComputerUseRegistry from '@deepseek-ai/dsh-computer-use'
-import NodeRuntime from '@deepseek-ai/dsh-ptc-runtime-node'
-import Subprocess from '@deepseek-ai/dsh-subprocess'
-import Sandbox from '@deepseek-ai/dsh-sandbox-local'
-import SandboxPolicy from '@deepseek-ai/dsh-sandbox-policy'
-import { scopeTarget } from '@deepseek-ai/dsh-scope'
-import WorkingDirectory from '@deepseek-ai/dsh-working-directory'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type { Agent } from '@deepseek-ai/dsh-agent'
+import AgentPresets from '@reevo/dsh-agent-preset-registry'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
+import ComputerUseRegistry from '@reevo/dsh-computer-use'
+import NodeRuntime from '@reevo/dsh-ptc-runtime-node'
+import Subprocess from '@reevo/dsh-subprocess'
+import Sandbox from '@reevo/dsh-sandbox-local'
+import SandboxPolicy from '@reevo/dsh-sandbox-policy'
+import { scopeTarget } from '@reevo/dsh-scope'
+import WorkingDirectory from '@reevo/dsh-working-directory'
+import type { SessionId } from '@reevo/dsh-session'
+import type { Agent } from '@reevo/dsh-agent'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { CuaConfig, installCua } from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const programPrompt = 'Fixture CUA program guidance\n\nAX read defaults: maxElements=2000, maxDepth=25.\n\nMaximum click holdMs: 5000 ms.'
 
@@ -538,6 +538,6 @@ it.each([
   expect(prompt).not.toContain('Raw tools use { method, params }')
 })
 
-function admittedMessages(assembly: import('@deepseek-ai/dsh-system-prompt').PromptAssembly) {
+function admittedMessages(assembly: import('@reevo/dsh-system-prompt').PromptAssembly) {
   return assembly.systemUpdates(false).map(update => update.message)
 }

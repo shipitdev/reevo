@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-jobs",
+  "name": "@reevo/dsh-jobs",
   "description": "Background job registry (ctx.jobs) for the DeepSeek Harness — shared ids, owner isolation, polling, cancellation, and completion listeners for long-running tool work",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -39,23 +39,23 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-error": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-workspace": {
+    "@reevo/dsh-workspace": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-workspace": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-error": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-workspace": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

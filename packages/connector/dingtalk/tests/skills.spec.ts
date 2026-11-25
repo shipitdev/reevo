@@ -2,7 +2,7 @@
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { renderSkillContent } from '@deepseek-ai/dsh-skill'
+import { renderSkillContent } from '@reevo/dsh-skill'
 import { expect, it } from 'vitest'
 
 const skills = fileURLToPath(new URL('../skills/', import.meta.url))

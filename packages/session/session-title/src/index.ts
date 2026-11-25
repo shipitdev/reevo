@@ -1,25 +1,25 @@
 /**
  * Log-backed session title service, deterministic fallback, and provider contract.
- * @module @deepseek-ai/dsh-session-title
+ * @module @reevo/dsh-session-title
  */
 
 import { Context, FiberState, Service, type Fiber } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import { z as zod } from 'zod'
 import type { ZodType } from 'zod'
-import type { Branded } from '@deepseek-ai/dsh-brand'
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import { isAgentLoopRequest } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions } from '@deepseek-ai/dsh-llm'
-import { assertNever, deepFreeze } from '@deepseek-ai/dsh-util-values'
+import type { Branded } from '@reevo/dsh-brand'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import { isAgentLoopRequest } from '@reevo/dsh-llm'
+import type { GenerateOptions } from '@reevo/dsh-llm'
+import { assertNever, deepFreeze } from '@reevo/dsh-util-values'
 import type {
   Session,
   SessionEvent,
-} from '@deepseek-ai/dsh-session'
-import { SessionSeq } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionDefinition, ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-agent'
+} from '@reevo/dsh-session'
+import { SessionSeq } from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-session-projection'
+import type { ProjectionDefinition, ProjectionHandle } from '@reevo/dsh-session-projection'
+import type {} from '@reevo/dsh-agent'
 export type {
   SessionTitleEventData,
   SessionTitleModelIdentity,
@@ -69,7 +69,7 @@ declare module '@deepseek-ai/cordis' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@reevo/dsh-session/types' {
   interface SessionEventMap {
     /**
      * Latest-wins session title snapshot. Log-only: it never enters the model

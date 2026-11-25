@@ -21,12 +21,12 @@
  * composition, entry mounting, the activation audit, and its diagnostics are the
  * same code the Node deployment runs. The Worker supplies module loading, the
  * platform overlay, and the command line.
- * @module @deepseek-ai/dsh-experimental-webworker-runtime/src/worker-host
+ * @module @reevo/dsh-experimental-webworker-runtime/src/worker-host
  */
 import { setActiveModuleLoader, WorkerModuleLoader, type StaticModuleFactory } from './module-system/module-loader.ts'
-import type { ProfileContext } from '@deepseek-ai/dsh-app-boot'
-import type { TypertGateway } from '@deepseek-ai/dsh-api-gateway'
-import type { HostConnectionHandle, PeerScope } from '@deepseek-ai/dsh-client-connection'
+import type { ProfileContext } from '@reevo/dsh-app-boot'
+import type { TypertGateway } from '@reevo/dsh-api-gateway'
+import type { HostConnectionHandle, PeerScope } from '@reevo/dsh-client-connection'
 import type { AlsCausality } from './polyfill/async-context/als-runtime.ts'
 import { join } from './module-system/posix-path.ts'
 import { installProcessGlobal } from './node/globals/process.ts'
@@ -222,11 +222,11 @@ export function createWorkerHost(options: WorkerHostOptions): WorkerHost {
       modules = loader
 
       const require = loader.requireFrom(root)
-      const appBoot = require('@deepseek-ai/dsh-app-boot') as AppBootFace
-      const { DSH_LAUNCH_ENVIRONMENT_KEY } = require('@deepseek-ai/dsh-launch-environment') as {
+      const appBoot = require('@reevo/dsh-app-boot') as AppBootFace
+      const { DSH_LAUNCH_ENVIRONMENT_KEY } = require('@reevo/dsh-launch-environment') as {
         DSH_LAUNCH_ENVIRONMENT_KEY: string
       }
-      const cmdline = require('@deepseek-ai/dsh-cmdline') as {
+      const cmdline = require('@reevo/dsh-cmdline') as {
         provideCmdline(ctx: unknown, host: {
           args: readonly string[]
           exit: (code: number) => void

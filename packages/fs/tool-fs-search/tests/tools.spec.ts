@@ -9,27 +9,27 @@
  * formatted-result spill handoff, and the no-background-job invariant.
  * Real-`rg` behavior is pinned separately in integration.spec.ts.
  */
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import { provideWorkingDirectoryFixture } from '@deepseek-ai/dsh-agent-loop-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import { provideWorkingDirectoryFixture } from '@reevo/dsh-agent-loop-testkit'
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { createScope, type Scope } from '@deepseek-ai/dsh-scope'
+import { createScope, type Scope } from '@reevo/dsh-scope'
 import { join, sep } from 'node:path'
-import { createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import SystemPrompt, { renderPrompt } from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { TOOL_ABORTED_BEFORE_DISPATCH, type ToolExecution, type ToolExecutionToken } from '@deepseek-ai/dsh-tools'
-import { SubprocessRuntime } from '@deepseek-ai/dsh-subprocess'
-import type { SubprocessCollectedOutputs, SubprocessHandle, SubprocessOutcome, SubprocessOutputRead, SubprocessOutputReader, SubprocessSpawnSpec } from '@deepseek-ai/dsh-subprocess'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import { createUserMessage, type ToolCallId } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import SystemPrompt, { renderPrompt } from '@reevo/dsh-system-prompt'
+import ToolRuntime, { TOOL_ABORTED_BEFORE_DISPATCH, type ToolExecution, type ToolExecutionToken } from '@reevo/dsh-tools'
+import { SubprocessRuntime } from '@reevo/dsh-subprocess'
+import type { SubprocessCollectedOutputs, SubprocessHandle, SubprocessOutcome, SubprocessOutputRead, SubprocessOutputReader, SubprocessSpawnSpec } from '@reevo/dsh-subprocess'
+import { MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
 import { rgPath } from '@vscode/ripgrep'
-import { type SpillLocator, SpillStore } from '@deepseek-ai/dsh-spill'
-import type { SaveTextSpill, SpillRef } from '@deepseek-ai/dsh-spill'
-import * as ToolFsSearch from '@deepseek-ai/dsh-tool-fs-search'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { type SpillLocator, SpillStore } from '@reevo/dsh-spill'
+import type { SaveTextSpill, SpillRef } from '@reevo/dsh-spill'
+import * as ToolFsSearch from '@reevo/dsh-tool-fs-search'
+import { brandString } from '@reevo/dsh-brand'
 import {
   buildGlobCommand,
   buildGrepCommand,
@@ -44,9 +44,9 @@ import {
   runRipgrep,
   sampleAcrossTopLevel,
   toWorkdirRelative,
-} from '@deepseek-ai/dsh-tool-fs-search'
+} from '@reevo/dsh-tool-fs-search'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

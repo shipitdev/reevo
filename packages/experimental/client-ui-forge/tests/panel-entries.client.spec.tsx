@@ -6,14 +6,14 @@
  */
 import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import type { RemoteHostFacts } from '@deepseek-ai/dsh-api-remotes/client'
-import type { MergeRequest } from '@deepseek-ai/dsh-experimental-forge/types'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { bindSnapshotSelector, contextMenuHook, makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
-import type { ContextMenuTarget } from '@deepseek-ai/dsh-client-ui-context-menu/client'
-import type { PanelFoldProps } from '@deepseek-ai/dsh-client-ui-session-panel/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { RemoteHostFacts } from '@reevo/dsh-api-remotes/client'
+import type { MergeRequest } from '@reevo/dsh-experimental-forge/types'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import { bindSnapshotSelector, contextMenuHook, makeTranslate } from '@reevo/dsh-client-test-runtime'
+import type { ContextMenuTarget } from '@reevo/dsh-client-ui-context-menu/client'
+import type { PanelFoldProps } from '@reevo/dsh-client-ui-session-panel/client'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { brandString } from '@reevo/dsh-brand'
 import {
   ChangeRequestsActions, ChangeRequestsSection, type ChangeRequestsActionsProps, type ChangeRequestsSectionProps,
 } from '../src/client/ChangeRequestsSection.tsx'

@@ -29,7 +29,7 @@ async function downloadResource(kind) {
     const staging = await mkdtemp(join(cache, `.${kind}-`))
     let disposeProxy
     try {
-      const { installProxyFromEnvironment } = await import('@deepseek-ai/dsh-http-proxy')
+      const { installProxyFromEnvironment } = await import('@reevo/dsh-http-proxy')
       disposeProxy = await installProxyFromEnvironment({ get(name) {
         const value = process.env[name]
         return value === undefined ? undefined : { value }
@@ -72,7 +72,7 @@ if (office !== undefined) {
 const selectorName = 'DSH_SUBPROCESS_RUNNER'
 const selection = process.env[selectorName]
 const aclRunner = process.platform === 'win32'
-  ? fileURLToPath(import.meta.resolve('@deepseek-ai/dsh-sandbox-windows-acl/runner'))
+  ? fileURLToPath(import.meta.resolve('@reevo/dsh-sandbox-windows-acl/runner'))
   : undefined
 
 const resource = process.env.DSH_RUNTIME_DOWNLOAD
@@ -83,10 +83,10 @@ if (resource !== undefined) {
   console.log(JSON.stringify(path))
 } else if (aclRunner !== undefined && process.argv[2] === aclRunner) {
   process.argv.splice(1, 1)
-  await import('@deepseek-ai/dsh-sandbox-windows-acl/runner')
+  await import('@reevo/dsh-sandbox-windows-acl/runner')
 } else if (process.env.DSH_PTC_RUNTIME_NODE === '1') {
   Reflect.deleteProperty(process.env, 'DSH_PTC_RUNTIME_NODE')
-  await import('@deepseek-ai/dsh-ptc-runtime-node/process')
+  await import('@reevo/dsh-ptc-runtime-node/process')
 } else if (selection === undefined) {
   // A DSH_PRIMARY_RUNTIME set or inherited from the environment, including the empty opt-out, takes precedence over the
   // downloaded cache.
@@ -96,7 +96,7 @@ if (resource !== undefined) {
   let packageManager
   const primary = process.env.DSH_PRIMARY_RUNTIME
   if (primary !== undefined && primary !== '') {
-    const { resolvePrimaryRuntime } = await import('@deepseek-ai/dsh-tool-workspace-dependencies')
+    const { resolvePrimaryRuntime } = await import('@reevo/dsh-tool-workspace-dependencies')
     const { node, pnpm } = await resolvePrimaryRuntime(primary)
     if (node !== undefined && pnpm !== undefined) {
       packageManager = { command: node, args: [pnpm],
@@ -107,6 +107,6 @@ if (resource !== undefined) {
   await runCli({ packageManager })
 } else {
   Reflect.deleteProperty(process.env, selectorName)
-  const { runSelectedSubprocessRunner } = await import('@deepseek-ai/dsh-subprocess-local/runner')
+  const { runSelectedSubprocessRunner } = await import('@reevo/dsh-subprocess-local/runner')
   await runSelectedSubprocessRunner(selection)
 }

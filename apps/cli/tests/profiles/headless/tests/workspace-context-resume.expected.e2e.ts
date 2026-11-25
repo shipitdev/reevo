@@ -14,22 +14,22 @@ import {
   normalizeSessionSnapshots,
   REPLAY_CREDENTIAL_ENV,
   type NormalizeContext,
-} from '@deepseek-ai/dsh-session-snapshot'
-import { LOADER_SMOKE_TEST_TIMEOUT_MS, runLoaderSmoke } from '@deepseek-ai/dsh-loader-smoke'
-import { createMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
+} from '@reevo/dsh-session-snapshot'
+import { LOADER_SMOKE_TEST_TIMEOUT_MS, runLoaderSmoke } from '@reevo/dsh-loader-smoke'
+import { createMessage, createUserMessage } from '@reevo/dsh-llm'
 import {
   SESSION_FORMAT_VERSION,
   type SessionId,
   SessionSeq,
   type SessionEvent,
   type SessionHeader,
-} from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+} from '@reevo/dsh-session'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
 import { logPath } from '../../../../../../packages/session/session-persistence-jsonl/src/format.ts'
-import { renderAgentInstructions } from '@deepseek-ai/dsh-agent-instructions'
-import { resolveConfig, workspaceBaselineIdentity } from '@deepseek-ai/dsh-agent-instructions/src/config.ts'
+import { renderAgentInstructions } from '@reevo/dsh-agent-instructions'
+import { resolveConfig, workspaceBaselineIdentity } from '@reevo/dsh-agent-instructions/src/config.ts'
 import { describe, expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const fixtureDir = join(dirname(fileURLToPath(import.meta.url)), 'expected/workspace-context-resume/offline-edit')
 const replayFixture = join(fixtureDir, 'replay.jsonl')

@@ -2,7 +2,7 @@ import { existsSync } from 'node:fs'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execa } from 'execa'
-import { SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
+import { SESSION_FORMAT_VERSION } from '@reevo/dsh-session'
 import { describe, expect, it } from 'vitest'
 
 const packageRoot = fileURLToPath(new URL('..', import.meta.url))
@@ -17,8 +17,8 @@ describe.skipIf(!built)('built migration verifier (plain node)', () => {
       import { join } from 'node:path'
       import { Worker } from 'node:worker_threads'
       import { Context } from '@deepseek-ai/cordis'
-      import { SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session'
-      import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+      import { SESSION_FORMAT_VERSION } from '@reevo/dsh-session'
+      import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
 
       const terminate = Worker.prototype.terminate
       let terminations = 0

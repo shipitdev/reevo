@@ -5,9 +5,9 @@ import {
   NO_START_CAPABILITIES,
   type SubagentStartRequest,
   type SubagentProvider,
-} from '@deepseek-ai/dsh-subagent'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@reevo/dsh-subagent'
+import type { SessionId } from '@reevo/dsh-session'
+import { brandString } from '@reevo/dsh-brand'
 
 export const name = 'subagent-result-diagnostic'
 export const inject = ['subagents']

@@ -15,7 +15,7 @@ export type {
   ChainRenderOpts, HostObservable, RenderOpts, SnapshotSelectorHook, SlotRenderer,
   ScopedStandardSourceBinding, SlotRendererHost, SlotScopeAdapter,
   StandardSourceBinding, StoreInstanceLike,
-} from '@deepseek-ai/dsh-client-ui-slots'
+} from '@reevo/dsh-client-ui-slots'
 
 /** Mount operation exposed to the framework-free boot kernel. */
 export interface UiRendererService {

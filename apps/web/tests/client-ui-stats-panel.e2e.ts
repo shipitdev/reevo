@@ -8,11 +8,11 @@ import type { Browser, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed } from 'vitest'
 import { parseEntryYaml } from '@deepseek-ai/cordis-plugin-include'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import {
   createAssistantMessage, createMessage, createUserMessage, type ToolCallId,
   type AssistantStreamRecord, type TokenUsage,
-} from '@deepseek-ai/dsh-llm'
+} from '@reevo/dsh-llm'
 import {
   assertFixtureInventory, captureStableAria, compareOrRefreshGolden,
   launchWebScaffold, watchConsole, webSnapshotMode, type WebScaffold,
@@ -52,7 +52,7 @@ function stream(firstTokenAt: number): AssistantStreamRecord[] {
 describe('Statistics view overlay', () => {
   it('mounts the experimental client plugin over the shipped Web surface', () => {
     expect(profileEntries(OVERLAY)).toEqual([{
-      insert: [{ id: 'ui-client-ui-stats', name: '@deepseek-ai/dsh-experimental-client-ui-stats' }],
+      insert: [{ id: 'ui-client-ui-stats', name: '@reevo/dsh-experimental-client-ui-stats' }],
     }])
   })
 })

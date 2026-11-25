@@ -10,10 +10,10 @@ import { mkdtemp, mkdir, rm, writeFile, realpath } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import Lsp, { type LspQueryRequest, type LspQueryResult } from '@deepseek-ai/dsh-lsp'
-import * as LspLocal from '@deepseek-ai/dsh-lsp-stdio'
+import LocalSubprocessRuntime from '@reevo/dsh-subprocess-local'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import Lsp, { type LspQueryRequest, type LspQueryResult } from '@reevo/dsh-lsp'
+import * as LspLocal from '@reevo/dsh-lsp-stdio'
 
 // The server binary is a dev dependency of this package; resolve its pnpm-hoisted .bin path.
 const serverBin = join(

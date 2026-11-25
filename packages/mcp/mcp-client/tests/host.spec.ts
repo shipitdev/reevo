@@ -2,10 +2,10 @@
 
 import { expect, it, onTestFinished } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import Tools from '@deepseek-ai/dsh-tools'
-import { McpClientHost, type ConfigInput } from '@deepseek-ai/dsh-mcp-client'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import Tools from '@reevo/dsh-tools'
+import { McpClientHost, type ConfigInput } from '@reevo/dsh-mcp-client'
 import { authorize, oauthWorld } from './oauth-fixture.ts'
 import { startHttpMcpFixture } from './http-fixture.ts'
 

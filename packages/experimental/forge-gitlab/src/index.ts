@@ -5,9 +5,9 @@
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-experimental-forge'
-import type {} from '@deepseek-ai/dsh-experimental-forge-session'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import type {} from '@reevo/dsh-experimental-forge'
+import type {} from '@reevo/dsh-experimental-forge-session'
+import { MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
 import { GLAB_COMMANDS } from './commands.ts'
 import { glabRunner } from './glab.ts'
 import { GitLabProvider } from './provider.ts'

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-tool-testkit",
+  "name": "@reevo/dsh-tool-testkit",
   "description": "Tool definition and execution fixtures for tests and benchmarks",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -31,15 +31,15 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*"
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*"
   }
 }

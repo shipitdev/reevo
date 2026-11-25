@@ -2,7 +2,7 @@
 import type { Volatile } from '@deepseek-ai/cordis'
 
 import { Context, Service } from '@deepseek-ai/cordis'
-import { SubagentError } from '@deepseek-ai/dsh-subagent'
+import { SubagentError } from '@reevo/dsh-subagent'
 import z from '@deepseek-ai/schemastery'
 // Retains the released Session event declaration in emitted declarations.
 import './model-selection-state.ts'

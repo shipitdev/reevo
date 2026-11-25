@@ -1,30 +1,30 @@
 import { describe, expect, it, vi } from 'vitest'
-import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@reevo/dsh-agent-loop-testkit'
 import { PassThrough } from 'node:stream'
 import { resolve } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
-import SessionStore, { SESSION_FORMAT_VERSION, Session, type SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry, { type Agent } from '@deepseek-ai/dsh-agent'
-import SandboxProvider from '@deepseek-ai/dsh-sandbox'
-import type { ConfinedArgv, SandboxPolicy } from '@deepseek-ai/dsh-sandbox'
-import SandboxPolicyService, { setSandboxMode } from '@deepseek-ai/dsh-sandbox-policy'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import TerminalSessionService, { TerminalBackendCleanupError, type TerminalSessionId } from '@deepseek-ai/dsh-terminal'
-import type { TerminalSendRequest, TerminalWaitReason } from '@deepseek-ai/dsh-terminal'
-import { BashTerminalBackend, PWSH_PROMPT_SETUP } from '@deepseek-ai/dsh-terminal-bash'
-import { ENCODING_PREAMBLE } from '@deepseek-ai/dsh-pwsh-local'
-import * as ptyLocal from '@deepseek-ai/dsh-terminal-bash'
-import type { ResolvedConfig } from '@deepseek-ai/dsh-terminal-bash/src/config.ts'
-import type { LocalPtySession } from '@deepseek-ai/dsh-terminal-bash/src/session.ts'
-import { SubprocessRuntime } from '@deepseek-ai/dsh-subprocess'
+import SessionStore, { SESSION_FORMAT_VERSION, Session, type SessionId } from '@reevo/dsh-session'
+import AgentRegistry, { type Agent } from '@reevo/dsh-agent'
+import SandboxProvider from '@reevo/dsh-sandbox'
+import type { ConfinedArgv, SandboxPolicy } from '@reevo/dsh-sandbox'
+import SandboxPolicyService, { setSandboxMode } from '@reevo/dsh-sandbox-policy'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import TerminalSessionService, { TerminalBackendCleanupError, type TerminalSessionId } from '@reevo/dsh-terminal'
+import type { TerminalSendRequest, TerminalWaitReason } from '@reevo/dsh-terminal'
+import { BashTerminalBackend, PWSH_PROMPT_SETUP } from '@reevo/dsh-terminal-bash'
+import { ENCODING_PREAMBLE } from '@reevo/dsh-pwsh-local'
+import * as ptyLocal from '@reevo/dsh-terminal-bash'
+import type { ResolvedConfig } from '@reevo/dsh-terminal-bash/src/config.ts'
+import type { LocalPtySession } from '@reevo/dsh-terminal-bash/src/session.ts'
+import { SubprocessRuntime } from '@reevo/dsh-subprocess'
 import type {
   SubprocessHandle,
   SubprocessSpawnSpec,
   SubprocessTerminalHandle,
   SubprocessTerminalSpawnSpec,
-} from '@deepseek-ai/dsh-subprocess'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@reevo/dsh-subprocess'
+import { brandString } from '@reevo/dsh-brand'
 
 class EmptySandbox extends SandboxProvider {
   async confine(_argv: readonly string[], _policy: SandboxPolicy): Promise<ConfinedArgv> {

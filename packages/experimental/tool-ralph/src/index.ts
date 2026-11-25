@@ -2,17 +2,17 @@
  * Model-facing foreground Ralph loop over the workflow and subagent seams. A
  * fixed script starts one fresh structured-output child per round, carrying
  * only the immutable objective and the previous bounded handoff between them.
- * @module @deepseek-ai/dsh-tool-ralph
+ * @module @reevo/dsh-tool-ralph
  */
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
-import type { SubagentProvider } from '@deepseek-ai/dsh-subagent'
-import { defineTool, ToolArgsError, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import type { ToolCallView, ToolResultView } from '@deepseek-ai/dsh-tools'
-import type { WorkflowResult, WorkflowRun } from '@deepseek-ai/dsh-workflow'
+import type { ContentBlock } from '@reevo/dsh-llm'
+import type { JsonValue } from '@reevo/dsh-util-values'
+import type { SubagentProvider } from '@reevo/dsh-subagent'
+import { defineTool, ToolArgsError, ToolContextUnavailableError } from '@reevo/dsh-tools'
+import type { ToolCallView, ToolResultView } from '@reevo/dsh-tools'
+import type { WorkflowResult, WorkflowRun } from '@reevo/dsh-workflow'
 import { RalphError } from './error.ts'
 
 export const name = 'tool-ralph'

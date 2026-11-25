@@ -9,7 +9,7 @@ import Loader, { ModuleLoader, type Entry } from '@deepseek-ai/cordis-plugin-loa
 import {
   boot, initProfile, ProfileRuntimeResolution, readProfileManifest, readProfilePatches, reconcileProfilePatches, ResolutionRestartRequired,
   type PluginPackages, type ProfileContext, type RuntimeResolution,
-} from '@deepseek-ai/dsh-app-boot'
+} from '@reevo/dsh-app-boot'
 import Timer from '@deepseek-ai/cordis-plugin-timer'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import Hmr from '../src/index.ts'

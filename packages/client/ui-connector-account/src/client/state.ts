@@ -3,10 +3,10 @@
  * it started, whose authorization pages open here, and the notice to show.
  */
 import type { Context } from '@deepseek-ai/cordis'
-import type { RemoteStream } from '@deepseek-ai/dsh-api-gateway/client'
-import type { ClientRemote } from '@deepseek-ai/dsh-api-remotes/client'
-import { createSnapshotStore, type SnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { LocalizedText } from '@deepseek-ai/dsh-package-manifest'
+import type { RemoteStream } from '@reevo/dsh-api-gateway/client'
+import type { ClientRemote } from '@reevo/dsh-api-remotes/client'
+import { createSnapshotStore, type SnapshotStore } from '@reevo/dsh-client-store'
+import type { LocalizedText } from '@reevo/dsh-package-manifest'
 import type { ConnectorAccountEntry, ConnectorAccountsView, ConnectorOperationId } from '../types.ts'
 import type { ConnectorAccountNotice, ConnectorAccountsState } from './types.ts'
 

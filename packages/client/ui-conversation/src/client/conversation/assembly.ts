@@ -1,14 +1,14 @@
 /** Per-Session target-neutral Conversation assembly. */
 import { Service, type Context } from '@deepseek-ai/cordis'
-import type { ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
+import type { ImageAttachmentRef } from '@reevo/dsh-attachment'
 import type {
   ISessions, SessionBinding, SessionEventSource, SessionEventWindow,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import type { SessionEvent, SessionId } from '@deepseek-ai/dsh-session/types'
-import { WeakMapWithValues } from '@deepseek-ai/dsh-util-values'
+} from '@reevo/dsh-api-session-controller/client'
+import type { SessionEvent, SessionId } from '@reevo/dsh-session/types'
+import { WeakMapWithValues } from '@reevo/dsh-util-values'
 import {
   createSnapshotStore, type ObservableSnapshot, type SnapshotStore,
-} from '@deepseek-ai/dsh-client-store'
+} from '@reevo/dsh-client-store'
 import type {
   ConversationPublication, ConversationViewSnapshotMap,
   ConversationViewSnapshotStore,
@@ -27,7 +27,7 @@ import { ConversationGroupRegistry } from './group-registry.ts'
 import { ConversationInteractionRegistry } from './interaction-registry.ts'
 import { UserTextRegistry } from './user-text-registry.ts'
 
-declare module '@deepseek-ai/dsh-api-session-controller/client' {
+declare module '@reevo/dsh-api-session-controller/client' {
   interface SessionRetainFacetMap {
     /**
      * Conversation assembly of the Session's event window. While a reference retains it, the binding folds the

@@ -22,24 +22,24 @@ import SessionStore, {
   type SessionId,
   SessionLogOffset,
   SessionSeq,
-} from '@deepseek-ai/dsh-session'
-import type { SessionEvent, SessionHeader } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
-import type { SessionProjectionSummaryExcluded } from '@deepseek-ai/dsh-session-projection/types'
-import Storage from '@deepseek-ai/dsh-storage'
+} from '@reevo/dsh-session'
+import type { SessionEvent, SessionHeader } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { ProjectionDefinition } from '@reevo/dsh-session-projection'
+import type { SessionProjectionSummaryExcluded } from '@reevo/dsh-session-projection/types'
+import Storage from '@reevo/dsh-storage'
 import {
   apply as storageJsonApply, Config as storageJsonConfig, inject as storageJsonInject, name as storageJsonName,
-} from '@deepseek-ai/dsh-storage-json'
+} from '@reevo/dsh-storage-json'
 import {
   apply as storageDomainApply, Config as storageDomainConfig, inject as storageDomainInject, name as storageDomainName,
-} from '@deepseek-ai/dsh-storage-domain'
+} from '@reevo/dsh-storage-domain'
 import SessionProjectionCache from '../src/index.ts'
 import { checkpointRecord, projectionCacheDomainSpec } from '../src/spec.ts'
 import type { CheckpointRecord } from '../src/spec.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@reevo/dsh-session-projection/types' {
   interface SessionProjectionMap {
     'cache-test/marks': { marks: string[] }
     'cache-test/secondary-marks': { marks: string[] }
@@ -49,7 +49,7 @@ declare module '@deepseek-ai/dsh-session-projection/types' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session/types' {
+declare module '@reevo/dsh-session/types' {
   interface SessionEventMap {
     'cache-test/mark': { marks: string[] }
   }

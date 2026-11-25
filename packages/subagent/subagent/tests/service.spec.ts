@@ -2,13 +2,13 @@ import { bindSubagentActivation } from './manager-internals.ts'
 import { mountWorkingDirectoryFixture } from './working-directory-fixture.ts'
 import { describe, expect, expectTypeOf, it, onTestFinished, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { type Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { type Agent } from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
 
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { HarnessError, type ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import { carrierKeyOf } from '@deepseek-ai/dsh-scope'
+import { brandString } from '@reevo/dsh-brand'
+import { HarnessError, type ReasoningEffortId } from '@reevo/dsh-llm'
+import { carrierKeyOf } from '@reevo/dsh-scope'
 import SubagentRuntime, {
   foldSubagentDescriptor,
   snapshotSubagentDescriptor,
@@ -23,9 +23,9 @@ import SubagentRuntime, {
   type SubagentRun,
   type SubagentRunEndInfo,
   type SubagentStartRequest,
-} from '@deepseek-ai/dsh-subagent'
-import { Session, type SessionId, type SessionEvent } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+} from '@reevo/dsh-subagent'
+import { Session, type SessionId, type SessionEvent } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 
 function fakeParent(id = 'parent-1'): Agent {
   return { id: brandString<SessionId>(id) } as Agent

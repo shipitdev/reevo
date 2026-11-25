@@ -1,7 +1,7 @@
 /** Immutable system-only interpretation of the loaded Session surface. */
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import type { SessionEvent } from '@deepseek-ai/dsh-session/types'
-import { isSurfaceEvent } from '@deepseek-ai/dsh-session/surface'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import type { SessionEvent } from '@reevo/dsh-session/types'
+import { isSurfaceEvent } from '@reevo/dsh-session/surface'
 import type { SystemPromptNode } from './request-inspection.ts'
 
 interface PositionedSystem {

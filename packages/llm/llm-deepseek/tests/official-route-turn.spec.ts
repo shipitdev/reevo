@@ -1,17 +1,17 @@
 /** Turns on the official endpoint report credential failures on the model request, after the prompt is recorded. */
 import { afterEach, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import LlmRuntime, { createUserMessage } from '@deepseek-ai/dsh-llm'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import * as DeepSeek from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import DeepSeekAuth from '@deepseek-ai/dsh-deepseek-auth'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import LlmRuntime, { createUserMessage } from '@reevo/dsh-llm'
+import AgentRegistry from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import * as DeepSeek from '@reevo/dsh-llm-deepseek-api-key'
+import DeepSeekAuth from '@reevo/dsh-deepseek-auth'
+import { brandString } from '@reevo/dsh-brand'
 
 const contexts: Context[] = []
 afterEach(async () => {

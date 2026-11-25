@@ -9,14 +9,14 @@ import SessionStore, {
   type CreateSessionOptions,
   type SessionEvent,
   type SessionHeader,
-} from '@deepseek-ai/dsh-session'
-import { createSessionFormatCatalogWithChildren } from '@deepseek-ai/dsh-session-format-catalog'
-import DeepSeekLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import { createDeveloperMessage, createAssistantMessage, createSystemMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+} from '@reevo/dsh-session'
+import { createSessionFormatCatalogWithChildren } from '@reevo/dsh-session-format-catalog'
+import DeepSeekLlmApiExtensionRegistry from '@reevo/dsh-deepseek-llm-api-extensions'
+import { createDeveloperMessage, createAssistantMessage, createSystemMessage, createUserMessage } from '@reevo/dsh-llm'
+import type { JsonValue } from '@reevo/dsh-util-values'
 import * as SessionLogDeepSeek from '../src/index.ts'
 import type { DeepSeekSessionLogExtension, DeepSeekSessionLogWireEvent, DeepSeekSessionLogWireSurfaceOp } from '../src/types.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const contexts: Context[] = []
 const SIGNAL = new AbortController().signal

@@ -1,6 +1,6 @@
 import { expect, it, vi } from 'vitest'
-import { RemoteError, type TypertClientRemote } from '@deepseek-ai/dsh-typert-protocol'
-import { SessionId } from '@deepseek-ai/dsh-session/types'
+import { RemoteError, type TypertClientRemote } from '@reevo/dsh-typert-protocol'
+import { SessionId } from '@reevo/dsh-session/types'
 import { SessionReadModel } from '../src/client/model.ts'
 import type { SessionReadState } from '../src/types.ts'
 

@@ -2,26 +2,26 @@
 
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-api-remote-access'
-import { changeRequestKey } from '@deepseek-ai/dsh-experimental-forge'
+import type { Agent } from '@reevo/dsh-agent'
+import type {} from '@reevo/dsh-api-remote-access'
+import { changeRequestKey } from '@reevo/dsh-experimental-forge'
 import type {
   BranchUpdateMethod, ChangeRequestDescription, ChangeRequestKey, ChangeRequestRef, ChangeRequestReviewer, ChangeRequestSnapshot,
   ChangeRequestUpdate, ForgeActionFailure, ForgeCommitList,
   ForgeFailure,
   ForgeLineComment, ForgeRerunRequest, ForgeReviewChange, ForgeReviewData, ForgeReviewerCandidate, ForgeReviewRequest, ForgeReviewResult,
   ForgeReviewWrite, ForgeReviewWriteResult, ForgeViewedFiles, ForgeViewedRequest, MergeMethod,
-} from '@deepseek-ai/dsh-experimental-forge'
-import type { SessionChangeRequest } from '@deepseek-ai/dsh-experimental-forge-session'
-import type { WorktreeCleanup } from '@deepseek-ai/dsh-experimental-worktree/types'
-import { appendPluginRecord } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent, SessionId, UserMessage } from '@deepseek-ai/dsh-session'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type {} from '@deepseek-ai/dsh-session-query'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
-import { Remote, RemoteError, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+} from '@reevo/dsh-experimental-forge'
+import type { SessionChangeRequest } from '@reevo/dsh-experimental-forge-session'
+import type { WorktreeCleanup } from '@reevo/dsh-experimental-worktree/types'
+import { appendPluginRecord } from '@reevo/dsh-session'
+import type { Session, SessionEvent, SessionId, UserMessage } from '@reevo/dsh-session'
+import type { ProjectionHandle } from '@reevo/dsh-session-projection'
+import type {} from '@reevo/dsh-session-projection-cache'
+import type {} from '@reevo/dsh-session-query'
+import { MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
+import { Remote, RemoteError, TypertRemoteService } from '@reevo/dsh-typert-protocol'
+import { assertNever } from '@reevo/dsh-util-values'
 import { gitIn, hasBranch, inspectCheckout } from './git.ts'
 import type { Inspection } from './git.ts'
 import { branchNameProblem } from './branch-name.ts'

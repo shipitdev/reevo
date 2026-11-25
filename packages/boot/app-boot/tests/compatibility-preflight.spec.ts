@@ -35,7 +35,7 @@ function fixture() {
     mkdirSync(packageDir, { recursive: true })
     writeFileSync(join(packageDir, 'package.json'), JSON.stringify({
       name, version: options.version ?? '1.0.0', type: 'module', exports: './index.mjs',
-      ...options.peer === undefined ? {} : { peerDependencies: { '@deepseek-ai/dsh-test': options.peer } },
+      ...options.peer === undefined ? {} : { peerDependencies: { '@reevo/dsh-test': options.peer } },
     }))
     writeFileSync(join(packageDir, 'index.mjs'), `import { appendFileSync } from 'node:fs'
 const record = (value) => appendFileSync(new URL('${pathToFileURL(effects).href}'), value + '\\n')
@@ -120,7 +120,7 @@ it('blocks a denied plugin reached through a package-imports alias', async () =>
   mkdirSync(aliased)
   writeFileSync(join(aliased, 'package.json'), JSON.stringify({
     name: 'denied-plugin', version: '1.0.0', type: 'module', exports: './index.mjs',
-    peerDependencies: { '@deepseek-ai/dsh-test': '^9.0.0' },
+    peerDependencies: { '@reevo/dsh-test': '^9.0.0' },
   }))
   writeFileSync(join(aliased, 'index.mjs'), `import { appendFileSync } from 'node:fs'
 appendFileSync(new URL('${pathToFileURL(join(f.dir, 'effects')).href}'), 'import:denied-plugin\\n')

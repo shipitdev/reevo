@@ -6,15 +6,15 @@ import {
   PermissionIconFullAccessMedium, PermissionIconFullAccessRegular, PermissionIconReadOnlyMedium,
   PermissionIconReadOnlyRegular, PermissionIconWorkspaceWriteMedium, PermissionIconWorkspaceWriteRegular,
   RiskConfirmation,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { MenuEntry } from '@deepseek-ai/dsh-client-ui-primitives'
+} from '@reevo/dsh-client-ui-primitives'
+import type { MenuEntry } from '@reevo/dsh-client-ui-primitives'
 import type {
   HostObservable, InjectFace, PropsLocale, PropsRuntime,
-} from '@deepseek-ai/dsh-client-ui-slots'
-import type { PresetOption } from '@deepseek-ai/dsh-permission-presets/client'
+} from '@reevo/dsh-client-ui-slots'
+import type { PresetOption } from '@reevo/dsh-permission-presets/client'
 // Type-only: pulls the conversation-owned permission slot declaration and
 // the standard session projection hook into this package's Client face.
-import type {} from '@deepseek-ai/dsh-client-ui-conversation/client'
+import type {} from '@reevo/dsh-client-ui-conversation/client'
 import type { PermissionCatalogState } from './catalog.ts'
 import { PERMISSION_ACCESS_NS } from './locales.ts'
 import {

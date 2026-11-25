@@ -5,9 +5,9 @@ import { isDeepStrictEqual } from 'node:util'
 import { Context, FiberState, Service } from '@deepseek-ai/cordis'
 import { parseEntryYaml, type PatchOptions } from '@deepseek-ai/cordis-plugin-include'
 import type { Entry, EntryOptions } from '@deepseek-ai/cordis-plugin-loader'
-import type {} from '@deepseek-ai/dsh-hmr'
-import { composeEntries, loadProfileDirectory, readProfilePatches, reconcileProfilePatches } from '@deepseek-ai/dsh-app-boot'
-import { withFileLock, writeFileAtomic } from '@deepseek-ai/dsh-atomic-write'
+import type {} from '@reevo/dsh-hmr'
+import { composeEntries, loadProfileDirectory, readProfilePatches, reconcileProfilePatches } from '@reevo/dsh-app-boot'
+import { withFileLock, writeFileAtomic } from '@reevo/dsh-atomic-write'
 import { isMap, isSeq, parseDocument, Scalar, visit } from 'yaml'
 
 declare module '@deepseek-ai/cordis' {

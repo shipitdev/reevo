@@ -1,11 +1,11 @@
 /** Reviewed synthetic tool history shared by continuation and child-catalog measurements. */
 
-import { AssistantStreamAccumulator } from '@deepseek-ai/dsh-llm/assistant-stream'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { MessageId, ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { Session, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
+import { AssistantStreamAccumulator } from '@reevo/dsh-llm/assistant-stream'
+import { brandString } from '@reevo/dsh-brand'
+import type { MessageId, ToolCallId } from '@reevo/dsh-llm'
+import type { ContentBlock, StreamChunk } from '@reevo/dsh-llm'
+import { Session, type SessionId } from '@reevo/dsh-session'
+import type { SessionEvent } from '@reevo/dsh-session'
 
 /** Workload dimensions, independent of environment and recorded user material. */
 export const WORKLOAD = {

@@ -1,8 +1,8 @@
 /** Native-owned held input, program-end reminders, and failure/cancellation cleanup. */
 import type { Context } from '@deepseek-ai/cordis'
-import { emitAgentEvent, type Agent } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import { RUN_CODE_NAME, type ToolExecution } from '@deepseek-ai/dsh-tools'
+import { emitAgentEvent, type Agent } from '@reevo/dsh-agent'
+import { createUserMessage } from '@reevo/dsh-llm'
+import { RUN_CODE_NAME, type ToolExecution } from '@reevo/dsh-tools'
 import { z } from 'zod'
 import { NativeError, type NativeClient } from './native-client.ts'
 

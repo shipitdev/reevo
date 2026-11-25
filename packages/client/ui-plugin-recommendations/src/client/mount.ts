@@ -1,16 +1,16 @@
 /** Register the official plugin card body and its localized copy over the catalog-text Remote. */
 import { createElement } from 'react'
 import type { Context } from '@deepseek-ai/cordis'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type {} from '@deepseek-ai/dsh-api-remotes/client'
-import type {} from '@deepseek-ai/dsh-client-locale/client'
-import type {} from '@deepseek-ai/dsh-client-ui-plugin-manager/client'
-import type {} from '@deepseek-ai/dsh-client-ui-action-cards/client'
-import type {} from '@deepseek-ai/dsh-plugin-recommendations/remote'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import type {} from '@reevo/dsh-api-remotes/client'
+import type {} from '@reevo/dsh-client-locale/client'
+import type {} from '@reevo/dsh-client-ui-plugin-manager/client'
+import type {} from '@reevo/dsh-client-ui-action-cards/client'
+import type {} from '@reevo/dsh-plugin-recommendations/remote'
 import { PluginCardBody, type CatalogDetails, type PluginCardServices } from './Card.tsx'
 import { de, en, es, fr, ja, pt, ru, zh, type RecommendationKey } from './locales.ts'
 
-declare module '@deepseek-ai/dsh-client-ui-slots' {
+declare module '@reevo/dsh-client-ui-slots' {
   interface LocaleNamespaceMap { pluginRecommendations: RecommendationKey }
 }
 

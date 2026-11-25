@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-experimental-tool-worktree",
+  "name": "@reevo/dsh-experimental-tool-worktree",
   "description": "Model tool that creates and enters a new Git worktree",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -37,31 +37,31 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-experimental-worktree": "workspace:*"
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-experimental-worktree": "workspace:*"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop-testkit": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-local": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-working-directory": "workspace:*",
-    "@deepseek-ai/dsh-experimental-worktree": "workspace:*",
-    "@deepseek-ai/dsh-agent-loop": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-agent-loop-testkit": "workspace:*",
+    "@reevo/dsh-fs-local": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-sandbox-local": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-subprocess-local": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tool-executor-native": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-working-directory": "workspace:*",
+    "@reevo/dsh-experimental-worktree": "workspace:*",
+    "@reevo/dsh-agent-loop": "workspace:*"
   },
   "icon": "./icon.svg",
   "dsh": {
@@ -70,6 +70,6 @@
     }
   },
   "dependencies": {
-    "@deepseek-ai/dsh-experimental-worktree": "workspace:*"
+    "@reevo/dsh-experimental-worktree": "workspace:*"
   }
 }

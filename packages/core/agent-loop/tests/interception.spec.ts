@@ -1,29 +1,29 @@
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import LlmRuntime, { createUserMessage, type ToolCallId  } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import LlmRuntime, { createUserMessage, type ToolCallId  } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
 import SessionStore, {
   type SessionId,
   type SessionEvent,
   type TurnEndReason,
   type UserMessage,
-} from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime, { type PostToolDecision, type PreToolDecision } from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+} from '@reevo/dsh-session'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime, { type PostToolDecision, type PreToolDecision } from '@reevo/dsh-tools'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 import AgentRegistry, {
   type Agent,
   type PreStepDecision,
   type SessionStartSource,
-} from '@deepseek-ai/dsh-agent'
+} from '@reevo/dsh-agent'
 
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { MockAdapter, textResponse, toolCallResponse } from './mock-adapter.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'a': { kind: 'a' } & ContextFormed
     'accepted source': { kind: 'accepted source' } & ContextFormed

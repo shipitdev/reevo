@@ -30,9 +30,9 @@ export function writePackage(modules: string, name: string, fields: Record<strin
  * @returns Sealed runtime metadata.
  */
 export function runtimeFixture(root: string, version = '1.0.0', nodeVersion = '24.17.0'): DesktopRuntimeDescriptor {
-  const names = ['@reevo/cli', '@deepseek-ai/dsh-desktop-host', '@deepseek-ai/dsh-base', '@deepseek-ai/dsh-web-app', '@deepseek-ai/cordis']
+  const names = ['@reevo/cli', '@reevo/dsh-desktop-host', '@reevo/dsh-base', '@reevo/dsh-web-app', '@deepseek-ai/cordis']
   for (const name of names) {
-    const bundle = name === '@deepseek-ai/dsh-base' || name === '@deepseek-ai/dsh-web-app'
+    const bundle = name === '@reevo/dsh-base' || name === '@reevo/dsh-web-app'
     const path = writePackage(join(root, 'node_modules'), name, {
       version,
       ...(name === '@reevo/cli' ? { dependencies: Object.fromEntries(names.slice(1).map(dependency => [dependency, version])) } : {}),
@@ -41,7 +41,7 @@ export function runtimeFixture(root: string, version = '1.0.0', nodeVersion = '2
     if (bundle) writeFileSync(join(path, 'bundle.yml'), '[]\n')
   }
   for (const file of DESKTOP_HOST_RUNTIME_FILES) {
-    const path = join(root, 'node_modules', '@deepseek-ai/dsh-desktop-host', file)
+    const path = join(root, 'node_modules', '@reevo/dsh-desktop-host', file)
     mkdirSync(join(path, '..'), { recursive: true })
     writeFileSync(path, '')
   }

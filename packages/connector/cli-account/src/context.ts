@@ -2,7 +2,7 @@
 
 import { posix, win32 } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-system-prompt'
+import type {} from '@reevo/dsh-system-prompt'
 
 /** What one app plugin states about its CLI. */
 export interface CliPathContext {

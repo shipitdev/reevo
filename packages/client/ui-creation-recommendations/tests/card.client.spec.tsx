@@ -1,14 +1,14 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { afterEach, expect, it, vi } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ActionCardId } from '@deepseek-ai/dsh-action-cards/types'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { FoldedText } from '@deepseek-ai/dsh-client-ui-action-cards/src/client/Card.tsx'
-import type { ActionCardFields, ActionCardResult } from '@deepseek-ai/dsh-action-cards/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { ActionCardId } from '@reevo/dsh-action-cards/types'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import { FoldedText } from '@reevo/dsh-client-ui-action-cards/src/client/Card.tsx'
+import type { ActionCardFields, ActionCardResult } from '@reevo/dsh-action-cards/types'
 import { PageCardBody, type PageCardProps } from '../src/client/Card.tsx'
-import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
+import { makeTranslate } from '@reevo/dsh-client-test-runtime'
 import { en, zh } from '../src/client/locales.ts'
 
 afterEach(() => { cleanup(); vi.restoreAllMocks() })

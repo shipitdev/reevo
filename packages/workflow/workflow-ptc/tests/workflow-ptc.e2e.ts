@@ -1,16 +1,16 @@
 import { afterEach, describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { SessionId } from '@deepseek-ai/dsh-session'
+import type { SessionId } from '@reevo/dsh-session'
 
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import * as LlmDeepSeek from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import SubagentRuntime from '@deepseek-ai/dsh-subagent'
-import * as Spawn from '@deepseek-ai/dsh-subagent-spawn-in-process'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import * as LlmDeepSeek from '@reevo/dsh-llm-deepseek-api-key'
+import SubagentRuntime from '@reevo/dsh-subagent'
+import * as Spawn from '@reevo/dsh-subagent-spawn-in-process'
 import PtcWorkflowEngine from '../src/index.ts'
-import DeepSeekAuth from '@deepseek-ai/dsh-deepseek-auth'
+import DeepSeekAuth from '@reevo/dsh-deepseek-auth'
 import { mountPtcRuntime } from './setup.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 let ctx: Context | undefined
 

@@ -4,9 +4,9 @@
  */
 import assert from 'node:assert/strict'
 import { Context, Service } from '@deepseek-ai/cordis'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'
-import { RemoteError, type RemoteResult } from '@deepseek-ai/dsh-typert-protocol'
+import { LocaleRuntime } from '@reevo/dsh-client-locale/client'
+import { SlotRegistry } from '@reevo/dsh-client-ui-renderer/client'
+import { RemoteError, type RemoteResult } from '@reevo/dsh-typert-protocol'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import {
   ConnectorAccountActivationEntry, ConnectorAccountBadgeEntry, ConnectorAccountSectionEntry, ConnectorAccountToastEntry,

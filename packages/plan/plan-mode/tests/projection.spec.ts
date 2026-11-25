@@ -1,19 +1,19 @@
 /** Plan projection behavior. */
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import UserQuestionService from '@deepseek-ai/dsh-user-questions'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CommandId } from '@deepseek-ai/dsh-commands/types'
-import PlanModeController from '@deepseek-ai/dsh-plan-mode'
+import AgentRegistry from '@reevo/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
+import SessionStore from '@reevo/dsh-session'
+import type { Session } from '@reevo/dsh-session'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import UserQuestionService from '@reevo/dsh-user-questions'
+import { brandString } from '@reevo/dsh-brand'
+import type { CommandId } from '@reevo/dsh-commands/types'
+import PlanModeController from '@reevo/dsh-plan-mode'
 
 interface Bench {
   ctx: Context

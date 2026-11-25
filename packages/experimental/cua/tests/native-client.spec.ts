@@ -1,17 +1,17 @@
 /** Controlled connection streams exercise the platform-independent native protocol client. */
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { PassThrough, Writable } from 'node:stream'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm'
+import { HarnessError } from '@reevo/dsh-error'
+import type { ToolCallId } from '@reevo/dsh-llm'
 import { Context } from '@deepseek-ai/cordis'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import { NativeToolExecutor } from '@deepseek-ai/dsh-tool-executor-native'
-import Tools, { defineTool } from '@deepseek-ai/dsh-tools'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import { NativeToolExecutor } from '@reevo/dsh-tool-executor-native'
+import Tools, { defineTool } from '@reevo/dsh-tools'
 import type { NativeChannel } from '../src/native-client.ts'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
 import { z } from 'zod'
 import { NativeClient, NativeError } from '../src/native-client.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const shared = vi.hoisted(() => ({ create: vi.fn() }))
 

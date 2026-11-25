@@ -1,23 +1,23 @@
 /**
  * Same-session goal domain: event-sourced state, compare-and-set mutations,
  * and process-local continuation activation.
- * @module @deepseek-ai/dsh-goal
+ * @module @reevo/dsh-goal
  */
 
 import { randomUUID } from 'node:crypto'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import type { GoalId } from './types.ts'
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
 import { z as zod } from 'zod'
 import type { ZodType } from 'zod'
-import { agentEvents } from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { SessionSeq } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import { TypertRemoteService, Remote } from '@deepseek-ai/dsh-typert-protocol'
-import type { ProjectionHandle } from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
+import { agentEvents } from '@reevo/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
+import { SessionSeq } from '@reevo/dsh-session'
+import type { Session, SessionEvent, SessionLogOffset } from '@reevo/dsh-session'
+import { TypertRemoteService, Remote } from '@reevo/dsh-typert-protocol'
+import type { ProjectionHandle } from '@reevo/dsh-session-projection'
+import type { ProjectionDefinition } from '@reevo/dsh-session-projection'
 import {
   applyGoalEvent,
   goalChangeRef,

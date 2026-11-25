@@ -15,13 +15,13 @@ import { fileURLToPath } from 'node:url'
 import type { Browser, Locator, Page } from 'playwright'
 import { chromium } from 'playwright'
 import { afterAll, beforeAll, describe, expect, it, onTestFailed } from 'vitest'
-import { createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
-import { createMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock, ContextFormed, Message, MessageSource } from '@deepseek-ai/dsh-llm'
-import { deriveEventMessage, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
-import type { TokenMeter } from '@deepseek-ai/dsh-token-meter'
-import type {} from '@deepseek-ai/dsh-api-terminal-controller'
+import { createLaunchEnvironmentSnapshot } from '@reevo/dsh-launch-environment'
+import { createMessage, createUserMessage } from '@reevo/dsh-llm'
+import type { ContentBlock, ContextFormed, Message, MessageSource } from '@reevo/dsh-llm'
+import { deriveEventMessage, type SessionId } from '@reevo/dsh-session'
+import type { SessionEvent } from '@reevo/dsh-session'
+import type { TokenMeter } from '@reevo/dsh-token-meter'
+import type {} from '@reevo/dsh-api-terminal-controller'
 import { join } from 'node:path'
 import {
   acknowledgeReloadConnectionLoss, assertFixtureInventory, captureExpandedTurnProcessAria, captureStableAria,
@@ -30,9 +30,9 @@ import {
   webSnapshotMode, type WebScaffold,
 } from './scaffold.ts'
 import { expandOwningTurnProcess, newEnglishPage, pinBrowserClock, pinHostClock, saveFailureShot, WEB_FIXTURE_TIME } from './support.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'fixture': { kind: 'fixture' } & ContextFormed
   }

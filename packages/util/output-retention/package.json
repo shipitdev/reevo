@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-output-retention",
+  "name": "@reevo/dsh-output-retention",
   "description": "Zero-dependency bounded-retention primitive: ItemRetainer/TextRetainer + neutral notice helpers (what did we keep, what did we omit)",
   "version": "0.2.3-alpha.2",
   "publishConfig": {

@@ -2,10 +2,10 @@ import type { Context } from '@deepseek-ai/cordis'
 import type {
   AssistantBlock, AssistantMessageNode, ConversationLocation, ConversationMatch,
   ConversationNodeContext, ConversationNodeDefinition,
-} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type { StreamChunk } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-llm-retry/types'
-import type { SessionEvent } from '@deepseek-ai/dsh-session/types'
+} from '@reevo/dsh-client-ui-conversation/client'
+import type { StreamChunk } from '@reevo/dsh-llm'
+import type {} from '@reevo/dsh-llm-retry/types'
+import type { SessionEvent } from '@reevo/dsh-session/types'
 import type { AssistantChatData } from '../contract/chat-nodes.ts'
 import { CHAT_SYNTHETIC_SEQ_OFFSETS, chatNode } from './common.ts'
 import {
@@ -19,7 +19,7 @@ declare module '../contract/chat-nodes.ts' {
   }
 }
 
-declare module '@deepseek-ai/dsh-client-ui-conversation/client' {
+declare module '@reevo/dsh-client-ui-conversation/client' {
   interface ConversationStepDataMap {
     /** Streaming, settled, or interrupted Assistant material for this Step. */
     'assistant-step': AssistantChatData

@@ -1,23 +1,23 @@
 import { describe, expect, expectTypeOf, it, onTestFinished, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import BasicCompactionEngine from '@deepseek-ai/dsh-compaction-basic'
-import type { BasicCompactionConfig } from '@deepseek-ai/dsh-compaction-basic'
-import { selectCompactableRange } from '@deepseek-ai/dsh-compaction-basic/src/region.ts'
-import { answeredRouteProjectionDefinition } from '@deepseek-ai/dsh-compaction-basic/src/answered-route.ts'
-import { frameSummary } from '@deepseek-ai/dsh-compaction-basic/src/summarizer.ts'
-import type { SummarizationInput, SummaryResult } from '@deepseek-ai/dsh-compaction-basic/src/summarizer.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CompactionId } from '@deepseek-ai/dsh-compaction/types'
-import { toolPairingBalancedAfter, toolPairingBalancedBefore } from '@deepseek-ai/dsh-compaction'
+import type { AttachmentId } from '@reevo/dsh-attachment/types'
+import BasicCompactionEngine from '@reevo/dsh-compaction-basic'
+import type { BasicCompactionConfig } from '@reevo/dsh-compaction-basic'
+import { selectCompactableRange } from '@reevo/dsh-compaction-basic/src/region.ts'
+import { answeredRouteProjectionDefinition } from '@reevo/dsh-compaction-basic/src/answered-route.ts'
+import { frameSummary } from '@reevo/dsh-compaction-basic/src/summarizer.ts'
+import type { SummarizationInput, SummaryResult } from '@reevo/dsh-compaction-basic/src/summarizer.ts'
+import { brandString } from '@reevo/dsh-brand'
+import type { CompactionId } from '@reevo/dsh-compaction/types'
+import { toolPairingBalancedAfter, toolPairingBalancedBefore } from '@reevo/dsh-compaction'
 import {
   resolveCompactSpec,
   resolveConfig,
   resolveTargetPolicy,
-} from '@deepseek-ai/dsh-compaction-basic/src/config.ts'
-import type { CompactionResult } from '@deepseek-ai/dsh-compaction'
-import LlmRuntime, { createUserMessage, type ToolCallId, CONTEXT_WINDOW_EXCEEDED_CODE, createSystemMessage, createToolResultMessage, LlmAdapter , createMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
+} from '@reevo/dsh-compaction-basic/src/config.ts'
+import type { CompactionResult } from '@reevo/dsh-compaction'
+import LlmRuntime, { createUserMessage, type ToolCallId, CONTEXT_WINDOW_EXCEEDED_CODE, createSystemMessage, createToolResultMessage, LlmAdapter , createMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
 import type {
   ContentBlock,
   GenerateOptions,
@@ -27,15 +27,15 @@ import type {
   Message,
   StreamChunk,
   TokenUsage,
-} from '@deepseek-ai/dsh-llm'
-import SessionStore, { Session, type SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionCheckpoint } from '@deepseek-ai/dsh-session-projection'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
-import { agentEvents, type Agent, type RequestErrorAction } from '@deepseek-ai/dsh-agent'
-import ToolResultPruner from '@deepseek-ai/dsh-compaction-tool-result-pruner'
+} from '@reevo/dsh-llm'
+import SessionStore, { Session, type SessionId, SessionLogOffset, SessionSeq } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { ProjectionCheckpoint } from '@reevo/dsh-session-projection'
+import TokenMeter from '@reevo/dsh-token-meter'
+import { agentEvents, type Agent, type RequestErrorAction } from '@reevo/dsh-agent'
+import ToolResultPruner from '@reevo/dsh-compaction-tool-result-pruner'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

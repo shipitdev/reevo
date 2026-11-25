@@ -3,9 +3,9 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { liveConfig } from '../../../settings/settings/tests/live-config.ts'
-import WebRuntime from '@deepseek-ai/dsh-web'
-import DeepSeekAuth from '@deepseek-ai/dsh-deepseek-auth'
-import * as deepseekPlugin from '@deepseek-ai/dsh-web-search-deepseek'
+import WebRuntime from '@reevo/dsh-web'
+import DeepSeekAuth from '@reevo/dsh-deepseek-auth'
+import * as deepseekPlugin from '@reevo/dsh-web-search-deepseek'
 
 function jsonResponse(body: unknown): Response {
   return new Response(JSON.stringify(body), {

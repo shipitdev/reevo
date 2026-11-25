@@ -1,24 +1,24 @@
-import { imageOffloadProjection } from '@deepseek-ai/dsh-compaction-image-offload/projection'
+import { imageOffloadProjection } from '@reevo/dsh-compaction-image-offload/projection'
 import { describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { type ToolCallId , createMessage, createToolResultMessage } from '@deepseek-ai/dsh-llm'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import { type ToolCallId , createMessage, createToolResultMessage } from '@reevo/dsh-llm'
+import type { ContentBlock } from '@reevo/dsh-llm'
 import {
   Session,
   type SessionId,
   SessionSeq,
-} from '@deepseek-ai/dsh-session'
-import type { SurfaceEvent } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import TokenMeter from '@deepseek-ai/dsh-token-meter'
+} from '@reevo/dsh-session'
+import type { SurfaceEvent } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import TokenMeter from '@reevo/dsh-token-meter'
 import ToolResultPruner, {
   codePointLength,
   DEFAULTS,
   PRUNE_MARKER,
   resolveConfig,
-} from '@deepseek-ai/dsh-compaction-tool-result-pruner'
-import type { ToolResultPruneConfig } from '@deepseek-ai/dsh-compaction-tool-result-pruner'
+} from '@reevo/dsh-compaction-tool-result-pruner'
+import type { ToolResultPruneConfig } from '@reevo/dsh-compaction-tool-result-pruner'
 
 const MODEL = 'test-model'
 const SMALL: ToolResultPruneConfig = {

@@ -4,14 +4,14 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import type { SessionHeader } from '@deepseek-ai/dsh-session'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { DomainFacility } from '@deepseek-ai/dsh-storage-domain'
+import type { SessionHeader } from '@reevo/dsh-session'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { DomainFacility } from '@reevo/dsh-storage-domain'
 import { MemoryMediaPool, MemoryStorageBackend } from '../../../storage/storage-domain/tests/helpers/memory-backend.ts'
 import { storedKey, type StoredStates } from '../src/states.ts'
 import type { ForgeChangeRequestListState, ForgeChangeRequestStatesFrame } from '../src/types.ts'
 import { bench, pullUrl, type Bench } from './harness.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const cleanups: (() => Promise<void>)[] = []
 

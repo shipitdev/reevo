@@ -1,28 +1,28 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { afterEach, describe, expect, it } from 'vitest'
-import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { unsupportedModel, provideWorkingDirectoryFixture, unsupportedInbox } from '@reevo/dsh-agent-loop-testkit'
 import { mkdir, rm, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId, type Message } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed, MessageSource } from '@deepseek-ai/dsh-llm'
-import { createScope, type Scope } from '@deepseek-ai/dsh-scope'
+import { brandString } from '@reevo/dsh-brand'
+import { createUserMessage, type ToolCallId, type Message } from '@reevo/dsh-llm'
+import type { ContextFormed, MessageSource } from '@reevo/dsh-llm'
+import { createScope, type Scope } from '@reevo/dsh-scope'
 import {
   SESSION_FORMAT_VERSION, Session, type SessionId, type SessionEvent, type UserMessage,
-} from '@deepseek-ai/dsh-session'
-import SystemPrompt, { renderPrompt } from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import AgentRegistry, { agentEvents, type Agent, type PreStepDecision } from '@deepseek-ai/dsh-agent'
-import SkillRegistry from '@deepseek-ai/dsh-skill'
-import * as SkillFileSystem from '@deepseek-ai/dsh-skill-filesystem'
-import * as toolSkill from '@deepseek-ai/dsh-tool-skill'
+} from '@reevo/dsh-session'
+import SystemPrompt, { renderPrompt } from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
+import AgentRegistry, { agentEvents, type Agent, type PreStepDecision } from '@reevo/dsh-agent'
+import SkillRegistry from '@reevo/dsh-skill'
+import * as SkillFileSystem from '@reevo/dsh-skill-filesystem'
+import * as toolSkill from '@reevo/dsh-tool-skill'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'dsh-tool-skill': { kind: 'dsh-tool-skill' } & ContextFormed
     'later-contribution': { kind: 'later-contribution' } & ContextFormed

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-host-authentication-desktop",
+  "name": "@reevo/dsh-host-authentication-desktop",
   "description": "Desktop private-channel authentication provider",
   "version": "0.2.3-alpha.2",
   "publishConfig": { "access": "public" },
@@ -28,11 +28,11 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-connection": "workspace:*"
+    "@reevo/dsh-client-connection": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   }
 }

@@ -23,15 +23,15 @@
 import { posix, win32 } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type {} from '@deepseek-ai/dsh-fs'
-import type { FsDirEntry, FsInfo, FsPathInfo, FsTarget } from '@deepseek-ai/dsh-fs'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import type {} from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-session-persistence'
-import type {} from '@deepseek-ai/dsh-session-projection-cache'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { Remote, RemoteError, TypertRemoteService, type TypertLookup } from '@deepseek-ai/dsh-typert-protocol'
-import type {} from '@deepseek-ai/dsh-working-directory'
+import type {} from '@reevo/dsh-fs'
+import type { FsDirEntry, FsInfo, FsPathInfo, FsTarget } from '@reevo/dsh-fs'
+import type {} from '@reevo/dsh-sandbox-policy'
+import type {} from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-session-persistence'
+import type {} from '@reevo/dsh-session-projection-cache'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { Remote, RemoteError, TypertRemoteService, type TypertLookup } from '@reevo/dsh-typert-protocol'
+import type {} from '@reevo/dsh-working-directory'
 import { WorkspaceChangeFeed } from './changes.ts'
 import { searchWorkspace, type SearchLimits } from './search.ts'
 import type {
@@ -89,7 +89,7 @@ async function workspaceFileScopeOf(
   return { sessionId, workspaceRoot: cached ?? stored.header.cwd ?? ctx.sandboxPolicy.workspaceRoot }
 }
 
-declare module '@deepseek-ai/dsh-typert-protocol' {
+declare module '@reevo/dsh-typert-protocol' {
   interface TypertLookupMap {
     /** Resolve a Session id to its workspace root without loading its event body or activating an Agent. */
     workspaceFileScope: TypertLookup<WorkspaceFileScope, SessionId>
@@ -243,8 +243,8 @@ export class WorkspaceFiles extends TypertRemoteService {
         parameter: 'workspaceFileScope',
         wire: 'workspaceFileScopeId',
         resource: 'session',
-        hostTypeSymbol: '@deepseek-ai/dsh-api-workspace-files#WorkspaceFileScope',
-        wireTypeSymbol: '@deepseek-ai/dsh-session/types#SessionId',
+        hostTypeSymbol: '@reevo/dsh-api-workspace-files#WorkspaceFileScope',
+        wireTypeSymbol: '@reevo/dsh-session/types#SessionId',
         resolve: sessionId => workspaceFileScopeOf(scope, sessionId),
       })
     })

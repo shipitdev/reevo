@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-util-file-drag",
+  "name": "@reevo/dsh-util-file-drag",
   "description": "Shared file drag names and native transfer requests",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*"
   },
   "dependencies": {
     "mime": "^4.1.1"

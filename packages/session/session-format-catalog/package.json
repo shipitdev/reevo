@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-session-format-catalog",
+  "name": "@reevo/dsh-session-format-catalog",
   "description": "Build-static first-party Session format codec and migration catalog",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -35,20 +35,20 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-session-format": "workspace:*",
-    "@deepseek-ai/dsh-session-format-v0-to-v1": "workspace:*",
-    "@deepseek-ai/dsh-session-format-v1-to-v2": "workspace:*",
-    "@deepseek-ai/dsh-session-format-v2-to-v3": "workspace:*",
-    "@deepseek-ai/dsh-session-format-v3-to-v4": "workspace:*",
-    "@deepseek-ai/dsh-compaction-image-offload": "workspace:*"
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-session-format": "workspace:*",
+    "@reevo/dsh-session-format-v0-to-v1": "workspace:*",
+    "@reevo/dsh-session-format-v1-to-v2": "workspace:*",
+    "@reevo/dsh-session-format-v2-to-v3": "workspace:*",
+    "@reevo/dsh-session-format-v3-to-v4": "workspace:*",
+    "@reevo/dsh-compaction-image-offload": "workspace:*"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@reevo/dsh-session": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session": "workspace:*"
+    "@reevo/dsh-session": "workspace:*"
   }
 }

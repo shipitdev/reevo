@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-api-job-controller",
+  "name": "@reevo/dsh-api-job-controller",
   "description": "Job Remote observation stream and the reference-counted client job-output service",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -41,11 +41,11 @@
   "dsh": {
     "client": {
       "external": [
-        "@deepseek-ai/dsh-api-gateway/client"
+        "@reevo/dsh-api-gateway/client"
       ],
       "inject": [
-        "@deepseek-ai/dsh-api-gateway",
-        "@deepseek-ai/dsh-client-connection"
+        "@reevo/dsh-api-gateway",
+        "@reevo/dsh-client-connection"
       ],
       "platform": "web"
     }
@@ -71,7 +71,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "zod": "4.6.6"
   },
@@ -80,14 +80,14 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-api-gateway": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-jobs": "workspace:*",
-    "@deepseek-ai/dsh-jobs-local": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-typert-registry": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-api-gateway": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-client-store": "workspace:*",
+    "@reevo/dsh-jobs": "workspace:*",
+    "@reevo/dsh-jobs-local": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-typert-registry": "workspace:*"
   }
 }

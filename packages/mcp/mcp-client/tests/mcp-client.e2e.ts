@@ -7,10 +7,10 @@
  *
  * No API key needed — all servers are local/keyless.
  */
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { createServer, type IncomingMessage, type Server, type ServerResponse } from 'node:http'
 import { mkdtemp, rm, writeFile, readFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
@@ -21,16 +21,16 @@ import { Context } from '@deepseek-ai/cordis'
 import { createMcpHandler, McpServer, type CallToolResult } from '@modelcontextprotocol/server'
 import { toNodeHandler, type NodeIncomingMessageLike } from '@modelcontextprotocol/node'
 import { z } from 'zod'
-import LocalAttachmentStore from '@deepseek-ai/dsh-attachment-local'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { type ToolCallId, LlmAdapter, LlmRuntime } from '@deepseek-ai/dsh-llm'
-import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@deepseek-ai/dsh-llm'
-import { apply } from '@deepseek-ai/dsh-mcp-client/src/index.ts'
-import { probeServer } from '@deepseek-ai/dsh-mcp-client/src/probe.ts'
-import { publicToolName } from '@deepseek-ai/dsh-mcp-client/src/tools.ts'
-import { Config } from '@deepseek-ai/dsh-mcp-client'
+import LocalAttachmentStore from '@reevo/dsh-attachment-local'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import { brandString } from '@reevo/dsh-brand'
+import { type ToolCallId, LlmAdapter, LlmRuntime } from '@reevo/dsh-llm'
+import type { GenerateOptions, LlmResolvedModelInfo, StreamChunk } from '@reevo/dsh-llm'
+import { apply } from '@reevo/dsh-mcp-client/src/index.ts'
+import { probeServer } from '@reevo/dsh-mcp-client/src/probe.ts'
+import { publicToolName } from '@reevo/dsh-mcp-client/src/tools.ts'
+import { Config } from '@reevo/dsh-mcp-client'
 
 const testToolSignal = new AbortController().signal
 

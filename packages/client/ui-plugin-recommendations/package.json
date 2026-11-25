@@ -7,7 +7,7 @@
   "main": "lib/index.js",
   "types": "lib/types/index.d.ts",
   "license": "MIT",
-  "name": "@deepseek-ai/dsh-client-ui-plugin-recommendations",
+  "name": "@reevo/dsh-client-ui-plugin-recommendations",
   "description": "Official plugin card body with catalog text and enabling",
   "repository": {
     "type": "git",
@@ -31,10 +31,10 @@
     "client": {
       "platform": "web",
       "inject": [
-        "@deepseek-ai/dsh-api-remotes",
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-plugin-manager",
-        "@deepseek-ai/dsh-client-ui-action-cards"
+        "@reevo/dsh-api-remotes",
+        "@reevo/dsh-client-locale",
+        "@reevo/dsh-client-ui-plugin-manager",
+        "@reevo/dsh-client-ui-action-cards"
       ]
     }
   },
@@ -42,22 +42,22 @@
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-api-remotes": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-api-remotes": "workspace:*",
+    "@reevo/dsh-client-locale": "workspace:*",
+    "@reevo/dsh-client-ui-slots": "workspace:*",
+    "@reevo/dsh-client-ui-primitives": "workspace:*",
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-plugin-recommendations": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-action-cards": "workspace:*",
-    "@deepseek-ai/dsh-action-cards": "workspace:*",
+    "@reevo/dsh-plugin-recommendations": "workspace:*",
+    "@reevo/dsh-client-store": "workspace:*",
+    "@reevo/dsh-client-ui-plugin-manager": "workspace:*",
+    "@reevo/dsh-package-manifest": "workspace:*",
+    "@reevo/dsh-client-ui-action-cards": "workspace:*",
+    "@reevo/dsh-action-cards": "workspace:*",
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*"
+    "@reevo/dsh-client-test-runtime": "workspace:*"
   },
   "files": [
     "locale/*.json",

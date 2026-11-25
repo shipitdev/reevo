@@ -7,15 +7,15 @@
  * releases it once no share is left. Stopping a share stops the turn that admitted share-viewer input,
  * with the owner's own cancellation; an owner-started turn keeps running, and a turn this host cannot
  * attribute stops with the share.
- * @module @deepseek-ai/dsh-experimental-liveshare/src/host/source-access
+ * @module @reevo/dsh-experimental-liveshare/src/host/source-access
  */
 
 import type { Context } from '@deepseek-ai/cordis'
-import type { SessionId, Session } from '@deepseek-ai/dsh-session'
-import { scopeOf } from '@deepseek-ai/dsh-scope'
-import type { SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
-import type { ShareRpcActor } from '@deepseek-ai/dsh-experimental-liveshare-protocol'
-import { identityKeyOf } from '@deepseek-ai/dsh-experimental-liveshare-protocol'
+import type { SessionId, Session } from '@reevo/dsh-session'
+import { scopeOf } from '@reevo/dsh-scope'
+import type { SandboxExecutionPolicy } from '@reevo/dsh-sandbox'
+import type { ShareRpcActor } from '@reevo/dsh-experimental-liveshare-protocol'
+import { identityKeyOf } from '@reevo/dsh-experimental-liveshare-protocol'
 import {
   installSourceSessionAccess,
   type ForkEnforcementFs,

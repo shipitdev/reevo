@@ -6,10 +6,10 @@
  * tool-specific spill code, and the model-facing text changes ONLY by the
  * deliberate spill notice (the full formatted result lands in the spill file).
  */
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
 
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { createServer, type IncomingMessage, type Server, type ServerResponse } from 'node:http'
 import { AddressInfo } from 'node:net'
@@ -17,20 +17,20 @@ import { mkdtempSync, readFileSync, rmSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import { estimateContent } from '@deepseek-ai/dsh-token-meter/estimate'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm/types'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
-import type { ToolExecution } from '@deepseek-ai/dsh-tools'
+import { estimateContent } from '@reevo/dsh-token-meter/estimate'
+import { brandString } from '@reevo/dsh-brand'
+import type { ToolCallId } from '@reevo/dsh-llm/types'
+import type { SessionId } from '@reevo/dsh-session'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
+import type { ToolExecution } from '@reevo/dsh-tools'
 
 const testToolSignal = new AbortController().signal
-import WebRuntime from '@deepseek-ai/dsh-web'
-import * as WebFetchLocal from '@deepseek-ai/dsh-web-fetch-http'
-import LocalSpillStore from '@deepseek-ai/dsh-spill-local'
-import * as SpillPolicy from '@deepseek-ai/dsh-spill-policy'
-import * as ToolWeb from '@deepseek-ai/dsh-tool-web'
+import WebRuntime from '@reevo/dsh-web'
+import * as WebFetchLocal from '@reevo/dsh-web-fetch-http'
+import LocalSpillStore from '@reevo/dsh-spill-local'
+import * as SpillPolicy from '@reevo/dsh-spill-policy'
+import * as ToolWeb from '@reevo/dsh-tool-web'
 
 type Handler = (req: IncomingMessage, res: ServerResponse) => void
 

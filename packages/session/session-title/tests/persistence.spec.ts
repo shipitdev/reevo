@@ -1,15 +1,15 @@
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
+import { createUserMessage } from '@reevo/dsh-llm'
 import { afterEach, describe, expect, it } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import SessionTitleService, { foldSessionTitle } from '@deepseek-ai/dsh-session-title'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import AgentRegistry from '@reevo/dsh-agent'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
+import SessionTitleService, { foldSessionTitle } from '@reevo/dsh-session-title'
+import { brandString } from '@reevo/dsh-brand'
 
 const CONFIG = {
   fallbackMaxWords: 5,

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-upstream-skills",
+  "name": "@reevo/dsh-upstream-skills",
   "description": "Host Service of CLI app plugins: each plugin registers its entry skill and a pinned directory of the vendor's GitHub repository, and the Service downloads that directory into the DSH cache and lists the entry skill over it",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -35,19 +35,19 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-home-paths": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
+    "@reevo/dsh-home-paths": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "tar": "^7.5.22",
     "yaml": "^2.4.2"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-skill": "workspace:*"
+    "@reevo/dsh-skill": "workspace:*"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*"
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*"
   }
 }

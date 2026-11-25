@@ -1,10 +1,10 @@
-/** Client-safe question, answer, and event types. @module @deepseek-ai/dsh-user-questions/types */
+/** Client-safe question, answer, and event types. @module @reevo/dsh-user-questions/types */
 
-import type { Scoped } from '@deepseek-ai/dsh-scope'
-import type { Agent } from '@deepseek-ai/dsh-agent/types'
-import type { ToolCallId } from '@deepseek-ai/dsh-llm/types'
-import type {} from '@deepseek-ai/dsh-session/types'
-import type {} from '@deepseek-ai/dsh-session-projection/types'
+import type { Scoped } from '@reevo/dsh-scope'
+import type { Agent } from '@reevo/dsh-agent/types'
+import type { ToolCallId } from '@reevo/dsh-llm/types'
+import type {} from '@reevo/dsh-session/types'
+import type {} from '@reevo/dsh-session-projection/types'
 
 /** One selectable answer offered to the user. */
 export interface AskUserQuestionOption {
@@ -121,7 +121,7 @@ export interface UserQuestionProjectionView {
   readonly settled: readonly SettledUserQuestion[]
 }
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     /**
      * Late reply to a continued `ask_user_question` call, steered into the
@@ -135,7 +135,7 @@ declare module '@deepseek-ai/dsh-llm' {
   }
 }
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@reevo/dsh-session-projection/types' {
   interface SessionProjectionMap {
     /** Timed questions that remain answerable in this Session, and the ones a late reply settled. */
     userQuestions: UserQuestionProjectionView
@@ -167,7 +167,7 @@ declare module '@deepseek-ai/cordis' {
     /**
      * Ask composed answerers for structured user input. Return an answer to
      * claim the request or call `next()` to delegate. Scope-filtered dispatch
-     * (`@deepseek-ai/dsh-scope`): agent-scoped listeners receive only that agent.
+     * (`@reevo/dsh-scope`): agent-scoped listeners receive only that agent.
      * @param request - pending user-question request.
      * @mode waterfall
      */

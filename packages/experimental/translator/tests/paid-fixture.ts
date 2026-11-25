@@ -1,24 +1,24 @@
 /** Real Loader/native adapters with fixture-owned credentials and a bounded loopback wire. */
 import type { ModuleLoaderV2 } from '@deepseek-ai/cordis-plugin-loader'
-import { boot } from '@deepseek-ai/dsh-app-boot'
-import LlmRuntime from '@deepseek-ai/dsh-llm'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionSeq, type Session, type SessionEvent, type SessionHeader } from '@deepseek-ai/dsh-session'
-import * as JsonlPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SqliteSessionQuery from '@deepseek-ai/dsh-session-query-sqlite'
-import * as Official from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import DeepSeekAuth from '@deepseek-ai/dsh-deepseek-auth'
-import * as Account from '@deepseek-ai/dsh-llm-deepseek-account'
-import DeepSeekLlmApiExtensionRegistry from '@deepseek-ai/dsh-deepseek-llm-api-extensions'
-import * as SessionLogDeepSeek from '@deepseek-ai/dsh-session-log-deepseek'
-import { createLaunchEnvironmentSnapshot } from '@deepseek-ai/dsh-launch-environment'
+import { boot } from '@reevo/dsh-app-boot'
+import LlmRuntime from '@reevo/dsh-llm'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionSeq, type Session, type SessionEvent, type SessionHeader } from '@reevo/dsh-session'
+import * as JsonlPersistence from '@reevo/dsh-session-persistence-jsonl'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SqliteSessionQuery from '@reevo/dsh-session-query-sqlite'
+import * as Official from '@reevo/dsh-llm-deepseek-api-key'
+import DeepSeekAuth from '@reevo/dsh-deepseek-auth'
+import * as Account from '@reevo/dsh-llm-deepseek-account'
+import DeepSeekLlmApiExtensionRegistry from '@reevo/dsh-deepseek-llm-api-extensions'
+import * as SessionLogDeepSeek from '@reevo/dsh-session-log-deepseek'
+import { createLaunchEnvironmentSnapshot } from '@reevo/dsh-launch-environment'
 import { once } from 'node:events'
 import { createServer, type ServerResponse } from 'node:http'
 import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import Translator, { type Config } from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import { accountStub } from '../../../account/deepseek-account/tests/account-stub.ts'
 
 /** Provider-visible request, without credential values. */
@@ -129,34 +129,34 @@ export async function paidFixture(cleanups: Array<() => Promise<void>>, options:
   const configPath = join(root, 'cordis.yml'), storedRoot = join(root, 'sessions')
   let translator = options.translator ?? {}, withNativeOwners = true
   const rows = () => [
-    { id: 'llm', name: '@deepseek-ai/dsh-llm' },
-    { id: 'session', name: '@deepseek-ai/dsh-session' },
-    { id: 'storage', name: '@deepseek-ai/dsh-session-persistence-jsonl', config: { root: storedRoot, compression: 'none' } },
-    { id: 'deepseek-auth', name: '@deepseek-ai/dsh-deepseek-auth' },
-    { id: 'official-custom-id', name: options.officialName ?? '@deepseek-ai/dsh-llm-deepseek-api-key', disabled: !withNativeOwners, config: {
+    { id: 'llm', name: '@reevo/dsh-llm' },
+    { id: 'session', name: '@reevo/dsh-session' },
+    { id: 'storage', name: '@reevo/dsh-session-persistence-jsonl', config: { root: storedRoot, compression: 'none' } },
+    { id: 'deepseek-auth', name: '@reevo/dsh-deepseek-auth' },
+    { id: 'official-custom-id', name: options.officialName ?? '@reevo/dsh-llm-deepseek-api-key', disabled: !withNativeOwners, config: {
       baseURL, apiKeyEnv: 'PAID_TRANSLATION_FIXTURE_KEY', models: options.officialModels ?? [{ id: 'deepseek-flash', name: 'Flash version-independent name' }],
     } },
-    { id: 'account-custom-id', name: '@deepseek-ai/dsh-llm-deepseek-account', disabled: !withNativeOwners, config: { baseURL } },
-    { id: 'translator', name: '@deepseek-ai/dsh-experimental-translator', config: translator },
+    { id: 'account-custom-id', name: '@reevo/dsh-llm-deepseek-account', disabled: !withNativeOwners, config: { baseURL } },
+    { id: 'translator', name: '@reevo/dsh-experimental-translator', config: translator },
     ...options.withSessionQuery === true ? [
-      { id: 'projections', name: '@deepseek-ai/dsh-session-projection' },
-      { id: 'query', name: '@deepseek-ai/dsh-session-query-sqlite', config: { path: join(root, 'query.sqlite'), openAt: 'never' } },
+      { id: 'projections', name: '@reevo/dsh-session-projection' },
+      { id: 'query', name: '@reevo/dsh-session-query-sqlite', config: { path: join(root, 'query.sqlite'), openAt: 'never' } },
     ] : [],
     ...options.withSessionLog === true ? [
-      { id: 'deepseek-llm-api-extensions', name: '@deepseek-ai/dsh-deepseek-llm-api-extensions' },
-      { id: 'session-log-deepseek', name: '@deepseek-ai/dsh-session-log-deepseek' },
+      { id: 'deepseek-llm-api-extensions', name: '@reevo/dsh-deepseek-llm-api-extensions' },
+      { id: 'session-log-deepseek', name: '@reevo/dsh-session-log-deepseek' },
     ] : [],
   ]
   await writeFile(configPath, JSON.stringify(rows()))
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-llm', LlmRuntime], ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-persistence-jsonl', JsonlPersistence], ['@deepseek-ai/dsh-session-query-sqlite', SqliteSessionQuery],
-    ['@deepseek-ai/dsh-deepseek-auth', DeepSeekAuth],
-    ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-    [options.officialName ?? '@deepseek-ai/dsh-llm-deepseek-api-key', Official],
-    ['@deepseek-ai/dsh-llm-deepseek-account', Account], ['@deepseek-ai/dsh-experimental-translator', Translator],
-    ['@deepseek-ai/dsh-deepseek-llm-api-extensions', DeepSeekLlmApiExtensionRegistry],
-    ['@deepseek-ai/dsh-session-log-deepseek', SessionLogDeepSeek],
+    ['@reevo/dsh-llm', LlmRuntime], ['@reevo/dsh-session', SessionStore],
+    ['@reevo/dsh-session-persistence-jsonl', JsonlPersistence], ['@reevo/dsh-session-query-sqlite', SqliteSessionQuery],
+    ['@reevo/dsh-deepseek-auth', DeepSeekAuth],
+    ['@reevo/dsh-session-projection', SessionProjectionRegistry],
+    [options.officialName ?? '@reevo/dsh-llm-deepseek-api-key', Official],
+    ['@reevo/dsh-llm-deepseek-account', Account], ['@reevo/dsh-experimental-translator', Translator],
+    ['@reevo/dsh-deepseek-llm-api-extensions', DeepSeekLlmApiExtensionRegistry],
+    ['@reevo/dsh-session-log-deepseek', SessionLogDeepSeek],
   ])
   const start = () => boot('paid-translator-composition', configPath, [], (host) => {
     const sourceModules: ModuleLoaderV2 = {

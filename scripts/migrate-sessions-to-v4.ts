@@ -8,13 +8,13 @@ import { availableParallelism, homedir, tmpdir } from 'node:os'
 import { basename, join, relative, resolve } from 'node:path'
 import { inspect, parseArgs } from 'node:util'
 import { Context } from '@deepseek-ai/cordis'
-import { SESSION_FORMAT_VERSION, type SessionId } from '@deepseek-ai/dsh-session'
-import { sessionFormatCatalog } from '@deepseek-ai/dsh-session-format-catalog'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+import { SESSION_FORMAT_VERSION, type SessionId } from '@reevo/dsh-session'
+import { sessionFormatCatalog } from '@reevo/dsh-session-format-catalog'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
 import { encodeSegment, generationLogFilename, parseGenerationLogFilename, type JsonlCompression } from '../packages/session/session-persistence-jsonl/src/format.ts'
 import { JsonlGenerationSourceChangedError } from '../packages/session/session-persistence-jsonl/src/generation.ts'
 import { classifyMigrationFailure, type MigrationFailureDiagnostic } from './migration-failure-summary.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const usage = `Usage: pnpm run migrate:sessions-to-v4 [--sessions-dir PATH] [--jobs N]
 

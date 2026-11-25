@@ -11,7 +11,7 @@ import * as viewerSession from '../src/client/viewer-session-plugin.ts'
 import * as viewerSessionRow from '../src/client/viewer-session-row.tsx'
 
 /** The generated contribution is a build artifact; the mount boundary is what this face test covers. */
-vi.mock('@deepseek-ai/dsh-experimental-liveshare/remote', () => ({ default: { package: '@deepseek-ai/dsh-experimental-liveshare', methods: {} } }))
+vi.mock('@reevo/dsh-experimental-liveshare/remote', () => ({ default: { package: '@reevo/dsh-experimental-liveshare', methods: {} } }))
 
 const VIEWER_PLUGINS = [
   viewerSession, viewerBrand, viewerModel, viewerPermission, viewerSessionRow,

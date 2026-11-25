@@ -3,16 +3,16 @@
 import type { Context } from '@deepseek-ai/cordis'
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import { Webhooks } from '@octokit/webhooks'
-import type { CredentialRef } from '@deepseek-ai/dsh-credentials'
-import { snapshotJsonValue } from '@deepseek-ai/dsh-util-values'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import type { CredentialRef } from '@reevo/dsh-credentials'
+import { snapshotJsonValue } from '@reevo/dsh-util-values'
+import { brandString } from '@reevo/dsh-brand'
 import type {
   WebhookDeliveryId,
   WebhookSourceId,
   VerifiedWebhookDelivery,
-} from '@deepseek-ai/dsh-webhook/types'
-import type {} from '@deepseek-ai/dsh-webhook'
-import type { WebRoute } from '@deepseek-ai/dsh-host-webserver'
+} from '@reevo/dsh-webhook/types'
+import type {} from '@reevo/dsh-webhook'
+import type { WebRoute } from '@reevo/dsh-host-webserver'
 import { readBoundedUtf8Body, WebhookHttpError } from './body.ts'
 import type { GitHubJsonObject } from './types.ts'
 

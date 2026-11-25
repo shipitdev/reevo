@@ -2,10 +2,10 @@
  * Per-server runtime status, list views, and the MCP manager's Cordis event.
  * Types only — no runtime code.
  *
- * @module @deepseek-ai/dsh-mcp-manager/types
+ * @module @reevo/dsh-mcp-manager/types
  */
 
-import type { McpCloseResult, McpConnectionStatus, McpOAuthAttemptView } from '@deepseek-ai/dsh-mcp-client/types'
+import type { McpCloseResult, McpConnectionStatus, McpOAuthAttemptView } from '@reevo/dsh-mcp-client/types'
 
 /**
  * Status of one managed server. Extends the mcp-client connection status with

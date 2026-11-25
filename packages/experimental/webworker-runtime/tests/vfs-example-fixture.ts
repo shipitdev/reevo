@@ -10,14 +10,14 @@ import {
   type SessionHeader,
   type SessionLogOffset as SessionLogOffsetType,
   type SessionSeq as SessionSeqType,
-} from '@deepseek-ai/dsh-session'
+} from '@reevo/dsh-session'
 import {
   eventLines, generationLogFilename, projectKey, toHeaderLine,
-} from '@deepseek-ai/dsh-session-persistence-jsonl/src/format.ts'
-import { projectionCacheDomainSpec } from '@deepseek-ai/dsh-session-projection-cache'
-import { scheduleDomain } from '@deepseek-ai/dsh-schedule'
-import { snapshotSubagentDescriptor, SUBAGENT_DESCRIPTOR_VERSION } from '@deepseek-ai/dsh-subagent'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@reevo/dsh-session-persistence-jsonl/src/format.ts'
+import { projectionCacheDomainSpec } from '@reevo/dsh-session-projection-cache'
+import { scheduleDomain } from '@reevo/dsh-schedule'
+import { snapshotSubagentDescriptor, SUBAGENT_DESCRIPTOR_VERSION } from '@reevo/dsh-subagent'
+import { brandString } from '@reevo/dsh-brand'
 
 /** Root copied by the preview image's repository adapter. */
 export const VFS_EXAMPLE_ROOT = fileURLToPath(new URL('./fixtures/vfs-example', import.meta.url))

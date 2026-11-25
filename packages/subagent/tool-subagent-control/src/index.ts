@@ -3,18 +3,18 @@
  * They perform no lifecycle routing of their own —
  * residency, cold resume, and interrupt authorization belong to the subagent
  * service — and they live apart from the provider-bound
- * `@deepseek-ai/dsh-tool-subagent` instances so multiple delegation tools share
+ * `@reevo/dsh-tool-subagent` instances so multiple delegation tools share
  * one control API.
- * @module @deepseek-ai/dsh-tool-subagent-control
+ * @module @reevo/dsh-tool-subagent-control
  */
 
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { defineTool, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import type { ContentBlock } from '@deepseek-ai/dsh-llm'
-import { ROOT_AGENT_NAME } from '@deepseek-ai/dsh-subagent'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-agent-team'
+import { defineTool, ToolContextUnavailableError } from '@reevo/dsh-tools'
+import type { ContentBlock } from '@reevo/dsh-llm'
+import { ROOT_AGENT_NAME } from '@reevo/dsh-subagent'
+import type {} from '@reevo/dsh-system-prompt'
+import type {} from '@reevo/dsh-agent-team'
 import { registerListAgents } from './list-agents.ts'
 import { registerWaitAgent } from './wait-agent.ts'
 

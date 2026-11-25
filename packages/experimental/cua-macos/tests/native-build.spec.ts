@@ -4,7 +4,7 @@ import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { dirname, join } from 'node:path'
 import { expect, it, onTestFinished, vi } from 'vitest'
-import type { SubprocessHandle, SubprocessOutcome, SubprocessSpawnSpec } from '@deepseek-ai/dsh-subprocess'
+import type { SubprocessHandle, SubprocessOutcome, SubprocessSpawnSpec } from '@reevo/dsh-subprocess'
 import { buildNativeExecutable, isSourcePackage, nativeExecutablePath, nativeHostArchitecture, prepareNativeExecutable } from '../src/native-build.ts'
 
 async function publish(directory: string, bytes: Buffer, variant: 'release' | 'dev'): Promise<string> {
@@ -57,7 +57,7 @@ it('recognizes only the repository-owned package location as a source build', as
     await writeFile(join(f.root, 'package.json'), JSON.stringify(value))
     expect(await isSourcePackage(f.spec.packageRoot)).toBe(typeof value === 'object' && value !== null && 'name' in value && value.name === '@reevo/workspace')
   }
-  expect(await isSourcePackage(join(f.root, 'node_modules/@deepseek-ai/dsh-cua'))).toBe(false)
+  expect(await isSourcePackage(join(f.root, 'node_modules/@reevo/dsh-cua'))).toBe(false)
   await writeFile(join(f.root, 'package.json'), '{')
   await expect(isSourcePackage(f.spec.packageRoot)).rejects.toThrow()
 })
@@ -115,15 +115,15 @@ it.each(['ad-hoc', { identity: 'Apple Development: Example', keychain: '/keychai
 
 it('reads an application that an Electron archive installation keeps beside app.asar', async () => {
   const f = await fixture()
-  const archived = join(f.root, 'Resources/app.asar/dsh/node_modules/@deepseek-ai/dsh-cua-macos')
-  const path = await publish(join(f.root, 'Resources/app.asar.unpacked/dsh/node_modules/@deepseek-ai/dsh-cua-macos/native/bin/darwin-arm64'), f.output, 'release')
+  const archived = join(f.root, 'Resources/app.asar/dsh/node_modules/@reevo/dsh-cua-macos')
+  const path = await publish(join(f.root, 'Resources/app.asar.unpacked/dsh/node_modules/@reevo/dsh-cua-macos/native/bin/darwin-arm64'), f.output, 'release')
   expect(await prepareNativeExecutable({ ...f.spec, packageRoot: archived })).toBe(path)
   expect(f.spawn).not.toHaveBeenCalled()
 })
 
 it('names the expected directory when an installed package carries no helper application', async () => {
   const f = await fixture()
-  const installed = join(f.root, 'node_modules/@deepseek-ai/dsh-cua-macos.asar/package')
+  const installed = join(f.root, 'node_modules/@reevo/dsh-cua-macos.asar/package')
   const directory = join(installed, 'native/bin/darwin-arm64')
   await expect(prepareNativeExecutable({ ...f.spec, packageRoot: installed })).rejects.toThrow(
     `Computer use helper application is missing from ${directory}; this installation does not include the signed helper`)

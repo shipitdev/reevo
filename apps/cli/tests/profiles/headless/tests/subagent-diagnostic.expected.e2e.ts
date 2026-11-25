@@ -13,13 +13,13 @@ import {
   normalizeSessionSnapshots,
   REPLAY_CREDENTIAL_ENV,
   type NormalizeContext,
-} from '@deepseek-ai/dsh-session-snapshot'
-import { LOADER_SMOKE_TEST_TIMEOUT_MS, runLoaderSmoke } from '@deepseek-ai/dsh-loader-smoke'
-import { createMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import { SessionSeq, SESSION_FORMAT_VERSION, type SessionId, type SessionEvent, type SessionHeader } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
+} from '@reevo/dsh-session-snapshot'
+import { LOADER_SMOKE_TEST_TIMEOUT_MS, runLoaderSmoke } from '@reevo/dsh-loader-smoke'
+import { createMessage, createUserMessage } from '@reevo/dsh-llm'
+import { SessionSeq, SESSION_FORMAT_VERSION, type SessionId, type SessionEvent, type SessionHeader } from '@reevo/dsh-session'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
 import { describe, expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const fixtureDir = fileURLToPath(new URL('./expected/subagent-diagnostic', import.meta.url))
 const replayOverride = join(fixtureDir, 'replay.override.json')

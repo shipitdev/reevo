@@ -3,7 +3,7 @@ description: "DeepSeek request authentication for plugins that call a DeepSeek A
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-deepseek-auth
+# @reevo/dsh-deepseek-auth
 
 English | [中文](README.zh.md)
 
@@ -35,7 +35,7 @@ Use it for every request a Host plugin sends to a DeepSeek deployment. Mount it 
 
 ```ts
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-deepseek-auth'
+import type {} from '@reevo/dsh-deepseek-auth'
 
 declare const ctx: Context
 declare const route: string | undefined // provider route of the conversation's latest model request
@@ -81,8 +81,8 @@ A model route plugin connects the provider route it registers and its settings f
 
 ```ts
 import type { Context } from '@deepseek-ai/cordis'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import type {} from '@deepseek-ai/dsh-deepseek-auth'
+import { credentialRef } from '@reevo/dsh-credentials'
+import type {} from '@reevo/dsh-deepseek-auth'
 
 declare const ctx: Context
 declare const settings: () => { baseURL: string; apiKeyEnv: string }

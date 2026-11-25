@@ -1,24 +1,24 @@
 import { Service } from '@deepseek-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry, { agentEvents } from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createUserMessage, HarnessError } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import SessionStore, { Session, type SessionId, type UserMessage } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { GoalId } from '@deepseek-ai/dsh-goal/types'
+import AgentRegistry, { agentEvents } from '@reevo/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
+import { createUserMessage, HarnessError } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import SessionStore, { Session, type SessionId, type UserMessage } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { brandString } from '@reevo/dsh-brand'
+import type { GoalId } from '@reevo/dsh-goal/types'
 import GoalService, {
   GoalError,
   decodeGoalChange,
   foldGoal,
-} from '@deepseek-ai/dsh-goal'
-import type { GoalChangeMeta, GoalRef, GoalSnapshotChangeMeta } from '@deepseek-ai/dsh-goal'
-import { unsupportedModel, createInboxStub } from '@deepseek-ai/dsh-agent-loop-testkit'
-import { remoteMethods } from '@deepseek-ai/dsh-typert-protocol'
+} from '@reevo/dsh-goal'
+import type { GoalChangeMeta, GoalRef, GoalSnapshotChangeMeta } from '@reevo/dsh-goal'
+import { unsupportedModel, createInboxStub } from '@reevo/dsh-agent-loop-testkit'
+import { remoteMethods } from '@reevo/dsh-typert-protocol'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
     'ordinary-user-message': { kind: 'ordinary-user-message' } & ContextFormed
@@ -80,7 +80,7 @@ function stubAgentForSession(session: Session, suppliedCtx?: Context): StubAgent
 /** Build a registry-compatible agent around a fresh session. */
 function stubAgent(
   rawId: string,
-  seed?: readonly import('@deepseek-ai/dsh-session').SessionEvent[],
+  seed?: readonly import('@reevo/dsh-session').SessionEvent[],
   ctx?: Context,
 ): StubAgent {
   const session = ctx === undefined

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-agent-preset",
+  "name": "@reevo/dsh-agent-preset",
   "description": "Declare an Agent capability composition in Cordis YAML",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -35,7 +35,7 @@
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*"
+    "@reevo/dsh-agent-preset-registry": "workspace:*"
   },
   "dependencies": {
     "@deepseek-ai/schemastery": "workspace:~"
@@ -44,11 +44,11 @@
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-include": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*",
-    "@deepseek-ai/dsh-compaction-tool-result-pruner": "workspace:*",
-    "@deepseek-ai/dsh-plugin-detail": "workspace:*",
-    "@deepseek-ai/dsh-skill": "workspace:*",
-    "@deepseek-ai/dsh-skill-filesystem": "workspace:*",
+    "@reevo/dsh-agent-preset-registry": "workspace:*",
+    "@reevo/dsh-compaction-tool-result-pruner": "workspace:*",
+    "@reevo/dsh-plugin-detail": "workspace:*",
+    "@reevo/dsh-skill": "workspace:*",
+    "@reevo/dsh-skill-filesystem": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~"
   }
 }

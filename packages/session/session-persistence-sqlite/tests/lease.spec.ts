@@ -3,8 +3,8 @@ import { mkdtemp, readFile, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { afterEach, describe, expect, it, onTestFinished, vi } from 'vitest'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import { SessionAlreadyOwnedError } from '@deepseek-ai/dsh-session-persistence'
+import { SessionId } from '@reevo/dsh-session'
+import { SessionAlreadyOwnedError } from '@reevo/dsh-session-persistence'
 import { SessionWriteLease, LEASE_FILENAME } from '../src/lease.ts'
 
 const faults = vi.hoisted(() => ({ flock: '', stat: false, swap: 0, remove: false }))

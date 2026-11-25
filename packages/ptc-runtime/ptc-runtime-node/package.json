@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-ptc-runtime-node",
+  "name": "@reevo/dsh-ptc-runtime-node",
   "description": "Node PTC execution with async function, REPL, scoped REPL and VM Script evaluators and optional retained state",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -43,35 +43,35 @@
   "license": "MIT",
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-ptc-runtime": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*"
+    "@reevo/dsh-ptc-runtime": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
+    "@reevo/dsh-fs": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*"
   },
   "dependencies": {
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "acorn": "^8.18.0",
     "acorn-walk": "^8.3.5",
     "birpc": "4.2.0"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-ptc-runtime": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-fs": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-fs-local": "workspace:*",
-    "@deepseek-ai/dsh-subprocess-local": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-local": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*"
+    "@reevo/dsh-ptc-runtime": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
+    "@reevo/dsh-fs": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*",
+    "@reevo/dsh-fs-local": "workspace:*",
+    "@reevo/dsh-subprocess-local": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-sandbox-local": "workspace:*",
+    "@reevo/dsh-attachment": "workspace:*"
   }
 }

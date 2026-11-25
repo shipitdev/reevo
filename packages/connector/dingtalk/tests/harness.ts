@@ -8,19 +8,19 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { PassThrough } from 'node:stream'
 import { Context } from '@deepseek-ai/cordis'
-import CliAccounts from '@deepseek-ai/dsh-cli-account'
-import type { ConnectorAccountRegistration } from '@deepseek-ai/dsh-client-ui-connector-account/types'
-import SkillRegistry from '@deepseek-ai/dsh-skill'
-import { SubprocessRuntime } from '@deepseek-ai/dsh-subprocess'
+import CliAccounts from '@reevo/dsh-cli-account'
+import type { ConnectorAccountRegistration } from '@reevo/dsh-client-ui-connector-account/types'
+import SkillRegistry from '@reevo/dsh-skill'
+import { SubprocessRuntime } from '@reevo/dsh-subprocess'
 import type {
   SubprocessCollectedOutputs,
   SubprocessHandle,
   SubprocessOutcome,
   SubprocessSpawnSpec,
   SubprocessTerminalEnvironment,
-} from '@deepseek-ai/dsh-subprocess'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
+} from '@reevo/dsh-subprocess'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SystemPrompt from '@reevo/dsh-system-prompt'
 import { vi } from 'vitest'
 import { executableFileName } from '../src/release.ts'
 import type { DingtalkState } from '../src/types.ts'

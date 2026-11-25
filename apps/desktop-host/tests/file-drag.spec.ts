@@ -3,13 +3,13 @@ import { mkdtemp, realpath, rm, symlink, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import { LocalFileSystem } from '@deepseek-ai/dsh-fs-local'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { sessionFileAddress } from '@deepseek-ai/dsh-util-workspace-path'
+import { LocalFileSystem } from '@reevo/dsh-fs-local'
+import SessionStore from '@reevo/dsh-session'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { sessionFileAddress } from '@reevo/dsh-util-workspace-path'
 import { expect, it, onTestFinished, vi } from 'vitest'
 import { localDragResource } from '../src/file-drag.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 async function fixture() {
   const root = await mkdtemp(join(tmpdir(), 'dsh-host-drag-'))

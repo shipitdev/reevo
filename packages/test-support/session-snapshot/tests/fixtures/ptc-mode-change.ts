@@ -1,9 +1,9 @@
-import { setSandboxMode } from '@deepseek-ai/dsh-sandbox-policy'
+import { setSandboxMode } from '@reevo/dsh-sandbox-policy'
 /** Change the file policy from outside the active PTC call while a nested tool awaits cancellation. */
 import type { Context } from '@deepseek-ai/cordis'
-import type { Session } from '@deepseek-ai/dsh-session'
-import { defineTool } from '@deepseek-ai/dsh-tools'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
+import type { Session } from '@reevo/dsh-session'
+import { defineTool } from '@reevo/dsh-tools'
+import type {} from '@reevo/dsh-sandbox-policy'
 
 export const name = 'ptc-mode-change'
 export const inject = ['tools', 'sandboxPolicy']

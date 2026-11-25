@@ -24,7 +24,7 @@
 
 ```ts
 import type { Context } from '@deepseek-ai/cordis'
-import '@deepseek-ai/dsh-system-prompt'
+import '@reevo/dsh-system-prompt'
 
 export const name = 'example-response-style'
 export const inject = ['systemPrompt']
@@ -50,7 +50,7 @@ export function apply(ctx: Context) {
 
 ```ts
 import type { Context } from '@deepseek-ai/cordis'
-import '@deepseek-ai/dsh-system-prompt'
+import '@reevo/dsh-system-prompt'
 
 export function registerInstructions(ctx: Context, initialText: string) {
   let currentText = initialText

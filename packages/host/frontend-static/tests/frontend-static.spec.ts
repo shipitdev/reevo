@@ -14,11 +14,11 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include from '@deepseek-ai/cordis-plugin-include'
-import * as Connection from '@deepseek-ai/dsh-client-connection'
-import * as Token from '@deepseek-ai/dsh-host-authentication-token'
-import { BrowserAuth } from '@deepseek-ai/dsh-host-authentication-token/src/browser-auth.ts'
-import LocalCredentials from '@deepseek-ai/dsh-credentials-local'
-import HttpServer from '@deepseek-ai/dsh-host-webserver'
+import * as Connection from '@reevo/dsh-client-connection'
+import * as Token from '@reevo/dsh-host-authentication-token'
+import { BrowserAuth } from '@reevo/dsh-host-authentication-token/src/browser-auth.ts'
+import LocalCredentials from '@reevo/dsh-credentials-local'
+import HttpServer from '@reevo/dsh-host-webserver'
 import * as FrontendStatic from '../src/index.ts'
 
 const heldIndex = vi.hoisted(() => ({
@@ -68,18 +68,18 @@ async function loadComposition(): Promise<Context> {
   await mkdir(join(dist, 'empty'))
   const configPath = join(root, 'cordis.yml')
   await writeFile(configPath, [
-    "- name: '@deepseek-ai/dsh-credentials-local'",
+    "- name: '@reevo/dsh-credentials-local'",
     '  config:',
     `    path: '${join(root, '.credentials.yaml')}'`,
     '    watch: false',
-    "- name: '@deepseek-ai/dsh-host-webserver'",
+    "- name: '@reevo/dsh-host-webserver'",
     '  config:',
     "    host: '127.0.0.1'",
     '    port: 0',
-    "- name: '@deepseek-ai/dsh-client-connection'",
-    "- name: '@deepseek-ai/dsh-host-authentication-token'",
+    "- name: '@reevo/dsh-client-connection'",
+    "- name: '@reevo/dsh-host-authentication-token'",
     '- id: frontend',
-    "  name: '@deepseek-ai/dsh-host-frontend-static'",
+    "  name: '@reevo/dsh-host-frontend-static'",
     '  config:',
     `    distIndex: '${distIndex}'`,
     '',
@@ -90,11 +90,11 @@ async function loadComposition(): Promise<Context> {
   await context.plugin(Loader)
   context.loader.builtins.include = Include
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-credentials-local', LocalCredentials],
-    ['@deepseek-ai/dsh-host-webserver', HttpServer],
-    ['@deepseek-ai/dsh-client-connection', Connection],
-    ['@deepseek-ai/dsh-host-authentication-token', Token],
-    ['@deepseek-ai/dsh-host-frontend-static', FrontendStatic],
+    ['@reevo/dsh-credentials-local', LocalCredentials],
+    ['@reevo/dsh-host-webserver', HttpServer],
+    ['@reevo/dsh-client-connection', Connection],
+    ['@reevo/dsh-host-authentication-token', Token],
+    ['@reevo/dsh-host-frontend-static', FrontendStatic],
   ])
   context.loader.internal = {
     version: 'v2',

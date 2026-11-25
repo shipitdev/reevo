@@ -7,15 +7,15 @@
 import type { ReactNode } from 'react'
 import { act, cleanup, fireEvent, render, renderHook } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import type { SessionListState, SessionReference, SessionSnapshot } from '@deepseek-ai/dsh-api-session-controller/client'
+import type { SessionListState, SessionReference, SessionSnapshot } from '@reevo/dsh-api-session-controller/client'
 import type {
   ConversationSnapshot, ConversationViewsProps, WorkspaceSelectedHandler, WorkspaceSessionAdopter,
-} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { bindSnapshotSelector, conversationSnapshot, makeTranslate, sessionSnapshot } from '@deepseek-ai/dsh-client-test-runtime'
-import type { RenderFactorySlot, SessionAreaProps } from '@deepseek-ai/dsh-client-ui-slots'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@reevo/dsh-client-ui-conversation/client'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import { bindSnapshotSelector, conversationSnapshot, makeTranslate, sessionSnapshot } from '@reevo/dsh-client-test-runtime'
+import type { RenderFactorySlot, SessionAreaProps } from '@reevo/dsh-client-ui-slots'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { brandString } from '@reevo/dsh-brand'
 import { en } from '../src/client/locales.ts'
 import {
   ReviewChat, ReviewChatView, ReviewConversation, useReviewConversation, type ReviewChatFace, type ReviewChatProps,

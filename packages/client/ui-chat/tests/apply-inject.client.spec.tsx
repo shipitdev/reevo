@@ -1,33 +1,33 @@
 import type { CompactionRowInjected } from '../src/client/chat/CompactionItem.tsx'
-import { syncedConfig } from '@deepseek-ai/dsh-client-test-runtime'
+import { syncedConfig } from '@reevo/dsh-client-test-runtime'
 import type { AssistantNodeInjected } from '../src/client/chat/AssistantNodeView.tsx'
-import type { MessageId } from '@deepseek-ai/dsh-llm/types'
-import { apply as applyMenus, inject as injectMenus } from '@deepseek-ai/dsh-client-ui-context-menu/client'
+import type { MessageId } from '@reevo/dsh-llm/types'
+import { apply as applyMenus, inject as injectMenus } from '@reevo/dsh-client-ui-context-menu/client'
 // @vitest-environment jsdom
 /** Chat inject factories exercised over independently mounted Conversation and Chat plugins. */
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
 import { describe, expect, it, vi } from 'vitest'
-import type { AttachmentId } from '@deepseek-ai/dsh-attachment/types'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ISession, SessionReference } from '@deepseek-ai/dsh-api-session-controller/client'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
+import type { AttachmentId } from '@reevo/dsh-attachment/types'
+import { brandString } from '@reevo/dsh-brand'
+import type { ISession, SessionReference } from '@reevo/dsh-api-session-controller/client'
+import { LocaleRuntime } from '@reevo/dsh-client-locale/client'
 import {
   SlotTestRuntime, stubConfigForm, usePinnedBrowserLanguages,
-} from '@deepseek-ai/dsh-client-test-runtime'
-import type { SessionBehaviorOverrides } from '@deepseek-ai/dsh-client-test-runtime'
-import type { ClientRemote } from '@deepseek-ai/dsh-api-remotes/client'
-import type { ConnectionHandle } from '@deepseek-ai/dsh-client-connection/client'
+} from '@reevo/dsh-client-test-runtime'
+import type { SessionBehaviorOverrides } from '@reevo/dsh-client-test-runtime'
+import type { ClientRemote } from '@reevo/dsh-api-remotes/client'
+import type { ConnectionHandle } from '@reevo/dsh-client-connection/client'
 import {
   apply as applyConversation, inject as injectConversation,
   type GroupKey,
-} from '@deepseek-ai/dsh-client-ui-conversation/client'
+} from '@reevo/dsh-client-ui-conversation/client'
 import {
   apply as applyChat, inject as injectChat, type ChatFlowDataInjected, type ChatViewInjected,
-} from '@deepseek-ai/dsh-client-ui-chat/client'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
-import type { SessionWireEvent } from '@deepseek-ai/dsh-api-session-controller/types'
-import { SessionSeq, type SessionId } from '@deepseek-ai/dsh-session/types'
-import type { WorkspaceId } from '@deepseek-ai/dsh-workspace/types'
+} from '@reevo/dsh-client-ui-chat/client'
+import { RemoteError } from '@reevo/dsh-typert-protocol'
+import type { SessionWireEvent } from '@reevo/dsh-api-session-controller/types'
+import { SessionSeq, type SessionId } from '@reevo/dsh-session/types'
+import type { WorkspaceId } from '@reevo/dsh-workspace/types'
 import { createChatStore } from '../src/client/stores.ts'
 import { CHAT_SETTINGS_NAMESPACE, type ChatSettings } from '../src/chat-settings.ts'
 import type { LinkOpeningRowInjected } from '../src/client/settings/LinkOpeningRow.tsx'

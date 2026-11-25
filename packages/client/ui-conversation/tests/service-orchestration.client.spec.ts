@@ -3,16 +3,16 @@
 // TestSessions mints tagged scopes through the production createScope, so the
 // service's scopeOf/binding path runs against production resolution (no local
 // tag probe).
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import type { UserMessage } from '@deepseek-ai/dsh-llm/types'
-import type { MessageId } from '@deepseek-ai/dsh-llm/types'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import type { UserMessage } from '@reevo/dsh-llm/types'
+import type { MessageId } from '@reevo/dsh-llm/types'
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'
-import { makeTranslate, RemoteError, SlotTestRuntime } from '@deepseek-ai/dsh-client-test-runtime'
+import { makeTranslate, RemoteError, SlotTestRuntime } from '@reevo/dsh-client-test-runtime'
 import type {
   BeginSubmissionInput, PendingSubmissionRetirement,
-} from '@deepseek-ai/dsh-api-session-controller/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
+} from '@reevo/dsh-api-session-controller/client'
+import type { SessionId } from '@reevo/dsh-session/types'
 import { ComposerBlockRegistry } from '../src/client/input/blocks.ts'
 import { InputHub } from '../src/client/input/hub.ts'
 import { reportMessageSubmission } from '../src/client/input/submission-analytics.ts'

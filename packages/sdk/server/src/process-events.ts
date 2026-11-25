@@ -3,7 +3,7 @@
  * server's liveness failures. The launcher owns signal and failure handling;
  * this module only observes.
  *
- * @module @deepseek-ai/dsh-sdk-jsonrpc-server/process-events
+ * @module @reevo/dsh-sdk-jsonrpc-server/process-events
  */
 
 import { FiberState, type Context, type Fiber } from '@deepseek-ai/cordis'

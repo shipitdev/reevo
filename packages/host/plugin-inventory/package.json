@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-host-plugin-inventory",
+  "name": "@reevo/dsh-host-plugin-inventory",
   "description": "Read-only Remote projection of current Cordis Loader plugin state",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -54,23 +54,23 @@
   },
   "peerDependencies": {
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-agent-preset-registry": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-agent-preset-registry": {
+    "@reevo/dsh-agent-preset-registry": {
       "optional": true
     }
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-package-manifest": "workspace:*",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-agent-preset-registry": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-agent-preset-registry": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~"
   }
 }

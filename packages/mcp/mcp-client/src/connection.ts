@@ -17,10 +17,10 @@
 
 import { Client } from '@modelcontextprotocol/client'
 import type { Context } from '@deepseek-ai/cordis'
-import type { ScopeKey } from '@deepseek-ai/dsh-scope'
-import { assertNever, deepEqualJson, type JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { ScopeKey } from '@reevo/dsh-scope'
+import { assertNever, deepEqualJson, type JsonValue } from '@reevo/dsh-util-values'
 import type { ServerContext } from './server-context.ts'
-import { MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import { MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
 import { withDeadline } from './deadline.ts'
 import { McpAuthorizationRequired, McpLocalError, mcpRequestError, McpToolError, oauthFailure } from './diagnostic.ts'
 import type { McpOAuthCredentials, McpOAuthGrant } from './oauth-credentials.ts'

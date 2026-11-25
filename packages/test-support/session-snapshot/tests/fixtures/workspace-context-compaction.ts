@@ -1,10 +1,10 @@
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-agent'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { CompactionId } from '@deepseek-ai/dsh-compaction/types'
-import { compactCheckpointSource } from '@deepseek-ai/dsh-compaction'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type {} from '@deepseek-ai/dsh-tools'
+import type {} from '@reevo/dsh-agent'
+import { brandString } from '@reevo/dsh-brand'
+import type { CompactionId } from '@reevo/dsh-compaction/types'
+import { compactCheckpointSource } from '@reevo/dsh-compaction'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type {} from '@reevo/dsh-tools'
 
 export const name = 'workspace-context-compaction'
 

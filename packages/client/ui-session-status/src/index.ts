@@ -1,9 +1,9 @@
 /** Host-authoritative Session reading records, kept in memory, and their Remote service. */
 import { Context, Service } from '@deepseek-ai/cordis'
-import { Remote, RemoteError, TypertRemoteService } from '@deepseek-ai/dsh-typert-protocol'
-import type {} from '@deepseek-ai/dsh-api-remote-access'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-session-persistence'
+import { Remote, RemoteError, TypertRemoteService } from '@reevo/dsh-typert-protocol'
+import type {} from '@reevo/dsh-api-remote-access'
+import type { SessionId } from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-session-persistence'
 import { SessionReadFollower } from './feed.ts'
 import type { SessionReadRecord } from './spec.ts'
 import type { SessionReadAction, SessionReadFrame, SessionReadState } from './types.ts'

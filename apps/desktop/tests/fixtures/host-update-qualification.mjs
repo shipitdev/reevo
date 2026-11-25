@@ -13,10 +13,10 @@ const root = process.argv[2]
 assert.ok(root)
 const project = join(root, 'project')
 const require = createRequire(join(project, 'package.json'))
-const { LlmAdapter, createUserMessage } = await import(pathToFileURL(require.resolve('@deepseek-ai/dsh-llm')).href)
+const { LlmAdapter, createUserMessage } = await import(pathToFileURL(require.resolve('@reevo/dsh-llm')).href)
 const observed = []
 const { runProfile } = await import(pathToFileURL(require.resolve('@reevo/cli/profile-boot')).href)
-const { loadLayeredEnv, loadProfileDirectory } = await import(pathToFileURL(require.resolve('@deepseek-ai/dsh-app-boot')).href)
+const { loadLayeredEnv, loadProfileDirectory } = await import(pathToFileURL(require.resolve('@reevo/dsh-app-boot')).href)
 const installAnchor = require.resolve('@reevo/cli/package.json')
 const running = await runProfile({ environment: loadLayeredEnv('dsh'), profile: 'desktop',
   resolvedProfile: { profile: loadProfileDirectory('dsh', project, installAnchor), installAnchor },

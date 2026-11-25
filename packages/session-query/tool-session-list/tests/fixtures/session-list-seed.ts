@@ -3,10 +3,10 @@
 import { mkdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'
-import { SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-session-title'
-import type {} from '@deepseek-ai/dsh-storage-domain'
-import WorkspaceRegistry, { WorkspaceId, workspaceDomainSpec } from '@deepseek-ai/dsh-workspace'
+import { SessionId } from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-session-title'
+import type {} from '@reevo/dsh-storage-domain'
+import WorkspaceRegistry, { WorkspaceId, workspaceDomainSpec } from '@reevo/dsh-workspace'
 
 /** Loader fixture identity. */
 export const name = 'session-list-seed'

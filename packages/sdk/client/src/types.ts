@@ -5,9 +5,9 @@
  * @module @reevo/sdk/types
  */
 
-import type { ContentBlock, ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import type { SdkPromptContentBlock, SdkUserQuestionResult, SdkUserQuestionRequest } from '@deepseek-ai/dsh-sdk-protocol'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
+import type { ContentBlock, ReasoningEffortId } from '@reevo/dsh-llm'
+import type { SdkPromptContentBlock, SdkUserQuestionResult, SdkUserQuestionRequest } from '@reevo/dsh-sdk-protocol'
+import type { SessionEvent } from '@reevo/dsh-session'
 
 /** One server-to-client notification as received off the wire. */
 export interface HarnessNotification {
@@ -38,7 +38,7 @@ export interface HarnessClientOptions {
    * The complete child environment, read when {@link HarnessClient.start}
    * spawns. `undefined` reads the parent env at that time; passing an object
    * reads that object at spawn and replaces the parent environment entirely, so callers own
-   * credential policy (see `scrubbedParentEnv` in `@deepseek-ai/dsh-subprocess`
+   * credential policy (see `scrubbedParentEnv` in `@reevo/dsh-subprocess`
    * for the shared scrub-then-merge base).
    */
   env?: NodeJS.ProcessEnv
@@ -87,5 +87,5 @@ export interface RunResult {
 /** Re-exported content-block alias so SDK callers need no extra import. */
 export type { ContentBlock }
 export type { SdkPromptContentBlock }
-export type { SdkEncodedImageBlock } from '@deepseek-ai/dsh-sdk-protocol'
-export type { SdkUserQuestionAnswer, SdkUserQuestionResult, SdkUserQuestionRequest } from '@deepseek-ai/dsh-sdk-protocol'
+export type { SdkEncodedImageBlock } from '@reevo/dsh-sdk-protocol'
+export type { SdkUserQuestionAnswer, SdkUserQuestionResult, SdkUserQuestionRequest } from '@reevo/dsh-sdk-protocol'

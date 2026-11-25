@@ -13,27 +13,27 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
 import { z } from 'zod'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import { AttachmentStore } from '@deepseek-ai/dsh-attachment'
-import { agentPresetProjectionDefinition } from '@deepseek-ai/dsh-agent-preset-registry'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@deepseek-ai/dsh-session'
-import type { Session, SessionEvent, SessionHeader, UserMessage } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
-import type { SessionProjectionSummaryExcluded } from '@deepseek-ai/dsh-session-projection/types'
-import SessionProjectionCache, { projectionCacheDomainSpec } from '@deepseek-ai/dsh-session-projection-cache'
-import { titleProjectionDefinition } from '@deepseek-ai/dsh-session-title'
-import Storage from '@deepseek-ai/dsh-storage'
-import * as StorageDomain from '@deepseek-ai/dsh-storage-domain'
-import * as StorageJson from '@deepseek-ai/dsh-storage-json'
-import type { SessionControlFrame, SessionFollowFrame } from '@deepseek-ai/dsh-api-session-controller/types'
+import AgentRegistry from '@reevo/dsh-agent'
+import { AttachmentStore } from '@reevo/dsh-attachment'
+import { agentPresetProjectionDefinition } from '@reevo/dsh-agent-preset-registry'
+import { createUserMessage } from '@reevo/dsh-llm'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId, SessionLogOffset, SessionSeq } from '@reevo/dsh-session'
+import type { Session, SessionEvent, SessionHeader, UserMessage } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import type { ProjectionDefinition } from '@reevo/dsh-session-projection'
+import type { SessionProjectionSummaryExcluded } from '@reevo/dsh-session-projection/types'
+import SessionProjectionCache, { projectionCacheDomainSpec } from '@reevo/dsh-session-projection-cache'
+import { titleProjectionDefinition } from '@reevo/dsh-session-title'
+import Storage from '@reevo/dsh-storage'
+import * as StorageDomain from '@reevo/dsh-storage-domain'
+import * as StorageJson from '@reevo/dsh-storage-json'
+import type { SessionControlFrame, SessionFollowFrame } from '@reevo/dsh-api-session-controller/types'
 import {
   mountAgentLoopTestDependencies,
   mountAgentLoopTestHarness,
-} from '@deepseek-ai/dsh-agent-loop-testkit'
+} from '@reevo/dsh-agent-loop-testkit'
 import { createSessionTestRemote, testSessionPersistence, type TestSessionRemote } from './test-remote.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const ownedContexts = new Set<Context>()
 afterEach(async () => {
@@ -42,7 +42,7 @@ afterEach(async () => {
 })
 let nextHarnessSession = 1
 
-declare module '@deepseek-ai/dsh-session-projection/types' {
+declare module '@reevo/dsh-session-projection/types' {
   interface SessionProjectionMap {
     'test/last-user': { text: string } | null
     'test/summary-excluded': SessionProjectionSummaryExcluded<number>

@@ -5,12 +5,12 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
 import { expect, it, onTestFinished, vi } from 'vitest'
-import { SessionId, SessionSeq, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import { buildForkSeed } from '@deepseek-ai/dsh-session/fork'
-import * as persistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import * as sqlitePersistence from '@deepseek-ai/dsh-session-persistence-sqlite'
+import { SessionId, SessionSeq, SessionLogOffset } from '@reevo/dsh-session'
+import { buildForkSeed } from '@reevo/dsh-session/fork'
+import * as persistence from '@reevo/dsh-session-persistence-jsonl'
+import * as sqlitePersistence from '@reevo/dsh-session-persistence-sqlite'
 import { storedEvents, tailSegment } from '../../../session/session-persistence-sqlite/tests/fixtures/store.ts'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
 
 async function fixture(storage: 'sqlite' | 'jsonl' = 'sqlite') {
   const root = await mkdtemp(join(tmpdir(), 'dsh-agent-fork-source-'))

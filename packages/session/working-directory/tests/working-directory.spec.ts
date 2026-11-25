@@ -4,12 +4,12 @@ import { join } from 'node:path'
 import { setImmediate } from 'node:timers/promises'
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, vi } from 'vitest'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import WorkingDirectory, { type Config as WorkingDirectoryConfig } from '@deepseek-ai/dsh-working-directory'
-import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { renderContextSnapshot, renderPrompt } from '@deepseek-ai/dsh-system-prompt'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import WorkingDirectory, { type Config as WorkingDirectoryConfig } from '@reevo/dsh-working-directory'
+import { mountAgentLoopTestDependencies, mountAgentLoopTestHarness } from '@reevo/dsh-agent-loop-testkit'
+import type { SessionId } from '@reevo/dsh-session'
+import { renderContextSnapshot, renderPrompt } from '@reevo/dsh-system-prompt'
+import { brandString } from '@reevo/dsh-brand'
 
 async function fixture(config?: (root: string) => WorkingDirectoryConfig) {
   const root = await realpath(await mkdtemp(join(tmpdir(), 'dsh-working-directory-')))

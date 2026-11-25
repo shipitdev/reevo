@@ -1,24 +1,24 @@
-import { executeToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import { provideWorkingDirectoryFixture, mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
+import { executeToolFixture } from '@reevo/dsh-tool-testkit'
+import { brandString } from '@reevo/dsh-brand'
+import { createUserMessage, type ToolCallId } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import { provideWorkingDirectoryFixture, mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { mkdtempSync, rmSync, writeFileSync, chmodSync, existsSync, readFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import type { SessionId, SessionEvent } from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import { LocalBashExecutor } from '@deepseek-ai/dsh-bash-local'
-import LocalSubprocessRuntime from '@deepseek-ai/dsh-subprocess-local'
-import * as HooksCodex from '@deepseek-ai/dsh-hooks-codex'
+import type { SessionId, SessionEvent } from '@reevo/dsh-session'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
+import type { Agent } from '@reevo/dsh-agent'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import { LocalBashExecutor } from '@reevo/dsh-bash-local'
+import LocalSubprocessRuntime from '@reevo/dsh-subprocess-local'
+import * as HooksCodex from '@reevo/dsh-hooks-codex'
 import { MockAdapter, textResponse, toolCallResponse } from '../../../core/agent-loop/tests/mock-adapter.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'policy': { kind: 'policy' } & ContextFormed
   }

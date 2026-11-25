@@ -2,7 +2,7 @@
 
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { deadline, MAX_TIMER_DELAY_MS } from '@deepseek-ai/dsh-timeout'
+import { deadline, MAX_TIMER_DELAY_MS } from '@reevo/dsh-timeout'
 import { changeRequestKey } from './keys.ts'
 import { backoffDelay, nextPollDelay } from './schedule.ts'
 import type {

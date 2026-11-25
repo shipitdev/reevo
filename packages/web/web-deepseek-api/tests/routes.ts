@@ -4,12 +4,12 @@
  * the Loader, is what covers the production path.
  */
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-deepseek-auth'
-import { launchEnvironmentOf } from '@deepseek-ai/dsh-launch-environment'
-import { Config as AccountConfig } from '@deepseek-ai/dsh-llm-deepseek-account'
-import { plainAccountOptions, resolveAccountOptions } from '@deepseek-ai/dsh-llm-deepseek-account/src/config.ts'
-import { Config as OfficialConfig } from '@deepseek-ai/dsh-llm-deepseek-api-key'
-import { plainOptions, resolveAdapterOptions } from '@deepseek-ai/dsh-llm-deepseek-api-key/src/config.ts'
+import type {} from '@reevo/dsh-deepseek-auth'
+import { launchEnvironmentOf } from '@reevo/dsh-launch-environment'
+import { Config as AccountConfig } from '@reevo/dsh-llm-deepseek-account'
+import { plainAccountOptions, resolveAccountOptions } from '@reevo/dsh-llm-deepseek-account/src/config.ts'
+import { Config as OfficialConfig } from '@reevo/dsh-llm-deepseek-api-key'
+import { plainOptions, resolveAdapterOptions } from '@reevo/dsh-llm-deepseek-api-key/src/config.ts'
 
 /** One model route row. */
 export interface RouteRow {

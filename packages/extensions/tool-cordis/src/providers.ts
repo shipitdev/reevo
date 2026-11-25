@@ -1,9 +1,9 @@
 /** First-party Host inspect providers registered by the Cordis tool package. */
 
 import type { Context } from '@deepseek-ai/cordis'
-import { getDshRuntimeVersion } from '@deepseek-ai/dsh-app-boot'
-import { InspectError, type HostCordisInspectProviderRegistration } from '@deepseek-ai/dsh-cordis-host-runner'
-import type { JsonValue } from '@deepseek-ai/dsh-util-values'
+import { getDshRuntimeVersion } from '@reevo/dsh-app-boot'
+import { InspectError, type HostCordisInspectProviderRegistration } from '@reevo/dsh-cordis-host-runner'
+import type { JsonValue } from '@reevo/dsh-util-values'
 import { EVENT_API, queryEventApi, queryServiceApi } from './api-catalog.ts'
 import { queryLiveConfig } from './config.ts'
 

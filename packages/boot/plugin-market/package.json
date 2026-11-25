@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-plugin-market",
+  "name": "@reevo/dsh-plugin-market",
   "description": "Configured plugin market indexes for the Web Discover page and the plugin_market agent tool",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -55,14 +55,14 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-atomic-write": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
-    "@deepseek-ai/dsh-plugin-detail": "workspace:*",
-    "@deepseek-ai/dsh-plugin-market-index": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-atomic-write": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-package-manifest": "workspace:*",
+    "@reevo/dsh-plugin-detail": "workspace:*",
+    "@reevo/dsh-plugin-market-index": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "execa": "^10.0.1",
     "hosted-git-info": "^9.0.3",
@@ -73,15 +73,15 @@
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-plugin-manager": "workspace:*",
+    "@reevo/dsh-settings": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-error": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-settings": {
+    "@reevo/dsh-settings": {
       "optional": true
     }
   },
@@ -89,21 +89,21 @@
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
     "@deepseek-ai/cosmokit": "workspace:~",
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-config-editor": "workspace:*",
-    "@deepseek-ai/dsh-llm": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*",
-    "@deepseek-ai/dsh-plugin-manager": "workspace:*",
-    "@deepseek-ai/dsh-settings": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-config-editor": "workspace:*",
+    "@reevo/dsh-llm": "workspace:*",
+    "@reevo/dsh-error": "workspace:*",
+    "@reevo/dsh-plugin-manager": "workspace:*",
+    "@reevo/dsh-settings": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-tool-executor-native": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
     "@types/hosted-git-info": "^3.0.5",
     "@types/semver": "^7.8.0",
-    "@deepseek-ai/dsh-session-projection": "workspace:*"
+    "@reevo/dsh-session-projection": "workspace:*"
   }
 }

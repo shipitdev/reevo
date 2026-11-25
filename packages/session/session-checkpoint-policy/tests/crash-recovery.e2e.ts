@@ -8,9 +8,9 @@ import { afterEach, describe, expect, it, vi } from 'vitest'
 import SessionStore, {
   type SessionId, TOOL_OUTCOME_UNKNOWN, interruptedTurnClosers,
   type SessionEvent,
-} from '@deepseek-ai/dsh-session'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import { brandString } from '@deepseek-ai/dsh-brand'
+} from '@reevo/dsh-session'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
+import { brandString } from '@reevo/dsh-brand'
 
 const repoRoot = fileURLToPath(new URL('../../../../', import.meta.url))
 const childScript = fileURLToPath(new URL('./fixtures/crash-child.ts', import.meta.url))

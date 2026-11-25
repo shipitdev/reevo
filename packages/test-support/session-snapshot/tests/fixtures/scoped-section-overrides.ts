@@ -1,9 +1,9 @@
 /** Scoped section overrides and retirement through real plugin lifetimes. */
 import assert from 'node:assert/strict'
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-agent'
-import type {} from '@deepseek-ai/dsh-system-prompt'
-import type {} from '@deepseek-ai/dsh-tools'
+import type {} from '@reevo/dsh-agent'
+import type {} from '@reevo/dsh-system-prompt'
+import type {} from '@reevo/dsh-tools'
 
 export const name = 'scoped-section-overrides'
 export const inject = ['systemPrompt']

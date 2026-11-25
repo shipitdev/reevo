@@ -3,15 +3,15 @@
 /* jscpd:ignore-start -- both shipped providers import the same shared packages. */
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import { type LlmResolvedModelInfo, type ReasoningEffortId } from '@deepseek-ai/dsh-llm'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { SessionTitleProviderId } from '@deepseek-ai/dsh-session-title/types'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import { type LlmResolvedModelInfo, type ReasoningEffortId } from '@reevo/dsh-llm'
+import { assertNever } from '@reevo/dsh-util-values'
+import { brandString } from '@reevo/dsh-brand'
+import type { SessionTitleProviderId } from '@reevo/dsh-session-title/types'
 import {
   normalizeSessionTitle,
   type SessionTitleUserMessage,
-} from '@deepseek-ai/dsh-session-title'
+} from '@reevo/dsh-session-title'
 import {
   executeSessionTitleLlm,
   resolveSessionTitleLlmConfig,
@@ -19,7 +19,7 @@ import {
   type ResolvedSessionTitleLlmConfig,
   type SessionTitleLlmConfig,
   type SessionTitleLlmResponse,
-} from '@deepseek-ai/dsh-session-title-llm'
+} from '@reevo/dsh-session-title-llm'
 /* jscpd:ignore-end */
 
 export const name = 'session-title-first-prompt-llm'

@@ -3,13 +3,13 @@ import {
   RemoteStream,
   RemoteStreamCarrierError,
   type RemoteStreamOptions,
-} from '@deepseek-ai/dsh-api-gateway/client'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
-import { streamHandle } from '@deepseek-ai/dsh-remote-mock'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { LlmAttemptId } from '@deepseek-ai/dsh-llm'
-import { SESSION_FORMAT_VERSION } from '@deepseek-ai/dsh-session/types'
-import type { RemoteResult, RemoteStreamHandle } from '@deepseek-ai/dsh-typert-protocol'
+} from '@reevo/dsh-api-gateway/client'
+import { RemoteError } from '@reevo/dsh-typert-protocol'
+import { streamHandle } from '@reevo/dsh-remote-mock'
+import { brandString } from '@reevo/dsh-brand'
+import type { LlmAttemptId } from '@reevo/dsh-llm'
+import { SESSION_FORMAT_VERSION } from '@reevo/dsh-session/types'
+import type { RemoteResult, RemoteStreamHandle } from '@reevo/dsh-typert-protocol'
 import {
   createSessionControlStream,
   SessionEventStream,

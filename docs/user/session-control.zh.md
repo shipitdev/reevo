@@ -8,7 +8,7 @@ description: "在 Web profile 中启用跨 Session 消息，并理解独立对�
 
 ## 概述
 
-当 Agent 需要向另一个普通 Session 发送指令或发现时，在 Web profile 中启用 `session_send_message`。接收方可以属于其他 Workspace 或目录。你需要一个包含 `@deepseek-ai/dsh-web-app` bundle 的 profile（例如 `web`），以及目标 Session 的 id。`headless`、`sdk`、`sdk-minimal` 和 `acp` profile 中没有该工具。
+当 Agent 需要向另一个普通 Session 发送指令或发现时，在 Web profile 中启用 `session_send_message`。接收方可以属于其他 Workspace 或目录。你需要一个包含 `@reevo/dsh-web-app` bundle 的 profile（例如 `web`），以及目标 Session 的 id。`headless`、`sdk`、`sdk-minimal` 和 `acp` profile 中没有该工具。
 
 ## 目录
 

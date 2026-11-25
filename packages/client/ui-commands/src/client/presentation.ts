@@ -1,16 +1,16 @@
 /** Composer menu grouping, localized labels, descriptions, and icons. */
 import type { ComponentType } from 'react'
-import type { InputTriggerCandidate } from '@deepseek-ai/dsh-client-ui-input-trigger/client'
+import type { InputTriggerCandidate } from '@reevo/dsh-client-ui-input-trigger/client'
 import {
   IconCompactOutlineRegular, IconDownloadOutlineRegular,
   IconGoalOutlineRegular, IconPaperPlaneOutlineRegular, IconPlanOutlineRegular,
   PermissionIconFullAccessRegular,
-} from '@deepseek-ai/dsh-client-ui-primitives'
-import type { IconProps } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { TranslateNS } from '@deepseek-ai/dsh-client-locale/client'
-import type { CommandDescriptor } from '@deepseek-ai/dsh-commands/types'
+} from '@reevo/dsh-client-ui-primitives'
+import type { IconProps } from '@reevo/dsh-client-ui-primitives'
+import type { TranslateNS } from '@reevo/dsh-client-locale/client'
+import type { CommandDescriptor } from '@reevo/dsh-commands/types'
 import type { CommandKey } from './locales.ts'
-import { builtinCommandName, type BuiltinCommandName } from '@deepseek-ai/dsh-commands/builtin'
+import { builtinCommandName, type BuiltinCommandName } from '@reevo/dsh-commands/builtin'
 
 /** The menu's two sections. */
 export type MenuSection = 'add' | 'commands'

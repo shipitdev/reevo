@@ -1,9 +1,9 @@
 /** Recover cards from `action-card` blocks in answers, and decisions from `action-cards/decision` events and earlier plugin records. */
 import { z } from 'zod'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { AssistantMessage } from '@deepseek-ai/dsh-llm'
-import { pluginRecordOf, SessionLogOffset } from '@deepseek-ai/dsh-session'
-import type { ProjectionDefinition } from '@deepseek-ai/dsh-session-projection'
+import { brandString } from '@reevo/dsh-brand'
+import type { AssistantMessage } from '@reevo/dsh-llm'
+import { pluginRecordOf, SessionLogOffset } from '@reevo/dsh-session'
+import type { ProjectionDefinition } from '@reevo/dsh-session-projection'
 import { actionCardFences } from './fence.ts'
 import type { ActionCardId } from './types.ts'
 

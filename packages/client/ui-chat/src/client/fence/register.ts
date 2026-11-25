@@ -11,12 +11,12 @@ import { DiffFenceLayer, MathFenceLayer } from './FenceLayers.tsx'
  */
 export function registerFenceLayers(ctx: Context): void {
   ctx.slots.inject('conversation.chat.markdown.fence', () => ctx.slots.register({
-    name: 'conversation.chat.markdown.fence', key: 'math', id: '@deepseek-ai/dsh-client-ui-chat/fence/math',
+    name: 'conversation.chat.markdown.fence', key: 'math', id: '@reevo/dsh-client-ui-chat/fence/math',
   }, MathFenceLayer))
   ctx.slots.inject('conversation.chat.markdown.fence', () => ctx.slots.register({
-    name: 'conversation.chat.markdown.fence', key: 'diff', id: '@deepseek-ai/dsh-client-ui-chat/fence/diff', locale: NS,
+    name: 'conversation.chat.markdown.fence', key: 'diff', id: '@reevo/dsh-client-ui-chat/fence/diff', locale: NS,
   }, DiffFenceLayer))
   ctx.slots.inject('conversation.chat.markdown.fence', () => ctx.slots.register({
-    name: 'conversation.chat.markdown.fence', key: 'patch', id: '@deepseek-ai/dsh-client-ui-chat/fence/diff', locale: NS,
+    name: 'conversation.chat.markdown.fence', key: 'patch', id: '@reevo/dsh-client-ui-chat/fence/diff', locale: NS,
   }, DiffFenceLayer))
 }

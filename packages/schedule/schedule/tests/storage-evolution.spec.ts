@@ -3,8 +3,8 @@ import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'
-import { RemoteError } from '@deepseek-ai/dsh-typert-protocol'
-import { JsonStorageBackend } from '@deepseek-ai/dsh-storage-json'
+import { RemoteError } from '@reevo/dsh-typert-protocol'
+import { JsonStorageBackend } from '@reevo/dsh-storage-json'
 import { afterEach, beforeEach, expect, it, vi } from 'vitest'
 import {
   createAfterScheduleRecord,
@@ -17,7 +17,7 @@ import {
 } from '../src/domain.ts'
 import type { ScheduleId } from '../src/types.ts'
 import { agentFor, harness, storedUnit } from './harness.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const roots: string[] = []
 const contexts: Context[] = []

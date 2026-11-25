@@ -16,7 +16,7 @@ import { dirname, join } from 'node:path'
 import { createDevelopmentProjectMetadata } from '../src/project-manager.ts'
 import type { DesktopRelease } from '../src/release.ts'
 import { DESKTOP_RUNTIME_FILE, type DesktopRuntimeDescriptor } from '../src/runtime-tree.ts'
-import type { DesktopAutoUpdateTarget } from '@deepseek-ai/dsh-desktop-publisher/desktop-auto-update-environment.mjs'
+import type { DesktopAutoUpdateTarget } from '@reevo/dsh-desktop-publisher/desktop-auto-update-environment.mjs'
 import { desktopTargetPlatform } from './desktop-build-paths.mjs'
 
 interface PackageManifest {
@@ -134,9 +134,9 @@ export function prepareDevelopmentProject(options: DevelopmentProjectOptions): s
     throw new Error('desktop development: workspace dependency links are missing; run pnpm install')
   }
   const hostManifest = readManifest(join(options.hostDir, 'package.json'))
-  if (hostManifest.name !== '@deepseek-ai/dsh-desktop-host' || hostManifest.version !== options.release.version) {
+  if (hostManifest.name !== '@reevo/dsh-desktop-host' || hostManifest.version !== options.release.version) {
     throw new Error(
-      `desktop development: apps/desktop-host must be @deepseek-ai/dsh-desktop-host@${options.release.version}, found `
+      `desktop development: apps/desktop-host must be @reevo/dsh-desktop-host@${options.release.version}, found `
       + `${String(hostManifest.name)}@${String(hostManifest.version)}`,
     )
   }
@@ -155,10 +155,10 @@ export function prepareDevelopmentProject(options: DevelopmentProjectOptions): s
   const dshLink = join(destinationModules, '@deepseek-ai', 'dsh')
   removeOwnedPath(dshLink)
   linkDirectory(options.cliDir, dshLink)
-  const hostLink = join(destinationModules, '@deepseek-ai', 'dsh-desktop-host')
+  const hostLink = join(destinationModules, '@reevo', 'dsh-desktop-host')
   removeOwnedPath(hostLink)
   linkDirectory(options.hostDir, hostLink)
-  const sharedPackages = [...new Set([...names, '@reevo/cli', '@deepseek-ai/dsh-desktop-host'])].flatMap((name) => {
+  const sharedPackages = [...new Set([...names, '@reevo/cli', '@reevo/dsh-desktop-host'])].flatMap((name) => {
     const manifest = readManifest(join(destinationModules, name, 'package.json'))
     return typeof manifest.version === 'string' ? [{ name, version: manifest.version, path: `node_modules/${name}` }] : []
   })

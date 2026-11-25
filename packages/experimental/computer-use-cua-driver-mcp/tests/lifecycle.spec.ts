@@ -1,13 +1,13 @@
 /** The external MCP process is replaced by barriers to pin disposal ordering. */
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import * as NativeToolExecutor from '@deepseek-ai/dsh-tool-executor-native'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import * as NativeToolExecutor from '@reevo/dsh-tool-executor-native'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import ComputerUse from '@deepseek-ai/dsh-computer-use'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { ComputerUseProviderName } from '@deepseek-ai/dsh-computer-use/types'
-import SystemPrompt from '@deepseek-ai/dsh-system-prompt'
-import ToolRuntime from '@deepseek-ai/dsh-tools'
+import ComputerUse from '@reevo/dsh-computer-use'
+import { brandString } from '@reevo/dsh-brand'
+import type { ComputerUseProviderName } from '@reevo/dsh-computer-use/types'
+import SystemPrompt from '@reevo/dsh-system-prompt'
+import ToolRuntime from '@reevo/dsh-tools'
 
 const fake = vi.hoisted(() => ({
   start: vi.fn<() => Promise<void>>(),
@@ -15,8 +15,8 @@ const fake = vi.hoisted(() => ({
   configurations: [] as unknown[],
 }))
 
-vi.mock('@deepseek-ai/dsh-mcp-client', async (importOriginal) => {
-  const original = await importOriginal<typeof import('@deepseek-ai/dsh-mcp-client')>()
+vi.mock('@reevo/dsh-mcp-client', async (importOriginal) => {
+  const original = await importOriginal<typeof import('@reevo/dsh-mcp-client')>()
   return {
     ...original,
     async apply(ctx: Context, config: unknown) {

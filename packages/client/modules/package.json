@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-modules",
+  "name": "@reevo/dsh-client-modules",
   "description": "Client module system, dual-face: node half composes the __DSH_BOOT__ entry graph (incremental dsh.client scan, bundle route, index tap, webPlugins service); browser half is the lazy-CJS module table the vendored cordis Loader consumes as its internal seam",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -43,15 +43,15 @@
   "license": "MIT",
   "devDependencies": {
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-host-webserver": "workspace:*",
+    "@reevo/dsh-host-webserver": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
-    "@deepseek-ai/dsh-client-store": "workspace:*",
-    "@deepseek-ai/dsh-client-script-realm": "workspace:*",
+    "@reevo/dsh-package-manifest": "workspace:*",
+    "@reevo/dsh-client-store": "workspace:*",
+    "@reevo/dsh-client-script-realm": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-client-config": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*"
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-client-config": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*"
   },
   "files": [
     "locale/*.json",

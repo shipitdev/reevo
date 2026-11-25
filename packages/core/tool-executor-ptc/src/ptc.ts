@@ -9,33 +9,33 @@
 import { isDeepStrictEqual } from 'node:util'
 import type { PtcDispatchLog } from './runtime-types.ts'
 import { symbols, type Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { extractTextContent } from '@deepseek-ai/dsh-llm/message'
-import { createUserMessage, HarnessError, resolveImageAttachmentAccess } from '@deepseek-ai/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
+import { extractTextContent } from '@reevo/dsh-llm/message'
+import { createUserMessage, HarnessError, resolveImageAttachmentAccess } from '@reevo/dsh-llm'
 
-import type { ContentBlock, ToolCallId, ToolSchema } from '@deepseek-ai/dsh-llm'
-import { PtcImage, PtcInspectableValue } from '@deepseek-ai/dsh-ptc-runtime'
-import type { PtcJsonValue, PtcOutput } from '@deepseek-ai/dsh-ptc-runtime'
-import type { PtcBindingFunction, PtcRunResult, PtcRunSandbox, PtcRuntime } from '@deepseek-ai/dsh-ptc-runtime'
-import { approveEscalation, ESCALATION_TARGETS, validateEscalationArgs } from '@deepseek-ai/dsh-sandbox'
-import type { SandboxExecutionPolicy } from '@deepseek-ai/dsh-sandbox'
-import type {} from '@deepseek-ai/dsh-user-approval'
-import type {} from '@deepseek-ai/dsh-working-directory'
-import type {} from '@deepseek-ai/dsh-sandbox-policy'
-import { deepFreeze, snapshotJsonValue, type JsonValue } from '@deepseek-ai/dsh-util-values'
+import type { ContentBlock, ToolCallId, ToolSchema } from '@reevo/dsh-llm'
+import { PtcImage, PtcInspectableValue } from '@reevo/dsh-ptc-runtime'
+import type { PtcJsonValue, PtcOutput } from '@reevo/dsh-ptc-runtime'
+import type { PtcBindingFunction, PtcRunResult, PtcRunSandbox, PtcRuntime } from '@reevo/dsh-ptc-runtime'
+import { approveEscalation, ESCALATION_TARGETS, validateEscalationArgs } from '@reevo/dsh-sandbox'
+import type { SandboxExecutionPolicy } from '@reevo/dsh-sandbox'
+import type {} from '@reevo/dsh-user-approval'
+import type {} from '@reevo/dsh-working-directory'
+import type {} from '@reevo/dsh-sandbox-policy'
+import { deepFreeze, snapshotJsonValue, type JsonValue } from '@reevo/dsh-util-values'
 import {
   defineTool, parameterSchemaSpecToJsonSchema, projectToolSchema, RUN_CODE_NAME, TOOL_ABORTED, ToolArgsError,
   ToolContextUnavailableError,
-} from '@deepseek-ai/dsh-tools'
-import type { ToolExecutionPipeline } from '@deepseek-ai/dsh-tools/pipeline'
-import { toolErrorMessage } from '@deepseek-ai/dsh-tools/pipeline'
-import { scopeTarget } from '@deepseek-ai/dsh-scope'
+} from '@reevo/dsh-tools'
+import type { ToolExecutionPipeline } from '@reevo/dsh-tools/pipeline'
+import { toolErrorMessage } from '@reevo/dsh-tools/pipeline'
+import { scopeTarget } from '@reevo/dsh-scope'
 import type { PtcCalls } from './ptc-calls.ts'
 import { CodeRunFailedError, ToolCallLimitExceededError } from './errors.ts'
 import { substituteProgramImages } from './program-images.ts'
 import type { Config } from './config.ts'
 import type { RunCodeToolOptions } from './run-code.ts'
-import type { ToolDefinition, ToolExecution, ToolExecutionFailure, ToolExecutionResult, ToolRunContext } from '@deepseek-ai/dsh-tools'
+import type { ToolDefinition, ToolExecution, ToolExecutionFailure, ToolExecutionResult, ToolRunContext } from '@reevo/dsh-tools'
 import type {} from './types.ts'
 
 /** The model-facing name of the PTC mode tool. */
@@ -77,7 +77,7 @@ const TYPESCRIPT_FUNCTION_FLAVOR = runCodeFlavor('TypeScript', TYPESCRIPT_OUTPUT
 export function requirePtcRuntime(ctx: Context): PtcRuntime {
   const runtime = ctx.get('ptcRuntime')
   if (runtime === undefined) {
-    throw new ToolContextUnavailableError('dsh-tools: mode "ptc" requires a PTC runtime — load a ctx.ptcRuntime implementation (e.g. @deepseek-ai/dsh-ptc-runtime-node) or load @deepseek-ai/dsh-tool-executor-native')
+    throw new ToolContextUnavailableError('dsh-tools: mode "ptc" requires a PTC runtime — load a ctx.ptcRuntime implementation (e.g. @reevo/dsh-ptc-runtime-node) or load @reevo/dsh-tool-executor-native')
   }
   return requireRuntimeLanguage(runtime)
 }

@@ -1,20 +1,20 @@
 // @vitest-environment jsdom
 /** Detail adapters accept the exact recorded result text and retain safe fallback paths. */
 import { describe, expect, it } from 'vitest'
-import type { ToolResultNode } from '@deepseek-ai/dsh-client-ui-chat/client'
-import { makeTranslate } from '@deepseek-ai/dsh-client-test-runtime'
-import { en, zh } from '@deepseek-ai/dsh-client-ui-conversation/src/client/locales.ts'
-import { en as commonEn } from '@deepseek-ai/dsh-client-locale/src/locales/en.ts'
-import { zh as commonZh } from '@deepseek-ai/dsh-client-locale/src/locales/zh.ts'
-import { statusLine } from '@deepseek-ai/dsh-tool-jobs/src/render.ts'
-import { presentation } from '@deepseek-ai/dsh-tool-session-query/src/presentation.ts'
-import { renderList, renderRead, renderSpawn } from '@deepseek-ai/dsh-tool-terminal/src/render.ts'
-import { formatSpillNotice } from '@deepseek-ai/dsh-spill-policy/notice'
+import type { ToolResultNode } from '@reevo/dsh-client-ui-chat/client'
+import { makeTranslate } from '@reevo/dsh-client-test-runtime'
+import { en, zh } from '@reevo/dsh-client-ui-conversation/src/client/locales.ts'
+import { en as commonEn } from '@reevo/dsh-client-locale/src/locales/en.ts'
+import { zh as commonZh } from '@reevo/dsh-client-locale/src/locales/zh.ts'
+import { statusLine } from '@reevo/dsh-tool-jobs/src/render.ts'
+import { presentation } from '@reevo/dsh-tool-session-query/src/presentation.ts'
+import { renderList, renderRead, renderSpawn } from '@reevo/dsh-tool-terminal/src/render.ts'
+import { formatSpillNotice } from '@reevo/dsh-spill-policy/notice'
 import { detailBadge, detailJson, detailList, detailRecord, inspectionItems, nonempty } from '../src/client/tool/models/detail-model-shared.ts'
 import { detailsCardModel } from '../src/client/tool/models/details-card-model.ts'
-import type { SpillLocator } from '@deepseek-ai/dsh-spill'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { PartialArguments } from '@deepseek-ai/dsh-util-values'
+import type { SpillLocator } from '@reevo/dsh-spill'
+import { brandString } from '@reevo/dsh-brand'
+import { PartialArguments } from '@reevo/dsh-util-values'
 
 const t = makeTranslate(en, commonEn)
 

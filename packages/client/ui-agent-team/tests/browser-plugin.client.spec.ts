@@ -1,17 +1,17 @@
 import { Context } from '@deepseek-ai/cordis'
 import { describe, expect, it, onTestFinished, vi } from 'vitest'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { RemoteError, TestRemote } from '@deepseek-ai/dsh-client-test-runtime'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { RemoteError, TestRemote } from '@reevo/dsh-client-test-runtime'
 import { TeamModePane, TeamModeToggle, type TeamModePaneInjected } from '../src/client/TeamModeToggle.tsx'
-import { LocaleRuntime } from '@deepseek-ai/dsh-client-locale/client'
-import { SlotRegistry } from '@deepseek-ai/dsh-client-ui-renderer/client'
+import { LocaleRuntime } from '@reevo/dsh-client-locale/client'
+import { SlotRegistry } from '@reevo/dsh-client-ui-renderer/client'
 import { TeamBoard, TeamProgress } from '../src/client/TeamBoard.tsx'
 import { TeamCommandRow } from '../src/client/TeamCommandRow.tsx'
 import { TeamDisableConfirmation, type TeamDisableConfirmationInjected } from '../src/client/TeamDisableConfirmation.tsx'
-import { resolveSlotLabel } from '@deepseek-ai/dsh-client-ui-slots'
+import { resolveSlotLabel } from '@reevo/dsh-client-ui-slots'
 import { apply, inject } from '../src/client/index.ts'
 import { apply as nodeApply } from '../src/index.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 async function bench() {
   const ctx = new Context()

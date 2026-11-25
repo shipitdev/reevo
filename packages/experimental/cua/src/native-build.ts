@@ -1,8 +1,8 @@
 /** Managed native compilation and platform-owned executable resolution. */
 import { mkdir, readFile } from 'node:fs/promises'
 import { dirname, join, resolve } from 'node:path'
-import { withFileLock } from '@deepseek-ai/dsh-atomic-write'
-import type { SubprocessOutcome, SubprocessRuntime } from '@deepseek-ai/dsh-subprocess'
+import { withFileLock } from '@reevo/dsh-atomic-write'
+import type { SubprocessOutcome, SubprocessRuntime } from '@reevo/dsh-subprocess'
 
 /** Compiler invocation and lock shared by preparations using the same scratch files. */
 interface NativeCompilerBuild {

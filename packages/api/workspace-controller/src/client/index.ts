@@ -6,7 +6,7 @@ import {
   RemoteStreamCarrierError,
   type ClientRemote,
   type RemoteStreamCarrierFailure,
-} from '@deepseek-ai/dsh-api-gateway/client'
+} from '@reevo/dsh-api-gateway/client'
 import type { WorkspaceFollowFrame, WorkspaceFollowIncrement } from '../types.ts'
 import type { WorkspaceFollowSink } from './model.ts'
 import { ClientWorkspaceModel } from './model.ts'

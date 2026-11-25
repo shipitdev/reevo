@@ -1,18 +1,18 @@
 /** The WeCom authorization section the Plugins page shows for each Host view. */
-import type { CliAccountText } from '@deepseek-ai/dsh-cli-account/types'
+import type { CliAccountText } from '@reevo/dsh-cli-account/types'
 import type {
   ConnectorAccountButton, ConnectorAccountCopy, ConnectorAccountDisplay, ConnectorAccountFailure, ConnectorAccountNote,
   ConnectorAccountOperation,
-} from '@deepseek-ai/dsh-client-ui-connector-account/types'
-import type { UpstreamSkillsState } from '@deepseek-ai/dsh-upstream-skills/types'
-import { assertNever } from '@deepseek-ai/dsh-util-values'
+} from '@reevo/dsh-client-ui-connector-account/types'
+import type { UpstreamSkillsState } from '@reevo/dsh-upstream-skills/types'
+import { assertNever } from '@reevo/dsh-util-values'
 import type { WecomTextKey } from './locales.ts'
 import type { WecomOperationKind, WecomState } from './types.ts'
 
 type Text = CliAccountText<WecomTextKey>
 
 /** The npm package whose bundle page carries the authorization section. */
-export const WECOM_PACKAGE = '@deepseek-ai/dsh-wecom'
+export const WECOM_PACKAGE = '@reevo/dsh-wecom'
 
 /* jscpd:ignore-start -- CLI app plugins declare page operations, copy, and commands alike, each with its own text. */
 /**

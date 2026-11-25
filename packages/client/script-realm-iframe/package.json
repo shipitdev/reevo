@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-script-realm-iframe",
+  "name": "@reevo/dsh-client-script-realm-iframe",
   "description": "Optional iframe ScriptRealm provider",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-script-realm": "workspace:*"
+    "@reevo/dsh-client-script-realm": "workspace:*"
   },
   "files": [
     "locale/*.json",
@@ -46,7 +46,7 @@
   "dsh": {
     "client": {
       "platform": "web",
-      "external": ["@deepseek-ai/dsh-client-script-realm/client"]
+      "external": ["@reevo/dsh-client-script-realm/client"]
     }
   },
   "scripts": {

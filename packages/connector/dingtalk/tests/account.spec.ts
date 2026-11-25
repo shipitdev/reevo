@@ -2,7 +2,7 @@
 import { mkdir } from 'node:fs/promises'
 import { join } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'
-import type { ConnectorOperationId } from '@deepseek-ai/dsh-client-ui-connector-account/types'
+import type { ConnectorOperationId } from '@reevo/dsh-client-ui-connector-account/types'
 import { afterEach, beforeEach, describe, expect, it, vi, type Mock } from 'vitest'
 import * as Dingtalk from '../src/index.ts'
 import { DWS_RELEASE, executableFileName } from '../src/release.ts'

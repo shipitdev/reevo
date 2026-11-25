@@ -17,25 +17,25 @@ import type {
   InboxState,
   PreStepDecision,
   RequestErrorAction,
-} from '@deepseek-ai/dsh-agent'
-import { AgentModel, agentEvents, assembleContextFor } from '@deepseek-ai/dsh-agent'
-import type { GenerateOptions, LlmCallConfig, Message, PreparedLlmCall } from '@deepseek-ai/dsh-llm'
+} from '@reevo/dsh-agent'
+import { AgentModel, agentEvents, assembleContextFor } from '@reevo/dsh-agent'
+import type { GenerateOptions, LlmCallConfig, Message, PreparedLlmCall } from '@reevo/dsh-llm'
 import {
   LlmError,
   createAssistantMessage,
   createDeveloperMessage,
   errorChain,
   markAgentLoopRequest,
-} from '@deepseek-ai/dsh-llm'
-import { assertNever, deepFreeze } from '@deepseek-ai/dsh-util-values'
-import type { Scope } from '@deepseek-ai/dsh-scope'
-import { createScope } from '@deepseek-ai/dsh-scope'
-import type { EpochHeader, RequestContext, Session, SessionId, SessionSeq, TurnEndReason, UserMessage } from '@deepseek-ai/dsh-session'
-import { canonicalHeader, headerEquals, ToolCallRecovery } from '@deepseek-ai/dsh-session'
-import { renderContextSections } from '@deepseek-ai/dsh-system-prompt'
-import type { PromptAssembly } from '@deepseek-ai/dsh-system-prompt'
-import { ToolActivationError, ToolBatchExecutionError } from '@deepseek-ai/dsh-tools'
-import type { ResolvedToolSet } from '@deepseek-ai/dsh-tools'
+} from '@reevo/dsh-llm'
+import { assertNever, deepFreeze } from '@reevo/dsh-util-values'
+import type { Scope } from '@reevo/dsh-scope'
+import { createScope } from '@reevo/dsh-scope'
+import type { EpochHeader, RequestContext, Session, SessionId, SessionSeq, TurnEndReason, UserMessage } from '@reevo/dsh-session'
+import { canonicalHeader, headerEquals, ToolCallRecovery } from '@reevo/dsh-session'
+import { renderContextSections } from '@reevo/dsh-system-prompt'
+import type { PromptAssembly } from '@reevo/dsh-system-prompt'
+import { ToolActivationError, ToolBatchExecutionError } from '@reevo/dsh-tools'
+import type { ResolvedToolSet } from '@reevo/dsh-tools'
 import type { Context } from '@deepseek-ai/cordis'
 import { ReactLoopInbox } from './inbox.ts'
 import { RuntimeContextProjection } from './runtime-context.ts'

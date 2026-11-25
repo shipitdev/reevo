@@ -1,13 +1,13 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import { PROTOCOL_VERSION } from '@agentclientprotocol/sdk'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createUserMessage, type ToolCallId, type StreamChunk  } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import { defineContentToolFixture } from '@deepseek-ai/dsh-tool-testkit'
+import { brandString } from '@reevo/dsh-brand'
+import { createUserMessage, type ToolCallId, type StreamChunk  } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import type { SessionId } from '@reevo/dsh-session'
+import { defineContentToolFixture } from '@reevo/dsh-tool-testkit'
 import { makeBridgeHarness, textResponse, type BridgeHarness } from './harness.ts'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

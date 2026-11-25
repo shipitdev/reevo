@@ -1,6 +1,6 @@
 /**
  * Classification of host errno failures into the shared filesystem codes.
- * @module @deepseek-ai/dsh-fs/errno
+ * @module @reevo/dsh-fs/errno
  */
 
 import { FsError } from './types.ts'

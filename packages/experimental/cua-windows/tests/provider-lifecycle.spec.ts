@@ -3,7 +3,7 @@ import { resolve } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
 import type { WslPreparation } from '../src/windows-host.ts'
 import type { NativeBuildSpec } from '../src/native-build.ts'
-import type { installCua } from '@deepseek-ai/dsh-cua'
+import type { installCua } from '@reevo/dsh-cua'
 import { beforeEach, expect, it, onTestFinished, vi } from 'vitest'
 import { apply, Config } from '../src/index.ts'
 import { GUIDANCE } from '../src/guidance.ts'
@@ -21,8 +21,8 @@ vi.mock('../src/native-build.ts', async original => ({
   ...await original<typeof import('../src/native-build.ts')>(),
   prepareNativeExecutable: native.prepare, nativeHostArchitecture: native.architecture,
 }))
-vi.mock('@deepseek-ai/dsh-cua', async original => ({
-  ...await original<typeof import('@deepseek-ai/dsh-cua')>(), installCua: native.install,
+vi.mock('@reevo/dsh-cua', async original => ({
+  ...await original<typeof import('@reevo/dsh-cua')>(), installCua: native.install,
 }))
 vi.mock('../src/native-runtime.ts', () => ({ WindowsNativeRuntime: class {
   constructor(...args: unknown[]) { native.construct(...args) }

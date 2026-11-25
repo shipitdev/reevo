@@ -42,7 +42,7 @@ import {
   contentHasImage,
   LlmAdapter,
   LlmError,
-} from '@deepseek-ai/dsh-llm'
+} from '@reevo/dsh-llm'
 import type {
   GenerateOptions,
   ImageAttachmentAccess,
@@ -54,10 +54,10 @@ import type {
   ResolvedRetryPolicy,
   StreamChunk,
   ToolSchema,
-} from '@deepseek-ai/dsh-llm'
-import type { AttachmentStore, ImageAttachmentRef } from '@deepseek-ai/dsh-attachment'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { idleWatchdog, timeoutOf } from '@deepseek-ai/dsh-timeout'
+} from '@reevo/dsh-llm'
+import type { AttachmentStore, ImageAttachmentRef } from '@reevo/dsh-attachment'
+import { brandString } from '@reevo/dsh-brand'
+import { idleWatchdog, timeoutOf } from '@reevo/dsh-timeout'
 import type { ResolvedPiAiProviderProfile } from './config.ts'
 import { requestImageTarget, toPiContext } from './context.ts'
 import { resolveImageRequestBudget } from './image-policy.ts'

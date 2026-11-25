@@ -1,17 +1,17 @@
 /**
  * Model-authored messages to ordinary Web Sessions with runtime-owned sender attribution.
- * @module @deepseek-ai/dsh-tool-session-control
+ * @module @reevo/dsh-tool-session-control
  */
 
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-api-session-controller'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { HarnessError } from '@deepseek-ai/dsh-error'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import type {} from '@deepseek-ai/dsh-subagent'
-import { defineTool, ToolArgsError, ToolContextUnavailableError } from '@deepseek-ai/dsh-tools'
-import type {} from '@deepseek-ai/dsh-workspace'
+import type {} from '@reevo/dsh-api-session-controller'
+import { brandString } from '@reevo/dsh-brand'
+import { HarnessError } from '@reevo/dsh-error'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { SessionId } from '@reevo/dsh-session'
+import type {} from '@reevo/dsh-subagent'
+import { defineTool, ToolArgsError, ToolContextUnavailableError } from '@reevo/dsh-tools'
+import type {} from '@reevo/dsh-workspace'
 
 /** Cordis plugin name. */
 export const name = 'tool-session-control'

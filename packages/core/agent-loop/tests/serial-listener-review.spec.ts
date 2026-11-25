@@ -4,17 +4,17 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import AgentLoop from '@deepseek-ai/dsh-agent-loop'
-import * as JsonlSessionPersistence from '@deepseek-ai/dsh-session-persistence-jsonl'
-import { mountAgentLoopTestDependencies } from '@deepseek-ai/dsh-agent-loop-testkit'
-import type { SessionId } from '@deepseek-ai/dsh-session'
-import LocalFileReference from '@deepseek-ai/dsh-file-reference-local'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import AgentLoop from '@reevo/dsh-agent-loop'
+import * as JsonlSessionPersistence from '@reevo/dsh-session-persistence-jsonl'
+import { mountAgentLoopTestDependencies } from '@reevo/dsh-agent-loop-testkit'
+import type { SessionId } from '@reevo/dsh-session'
+import LocalFileReference from '@reevo/dsh-file-reference-local'
+import type { Agent } from '@reevo/dsh-agent'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import { brandString } from '@reevo/dsh-brand'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'due-work': { kind: 'due-work'; plugin: string } & ContextFormed
   }

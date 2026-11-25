@@ -1,6 +1,6 @@
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-commands'
-import type {} from '@deepseek-ai/dsh-fs'
+import type {} from '@reevo/dsh-commands'
+import type {} from '@reevo/dsh-fs'
 import { CHECKPOINT_BYTES } from './checkpoint.ts'
 import type { TimelineStorage } from './storage.ts'
 

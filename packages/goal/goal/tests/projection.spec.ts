@@ -10,20 +10,20 @@
 
 import { describe, expect, it, vi } from 'vitest'
 import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry, { agentEvents } from '@deepseek-ai/dsh-agent'
-import type { Agent, AgentStatus } from '@deepseek-ai/dsh-agent'
-import { createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { ContextFormed } from '@deepseek-ai/dsh-llm'
-import SessionStore from '@deepseek-ai/dsh-session'
-import type { Session } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import type { GoalId } from '@deepseek-ai/dsh-goal/types'
-import GoalService, { applyGoalProjection, foldGoal, goalProjectionDefinition } from '@deepseek-ai/dsh-goal'
-import type { GoalProjection, GoalProjectionState, GoalRef } from '@deepseek-ai/dsh-goal'
-import { unsupportedModel, unsupportedInbox } from '@deepseek-ai/dsh-agent-loop-testkit'
+import AgentRegistry, { agentEvents } from '@reevo/dsh-agent'
+import type { Agent, AgentStatus } from '@reevo/dsh-agent'
+import { createUserMessage } from '@reevo/dsh-llm'
+import type { ContextFormed } from '@reevo/dsh-llm'
+import SessionStore from '@reevo/dsh-session'
+import type { Session } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import { brandString } from '@reevo/dsh-brand'
+import type { GoalId } from '@reevo/dsh-goal/types'
+import GoalService, { applyGoalProjection, foldGoal, goalProjectionDefinition } from '@reevo/dsh-goal'
+import type { GoalProjection, GoalProjectionState, GoalRef } from '@reevo/dsh-goal'
+import { unsupportedModel, unsupportedInbox } from '@reevo/dsh-agent-loop-testkit'
 
-declare module '@deepseek-ai/dsh-llm' {
+declare module '@reevo/dsh-llm' {
   interface MessageSourceMap {
     'test': { kind: 'test' } & ContextFormed
   }

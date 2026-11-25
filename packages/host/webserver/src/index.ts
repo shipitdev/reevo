@@ -1,5 +1,5 @@
 /**
- * @deepseek-ai/dsh-host-webserver — node:http route registration — node:https
+ * @reevo/dsh-host-webserver — node:http route registration — node:https
  * when `tls` names a certificate and key — with optional gzip, index injection
  * for the Peer a page speaks for, and one fallback seat. It serves no files;
  * the composing application owns dist serving. Electron uses file:// plus IPC
@@ -20,7 +20,7 @@ import { resolve } from 'node:path'
 import type { Duplex } from 'node:stream'
 import { Context, Service } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import type { PeerScope } from '@deepseek-ai/dsh-typert-protocol'
+import type { PeerScope } from '@reevo/dsh-typert-protocol'
 import compressionMiddleware from 'compression'
 import ipaddr from 'ipaddr.js'
 import Negotiator from 'negotiator'

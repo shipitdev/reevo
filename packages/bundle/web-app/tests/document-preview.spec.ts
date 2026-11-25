@@ -6,19 +6,19 @@ import { fileURLToPath, pathToFileURL } from 'node:url'
 import { Context } from '@deepseek-ai/cordis'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import Include, { applyEntryPatches } from '@deepseek-ai/cordis-plugin-include'
-import { loadOverlayPatches } from '@deepseek-ai/dsh-app-boot'
-import WorkspaceFiles, { type WorkspaceFileScope } from '@deepseek-ai/dsh-api-workspace-files'
-import OfficeKit from '@deepseek-ai/dsh-office-kit'
-import * as DocumentPreview from '@deepseek-ai/dsh-client-ui-sidebar-documentpreview'
-import SessionStore, { type SessionId } from '@deepseek-ai/dsh-session'
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
-import SandboxPolicyService from '@deepseek-ai/dsh-sandbox-policy'
-import LocalFileSystem from '@deepseek-ai/dsh-fs-local'
-import { FsError } from '@deepseek-ai/dsh-fs'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
+import { loadOverlayPatches } from '@reevo/dsh-app-boot'
+import WorkspaceFiles, { type WorkspaceFileScope } from '@reevo/dsh-api-workspace-files'
+import OfficeKit from '@reevo/dsh-office-kit'
+import * as DocumentPreview from '@reevo/dsh-client-ui-sidebar-documentpreview'
+import SessionStore, { type SessionId } from '@reevo/dsh-session'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
+import SandboxPolicyService from '@reevo/dsh-sandbox-policy'
+import LocalFileSystem from '@reevo/dsh-fs-local'
+import { FsError } from '@reevo/dsh-fs'
+import TypertRegistry from '@reevo/dsh-typert-registry'
 import type { Converter, ConverterOptions } from '@deepseek-ai/libreoffice-kit'
 import { expect, it, onTestFinished, vi } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const kit = vi.hoisted(() => ({ create: vi.fn<(options?: ConverterOptions) => Promise<Converter>>() }))
 vi.mock('@deepseek-ai/libreoffice-kit', () => ({ createConverter: kit.create }))
@@ -37,8 +37,8 @@ it('loads the shipped Office rows with separately patched settings and authorize
   })
   const configPath = join(directory, 'cordis.yml')
   const expectedRows = {
-    'office-kit': '@deepseek-ai/dsh-office-kit',
-    'ui-sidebar-documentpreview': '@deepseek-ai/dsh-client-ui-sidebar-documentpreview',
+    'office-kit': '@reevo/dsh-office-kit',
+    'ui-sidebar-documentpreview': '@reevo/dsh-client-ui-sidebar-documentpreview',
   }
   const rows = loadOverlayPatches('web-office-test', fileURLToPath(new URL('../cordis.patch.yml', import.meta.url)))
     .flatMap(patch => patch.insert ?? []).filter(row => row.id !== undefined && Object.hasOwn(expectedRows, row.id))
@@ -51,12 +51,12 @@ it('loads the shipped Office rows with separately patched settings and authorize
   ], (message) => { throw new Error(message) }).data
   expect(configured.find(row => row.id === 'ui-sidebar-documentpreview')!.config).toEqual(clientConfig)
   await writeFile(configPath, JSON.stringify([
-    { name: '@deepseek-ai/dsh-session' },
-    { name: '@deepseek-ai/dsh-session-projection' },
-    { name: '@deepseek-ai/dsh-sandbox-policy', config: { workspaceRoot: directory } },
-    { name: '@deepseek-ai/dsh-fs-local', config: { cwd: directory } },
-    { name: '@deepseek-ai/dsh-typert-registry' },
-    { name: '@deepseek-ai/dsh-api-workspace-files', config: { maxFileBytes: 1 } },
+    { name: '@reevo/dsh-session' },
+    { name: '@reevo/dsh-session-projection' },
+    { name: '@reevo/dsh-sandbox-policy', config: { workspaceRoot: directory } },
+    { name: '@reevo/dsh-fs-local', config: { cwd: directory } },
+    { name: '@reevo/dsh-typert-registry' },
+    { name: '@reevo/dsh-api-workspace-files', config: { maxFileBytes: 1 } },
     ...configured,
   ]))
   const pdf = Buffer.from('%PDF-1.7\nLoader preview\n%%EOF\n')
@@ -76,14 +76,14 @@ it('loads the shipped Office rows with separately patched settings and authorize
   ctx.loader.builtins.include = Include
   // Loader's native imports must share the test's source-plane Service classes.
   const modules = new Map<string, unknown>([
-    ['@deepseek-ai/dsh-session', SessionStore],
-    ['@deepseek-ai/dsh-session-projection', SessionProjectionRegistry],
-    ['@deepseek-ai/dsh-sandbox-policy', SandboxPolicyService],
-    ['@deepseek-ai/dsh-fs-local', LocalFileSystem],
-    ['@deepseek-ai/dsh-typert-registry', TypertRegistry],
-    ['@deepseek-ai/dsh-api-workspace-files', WorkspaceFiles],
-    ['@deepseek-ai/dsh-office-kit', OfficeKit],
-    ['@deepseek-ai/dsh-client-ui-sidebar-documentpreview', DocumentPreview],
+    ['@reevo/dsh-session', SessionStore],
+    ['@reevo/dsh-session-projection', SessionProjectionRegistry],
+    ['@reevo/dsh-sandbox-policy', SandboxPolicyService],
+    ['@reevo/dsh-fs-local', LocalFileSystem],
+    ['@reevo/dsh-typert-registry', TypertRegistry],
+    ['@reevo/dsh-api-workspace-files', WorkspaceFiles],
+    ['@reevo/dsh-office-kit', OfficeKit],
+    ['@reevo/dsh-client-ui-sidebar-documentpreview', DocumentPreview],
   ])
   ctx.loader.internal = {
     version: 'v2',

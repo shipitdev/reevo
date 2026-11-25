@@ -2,7 +2,7 @@
 import type { IncomingMessage, ServerResponse } from 'node:http'
 import type { Duplex } from 'node:stream'
 import type { Context } from '@deepseek-ai/cordis'
-import type { WebAdmission, WebAuthenticationRule, WebAuthRequest, WebRoute, WebUpgradeRoute } from '@deepseek-ai/dsh-host-webserver'
+import type { WebAdmission, WebAuthenticationRule, WebAuthRequest, WebRoute, WebUpgradeRoute } from '@reevo/dsh-host-webserver'
 
 function authorize(ctx: Context, req: IncomingMessage, auth: WebAuthenticationRule | undefined, transport: WebAuthRequest['transport']): WebAdmission {
   const request: WebAuthRequest = {

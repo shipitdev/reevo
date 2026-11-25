@@ -1,23 +1,23 @@
-import SessionProjectionRegistry from '@deepseek-ai/dsh-session-projection'
+import SessionProjectionRegistry from '@reevo/dsh-session-projection'
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import AgentRegistry from '@deepseek-ai/dsh-agent'
-import type { Agent } from '@deepseek-ai/dsh-agent'
-import { agentPresetProjectionDefinition } from '@deepseek-ai/dsh-agent-preset-registry'
-import SessionStore, { SESSION_FORMAT_VERSION, type SessionId } from '@deepseek-ai/dsh-session'
-import type { SessionHeader } from '@deepseek-ai/dsh-session'
-import { SessionAlreadyOwnedError } from '@deepseek-ai/dsh-session-persistence'
-import type { SessionObservation } from '@deepseek-ai/dsh-session-query'
-import TypertRegistry from '@deepseek-ai/dsh-typert-registry'
+import AgentRegistry from '@reevo/dsh-agent'
+import type { Agent } from '@reevo/dsh-agent'
+import { agentPresetProjectionDefinition } from '@reevo/dsh-agent-preset-registry'
+import SessionStore, { SESSION_FORMAT_VERSION, type SessionId } from '@reevo/dsh-session'
+import type { SessionHeader } from '@reevo/dsh-session'
+import { SessionAlreadyOwnedError } from '@reevo/dsh-session-persistence'
+import type { SessionObservation } from '@reevo/dsh-session-query'
+import TypertRegistry from '@reevo/dsh-typert-registry'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 import {
   ApiSessionAgentController,
   ApiSessionCwdConflict,
 } from '../src/agent.ts'
 import { installSessionReadTestServices, testSessionPersistence } from './test-remote.ts'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 
 const roots: Context[] = []
 

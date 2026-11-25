@@ -6,7 +6,7 @@ import { Context } from '@deepseek-ai/cordis'
 import Include from '@deepseek-ai/cordis-plugin-include'
 import Loader from '@deepseek-ai/cordis-plugin-loader'
 import { afterEach, describe, expect, it } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import WebhookRuntime, {
   type WebhookDeliveryId,
   type WebhookRuleId,
@@ -29,7 +29,7 @@ describe('real Loader composition', () => {
     const configPath = join(root, 'cordis.yml')
     await writeFile(configPath, [
       '- name: fixture-dependencies',
-      "- name: '@deepseek-ai/dsh-webhook'",
+      "- name: '@reevo/dsh-webhook'",
       '- name: fixture-rule',
       '',
     ].join('\n'))
@@ -66,7 +66,7 @@ describe('real Loader composition', () => {
     context.loader.builtins.include = Include
     const modules = new Map<string, unknown>([
       ['fixture-dependencies', dependencies],
-      ['@deepseek-ai/dsh-webhook', WebhookRuntime],
+      ['@reevo/dsh-webhook', WebhookRuntime],
       ['fixture-rule', rule],
     ])
     context.loader.internal = {

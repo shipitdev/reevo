@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { contextMenuHook } from '@deepseek-ai/dsh-client-test-runtime'
+import { contextMenuHook } from '@reevo/dsh-client-test-runtime'
 /**
  * Scenario-chain integration (scenarios A/C/D/H/I): the real per-session
  * InputTriggerController pipeline over a real session scope (Client Sessions over
@@ -10,28 +10,28 @@ import { contextMenuHook } from '@deepseek-ai/dsh-client-test-runtime'
  * decision-table contract at the `InputTriggerSource` boundary.
  */
 import './control-row-dom.ts'
-import type { GlobalStandardProps } from '@deepseek-ai/dsh-client-ui-slots'
+import type { GlobalStandardProps } from '@reevo/dsh-client-ui-slots'
 import { afterEach, describe, expect, it, onTestFinished, vi } from 'vitest'
 import { act, cleanup, fireEvent, render } from '@testing-library/react'
 import {
   $createTextNode, $getRoot, $isElementNode, BEFORE_INPUT_COMMAND, COMMAND_PRIORITY_LOW, DELETE_CHARACTER_COMMAND,
   UNDO_COMMAND,
 } from 'lexical'
-import type { SessionSnapshot } from '@deepseek-ai/dsh-api-session-controller/client'
-import { createSnapshotStore } from '@deepseek-ai/dsh-client-store'
-import { InputTriggerService } from '@deepseek-ai/dsh-client-ui-input-trigger/client'
+import type { SessionSnapshot } from '@reevo/dsh-api-session-controller/client'
+import { createSnapshotStore } from '@reevo/dsh-client-store'
+import { InputTriggerService } from '@reevo/dsh-client-ui-input-trigger/client'
 import type {
   ClientSessionContext, SubmitEnvelope,
-} from '@deepseek-ai/dsh-client-ui-input-trigger/client'
+} from '@reevo/dsh-client-ui-input-trigger/client'
 import type {
   CommandClaim, PickOutcome, SubmitAttachment, SubmitOutcome,
 } from '../src/client/contract/input.ts'
 import {
   allowAllAccess, bindSnapshotSelector, conversationSnapshot, makeTranslate, sessionSnapshot, SlotTestRuntime,
-} from '@deepseek-ai/dsh-client-test-runtime'
-import type { SessionStatusSnapshot } from '@deepseek-ai/dsh-client-ui-session-status/client'
-import type { SessionId } from '@deepseek-ai/dsh-session/types'
-import { zh as commonZh } from '@deepseek-ai/dsh-client-locale/src/locales/zh.ts'
+} from '@reevo/dsh-client-test-runtime'
+import type { SessionStatusSnapshot } from '@reevo/dsh-client-ui-session-status/client'
+import type { SessionId } from '@reevo/dsh-session/types'
+import { zh as commonZh } from '@reevo/dsh-client-locale/src/locales/zh.ts'
 import type { DraftAttachmentId } from '../src/client/contract/input.ts'
 import { SessionInputShell } from '../src/client/input/facade.ts'
 import { $replaceDetectSpanWithText } from '../src/client/input/editor/span-map.ts'

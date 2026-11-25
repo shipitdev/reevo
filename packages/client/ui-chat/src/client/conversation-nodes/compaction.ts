@@ -1,8 +1,8 @@
 import type { Context } from '@deepseek-ai/cordis'
 import type {
   CompactionSummaryNode, ConversationMatch, ConversationNodeContext, ConversationNodeDefinition,
-} from '@deepseek-ai/dsh-client-ui-conversation/client'
-import type {} from '@deepseek-ai/dsh-compaction/types'
+} from '@reevo/dsh-client-ui-conversation/client'
+import type {} from '@reevo/dsh-compaction/types'
 import { chatNode, contextLocation } from './common.ts'
 import { compactSource, compactSummary, updateCompactionState } from './command.ts'
 

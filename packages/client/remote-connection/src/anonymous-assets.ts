@@ -1,6 +1,6 @@
 /** Public pairing script served before the authenticated application loads. */
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-host-webserver'
+import type {} from '@reevo/dsh-host-webserver'
 import { renderPairingScript } from './anonymous/index.ts'
 import type { PairingRecovery } from './anonymous/pairing.ts'
 

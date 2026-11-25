@@ -5,9 +5,9 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execa } from 'execa'
 import { describe, expect, it, onTestFinished } from 'vitest'
-import { runLoaderSmoke } from '@deepseek-ai/dsh-loader-smoke'
-import { parseSessionLog } from '@deepseek-ai/dsh-llm-replay'
-import type { SessionEvent } from '@deepseek-ai/dsh-session'
+import { runLoaderSmoke } from '@reevo/dsh-loader-smoke'
+import { parseSessionLog } from '@reevo/dsh-llm-replay'
+import type { SessionEvent } from '@reevo/dsh-session'
 import { officeCalls, officeModelPatches, officeToolPatches } from './fixtures/real-office.ts'
 
 const repo = fileURLToPath(new URL('../../../../', import.meta.url))
@@ -80,9 +80,9 @@ describe.skipIf(!process.env.DEEPSEEK_API_KEY || !runtime).each(['native', 'ptc'
         await execa(python!, ['-c', seed, kind], { cwd })
         original = await readFile(join(cwd, 'input.xlsx'))
         await writeFile(configPath, JSON.stringify([
-          { insert: [{ id: 'skill-office', name: '@deepseek-ai/dsh-skill-office', config: { assetRoot } }] },
+          { insert: [{ id: 'skill-office', name: '@reevo/dsh-skill-office', config: { assetRoot } }] },
           ...officeToolPatches(),
-          { insert: [{ id: 'workspace-dependencies', name: '@deepseek-ai/dsh-tool-workspace-dependencies', config: { source: runtime! } }] },
+          { insert: [{ id: 'workspace-dependencies', name: '@reevo/dsh-tool-workspace-dependencies', config: { source: runtime! } }] },
           ...officeModelPatches(),
           { id: 'attachment-local', config: { dshHome: imageRoot } },
           { id: 'session-persistence-jsonl', config: { root: sessionRoot, compression: 'none' } },

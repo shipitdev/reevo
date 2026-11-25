@@ -5,7 +5,7 @@ import { dirname, join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
 import type { Converter, RenderImagesRequest, RenderImagesResult, RenderedImage } from '@deepseek-ai/libreoffice-kit'
 import { afterEach, beforeEach, expect, it, onTestFinished, vi } from 'vitest'
-import { brandString } from '@deepseek-ai/dsh-brand'
+import { brandString } from '@reevo/dsh-brand'
 import OfficeKit, { Config, type OfficeSourceKey, type OfficeKitSource, type OfficeImagesRequest } from '../src/index.ts'
 
 const kit = vi.hoisted(() => ({ create: vi.fn<() => Promise<Converter>>() }))

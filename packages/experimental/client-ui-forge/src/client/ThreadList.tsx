@@ -5,9 +5,9 @@
  */
 
 import { useLayoutEffect, useMemo, useRef, type KeyboardEvent, type ReactNode } from 'react'
-import { IconChevronLeftOutlineRegular, IconCloseOutlineRegular, IconRightUpOutlineRegular, Tag, Tooltip } from '@deepseek-ai/dsh-client-ui-primitives'
-import type { PropsLocale } from '@deepseek-ai/dsh-client-ui-slots'
-import type { ForgeReviewThread } from '@deepseek-ai/dsh-experimental-forge/types'
+import { IconChevronLeftOutlineRegular, IconCloseOutlineRegular, IconRightUpOutlineRegular, Tag, Tooltip } from '@reevo/dsh-client-ui-primitives'
+import type { PropsLocale } from '@reevo/dsh-client-ui-slots'
+import type { ForgeReviewThread } from '@reevo/dsh-experimental-forge/types'
 import type { ForgeDiffFile } from '../types.ts'
 import { FileLabel } from './FileLabel.tsx'
 import { SegmentedChoice } from './ReviewControls.tsx'

@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-ui-file-actions",
+  "name": "@reevo/dsh-client-ui-file-actions",
   "description": "Original-file saving and image clipboard actions for Web and Desktop",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -32,10 +32,10 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-client-locale",
-        "@deepseek-ai/dsh-client-ui-context-menu",
-        "@deepseek-ai/dsh-api-workspace-files",
-        "@deepseek-ai/dsh-api-session-controller"
+        "@reevo/dsh-client-locale",
+        "@reevo/dsh-client-ui-context-menu",
+        "@reevo/dsh-api-workspace-files",
+        "@reevo/dsh-api-session-controller"
       ],
       "platform": "web"
     }
@@ -49,21 +49,21 @@
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
-    "@deepseek-ai/dsh-brand": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
     "react": "^18.2.0",
-    "@deepseek-ai/dsh-client-ui-primitives": "workspace:*",
+    "@reevo/dsh-client-ui-primitives": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-client-ui-slots": "workspace:*",
-    "@deepseek-ai/dsh-api-session-controller": "workspace:*",
-    "@deepseek-ai/dsh-client-test-runtime": "workspace:*",
-    "@deepseek-ai/dsh-util-file-drag": "workspace:*",
-    "@deepseek-ai/dsh-client-locale": "workspace:*",
-    "@deepseek-ai/dsh-client-ui-context-menu": "workspace:*",
-    "@deepseek-ai/dsh-api-workspace-files": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-util-workspace-path": "workspace:*",
+    "@reevo/dsh-client-ui-slots": "workspace:*",
+    "@reevo/dsh-api-session-controller": "workspace:*",
+    "@reevo/dsh-client-test-runtime": "workspace:*",
+    "@reevo/dsh-util-file-drag": "workspace:*",
+    "@reevo/dsh-client-locale": "workspace:*",
+    "@reevo/dsh-client-ui-context-menu": "workspace:*",
+    "@reevo/dsh-api-workspace-files": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-util-workspace-path": "workspace:*",
     "mime": "^4.1.0",
-    "@deepseek-ai/dsh-client-ui-renderer": "workspace:*"
+    "@reevo/dsh-client-ui-renderer": "workspace:*"
   },
   "files": [
     "locale/*.json",

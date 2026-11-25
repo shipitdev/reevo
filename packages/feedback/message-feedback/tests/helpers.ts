@@ -2,16 +2,16 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { Context } from '@deepseek-ai/cordis'
-import { brandString } from '@deepseek-ai/dsh-brand'
-import { createAssistantMessage, createUserMessage } from '@deepseek-ai/dsh-llm'
-import type { MessageId } from '@deepseek-ai/dsh-llm/types'
+import { brandString } from '@reevo/dsh-brand'
+import { createAssistantMessage, createUserMessage } from '@reevo/dsh-llm'
+import type { MessageId } from '@reevo/dsh-llm/types'
 import SessionStore, { SessionLogOffset,
   SESSION_FORMAT_VERSION,
   Session,
   type SessionId,
   type SessionEvent,
   type SessionHeader,
-} from '@deepseek-ai/dsh-session'
+} from '@reevo/dsh-session'
 import SessionPersistence, {
   SessionAlreadyExistsError,
   SessionHandleClosedError,
@@ -21,7 +21,7 @@ import SessionPersistence, {
   type SessionAccess,
   type SessionHandle,
   type SessionPersistenceSnapshot,
-} from '@deepseek-ai/dsh-session-persistence'
+} from '@reevo/dsh-session-persistence'
 import MessageFeedbackService from '../src/index.ts'
 
 export interface MessageFixture {

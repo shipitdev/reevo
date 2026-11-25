@@ -4,7 +4,7 @@ import { cp, lstat, mkdir, mkdtemp, readFile, readlink, rename, rm, stat, symlin
 import { dirname, isAbsolute, join } from 'node:path'
 import type { Context } from '@deepseek-ai/cordis'
 import z from '@deepseek-ai/schemastery'
-import { defineTool } from '@deepseek-ai/dsh-tools'
+import { defineTool } from '@reevo/dsh-tools'
 import { WorkspaceDependencyError } from './error.ts'
 
 export { WorkspaceDependencyError, type WorkspaceDependencyErrorCode } from './error.ts'

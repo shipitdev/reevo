@@ -3,7 +3,7 @@ window.__ModuleLoader__.load({
   id: '@fixture/remote-connection-extension',
   factory(require) {
     const { createElement: h, useState } = require('react')
-    const { Button, Checkbox } = require('@deepseek-ai/dsh-client-ui-primitives')
+    const { Button, Checkbox } = require('@reevo/dsh-client-ui-primitives')
     const stylesheet = `
       .remoteOptions_card {
         display: flex;

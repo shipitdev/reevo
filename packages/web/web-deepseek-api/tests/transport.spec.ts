@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import type { DeepSeekAuthCandidate } from '@deepseek-ai/dsh-deepseek-auth'
-import { WebError } from '@deepseek-ai/dsh-web'
+import { credentialRef } from '@reevo/dsh-credentials'
+import type { DeepSeekAuthCandidate } from '@reevo/dsh-deepseek-auth'
+import { WebError } from '@reevo/dsh-web'
 import { customGuidance } from './guidance.ts'
 import {
   dispatchDeepSeekWeb, hasDeepSeekWebCredential, isDeepSeekWebAuthReady, type DeepSeekWebAuthSource,

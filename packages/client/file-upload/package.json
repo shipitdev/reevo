@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-client-file-upload",
+  "name": "@reevo/dsh-client-file-upload",
   "description": "Agent-scoped browser file upload, streaming intake, and staged receipt service",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -41,7 +41,7 @@
   "dsh": {
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-api-remotes"
+        "@reevo/dsh-api-remotes"
       ],
       "platform": "web",
       "immediately": true
@@ -69,20 +69,20 @@
   ],
   "dependencies": {
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-brand": "workspace:*"
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~"
   },
   "devDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
-    "@deepseek-ai/dsh-commands": "workspace:*",
-    "@deepseek-ai/dsh-util-crypto": "workspace:*",
-    "@deepseek-ai/dsh-api-remotes": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-attachment": "workspace:*"
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-commands": "workspace:*",
+    "@reevo/dsh-util-crypto": "workspace:*",
+    "@reevo/dsh-api-remotes": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-attachment": "workspace:*"
   }
 }

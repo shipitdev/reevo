@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-plugin-manager",
+  "name": "@reevo/dsh-plugin-manager",
   "description": "Current-profile plugin and bundle management shared by dsh CLI, Web and agent tools",
   "version": "0.2.3-alpha.2",
   "publishConfig": {
@@ -72,64 +72,64 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@deepseek-ai/dsh-app-boot": "workspace:*",
-    "@deepseek-ai/dsh-atomic-write": "workspace:*",
-    "@deepseek-ai/dsh-official-bundles": "workspace:*",
+    "@reevo/dsh-app-boot": "workspace:*",
+    "@reevo/dsh-atomic-write": "workspace:*",
+    "@reevo/dsh-official-bundles": "workspace:*",
     "@deepseek-ai/schemastery": "workspace:~",
     "execa": "^10.0.1",
     "semver": "^7.8.5",
     "yaml": "^2.9.0",
     "zod": "4.6.6",
-    "@deepseek-ai/dsh-util-values": "workspace:*",
-    "@deepseek-ai/dsh-plugin-detail": "workspace:*",
-    "@deepseek-ai/dsh-timeout": "workspace:*",
+    "@reevo/dsh-util-values": "workspace:*",
+    "@reevo/dsh-plugin-detail": "workspace:*",
+    "@reevo/dsh-timeout": "workspace:*",
     "hosted-git-info": "^9.0.3"
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-host-plugin-inventory": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*",
-    "@deepseek-ai/dsh-hmr": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-user-approval": "workspace:*"
+    "@reevo/dsh-host-plugin-inventory": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-error": "workspace:*",
+    "@reevo/dsh-hmr": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-user-approval": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@deepseek-ai/dsh-hmr": {
+    "@reevo/dsh-hmr": {
       "optional": true
     },
-    "@deepseek-ai/dsh-user-approval": {
+    "@reevo/dsh-user-approval": {
       "optional": true
     }
   },
   "devDependencies": {
     "chokidar": "^4.0.3",
     "@types/semver": "^7.8.0",
-    "@deepseek-ai/dsh-package-manifest": "workspace:*",
+    "@reevo/dsh-package-manifest": "workspace:*",
     "@deepseek-ai/cordis": "workspace:~",
     "@deepseek-ai/cordis-plugin-loader": "workspace:~",
-    "@deepseek-ai/dsh-host-plugin-inventory": "workspace:*",
-    "@deepseek-ai/dsh-subprocess": "workspace:*",
-    "@deepseek-ai/dsh-typert-protocol": "workspace:*",
-    "@deepseek-ai/dsh-tool-executor-native": "workspace:*",
-    "@deepseek-ai/dsh-tool-testkit": "workspace:*",
-    "@deepseek-ai/dsh-tools": "workspace:*",
-    "@deepseek-ai/dsh-error": "workspace:*",
-    "@deepseek-ai/dsh-system-prompt": "workspace:*",
-    "@deepseek-ai/dsh-hmr": "workspace:*",
+    "@reevo/dsh-host-plugin-inventory": "workspace:*",
+    "@reevo/dsh-subprocess": "workspace:*",
+    "@reevo/dsh-typert-protocol": "workspace:*",
+    "@reevo/dsh-tool-executor-native": "workspace:*",
+    "@reevo/dsh-tool-testkit": "workspace:*",
+    "@reevo/dsh-tools": "workspace:*",
+    "@reevo/dsh-error": "workspace:*",
+    "@reevo/dsh-system-prompt": "workspace:*",
+    "@reevo/dsh-hmr": "workspace:*",
     "@deepseek-ai/cordis-plugin-timer": "workspace:~",
-    "@deepseek-ai/dsh-brand": "workspace:*",
-    "@deepseek-ai/dsh-sandbox-policy": "workspace:*",
-    "@deepseek-ai/dsh-agent": "workspace:*",
-    "@deepseek-ai/dsh-session": "workspace:*",
-    "@deepseek-ai/dsh-session-projection": "workspace:*",
-    "@deepseek-ai/dsh-sandbox": "workspace:*",
-    "@deepseek-ai/dsh-user-approval": "workspace:*",
-    "@deepseek-ai/dsh-client-connection": "workspace:*",
+    "@reevo/dsh-brand": "workspace:*",
+    "@reevo/dsh-sandbox-policy": "workspace:*",
+    "@reevo/dsh-agent": "workspace:*",
+    "@reevo/dsh-session": "workspace:*",
+    "@reevo/dsh-session-projection": "workspace:*",
+    "@reevo/dsh-sandbox": "workspace:*",
+    "@reevo/dsh-user-approval": "workspace:*",
+    "@reevo/dsh-client-connection": "workspace:*",
     "@types/hosted-git-info": "^3.0.5"
   }
 }

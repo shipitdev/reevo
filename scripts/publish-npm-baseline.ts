@@ -254,7 +254,7 @@ class WorkspacePackageSet {
       const isVendored = manifestPath.startsWith('vendor/')
       // Vendored packages are rescoped too (vendor/README.md), so publication
       // never carries an upstream name that would squat it on the registry.
-      if ((name !== '@reevo/cli' && name !== '@reevo/web' && name !== '@reevo/sdk' && !name.startsWith('@deepseek-ai/'))) {
+      if ((name !== '@reevo/cli' && name !== '@reevo/web' && name !== '@reevo/sdk' && !name.startsWith('@reevo/dsh-') && !name.startsWith('@deepseek-ai/'))) {
         throw new Error(`${manifestPath} must name an @deepseek-ai package`)
       }
       if (name === '@reevo/workspace') {
@@ -792,7 +792,7 @@ function parsePackedPackage(value: unknown, index: number): PackedPackage {
   if (origin !== 'harness' && origin !== 'vendor') {
     throw new Error(`invalid package origin in release manifest: ${JSON.stringify(origin)}`)
   }
-  if (origin === 'harness' && ((name !== '@reevo/cli' && name !== '@reevo/web' && name !== '@reevo/sdk' && !name.startsWith('@deepseek-ai/')) || name === '@reevo/workspace')) {
+  if (origin === 'harness' && ((name !== '@reevo/cli' && name !== '@reevo/web' && name !== '@reevo/sdk' && !name.startsWith('@reevo/dsh-') && !name.startsWith('@deepseek-ai/')) || name === '@reevo/workspace')) {
     throw new Error(`invalid package name in release manifest: ${name}`)
   }
   return {

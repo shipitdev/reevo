@@ -2,10 +2,10 @@
 
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { Context, type Fiber } from '@deepseek-ai/cordis'
-import { credentialRef } from '@deepseek-ai/dsh-credentials'
-import { Config } from '@deepseek-ai/dsh-mcp-client'
-import { probeServer } from '@deepseek-ai/dsh-mcp-client/src/probe.ts'
-import { McpTemplateBinding } from '@deepseek-ai/dsh-mcp-client/src/credentials.ts'
+import { credentialRef } from '@reevo/dsh-credentials'
+import { Config } from '@reevo/dsh-mcp-client'
+import { probeServer } from '@reevo/dsh-mcp-client/src/probe.ts'
+import { McpTemplateBinding } from '@reevo/dsh-mcp-client/src/credentials.ts'
 import { TestCredentials } from './credential-fixture.ts'
 import { startHttpMcpFixture } from './http-fixture.ts'
 

@@ -6,11 +6,11 @@ import * as ReactDomClient from 'react-dom/client'
 import * as Cordis from '@deepseek-ai/cordis'
 import * as Zod from 'zod'
 import * as ReactVirtual from '@tanstack/react-virtual'
-import * as ClientStore from '@deepseek-ai/dsh-client-store'
-import * as UiSlots from '@deepseek-ai/dsh-client-ui-slots'
-import * as UiPrimitives from '@deepseek-ai/dsh-client-ui-primitives'
-import * as UiDockkit from '@deepseek-ai/dsh-client-ui-dockkit'
-import type { DshClientModuleManifest } from '@deepseek-ai/dsh-package-manifest'
+import * as ClientStore from '@reevo/dsh-client-store'
+import * as UiSlots from '@reevo/dsh-client-ui-slots'
+import * as UiPrimitives from '@reevo/dsh-client-ui-primitives'
+import * as UiDockkit from '@reevo/dsh-client-ui-dockkit'
+import type { DshClientModuleManifest } from '@reevo/dsh-package-manifest'
 import { STATIC_MODULE_MANIFEST_EXPORT, type PlatformModule } from './platform.ts'
 
 /** Read the manifest a `staticLinked` library exports beside its ordinary exports. */
@@ -42,9 +42,9 @@ export function getStaticModules(): readonly DshClientModuleManifest[] {
     '@deepseek-ai/cordis': platform('@deepseek-ai/cordis', Cordis),
     'zod': platform('zod', Zod),
     '@tanstack/react-virtual': platform('@tanstack/react-virtual', ReactVirtual),
-    '@deepseek-ai/dsh-client-store': compiledModule('@deepseek-ai/dsh-client-store', ClientStore),
-    '@deepseek-ai/dsh-client-ui-slots': compiledModule('@deepseek-ai/dsh-client-ui-slots', UiSlots),
-    '@deepseek-ai/dsh-client-ui-primitives': compiledModule('@deepseek-ai/dsh-client-ui-primitives', UiPrimitives),
-    '@deepseek-ai/dsh-client-ui-dockkit': compiledModule('@deepseek-ai/dsh-client-ui-dockkit', UiDockkit),
+    '@reevo/dsh-client-store': compiledModule('@reevo/dsh-client-store', ClientStore),
+    '@reevo/dsh-client-ui-slots': compiledModule('@reevo/dsh-client-ui-slots', UiSlots),
+    '@reevo/dsh-client-ui-primitives': compiledModule('@reevo/dsh-client-ui-primitives', UiPrimitives),
+    '@reevo/dsh-client-ui-dockkit': compiledModule('@reevo/dsh-client-ui-dockkit', UiDockkit),
   } satisfies Record<PlatformModule, DshClientModuleManifest>)
 }

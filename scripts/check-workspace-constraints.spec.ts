@@ -24,18 +24,18 @@ import {
 } from './check-workspace-constraints.ts'
 
 const legacyManifests = LEGACY_PREFIXED_EXPERIMENTAL_PACKAGE_DIRECTORIES
-  .map(dir => ({ dir, manifest: { name: dir.replace('packages/experimental/', '@deepseek-ai/dsh-experimental-') } }))
+  .map(dir => ({ dir, manifest: { name: dir.replace('packages/experimental/', '@reevo/dsh-experimental-') } }))
 
 const experimental = {
   dir: LEGACY_PREFIXED_EXPERIMENTAL_PACKAGE_DIRECTORIES[0]!,
   manifest: {
-    name: '@deepseek-ai/dsh-experimental-prototype',
+    name: '@reevo/dsh-experimental-prototype',
     publishConfig: { access: 'public' },
   },
 } satisfies WorkspaceManifest
 
 describe('workspace dependency ranges', () => {
-  const dependency = { dir: 'packages/core/runtime', manifest: { name: '@deepseek-ai/dsh-runtime' } }
+  const dependency = { dir: 'packages/core/runtime', manifest: { name: '@reevo/dsh-runtime' } }
   const cli = { dir: 'apps/cli', manifest: { name: '@reevo/cli' } }
   const vendor = { dir: 'vendor/cordis', manifest: { name: '@deepseek-ai/cordis' } }
   const native = { dir: 'native/system', manifest: { name: '@deepseek-ai/node-addon-system' } }
@@ -55,7 +55,7 @@ describe('workspace dependency ranges', () => {
         })
         const check = (name: string, range: string): string[] =>
           checkWorkspaceProtocol([dependency, cli, vendor, native, platform, unrelated, consumer(name, range)])
-        for (const name of ['@reevo/cli', '@deepseek-ai/dsh-runtime']) {
+        for (const name of ['@reevo/cli', '@reevo/dsh-runtime']) {
           expect(check(name, 'workspace:*')).toEqual([])
           for (const range of ['workspace:^', 'workspace:~', 'workspace:^0.1.7', '^0.1.7', '*']) {
             expect(check(name, range)).toEqual([
@@ -95,13 +95,13 @@ describe('workspace manifest discovery', () => {
     for (const dir of [...consumers, 'tools/excluded', 'unlisted/probe', 'packages/core/runtime']) {
       mkdirSync(join(root, dir), { recursive: true })
       writeFileSync(join(root, dir, 'package.json'), JSON.stringify(dir === 'packages/core/runtime'
-        ? { name: '@deepseek-ai/dsh-runtime' }
-        : { dependencies: { '@deepseek-ai/dsh-runtime': 'workspace:^' } }))
+        ? { name: '@reevo/dsh-runtime' }
+        : { dependencies: { '@reevo/dsh-runtime': 'workspace:^' } }))
     }
     const manifests = readWorkspaceManifests(root)
     expect(manifests.map(entry => entry.dir).sort()).toEqual([...consumers, 'packages/core/runtime'].sort())
     expect(checkWorkspaceProtocol(manifests).sort()).toEqual(consumers.map(dir =>
-      `${dir}: dependencies.@deepseek-ai/dsh-runtime must use workspace:*, got workspace:^`).sort())
+      `${dir}: dependencies.@reevo/dsh-runtime must use workspace:*, got workspace:^`).sort())
   })
 
   it.each(['', 'null', '{}', 'packages: []', 'packages: [false]', 'packages: [""]', 'packages: wrong'])(
@@ -125,9 +125,9 @@ describe('experimental workspace constraints', () => {
   it('requires an unprefixed name to have a directory entry', () => {
     expect(checkExperimentalManifest({
       ...experimental,
-      manifest: { ...experimental.manifest, name: '@deepseek-ai/dsh-prototype' },
+      manifest: { ...experimental.manifest, name: '@reevo/dsh-prototype' },
     })).toEqual([
-      '@deepseek-ai/dsh-prototype: experimental package name must be declared for this directory in EXPERIMENTAL_PACKAGE_NAME_EXCEPTIONS (scripts/experimental-package-policy.ts)',
+      '@reevo/dsh-prototype: experimental package name must be declared for this directory in EXPERIMENTAL_PACKAGE_NAME_EXCEPTIONS (scripts/experimental-package-policy.ts)',
     ])
   })
 
@@ -139,7 +139,7 @@ describe('experimental workspace constraints', () => {
 
   it('rejects the legacy prefix outside the legacy directory list', () => {
     expect(checkExperimentalManifest({ ...experimental, dir: 'packages/experimental/prototype' })).toEqual([
-      '@deepseek-ai/dsh-experimental-prototype: new experimental packages must not use the "@deepseek-ai/dsh-experimental-" prefix; name it @deepseek-ai/dsh-<name> and declare it in EXPERIMENTAL_PACKAGE_NAME_EXCEPTIONS (scripts/experimental-package-policy.ts)',
+      '@reevo/dsh-experimental-prototype: new experimental packages must not use the "@reevo/dsh-experimental-" prefix; name it @reevo/dsh-<name> and declare it in EXPERIMENTAL_PACKAGE_NAME_EXCEPTIONS (scripts/experimental-package-policy.ts)',
     ])
   })
 
@@ -154,7 +154,7 @@ describe('experimental workspace constraints', () => {
     const [first, ...rest] = manifests
     for (const invalid of [
       rest,
-      [{ ...first!, manifest: { name: '@deepseek-ai/dsh-experimental-replacement' } }, ...rest],
+      [{ ...first!, manifest: { name: '@reevo/dsh-experimental-replacement' } }, ...rest],
       [{ ...first!, dir: 'packages/core/replacement' }, ...rest],
       [...manifests, { ...first!, dir: 'packages/experimental/duplicate' }],
     ]) expect(checkExperimentalNameExceptions([...invalid, ...legacyManifests])).toEqual([expect.stringContaining(first!.manifest.name)])
@@ -163,7 +163,7 @@ describe('experimental workspace constraints', () => {
   it('rejects a legacy directory without a prefixed package', () => {
     const unprefixed = Object.entries(EXPERIMENTAL_PACKAGE_NAME_EXCEPTIONS).map(([dir, name]) => ({ dir, manifest: { name } }))
     const others = legacyManifests.filter(entry => entry.dir !== experimental.dir)
-    for (const invalid of [others, [...others, { dir: experimental.dir, manifest: { name: '@deepseek-ai/dsh-renamed' } }]]) {
+    for (const invalid of [others, [...others, { dir: experimental.dir, manifest: { name: '@reevo/dsh-renamed' } }]]) {
       expect(checkExperimentalNameExceptions([...unprefixed, ...invalid]))
         .toEqual([`${experimental.dir}: remove this directory from LEGACY_PREFIXED_EXPERIMENTAL_PACKAGE_DIRECTORIES; no package with the legacy prefix lives here`])
     }
@@ -183,8 +183,8 @@ describe('experimental workspace constraints', () => {
       ...experimental,
       manifest: { name: experimental.manifest.name, private: true },
     })).toEqual([
-      '@deepseek-ai/dsh-experimental-prototype: public experimental package must not set "private": true',
-      '@deepseek-ai/dsh-experimental-prototype: public experimental package must set publishConfig.access to "public"',
+      '@reevo/dsh-experimental-prototype: public experimental package must not set "private": true',
+      '@reevo/dsh-experimental-prototype: public experimental package must set publishConfig.access to "public"',
     ])
   })
 
@@ -223,28 +223,28 @@ describe('experimental workspace constraints', () => {
       expect(checkExperimentalDependencyIsolation([experimental, {
         dir: 'packages/core/consumer',
         manifest: {
-          name: '@deepseek-ai/dsh-consumer',
-          [section]: { '@deepseek-ai/dsh-experimental-prototype': 'workspace:^' },
+          name: '@reevo/dsh-consumer',
+          [section]: { '@reevo/dsh-experimental-prototype': 'workspace:^' },
         },
       }])).toEqual([
-        `@deepseek-ai/dsh-consumer: ${section}.@deepseek-ai/dsh-experimental-prototype must not reference an experimental package`,
+        `@reevo/dsh-consumer: ${section}.@reevo/dsh-experimental-prototype must not reference an experimental package`,
       ])
     },
   )
 
   it('allows the dsh installation to ship the optional bundles the launcher names, and nothing else experimental', () => {
-    const listed = { '@deepseek-ai/dsh-experimental-prototype': 'workspace:^' }
+    const listed = { '@reevo/dsh-experimental-prototype': 'workspace:^' }
     const installation = { dir: 'apps/cli', manifest: { name: '@reevo/cli', dependencies: listed } } satisfies WorkspaceManifest
-    expect(checkExperimentalDependencyIsolation([experimental, installation], ['@deepseek-ai/dsh-experimental-prototype'])).toEqual([])
+    expect(checkExperimentalDependencyIsolation([experimental, installation], ['@reevo/dsh-experimental-prototype'])).toEqual([])
     expect(checkExperimentalDependencyIsolation([experimental, installation], [])).toEqual([
-      '@reevo/cli: dependencies.@deepseek-ai/dsh-experimental-prototype must not reference an experimental package',
+      '@reevo/cli: dependencies.@reevo/dsh-experimental-prototype must not reference an experimental package',
     ])
     // Only a plain dependency edge is offered; a peer would make the bundle a requirement of every consumer.
     expect(checkExperimentalDependencyIsolation([experimental, {
       dir: 'apps/cli',
       manifest: { name: '@reevo/cli', peerDependencies: listed },
-    }], ['@deepseek-ai/dsh-experimental-prototype'])).toEqual([
-      '@reevo/cli: peerDependencies.@deepseek-ai/dsh-experimental-prototype must not reference an experimental package',
+    }], ['@reevo/dsh-experimental-prototype'])).toEqual([
+      '@reevo/cli: peerDependencies.@reevo/dsh-experimental-prototype must not reference an experimental package',
     ])
   })
 
@@ -252,25 +252,25 @@ describe('experimental workspace constraints', () => {
     const manifests: WorkspaceManifest[] = [experimental, {
       dir: 'packages/core/test-only',
       manifest: {
-        name: '@deepseek-ai/dsh-test-only',
-        devDependencies: { '@deepseek-ai/dsh-experimental-prototype': 'workspace:^' },
+        name: '@reevo/dsh-test-only',
+        devDependencies: { '@reevo/dsh-experimental-prototype': 'workspace:^' },
       },
     }, {
       dir: 'packages/experimental/consumer',
       manifest: {
-        name: '@deepseek-ai/dsh-experimental-consumer',
-        dependencies: { '@deepseek-ai/dsh-experimental-prototype': 'workspace:^' },
+        name: '@reevo/dsh-experimental-consumer',
+        dependencies: { '@reevo/dsh-experimental-prototype': 'workspace:^' },
       },
     }, {
       dir: 'python/sdk-runtime',
       manifest: {
-        name: '@deepseek-ai/dsh-python-runtime',
-        dependencies: { '@deepseek-ai/dsh-experimental-prototype': 'workspace:^' },
+        name: '@reevo/dsh-python-runtime',
+        dependencies: { '@reevo/dsh-experimental-prototype': 'workspace:^' },
       },
     }]
 
     expect(checkExperimentalDependencyIsolation(manifests)).toEqual([
-      '@deepseek-ai/dsh-python-runtime: dependencies.@deepseek-ai/dsh-experimental-prototype must not reference an experimental package',
+      '@reevo/dsh-python-runtime: dependencies.@reevo/dsh-experimental-prototype must not reference an experimental package',
     ])
   })
 })
@@ -278,9 +278,9 @@ describe('experimental workspace constraints', () => {
 describe('dsh family version coherence', () => {
   it('rejects a package carrying a stale shared version', () => {
     expect(checkDshFamilyVersion(
-      { name: '@deepseek-ai/dsh-http-proxy', version: '0.1.2-alpha.5' },
+      { name: '@reevo/dsh-http-proxy', version: '0.1.2-alpha.5' },
       '0.1.2-rc.1',
-    )).toBe('@deepseek-ai/dsh-http-proxy: package.json version must match root version 0.1.2-rc.1')
+    )).toBe('@reevo/dsh-http-proxy: package.json version must match root version 0.1.2-rc.1')
   })
 
   it('rejects the root-named CLI app on a stale shared version', () => {
@@ -292,7 +292,7 @@ describe('dsh family version coherence', () => {
 
   it('accepts a manifest carrying the shared version', () => {
     expect(checkDshFamilyVersion(
-      { name: '@deepseek-ai/dsh-http-proxy', version: '0.1.2-rc.1' },
+      { name: '@reevo/dsh-http-proxy', version: '0.1.2-rc.1' },
       '0.1.2-rc.1',
     )).toBeUndefined()
   })
@@ -342,7 +342,7 @@ describe('package payload constraints', () => {
     { exports: { './locale/*.json': './locale/*.json', './search/locale/*.json': './locale/*.json' }, resources: ['locale/*.json'] },
     { exports: { './search/locale/*.json': './z/*.json', './locale/*.json': './a/*.json' }, resources: ['a/*.json', 'z/*.json'] },
   ])('includes declared locale resources in the canonical payload: $exports', ({ exports, resources }) => {
-    expect(expectedDshPackageFiles({ name: '@deepseek-ai/dsh-localized', exports })).toEqual([
+    expect(expectedDshPackageFiles({ name: '@reevo/dsh-localized', exports })).toEqual([
       ...resources, 'lib/index.js', 'lib/types/**/*.d.ts', 'lib/types/**/*.d.ts.map', 'lib/**/*.js.map', 'src',
     ])
   })
@@ -470,7 +470,7 @@ describe('package payload constraints', () => {
 
   it('includes a declared profile patch without a package-name allowlist', () => {
     expect(expectedDshPackageFiles({
-      name: '@deepseek-ai/dsh-private-profile',
+      name: '@reevo/dsh-private-profile',
       dsh: { bundle: { patch: './cordis.patch.yml' } },
     })).toEqual([
       'lib/index.js',
@@ -481,7 +481,7 @@ describe('package payload constraints', () => {
       'src',
     ])
     expect(expectedDshPackageFiles({
-      name: '@deepseek-ai/dsh-private-profile',
+      name: '@reevo/dsh-private-profile',
       dsh: { bundle: { patch: ['./cordis.patch.yml', './layers/web.patch.yml'] } },
     })).toEqual([
       'lib/index.js',
@@ -531,7 +531,7 @@ describe('package payload constraints', () => {
   it('rejects a package-asset export whose payload omits the built assets', () => {
     const dir = 'packages/client/probe'
     const manifest = {
-      name: '@deepseek-ai/dsh-client-probe',
+      name: '@reevo/dsh-client-probe',
       type: 'module',
       main: 'lib/index.js',
       types: 'lib/types/index.d.ts',
@@ -548,7 +548,7 @@ describe('package payload constraints', () => {
       checkWorkspaceManifest({ dir, manifest: candidate }).filter(error => error.includes('package.json files must be'))
     expect(payloadErrors(manifest)).toEqual([])
     expect(payloadErrors({ ...manifest, files: manifest.files.filter(file => file !== 'lib/assets') })).toEqual([
-      expect.stringContaining('@deepseek-ai/dsh-client-probe: package.json files must be '
+      expect.stringContaining('@reevo/dsh-client-probe: package.json files must be '
         + '["lib/index.js","lib/client.js","lib/assets","lib/types/**/*.d.ts","lib/types/**/*.d.ts.map","lib/**/*.js.map","src"]'),
     ])
   })

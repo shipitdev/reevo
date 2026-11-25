@@ -3,7 +3,7 @@ description: "二维码登录、私密登录链接和 owner 审批的浏览器�
 kind: "package-reference"
 ---
 
-# @deepseek-ai/dsh-client-remote-connection
+# @reevo/dsh-client-remote-connection
 
 [English](README.md) | 中文
 
@@ -90,9 +90,9 @@ owner 的审批返回 `approved`、`denied` 或 `unavailable` 后，卡片先从
 
 ```ts client
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
+import type {} from '@reevo/dsh-client-ui-renderer/client'
 import type { FunctionComponent } from 'react'
-import type { RemoteConnectionExtensionProps } from '@deepseek-ai/dsh-client-remote-connection/client'
+import type { RemoteConnectionExtensionProps } from '@reevo/dsh-client-remote-connection/client'
 
 declare const ConnectionOptions: FunctionComponent<RemoteConnectionExtensionProps>
 
@@ -116,9 +116,9 @@ export function apply(ctx: Context): void {
 
 ```ts client
 import type { Context } from '@deepseek-ai/cordis'
-import type {} from '@deepseek-ai/dsh-client-ui-renderer/client'
+import type {} from '@reevo/dsh-client-ui-renderer/client'
 import type { FunctionComponent } from 'react'
-import type { RemoteConnectionContentProps } from '@deepseek-ai/dsh-client-remote-connection/client'
+import type { RemoteConnectionContentProps } from '@reevo/dsh-client-remote-connection/client'
 
 declare const CustomPanel: FunctionComponent<RemoteConnectionContentProps>
 
