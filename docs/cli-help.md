@@ -23,11 +23,11 @@ Run `pnpm run gen-cli-help` to regenerate; run `pnpm run verify-cli-help` to che
 Invocations: `dsh --help`
 
 ```text
-Usage: dsh [--profile] <name> [options] [app-args...]
+Usage: reevo [--profile] <name> [options] [app-args...]
        dsh plugin --profile <name> <pnpm-args...>
 
-dsh: boot a DeepSeek Harness profile — an ordered stack of plugin-bundle patch
-layers under your own overrides.
+reevo: boot a Reevo profile — an ordered stack of plugin-bundle patch layers
+under your own overrides.
 
 Arguments:
   args                           arguments for the booted profile's app (see:
@@ -47,14 +47,14 @@ Options:
                                  or --patch overlays and exit
 
 Examples:
-  dsh web                                   boot the web profile (same as: dsh --profile web)
-  dsh rescue --from-default-profile web
+  reevo web                                   boot the web profile (same as: reevo --profile web)
+  reevo rescue --from-default-profile web
                                             recreate rescue from the shipped web template, then boot it
-  dsh headless "run the tests"              answer one task, print the result, and exit
-  dsh tui --patch ./extra.yml               boot a custom profile with one extra overlay
-  dsh tui --resume <session>                arguments after the launcher flags reach the app
-  dsh web --help                            the web app's own flags and help
-  dsh plugin --profile tui add <package>    install a plugin into the tui profile
+  reevo headless "run the tests"              answer one task, print the result, and exit
+  reevo tui --patch ./extra.yml               boot a custom profile with one extra overlay
+  reevo tui --resume <session>                arguments after the launcher flags reach the app
+  reevo web --help                            the web app's own flags and help
+  reevo plugin --profile tui add <package>    install a plugin into the tui profile
 
 ```
 
@@ -64,7 +64,7 @@ Examples:
 Invocations: `dsh plugin --help`
 
 ```text
-Usage: dsh plugin [options] [args...]
+Usage: reevo plugin [options] [args...]
 
 manage a profile's plugins by forwarding the remaining arguments to pnpm in the
 profile directory
