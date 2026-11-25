@@ -106,7 +106,7 @@ export async function launchRemoteConnectionFixture(secure: boolean, ticketLifet
       processHandle.stderr.setEncoding('utf8')
       processHandle.stdout.on('data', (chunk: string) => {
         output += chunk
-        const published = /dsh web: (https?:\/\/qr-login\.test:\d+\/[^\s]*)/.exec(output)?.[1]
+        const published = /reevo web: (https?:\/\/qr-login\.test:\d+\/[^\s]*)/.exec(output)?.[1]
         if (published !== undefined) settle(published)
       })
       processHandle.stderr.on('data', (chunk: string) => { output += chunk })

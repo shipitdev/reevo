@@ -78,7 +78,7 @@ describe('web-app runtime glue', () => {
     const log = vi.spyOn(console, 'log').mockImplementation(() => {})
     const open = vi.spyOn(internals, 'openBrowser').mockResolvedValue(undefined)
     ctx.on('webserver/entry-url', (baseUrl, entries) => {
-      entries.push({ label: 'dsh web', url: `${baseUrl}/?token=fixture`, open: true })
+      entries.push({ label: 'reevo web', url: `${baseUrl}/?token=fixture`, open: true })
     })
     const config = enabled ? new Config() : new Config({ surfaceContext: false, printUrl: false, openBrowser: false })
     expect(config).toMatchObject({ printUrl: enabled, openBrowser: enabled })
@@ -86,7 +86,7 @@ describe('web-app runtime glue', () => {
     expect(log).toHaveBeenCalledTimes(enabled ? 2 : 0)
     expect(open).toHaveBeenCalledTimes(enabled ? 1 : 0)
     if (enabled) {
-      expect(log).toHaveBeenCalledWith('dsh web: http://127.0.0.1:4567/?token=fixture')
+      expect(log).toHaveBeenCalledWith('reevo web: http://127.0.0.1:4567/?token=fixture')
       expect(open).toHaveBeenCalledWith('http://127.0.0.1:4567/?token=fixture', expect.any(AbortSignal))
       await open.mock.results[0]!.value
     }
@@ -147,7 +147,7 @@ describe('web-app runtime glue', () => {
     apply(ctx, new Config({ printUrl: false, openBrowser: false, surfaceContext: false }))
     expect(ctx.webApp.getAdvertisedUrl()).toBe(`http://${advertised}:4567`)
     expect(warn).toHaveBeenCalledExactlyOnceWith(
-      `dsh web: listening on ${bind} over plain HTTP; restrict this port to a trusted proxy or network`,
+      `reevo web: listening on ${bind} over plain HTTP; restrict this port to a trusted proxy or network`,
     )
   })
 

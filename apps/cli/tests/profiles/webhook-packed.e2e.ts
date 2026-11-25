@@ -78,7 +78,7 @@ export function apply(ctx) {
       child.stdout?.on('data', (chunk: Buffer) => {
         output += chunk.toString()
         const origin = /PACKED_WEBHOOK_READY=(http:\/\/127\.0\.0\.1:\d+)/.exec(output)?.[1]
-        if (origin !== undefined && output.includes('dsh web: ')) resolveReady(origin)
+        if (origin !== undefined && output.includes('reevo web: ')) resolveReady(origin)
       })
       void child.then((result) => {
         rejectReady(new Error(`Web profile exited before readiness:\n${result.stdout}\n${result.stderr}`))

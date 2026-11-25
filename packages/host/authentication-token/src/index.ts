@@ -151,6 +151,6 @@ export async function apply(ctx: Context, config: Config): Promise<void> {
     })
   })
   ctx.on('webserver/entry-url', (baseUrl, entries) => {
-    entries.push({ label: 'dsh web', url: auth.authenticatedUrl(baseUrl), open: true })
+    entries.push({ label: 'reevo web', url: auth.authenticatedUrl(baseUrl), open: true })
   })
 }

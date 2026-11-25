@@ -24,7 +24,7 @@ async function setup(options: { origin?: string; ssh?: 'SSH_CONNECTION' | 'SSH_T
   ctx.provide('webServer', server as WebServer)
   const baseUrl = () => options.origin ?? 'http://127.0.0.1:3080/'
   const auth = { authenticatedUrl: (url: string) => `${url}?token=fixture-token` }
-  const removeEntry = ctx.on('webserver/entry-url', (url, entries) => { entries.push({ label: 'dsh web', url: auth.authenticatedUrl(url), open: true }) })
+  const removeEntry = ctx.on('webserver/entry-url', (url, entries) => { entries.push({ label: 'reevo web', url: auth.authenticatedUrl(url), open: true }) })
   const log = vi.spyOn(console, 'log').mockImplementation(() => {})
   const error = vi.spyOn(console, 'error').mockImplementation(() => {})
   const open = vi.fn<(url: string) => Promise<void>>().mockResolvedValue(undefined)
@@ -45,8 +45,8 @@ it('prints and opens its authenticated advertised URL in order', async () => {
   publishStartup(ctx, { printUrl: true, openBrowser: true }, baseUrl)
   const expected = auth.authenticatedUrl('https://public.test/ui/')
   await vi.waitFor(() => { expect(events).toEqual([
-    `dsh web: ${expected}`,
-    'dsh web: opening the default browser; pass --no-open to disable',
+    `reevo web: ${expected}`,
+    'reevo web: opening the default browser; pass --no-open to disable',
     `open:${expected}`,
   ]) })
 })
@@ -61,7 +61,7 @@ it('keeps startup dormant when both flags are disabled', async () => {
 it.each(['SSH_CONNECTION', 'SSH_TTY'] as const)('prints without opening when %s marks SSH', async (ssh) => {
   const remote = await setup({ ssh })
   publishStartup(remote.ctx, { printUrl: true, openBrowser: true }, remote.baseUrl)
-  await vi.waitFor(() => { expect(remote.log).toHaveBeenCalledWith(`dsh web: ${remote.auth.authenticatedUrl('http://127.0.0.1:3080/')}`) })
+  await vi.waitFor(() => { expect(remote.log).toHaveBeenCalledWith(`reevo web: ${remote.auth.authenticatedUrl('http://127.0.0.1:3080/')}`) })
   expect(remote.open).not.toHaveBeenCalled()
 })
 
@@ -139,7 +139,7 @@ it('publishes after successful Loader settlement', async () => {
   expect(log).not.toHaveBeenCalled()
   gate.resolve(undefined)
   await vi.waitFor(() => { expect(open).toHaveBeenCalledOnce() })
-  expect(log).toHaveBeenCalledWith(`dsh web: ${auth.authenticatedUrl('http://127.0.0.1:3080/')}`)
+  expect(log).toHaveBeenCalledWith(`reevo web: ${auth.authenticatedUrl('http://127.0.0.1:3080/')}`)
 })
 
 it('collects an entry registered while application readiness is pending', async () => {
@@ -205,7 +205,7 @@ it.each([new Error('launcher unavailable'), 'launcher unavailable'])('reports op
   open.mockRejectedValue(failure)
   publishStartup(ctx, { printUrl: true, openBrowser: true }, baseUrl)
   await vi.waitFor(() => { expect(error).toHaveBeenCalledOnce() })
-  expect(error).toHaveBeenCalledWith('web-app: could not open the default browser because launcher unavailable; use the dsh web URL printed at startup')
+  expect(error).toHaveBeenCalledWith('web-app: could not open the default browser because launcher unavailable; use the reevo web URL printed at startup')
   expect(error.mock.calls.flat().join(' ')).not.toContain(new URL(auth.authenticatedUrl('http://localhost')).searchParams.get('token'))
 })
 
@@ -218,15 +218,15 @@ it('prints all contributed entries and opens only the first eligible entry', asy
     entries.push({ label: 'dsh remote', url: 'https://remote.test/invite', open: false })
   })
   ctx.on('webserver/entry-url', (_base, entries) => {
-    entries.push({ label: 'dsh web', url: 'https://web.test/?token=first', open: true })
+    entries.push({ label: 'reevo web', url: 'https://web.test/?token=first', open: true })
     entries.push({ label: 'dsh other', url: 'https://other.test/', open: true })
   })
   publishStartup(ctx, { printUrl: true, openBrowser: true }, baseUrl)
   expect(log.mock.calls.map(call => String(call[0]))).toEqual([
     'dsh remote: https://remote.test/invite',
-    'dsh web: https://web.test/?token=first',
+    'reevo web: https://web.test/?token=first',
     'dsh other: https://other.test/',
-    'dsh web: opening the default browser; pass --no-open to disable',
+    'reevo web: opening the default browser; pass --no-open to disable',
   ])
   expect(open).toHaveBeenCalledOnce()
   expect(open).toHaveBeenCalledWith('https://web.test/?token=first', expect.any(AbortSignal))

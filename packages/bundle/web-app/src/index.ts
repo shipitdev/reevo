@@ -205,7 +205,7 @@ export function apply(ctx: Context, config: Config): void {
     )
   }
   if (ctx.webServer.protocol === 'http:' && !isLoopbackHost(boundHost)) {
-    console.warn(`dsh web: listening on ${boundHost} over plain HTTP; restrict this port to a trusted proxy or network`)
+    console.warn(`reevo web: listening on ${boundHost} over plain HTTP; restrict this port to a trusted proxy or network`)
   }
   // The bind URL belongs to this host. Under SSH, the operator reaches it
   // through a local forwarding address that this process cannot derive.
@@ -242,11 +242,11 @@ export function apply(ctx: Context, config: Config): void {
       }
       const entry = entries.find(entry => entry.open)
       if (handoffBrowser && entry !== undefined) {
-        console.log('dsh web: opening the default browser; pass --no-open to disable')
+        console.log('reevo web: opening the default browser; pass --no-open to disable')
         opening = internals.openBrowser(entry.url, lifetime.signal).catch((error: unknown) => {
           if (lifetime.signal.aborted) return
           const reason = (error instanceof Error ? error.message : String(error)).replaceAll(entry.url, '[login URL]')
-          console.error(`web-app: could not open the default browser because ${reason}; use the dsh web URL printed at startup`)
+          console.error(`web-app: could not open the default browser because ${reason}; use the reevo web URL printed at startup`)
         })
       }
     }
@@ -255,7 +255,7 @@ export function apply(ctx: Context, config: Config): void {
     else {
       void settled.then(async () => {
         if (lifetime.signal.aborted) return
-        await auditStartupEntries(ctx[Context.root], 'dsh web', () => {})
+        await auditStartupEntries(ctx[Context.root], 'reevo web', () => {})
         announceReady()
       }).catch(() => {
         // The Loader/startup audit owns failure diagnostics; failed startup remains unpublished.
