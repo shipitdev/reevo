@@ -27,7 +27,7 @@ On Windows, the uninstaller normally removes the two application-data directorie
 sh -c '
 rm -rf -- \
   "$HOME/.dsh" \
-  "$HOME/Library/Application Support/@deepseek-ai/dsh-desktop" \
+  "$HOME/Library/Application Support/@reevo/desktop" \
   "$HOME/Library/Logs/DeepSeek Harness" \
   "$HOME/Library/Preferences/com.deepseek.dsh.plist" \
   "$HOME/Library/Preferences/ByHost"/com.deepseek.dsh.ShipIt.*.plist \

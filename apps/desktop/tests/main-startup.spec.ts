@@ -1455,14 +1455,14 @@ describe('desktop main startup', () => {
     vi.spyOn(harness.app, 'getLocale').mockReturnValue(locale)
     vi.spyOn(harness.app, 'getPreferredSystemLanguages').mockReturnValue([locale])
     const originalName = harness.app.name
-    harness.app.name = '@deepseek-ai/dsh-desktop'
+    harness.app.name = '@reevo/desktop'
     try {
       await import('../src/main.ts')
       await harness.preparing.promise
       const commands = applicationMenuItems().filter(item => item.visible !== false)
       await expect(JSON.stringify(commands, null, 2) + '\n')
         .toMatchFileSnapshot(`./expected/application-menu-${locale}.json`)
-      expect(harness.app.name).toBe('@deepseek-ai/dsh-desktop')
+      expect(harness.app.name).toBe('@reevo/desktop')
     } finally { harness.app.name = originalName }
   })
 

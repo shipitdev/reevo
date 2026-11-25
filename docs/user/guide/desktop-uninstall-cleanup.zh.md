@@ -27,7 +27,7 @@ Windows 卸载程序通常会删除脚本中列出的两个应用数据目录，
 sh -c '
 rm -rf -- \
   "$HOME/.dsh" \
-  "$HOME/Library/Application Support/@deepseek-ai/dsh-desktop" \
+  "$HOME/Library/Application Support/@reevo/desktop" \
   "$HOME/Library/Logs/DeepSeek Harness" \
   "$HOME/Library/Preferences/com.deepseek.dsh.plist" \
   "$HOME/Library/Preferences/ByHost"/com.deepseek.dsh.ShipIt.*.plist \
