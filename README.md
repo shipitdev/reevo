@@ -15,7 +15,7 @@ pnpm reevo --profile web --patch examples/reevo/web.patch.yml --dump-config
 pnpm reevo --profile web --patch examples/reevo/web.patch.yml
 ```
 
-Use the schema and [configuration catalog](docs/config-catalog.zh.md) to find supported plugin settings. Pass multiple `--patch` flags to apply overrides in order. Add `--patch examples/reevo/model.patch.yml` to select a different default model for new agents. A saved model selection can override this default.
+Use the schema and [configuration catalog](docs/config-catalog.zh.md) to find supported plugin settings. Pass multiple `--patch` flags to apply overrides in order. Add `--patch examples/reevo/model.patch.yml` to select a different default model for new agents. A saved model selection can override this default. Add `--patch examples/reevo/persona.patch.yml` to set the deployment persona.
 
 English | [中文](README.zh.md)
 
@@ -27,7 +27,7 @@ Documentation: [https://deepseek-harness.github.io/deepseek-harness/](https://de
 
 ## Developer preview
 
-DeepSeek Harness is in _developer preview_ and iterating rapidly. **THERE WILL BE COMPATIBILITY-BREAKING CHANGES.**
+Reevo is in _developer preview_ and iterating rapidly. **THERE WILL BE COMPATIBILITY-BREAKING CHANGES.**
 
 Review the [safety notice](SAFETY.md) before running the project.
 
