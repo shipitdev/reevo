@@ -15,7 +15,7 @@ pnpm reevo --profile web --patch examples/reevo/web.patch.yml --dump-config
 pnpm reevo --profile web --patch examples/reevo/web.patch.yml
 ```
 
-Use the schema and [configuration catalog](docs/config-catalog.zh.md) to find supported plugin settings. Pass multiple `--patch` flags to apply overrides in order.
+Use the schema and [configuration catalog](docs/config-catalog.zh.md) to find supported plugin settings. Pass multiple `--patch` flags to apply overrides in order. Add `--patch examples/reevo/model.patch.yml` to select a different default model for new agents. A saved model selection can override this default.
 
 English | [中文](README.zh.md)
 
