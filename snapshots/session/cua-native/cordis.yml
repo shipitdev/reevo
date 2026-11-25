@@ -1,11 +1,11 @@
 - id: agent-default-model
-  name: '@deepseek-ai/dsh-agent-default-model'
+  name: '@reevo/dsh-agent-default-model'
   config:
     provider: deepseek-official
     model: deepseek-v4-flash-vision-exp
 
 - id: session-persistence-jsonl
-  name: '@deepseek-ai/dsh-session-persistence-jsonl'
+  name: '@reevo/dsh-session-persistence-jsonl'
   config:
     root: !!js dshHomePath('sessions')
     compression: none
@@ -17,7 +17,7 @@
   disabled: true
 
 - id: system-prompt
-  name: '@deepseek-ai/dsh-system-prompt'
+  name: '@reevo/dsh-system-prompt'
   config:
     personaPrefix: |
       You are a coding assistant powered by the {{model}} model.
@@ -25,20 +25,20 @@
       Verify your work by running the code or tests. Keep answers brief and factual.
 
 - id: attachment-local
-  name: '@deepseek-ai/dsh-attachment-local'
+  name: '@reevo/dsh-attachment-local'
 
 - insert:
     - id: computer-use
-      name: '@deepseek-ai/dsh-computer-use'
+      name: '@reevo/dsh-computer-use'
     - id: cua-native
-      name: '@deepseek-ai/dsh-cua-macos'
+      name: '@reevo/dsh-cua-macos'
       config:
         agentPreset: false
         helperPath: !!js process.cwd() + '/native-helper.mjs'
         allowedApps: [{"id": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "name": "Fixture", "executablePath": "/fixture/app"}]
 
 - id: user-questions
-  name: '@deepseek-ai/dsh-user-questions'
+  name: '@reevo/dsh-user-questions'
 
 - insert:
     - id: cua-permission-fixture

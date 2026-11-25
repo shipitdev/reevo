@@ -1,34 +1,34 @@
 - insert:
     - id: subagent-model-selection-settings
-      name: '@deepseek-ai/dsh-tool-subagent/model-selection-settings'
+      name: '@reevo/dsh-tool-subagent/model-selection-settings'
     - id: agent-preset-registry
-      name: '@deepseek-ai/dsh-agent-preset-registry'
+      name: '@reevo/dsh-agent-preset-registry'
       config:
         default: parent
     - id: preset-parent
-      name: '@deepseek-ai/dsh-agent-preset'
+      name: '@reevo/dsh-agent-preset'
       config:
         id: parent
         name: Parent
         description: Headless parent tools.
         plugins:
           - id: tool-fs
-            name: '@deepseek-ai/dsh-tool-fs'
+            name: '@reevo/dsh-tool-fs'
     - id: preset-reviewer
-      name: '@deepseek-ai/dsh-agent-preset'
+      name: '@reevo/dsh-agent-preset'
       config:
         id: reviewer
         name: Reviewer
         description: File review.
         plugins:
           - id: persona
-            name: '@deepseek-ai/dsh-persona'
+            name: '@reevo/dsh-persona'
             config:
               prefix: You are a file reviewer. Inspect the requested files and report your findings.
           - id: tool-fs
-            name: '@deepseek-ai/dsh-tool-fs'
+            name: '@reevo/dsh-tool-fs'
           - id: tool-subagent
-            name: '@deepseek-ai/dsh-tool-subagent'
+            name: '@reevo/dsh-tool-subagent'
             config:
               provider: spawn
               toolName: reviewer_delegate
@@ -39,7 +39,7 @@
         presets: [parent, reviewer, parent, reviewer, parent]
 
 - id: tool-subagent
-  name: '@deepseek-ai/dsh-tool-subagent'
+  name: '@reevo/dsh-tool-subagent'
   inject: [agentPresets]
   config:
     provider: spawn

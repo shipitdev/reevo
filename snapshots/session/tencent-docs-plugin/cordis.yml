@@ -4,9 +4,9 @@
 
 - insert:
     - id: mcp-manager
-      name: '@deepseek-ai/dsh-mcp-manager'
+      name: '@reevo/dsh-mcp-manager'
       inject: [credentials, mcpResources]
     - id: tencent-docs
-      name: '@deepseek-ai/dsh-tencent-docs'
+      name: '@reevo/dsh-tencent-docs'
       config:
         url: !!js process.env.DSH_MCP_DEMO_URL

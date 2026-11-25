@@ -1,6 +1,6 @@
 # Keyless replay counterpart to cordis.yml.
 - id: llm-deepseek
-  name: '@deepseek-ai/dsh-llm-deepseek-api-key'
+  name: '@reevo/dsh-llm-deepseek-api-key'
   disabled: true
 
 - insert:
@@ -13,13 +13,13 @@
         terminals: true
       config:
         - id: pty
-          name: '@deepseek-ai/dsh-terminal'
+          name: '@reevo/dsh-terminal'
         - id: terminal-panel
-          name: '@deepseek-ai/dsh-terminal-panel'
+          name: '@reevo/dsh-terminal-panel'
         - id: tool-terminal
-          name: '@deepseek-ai/dsh-tool-terminal'
+          name: '@reevo/dsh-tool-terminal'
     - id: llm-replay
-      name: '@deepseek-ai/dsh-llm-replay'
+      name: '@reevo/dsh-llm-replay'
       config:
         providers:
           - id: deepseek-official

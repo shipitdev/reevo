@@ -4,7 +4,7 @@
       name: './web-search-error-fixture.mjs'
 
 - id: web-deepseek-api
-  name: '@deepseek-ai/dsh-web-deepseek-api'
+  name: '@reevo/dsh-web-deepseek-api'
   config:
     searchApiKeyEnv: DSH_SNAPSHOT_SEARCH_KEY
     # The fixture maps this recorded authority to its OS-assigned listener.
@@ -12,7 +12,7 @@
 
 # The conversation runs on a DeepSeek model route, where an unconfigured search selects Messages search.
 - id: web
-  name: '@deepseek-ai/dsh-web'
+  name: '@reevo/dsh-web'
   config:
     searchProvider: deepseek-search-api
     fetchProvider: http

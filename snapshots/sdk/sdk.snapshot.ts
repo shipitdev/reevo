@@ -1,7 +1,7 @@
 /**
  * Keyless snapshot coverage for the TypeScript SDK path: each scenario spawns
  * the real `dsh --profile sdk` or `sdk-minimal` runtime through
- * `@reevo/dsh-sdk-client`, drives recorded turns and standalone commands over stdio JSON-RPC,
+ * `@reevo/sdk`, drives recorded turns and standalone commands over stdio JSON-RPC,
  * and pins the SDK `RunResult`, the complete notification stream, and the
  * persisted session logs. Replay serves recorded model
  * responses via `llm-replay` (`cordis.snapshot.yml`); `DSH_SNAPSHOT=record`
@@ -63,7 +63,7 @@ import {
   type SdkPromptContentBlock,
   type SdkUserQuestionRequest,
   type SdkUserQuestionResult,
-} from '@reevo/dsh-sdk-client'
+} from '@reevo/sdk'
 import { SESSION_FORMAT_VERSION } from '@reevo/dsh-session'
 import { deriveReplayScript, parseSessionLog } from '@reevo/dsh-llm-replay'
 

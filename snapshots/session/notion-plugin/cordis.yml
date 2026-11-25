@@ -4,9 +4,9 @@
 
 - insert:
     - id: mcp-manager
-      name: '@deepseek-ai/dsh-mcp-manager'
+      name: '@reevo/dsh-mcp-manager'
       inject: [credentials, mcpResources]
     - id: notion
-      name: '@deepseek-ai/dsh-notion'
+      name: '@reevo/dsh-notion'
       config:
         url: !!js process.env.DSH_MCP_DEMO_URL

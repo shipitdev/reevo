@@ -2,7 +2,7 @@
 # script comes from the scenario's committed session JSONL.
 
 - id: llm-deepseek
-  name: '@deepseek-ai/dsh-llm-deepseek-api-key'
+  name: '@reevo/dsh-llm-deepseek-api-key'
   disabled: true
 
 - id: plugin-package-inventory-deepseek
@@ -12,13 +12,13 @@
   disabled: true
 
 - id: session-persistence-jsonl
-  name: '@deepseek-ai/dsh-session-persistence-jsonl'
+  name: '@reevo/dsh-session-persistence-jsonl'
   config:
     root: !!js dshHomePath('sessions')
     compression: none
 
 - id: sandbox
-  name: '@deepseek-ai/dsh-sandbox-local'
+  name: '@reevo/dsh-sandbox-local'
   config:
     runnerCommand:
       - bash
@@ -30,7 +30,7 @@
 
 - insert:
     - id: llm-replay
-      name: '@deepseek-ai/dsh-llm-replay'
+      name: '@reevo/dsh-llm-replay'
       config:
         providers:
           - id: deepseek-official
@@ -48,15 +48,15 @@
 
 - insert:
     - id: office-kit
-      name: '@deepseek-ai/dsh-office-kit'
+      name: '@reevo/dsh-office-kit'
       config:
         outputDirectory: !!js dshHomePath('office-kit', 'outputs')
 
     - id: tool-office
-      name: '@deepseek-ai/dsh-tool-office'
+      name: '@reevo/dsh-tool-office'
 
     - id: skill-office
-      name: '@deepseek-ai/dsh-skill-office'
+      name: '@reevo/dsh-skill-office'
       disabled: false
       config:
         assetRoot: !!js process.cwd() + '/office-skills'

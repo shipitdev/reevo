@@ -1,74 +1,74 @@
 # Minimal live counterpart for the apply-patch snapshot composition.
 - id: llm-deepseek
-  name: '@deepseek-ai/dsh-llm-deepseek-api-key'
+  name: '@reevo/dsh-llm-deepseek-api-key'
   config:
     models:
       - id: deepseek-v4-pro
 
 - id: subprocess
-  name: '@deepseek-ai/dsh-subprocess-local'
+  name: '@reevo/dsh-subprocess-local'
 
 - id: agent-default-model
-  name: '@deepseek-ai/dsh-agent-default-model'
+  name: '@reevo/dsh-agent-default-model'
   config:
     provider: deepseek-official
     model: deepseek-v4-pro
 
 - id: session-persistence-jsonl
-  name: '@deepseek-ai/dsh-session-persistence-jsonl'
+  name: '@reevo/dsh-session-persistence-jsonl'
   config:
     root: !!js dshHomePath('sessions')
     compression: !!js 'process.env.DSH_SNAPSHOT === undefined ? ''zstd'' : ''none'''
 
 - id: agent-instructions
-  name: '@deepseek-ai/dsh-agent-instructions'
+  name: '@reevo/dsh-agent-instructions'
   disabled: true
 
 - id: system-prompt
-  name: '@deepseek-ai/dsh-system-prompt'
+  name: '@reevo/dsh-system-prompt'
   config:
     personaPrefix: You are a concise snapshot agent.
 
 - id: tool-jobs
-  name: '@deepseek-ai/dsh-tool-jobs'
+  name: '@reevo/dsh-tool-jobs'
   disabled: true
 
 - id: goal
-  name: '@deepseek-ai/dsh-goal'
+  name: '@reevo/dsh-goal'
   disabled: true
 
 - id: goal-round-driver
-  name: '@deepseek-ai/dsh-goal-round-driver'
+  name: '@reevo/dsh-goal-round-driver'
   disabled: true
 
 - id: command-goal
-  name: '@deepseek-ai/dsh-command-goal'
+  name: '@reevo/dsh-command-goal'
   disabled: true
 
 - id: tool-goal
-  name: '@deepseek-ai/dsh-tool-goal'
+  name: '@reevo/dsh-tool-goal'
   disabled: true
 
 - id: skill
-  name: '@deepseek-ai/dsh-skill'
+  name: '@reevo/dsh-skill'
   disabled: true
 
 - id: skill-filesystem
-  name: '@deepseek-ai/dsh-skill-filesystem'
+  name: '@reevo/dsh-skill-filesystem'
   disabled: true
 
 - id: tool-skill
-  name: '@deepseek-ai/dsh-tool-skill'
+  name: '@reevo/dsh-tool-skill'
   disabled: true
 
 - id: upstream-skills
-  name: '@deepseek-ai/dsh-upstream-skills'
+  name: '@reevo/dsh-upstream-skills'
   disabled: true
 
 - id: tool-fs
 
 - id: spill-local
-  name: '@deepseek-ai/dsh-spill-local'
+  name: '@reevo/dsh-spill-local'
   config:
     root: !!js process.env.DSH_SNAPSHOT_SPILL_ROOT ?? './.spill'
 
