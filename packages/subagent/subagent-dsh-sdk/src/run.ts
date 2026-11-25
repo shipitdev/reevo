@@ -1,6 +1,6 @@
 /**
  * Fresh-process SDK subagent client. Drives one child DeepSeek Harness
- * runtime over stdio JSON-RPC through `@deepseek-ai/dsh-sdk-client` and owns
+ * runtime over stdio JSON-RPC through `@reevo/sdk` and owns
  * cancellation and quiescent disposal. It publishes after the child
  * handshake, maps child failures to stop reasons, and tears down to
  * quiescence. The SDK client spawns the child rather than using
@@ -19,7 +19,7 @@ import {
   SdkProtocolError,
   TransportClosedError,
   validatedSessionEvent,
-} from '@deepseek-ai/dsh-sdk-client'
+} from '@reevo/sdk'
 import type { ContentBlock, ReasoningEffortId } from '@deepseek-ai/dsh-llm'
 import type { SessionId, TurnEndReason } from '@deepseek-ai/dsh-session'
 import type { SubagentResult, SubagentRun, SubagentStartRequest, SubagentStopReason } from '@deepseek-ai/dsh-subagent'

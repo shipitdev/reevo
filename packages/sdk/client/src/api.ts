@@ -2,7 +2,7 @@
  * High-level run API over {@link HarnessClient}: route text to prompts or native
  * commands and collect prompt activity for text and image input.
  *
- * @module @deepseek-ai/dsh-sdk-client/api
+ * @module @reevo/sdk/api
  */
 
 import { randomUUID } from 'node:crypto'

@@ -688,7 +688,7 @@ importers:
       '@deepseek-ai/dsh-sandbox-policy':
         specifier: workspace:*
         version: link:../../packages/sandbox/sandbox-policy
-      '@deepseek-ai/dsh-sdk-client':
+      '@reevo/sdk':
         specifier: workspace:*
         version: link:../../packages/sdk/client
       '@deepseek-ai/dsh-session':
@@ -1250,7 +1250,7 @@ importers:
       '@deepseek-ai/dsh-llm-replay':
         specifier: workspace:*
         version: link:../packages/test-support/llm-replay
-      '@deepseek-ai/dsh-sdk-client':
+      '@reevo/sdk':
         specifier: workspace:*
         version: link:../packages/sdk/client
       '@deepseek-ai/dsh-session':
@@ -18900,7 +18900,7 @@ importers:
       '@deepseek-ai/dsh-loader-smoke':
         specifier: workspace:*
         version: link:../../test-support/loader-smoke
-      '@deepseek-ai/dsh-sdk-client':
+      '@reevo/sdk':
         specifier: workspace:*
         version: link:../../sdk/client
       '@deepseek-ai/dsh-sdk-protocol':

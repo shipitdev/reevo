@@ -3,7 +3,7 @@ description: "面向以子进程方式启动 DeepSeek Harness 运行时、并通
 kind: "package-library"
 ---
 
-# @deepseek-ai/dsh-sdk-client
+# @reevo/sdk
 
 [English](README.md) | 中文
 
@@ -34,7 +34,7 @@ kind: "package-library"
 ```ts
 import { createInterface } from 'node:readline/promises'
 import { stdin, stdout } from 'node:process'
-import { DeepSeekHarness } from '@deepseek-ai/dsh-sdk-client'
+import { DeepSeekHarness } from '@reevo/sdk'
 
 const terminal = createInterface({ input: stdin, output: stdout })
 try {
@@ -64,7 +64,7 @@ try {
 下面的示例在运行时导入 `brandString`。请在应用中直接声明 `@deepseek-ai/dsh-brand` 依赖，不要依赖 SDK 的传递依赖；仅测试使用时可以放入开发依赖。
 
 ```ts
-import { DeepSeekHarness } from '@deepseek-ai/dsh-sdk-client'
+import { DeepSeekHarness } from '@reevo/sdk'
 import { brandString } from '@deepseek-ai/dsh-brand'
 import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
 
@@ -90,7 +90,7 @@ console.log(result.finalResponse)
 先选择支持图片输入的模型。通过现有内容块数组同时提交命令和图片，例如 `session.run([{ type: 'text', text: '/plan Analyze this image.' }, { type: 'image', data: imageBase64, mimeType: 'image/png' }])`；`harness.run()` 接受相同输入。计划输入和目标创建、编辑接受图片；`/plan off`、目标控制、压缩和权限命令按[原生附件规则](../server/README.zh.md#command-input)拒绝图片。原生命令输入支持编码栅格图片，不支持一般文件上传或客户端提供的附件引用。
 
 ```ts
-import { DeepSeekHarness } from '@deepseek-ai/dsh-sdk-client'
+import { DeepSeekHarness } from '@reevo/sdk'
 
 await using harness = new DeepSeekHarness({ profile: 'sdk', dshHome: '/absolute/path/to/dsh-home' })
 const session = harness.session()

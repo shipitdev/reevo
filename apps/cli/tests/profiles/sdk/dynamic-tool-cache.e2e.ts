@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { lastAssistantStreamChunk, type RetryPolicyConfig, type TokenUsage } from '@deepseek-ai/dsh-llm'
-import { DeepSeekHarness } from '@deepseek-ai/dsh-sdk-client'
+import { DeepSeekHarness } from '@reevo/sdk'
 import type { SessionEvent } from '@deepseek-ai/dsh-session'
 import { describe, expect, it, onTestFinished } from 'vitest'
 

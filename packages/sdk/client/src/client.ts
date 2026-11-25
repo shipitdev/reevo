@@ -9,7 +9,7 @@
  * spawns directly rather than through the `dsh-subprocess` service — the
  * seam's documented exception for SDK-managed transports.
  *
- * @module @deepseek-ai/dsh-sdk-client/client
+ * @module @reevo/sdk/client
  */
 
 import { spawn, type ChildProcess } from 'node:child_process'

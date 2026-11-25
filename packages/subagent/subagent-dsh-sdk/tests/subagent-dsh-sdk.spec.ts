@@ -21,10 +21,10 @@ import {
   DeepSeekHarness,
   HarnessClient,
   SdkProtocolError,
-} from '@deepseek-ai/dsh-sdk-client'
+} from '@reevo/sdk'
 import { createProcessDeepSeekHarness } from '../../../sdk/client/src/api.ts'
 import type { RuntimeProcessOptions } from '../../../sdk/client/src/launch.ts'
-import type { DeepSeekHarnessOptions } from '@deepseek-ai/dsh-sdk-client'
+import type { DeepSeekHarnessOptions } from '@reevo/sdk'
 import { brandString } from '@deepseek-ai/dsh-brand'
 import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
 import * as sdk from '../src/index.ts'
@@ -158,7 +158,7 @@ describe('sdkChildOutcome', () => {
 describe('dsh-subagent-dsh-sdk provider', () => {
   it('constructs the production dsh-backed harness lazily', async () => {
     const harness = defaultCreateHarness({})
-    expect(harness).toBeInstanceOf((await import('@deepseek-ai/dsh-sdk-client')).DeepSeekHarness)
+    expect(harness).toBeInstanceOf((await import('@reevo/sdk')).DeepSeekHarness)
     await harness.close()
   })
 

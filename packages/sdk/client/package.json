@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh-sdk-client",
+  "name": "@reevo/sdk",
   "description": "TypeScript client SDK for driving a DeepSeek Harness runtime subprocess over stdio JSON-RPC: the DeepSeekHarness high-level turns API and the lower-level HarnessClient",
   "version": "0.2.3-alpha.2",
   "publishConfig": {

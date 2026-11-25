@@ -6,7 +6,7 @@
  * registers nothing on a Cordis context; named profiles and ordered patch
  * files customize the runtime process it spawns.
  *
- * @module @deepseek-ai/dsh-sdk-client
+ * @module @reevo/sdk
  */
 
 export { DeepSeekHarness, HarnessSession, validatedSessionEvent } from './api.ts'

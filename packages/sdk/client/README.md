@@ -3,7 +3,7 @@ description: "The TypeScript SDK client for callers that spawn a DeepSeek Harnes
 kind: "package-library"
 ---
 
-# @deepseek-ai/dsh-sdk-client
+# @reevo/sdk
 
 English | [中文](README.zh.md)
 
@@ -34,7 +34,7 @@ For example, this terminal embedding asks for each one-operation grant. It does 
 ```ts
 import { createInterface } from 'node:readline/promises'
 import { stdin, stdout } from 'node:process'
-import { DeepSeekHarness } from '@deepseek-ai/dsh-sdk-client'
+import { DeepSeekHarness } from '@reevo/sdk'
 
 const terminal = createInterface({ input: stdin, output: stdout })
 try {
@@ -64,7 +64,7 @@ Pass `{ permissionMode: "danger-full-access" }` as the second argument to replac
 The following example imports `brandString` at runtime. Declare `@deepseek-ai/dsh-brand` as a direct dependency of your application rather than relying on the SDK's transitive dependencies; tests alone can use a development dependency.
 
 ```ts
-import { DeepSeekHarness } from '@deepseek-ai/dsh-sdk-client'
+import { DeepSeekHarness } from '@reevo/sdk'
 import { brandString } from '@deepseek-ai/dsh-brand'
 import type { ReasoningEffortId } from '@deepseek-ai/dsh-llm/types'
 
@@ -90,7 +90,7 @@ The subprocess starts lazily on first use and stays owned by the instance across
 Select a model that supports image input. Submit a command and image in the existing content-block array, for example `session.run([{ type: 'text', text: '/plan Analyze this image.' }, { type: 'image', data: imageBase64, mimeType: 'image/png' }])`; `harness.run()` accepts the same input. Plan input and goal creation or editing accept images; `/plan off`, goal controls, compact, and permission commands reject them through the [native attachment rules](../server/README.md#command-input). Native command input supports encoded raster images, not general file uploads or client-supplied attachment references.
 
 ```ts
-import { DeepSeekHarness } from '@deepseek-ai/dsh-sdk-client'
+import { DeepSeekHarness } from '@reevo/sdk'
 
 await using harness = new DeepSeekHarness({ profile: 'sdk', dshHome: '/absolute/path/to/dsh-home' })
 const session = harness.session()
