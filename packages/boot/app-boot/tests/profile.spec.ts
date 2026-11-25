@@ -466,7 +466,7 @@ describe('loadProfile', () => {
     })
     const manifestPath = join(anchor, '..', 'node_modules', 'guarded', 'package.json')
     writeFileSync(manifestPath, JSON.stringify({
-      ...JSON.parse(readFileSync(manifestPath, 'utf8')) as object, peerDependencies: { '@deepseek-ai/dsh': '999.0.0' },
+      ...JSON.parse(readFileSync(manifestPath, 'utf8')) as object, peerDependencies: { '@reevo/cli': '999.0.0' },
     }))
     const dir = resolveProfileDir('demo', tmp())
     initProfile(dir, ['guarded', 'kept'])

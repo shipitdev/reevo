@@ -79,7 +79,7 @@ const localArtifactDirs = new Set(['node_modules'])
 const appPackageFiles: Readonly<Record<string, readonly string[]>> = {
   // Only `prepack` stages `docs`; every other reader of this directory sees
   // whatever the checkout holds.
-  '@deepseek-ai/dsh': ['lib/*.js', 'lib/*.js.map', 'lib/types/*.d.ts', 'lib/types/*.d.ts.map', 'docs', 'src'],
+  '@reevo/cli': ['lib/*.js', 'lib/*.js.map', 'lib/types/*.d.ts', 'lib/types/*.d.ts.map', 'docs', 'src'],
   '@deepseek-ai/dsh-desktop-host': [
     'lib/index.js', 'lib/cli.js',
   ],
@@ -504,7 +504,7 @@ function isReleaseMemberDirectory(dir: string): boolean {
  */
 export function checkDshFamilyVersion(manifest: PackageManifest, expected: string | undefined): string | undefined {
   const name = manifest.name
-  if (name !== '@deepseek-ai/dsh' && name?.startsWith('@deepseek-ai/dsh-') !== true) return undefined
+  if (name !== '@reevo/cli' && name?.startsWith('@deepseek-ai/dsh-') !== true) return undefined
   if (manifest.version !== expected) {
     return `${name}: package.json version must match root version ${expected ?? '(missing)'}`
   }
@@ -684,7 +684,7 @@ export function checkExperimentalDependencyIsolation(
   const errors: string[] = []
   for (const { dir, manifest } of manifests) {
     if (!standardReleaseMemberDirectory.test(dir) && dir !== 'python/sdk-runtime') continue
-    const offered = manifest.name === '@deepseek-ai/dsh' ? new Set(optionalBundles) : new Set<string>()
+    const offered = manifest.name === '@reevo/cli' ? new Set(optionalBundles) : new Set<string>()
     for (const section of runtimeDependencySections) {
       for (const [name, range] of Object.entries(manifest[section] ?? {})) {
         const experimental = experimentalNames.has(name) || isExperimentalPackageName(name)
@@ -718,7 +718,7 @@ export function checkWorkspaceProtocol(manifests: readonly WorkspaceManifest[]):
     for (const section of dependencySections) {
       for (const [name, range] of Object.entries(manifest[section] ?? {})) {
         if (!members.has(name)) continue
-        const expected = name === '@deepseek-ai/dsh' || name.startsWith('@deepseek-ai/dsh-')
+        const expected = name === '@reevo/cli' || name.startsWith('@deepseek-ai/dsh-')
           ? 'workspace:*'
           : vendors.has(name) ? 'workspace:~' : undefined
         if (expected !== undefined ? range === expected : range.startsWith('workspace:')) continue

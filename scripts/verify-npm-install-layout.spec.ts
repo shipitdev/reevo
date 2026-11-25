@@ -11,9 +11,9 @@ function validLayout(): NpmPackageLock {
   return {
     lockfileVersion: 3,
     packages: {
-      '': { dependencies: { '@deepseek-ai/dsh': '0.2.0', 'dsh-previous': 'npm:@deepseek-ai/dsh@0.1.0' } },
+      '': { dependencies: { '@reevo/cli': '0.2.0', 'dsh-previous': 'npm:@reevo/cli@0.1.0' } },
       'node_modules/@deepseek-ai/cordis': { version: '4.0.1' },
-      'node_modules/@deepseek-ai/dsh': {
+      'node_modules/@reevo/cli': {
         version: '0.2.0',
         dependencies: { '@deepseek-ai/dsh-child': '^0.2.0' },
         peerDependencies: { '@deepseek-ai/cordis': '^4.0.1' },
@@ -24,7 +24,7 @@ function validLayout(): NpmPackageLock {
       },
       'node_modules/@deepseek-ai/dsh-leaf': { version: '0.2.0' },
       'node_modules/dsh-previous': {
-        name: '@deepseek-ai/dsh',
+        name: '@reevo/cli',
         version: '0.1.0',
         dependencies: { '@deepseek-ai/dsh-child': '^0.1.0' },
         peerDependencies: { '@deepseek-ai/cordis': '^4.0.1' },
@@ -41,8 +41,8 @@ function validLayout(): NpmPackageLock {
 describe('npm install layout verifier', () => {
   it('creates two incompatible versions of every DSH package', () => {
     const index: RegistryIndex = new Map([
-      ['@deepseek-ai/dsh', new Map([['0.1.1-rc.2', {
-        name: '@deepseek-ai/dsh',
+      ['@reevo/cli', new Map([['0.1.1-rc.2', {
+        name: '@reevo/cli',
         version: '0.1.1-rc.2',
         dependencies: { '@deepseek-ai/dsh-child': '^0.1.1-rc.2' },
         peerDependencies: { '@deepseek-ai/cordis': '^4.0.1' },
@@ -59,13 +59,13 @@ describe('npm install layout verifier', () => {
 
     const dual = buildDualDshRegistry(index, '0.1.1-rc.2')
 
-    expect([...dual.get('@deepseek-ai/dsh')?.keys() ?? []]).toEqual(['0.1.0', '0.2.0'])
-    expect(dual.get('@deepseek-ai/dsh')?.get('0.1.0')).toMatchObject({
+    expect([...dual.get('@reevo/cli')?.keys() ?? []]).toEqual(['0.1.0', '0.2.0'])
+    expect(dual.get('@reevo/cli')?.get('0.1.0')).toMatchObject({
       version: '0.1.0',
       dependencies: { '@deepseek-ai/dsh-child': '^0.1.0' },
       peerDependencies: { '@deepseek-ai/cordis': '^4.0.1' },
     })
-    expect(dual.get('@deepseek-ai/dsh')?.get('0.2.0')).toMatchObject({
+    expect(dual.get('@reevo/cli')?.get('0.2.0')).toMatchObject({
       version: '0.2.0',
       dependencies: { '@deepseek-ai/dsh-child': '^0.2.0' },
     })

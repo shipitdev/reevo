@@ -131,7 +131,7 @@ it.skipIf(!built)('installs the exported registry\'s local closure and switches 
       },
     },
   }] }]))
-  const child = execa(process.execPath, [join(installation, 'node_modules/@deepseek-ai/dsh/lib/bin.js'),
+  const child = execa(process.execPath, [join(installation, 'node_modules/@reevo/cli/lib/bin.js'),
     'web', '--patch', patch, '--no-open', '--port', '0'], {
     cwd: temporary, env: environment, extendEnv: false, reject: false, timeout: 240_000,
   })

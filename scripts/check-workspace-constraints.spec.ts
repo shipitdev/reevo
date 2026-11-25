@@ -36,7 +36,7 @@ const experimental = {
 
 describe('workspace dependency ranges', () => {
   const dependency = { dir: 'packages/core/runtime', manifest: { name: '@deepseek-ai/dsh-runtime' } }
-  const cli = { dir: 'apps/cli', manifest: { name: '@deepseek-ai/dsh' } }
+  const cli = { dir: 'apps/cli', manifest: { name: '@reevo/cli' } }
   const vendor = { dir: 'vendor/cordis', manifest: { name: '@deepseek-ai/cordis' } }
   const native = { dir: 'native/system', manifest: { name: '@deepseek-ai/node-addon-system' } }
   const platform = { dir: 'native/system/packages/darwin-arm64', manifest: { name: '@deepseek-ai/node-addon-system-darwin-arm64' } }
@@ -55,7 +55,7 @@ describe('workspace dependency ranges', () => {
         })
         const check = (name: string, range: string): string[] =>
           checkWorkspaceProtocol([dependency, cli, vendor, native, platform, unrelated, consumer(name, range)])
-        for (const name of ['@deepseek-ai/dsh', '@deepseek-ai/dsh-runtime']) {
+        for (const name of ['@reevo/cli', '@deepseek-ai/dsh-runtime']) {
           expect(check(name, 'workspace:*')).toEqual([])
           for (const range of ['workspace:^', 'workspace:~', 'workspace:^0.1.7', '^0.1.7', '*']) {
             expect(check(name, range)).toEqual([
@@ -172,7 +172,7 @@ describe('experimental workspace constraints', () => {
   it.each(Object.values(EXPERIMENTAL_PACKAGE_NAME_EXCEPTIONS))('rejects retained runtime names and aliases: %s', (name) => {
     for (const dependencies of [{ [name]: 'workspace:*' }, { alias: `npm:${name}@1.0.0` }, { alias: `workspace:${name}@*` }]) {
       expect(checkExperimentalDependencyIsolation([{
-        dir: 'apps/cli', manifest: { name: '@deepseek-ai/dsh', dependencies },
+        dir: 'apps/cli', manifest: { name: '@reevo/cli', dependencies },
       }], [])).toEqual([expect.stringContaining('must not reference an experimental package')])
     }
   })
@@ -234,17 +234,17 @@ describe('experimental workspace constraints', () => {
 
   it('allows the dsh installation to ship the optional bundles the launcher names, and nothing else experimental', () => {
     const listed = { '@deepseek-ai/dsh-experimental-prototype': 'workspace:^' }
-    const installation = { dir: 'apps/cli', manifest: { name: '@deepseek-ai/dsh', dependencies: listed } } satisfies WorkspaceManifest
+    const installation = { dir: 'apps/cli', manifest: { name: '@reevo/cli', dependencies: listed } } satisfies WorkspaceManifest
     expect(checkExperimentalDependencyIsolation([experimental, installation], ['@deepseek-ai/dsh-experimental-prototype'])).toEqual([])
     expect(checkExperimentalDependencyIsolation([experimental, installation], [])).toEqual([
-      '@deepseek-ai/dsh: dependencies.@deepseek-ai/dsh-experimental-prototype must not reference an experimental package',
+      '@reevo/cli: dependencies.@deepseek-ai/dsh-experimental-prototype must not reference an experimental package',
     ])
     // Only a plain dependency edge is offered; a peer would make the bundle a requirement of every consumer.
     expect(checkExperimentalDependencyIsolation([experimental, {
       dir: 'apps/cli',
-      manifest: { name: '@deepseek-ai/dsh', peerDependencies: listed },
+      manifest: { name: '@reevo/cli', peerDependencies: listed },
     }], ['@deepseek-ai/dsh-experimental-prototype'])).toEqual([
-      '@deepseek-ai/dsh: peerDependencies.@deepseek-ai/dsh-experimental-prototype must not reference an experimental package',
+      '@reevo/cli: peerDependencies.@deepseek-ai/dsh-experimental-prototype must not reference an experimental package',
     ])
   })
 
@@ -285,9 +285,9 @@ describe('dsh family version coherence', () => {
 
   it('rejects the root-named CLI app on a stale shared version', () => {
     expect(checkDshFamilyVersion(
-      { name: '@deepseek-ai/dsh', version: '0.1.2-alpha.5' },
+      { name: '@reevo/cli', version: '0.1.2-alpha.5' },
       '0.1.2-rc.1',
-    )).toBe('@deepseek-ai/dsh: package.json version must match root version 0.1.2-rc.1')
+    )).toBe('@reevo/cli: package.json version must match root version 0.1.2-rc.1')
   })
 
   it('accepts a manifest carrying the shared version', () => {
@@ -569,7 +569,7 @@ it('publishes CLI runtime declarations and rejects a payload that omits them', (
   const manifest = JSON.parse(readFileSync(new URL('../apps/cli/package.json', import.meta.url), 'utf8')) as WorkspaceManifest['manifest']
   expect(checkWorkspaceManifest({ dir: 'apps/cli', manifest })).toEqual([])
   expect(checkWorkspaceManifest({ dir: 'apps/cli', manifest: { ...manifest, files: ['lib/*.js'] } }))
-    .toEqual([expect.stringContaining('@deepseek-ai/dsh: package.json files must be ["lib/*.js","lib/*.js.map","lib/types/*.d.ts","lib/types/*.d.ts.map","docs","src"]')])
+    .toEqual([expect.stringContaining('@reevo/cli: package.json files must be ["lib/*.js","lib/*.js.map","lib/types/*.d.ts","lib/types/*.d.ts.map","docs","src"]')])
 })
 
 it('requires the shared Web injection entry in the published payload', () => {

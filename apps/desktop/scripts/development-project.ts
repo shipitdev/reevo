@@ -124,9 +124,9 @@ function mirrorWorkspaceDependencies(roots: readonly string[], destinationRoot: 
  */
 export function prepareDevelopmentProject(options: DevelopmentProjectOptions): string {
   const cliManifest = readManifest(join(options.cliDir, 'package.json'))
-  if (cliManifest.name !== '@deepseek-ai/dsh' || cliManifest.version !== options.release.version) {
+  if (cliManifest.name !== '@reevo/cli' || cliManifest.version !== options.release.version) {
     throw new Error(
-      `desktop development: apps/cli must be @deepseek-ai/dsh@${options.release.version}, found `
+      `desktop development: apps/cli must be @reevo/cli@${options.release.version}, found `
       + `${String(cliManifest.name)}@${String(cliManifest.version)}`,
     )
   }
@@ -158,7 +158,7 @@ export function prepareDevelopmentProject(options: DevelopmentProjectOptions): s
   const hostLink = join(destinationModules, '@deepseek-ai', 'dsh-desktop-host')
   removeOwnedPath(hostLink)
   linkDirectory(options.hostDir, hostLink)
-  const sharedPackages = [...new Set([...names, '@deepseek-ai/dsh', '@deepseek-ai/dsh-desktop-host'])].flatMap((name) => {
+  const sharedPackages = [...new Set([...names, '@reevo/cli', '@deepseek-ai/dsh-desktop-host'])].flatMap((name) => {
     const manifest = readManifest(join(destinationModules, name, 'package.json'))
     return typeof manifest.version === 'string' ? [{ name, version: manifest.version, path: `node_modules/${name}` }] : []
   })

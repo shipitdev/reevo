@@ -29,8 +29,8 @@ describe('installed-update runtime preparation', () => {
         const runtime = join(run.root, version, 'dsh')
         const descriptor = await verifyDesktopRuntime(runtime, version)
         expect(descriptor.sharedPackages.find(entry => entry.name === '@deepseek-ai/cordis')?.version).toBe(source.version)
-        expect(descriptor.sharedPackages.find(entry => entry.name === '@deepseek-ai/dsh')?.version).toBe(version)
-        const metadata = JSON.parse(await readFile(join(runtime, 'node_modules/@deepseek-ai/dsh/package.json'), 'utf8')) as {
+        expect(descriptor.sharedPackages.find(entry => entry.name === '@reevo/cli')?.version).toBe(version)
+        const metadata = JSON.parse(await readFile(join(runtime, 'node_modules/@reevo/cli/package.json'), 'utf8')) as {
           dependencies: Record<string, string>
         }
         expect(metadata.dependencies['@deepseek-ai/dsh-desktop-host']).toBe(version)

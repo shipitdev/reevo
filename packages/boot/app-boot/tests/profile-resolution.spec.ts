@@ -148,7 +148,7 @@ function fixture(name = '@deepseek-ai/dsh-core'): {
   roots.push(root)
   const installDir = join(root, 'global', 'node_modules', '@deepseek-ai', 'dsh')
   const installed = join(installDir, 'node_modules', name)
-  const installAnchor = pkg(installDir, '@deepseek-ai/dsh', 0, { [name]: '*' })
+  const installAnchor = pkg(installDir, '@reevo/cli', 0, { [name]: '*' })
   pkg(installed, name, 1)
   const profileDir = join(root, 'profiles', 'web')
   file(join(profileDir, 'package.json'), JSON.stringify({
@@ -286,7 +286,7 @@ describe('runtime resolution', { concurrent: false }, () => {
       symlinkSync(dirname(f.installAnchor), dirname(installAnchor), 'junction')
     }
     if (origin === 'bundle') {
-      pkg(dirname(f.installAnchor), '@deepseek-ai/dsh', 0)
+      pkg(dirname(f.installAnchor), '@reevo/cli', 0)
       f.profile.layers.push({
         packageName: 'bridge', packageDir: f.installed,
         patchPaths: [join(f.installed, 'cordis.patch.yml')], patches: [],
@@ -296,7 +296,7 @@ describe('runtime resolution', { concurrent: false }, () => {
     const resolution = await createRuntimeResolution({
       installAnchor, profile: f.profile, home: f.root,
     })
-    expect(resolution.entries.find(entry => entry.name === '@deepseek-ai/dsh')?.declarer).toBe(f.installAnchor)
+    expect(resolution.entries.find(entry => entry.name === '@reevo/cli')?.declarer).toBe(f.installAnchor)
     expect(resolution.entries.find(entry => entry.name === 'middle')?.declarer)
       .toBe(join(bridge, 'package.json'))
     expect(resolution.entries.find(entry => entry.name === 'leaf')).toMatchObject({
@@ -564,7 +564,7 @@ describe('runtime resolution', { concurrent: false }, () => {
   it('preserves an npm alias package self-reference', async () => {
     const f = fixture()
     file(f.installAnchor, JSON.stringify({
-      name: '@deepseek-ai/dsh',
+      name: '@reevo/cli',
       version: '0.0.0',
       type: 'module',
       exports: { import: './index.js', require: './index.cjs' },
@@ -2092,7 +2092,7 @@ describe('runtime resolution', { concurrent: false }, () => {
   } {
     const f = fixture()
     const installDir = dirname(f.installAnchor)
-    pkg(installDir, '@deepseek-ai/dsh', 0, { '@deepseek-ai/dsh-core': '*', '@deepseek-ai/dsh-util': '*' })
+    pkg(installDir, '@reevo/cli', 0, { '@deepseek-ai/dsh-core': '*', '@deepseek-ai/dsh-util': '*' })
     pkg(join(installDir, 'node_modules', '@deepseek-ai', 'dsh-util'), '@deepseek-ai/dsh-util', 2)
     const linkedRoot = join(f.root, 'work', 'my-plugin')
     const writeManifest = (peers: Record<string, string> | undefined): void => {
@@ -2432,7 +2432,7 @@ describe('runtime resolution', { concurrent: false }, () => {
         selected: join(installDir, 'node_modules', 'outer-peer'), marker: 3,
       },
     ]
-    pkg(installDir, '@deepseek-ai/dsh', 0, Object.fromEntries(queries.map(({ name }) => [name, '*'])))
+    pkg(installDir, '@reevo/cli', 0, Object.fromEntries(queries.map(({ name }) => [name, '*'])))
     for (const [index, query] of queries.entries()) {
       pkg(join(installDir, 'node_modules', query.name), query.name, index + 1)
       pkg(query.nativeDir, query.name, query.nativeMarker)
@@ -2480,7 +2480,7 @@ describe('runtime resolution', { concurrent: false }, () => {
       const name = '@deepseek-ai/dsh-core'
       const f = fixture(name)
       const installDir = dirname(f.installAnchor)
-      pkg(installDir, '@deepseek-ai/dsh', 0, {
+      pkg(installDir, '@reevo/cli', 0, {
         [name]: '*', 'host-consumer': '*', 'workspace-consumer': '*',
       })
       const hostSource = join(installDir, 'src')

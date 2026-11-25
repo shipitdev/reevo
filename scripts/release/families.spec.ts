@@ -178,7 +178,7 @@ describe('release families', () => {
   it('names one tag for the whole dsh family and one per vendored package', () => {
     const dsh = releaseFamily('dsh')
     const vendor = releaseFamily('vendor')
-    const cli = member('apps/cli', '@deepseek-ai/dsh')
+    const cli = member('apps/cli', '@reevo/cli')
     const cordis = { ...member('vendor/cordis', '@deepseek-ai/cordis'), version: '4.0.1' }
 
     expect(dsh.tagFor(cli)).toBe('dsh-v0.0.1')
@@ -203,7 +203,7 @@ describe('release families', () => {
 
   it('rejects a family whose members disagree on the shared version', () => {
     const dsh = releaseFamily('dsh')
-    const members = [member('apps/cli', '@deepseek-ai/dsh'), { ...member('apps/web', '@deepseek-ai/dsh-web-frontend'), version: '0.0.2' }]
+    const members = [member('apps/cli', '@reevo/cli'), { ...member('apps/web', '@deepseek-ai/dsh-web-frontend'), version: '0.0.2' }]
 
     expect(() => { dsh.verifyVersions(members) }).toThrow(/must share one version/)
     expect(() => { dsh.verifyVersions([members[0]!]) }).not.toThrow()
@@ -255,7 +255,7 @@ describe('release families', () => {
   })
 
   it('publishes on-demand catalog members before dsh without adding installed dependencies', () => {
-    const dsh = member('apps/cli', '@deepseek-ai/dsh')
+    const dsh = member('apps/cli', '@reevo/cli')
     const providers = ON_DEMAND_BUNDLES.map(name => member(`packages/subagent/${name}`, name))
     const plan = releaseFamily('dsh').publishOrder([dsh, ...providers])
     expect(plan.order.map(entry => entry.name)).toEqual([...ON_DEMAND_BUNDLES.toSorted(), dsh.name])
@@ -264,14 +264,14 @@ describe('release families', () => {
   })
 
   it('rejects an advertised provider missing from the public release family', () => {
-    expect(() => releaseFamily('dsh').publishOrder([member('apps/cli', '@deepseek-ai/dsh')]))
+    expect(() => releaseFamily('dsh').publishOrder([member('apps/cli', '@reevo/cli')]))
       .toThrow('Official catalog prerequisite')
   })
 
   it('keeps catalog prerequisites ahead of a dsh peer declaration', () => {
-    const dsh = member('apps/cli', '@deepseek-ai/dsh')
+    const dsh = member('apps/cli', '@reevo/cli')
     const providers = ON_DEMAND_BUNDLES.map(name => member(`packages/subagent/${name}`, name, {
-      peerDependencies: { '@deepseek-ai/dsh': 'workspace:*' },
+      peerDependencies: { '@reevo/cli': 'workspace:*' },
     }))
     const plan = releaseFamily('dsh').publishOrder([dsh, ...providers])
     expect(plan.order.map(entry => entry.name)).toEqual([...ON_DEMAND_BUNDLES.toSorted(), dsh.name])
@@ -409,21 +409,21 @@ describe('release families', () => {
 
   it('requires the installed package payload the staging hook supplies', () => {
     const dsh = releaseFamily('dsh')
-    const installed = member('apps/cli', '@deepseek-ai/dsh')
+    const installed = member('apps/cli', '@reevo/cli')
 
     expect(() => { dsh.validatePayload(installed, ['package/lib/index.js', 'package/src/bin.ts']) })
-      .toThrow(/@deepseek-ai\/dsh packed no documentation/)
+      .toThrow(/@reevo\/cli packed no documentation/)
     expect(() => { dsh.validatePayload(installed, ['package/lib/index.js', 'package/docs/guide.md', 'package/src/bin.ts']) })
-      .toThrow(/@deepseek-ai\/dsh packed no upgrade guide index/)
+      .toThrow(/@reevo\/cli packed no upgrade guide index/)
     const docs = ['package/docs/guide.md', 'package/docs/upgrade-guide/README.md']
     expect(() => { dsh.validatePayload(installed, ['package/lib/index.js', ...docs]) })
-      .toThrow(/@deepseek-ai\/dsh packed no source/)
+      .toThrow(/@reevo\/cli packed no source/)
     expect(() => { dsh.validatePayload(installed, ['package/lib/index.js', ...docs, 'package/src/bin.ts']) })
       .not.toThrow()
   })
 
   it('drives the installed entry only for the family that publishes one', () => {
-    expect(releaseFamily('dsh').installedEntry).toEqual({ packageName: '@deepseek-ai/dsh', binPath: 'lib/bin.js' })
+    expect(releaseFamily('dsh').installedEntry).toEqual({ packageName: '@reevo/cli', binPath: 'lib/bin.js' })
     expect(releaseFamily('vendor').installedEntry).toBeUndefined()
   })
 

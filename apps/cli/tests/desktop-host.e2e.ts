@@ -22,7 +22,7 @@ it.each([
   const modules = join(root, 'node_modules', '@deepseek-ai')
   const hostDirectory = fileURLToPath(new URL('../../desktop-host/', import.meta.url))
   const manifest = JSON.parse(readFileSync(join(hostDirectory, 'package.json'), 'utf8')) as { dependencies: Record<string, string> }
-  const stubbed = new Set(['@deepseek-ai/dsh-app-boot', '@deepseek-ai/dsh'])
+  const stubbed = new Set(['@deepseek-ai/dsh-app-boot', '@reevo/cli'])
   for (const name of Object.keys(manifest.dependencies)) {
     const destination = join(root, 'node_modules', name)
     mkdirSync(dirname(destination), { recursive: true })

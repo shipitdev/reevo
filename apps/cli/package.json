@@ -1,5 +1,5 @@
 {
-  "name": "@deepseek-ai/dsh",
+  "name": "@reevo/cli",
   "description": "dsh CLI: profile launch, plugin management, and configuration inspection",
   "version": "0.2.3-alpha.2",
   "publishConfig": {

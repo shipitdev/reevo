@@ -74,9 +74,9 @@ const ASSET_GLOBS = [
 
 /** Published source and documentation: types and maps already describe the runtime, so no load path needs them. */
 const PUBLISHED_PAYLOAD_IGNORES = [
-  '**/node_modules/@deepseek-ai/dsh/src/**',
+  '**/node_modules/@reevo/cli/src/**',
   '**/node_modules/@deepseek-ai/dsh-*/src/**',
-  '**/node_modules/@deepseek-ai/dsh/docs/**',
+  '**/node_modules/@reevo/cli/docs/**',
 ]
 
 const PLATFORMS = ['linux', 'macos', 'win'] as const

@@ -22,8 +22,8 @@ async function fixture() {
   await file(join(root, 'node/node_modules/@deepseek-ai/dsh-http-proxy/index.mjs'), 'export async function installProxyFromEnvironment(env) { if (typeof env.get !== "function") throw new Error("missing environment lookup"); return async () => {} }')
   await file(join(root, 'node/node_modules/@deepseek-ai/dsh-sandbox-windows-acl/package.json'), '{"type":"module","exports":{"./runner":"./runner.mjs"}}')
   await file(join(root, 'node/node_modules/@deepseek-ai/dsh-sandbox-windows-acl/runner.mjs'), '')
-  await file(join(root, 'node/node_modules/@deepseek-ai/dsh/package.json'), '{"type":"module"}')
-  await file(join(root, 'node/node_modules/@deepseek-ai/dsh/lib/bin.js'), `
+  await file(join(root, 'node/node_modules/@reevo/cli/package.json'), '{"type":"module"}')
+  await file(join(root, 'node/node_modules/@reevo/cli/lib/bin.js'), `
     export async function runCli(options = {}) {
       const result = process.argv[2] ? { argv: process.argv.slice(2) }
         : { primary: process.env.DSH_PRIMARY_RUNTIME };

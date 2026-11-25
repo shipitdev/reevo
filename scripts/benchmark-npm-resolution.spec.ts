@@ -69,7 +69,7 @@ describe('npm resolution benchmark', () => {
       devDependencies: { ignored: '^1.0.0' },
     })
     writeJson(root, 'apps/cli/package.json', {
-      name: '@deepseek-ai/dsh',
+      name: '@reevo/cli',
       version: '0.1.0',
       dependencies: { '@deepseek-ai/dsh-child': 'workspace:^', external: '^2.0.0' },
       devDependencies: { ignored: 'workspace:^' },
@@ -82,8 +82,8 @@ describe('npm resolution benchmark', () => {
     const index = buildRegistryIndex(root)
 
     expect(index.get('external')?.get('2.0.0')).toMatchObject({ dependencies: { child: '^1.0.0' } })
-    expect(index.get('@deepseek-ai/dsh')?.get('0.1.0')).toEqual({
-      name: '@deepseek-ai/dsh',
+    expect(index.get('@reevo/cli')?.get('0.1.0')).toEqual({
+      name: '@reevo/cli',
       version: '0.1.0',
       dependencies: { '@deepseek-ai/dsh-child': '^0.1.0', external: '^2.0.0' },
     })
@@ -91,8 +91,8 @@ describe('npm resolution benchmark', () => {
 
   it('runs npm against the local registry without requesting an archive', async () => {
     const index: RegistryIndex = new Map([[
-      '@deepseek-ai/dsh',
-      new Map([['0.1.0', { name: '@deepseek-ai/dsh', version: '0.1.0' }]]),
+      '@reevo/cli',
+      new Map([['0.1.0', { name: '@reevo/cli', version: '0.1.0' }]]),
     ]])
     const result = await benchmarkNpmResolution(index, '0.1.0', 10_000)
 
@@ -104,22 +104,22 @@ describe('npm resolution benchmark', () => {
 
   it('returns npm placement for two aliased package versions without requesting archives', async () => {
     const index: RegistryIndex = new Map([[
-      '@deepseek-ai/dsh',
+      '@reevo/cli',
       new Map([
-        ['0.1.0', { name: '@deepseek-ai/dsh', version: '0.1.0' }],
-        ['0.2.0', { name: '@deepseek-ai/dsh', version: '0.2.0' }],
+        ['0.1.0', { name: '@reevo/cli', version: '0.1.0' }],
+        ['0.2.0', { name: '@reevo/cli', version: '0.2.0' }],
       ]),
     ]])
 
     const result = await resolveNpmPackageLock(index, {
-      '@deepseek-ai/dsh': '0.2.0',
-      'dsh-previous': 'npm:@deepseek-ai/dsh@0.1.0',
+      '@reevo/cli': '0.2.0',
+      'dsh-previous': 'npm:@reevo/cli@0.1.0',
     }, 10_000)
 
     expect(result.archiveRequests).toBe(0)
-    expect(result.packageLock.packages['node_modules/@deepseek-ai/dsh']?.version).toBe('0.2.0')
+    expect(result.packageLock.packages['node_modules/@reevo/cli']?.version).toBe('0.2.0')
     expect(result.packageLock.packages['node_modules/dsh-previous']).toMatchObject({
-      name: '@deepseek-ai/dsh',
+      name: '@reevo/cli',
       version: '0.1.0',
     })
   })
@@ -139,8 +139,8 @@ describe('npm resolution benchmark', () => {
     process.env.npm_config_omit = 'peer'
     try {
       const index: RegistryIndex = new Map([
-        ['@deepseek-ai/dsh', new Map([['0.1.0', {
-          name: '@deepseek-ai/dsh',
+        ['@reevo/cli', new Map([['0.1.0', {
+          name: '@reevo/cli',
           version: '0.1.0',
           peerDependencies: { '@deepseek-ai/dsh-peer': '1.0.0' },
         }]])],
@@ -150,7 +150,7 @@ describe('npm resolution benchmark', () => {
         }]])],
       ])
 
-      const result = await resolveNpmPackageLock(index, { '@deepseek-ai/dsh': '0.1.0' }, 10_000)
+      const result = await resolveNpmPackageLock(index, { '@reevo/cli': '0.1.0' }, 10_000)
 
       expect(result.archiveRequests).toBe(0)
       expect(result.packageLock.packages['node_modules/@deepseek-ai/dsh-peer']?.version).toBe('1.0.0')

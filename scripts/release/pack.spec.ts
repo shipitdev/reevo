@@ -307,7 +307,7 @@ describe('release pack CLI', () => {
   it('validates every parallel tarball before recording the publish order', async () => {
     const root = fixture()
     packageFixture(root, 'packages/util/alpha', '@deepseek-ai/alpha')
-    packageFixture(root, 'apps/cli', '@deepseek-ai/dsh', { files: ['lib/index.js', 'src/bin.ts'] })
+    packageFixture(root, 'apps/cli', '@reevo/cli', { files: ['lib/index.js', 'src/bin.ts'] })
     packageFixture(root, 'packages/subagent/subagent-claude-code', '@deepseek-ai/dsh-subagent-claude-code')
     packageFixture(root, 'packages/subagent/subagent-codex', '@deepseek-ai/dsh-subagent-codex')
     write(join(root, 'apps/cli/src/bin.ts'), 'export const bin = 1\n')
@@ -317,7 +317,7 @@ describe('release pack CLI', () => {
     const result = await runPack(root, ['--family', 'dsh', '--concurrency', '8'])
 
     expect(result.status).not.toBe(0)
-    expect(result.stderr).toContain('@deepseek-ai/dsh packed no documentation')
+    expect(result.stderr).toContain('@reevo/cli packed no documentation')
     expect(readdirSync(join(root, 'packed')).filter(name => name.endsWith('.tgz'))).toHaveLength(4)
     expect(existsSync(join(root, 'packed', PUBLISH_ORDER_FILE))).toBe(false)
   })

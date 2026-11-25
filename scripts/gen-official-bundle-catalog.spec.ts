@@ -22,7 +22,7 @@ function directory(name: string): string { return `packages/subagent/${name.slic
 function fixture(): string {
   const root = mkdtempSync(join(tmpdir(), 'dsh-official-catalog-'))
   roots.push(root)
-  write(root, 'apps/cli/package.json', { name: '@deepseek-ai/dsh' })
+  write(root, 'apps/cli/package.json', { name: '@reevo/cli' })
   for (const name of ON_DEMAND_BUNDLES) {
     const dir = directory(name)
     write(root, `${dir}/package.json`, {
@@ -90,7 +90,7 @@ describe('Official bundle catalog generation', () => {
   it.each([false, true])('rejects an on-demand provider in the installed dependency closure (indirect=%s)', (indirect) => {
     const root = fixture()
     const name = ON_DEMAND_BUNDLES[0]!
-    write(root, 'apps/cli/package.json', { name: '@deepseek-ai/dsh', dependencies: { [indirect ? '@deepseek-ai/dsh-layer' : name]: '*' } })
+    write(root, 'apps/cli/package.json', { name: '@reevo/cli', dependencies: { [indirect ? '@deepseek-ai/dsh-layer' : name]: '*' } })
     if (indirect) write(root, 'packages/bundle/layer/package.json', { name: '@deepseek-ai/dsh-layer', dependencies: { [name]: '*' } })
     expect(() => generateOfficialBundleCatalog(root)).toThrow('must not be installed by the DSH distribution')
   })

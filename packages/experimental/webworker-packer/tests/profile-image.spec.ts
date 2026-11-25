@@ -38,7 +38,7 @@ describe('profile roster', () => {
 
   it('names the CLI manifest as the installation', () => {
     expect(installationManifest(repoRoot)).toEqual({
-      name: '@deepseek-ai/dsh',
+      name: '@reevo/cli',
       manifest: join(repoRoot, 'apps/cli/package.json'),
     })
   })

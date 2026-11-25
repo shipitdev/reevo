@@ -26,7 +26,7 @@ import { initProfile, removeLinkProjections, sanitizeProfile } from '@deepseek-a
 import { PROFILE_TEMPLATES, type ProfileTemplate } from '@deepseek-ai/dsh-official-bundles'
 
 const PROJECT_NAME = '@deepseek-ai/dsh-desktop-runtime'
-const DSH_PACKAGE = '@deepseek-ai/dsh'
+const DSH_PACKAGE = '@reevo/cli'
 const CORE_BUILD_PACKAGE = '@deepseek-ai/dsh-subprocess-local'
 const WEB_PROFILE = PROFILE_TEMPLATES.web as ProfileTemplate
 const WORKSPACE_SETTINGS = 'nodeLinker: hoisted\nautoInstallPeers: false\n'

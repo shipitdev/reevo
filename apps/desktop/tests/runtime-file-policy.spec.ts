@@ -53,10 +53,10 @@ it('omits development artifacts while preserving executable modules, assets and 
     '@deepseek-ai/libreoffice-kit-win32-x64/bin/dsoffice.exe',
     '@deepseek-ai/libreoffice-kit-win32-x64/sources/core-source.json',
     '@deepseek-ai/libreoffice-kit-win32-x64/licenses/MPL-2.0.txt',
-    '@deepseek-ai/dsh/lib/index.js', '@deepseek-ai/dsh/lib/bin.js',
+    '@reevo/cli/lib/index.js', '@reevo/cli/lib/bin.js',
     '@deepseek-ai/dsh-session/lib/index.js',
-    '@deepseek-ai/dsh/src/bin.ts', '@deepseek-ai/dsh/docs/architecture.md',
-    '@deepseek-ai/dsh/docs/upgrade-guide/v0.2.0/example/guide.md',
+    '@reevo/cli/src/bin.ts', '@reevo/cli/docs/architecture.md',
+    '@reevo/cli/docs/upgrade-guide/v0.2.0/example/guide.md',
     '@deepseek-ai/dsh-session/src/index.ts',
     '@deepseek-ai/dsh-client-ui-chat/src/client/Page.tsx',
   ]

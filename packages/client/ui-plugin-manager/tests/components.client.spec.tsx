@@ -54,10 +54,10 @@ function row(overrides: Partial<PackageRow> = {}): PackageRow {
   return { entryId: 'include:sidebar' as PluginEntryId, rowId: 'sidebar', moduleName: 'dsh-better-sidebar', enabled: true, phase: 'active', ...overrides }
 }
 
-const INCOMPATIBLE = { name: 'dsh-late', version: '2.0.0', runtimeVersion: '0.1.0', requirements: { '@deepseek-ai/dsh': '^0.2.0', '@deepseek-ai/dsh-core': '^0.2.0' } }
+const INCOMPATIBLE = { name: 'dsh-late', version: '2.0.0', runtimeVersion: '0.1.0', requirements: { '@reevo/cli': '^0.2.0', '@deepseek-ai/dsh-core': '^0.2.0' } }
 /** The English sentence an incompatibility of {@link INCOMPATIBLE}, optionally renamed, reads as. */
 const incompatibleText = (name = INCOMPATIBLE.name): string => en.reasonIncompatibleVersion
-  .replace('{plugin}', `${name}@2.0.0`).replace('{runtime}', '0.1.0').replace('{requirements}', '@deepseek-ai/dsh ^0.2.0, @deepseek-ai/dsh-core ^0.2.0')
+  .replace('{plugin}', `${name}@2.0.0`).replace('{runtime}', '0.1.0').replace('{requirements}', '@reevo/cli ^0.2.0, @deepseek-ai/dsh-core ^0.2.0')
 const MIRROR = 'https://registry.npmmirror.com/'
 const OFFICIAL = 'https://registry.npmjs.org/'
 
@@ -3008,7 +3008,7 @@ describe('registry versions and updates', () => {
   const v = (version: string, more: Partial<PluginVersion> = {}): PluginVersion => ({
     version, tags: [], prerelease: false, bundle: true, ...more,
   })
-  const incompatible = (version: string) => ({ name: 'dsh-better-sidebar', version, runtimeVersion: runtime, requirements: { '@deepseek-ai/dsh': '>=0.9.0' } })
+  const incompatible = (version: string) => ({ name: 'dsh-better-sidebar', version, runtimeVersion: runtime, requirements: { '@reevo/cli': '>=0.9.0' } })
   const detail = (): HTMLElement => document.querySelector('[data-plugin-detail]') as HTMLElement
   const section = (): HTMLElement => document.querySelector('[data-plugin-versions]') as HTMLElement
   const open = (navigation: ReturnType<typeof renderTab>['navigation']) => {
@@ -3040,7 +3040,7 @@ describe('registry versions and updates', () => {
     const rows = [...section().querySelectorAll('[data-plugin-version]')].map(row => row.getAttribute('data-plugin-version'))
     expect(rows).toEqual(['2.0.0', '1.4.0', '1.3.2', '1.3.1', '0.16.0'])
     const row = (version: string) => section().querySelector(`[data-plugin-version="${version}"]`) as HTMLElement
-    expect(within(row('2.0.0')).getByText('Needs @deepseek-ai/dsh >=0.9.0')).toBeTruthy()
+    expect(within(row('2.0.0')).getByText('Needs @reevo/cli >=0.9.0')).toBeTruthy()
     expect(within(row('2.0.0')).queryByRole('button')).toBeNull()
     expect(within(row('1.3.1')).getByText(en.versionsNotBundle)).toBeTruthy()
     expect(within(row('1.3.2')).getByText('use 1.4.0')).toBeTruthy()
@@ -3068,7 +3068,7 @@ describe('registry versions and updates', () => {
     open(navigation)
     expect(within(section()).getByText(title)).toBeTruthy()
     expect(within(detail()).queryByRole('button', { name: /^Update to / })).toBeNull()
-    if (title === en.versionsBlocked) expect(within(section()).getByText(`2.0.0 needs @deepseek-ai/dsh >=0.9.0; this DSH is ${runtime}`)).toBeTruthy()
+    if (title === en.versionsBlocked) expect(within(section()).getByText(`2.0.0 needs @reevo/cli >=0.9.0; this DSH is ${runtime}`)).toBeTruthy()
   })
 
   it('reports a refused check with the registries asked and a retry', () => {

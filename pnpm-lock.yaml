@@ -917,7 +917,7 @@ importers:
       '@deepseek-ai/cordis':
         specifier: workspace:~
         version: link:../../vendor/cordis
-      '@deepseek-ai/dsh':
+      '@reevo/cli':
         specifier: workspace:*
         version: link:../cli
       '@deepseek-ai/dsh-agent':
@@ -16343,7 +16343,7 @@ importers:
 
   packages/sdk/client:
     dependencies:
-      '@deepseek-ai/dsh':
+      '@reevo/cli':
         specifier: workspace:*
         version: link:../../../apps/cli
       '@deepseek-ai/dsh-brand':
@@ -20579,7 +20579,7 @@ importers:
       '@deepseek-ai/cosmokit':
         specifier: link:../../vendor/cosmokit
         version: link:../../vendor/cosmokit
-      '@deepseek-ai/dsh':
+      '@reevo/cli':
         specifier: workspace:*
         version: link:../../apps/cli
       '@deepseek-ai/dsh-acp':

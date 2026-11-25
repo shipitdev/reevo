@@ -104,7 +104,7 @@ it('rejects local client artifacts in the release packing command', async () => 
 it('validates local tarball contents before reporting success', async () => {
   const root = fixture()
   write(root, 'pnpm-workspace.yaml', 'packages:\n  - packages/*/*\n  - apps/*\n')
-  write(root, 'apps/cli/package.json', JSON.stringify({ name: '@deepseek-ai/dsh', version: '1.2.3', files: ['lib', 'src'] }))
+  write(root, 'apps/cli/package.json', JSON.stringify({ name: '@reevo/cli', version: '1.2.3', files: ['lib', 'src'] }))
   write(root, 'apps/cli/lib/index.js', 'export const cli = true\n')
   write(root, 'apps/cli/src/bin.ts', 'export const bin = true\n')
   for (const name of ['subagent-claude-code', 'subagent-codex']) {
@@ -113,7 +113,7 @@ it('validates local tarball contents before reporting success', async () => {
   }
   const result = await pack(root)
   expect(result.code).not.toBe(0)
-  expect(result.output).toContain('@deepseek-ai/dsh packed no documentation')
+  expect(result.output).toContain('@reevo/cli packed no documentation')
 }, testTimeout)
 
 it('rejects an invalid local pack concurrency before replacing packages', async () => {

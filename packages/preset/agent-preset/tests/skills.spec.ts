@@ -202,7 +202,7 @@ describe('the shipped dsh-doc skill', () => {
   it('locates checkout documentation from the shipped skill directory', () => {
     const root = resolve(realpathSync(skill), '../../../../..')
     expect(JSON.parse(readFileSync(join(root, 'package.json'), 'utf8'))).toMatchObject({ name: '@reevo/workspace' })
-    expect(JSON.parse(readFileSync(join(root, 'apps/cli/package.json'), 'utf8'))).toMatchObject({ name: '@deepseek-ai/dsh' })
+    expect(JSON.parse(readFileSync(join(root, 'apps/cli/package.json'), 'utf8'))).toMatchObject({ name: '@reevo/cli' })
     expect(statSync(join(root, 'pnpm-workspace.yaml')).isFile()).toBe(true)
     expect(statSync(join(root, 'docs/user/index.md')).isFile()).toBe(true)
     expect(statSync(join(root, 'packages/README.md')).isFile()).toBe(true)
