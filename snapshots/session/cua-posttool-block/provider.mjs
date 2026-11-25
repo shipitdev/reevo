@@ -3,7 +3,7 @@ import { installFixture } from '../cua-run-code/provider.mjs'
 import { createNativeFixture } from '../cua-run-code/native-channel.mjs'
 export { Config, inject, name } from '../cua-run-code/provider.mjs'
 
-/** @param {import('@deepseek-ai/cordis').Context} ctx @param {import('@deepseek-ai/dsh-cua').CuaConfig} config */
+/** @param {import('@deepseek-ai/cordis').Context} ctx @param {import('@reevo/dsh-cua').CuaConfig} config */
 export function apply(ctx, config) {
   const fixture = createNativeFixture()
   const release = fixture.controlNext('releaseHeldInputs')

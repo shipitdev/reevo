@@ -4,7 +4,7 @@
  * HTTP transport. Replay therefore reaches the model-visible failure text without external network
  * while retaining the recorded request URL.
  */
-import { HttpFetchProvider } from '@deepseek-ai/dsh-web-fetch-http'
+import { HttpFetchProvider } from '@reevo/dsh-web-fetch-http'
 import { applyLoopbackServerEffect } from '../loopback-fixture-server.mjs'
 
 /** Model-visible URL retained by the recorded session. */
