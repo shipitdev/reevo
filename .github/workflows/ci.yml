@@ -959,7 +959,7 @@ jobs:
           if [[ "$PLAYWRIGHT_INSTALL_MODE" == with-deps ]]; then deps=(--with-deps); fi
           (
             status=0
-            pnpm --filter @deepseek-ai/dsh-web-frontend exec playwright install "${deps[@]}" chromium webkit || status=$?
+            pnpm --filter @reevo/web exec playwright install "${deps[@]}" chromium webkit || status=$?
             echo "$status" > "$RUNNER_TEMP/playwright-install.status"
           ) > "$RUNNER_TEMP/playwright-install.log" 2>&1 &
           echo "$!" > "$RUNNER_TEMP/playwright-install.pid"

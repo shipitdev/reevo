@@ -13,7 +13,7 @@
  * the tile's own gradient to the edges, so no platform mask meets a seam.
  *
  * The committed PNGs are the output; rerun
- * `pnpm --filter @deepseek-ai/dsh-web-frontend run render:app-icons` after the
+ * `pnpm --filter @reevo/web run render:app-icons` after the
  * tile artwork changes.
  * @module render-app-icons
  */

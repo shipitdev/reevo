@@ -935,7 +935,7 @@ describe('Typert contract preparation', () => {
     const needsOf = (id: string) => subject.find(item => item.id === id)?.needs
 
     expect(subject.find(item => item.id === 'playwright-install')).toMatchObject({
-      args: ['/private/pnpm.cjs', '--filter', '@deepseek-ai/dsh-web-frontend', 'exec', 'playwright', ...install],
+      args: ['/private/pnpm.cjs', '--filter', '@reevo/web', 'exec', 'playwright', ...install],
     })
     expect(needsOf('playwright-install')).toBeUndefined()
     expect(needsOf('snapshot')).toEqual(['build', 'playwright-install'])

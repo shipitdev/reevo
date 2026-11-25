@@ -658,7 +658,7 @@ export async function launchWebScaffold(options: LaunchOptions = {}): Promise<We
       },
     },
     // The bundle's web-runtime row resolves the same built dist under test
-    // (apps/web IS @deepseek-ai/dsh-web-frontend). Collect Token entries through
+    // (apps/web IS @reevo/web). Collect Token entries through
     // WebApp's event without printing credentials; Playwright owns browser opening.
     // Preserve the composed surface-context choice because a patch replaces
     // the row's complete config.

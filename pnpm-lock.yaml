@@ -3596,7 +3596,7 @@ importers:
       '@deepseek-ai/dsh-tool-workspace-dependencies':
         specifier: workspace:*
         version: link:../../skill/tool-workspace-dependencies
-      '@deepseek-ai/dsh-web-frontend':
+      '@reevo/web':
         specifier: workspace:*
         version: link:../../../apps/web
       '@deepseek-ai/dsh-workflow-ptc':

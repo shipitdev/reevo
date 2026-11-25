@@ -626,7 +626,7 @@ function ciPlaywrightInstallGate(): Gate | undefined {
   if (raw !== 'with-deps' && raw !== 'browsers') {
     throw new Error(`run-gates: DSH_CI_PLAYWRIGHT_INSTALL must be with-deps or browsers, got ${JSON.stringify(raw)}.`)
   }
-  const args = ['--filter', '@deepseek-ai/dsh-web-frontend', 'exec', 'playwright', 'install',
+  const args = ['--filter', '@reevo/web', 'exec', 'playwright', 'install',
     ...raw === 'with-deps' ? ['--with-deps'] : [], 'chromium', 'webkit']
   return {
     id: 'playwright-install',

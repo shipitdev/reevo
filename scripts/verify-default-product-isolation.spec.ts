@@ -27,7 +27,7 @@ function fixture(): string {
   roots.push(root)
   write(root, 'apps/cli/package.json', { name: '@reevo/cli', dependencies: { [core]: 'workspace:^' } })
   write(root, 'apps/cli/src/bin.ts', 'export {}\n')
-  write(root, 'apps/web/package.json', { name: '@deepseek-ai/dsh-web-frontend' })
+  write(root, 'apps/web/package.json', { name: '@reevo/web' })
   write(root, 'apps/web/index.html', '<script type="module" src="/src/main.ts"></script>')
   write(root, 'apps/web/src/main.ts', 'export {}\n')
   write(root, 'python/sdk-runtime/package.json', { name: '@deepseek-ai/dsh-python-runtime' })
